@@ -1,0 +1,115 @@
+:root {
+    --blanco: #ffffff;
+    --primario: #FFC107;
+    --secundario: #0097A7;
+    --gris: #757575;
+    --oscuro: #212121;
+}
+
+.formulario {
+    margin: auto 1rem;
+    background-color: var(--gris);
+}
+
+.TituloCorreo {
+    color: var(--primario);
+    padding-top: 2rem;
+    margin: 2rem;
+    text-align: center;
+    font-size: 2.3rem;
+}
+
+.contenedor-campos {
+    height: 70%;
+    margin: 1.5rem;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+
+.ingresoDatos {
+    padding: 0.5rem 0rem;
+    border-radius: 0.5rem;
+}
+
+.textoCorreo {
+    padding-right: 6rem;
+    max-width: 4rem;
+    font-size: 1.7rem;
+    margin-bottom: 0.5rem;
+    color: var(--blanco);
+}
+
+.msjCorreo {
+    max-width: 100%;
+    height: 8rem;
+}
+
+.btnCorreo {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.enviar {
+    background-color: blue;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    font-size: 2rem;
+    width: 8rem;
+    height: 4rem;
+    padding: 0.5rem;
+    color: white;
+    border-radius: 0.4rem;
+    margin-bottom: 2rem;
+    margin-right: 2rem;
+}
+
+@media(min-width:1024px) {
+    .formulario {
+        margin: 1rem 10rem;
+        background-color: var(--gris);
+        max-width: 70rem;
+        margin: auto;
+    }
+    .TituloCorreo {
+        color: var(--primario);
+    }
+    .textoCorreo {
+        color: var(--blanco);
+        padding-right: 6rem;
+        max-width: 4rem;
+        font-size: 1.7rem;
+        margin: 0px 1.5rem;
+    }
+    .nomtelefono {
+        display: flex;
+        flex-direction: row;
+    }
+    .nomtelefono .campo {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+    .correoMsn {
+        display: flex;
+        flex-direction: column;
+    }
+    .correoMsn .campo {
+        display: flex;
+        flex-direction: row;
+    }
+    .ingresoDatos {
+        width: 100%;
+    }
+    .msjCorreo {
+        width: 100%;
+    }
+}

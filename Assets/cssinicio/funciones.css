@@ -1,0 +1,154 @@
+:root {
+    /*sub menu*/
+    --colorsubmenubg: #ffffff;
+    --colorTextoEnlacesySubEnlaces: #12377B;
+    /*HeaderPrincipal*/
+    --texroBarra: #ffffff;
+    --barra: #12377B;
+    --enlaceNavegador: #11116f;
+    --enlaceNavegadorHover: #E6AD09;
+    /*HeaderSecundario*/
+    --blanco: #ffffff;
+    --primario: #FFC107;
+    --secundario: #0097A7;
+    --gris: #757575;
+    --oscuro: #212121;
+    --textoNagadorHover: #B36036;
+    --fondoSubEnlaces: #ffffff;
+    --alturaTexto: 100px;
+    --texroBarra: #ffffff;
+    --tipoTexto1: 'Montserrat', sans-serif;
+    /* --tipoTexto1: 'Hind Siliguri', sans-serif;*/
+}
+
+@media(max-width:1024px) {
+    .carrusel {
+        position: relative;
+        min-width: 100%;
+        height: 300px;
+        overflow: hidden;
+        margin: 0 auto;
+    }
+    .titulo {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 40px;
+        font-weight: 800;
+    }
+    .card {
+        width: 80%;
+        height: 300px;
+        overflow: hidden;
+        position: relative;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+    }
+    .card .imagen__card {
+        min-width: 100%;
+        max-width: 100%;
+        border-radius: 8px;
+        padding: 0 auto;
+    }
+    .card .grupo__detalles-card {
+        /*texto en la imagen */
+        border-radius: 15px;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        padding-top: 200px;
+    }
+    .card .grupo__detalles-card .titulo__card,
+    .descripcion_card {
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        color: blue;
+        font-weight: 800;
+        width: 90%;
+        margin: auto;
+        padding: 10px;
+    }
+    .card .grupo__detalles-card .titulo__card {
+        font-size: 60px;
+        animation: 1s ease-in-out 0s 1 slideInFromLeft;
+    }
+    .card .grupo__detalles-card .descripcion_card {
+        font-size: 60px;
+        animation: 1s ease-in-out 0s 1 slideInFromRight;
+    }
+    @keyframes slideInFromLeft {
+        0% {
+            transform: translateX(-100%);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+    @keyframes slideInFromRight {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+    .carrusel .botones {
+        position: absolute;
+        top: 100px;
+        font-size: 50px;
+        z-index: 100;
+    }
+    .botones {
+        width: 100%;
+        padding: 55px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .carrusel .botones .atras,
+    .adelante {
+        cursor: pointer;
+        color: royalblue;
+    }
+    .slider__btn2 {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background: rgba(232, 172, 23, 0.7);
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 30px;
+        font-weight: bold;
+        font-family: monospace;
+        text-align: center;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    .slider__btn2:hover {
+        background: #fff;
+    }
+    .slider__btn2--left {
+        left: 10px;
+    }
+    .slider__btn2--right {
+        right: 10px;
+    }
+}
+
+@media(min-width:1024px) {
+    .atras {
+        display: none;
+    }
+    .adelante {
+        display: none;
+    }
+}
+
+.tituloFunciones {
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+    color: var(--enlaceNavegadorHover);
+    align-items: center;
+    margin-top: 1rem;
+}

@@ -1,0 +1,16 @@
+{
+    "name": "jp/use",
+    "description": "jp",
+    "type": "project",
+    "license": "private",
+    "authors": [
+        {
+            "name": "jp",
+            "email": "stifs.jprl18@gmail.com"
+        }
+    ],
+    "minimum-stability": "beta",
+    "require": {
+        "phpoffice/phpspreadsheet": "^1.22"
+    }
+}

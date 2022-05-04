@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.burguer {
+    background-color: blue;
+    height: 40px;
+    width: 40px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    justify-content: center;
+    align-items: center;
+}
+
+.line {
+    background-color: white;
+    height: 5px;
+    width: 30px;
+    border-radius: 3px;
+}
+
+.active .line:nth-child(1) {
+    transform: translateY(10px)rotate(135deg);
+    height: 8px;
+}
+
+.active .line:nth-child(2) {
+    transform: scale(0);
+}
+
+.active .line:nth-child(3) {
+    transform: translateY(-10px)rotate(-135deg);
+    height: 8px;
+}
+
+.nav-bar {
+    background: brown;
+    padding: 20px;
+    display: block;
+    color: cornsilk;
+    cursor: pointer;
+    font-size: 15px;
+    width: 100%;
+}
+
+.menu,
+.submenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu {
+    background-color: sandybrown;
+    transition: all 0.1s;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+}
+
+.mostrar {
+    height: 100%;
+    transition: all 0.3s;
+    margin-left: 0;
+    overflow: visible;
+}
+
+.menu__link {
+    display: block;
+    padding: 5px;
+    color: royalblue;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.menu__link:hover {
+    background-color: brown;
+}
+
+.submenu {
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.submenu .menu__link {
+    background: #000;
+    padding-left: 50px;
+}
+
+@media(min-width:1024px) {
+    .burguer {
+        display: none;
+    }
+    .nav-bar {
+        display: none;
+    }
+    .menu {
+        overflow: visible;
+        display: flex;
+    }
+    .container-submenu {
+        position: relative;
+    }
+    .submenu {
+        position: absolute;
+        top: 30px;
+        width: 200px;
+        /*ancho de sub enlace*/
+        overflow: visible;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+    }
+    .container-submenu:hover .submenu {
+        opacity: 1;
+        visibility: visible;
+    }
+    .submenu {
+        position: absolute;
+        top: 60;
+    }
+}

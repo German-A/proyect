@@ -1,0 +1,160 @@
+:root {
+    --fondo: #F2F4F8;
+    --plomo: #1B1811;
+    --rojoc: #D90F2A;
+    --azulc: #0506E6;
+    --naranjac: #F05905;
+    --moradoc: #B105F0;
+    --amarillocrema: #E6AD09;
+    --amarillo: #FDF107;
+    --verde: #0C8F3D;
+    --azulOsucuro: #000C4B;
+    --azulClaro: #12377B;
+    --azulAgua: #0A2FFF;
+    --rojo: #D8261A;
+    --colorsubmenubg: #ffffff;
+    --colorTextoEnlacesySubEnlaces: #12377B;
+}
+
+.cajaC {
+    width: 100%;
+}
+
+.contenedorC {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.caja__columnaC {
+    color: var(--plomo);
+    background: var(--fondo);
+    position: relative;
+    text-align: center;
+    width: 30rem;
+    height: 20rem;
+    margin: 2rem 0;
+}
+
+.tituloCalidad {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 3rem;
+    color: var(--amarillocrema);
+}
+
+.TexCalidad {
+    padding-right: 1rem;
+}
+
+.caja__columnaC .textoC {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border: 3px solid var(--azulClaro);
+    padding: 15px;
+}
+
+.caja__columnaC .textoC h2 {
+    font-size: 40px;
+    margin: 0 0 10px;
+}
+
+.caja__columnaC .textoC p {
+    font-size: 18px;
+    color: var(--plomo);
+}
+
+svg,
+rect {
+    top: 0rem;
+    left: 0rem;
+    width: 30rem;
+    height: 20rem;
+    fill: transparent;
+}
+
+rect {
+    stroke: rgb(25, 73, 13);
+    stroke-width: 4;
+    stroke-dasharray: 400;
+    animation: animate 6s linear infinite;
+}
+
+.iconWord {
+    height: 6rem;
+    width: 6rem;
+}
+
+@keyframes animate {
+    0% {
+        stroke-dashoffset: 800;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@media(min-width:1024px) {
+    .caja {
+        width: 100%;
+    }
+    .contenedorC {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+    .caja__columnaC {
+        display: flex;
+        color: #fff;
+        background: var(--fondo);
+        position: relative;
+        text-align: center;
+        width: 35rem;
+        height: 13rem;
+        margin: 2rem 0;
+    }
+    .tituloCalidad {
+        margin-top: 2rem;
+        text-align: center;
+    }
+    .caja__columnaC .textoC {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+        border: 3px solid var(--azulClaro);
+        padding: 8px;
+    }
+    .caja__columnaC .textoC h2 {
+        font-size: 40px;
+        margin: 0 0 10px;
+    }
+    .caja__columnaC .textoC p {
+        font-size: 18px;
+        padding-left: 0.5rem;
+        color: var(--plomo);
+    }
+    svg,
+    rect {
+        top: 0rem;
+        left: 0rem;
+        width: 34rem;
+        height: 13rem;
+        fill: transparent;
+    }
+    .cajitaCalidad {
+        display: flex;
+        flex-direction: row;
+    }
+    rect {
+        stroke: rgb(25, 73, 13);
+        stroke-width: 4;
+        stroke-dasharray: 400;
+        animation: animate 6s linear infinite;
+    }
+}

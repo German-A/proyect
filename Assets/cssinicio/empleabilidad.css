@@ -1,0 +1,57 @@
+:root {
+    --jpazulAlto: #000C4B;
+    --jpazulMedio: #12377B;
+    --jpazulbajo: #0A2FFF;
+    --jprojo: #D8261A;
+    --jpnegro: #1B1811;
+    --jpamarillo: #FDF107;
+    --jpmostaza: #E6AD09;
+    --jpverde: #0C8F3D;
+    --jpblanco: #FFFFFF;
+    --plomo: #EEEEEE;
+    --jpplomoazul: #E4E9F7;
+}
+
+.contenedor-trabajo {
+    width: 90%;
+    padding: 1rem;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card-trabajo {
+    width: 550px;
+    border-radius: 15px;
+    background-color: var(--jpplomoazul);
+    margin: auto;
+    padding: 10px;
+}
+
+.card-Titulo {
+    color: var(--jpazulAlto);
+    font-weight: 900;
+    padding: 5px;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.card-Cuerpo {}
+
+.acardTrabajo {
+    text-decoration: none;
+    color: var(--jpnegro);
+}
+
+.cardDescriocionTrabajo {
+    color: var(--jpazulMedio);
+    margin: 5px 10px;
+    font-weight: 800;
+}
+
+.trabajoDes {
+    color: var(--jpnegro);
+    font-weight: 100;
+}
