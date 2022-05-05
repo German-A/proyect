@@ -1,0 +1,185 @@
+<?php head($data); ?>
+
+<?php obj($data); ?>
+<?php
+
+//require_once  "../Models/HomeModel.php";
+$obj = new HomeModel();
+$obj2 = new HomeModel();
+$perfiles = $obj->selectLegal();
+$perfiless = $obj2->selectinstitucional();
+$perfilesss = $obj2->selectprimerNacional();
+$n = 1;
+
+?><br><br>
+
+<h3 class="text-center">EGRESADOS - 2021</h3>
+
+<br>
+<div class="row p-2">
+    <div class="col-md-6 col-lg-3">
+        <a href="<?= base_url() ?>/usuarios" class="linkw">
+            <div class="widget-small primary coloured-icon"><i class="icon fas fa-university "></i>
+                <div class="info">
+                    <h4>FACULTADES</h4>
+                    <p><b>13</b></p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+        <a href="<?= base_url() ?>/clientes" class="linkw">
+            <div class="widget-small info coloured-icon"><i class="icon fas fa-graduation-cap"></i>
+                <div class="info">
+                    <h4>BACHILLERES</h4>
+                    <p><b>2117</b></p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+        <a href="<?= base_url() ?>/productos" class="linkw">
+            <div class="widget-small warning coloured-icon"><i class="icon fas fa-user-graduate"></i>
+                <div class="info">
+                    <h4>TITULADOS</h4>
+                    <p><b>1139</b></p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+        <a href="<?= base_url() ?>/pedidos" class="linkw">
+            <div class="widget-small primary coloured-icon"><i class="icon fas fa-user-graduate"><span class="fas fa-user-graduate"></span></i>
+                <div class="info">
+                    <h4>2° ESPECIALIDAD</h4>
+                    <p><b>110</b></p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+</div>
+
+
+
+
+<div class="col-lg-12">
+    <div class="card">
+        <div class="card-header">
+            <h2 class="text-center">Transparencia a informacion de usuarios-Unidad de Seguimiento del Egresado</h2>
+        </div>
+
+        <div class="card-body">
+            <h3 class="text-muted m-b-15 text-center">Más detalle</h3>
+
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="false">
+                        <h3>Egresados por Año</h3>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">
+                        <h3>SISEU</h3>
+                    </a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link active show" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="true">Contact</a>
+                </li> -->
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+
+                <!-- seccion egresados -->
+                <div class="tab-pane fade" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                    <h3>EGRESADOS</h3>
+                    <br><br>
+
+
+                    <h4>Filtros</h4>
+                    
+
+                    <h5>Año de Egreso:</h5>
+
+                    <div class="row p-2">
+    <div class="col-md-6 col-lg-3">
+        <a href="<?= base_url() ?>/usuarios" class="linkw">
+            <div class="widget-small primary coloured-icon"><i class="icon fas fa-university "></i>
+                <div class="info">
+                    <h4>FACULTADES</h4>
+                    <p><b>13</b></p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+        <a href="<?= base_url() ?>/clientes" class="linkw">
+            <div class="widget-small info coloured-icon"><i class="icon fas fa-graduation-cap"></i>
+                <div class="info">
+                    <h4>BACHILLERES</h4>
+                    <p><b>2117</b></p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+        <a href="<?= base_url() ?>/productos" class="linkw">
+            <div class="widget-small warning coloured-icon"><i class="icon fas fa-user-graduate"></i>
+                <div class="info">
+                    <h4>TITULADOS</h4>
+                    <p><b>1139</b></p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+        <a href="<?= base_url() ?>/pedidos" class="linkw">
+            <div class="widget-small primary coloured-icon"><i class="icon fas fa-user-graduate"><span class="fas fa-user-graduate"></span></i>
+                <div class="info">
+                    <h4>2° ESPECIALIDAD</h4>
+                    <p><b>110</b></p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+</div>
+
+
+   
+                </div>
+
+
+                <!-- seccion siseu -->
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    <h3>Profile</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste nobis, fugit pariatur minima! Dolorum modi pariatur aperiam quas odio nulla, illo necessitatibus dolor a.
+                    </p>
+                </div>
+                <!-- <div class="tab-pane fade active show" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                    <h3>Cotanct</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste nobis, fugit pariatur minima! Dolorum modi pariatur aperiam quas odio nulla, illo necessitatibus dolor a.
+                    </p>
+                </div> -->
+            </div>
+
+
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<?php footer($data); ?>

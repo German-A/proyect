@@ -186,7 +186,7 @@ a {
 }
 
 a:hover {
-    color: #004a43;
+    color: #E6AD09;
     text-decoration: underline;
 }
 
@@ -3083,14 +3083,14 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-primary {
-    color: #009688;
-    border-color: #009688;
+    color: #1e4999;
+    border-color: #1e4999;
 }
 
 .btn-outline-primary:hover {
     color: #FFF;
-    background-color: #009688;
-    border-color: #009688;
+    background-color: #1e4999;
+    border-color: #1e4999;
 }
 
 .btn-outline-primary:focus,
@@ -7259,7 +7259,7 @@ a.close.disabled {
 }
 
 .bg-primary {
-    background-color: #009688 !important;
+    background-color: #007bff !important;
 }
 
 a.bg-primary:hover,
@@ -17194,4 +17194,16 @@ be a descendant of the grid when it is being dragged.
 
 .user .user-settings label {
     color: #666;
+}
+
+#snombre::placeholder{
+    color: white;
+  }
+.footermsj{
+    background-color: transparent; border: 0;
+        border-bottom: 1px solid #D76500;
+        border-radius: 0;
+        color: #FFFFFF;
+        font-size: 1.2rem;
+        padding: 8px 20px;
 }

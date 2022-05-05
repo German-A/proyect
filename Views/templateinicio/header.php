@@ -68,6 +68,7 @@
                     </ul>
                 </li>
                 <li class="menu__item"><a href="<?= base_url(); ?>/bases" class="menu__link">BASE LEGAL</a></li>
+                <li class="menu__item"><a href="<?= base_url(); ?>/estadisticas" class="menu__link">ESTADISTICAS</a></li>
                 <li class="menu__item"><a href="<?= base_url(); ?>/cursosmooc" class="menu__link">CURSOS MOOC</a></li>
                 <li class="menu__item"><a href="<?= base_url(); ?>/expoferialaboral" class="menu__link">EXPOFERIAS LABORALES </a></li>
               

@@ -35,7 +35,7 @@
         font-size: 40px;
         font-weight: 800;
     }
-    .card {
+    .s {
         width: 80%;
         height: 300px;
         overflow: hidden;
@@ -44,13 +44,13 @@
         display: flex;
         justify-content: center;
     }
-    .card .imagen__card {
+    .cards .imagen__card {
         min-width: 100%;
         max-width: 100%;
         border-radius: 8px;
         padding: 0 auto;
     }
-    .card .grupo__detalles-card {
+    .cards .grupo__detalles-card {
         /*texto en la imagen */
         border-radius: 15px;
         position: absolute;
@@ -59,7 +59,7 @@
         top: 0;
         padding-top: 200px;
     }
-    .card .grupo__detalles-card .titulo__card,
+    .cards .grupo__detalles-card .titulo__card,
     .descripcion_card {
         font-family: Arial, Helvetica, sans-serif;
         text-align: center;
@@ -69,11 +69,11 @@
         margin: auto;
         padding: 10px;
     }
-    .card .grupo__detalles-card .titulo__card {
+    .cards .grupo__detalles-card .titulo__card {
         font-size: 60px;
         animation: 1s ease-in-out 0s 1 slideInFromLeft;
     }
-    .card .grupo__detalles-card .descripcion_card {
+    .cards .grupo__detalles-card .descripcion_card {
         font-size: 60px;
         animation: 1s ease-in-out 0s 1 slideInFromRight;
     }

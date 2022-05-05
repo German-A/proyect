@@ -22,10 +22,10 @@
 	const SMONEY = "Q";
 
 	//Datos envio de correo
-	const NOMBRE_REMITENTE = "Tienda Virtual";
-	const EMAIL_REMITENTE = "no-reply@abelosh.com";
-	const NOMBRE_EMPESA = "Tienda Virtual";
-	const WEB_EMPRESA = "www.abelosh.com";
+	const NOMBRE_REMITENTE = "USE";
+	const EMAIL_REMITENTE = "jeanromerolobaton@gmail.com";
+	const NOMBRE_EMPESA = "UNIDAD DE SEGUIMIENTO DEL EGREADO";
+	const WEB_EMPRESA = "www.use-dpa.unitru.edu.pe";
 	
 
 
