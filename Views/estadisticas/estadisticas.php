@@ -17,7 +17,7 @@ $perfiles = $año->selectañoEspecialidades();
 <br>
 <div class="row p-2">
     <div class="col-md-6 col-lg-3">
-        <a href="<?= base_url() ?>/usuarios" class="linkw">
+        <a href="#" class="linkw">
             <div class="widget-small primary coloured-icon"><i class="icon fas fa-university "></i>
                 <div class="info">
                     <h4>FACULTADES</h4>
@@ -28,7 +28,7 @@ $perfiles = $año->selectañoEspecialidades();
     </div>
 
     <div class="col-md-6 col-lg-3">
-        <a href="<?= base_url() ?>/clientes" class="linkw">
+        <a href="#" class="linkw">
             <div class="widget-small info coloured-icon"><i class="icon fas fa-graduation-cap"></i>
                 <div class="info">
                     <h4>BACHILLERES</h4>
@@ -39,7 +39,7 @@ $perfiles = $año->selectañoEspecialidades();
     </div>
 
     <div class="col-md-6 col-lg-3">
-        <a href="<?= base_url() ?>/productos" class="linkw">
+        <a href="#" class="linkw">
             <div class="widget-small warning coloured-icon"><i class="icon fas fa-user-graduate"></i>
                 <div class="info">
                     <h4>TITULADOS</h4>
@@ -50,7 +50,7 @@ $perfiles = $año->selectañoEspecialidades();
     </div>
 
     <div class="col-md-6 col-lg-3">
-        <a href="<?= base_url() ?>/pedidos" class="linkw">
+        <a href="#" class="linkw">
             <div class="widget-small primary coloured-icon"><i class="icon fas fa-user-graduate"><span class="fas fa-user-graduate"></span></i>
                 <div class="info">
                     <h4>2° ESPECIALIDAD</h4>
@@ -68,51 +68,50 @@ $perfiles = $año->selectañoEspecialidades();
 <div class="col-lg-12">
     <div class="card">
         <div class="card-header">
-            <h2 class="text-center">Transparencia a informacion de e-Unidad de Seguimiento del Egresado</h2>
+            <h2 class="text-center">Transparencia - Unidad de Seguimiento del Egresado</h2>
         </div>
 
         <div class="card-body">
             <h3 class="text-muted m-b-15 text-center">Más detalle</h3>
+            <h4>
+            <a class="btn btn-primary" target="_blank" href="https://docs.google.com/spreadsheets/d/1Qsl3g_XTSYhMlZg4MMZg2QKGl_0gRNTMsVuV8KGXGFM/edit?usp=sharing" hr><h3>Ir al Dashboard</h3></a>
 
+            </h4>
+   
             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="false">
+                <!-- <li class="nav-item">
+                    <a href="https://docs.google.com/spreadsheets/d/1Qsl3g_XTSYhMlZg4MMZg2QKGl_0gRNTMsVuV8KGXGFM/edit?usp=sharing" class="nav-link" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="false">
                         <h3>Egresados por Año</h3>
                     </a>
-                </li>
-                <li class="nav-item">
+                </li> -->
+                <!-- <li class="nav-item">
                     <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">
                         <h3>SISEU</h3>
                     </a>
-                </li>
+                </li> -->
                 <!-- <li class="nav-item">
                     <a class="nav-link active show" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="true">Contact</a>
                 </li> -->
-            </ul>
+            <!-- </ul>
             <div class="tab-content" id="pills-tabContent">
 
                 <div class="col-12 col-md-6">
                     <h2 for="TipoContrato">Seleccionar el año de Egresado:</h2>
                 </div>
-
-                <div class="col-12 col-md-6">        
-                    <select  onchange="Buscar()" id="id" class="form-control select2 narrow wrap " name="TipoContrato" id="TipoContrato" class="form-control-lg mdb-select md-form">
+                <br><br>
+                
+                <div class="col-12 col-md-12 ">        
+                <h4>Filtros:</h4><select  onchange="Buscar()" id="id" class="form-control" name="TipoContrato" id="TipoContrato" >
                         <option disabled selected>Seleccionar una Opcion</option>
                         <?php foreach ($perfiles as $key => $fila) { ?>
                             <option value="<?php echo $fila['año'] ?>"><?php echo $fila['año'] ?></option>
                         <?php } ?>
                     </select>
                 </div>
+                <br><br>
 
-
-
-                <h4>Filtros</h4>
-
-
-                <h5>Año de Egreso:</h5>
-
-                <div class="row p-2">
-            
+           
+                <div class="row p-2">           
 
                     <div class="col-md-6 col-lg-3">
                         <a href="<?= base_url() ?>/clientes" class="linkw">
@@ -151,7 +150,7 @@ $perfiles = $año->selectañoEspecialidades();
 
 
 
-            </div>
+            </div> -->
 
 
             <!-- seccion siseu -->
@@ -192,7 +191,7 @@ $perfiles = $año->selectañoEspecialidades();
     $.ajax({
         type: "POST",
         async: true,
-        url: "especialidades/getcantidades",
+        url: "Home/getcantidades",
         data: cadena,
 
         success: function(response) {
@@ -207,8 +206,5 @@ $perfiles = $año->selectañoEspecialidades();
         }
     });
     }
-    //get Idiomas
-    $(".select2").select2({
 
-    });
 </script>

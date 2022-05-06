@@ -23,15 +23,15 @@
 
           <div class="form-row">
             <div class="form-group col-md-4">
-              <label for="bachiller">Cantidad Bachilleres</label>
+              <label for="bachiller">Cantidad-Bachilleres</label>
               <input type="text" class="form-control" id="bachiller" name="bachiller" required="">
             </div>
             <div class="form-group col-md-4">
-              <label for="titulo"> Cantidad de Titulados</label>
+              <label for="titulo"> Cantidad-Titulados</label>
               <input type="number" class="form-control" id="titulo" name="titulo" required="">
             </div>
             <div class="form-group col-md-4">
-              <label for="segundaespecialidad"> Cantidad de especialidades</label>
+              <label for="segundaespecialidad">Cantidad-Segunda Especialidades</label>
               <input type="number" class="form-control" id="segundaespecialidad" name="segundaespecialidad" required="">
             </div>
           </div>
@@ -44,7 +44,7 @@
             </div>
             <div class="form-group col-md-4">
               <label for="año">Año</label>
-              <input type="date" class="form-control" id="año" name="año" required="">
+              <input type="number" class="form-control" id="año" name="año" required="">
             </div>
           </div>
 

@@ -8,10 +8,10 @@
 	//date_default_timezone_set('America/Guatemala');
 
 	//Datos de conexión a Base de Datos
-	const DB_HOST = "localhost:3306";
+	const DB_HOST = "localhost";
 	const DB_NAME = "bduse3";
 	const DB_USER = "root";
-	const DB_PASSWORD = "jp123";
+	const DB_PASSWORD = "admin";
 	const DB_CHARSET = "utf8";
 
 	//Deliminadores decimal y millar Ej. 24,1989.00

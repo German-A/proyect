@@ -82,10 +82,10 @@
 
 		public function getCantidades($año)
 		{		
-			$sql = "SELECT year(año) as año, sum(bachiller) bachiller ,sum(titulo) titulo ,sum(segundaespecialidad) segundaespecialidad 
+			$sql = "SELECT  año, sum(bachiller) bachiller ,sum(titulo) titulo ,sum(segundaespecialidad) segundaespecialidad 
 			FROM especialidades  
-			where status>0 and year(año) = $año 
-			group by year(año)";
+			where status>0 and año = $año 
+			group by año ";
 			$request = $this->select_all($sql);
 			return $request;
 		}
