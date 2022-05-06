@@ -31,9 +31,11 @@
                 </li>
             <?php } ?>
 
-            <?php if (!empty($_SESSION['permisos'][3]['r']) ||!empty($_SESSION['permisos'][4]['r'])||
-              !empty($_SESSION['permisos'][5]['r'])|| !empty($_SESSION['permisos'][6]['r'])||  !empty($_SESSION['permisos'][7]['r'])
-              ||  !empty($_SESSION['permisos'][21]['r'])||  !empty($_SESSION['permisos'][22]['r'])) { ?>
+            <?php if (
+                !empty($_SESSION['permisos'][3]['r']) || !empty($_SESSION['permisos'][4]['r']) ||
+                !empty($_SESSION['permisos'][5]['r']) || !empty($_SESSION['permisos'][6]['r']) ||  !empty($_SESSION['permisos'][7]['r'])
+                ||  !empty($_SESSION['permisos'][21]['r']) ||  !empty($_SESSION['permisos'][22]['r'])
+            ) { ?>
                 <li class="treeview">
                     <a class="app-menu__item" href="#" data-toggle="treeview">
                         <i class="app-menu__icon fas fa-upload" aria-hidden="true"></i>
@@ -63,13 +65,13 @@
                         <?php if (!empty($_SESSION['permisos'][22]['r'])) { ?>
                             <li><a class="treeview-item" href="<?= base_url(); ?>/galeriavida2022"><i class="icon fa fa-circle-o"></i> galeriavida2022</a></li>
                         <?php } ?>
-                        
+
                     </ul>
                 </li>
             <?php } ?>
 
             <!------------------------- modulo de administador   ----------------------->
-            <?php if (!empty($_SESSION['permisos'][8]['r'])|| !empty($_SESSION['permisos'][9]['r']) || !empty($_SESSION['permisos'][12]['r'])) { ?>
+            <?php if (!empty($_SESSION['permisos'][8]['r']) || !empty($_SESSION['permisos'][9]['r']) || !empty($_SESSION['permisos'][12]['r'])) { ?>
                 <li class="treeview">
                     <a class="app-menu__item" href="#" data-toggle="treeview">
                         <i class="app-menu__icon fas fa-briefcase" aria-hidden="true"></i>
@@ -91,6 +93,11 @@
                 </li>
             <?php } ?>
 
+            <?php if (!empty($_SESSION['permisos'][23]['r'])) { ?>
+                <li><a class="treeview-item" href="<?= base_url(); ?>/especialidades"><i class="icon fa fa-circle-o"></i>Especialidades</a></li>
+            <?php } ?>
+
+
             <!------------------------- modulo de empresa  ----------------------->
             <?php if (!empty($_SESSION['permisos'][14]['r']) || !empty($_SESSION['permisos'][15]['r'])) { ?>
                 <li class="treeview">
@@ -111,7 +118,7 @@
                 </li>
             <?php } ?>
 
-           <!------------------------- modulo de ALUMNO  ----------------------->
+            <!------------------------- modulo de ALUMNO  ----------------------->
             <?php if (!empty($_SESSION['permisos'][18]['r'])) { ?>
                 <li>
                     <a class="app-menu__item" href="<?= base_url(); ?>/empleos">
@@ -131,7 +138,7 @@
             <?php } ?>
 
 
-            
+
 
             <li>
                 <a class="app-menu__item" href="<?= base_url(); ?>/logout">

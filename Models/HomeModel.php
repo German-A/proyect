@@ -148,5 +148,27 @@
 
 		}
 
+		//modulo estadistica
+		public function selectañoEspecialidades()
+		{		
+			$sql = "SELECT year(año) año,status FROM especialidades  where status>0  order by año asc ";
+			$request = $this->select_all($sql);
+			return $request;
+		}
+
+				//modulo estadistica
+		public function selectañoEspecialidadesporaño($año)
+		{		
+			$sql = "SELECT year(año) as año, sum(bachiller) bachiller ,sum(titulo) titulo ,sum(segundaespecialidad) segundaespecialidad 
+			FROM especialidades  
+			where status>0 and year(año) = $año 
+			group by year(año)";
+			$request = $this->select_all($sql);
+			return $request;
+		}
+
+		
+
+
 	}
  ?>

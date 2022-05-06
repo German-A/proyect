@@ -75,5 +75,6 @@ $n=1;
 </script>
 
 
+<br><br>
 
-
+<?php footer($data); ?>

@@ -4,12 +4,11 @@
 <?php
 
 //require_once  "../Models/HomeModel.php";
-$obj = new HomeModel();
-$obj2 = new HomeModel();
-$perfiles = $obj->selectLegal();
-$perfiless = $obj2->selectinstitucional();
-$perfilesss = $obj2->selectprimerNacional();
-$n = 1;
+$año = new HomeModel();
+
+$perfiles = $año->selectañoEspecialidades();
+//$perfiless = $año->selectañoEspecialidadesporaño($id);
+
 
 ?><br><br>
 
@@ -69,7 +68,7 @@ $n = 1;
 <div class="col-lg-12">
     <div class="card">
         <div class="card-header">
-            <h2 class="text-center">Transparencia a informacion de usuarios-Unidad de Seguimiento del Egresado</h2>
+            <h2 class="text-center">Transparencia a informacion de e-Unidad de Seguimiento del Egresado</h2>
         </div>
 
         <div class="card-body">
@@ -92,94 +91,124 @@ $n = 1;
             </ul>
             <div class="tab-content" id="pills-tabContent">
 
-                <!-- seccion egresados -->
-                <div class="tab-pane fade" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                    <h3>EGRESADOS</h3>
-                    <br><br>
-
-
-                    <h4>Filtros</h4>
-                    
-
-                    <h5>Año de Egreso:</h5>
-
-                    <div class="row p-2">
-    <div class="col-md-6 col-lg-3">
-        <a href="<?= base_url() ?>/usuarios" class="linkw">
-            <div class="widget-small primary coloured-icon"><i class="icon fas fa-university "></i>
-                <div class="info">
-                    <h4>FACULTADES</h4>
-                    <p><b>13</b></p>
+                <div class="col-12 col-md-6">
+                    <h2 for="TipoContrato">Seleccionar el año de Egresado:</h2>
                 </div>
+
+                <div class="col-12 col-md-6">        
+                    <select  onchange="Buscar()" id="id" class="form-control select2 narrow wrap " name="TipoContrato" id="TipoContrato" class="form-control-lg mdb-select md-form">
+                        <option disabled selected>Seleccionar una Opcion</option>
+                        <?php foreach ($perfiles as $key => $fila) { ?>
+                            <option value="<?php echo $fila['año'] ?>"><?php echo $fila['año'] ?></option>
+                        <?php } ?>
+                    </select>
+                </div>
+
+
+
+                <h4>Filtros</h4>
+
+
+                <h5>Año de Egreso:</h5>
+
+                <div class="row p-2">
+            
+
+                    <div class="col-md-6 col-lg-3">
+                        <a href="<?= base_url() ?>/clientes" class="linkw">
+                            <div class="widget-small info coloured-icon"><i class="icon fas fa-graduation-cap"></i>
+                                <div class="info">
+                                    <h4>BACHILLERES</h4>
+                                    <p><b id="bachiller"></b></p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <a href="<?= base_url() ?>/productos" class="linkw">
+                            <div class="widget-small warning coloured-icon"><i class="icon fas fa-user-graduate"></i>
+                                <div class="info">
+                                    <h4>TITULADOS</h4>
+                                    <p><b id="titulo"></b></p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <a href="<?= base_url() ?>/pedidos" class="linkw">
+                            <div class="widget-small primary coloured-icon"><i class="icon fas fa-user-graduate"><span class="fas fa-user-graduate"></span></i>
+                                <div class="info">
+                                    <h4>2° ESPECIALIDAD</h4>
+                                    <p><b id="segundaespecialidad"></b></p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+
+
+
             </div>
-        </a>
-    </div>
 
-    <div class="col-md-6 col-lg-3">
-        <a href="<?= base_url() ?>/clientes" class="linkw">
-            <div class="widget-small info coloured-icon"><i class="icon fas fa-graduation-cap"></i>
-                <div class="info">
-                    <h4>BACHILLERES</h4>
-                    <p><b>2117</b></p>
-                </div>
+
+            <!-- seccion siseu -->
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <h3>Profile</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste nobis, fugit pariatur minima! Dolorum modi pariatur aperiam quas odio nulla, illo necessitatibus dolor a.
+                </p>
             </div>
-        </a>
-    </div>
-
-    <div class="col-md-6 col-lg-3">
-        <a href="<?= base_url() ?>/productos" class="linkw">
-            <div class="widget-small warning coloured-icon"><i class="icon fas fa-user-graduate"></i>
-                <div class="info">
-                    <h4>TITULADOS</h4>
-                    <p><b>1139</b></p>
-                </div>
-            </div>
-        </a>
-    </div>
-
-    <div class="col-md-6 col-lg-3">
-        <a href="<?= base_url() ?>/pedidos" class="linkw">
-            <div class="widget-small primary coloured-icon"><i class="icon fas fa-user-graduate"><span class="fas fa-user-graduate"></span></i>
-                <div class="info">
-                    <h4>2° ESPECIALIDAD</h4>
-                    <p><b>110</b></p>
-                </div>
-            </div>
-        </a>
-    </div>
-
-</div>
-
-
-   
-                </div>
-
-
-                <!-- seccion siseu -->
-                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                    <h3>Profile</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste nobis, fugit pariatur minima! Dolorum modi pariatur aperiam quas odio nulla, illo necessitatibus dolor a.
-                    </p>
-                </div>
-                <!-- <div class="tab-pane fade active show" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+            <!-- <div class="tab-pane fade active show" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
                     <h3>Cotanct</h3>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste nobis, fugit pariatur minima! Dolorum modi pariatur aperiam quas odio nulla, illo necessitatibus dolor a.
                     </p>
                 </div> -->
-            </div>
-
-
-
-
-
-
         </div>
+
+
+
+
+
+
     </div>
+</div>
 </div>
 
 
 
 
 <?php footer($data); ?>
+
+<script>
+    function Buscar(){
+        var id = document.getElementById("id").value;
+        
+        cadena = "id=" + id;
+
+    $.ajax({
+        type: "POST",
+        async: true,
+        url: "especialidades/getcantidades",
+        data: cadena,
+
+        success: function(response) {
+            console.log(response);
+
+            var info = JSON.parse(response);
+            //console.log(info.data[0]['bachiller']);
+    
+            document.getElementById('bachiller').innerHTML =info.data[0]['bachiller'];
+            document.getElementById('titulo').innerHTML =info.data[0]['titulo'];
+            document.getElementById('segundaespecialidad').innerHTML =info.data[0]['segundaespecialidad'];
+        }
+    });
+    }
+    //get Idiomas
+    $(".select2").select2({
+
+    });
+</script>

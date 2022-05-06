@@ -3,7 +3,7 @@
 	//define("BASE_URL", "https://use-dpa.unitru.edu.pe");
 	//const BASE_URL = "http://localhost:89/practicamvc";
 	//const BASE_URL = "https://use-dpa.unitru.edu.pe";
-	const BASE_URL = "http://localhost/app-use-web";
+	const BASE_URL = "http://localhost/use";
 	//Zona horaria
 	//date_default_timezone_set('America/Guatemala');
 
@@ -11,7 +11,7 @@
 	const DB_HOST = "localhost:3306";
 	const DB_NAME = "bduse3";
 	const DB_USER = "root";
-	const DB_PASSWORD = "admin";
+	const DB_PASSWORD = "jp123";
 	const DB_CHARSET = "utf8";
 
 	//Deliminadores decimal y millar Ej. 24,1989.00

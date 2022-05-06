@@ -1,14 +1,16 @@
 <br><br>
 <footer class="row  p-5 " style="background-color:#11116f">
-    <!-- <div class="col-md-4 text-light text-center">
-        <h3 style="color:#E6AD09">
-            UNIDAD DE SEGUIMIENTO DEL EGRESADO
+    <div class="col-md-4 text-light text-center">
+        <h3 style="color:#E6AD09" >
+            CONTÁCTANOS
         </h3>
         <br>
         <h4 style="text-align: center">
-            Tiene por finalidad planificar, promover, ejecutar y evaluar actividades asociadas con el cumplimiento de las condiciones básicas de calidad del Modelo de Licenciamiento de la SUNEDU, indicador 53, que expresa “Existencia de mecanismos de mediación e inserción laboral”; asimismo, al cumplimiento del estándar 34 denominado “Seguimiento a egresados y objetivos educacionales” del nuevo “Modelo de Acreditación para programas de Estudios de Educación Superior Universitaria” del SINEACE. ​ Para ello, a través de diferentes actividades conecta, asesora y capacita a los estudiantes y egresados de nuestra Universidad con las principales empresas de nuestro país.
-        </h4>
-    </div> -->
+            UBICACIÓN
+       </h4>
+       <h4>Jr. Zepita N° 482, Trujillo - La Libertad</h4>
+       <h4>Oficina de Atención al Egresadp: Ubicada en el Primer piso.</h4>
+    </div>
     <div class="col-md-2 text-light text-center">
         <h2 style="color:#E6AD09">TRANSPARENCIA</h2>
         <br>
