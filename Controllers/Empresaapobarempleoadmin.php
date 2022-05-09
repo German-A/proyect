@@ -74,10 +74,11 @@ class empresaapobarempleoadmin extends Controllers
 		if ($_POST) {
 			if ($_SESSION['permisosMod']['d']) {
 				$idempleo = intval($_POST['idempleo']);
+				$requestDelete = $this->model->aprobarEmpleo($idempleo);		
+				
+				$this->enviarCorreo($idempleo);		
 
-				$requestDelete = $this->model->aprobarEmpleo($idempleo);
-
-				if ($requestDelete) {
+				if ($requestDelete) {				
 					$arrResponse = array('status' => true, 'msg' => 'Se ha publicado correctamente');
 				} else {
 					$arrResponse = array('status' => false, 'msg' => 'Error al publicar el Empleo.');
@@ -87,4 +88,33 @@ class empresaapobarempleoadmin extends Controllers
 		}
 		die();
 	}
+
+	public function enviarCorreo($idempleo){
+		$nombreUsuario=null;
+		$email=null;
+
+		$arrData['nombres'] = "";
+		$arrData['email_user'] = "";
+		
+		$arrData = $this->model->listaCarrerasid($idempleo); //datos del usuario
+		for( $i=0; $i <= count($arrData); $i++){		
+
+			//$nombreUsuario = empty($arrData[$i]['nombres']);
+			if(!empty($arrData[$i]['nombres'])){$nombreUsuario = $arrData[$i]['nombres'];}
+			if(!empty($arrData[$i]['email_user'])){$email = $arrData[$i]['email_user'];}
+			
+			$dataUsuario = array(
+			'nombreUsuario' => $nombreUsuario,
+			'email' => $email,
+			'asunto' => 'Recuperar cuenta - '.NOMBRE_REMITENTE);
+			sendMailLocalEmpleo($dataUsuario,'email_empleo');
+
+		
+			$dataUsuario=null;
+		}
+		
+	
+		
+	}
+	
 }

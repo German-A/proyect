@@ -11,7 +11,7 @@
 	const DB_HOST = "localhost";
 	const DB_NAME = "bduse3";
 	const DB_USER = "root";
-	const DB_PASSWORD = "admin";
+	const DB_PASSWORD = "jp123";
 	const DB_CHARSET = "utf8";
 
 	//Deliminadores decimal y millar Ej. 24,1989.00

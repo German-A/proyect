@@ -61,6 +61,18 @@
 			return $request;
 		}
 
+		public function listaCarrerasid($idempresa)
+		{
+			$sql = "SELECT dt.empleosid,u.nombres, u.email_user,e.nombreEscuela
+			FROM detallecarreras dt
+			inner join escuela e on dt.escuelaid = e.idEscuela
+			inner join egresado eg on eg.idescuela = e.idEscuela
+			inner join usuario u on u.idpersona = eg.personaid
+			where empleosid = $idempresa";
+			$request = $this->select_all($sql);			
+			return $request;
+		}
+
 
 
 
