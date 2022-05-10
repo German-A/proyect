@@ -108,8 +108,6 @@ class empresaapobarempleoadmin extends Controllers
 			'email' => $email,
 			'asunto' => 'Recuperar cuenta - '.NOMBRE_REMITENTE);
 			sendMailLocalEmpleo($dataUsuario,'email_empleo');
-
-		
 			$dataUsuario=null;
 		}
 		

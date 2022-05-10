@@ -77,14 +77,16 @@
 						$url_recovery = base_url().'/login/confirmUser/'.$strEmail.'/'.$token;
 						$requestUpdate = $this->model->setTokenUser($idpersona,$token);
 
+						
 						$dataUsuario = array('nombreUsuario' => $nombreUsuario,
 											 'email' => $strEmail,
 											 'asunto' => 'Recuperar cuenta - '.NOMBRE_REMITENTE,
 											 'url_recovery' => $url_recovery);
 						if($requestUpdate){
-							$sendEmail = sendMailLocal($dataUsuario,'email_cambioPassword');
+					
+							//$sendEmail = sendMailLocal($dataUsuario,'email_cambioPassword');
 
-							if($sendEmail){
+							if(sendMailLocal($dataUsuario,'email_cambioPassword')){
 								$arrResponse = array('status' => true, 
 												 'msg' => 'Se ha enviado un email a tu cuenta de correo para cambiar tu contraseña.');
 							}else{
@@ -93,7 +95,7 @@
 							}
 						}else{
 							$arrResponse = array('status' => false, 
-												 'msg' => 'No es posible realizar el proceso, intenta más tarde.' );
+												 'msg' => 'No es posible realizar el proceso de envio, intenta más tarde.' );
 						}
 					}
 				}
