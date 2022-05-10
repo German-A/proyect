@@ -159,13 +159,13 @@ header {
 }
 
 header.down {
-    background: rgb(255, 255, 255);
-
+    /* background: rgb(255, 255, 255); */
     position: fixed;
     top: 0;
     left: 0;
     margin: 0px auto;
     padding: 5px 0;
+
 }
 
 

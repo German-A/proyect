@@ -16,11 +16,11 @@ window.addEventListener("scroll", function() {
         alink[i].classList.toggle('enlacesDown', window.scrollY > 0);
     }
 
-    if (window.scrollY > 0) {
-        logo.setAttribute('src', 'Assets/img/logoUse.png');
-    } else {
-        logo.setAttribute('src', 'Assets/img/uselogoazul.jpg');
-    }
+    // if (window.scrollY > 0) {
+    //     logo.setAttribute('src', 'Assets/img/logoUse.png');
+    // } else {
+    //     logo.setAttribute('src', 'Assets/img/uselogoazul.jpg');
+    // }
 
 });
 
