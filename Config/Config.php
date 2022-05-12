@@ -22,10 +22,10 @@
 	const SMONEY = "Q";
 
 	//Datos envio de correo
-	const NOMBRE_REMITENTE = "USE";
+	const NOMBRE_REMITENTE = "Unidad de Seguimiento del Egresado";
 	const EMAIL_REMITENTE = "jeanromerolobaton@gmail.com";
 	const NOMBRE_EMPESA = "UNIDAD DE SEGUIMIENTO DEL EGREADO";
-	const WEB_EMPRESA = "www.use-dpa.unitru.edu.pe";
+	const WEB_EMPRESA = "https://www.use-dpa.unitru.edu.pe/";
 	
 
 

@@ -28,8 +28,6 @@ function footerAdmin($data = "")
     require_once($view_footer);
 }
 
-
-
 function head($data = "")
 {
     $view_header = "Views/templateinicio/header.php";
@@ -381,18 +379,18 @@ function sendMailLocalEmpleo($data, $template)
                 <tr>
                     <td>
                         <div class="x_sgwrap">
-                            <p>Hola'. $data['nombreUsuario'].'</p>
+                            <p>Hola '. $data['nombreUsuario'].'</p>
                         </div>
                         <p>tenemos una oferta laboral para ti</p>
                         <p>La cuenta de Acceso a plataforma es: <strong>'.$data['email'].'</strong></p>
                         <p>La contraseña es tu numero de Dni. </p>
                         <p class="x_text_white">
-                        <a href="<?=  base_url();  ?>" target="_blank" class="x_button_link x_link_blue">Ingresar al sistema</a>
+                        <a href="'. base_url() .'" target="_blank" class="x_button_link x_link_blue">Ingresar al sistema</a>
                         </p>
                         <br>       
                         <p>Si no te funciona el botón puedes copiar y pegar la siguiente dirección en tu navegador.</p>
                         
-                        <p class="x_title_gray"><a href="<?=  base_url(); ?>" target="_blanck"><?=  base_url(); ?></a></p>
+                        <p class="x_title_gray"><a href="'. base_url() .'" target="_blanck">'. base_url() .'</a></p>
                     </td>
                 </tr>
             </tbody>
@@ -408,25 +406,25 @@ function sendMailLocalEmpleo($data, $template)
         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
         //$mail->Username   = 'jeanromerolobaton@gmail.com';                     //SMTP username
         //$mail->Password   = 'JPsistemas321';                               //SMTP password
-        $mail->Username   = 'ofertalaboral@use-dpa.unitru.edu.pe';                     //SMTP username
-        $mail->Password   = 'JPofertalaboral321';   
+        $mail->Username   = 'notificaciones@use-dpa.unitru.edu.pe';                     //SMTP username
+        $mail->Password   = 'JPnotificaciones';   
         $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
         $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
         //Recipients
-        $mail->setFrom('toolsfordeveloper@gmail.com', 'Oferta Laboral');
+        $mail->setFrom('notificaciones@use-dpa.unitru.edu.pe', 'Oferta Laboral');
         $mail->addAddress($data['email']);     //Add a recipient
         if (!empty($data['emailCopia'])) {
             $mail->addBCC($data['emailCopia']);
         }
-
+        $data['asunto']='Oferta Laboral';
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML
         $mail->Subject = $data['asunto'];
         $mail->Body    = $mensaje;
 
         $mail->send();
-        echo 'Mensaje enviado';
+        return 1;
     } catch (Exception $e) {
         echo "Error en el envío del mensaje: {$mail->ErrorInfo}";
     }

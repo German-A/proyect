@@ -45,7 +45,11 @@
 							if($arrData['idrol']==4){
 								$arrEmp = $this->model->sessionEmpresa($_SESSION['idUser']);
 								$_SESSION['Empresario'] = $arrEmp['idempresa'];
+							}
 
+							if($arrData['idrol']==3){
+								$arrEmp = $this->model->sessionEgresado($_SESSION['idUser']);
+								$_SESSION['Egresado'] = $arrEmp['idegresado'];
 							}
 						}else{
 							$arrResponse = array('status' => false, 'msg' => 'Usuario inactivo.');

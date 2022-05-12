@@ -136,6 +136,14 @@
                     </a>
                 </li>
             <?php } ?>
+            <?php if (!empty($_SESSION['permisos'][24]['r'])) { ?>
+                <li>
+                    <a class="app-menu__item" href="<?= base_url(); ?>/postulaciones">
+                        <i class="app-menu__icon fa fa-sign-out" aria-hidden="true"></i>
+                        <span class="app-menu__label">MIS POSTULACIONES</span>
+                    </a>
+                </li>
+            <?php } ?>
 
 
 

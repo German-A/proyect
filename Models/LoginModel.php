@@ -47,13 +47,25 @@
 			return $request;
 		}
 
-
 		public function sessionEmpresa(int $iduser){
 			$this->intIdUsuario = $iduser;
 			//BUSCAR ROLE 
 			$sql = "SELECT e.idempresa 
 			FROM usuario u
 			inner join empresa e
+			on u.idpersona = e.personaid
+			where u.idpersona = $this->intIdUsuario";
+			$request = $this->select($sql);
+			
+			return $request;
+		}
+
+		public function sessionEgresado(int $iduser){
+			$this->intIdUsuario = $iduser;
+			//BUSCAR ROLE 
+			$sql = "SELECT e.idegresado 
+			FROM usuario u
+			inner join egresado e
 			on u.idpersona = e.personaid
 			where u.idpersona = $this->intIdUsuario";
 			$request = $this->select($sql);
