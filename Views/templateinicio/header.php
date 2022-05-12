@@ -8,31 +8,18 @@
     <link rel="shortcut icon" href="<?= media();?>/images/use.ico">
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- menu -->
     <link rel="stylesheet" type="text/css" href="<?= media();?>/cssinicio/navegacion.css">
     <link rel="stylesheet" type="text/css" href="<?= media();?>/cssinicio/social.css">
     <link rel="stylesheet" type="text/css" href="<?= media();?>/cssinicio/styles.css"> 
     <link rel="stylesheet" type="text/css" href="<?= media();?>/cssinicio/styles2.css"> 
-    <link rel="stylesheet" type="text/css" href="<?= media();?>/cssinicio/funciones.css">
-
-
-    <link rel="stylesheet" type="text/css" href="<?= media();?>/cssinicio/expoferia.css">
-    <link rel="stylesheet" type="text/css" href="<?= media();?>/cssinicio/cursos.css">
-
-    <!-- manuales  -->
+    <link rel="stylesheet" type="text/css" href="<?= media();?>/cssinicio/funciones.css">    <!-- manuales  -->
     <link rel="stylesheet" type="text/css" href="<?= media();?>/aos/aos.css">
-
-
-
     <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/main.css">
-    <link rel="stylesheet" type="text/css" href="<?= media();?>/css/bootstrap-select.min.css"> 
-
-
-    
- 
+    <link rel="stylesheet" type="text/css" href="<?= media();?>/css/bootstrap-select.min.css">  
     <!-- barra de navegacion -->
     <link rel="stylesheet" type="text/css" href="<?= media();?>/cssinicio/navegacion.css">
 
-    <link rel="stylesheet" type="text/css" href="<?= media();?>/cssinicio/manualesyguias.css">
 
 
     <title>UNIDAD DE SEGUIMIENTO DEL EGRESADO</title>
@@ -50,7 +37,7 @@
 
 
     <header>
-        <span id="btnMenu" class="nav-bar"><i class="fas fa-bars"></i>MENÚ</span>
+        <span id="btnMenu" class="nav-bar"><h2><i class="fas fa-bars"></i></h2></span>
         <nav class="main-nav">
             <ul class="menu " id="menu">
                 <img class="logo" src="<?= media(); ?>/img/uselogoazul.jpg" style="height: 70px;">

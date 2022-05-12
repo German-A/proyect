@@ -36,13 +36,104 @@ $perfiles = $obj->selectBanner();
 
 
 
+<style>
+  /*#region funciones*/
+
+.contenedorfunciones {
+    width: 100%;
+    /* display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; */
+    padding:20px 40px;
+}
+
+.contenedorfunciones figure {
+    position: relative;
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.contenedorfunciones figure img {
+    width: 100%;
+    height: 100%;
+    transition: all 500ms ease-out;
+}
+
+.contenedorfunciones figure .capa {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(252, 252, 252, 0.89);
+    transition: all 500ms ease-out;
+    opacity: 0;
+    visibility: hidden;
+    text-align: center;
+}
+
+.contenedorfunciones figure:hover>.capa {
+    opacity: 1;
+    visibility: visible;
+}
+
+.contenedorfunciones figure:hover>.capa h3 {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.contenedorfunciones figure:hover>img {
+    transform: scale(1.3);
+}
+
+.contenedorfunciones figure .capa h3 {
+    color: var(--barra);
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 20px;
+    transition: all 500ms ease-out;
+    margin-top: 50px;
+}
+
+.contenedorfunciones figure .capa p {
+    color: black;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.5;
+    width: 100%;
+    max-width: 220px;
+    margin: auto;
+}
+
+@media(min-width:1024px) {
+    .rowFunciones {
+        display: flex;
+        flex-direction: row;
+    }
+    .rowFunciones figure {
+        margin: 20px;
+    }
+    .contenedorfunciones {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 40px;
+    }
+}
+
+
+/*#endregion funciones*/
+</style>
 
 
 
 
 
-
-<h2 class="tituloPersonal">NUESTRAS FUNCIONES</h2>
+<h2 class="text-danger text-center"data-aos="fade-down">NUESTRAS FUNCIONES</h2>
 
 
 <div class="contenedorfunciones" data-aos="fade-down">
@@ -122,6 +213,65 @@ $perfiles = $obj->selectBanner();
 
 <!--  MISION Y VISION  -->
 
+<style>
+  /*#region misionyvisions*/
+
+.contenedorR {
+    width: 100%;
+}
+
+.cardMisionVision {
+    height: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 0px 0.4px;
+}
+
+.cardTituloM {
+    text-align: center;
+    color: black;
+}
+
+.cardTituloV {
+    text-align: center;
+    color: black;
+}
+
+.cardTextoMV {
+    background-color: var(--enlaceNavegadorHover);
+    text-align: justify;
+    padding: 20px;
+    color: black;  
+    border-radius: 15px;
+}
+
+@media(min-width:1024px) {
+    .row {
+        display: flex;
+        flex-direction: row;
+        margin-left: 25px;
+        margin-right: 25px;
+        justify-content: center;
+        align-items: center;
+    }
+    .cardTituloV {
+        text-align: center;
+    }
+    .cardTextoMV {
+        background-color: var(--enlaceNavegadorHover);
+        text-align: justify;
+        width: 500px;
+        padding: 20px;
+        color: var(--barra);  
+        border-radius: 10px;
+    }
+}
+
+
+/*#endregion noticias*/
+
+</style>
+
 <div class="contenedorR">
   <div class="row">
     <div class="cardMisionVision " data-aos="fade-down-right">
@@ -137,7 +287,7 @@ $perfiles = $obj->selectBanner();
   </div>
 </div>
 
-<h2 class="tituloPersonal">NUESTRO EQUIPO</h2>
+<h2 class="tituloPersonal text-center" data-aos="zoom-in">NUESTRO EQUIPO</h2>
 
 <!--  EQUIPO  -->
 
