@@ -1,64 +1,32 @@
 <br><br>
 <footer class="row  p-5 " style="background-color:#11116f">
-    <div class="col-md-4 text-light text-center">
-        <h3 style="color:#E6AD09" >
-            CONTÁCTANOS
-        </h3>
-        <br>
-        <h4 style="text-align: center">
-            UBICACIÓN
-       </h4>
-       <h4>Jr. Zepita N° 482, Trujillo - La Libertad</h4>
-       <h4>Oficina de Atención al Egresadp: Ubicada en el Primer piso.</h4>
+    <div class="col-md-2 text-light text-center"data-aos="fade-down-left" >
+        <img src="<?= media(); ?>/archivos/logos/logoUseBlanco.png" alt="300px" style="width: 250px;">
     </div>
-    <div class="col-md-2 text-light text-center">
-        <h2 style="color:#E6AD09">TRANSPARENCIA</h2>
+    <div class="col-md-3 text-light text-center"data-aos="fade-down" >
+        <h5>Oficina de Unidad de Seguimiento del Egresado</h5>
         <br>
-        <a href="estadisticas">
-            <h4>Cantidad de Egresados</h4>
-        </a>
-
-        <a href="bases">
-            <h4>Normatividad Nacional</h4>
-        </a>
-        <a href="bases">
-            <h4>Normatividad Institucional</h4>
-        </a>
-
-        <a href="manuales">
-            <h4>Manuales y Guias</h4>
-        </a>
-
-        <a href="cursosmooc">
-            <h4>Cursosmooc</h4>
-        </a>
-
+        <h4>use@unitru.edu.pe</h4>
     </div>
-    <div class="col-md-3 text-light text-center">
-        <h2 style="color:#E6AD09">ENVÍANOS UN MENSAJE</h2>
-        <br>
-        <div class="form-group">
-            <input type="text" id="snombre" placeholder="Nombres Completos" class="form-control footermsj">
+    <div class="col-md-7 text-light text-center"data-aos="fade-down-rigth" >
+        <div class="row" data-aos="fade-down-left">
+            <div class="col-md-9">
+                <div class="d-flex flex-column">
+                    <p>Envianos un mensaje</p>
+                    <input type="text" placeholder="Ingresar el correo Electronico">
+                    <br><br>
+                    <textarea name="" id="" cols="30" rows="5" placeholder="Ingresar un Mensaje"></textarea>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <br><br>
+                <input type="text" placeholder="Ingresar el Celular">
+                <br><br>
+                <a class="btn btn-danger" href="#">Enviar</a>
+            </div>
         </div>
-
-        <div class="form-group">
-            <input type="text" id="snombre" placeholder="Correo" class="form-control footermsj">
-        </div>
-
-        <div class="form-group">
-            <input type="text" id="snombre" placeholder="Número de Telefono" class="form-control footermsj">
-        </div>
-        <br>
     </div>
-    <div class="col-md-3 text-light text-center">
 
-
-        <div class="form-group">
-
-            <textarea name="" id="snombre" class="form-control footermsj" placeholder="mensaje"></textarea>
-        </div>
-        <br>
-    </div>
 </footer>
 
 
