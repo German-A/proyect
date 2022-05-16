@@ -101,6 +101,7 @@ $galeria = $obj->selectGaleriavidaysaluda2022();
                 <?php foreach ($perfiles as $key => $fila) { ?>
                     <div class="swiper-slide">
                         <img src="<?= media(); ?>/archivos/banner/<?php echo $fila['NombreArchivo'] ?>">
+                        <!-- <img src="<?= media(); ?>/archivos/banner/0onepiece-fondonegro.jpg"> -->
                     </div>
                 <?php } ?>
             </div>

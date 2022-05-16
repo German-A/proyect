@@ -31,8 +31,7 @@ $n = 1;
     }
 
     aside .titulo {
-        margin-bottom: 10px;
-        font-size: 2rem;
+        margin-bottom: 10px;       
     }
 
     aside .contenedor-temario {
@@ -58,7 +57,6 @@ $n = 1;
         padding: 10px 10px;
         text-decoration: none;
         transition: .3s ease all;
-        font-size: 1.6rem;
     }
 
     aside .lista li.activo a,
@@ -158,7 +156,7 @@ $n = 1;
             display: block;
             /* Tamaño */
             width: 850px;
-            height: 58rem;
+            height: 500px;
             /* Mejorar aspecto */
             border-radius: 10px;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -183,7 +181,7 @@ $n = 1;
                             <?php } ?>
                             <div class="itemY">
                                 <h1 data-id="<?php echo $fila['NombreArchivo'] ?>"></h1>
-                                <a href="#"><?php echo $fila['Nombre'] ?></a>
+                                <a href="#"><h5><?php echo $fila['Nombre'] ?></h5></a>
                             </div>
                             </li>
                         <?php } ?>
@@ -195,10 +193,10 @@ $n = 1;
         <?php foreach ($perfiless as $key => $fila) { ?>
             <main>
                 <div class="colMd1">
-                    <object class="pdfview" type="application/pdf" id="video_id" data="<?= media(); ?>/archivos/manualesyguias/<?php echo $fila['NombreArchivo']  ?>"></object>
+                    <object class="pdfview" type="application/pdf" id="video_id" data="<?= media(); ?>/archivos/manuales/<?php echo $fila['NombreArchivo']  ?>"></object>
                 </div>
                 <div class="colMd">
-                    <iframe id="video_id2" src="https://docs.google.com/viewer?url=<?= media(); ?>/archivos/manualesyguias/<?php echo $fila['NombreArchivo'] ?>&amp;embedded=true" frameborder="0" width="100%" height="500"> </iframe>
+                    <iframe id="video_id2" src="https://docs.google.com/viewer?url=<?= media(); ?>/archivos/manuales/<?php echo $fila['NombreArchivo'] ?>&amp;embedded=true" frameborder="0" width="100%" height="500"> </iframe>
                 </div>
             </main>
         <?php } ?>
@@ -227,9 +225,9 @@ $n = 1;
         $(".itemY").click(function() {
             let youtube_id = $(this).children("h1").attr("data-id");
             console.log(youtube_id);
-            let newUrl = `<?= media(); ?>/archivos/manualesyguias/${youtube_id}`;
+            let newUrl = `<?= media(); ?>/archivos/manuales/${youtube_id}`;
             let amp = "&amp;embedded=true";
-            let newUrl2 = `https://docs.google.com/viewer?url=<?= media(); ?>/archivos/manualesyguias/${youtube_id}`;
+            let newUrl2 = `https://docs.google.com/viewer?url=<?= media(); ?>/archivos/manuales/${youtube_id}`;
             $("#video_id").attr("data", newUrl);
             $("#video_id2").attr("src", newUrl2 + `&embedded=true`);
         })

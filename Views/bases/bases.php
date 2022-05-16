@@ -37,7 +37,6 @@ $n=1;
 
     aside .titulo {
         margin-bottom: 10px;
-        font-size: 2rem;
     }
 
     aside .contenedor-temario {
@@ -63,7 +62,6 @@ $n=1;
         padding: 10px 10px;
         text-decoration: none;
         transition: .3s ease all;
-        font-size: 1.6rem;
     }
 
     aside .lista li.activo a,
@@ -163,7 +161,7 @@ $n=1;
             display: block;
             /* Tamaño */
             width: 850px;
-            height: 58rem;
+            height: 500px;
             /* Mejorar aspecto */
             border-radius: 10px;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -185,7 +183,7 @@ $n=1;
                         <?php }?>                        
                                 <div class="itemY">
                                     <h1 data-id="<?php echo$fila['NombreArchivo'] ?>"></h1>                     
-                                    <a href="#"><?php echo $fila['Nombre'] ?></a>                           
+                                    <a href="#"><h5><?php echo $fila['Nombre'] ?></h5></a>                           
                                 </div>
                             </li>
                     <?php } ?>      

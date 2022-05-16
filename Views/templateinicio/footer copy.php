@@ -8,31 +8,26 @@
         <br>
         <h4>use@unitru.edu.pe</h4>
     </div>
-    <form class="formulario" action="enviar-prueba.php" method="POST">
-        <div class="col-md-7 text-light text-center"data-aos="fade-down-rigth" >
-            <div class="row" data-aos="fade-down-left">
-                <div class="col-md-9">
-                    <div class="d-flex flex-column">
-                        <p>Envianos un mensaje</p>
-                        <input type="text" placeholder="Ingresar el correo Electronico">
-                        <br><br>
-                        <textarea name="" id="" cols="30" rows="5" placeholder="Ingresar Mensaje"></textarea>
-                    </div>
-                </div>
-                <div class="col-md-3">
+    <div class="col-md-7 text-light text-center"data-aos="fade-down-rigth" >
+        <div class="row" data-aos="fade-down-left">
+            <div class="col-md-9">
+                <div class="d-flex flex-column">
+                    <p>Envianos un mensaje</p>
+                    <input type="text" placeholder="Ingresar el correo Electronico">
                     <br><br>
-                    <input type="text" placeholder="Ingresar el Celular">
-                    <br><br>
-                    
-                    <input class="enviar" type="submit" value="Enviar" required>
-                </div>
+                    <textarea name="" id="" cols="30" rows="5" placeholder="Ingresar un Mensaje"></textarea>
                 </div>
             </div>
+            <div class="col-md-3">
+                <br><br>
+                <input type="text" placeholder="Ingresar el Celular">
+                <br><br>
+                <a class="btn btn-danger" href="#">Enviar</a>
+            </div>
         </div>
-    </form>
+    </div>
 
 </footer>
-
 
 
 <script>

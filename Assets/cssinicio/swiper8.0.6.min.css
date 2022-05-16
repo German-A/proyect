@@ -609,7 +609,7 @@ button.swiper-pagination-bullet {
     z-index: 1;
     visibility: hidden;
     transform-origin: 0 0;
-    width: 100%;
+    width: 95%;
     height: 100%
 }
 

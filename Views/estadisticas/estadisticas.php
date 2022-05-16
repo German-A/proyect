@@ -68,15 +68,14 @@ $perfiles = $año->selectañoEspecialidades();
 <div class="col-lg-12">
     <div class="card">
         <div class="card-header">
-            <h2 class="text-center">Transparencia - Unidad de Seguimiento del Egresado</h2>
+            <h4 class="text-center">Transparencia - Unidad de Seguimiento del Egresado</h4>
         </div>
 
         <div class="card-body">
             <h3 class="text-muted m-b-15 text-center">Más detalle</h3>
-            <h4>
-            <a class="btn btn-primary" target="_blank" href="https://docs.google.com/spreadsheets/d/1Qsl3g_XTSYhMlZg4MMZg2QKGl_0gRNTMsVuV8KGXGFM/edit?usp=sharing" hr><h3>Ir al Dashboard</h3></a>
+         
+            <a class="btn btn-primary" target="_blank" href="https://docs.google.com/spreadsheets/d/1Qsl3g_XTSYhMlZg4MMZg2QKGl_0gRNTMsVuV8KGXGFM/edit?usp=sharing" hr><h5>Ir al Dashboard</h5></a>
 
-            </h4>
    
             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                 <!-- <li class="nav-item">

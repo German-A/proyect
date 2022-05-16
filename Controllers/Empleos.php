@@ -2,6 +2,7 @@
 
 class empleos extends Controllers
 {
+	private $idempleo ;
 	public function __construct()
 	{
 		session_start();
@@ -15,47 +16,42 @@ class empleos extends Controllers
 	//pagina Banner
 	public function empleos()
 	{
+
+
+
 		if (empty($_SESSION['permisosMod']['r'])) {
 			header("Location:" . base_url() . '/dashboard');
 		}
 		$data['page_tag'] = "Empleos";
 		$data['page_title'] = "Empleos <small>Unidad de Seguimiento del Egresado</small>";
 		$data['page_name'] = "USE-Empleos";
+	
 		$data['page_functions_js'] = "functions_empleos.js";
 		$this->views->getView($this, "empleos", $data);
 	}
 	//listado de los banners
-	public function getBanners()
+	public function getBanners($id)
 	{
 		if ($_SESSION['permisosMod']['r']) {
-			$arrData = $this->model->listadoBanner();
+			$arrData = $this->model->listadoEmpleosAll($id);
 			for ($i = 0; $i < count($arrData); $i++) {
-				$btnView = '';
-				$btnEdit = '';
-				$btnDelete = '';
-				if ($_SESSION['permisosMod']['r']) {
-					$btnView = '<button class="btn btn-info btn-sm btnViewUsuario" onClick="fntViewBanner(' . $arrData[$i]['IdBaner'] . ')" title="Ver Banner"><i class="far fa-eye"></i></button>';
+				$arrData[$i]['titulacionesid'] = "";
+
+				$arrData[$i]['escuelaid'] = "";
+
+				$arrD = $this->model->listaTitulaciones($arrData[$i]['idEmpleos']);
+
+				$arrDD = $this->model->listaCarreras($arrData[$i]['idEmpleos']);
+
+				for ($j = 0; $j < count($arrD); $j++) {
+					$arrData[$i]['titulacionesid'] = $arrData[$i]['titulacionesid'] . '<h5><span class="badge badge-primary">' . $arrD[$j]['nombreTitulaciones'] . '</span></h5> &nbsp;';
 				}
-				if ($_SESSION['permisosMod']['u']) {
-					if (($_SESSION['idUser'] == 1 and $_SESSION['userData']['idrol'] == 1) ||
-						($_SESSION['userData']['idrol'] == 1 and $arrData[$i]['idrol'] != 1)
-					) {
-						$btnEdit = '<button class="btn btn-primary  btn-sm fntEditBanner" onClick="fntEditBanner(this,' . $arrData[$i]['IdBaner'] . ')" title="Editar Banner"><i class="fas fa-pencil-alt"></i></button>';
-					} else {
-						$btnEdit = '<button class="btn btn-secondary btn-sm" disabled ><i class="fas fa-pencil-alt"></i></button>';
-					}
+
+				for ($j = 0; $j < count($arrDD); $j++) {
+					$arrData[$i]['escuelaid'] = $arrData[$i]['escuelaid'] . '<h5><span class="badge badge-info">' . $arrDD[$j]['nombreEscuela'] . '</span></h5>&nbsp; ';
 				}
-				if ($_SESSION['permisosMod']['d']) {
-					if (($_SESSION['idUser'] == 1 and $_SESSION['userData']['idrol'] == 1) ||
-						($_SESSION['userData']['idrol'] == 1 and $arrData[$i]['idrol'] != 1)
-					) {
-						$btnDelete = '<button class="btn btn-danger btn-sm fntDelBanner" onClick="fntDelBanner(' . $arrData[$i]['IdBaner'] . ')" title="Eliminar Banner"><i class="far fa-trash-alt"></i></button>';
-					} else {
-						$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
-					}
-				}
-				$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
 			}
+
 			echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
 		}
 		die();

@@ -57,6 +57,13 @@
 			$request = $this->select_all($sql);
 			return $request;
 		}
+		public function selectLegalInicio()
+		{
+		
+			$sql = "SELECT Nombre,NombreArchivo	from basenacional WHERE Habilitado = '1' order by Posicion asc";
+			$request = $this->select_all($sql);
+			return $request;
+		}
 
 		public function selectinstitucional()
 		{

@@ -125,14 +125,14 @@ $n = 1;
 <div class="contenedor">
     <aside>
         <div class="contenedor-temario" id="temario">
-            <h1 class="text-center">Expoferia Laboral</h1>
+            <h4 class="text-center">Expoferia Laboral</h4>
             <h4>2021</h4>
             <ul class="lista">
                 <li class="activo">
                     <div class="itemY">
                         <h1 data-id="Documentos\MYG\Cuestionario-SISEU.pdf"></h1>
                         <a href="https://unitru2021.wixsite.com/expoferialaboral" target="_blank">
-                            <h3>Expoferia Laboral Virtual 2021 (07 al 14 de octubre)</h3>
+                            <h5>Expoferia Laboral Virtual 2021 (07 al 14 de octubre)</h5>
                         </a>
                     </div>
                 </li>
@@ -143,7 +143,7 @@ $n = 1;
                     <div class="itemY">
                         <h1 data-id=""></h1>
                         <a href="<?= base_url(); ?>/expoferiavidaysalud" target="_blank">
-                            <h3>Ciencias de la Vida y la Salud (25 al 27 de mayo)</h3>
+                            <h5>Ciencias de la Vida y la Salud (25 al 27 de mayo)</h5>
                         </a>
                     </div>
                 </li>
@@ -151,7 +151,7 @@ $n = 1;
                     <div class="itemY">
                         <h1 data-id=""></h1>
                         <a href="#">
-                            <h3>Ciencias Básicas y Tecnológicas (28 al 30 de septiembre)</h3>
+                            <h5>Ciencias Básicas y Tecnológicas (28 al 30 de septiembre)</h5>
                         </a>
                     </div>
                 </li>
@@ -159,7 +159,7 @@ $n = 1;
                     <div class="itemY">
                         <h2 data-id=""></h2>
                         <a href="#">
-                            <h3>Ciencias de la Persona | Ciencia Económicas (07 al 09 diciembre)</h3>
+                            <h5>Ciencias de la Persona | Ciencia Económicas (07 al 09 diciembre)</h5>
                         </a>
                     </div>
                 </li>
