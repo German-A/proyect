@@ -52,9 +52,9 @@
                         <li class="menu__item"><a href="https://siseu-rep.sineace.gob.pe:6040/" target="_blank" class="al menu__link">EGRESADOS</a></li>
                     </ul>
                 </li>
-                <li class="menu__item"><a href="<?= base_url(); ?>/bases" class="menu__link">BASE LEGAL</a></li>
+                <li class="menu__item"><a href="<?= base_url(); ?>/bases" class="menu__link">NORMATIVA</a></li>
 
-                <li class="menu__item"><a href="<?= base_url(); ?>/cursosmooc" class="menu__link">CURSOS MOOC</a></li>
+                <!-- <li class="menu__item"><a href="<?= base_url(); ?>/cursosmooc" class="menu__link">CURSOS MOOC</a></li> -->
                 <li class="menu__item"><a href="<?= base_url(); ?>/expoferialaboral" class="menu__link">EXPOFERIAS LABORALES </a></li>
                 <li class="menu__item"><a href="<?= base_url(); ?>/estadisticas" class="menu__link">TRANSPARENCIA</a></li>
 

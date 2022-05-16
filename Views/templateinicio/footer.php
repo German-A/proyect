@@ -1,36 +1,47 @@
 <br><br>
 <footer class="row  p-5 " style="background-color:#11116f">
-    <div class="col-md-2 text-light text-center"data-aos="fade-down-left" >
-        <img src="<?= media(); ?>/archivos/logos/logoUseBlanco.png" alt="300px" style="width: 250px;">
+    <div class="col-md-3 text-light text-center" data-aos="fade-down-left">
+        <img src="<?= media(); ?>/archivos/logos/logoUseBlanco.png" alt="300px" style="width: 350px;">
     </div>
-    <div class="col-md-3 text-light text-center"data-aos="fade-down" >
+    <div class="col-md-4 text-light text-center" data-aos="fade-down">
         <h5>Oficina de Unidad de Seguimiento del Egresado</h5>
         <br>
         <h4>use@unitru.edu.pe</h4>
+        <div>
+            <a target="_blank" href="https://www.facebook.com/use.unt">
+                <img src="<?= media(); ?>/archivos/logos/facebook.png" alt="300px" style="width: 40px; height: 40px;">
+            </a>
+            <a target="_blank" href="https://instagram.com/use.unt?igshid=YmMyMTA2M2Y=">
+                <img src="<?= media(); ?>/archivos/logos/instagram.png" alt="300px" style="width: 40px; height: 40px;">
+            </a>
+            <a target="_blank" href="https://www.youtube.com/channel/UCXyJxRPtWA72esjZKAQdeOw">
+                <img src="<?= media(); ?>/archivos/logos/youtube.png" alt="300px" style="width: 40px; height: 40px;">
+            </a>
+        </div>
     </div>
-    <form class="formulario" action="enviar-prueba.php" method="POST">
-        <div class="col-md-7 text-light text-center"data-aos="fade-down-rigth" >
+    <div class="col-md-5 text-light text-center" data-aos="fade-down-rigth">
+        <form class="formulario" action="enviar-prueba.php" method="POST">
+
             <div class="row" data-aos="fade-down-left">
                 <div class="col-md-9">
                     <div class="d-flex flex-column">
                         <p>Envianos un mensaje</p>
-                        <input type="text" placeholder="Ingresar el correo Electronico">
-                        <br><br>
-                        <textarea name="" id="" cols="30" rows="5" placeholder="Ingresar Mensaje"></textarea>
+                        <input type="text" class="p-3" placeholder="Ingresar el correo Electronico">
+                        <br>
+                        <textarea name="" id="" cols="30" rows="5" ></textarea>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <br><br>
-                    <input type="text" placeholder="Ingresar el Celular">
+                    <input type="text"   class="p-2" placeholder="Ingresar el Celular">
                     <br><br>
-                    
-                    <input class="enviar" type="submit" value="Enviar" required>
-                </div>
+                    <input class="bg-warning enviar pt-2 pb-2 pl-4 pr-4 text-white" type="submit" value="Enviar" required>
                 </div>
             </div>
-        </div>
-    </form>
+    </div>
 
+    </form>
+    </div>
 </footer>
 
 

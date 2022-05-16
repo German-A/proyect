@@ -1,12 +1,30 @@
 .swiper {
     width: 98%;
-    height: 200px;
+    height: 300px;
 }
 
 @media(min-width:1024px) {
     .swiper {
-        width: 98%;
-        height: 500px;
+        width: 86%;
+        height: 730px;
+    }
+    .swiper-slide img {
+        display: block;
+        width: 86%;
+        height: 730px;
+    }
+
+}
+
+@media(min-width:800) {
+    .swiper {
+        width: 86%;
+        height: 900px;
+    }
+    .swiper-slide img {
+        display: block;
+        width: 86%;
+        height: 900px;
     }
 
 }
@@ -32,14 +50,14 @@
 .swiper-slide img {
     display: block;
     width: 95%;
-    height: 200px;
+    height: 300px;
 }
 
 @media(min-width:1024px) {
     .swiper-slide img {
         display: block;
-        width: 95%;
-        height: 600px;
+        width: 86%;
+        height: 730px;
     }
 }
 

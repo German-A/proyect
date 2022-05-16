@@ -7,8 +7,8 @@
 $obj = new HomeModel();
 $obj2 = new HomeModel();
 $perfiles = $obj->selectCursosMOOC();
-$perfiless = $obj2->selectCursosTUTORIALES();
-$perfilesss = $obj2->selectCursosCAPACITACIONES();
+$tutoriales = $obj2->selectCursosTUTORIALES();
+$capacitaciones = $obj2->selectCursosCAPACITACIONES();
 $perfilessss = $obj2->selectCursosPRINCIPAL();
 $n = 1;
 
@@ -190,7 +190,7 @@ $n = 1;
                 $n = 1;
                 ?>
 
-                <?php foreach ($perfiless as $key => $fila) { ?>
+                <?php foreach ($tutoriales as $key => $fila) { ?>
 
                     <li>
 
@@ -211,7 +211,7 @@ $n = 1;
                 $n = 1;
                 ?>
 
-                <?php foreach ($perfilesss as $key => $fila) { ?>
+                <?php foreach ($capacitaciones as $key => $fila) { ?>
                     <li>
                         <div class="itemY">
                             <a data-id="<?php echo $fila['UrlVideo'] ?>" href="#"><?php echo $fila['Nombre'] ?></a>

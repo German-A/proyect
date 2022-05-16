@@ -32,54 +32,59 @@ $legal = $obj->selectLegalInicio();
 
   <br>
 
-  <div class="col-12 d-flex justify-content-center" data-aos="fade-down">
-    <div class="col-10 col-md-5 p-2  text-center" style="border-radius:20px; background-color: var(--amarillo-mostaza);">
-      <h4><b>Unidad de Seguimiento del Egresado UNT</b> </h4>
+  <div class="col-12 d-flex justify-content-center" >
+    <div class="col-10 col-md-6 p-2  text-center" style="border-radius:20px; background-color: var(--amarillo-mostaza);">
+      <h2 class="blanco">Unidad de Seguimiento del Egresado UNT</h2>
     </div>
   </div>
   <br>
-
+  <br>
+<br><br><br>
   <div class="col-12 d-flex justify-content-center text-center">
     <div class="col-4 col-md-3" data-aos="fade-down-left">
-      <h3 class="mostaza"><b>98%</b></h3>
-      <h4 class="bluemedio">De nuestros egresados actualmente trabajan</h4>
+      <h1 class="mostaza" style="font-size: 40px;"><b>98%</b></h1>
+      <h5 class="blueoscuro">De nuestros egresados <big><big>actualmente trabajan</big></big> </h5>
     </div>
     <div class="col-4 col-md-3" data-aos="fade-down">
-      <h3 class="mostaza"><b>2117</b> </h3>
-      <h4 class="bluemedio">Egresados en el año 2021</h4>
+      <h1 class="mostaza" style="font-size: 40px;"><b>2117</b> </h1>
+      <h5 class="blueoscuro">Egresados en el año <big><big>2021</big></big></h5>
     </div>
     <div class="col-4 col-md-3" data-aos="fade-down-right">
-      <h3 class="mostaza"><b>+2000</b> </h3>
-      <h4 class="bluemedio">Ofertas laborales activas</h4>
+      <h1 class="mostaza" style="font-size: 40px;"><b>+2000</b> </h1>
+      <h5 class="blueoscuro"> <big><big>Ofertas laborales </big></big>activas</h5>
     </div>
   </div>
   <br>
   <br>
+  <br>
+  <br>
 
-  <div class="row d-flex justify-content-around text-center" style="max-width: 90%; margin:auto">
+  <div class="row d-flex justify-content-around text-center" style="max-width: 70%; margin:auto">
     <div class="col-md-12">
-      <div class="row " data-aos="fade-down-right">
-        <div class="col-md-4 text-left">
+      <div class="row" data-aos="fade-down-right">
+        <div class="col-md-4 pl-2 text-left">
           <h3 class="mostaza">Nuestra Misión</h3>
-          <h4 class="bluemedio">La DPA es un órgano técnico de gestión académica encargado de los diferentes procesos de implementación, ejecución y evaluación de las políticas académicas de la alta Dirección y del Vicerrectorado Académico, así como de los Programas y acciones que coadyuvan al fomento de la excelencia académica de la UNT.</h4>
+          <h5 class="blueoscuro">La DPA es un órgano técnico de gestión académica encargado de los diferentes procesos de implementación, ejecución y evaluación de las políticas académicas de la alta Dirección y del Vicerrectorado Académico, así como de los Programas y acciones que coadyuvan al fomento de la excelencia académica de la UNT.</h5>
         </div>
-        <div class="col-md-8 mt-5" data-aos="flip-left">
-          <img src="<?= media(); ?>/archivos/logos/portadaUNT.jpg" style="max-width: 98%; ">
+        <div class="col-md-8" data-aos="flip-left">
+          <img src="<?= media(); ?>/archivos/logos/portadaUNT.jpg" style=" min-width: 95%; max-height: 200px;">
         </div>
       </div>
     </div>
     <br><br>
     <div class="col-md-12">
       <div class="row" data-aos="fade-down-left">
-        <div class="col-md-6  mt-4" data-aos="flip-right">
+        <div class="col-md-7 align-self-center mt-4" data-aos="flip-right">
           <br><br>
-          <img class="col-5 col-md-6 imglogooo" src="<?= media(); ?>/archivos/logos/logoDpa.png">
-          <img class="col-5 col-md-6 imglogooo" src="<?= media(); ?>/archivos/logos/logoUse.png">
+          <div class="row d-flex justify-content-center">
+            <img class="col-6 col-md-6 imglogooo" src="<?= media(); ?>/archivos/logos/logoDpa.png">
+            <img class="col-6 col-md-6 imglogooo" src="<?= media(); ?>/archivos/logos/logoUse.png">
+          </div>
         </div>
         <br>
-        <div class="col-md-6 mt-5 text-right">
+        <div class="col-md-5 mt-5 mt-4 text-right">
           <h3 class="mostaza">Nuestra Visión</h3>
-          <h4 class="bluemedio">Al 2025 la DPA será un órgano técnico que integre de modo tecnológico, eficiente y eficaz, los procesos de implementación, ejecución y evaluación de las políticas académicas de la alta Dirección y del Vicerrectorado Académico, así como de los Programas y acciones que coadyuvan al fomento de la excelencia académica de la UNT.</h4>
+          <h5 class="blueoscuro">Al 2025 la DPA será un órgano técnico que integre de modo tecnológico, eficiente y eficaz, los procesos de implementación, ejecución y evaluación de las políticas académicas de la alta Dirección y del Vicerrectorado Académico, así como de los Programas y acciones que coadyuvan al fomento de la excelencia académica de la UNT.</h5>
         </div>
       </div>
     </div>
@@ -87,7 +92,7 @@ $legal = $obj->selectLegalInicio();
   <br><br>
 
 
-  <h3 class="mostaza text-center">BASE LEGAL</h3>
+  <!-- <h3 class="mostaza text-center">BASE LEGAL</h3>
   <div class="border border-primary ml-5 mr-5">
     <div class="row d-flex  text-center" style="max-width: 95%; margin:auto">
       <?php foreach ($legal as $key => $fila) { ?>
@@ -98,60 +103,71 @@ $legal = $obj->selectLegalInicio();
       <?php } ?>
     </div>
     <p class="text-center"><a href="<?= base_url(); ?>/bases">ver más</a></p>
-  </div>
+  </div> -->
+
+
   <br><br>
+  <h2 class="mostaza text-center mb-5">PLATAFORMAS</h2>
+
+
   <div class="row d-flex justify-content-around text-center" style="max-width: 80%; margin:auto">
     <div class="plataform-use  col-md-6 col-lg-4 col-xl-4" data-aos="flip-up">
       <a href="<?= base_url(); ?>/cursosmooc">
         <img class="logosplaforma" src="<?= media(); ?>/archivos/logos/cursomooc.png" alt="">
-        <h4 class="text-center">Cursos mooc</h4>
+        <br><br>
+        <h5 class="text-cursosmooc text-center">CURSOS MOOC</h5>
       </a>
     </div>
     <div class="plataform-use  col-md-6 col-lg-4 col-xl-4" data-aos="flip-down">
       <a href="https://siseu-rep.sineace.gob.pe:6041/login" target="_blank">
         <img class="logosplaforma" src="<?= media(); ?>/archivos/logos/siseu.png" alt="">
-        <h4 class="text-center">SISEU - PROGRAMA DE ESTUDIOS</h4>
+        <br><br>
+        <h5 class="text-cursosmooc text-center">SISEU - PROGRAMA DE ESTUDIO</h5>
       </a>
 
     </div>
     <div class="plataform-use  col-md-6 col-lg-4 col-xl-4" data-aos="flip-up">
       <a href="https://siseu-rep.sineace.gob.pe:6040/" target="_blank">
         <img class="logosplaforma" src="<?= media(); ?>/archivos/logos/sineace.jpg" alt="">
-        <h4 class="text-center">SISEU - EGRESADOS</h4>
+        <br><br>
+        <h5 class="text-cursosmooc text-center">SISEU - EGRESADOS</h5>
       </a>
 
     </div>
     <div class="plataform-use  col-md-6 col-lg-4 col-xl-4" data-aos="flip-down">
       <a href="https://jobboard.universia.net/unitruoportunidades" target="_blank">
         <img class="logosplaforma" src="<?= media(); ?>/archivos/logos/bolsatrabajo.png" alt="">
-        <h4 class="text-center">Bolsa de Trabajo Unt</h4>
+        <br><br>
+        <h5 class="text-cursosmooc text-center">BOLSA DE TRABAJO UNT</h5>
       </a>
 
     </div>
     <div class="plataform-use  col-md-6 col-lg-4 col-xl-4" data-aos="flip-up">
       <a href="<?= base_url(); ?>/expoferiavidaysalud" target="_blank">
         <img class="logosplaforma" src="<?= media(); ?>/archivos/logos/expoferia.png" alt="">
-        <h4 class="text-center">Expoferias Laboral</h4>
+        <br><br>
+        <h5 class="text-cursosmooc text-center">EXPOFERIA LABORAL</h5>
       </a>
 
     </div>
     <div class="plataform-use  col-md-6 col-lg-4 col-xl-4" data-aos="flip-down">
       <a href="<?= base_url(); ?>/manuales">
         <img class="logosplaforma" src="<?= media(); ?>/archivos/logos/manuales.png" alt="">
-        <h4 class="text-center">Manuales y Guias de Usuario</h4>
+        <br><br>
+        <h5 class="text-cursosmooc text-center">MANUALES Y GUIAS DE USUARIO</h5>
       </a>
 
     </div>
   </div>
-  <br><br>
   <br>
-  <h2  class="mostaza text-center">NUESTRO EQUIPO</h2>
+  <br>
+  <h2 class="mostaza text-center">NUESTRO EQUIPO</h2>
   <br>
 
   <div class="row contepersonald-flex justify-content-around text-center " data-aos="fade-down">
-    <div class="col-12 col-sm-4 col-md-3 col-lg-2">
+    <div class="col-12 col-sm-4 col-md-3 col-lg-2 mb-2">
       <div class="cont-titulo">
-        <h7 class="bluemedio">DIRECTOR DE LA UNIDAD DE SEGUIMIENTO DEL EGRESADO</h7>
+        <h5 class="bluemedio text-area">DIRECTOR DE LA UNIDAD DE SEGUIMIENTO DEL EGRESADO</h5>
       </div>
       <img class="equipoimg" src="<?= media(); ?>/img/sosa.jpeg" alt="">
       <div class="cont-info">
@@ -160,9 +176,9 @@ $legal = $obj->selectLegalInicio();
         <p><small>LICENCIADO EN EDUCACIÓN</small></p>
       </div>
     </div><br><br><br>
-    <div class="col-12 col-sm-4 col-md-3 col-lg-2">
+    <div class="col-12 col-sm-4 col-md-3 col-lg-2 mb-2">
       <div class="cont-titulo">
-        <h7 class="bluemedio">SUBUNIDAD DE ESTADÍSTICA E INFORMÁTICA</h7>
+        <h5 class="bluemedio text-area">SUBUNIDAD DE ESTADÍSTICA E INFORMÁTICA</h5>
       </div>
       <img class="equipoimg" src="<?= media(); ?>/img/katherine.png" alt="">
       <div class="cont-info">
@@ -171,38 +187,38 @@ $legal = $obj->selectLegalInicio();
         <p><small>INGENIERA ESTADÍSTICO</small> </p>
       </div>
     </div><br><br><br>
-    <div class="col-12 col-sm-4 col-md-3 col-lg-2 ">
+    <div class="col-12 col-sm-4 col-md-3 col-lg-2 mb-2">
       <div class="cont-titulo">
-        <h7 class="bluemedio">ANALISTA DE PROCESOS</h7>
+        <h5 class="bluemedio text-area">ANALISTA DE PROCESOS</h5>
       </div>
       <img class="equipoimg" src="<?= media(); ?>/img/JEAN.jpeg" alt="">
       <div class="cont-info">
         <br>
         <h6>JEAN PÁUL ROMERO LOBATÓN </h6>
-        <p><small>ANALISTA DE PROCESOS</small></p>
+        <p><small>INGENIERÍA DE SISTEMAS</small></p>
       </div>
     </div><br><br><br>
-    <div class="col-12 col-sm-4 col-md-3 col-lg-2">
-      <div class="cont-titulo">
-        <h7 class="bluemedio">SECRETARIADO LEGAL</h7>
+    <div class="col-12 col-sm-4 col-md-3 col-lg-2 mb-2">
+      <div class="cont-titulo ">
+        <h5 class="bluemedio text-area">ÁREA LEGAL</h5>
       </div>
       <img class="equipoimg" src="<?= media(); ?>/img/milena.jpeg" alt="">
       <div class="cont-info">
         <br>
         <h6>MILENA ALEXANDRA LÓPEZ ARIAS</h6>
-        <p><small>SECRETARIADO LEGAL</small></p>
+        <p><small>ABOGADA</small></p>
       </div>
 
     </div><br><br><br>
-    <div class="col-12 col-sm-4 col-md-3 col-lg-2">
-      <div class="cont-titulo">
-        <h7 class="bluemedio">ÁREA DE MARKETING</h7>
+    <div class="col-12 col-sm-4 col-md-3 col-lg-2 mb-2">
+      <div class="cont-titulo ">
+        <h5 class="bluemedio text-area">ÁREA DE MARKETING</h5>
       </div>
       <img class="equipoimg" src="<?= media(); ?>/img/renzo.jpeg" alt="">
       <div class="cont-info">
         <br>
         <h8>RENZO OMAR HURTADO CARBONEL</h8>
-        <p><small>ÁREA DE MARKETING</small></p>
+        <p><small>COMUNICADOR/DISEÑADOR</small></p>
       </div>
     </div><br><br><br>
   </div>

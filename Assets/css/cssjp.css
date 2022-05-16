@@ -9,6 +9,7 @@
 body,
 html {
   overflow-x: hidden;
+
 }
 
 :root {
@@ -25,7 +26,7 @@ html {
   --enlaceNavegador: rgb(25, 30, 98);
   --enlaceNavegadorHover: #e6ad09;
   /*HeaderSecundario*/
-  --blanco: #ffffff;
+
   --primario: #ffc107;
   --secundario: #0097a7;
   --gris: #757575;
@@ -36,6 +37,7 @@ html {
   --azul-claro: #0a2fff;
   --azul-medio: #12377b;
   --azul-oscuro: #000c4b;
+  --blanco: #ffffff;
 }
 
 /*#region navegador*/
@@ -215,32 +217,44 @@ header .brand {
 }
 
 .equipoimg {
-  width: 150px;
-  height: 200px;
+  width: 200px;
+  height: 250px;
 }
 .cont-titulo {
-    height: 40px;
-  }
+  height: 40px;
+}
 
-  @media(min-width:1024px) {
-    .cont-titulo {
-      height: 80px;
-    }
 
+
+@media (min-width: 1024px) {
+  .cont-titulo {
+    height: 80px;
   }
-  
+}
 
 .cont-info {
-    width: 90%;
-    margin: auto;
-    margin-top: 10px;
-    border-radius: 20px;
-    border-color: var(--amarillo-mostaza);
-    border: solid 2px var(--amarillo-mostaza);
-    color: var(--azul-medio);
-    padding: auto;
-  }
-
+  width: 90%;
+  margin: auto;
+  margin-top: 10px;
+  border-radius: 20px;
+  border-color: var(--amarillo-mostaza);
+  border: solid 2px var(--amarillo-mostaza);
+  color: var(--azul-medio);
+  padding: auto;
+}
+.logosplaforma {
+  height: 100px;
+  width: 100px;
+}
+.text-cursosmooc{
+  font-weight: 500;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+.text-area{
+  font-weight: 500;
+  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
 .mostaza {
   color: var(--amarillo-mostaza);
 }
@@ -253,5 +267,6 @@ header .brand {
 .blueoscuro {
   color: var(--azul-oscuro);
 }
-
-
+.blanco {
+  color: var(--blanco);
+}
