@@ -188,6 +188,6 @@ $n = 1;
 </script>
 
 
-<br><br>
+<br><br><br><br>
 
 <?php footer($data); ?>

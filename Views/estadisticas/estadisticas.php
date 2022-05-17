@@ -15,31 +15,20 @@ $perfiles = $año->selectañoEspecialidades();
 <h3 class="text-center">EGRESADOS - 2021</h3>
 
 <br>
-<div class="row p-2">
-    <div class="col-md-6 col-lg-3">
-        <a href="#" class="linkw">
-            <div class="widget-small primary coloured-icon"><i class="icon fas fa-university "></i>
-                <div class="info">
-                    <h4>FACULTADES</h4>
-                    <p><b>13</b></p>
-                </div>
-            </div>
-        </a>
-    </div>
-
-    <div class="col-md-6 col-lg-3">
-        <a href="#" class="linkw">
+<div class="row" style="margin: auto;" >
+    <div class="col-md-6 col-lg-4">
+        <a target="_blank" href="https://docs.google.com/spreadsheets/d/1v8pgqvTEWWA_QkMyxV1aTjt2lVYJligto6tNGKtp2Hk/edit?usp=sharing" class="linkw">
             <div class="widget-small info coloured-icon"><i class="icon fas fa-graduation-cap"></i>
                 <div class="info">
                     <h4>BACHILLERES</h4>
-                    <p><b>2117</b></p>
+                    <p><b>3366</b></p>
                 </div>
             </div>
         </a>
     </div>
 
-    <div class="col-md-6 col-lg-3">
-        <a href="#" class="linkw">
+    <div class="col-md-6 col-lg-4">
+        <a target="_blank" href="https://docs.google.com/spreadsheets/d/1WvLqY7uYFPUx740VArlorEWlrqWyeMkua8J421-UZOM/edit?usp=sharing" class="linkw">
             <div class="widget-small warning coloured-icon"><i class="icon fas fa-user-graduate"></i>
                 <div class="info">
                     <h4>TITULADOS</h4>
@@ -49,8 +38,8 @@ $perfiles = $año->selectañoEspecialidades();
         </a>
     </div>
 
-    <div class="col-md-6 col-lg-3">
-        <a href="#" class="linkw">
+    <div class="col-md-6 col-lg-4">
+        <a target="_blank" href="https://docs.google.com/spreadsheets/d/1QtaAYv8Ot6-bDVstc0tVfhxXo9tbKmwhXoFIY6w3wpU/edit?usp=sharing" class="linkw" >
             <div class="widget-small primary coloured-icon"><i class="icon fas fa-user-graduate"><span class="fas fa-user-graduate"></span></i>
                 <div class="info">
                     <h4>2° ESPECIALIDAD</h4>
@@ -64,7 +53,7 @@ $perfiles = $año->selectañoEspecialidades();
 
 
 
-
+<!-- 
 <div class="col-lg-12">
     <div class="card">
         <div class="card-header">
@@ -175,9 +164,23 @@ $perfiles = $año->selectañoEspecialidades();
     </div>
 </div>
 </div>
+ -->
+<br>
+<br>
 
+<br>
 
+<br>
 
+<br>
+
+<br>
+
+<br>
+<br>
+<br>
+<br>
+<br>
 
 <?php footer($data); ?>
 

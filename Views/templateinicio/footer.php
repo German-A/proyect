@@ -1,40 +1,43 @@
 <br>
-<footer class="row p-4" style="background-color:#11116f">
-    <div class="col-md-2 text-light text-center" data-aos="fade-down-left">
-        <img src="<?= media(); ?>/archivos/logos/logoUseBlanco.png" style="width: 220px;">
+<footer class="row p-5" style="background-color: var(--azul-medio);">
+    <div class="col-6 col-md-6 col-lg-6 col-xl-3 text-light text-center" style="margin: auto;" data-aos="fade-down-left">
+        <img src="<?= media(); ?>/archivos/logos/logoUseBlanco.png" style="width: 80%; ">
     </div>
-    <div class="col-md-3 text-light text-center" data-aos="fade-down">
-        <h6>Oficina de Unidad de Seguimiento del Egresado</h6>
-
-        <h6>use@unitru.edu.pe</h6>
+    <div class="col-6 col-md-6 col-lg-6 col-xl-3 text-light " style="margin: auto auto;" data-aos="fade-down">
+        <h5>Oficina de Unidad de Seguimiento del <br> Egresado</h5>
+        <br>
+        <h5>use@unitru.edu.pe</h5>
+        <br>
         <div>
             <a target="_blank" href="https://www.facebook.com/use.unt">
-                <img src="<?= media(); ?>/archivos/logos/facebook.png" style="width: 40px; height: 35px;">
-            </a>
+                <img src="<?= media(); ?>/archivos/logos/facebook.png" style="width:10%">
+            </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <a target="_blank" href="https://instagram.com/use.unt?igshid=YmMyMTA2M2Y=">
-                <img src="<?= media(); ?>/archivos/logos/instagram.png" style="width: 40px; height: 35px;">
-            </a>
+                <img src="<?= media(); ?>/archivos/logos/instagram.png" style="width:10%">
+            </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <a target="_blank" href="https://www.youtube.com/channel/UCXyJxRPtWA72esjZKAQdeOw">
-                <img src="<?= media(); ?>/archivos/logos/youtube.png" style="width: 40px; height: 35px;">
+                <img src="<?= media(); ?>/archivos/logos/youtube.png" style="width:15%">
             </a>
         </div>
+        <br>
     </div>
-    <div class="col-md-7 text-light text-center" data-aos="fade-down-rigth">
+    <div class="col-12 col-md-12 col-lg-12 col-xl-6 text-light" style="margin: auto auto;" data-aos="fade-down-rigth">
         <form class="formulario" action="enviar-prueba.php" method="POST">
-            <div class="row" data-aos="fade-down-left">
-                <div class="col-md-7">
+            <div class="row" style="width: 100%;" data-aos="fade-down-left">
+                <div class="col-md-9">
                     <div class="d-flex flex-column">
                         <p>Envianos un mensaje</p>
-                        <input type="text" class="pt-1" placeholder="Ingresar el correo Electronico" required>
+                        <input type="text" class="input p-3" placeholder="Ingresar el correo Electronico" required>
                         <br>
-                        <textarea name="" id="" cols="30" rows="4"></textarea>
+                        <textarea name="" id="" class="input p-3" rows="4" placeholder="Mensaje:"></textarea>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-2 text-center">
                     <br><br>
-                    <input type="text" class="p-1" placeholder="Ingresar el Celular" required>
+                    <input type="text" class="input p-3" placeholder="Ingresar el Celular" required>
                     <br><br>
-                    <input class="bg-warning enviar pt-2 pb-2 pl-4 pr-4 text-white" type="submit" value="Enviar" required>
+                    <button class="input bg-warning enviar pt-2 pb-2 pl-5 pr-5 text-white" type="submit" value="Enviar"><h4>ENVIAR</h4></button>
+         
                 </div>
             </div>
         </form>

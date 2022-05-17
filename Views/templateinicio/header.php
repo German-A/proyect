@@ -40,7 +40,7 @@
             <ul class="menu " id="menu">
                 <img class="logo" src="<?= media(); ?>/img/uselogoazul.jpg" style="height: 70px;">
                 <li class="menu__item "><a scrollto href="home" class="menu__link  m select">INICIO</a></li>
-                <li class="menu__item"><a href="<?= base_url(); ?>/manuales" class="menu__link m">MANUALES Y GUÍAS</a></li>
+                <li class="menu__item"><a href="<?= base_url(); ?>/manuales" class="menu__link m">CAPACITACIONES</a></li>
                 <li class="menu__item"><a target="_blank" href="https://jobboard.universia.net/unitruoportunidades" class="menu__link m">BOLSA DE TRABAJO UNT</a></li>
                 <li class="menu__item container-submenu"><a href="#" class="menu__link submenu-btn">PLATAFORMA SISEU <i class="fas fa-chevron-down"></i></a>
                     <ul class="submenu">

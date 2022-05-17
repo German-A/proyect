@@ -13,9 +13,7 @@ $legal = $obj->selectLegalInicio();
 
 <div class="contenedorPrincipal ">
 
-
-
-  <br>
+<br>
 
   <div class="swiper mySwiper" data-aos="fade-down" data-aos-duration="500">
     <div class="swiper-wrapper">
@@ -33,7 +31,7 @@ $legal = $obj->selectLegalInicio();
   <br>
 
   <div class="col-12 d-flex justify-content-center" >
-    <div class="col-10 col-md-6 p-1  text-center" style="border-radius:20px; background-color: var(--amarillo-mostaza);" data-aos="fade-down">
+    <div class="col-10 col-md-3 p-1  text-center" style="border-radius:20px; background-color: var(--amarillo-mostaza);" >
       <h4 class="blanco">Unidad de Seguimiento del Egresado UNT</h4>
     </div>
   </div>
@@ -46,7 +44,7 @@ $legal = $obj->selectLegalInicio();
       <h5 class="blueoscuro">De nuestros egresados <big><strong >actualmente trabajan</strong></big></h5>
     </div>
     <div class="col-4 col-md-3" data-aos="fade-down">
-      <h2 class="mostaza" style="font-size: 35px;">2117</h2>
+      <h2 class="mostaza" style="font-size: 35px;">3366</h2>
       <h5 class="blueoscuro">Egresados en el año<big><strong> 2021</strong></big> </h5>
     </div>
     <div class="col-4 col-md-3" data-aos="fade-down-right">
@@ -59,15 +57,15 @@ $legal = $obj->selectLegalInicio();
   <br>
   <br>
 
-  <div class="row d-flex justify-content-around text-center" style="max-width: 70%; margin:auto">
+  <div class="row d-flex justify-content-around " style="max-width: 65%; margin:auto">
     <div class="col-md-12">
       <div class="row" data-aos="fade-down-right">
-        <div class="col-md-4 pl-2 text-left">
+        <div class="col-md-8 col-lg-6  text-left ">
           <h3 class="mostaza">Nuestra Misión</h3>
-          <h5 class="blueoscuro">La DPA es un órgano técnico de gestión académica encargado de los diferentes procesos de implementación, ejecución y evaluación de las políticas académicas de la alta Dirección y del Vicerrectorado Académico, así como de los Programas y acciones que coadyuvan al fomento de la excelencia académica de la UNT.</h5>
+          <h4 class="blueoscuro">La DPA es un órgano técnico de gestión académica encargado de los diferentes procesos de implementación, ejecución y evaluación de las políticas académicas de la alta Dirección y del Vicerrectorado Académico, así como de los Programas y acciones que coadyuvan al fomento de la excelencia académica de la UNT.</h4>
         </div>
-        <div class="col-md-8" data-aos="flip-left">
-          <img src="<?= media(); ?>/archivos/logos/portadaUNT.jpg" style=" min-width: 95%; max-height: 200px;">
+        <div class="col-md-8 col-lg-6 d-flex flex-row-reverse" data-aos="flip-left">
+          <img src="<?= media(); ?>/archivos/logos/portadaUNT.jpg" style="min-width: 120px; max-height: 200px;">
         </div>
       </div>
     </div>
@@ -77,33 +75,19 @@ $legal = $obj->selectLegalInicio();
         <div class="col-md-7 align-self-center mt-4" data-aos="flip-right">
           <br><br>
           <div class="row d-flex justify-content-center">
-            <img class="col-6 col-md-6 imglogooo" src="<?= media(); ?>/archivos/logos/logoDpa.png">
-            <img class="col-6 col-md-6 imglogooo" src="<?= media(); ?>/archivos/logos/logoUse.png">
+            <img class="col-6 col-md-4 imglogooo" src="<?= media(); ?>/archivos/logos/logoDpa.png">
+            <img class="col-6 col-md-4 imglogooo" src="<?= media(); ?>/archivos/logos/logoUse.png">
           </div>
         </div>
         <br>
         <div class="col-md-5 mt-5 mt-4 text-right">
           <h3 class="mostaza">Nuestra Visión</h3>
-          <h5 class="blueoscuro">Al 2025 la DPA será un órgano técnico que integre de modo tecnológico, eficiente y eficaz, los procesos de implementación, ejecución y evaluación de las políticas académicas de la alta Dirección y del Vicerrectorado Académico, así como de los Programas y acciones que coadyuvan al fomento de la excelencia académica de la UNT.</h5>
+          <h4 class="blueoscuro">Al 2025 la DPA será un órgano técnico que integre de modo tecnológico, eficiente y eficaz, los procesos de implementación, ejecución y evaluación de las políticas académicas de la alta Dirección y del Vicerrectorado Académico, así como de los Programas y acciones que coadyuvan al fomento de la excelencia académica de la UNT.</h4>
         </div>
       </div>
     </div>
   </div>
   <br><br>
-
-
-  <!-- <h3 class="mostaza text-center">BASE LEGAL</h3>
-  <div class="border border-primary ml-5 mr-5">
-    <div class="row d-flex  text-center" style="max-width: 95%; margin:auto">
-      <?php foreach ($legal as $key => $fila) { ?>
-        <a class="col-4" href="<?= media(); ?>/archivos/documentoslegales/<?php echo $fila['NombreArchivo'] ?>" target="_blank">
-          <img src="<?= media(); ?>/archivos/logos/pdf.png" style="height: 50px;">
-          <p><?php echo substr($fila['Nombre'], 0, 30) . '...';  ?></p>
-        </a>
-      <?php } ?>
-    </div>
-    <p class="text-center"><a href="<?= base_url(); ?>/bases">ver más</a></p>
-  </div> -->
 
 
   <br><br>
@@ -165,59 +149,59 @@ $legal = $obj->selectLegalInicio();
   <br>
 
   <div class="row contepersonald-flex justify-content-around text-center " data-aos="fade-down">
-    <div class="col-12 col-sm-4 col-md-3 col-lg-2 mb-2">
+    <div class="col-12 col-sm-5 col-md-5 col-lg-2 mb-2">
       <div class="cont-titulo">
-        <h5 class="bluemedio text-area">DIRECTOR DE LA UNIDAD DE SEGUIMIENTO DEL EGRESADO</h5>
+        <h5 class="bluemedio text-area">DIRECTOR DE LA UNIDAD DE <br> SEGUIMIENTO DEL EGRESADO</h5>
       </div>
-      <img class="equipoimg" src="<?= media(); ?>/img/sosa.jpeg" alt="">
+      <img class="equipoimg" src="<?= media(); ?>/img/sosa.png" alt=""> 
       <div class="cont-info">
         <br>
-        <h6>EDUARDO TEÓFILO SOSA ANCAJIMA</h6>
+        <h6>EDUARDO TEÓFILO <br> SOSA ANCAJIMA</h6>
         <p><small>LICENCIADO EN EDUCACIÓN</small></p>
       </div>
     </div><br><br><br>
-    <div class="col-12 col-sm-4 col-md-3 col-lg-2 mb-2">
+    <div class="col-12 col-sm-5 col-md-5 col-lg-2 mb-2">
       <div class="cont-titulo">
-        <h5 class="bluemedio text-area">SUBUNIDAD DE ESTADÍSTICA E INFORMÁTICA</h5>
+        <h5 class="bluemedio text-area">SUBUNIDAD DE ESTADÍSTICA <br> E INFORMÁTICA</h5>
       </div>
       <img class="equipoimg" src="<?= media(); ?>/img/katherine.png" alt="">
       <div class="cont-info">
         <br>
-        <h6>KATHERINE LIZETH NUREÑA RODRÍGUEZ</h6>
+        <h6>KATHERINE LIZETH <br> NUREÑA RODRÍGUEZ</h6>
         <p><small>INGENIERA ESTADÍSTICO</small> </p>
       </div>
     </div><br><br><br>
-    <div class="col-12 col-sm-4 col-md-3 col-lg-2 mb-2">
+    <div class="col-12 col-sm-5 col-md-5 col-lg-2 mb-2">
       <div class="cont-titulo">
-        <h5 class="bluemedio text-area">ANALISTA DE PROCESOS</h5>
+        <h5 class="bluemedio text-area">ANALISTA DE <br>PROCESOS</h5>
       </div>
-      <img class="equipoimg" src="<?= media(); ?>/img/JEAN.jpeg" alt="">
-      <div class="cont-info">
+      <img class="equipoimg" src="<?= media(); ?>/img/JEAN.png" alt="">
+      <div class="col-4 cont-info">
         <br>
-        <h6>JEAN PÁUL ROMERO LOBATÓN </h6>
+        <h6>JEAN PÁUL ROMERO <br> LOBATÓN </h6>
         <p><small>INGENIERÍA DE SISTEMAS</small></p>
       </div>
     </div><br><br><br>
-    <div class="col-12 col-sm-4 col-md-3 col-lg-2 mb-2">
+    <div class="col-12 col-sm-5 col-md-5 col-lg-2 mb-2">
       <div class="cont-titulo ">
-        <h5 class="bluemedio text-area">ÁREA LEGAL</h5>
+        <h5 class="bluemedio text-area">ÁREA<br> LEGAL</h5>
       </div>
-      <img class="equipoimg" src="<?= media(); ?>/img/milena.jpeg" alt="">
-      <div class="cont-info">
+      <img class="equipoimg" src="<?= media(); ?>/img/milena.png" alt="">
+      <div class="col-4 cont-info">
         <br>
-        <h6>MILENA ALEXANDRA LÓPEZ ARIAS</h6>
+        <h6>MILENA ALEXANDRA <br> LÓPEZ ARIAS</h6>
         <p><small>ABOGADA</small></p>
       </div>
 
     </div><br><br><br>
-    <div class="col-12 col-sm-4 col-md-3 col-lg-2 mb-2">
+    <div class="col-12 col-sm-5 col-md-5 col-lg-2 mb-2">
       <div class="cont-titulo ">
-        <h5 class="bluemedio text-area">ÁREA DE MARKETING</h5>
+        <h5 class="bluemedio text-area">ÁREA DE <br>MARKETING</h5>
       </div>
-      <img class="equipoimg" src="<?= media(); ?>/img/renzo.jpeg" alt="">
-      <div class="cont-info">
+      <img class="equipoimg" src="<?= media(); ?>/img/renzo.png" alt="">
+      <div class="col-4 cont-info">
         <br>
-        <h8>RENZO OMAR HURTADO CARBONEL</h8>
+        <h6>RENZO OMAR HURTADO CARBONEL</h6>
         <p><small>COMUNICADOR/DISEÑADOR</small></p>
       </div>
     </div><br><br><br>

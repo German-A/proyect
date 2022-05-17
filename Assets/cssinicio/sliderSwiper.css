@@ -11,21 +11,9 @@
 }
 
 
-@media(min-width:1000px) {
-    .swiper {
-        width: 86%;
-        height: 400px;
-    }
-    .swiper-slide img {
-        display: block;
-        width: 86%;
-        height: 400px;
-    }
-
-}
 
 
-@media(min-width:1200) {
+ @media(min-width:1200) {
     .swiper {
         width: 86%;
         height: 550px;
