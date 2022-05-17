@@ -47,9 +47,9 @@ html {
   display: block;
   color: var(--colorMenu);
   cursor: pointer;
-  font-size: 10px;
+  font-size: 80px;
   width: 100%;
-  padding: 10px 20px;
+  padding: 10px 13px;
   display: flex;
   justify-content: flex-end;
 }
@@ -122,7 +122,7 @@ html {
     position: relative;
   }
   .menu li {
-    padding: 0px 20px;
+    padding: 0px 10px;
   }
   .menu .m::after {
     justify-content: center;

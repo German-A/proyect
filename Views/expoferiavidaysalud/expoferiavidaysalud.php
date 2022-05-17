@@ -3,83 +3,40 @@ obj($data);
 //require_once  "../Models/HomeModel.php";
 $obj = new HomeModel();
 $perfiles = $obj->selectBannervidaysaluda2022();
-
 $galeria = $obj->selectGaleriavidaysaluda2022();
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
     <title>USE - Ciencias de la Vida y la Salud </title>-</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
-
-
-  
-   
-
-
-
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700|Open+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
-
-
     <link href="assetsexpoferia/vendor/aos/aos.css" rel="stylesheet">
     <link href="assetsexpoferia/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="assetsexpoferia/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <link href="assetsexpoferia/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-
-
     <link rel="shortcut icon" href="assetsexpoferia/img/use.ico" />
     <link rel="shortcut icon" href="<?= media();?>/images/use.ico" />
-
     <link href="assetsexpoferia/css/style.css" rel="stylesheet">
-
-
-
-
     <link rel="stylesheet" type="text/css" href="<?= media(); ?>/cssinicio/carrucelPrincipal.css">
     <link rel="stylesheet" type="text/css" href="<?= media(); ?>/cssinicio/swiper8.0.6.min.css">
     <link rel="stylesheet" type="text/css" href="<?= media(); ?>/cssinicio/sliderSwiper.css">
-
-
 </head>
-
 <body>
 
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top d-flex align-items-center header-transparent ">
         <div class="container d-flex justify-content-between align-items-center ">
-
             <div id="logo">
                 <img href="expoFeria.html" src="assetsexpoferia/img/logoUse.png" alt="">
             </div>
-
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a class="nav-link scrollto active" href="#hero">INICIO</a></li>
                     <li><a class="nav-link scrollto" href="#about">INFORMACIÓN</a></li>
-
-
-                    <!-- <li class="dropdown"><a href="#"><span>EMPRESAS</span> <i class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="#">Empresa 1</a></li>
-                             <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                                <ul>
-                                    <li><a href="#">Deep Drop Down 1</a></li>
-                                    <li><a href="#">Deep Drop Down 2</a></li>
-                                    <li><a href="#">Deep Drop Down 3</a></li>
-                                    <li><a href="#">Deep Drop Down 4</a></li>
-                                    <li><a href="#">Deep Drop Down 5</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Empresa 2</a></li>
-                        </ul>
-                    </li> -->
                     <li><a class="nav-link scrollto" href="#gallery">GALERÍA</a></li>
                     <li><a class="nav-link scrollto" href="#contact">CONTACTANOS</a></li>
                     <li><a class="nav-link scrollto" href="<?= base_url(); ?>/login">INICIAR SESIÓN</a></li>
@@ -89,19 +46,16 @@ $galeria = $obj->selectGaleriavidaysaluda2022();
             <!-- .navbar -->
         </div>
     </header>
+    <br><br><br>
     <!-- End Header -->
-
-
-
     <!-- ======= Hero Section ======= -->
-    <section id="hero">
-
+    <!-- <section id="hero">
+        <br><br>
         <div class="swiper mySwiper" data-aos="fade-down" data-aos-duration="500">
             <div class="swiper-wrapper">
                 <?php foreach ($perfiles as $key => $fila) { ?>
                     <div class="swiper-slide">
                         <img src="<?= media(); ?>/archivos/banner/<?php echo $fila['NombreArchivo'] ?>">
-                        <!-- <img src="<?= media(); ?>/archivos/banner/0onepiece-fondonegro.jpg"> -->
                     </div>
                 <?php } ?>
             </div>
@@ -109,38 +63,9 @@ $galeria = $obj->selectGaleriavidaysaluda2022();
             <div class="swiper-button-prev"></div>
             <div class="swiper-pagination"></div>
         </div>
-
-
-
-        <div>
-
-
-            <div class="slideshow-container">
-
-                <?php foreach ($perfiles as $key => $fila) { ?>
-                    <div class="swiper-slide">
-                        <img src="<?= media(); ?>/archivos/banner/<?php echo $fila['NombreArchivo'] ?>">
-                    </div>
-                <?php } ?>
-
-                <!-- Las Flechas -->
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-            </div>
-
-
-            <br>
-        </div>
-
-
-
-
-    </section>
+    </section> -->
     <!-- End Hero Section -->
-
     <main id="main">
-
         <!-- ======= About Section ======= -->
         <section id="about" class="section-bg">
             <div class="container-fluid" data-aos="fade-up">

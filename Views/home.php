@@ -33,25 +33,25 @@ $legal = $obj->selectLegalInicio();
   <br>
 
   <div class="col-12 d-flex justify-content-center" >
-    <div class="col-10 col-md-6 p-2  text-center" style="border-radius:20px; background-color: var(--amarillo-mostaza);">
-      <h2 class="blanco">Unidad de Seguimiento del Egresado UNT</h2>
+    <div class="col-10 col-md-6 p-1  text-center" style="border-radius:20px; background-color: var(--amarillo-mostaza);" data-aos="fade-down">
+      <h4 class="blanco">Unidad de Seguimiento del Egresado UNT</h4>
     </div>
   </div>
   <br>
   <br>
-<br><br><br>
+
   <div class="col-12 d-flex justify-content-center text-center">
     <div class="col-4 col-md-3" data-aos="fade-down-left">
-      <h1 class="mostaza" style="font-size: 40px;"><b>98%</b></h1>
-      <h5 class="blueoscuro">De nuestros egresados <big><big>actualmente trabajan</big></big> </h5>
+      <h2 class="mostaza" style="font-size: 35px;"><b>98%</b></h2>
+      <h5 class="blueoscuro">De nuestros egresados <big><strong >actualmente trabajan</strong></big></h5>
     </div>
     <div class="col-4 col-md-3" data-aos="fade-down">
-      <h1 class="mostaza" style="font-size: 40px;"><b>2117</b> </h1>
-      <h5 class="blueoscuro">Egresados en el año <big><big>2021</big></big></h5>
+      <h2 class="mostaza" style="font-size: 35px;">2117</h2>
+      <h5 class="blueoscuro">Egresados en el año<big><strong> 2021</strong></big> </h5>
     </div>
     <div class="col-4 col-md-3" data-aos="fade-down-right">
-      <h1 class="mostaza" style="font-size: 40px;"><b>+2000</b> </h1>
-      <h5 class="blueoscuro"> <big><big>Ofertas laborales </big></big>activas</h5>
+      <h2 class="mostaza" style="font-size: 35px;"><b>+2000</b> </h2>
+      <h5 class="blueoscuro"> <big><strong>Ofertas laborales</strong></big> activas</h5>
     </div>
   </div>
   <br>
@@ -107,7 +107,7 @@ $legal = $obj->selectLegalInicio();
 
 
   <br><br>
-  <h2 class="mostaza text-center mb-5">PLATAFORMAS</h2>
+  <h2 class="mostaza text-center mb-5"  data-aos="fade-down">PLATAFORMAS</h2>
 
 
   <div class="row d-flex justify-content-around text-center" style="max-width: 80%; margin:auto">
@@ -161,7 +161,7 @@ $legal = $obj->selectLegalInicio();
   </div>
   <br>
   <br>
-  <h2 class="mostaza text-center">NUESTRO EQUIPO</h2>
+  <h2 class="mostaza text-center" data-aos="fade-down">NUESTRO EQUIPO</h2>
   <br>
 
   <div class="row contepersonald-flex justify-content-around text-center " data-aos="fade-down">
