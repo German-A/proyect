@@ -22,7 +22,8 @@ $n = 1;
     }
 
     .contenedor {
-        max-width: 95%;
+        max-width: 90%;
+        margin: auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
