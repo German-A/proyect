@@ -4,11 +4,10 @@ obj($data);
 ?>
 
 <?php
-
-//require_once  "../Models/HomeModel.php";
-$obj = new HomeModel();
-$perfiles = $obj->selectBanner();
-$legal = $obj->selectLegalInicio();
+  //require_once  "../Models/HomeModel.php";
+  $obj = new HomeModel();
+  $perfiles = $obj->selectBanner();
+  $legal = $obj->selectLegalInicio();
 ?>
 
 <div class="contenedorPrincipal ">
@@ -31,8 +30,8 @@ $legal = $obj->selectLegalInicio();
   <br>
 
   <div class="col-12 d-flex justify-content-center" >
-    <div class="col-10 col-md-3 p-1  text-center" style="border-radius:20px; background-color: var(--amarillo-mostaza);" >
-      <h4 class="blanco">Unidad de Seguimiento del Egresado UNT</h4>
+    <div class="col-10 col-md-7 col-lg-5 col-xl-4 p-1  text-center" style="border-radius:20px; background-color: var(--amarillo-mostaza);" >
+      <h5 class="blanco">Unidad de Seguimiento del Egresado UNT</h5>
     </div>
   </div>
   <br>

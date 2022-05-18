@@ -88,7 +88,7 @@ $galeria = $obj->selectGaleriavidaysaluda2022();
                         <h2>PREMIOS Y SORPRESAS A NUESTROS PARTICIPANTES</h2>
 
                         <ul>
-                            <li><i class="bi bi-check-circle" style="color:#11116f;"></i> !!Podrás hacerte acreedor de diversos premios y ser testigo de grandes sorpresas durante este evento!!.</li>
+                            <li><i class="bi bi-check-circle" style="color:#11116f;"></i> ¡Podrás hacerte acreedor de diversos premios y ser testigo de grandes sorpresas durante este evento!!.</li>
                             <li><i class="bi bi-check-circle" style="color:#11116f;"></i> ¡Grandes premios! ¡Desde cursos pagados en Udemy, hasta becas y medias becas en diplomados!.</li>
                             
                         </ul>
