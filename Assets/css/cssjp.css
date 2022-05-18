@@ -247,7 +247,7 @@ a:link, a:visited, a:active {
 /* footer*/
 
 .cont-info {
-  min-width: 200px;
+  max-width: 200px;
   margin: auto;
   margin-top: 10px;
   border-radius: 20px;
@@ -265,7 +265,7 @@ a:link, a:visited, a:active {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 .text-area{
-  font-weight: 350;
+  font-weight: 500;
   font-family: 'Courier New', Courier, monospace;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
