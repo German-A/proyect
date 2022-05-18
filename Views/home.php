@@ -12,8 +12,6 @@ obj($data);
 
 <div class="contenedorPrincipal ">
 
-<br>
-
   <div class="swiper mySwiper" data-aos="fade-down" data-aos-duration="500">
     <div class="swiper-wrapper">
       <?php foreach ($perfiles as $key => $fila) { ?>
@@ -30,8 +28,13 @@ obj($data);
   <br>
 
   <div class="col-12 d-flex justify-content-center" >
+<<<<<<< HEAD
     <div class="col-10 col-md-7 col-lg-5 col-xl-4 p-1  text-center" style="border-radius:20px; background-color: var(--amarillo-mostaza);" >
       <h5 class="blanco">Unidad de Seguimiento del Egresado UNT</h5>
+=======
+    <div class="col-10 col-md-5 p-1  text-center" style="border-radius:20px; background-color: var(--amarillo-mostaza);" >
+      <h4 class="blanco">Unidad de Seguimiento del Egresado UNT</h4>
+>>>>>>> 07448d8023a253451a7a6bdcc710a0a6e128ebf5
     </div>
   </div>
   <br>
@@ -74,8 +77,8 @@ obj($data);
         <div class="col-md-7 align-self-center mt-4" data-aos="flip-right">
           <br><br>
           <div class="row d-flex justify-content-center">
-            <img class="col-6 col-md-4 imglogooo" src="<?= media(); ?>/archivos/logos/logoDpa.png">
-            <img class="col-6 col-md-4 imglogooo" src="<?= media(); ?>/archivos/logos/logoUse.png">
+            <img class="col-6 col-md-6 imglogooo" src="<?= media(); ?>/archivos/logos/logoDpa.png">
+            <img class="col-6 col-md-6 imglogooo" src="<?= media(); ?>/archivos/logos/logoUse.png">
           </div>
         </div>
         <br>
@@ -95,11 +98,11 @@ obj($data);
 
   <div class="row d-flex justify-content-around text-center" style="max-width: 80%; margin:auto">
     <div class="plataform-use  col-md-6 col-lg-4 col-xl-4" data-aos="flip-up">
-      <a href="<?= base_url(); ?>/cursosmooc">
+    
         <img class="logosplaforma" src="<?= media(); ?>/archivos/logos/cursomooc.png" alt="">
         <br><br>
-        <h5 class="text-cursosmooc text-center">CURSOS MOOC</h5>
-      </a>
+        <h5 class="bluemedio text-cursosmooc text-center">CURSOS MOOC</h5>
+      
     </div>
     <div class="plataform-use  col-md-6 col-lg-4 col-xl-4" data-aos="flip-down">
       <a href="https://siseu-rep.sineace.gob.pe:6041/login" target="_blank">
@@ -147,13 +150,13 @@ obj($data);
   <h2 class="mostaza text-center" data-aos="fade-down">NUESTRO EQUIPO</h2>
   <br>
 
-  <div class="row contepersonald-flex justify-content-around text-center " data-aos="fade-down">
+  <div class="row contepersonald-flex justify-content-around text-center p-auto" data-aos="fade-down">
     <div class="col-12 col-sm-5 col-md-5 col-lg-2 mb-2">
       <div class="cont-titulo">
         <h5 class="bluemedio text-area">DIRECTOR DE LA UNIDAD DE <br> SEGUIMIENTO DEL EGRESADO</h5>
       </div>
       <img class="equipoimg" src="<?= media(); ?>/img/sosa.png" alt=""> 
-      <div class="cont-info">
+      <div class="col-4 cont-info">
         <br>
         <h6>EDUARDO TEÓFILO <br> SOSA ANCAJIMA</h6>
         <p><small>LICENCIADO EN EDUCACIÓN</small></p>
@@ -164,7 +167,7 @@ obj($data);
         <h5 class="bluemedio text-area">SUBUNIDAD DE ESTADÍSTICA <br> E INFORMÁTICA</h5>
       </div>
       <img class="equipoimg" src="<?= media(); ?>/img/katherine.png" alt="">
-      <div class="cont-info">
+      <div class="col-4 cont-info">
         <br>
         <h6>KATHERINE LIZETH <br> NUREÑA RODRÍGUEZ</h6>
         <p><small>INGENIERA ESTADÍSTICO</small> </p>
@@ -177,7 +180,7 @@ obj($data);
       <img class="equipoimg" src="<?= media(); ?>/img/JEAN.png" alt="">
       <div class="col-4 cont-info">
         <br>
-        <h6>JEAN PÁUL ROMERO <br> LOBATÓN </h6>
+        <h6>JEAN PÁUL <br>  ROMERO LOBATÓN </h6>
         <p><small>INGENIERÍA DE SISTEMAS</small></p>
       </div>
     </div><br><br><br>
