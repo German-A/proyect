@@ -51,6 +51,47 @@ $perfiles = $año->selectañoEspecialidades();
 
 </div>
 
+?><br><br>
+
+<h3 class="text-center">EGRESADOS - 2022</h3>
+
+<br>
+<div class="row" style="margin: auto;">
+    <div class="col-md-6 col-lg-4">
+        <a target="_blank" href="https://docs.google.com/spreadsheets/d/1jAZTMS1DX7KLhhgqhQZMaOlMbt-FcwNaBckd2nKVA4Q/edit?usp=sharing" class="linkw">
+            <div class="widget-small info coloured-icon"><i class="icon fas fa-graduation-cap"></i>
+                <div class="info">
+                    <h4>BACHILLERES</h4>
+                    <p><b>211</b></p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="col-md-6 col-lg-4">
+        <a target="_blank" href="https://docs.google.com/spreadsheets/d/1EiFmFEOlE9nrUuAPas6McMZJeYtw7AMyxGkTkIfowNc/edit?usp=sharing" class="linkw">
+            <div class="widget-small warning coloured-icon"><i class="icon fas fa-user-graduate"></i>
+                <div class="info">
+                    <h4>TITULADOS</h4>
+                    <p><b>177</b></p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="col-md-6 col-lg-4">
+        <a target="_blank" href="https://docs.google.com/spreadsheets/d/1QtaAYv8Ot6-bDVstc0tVfhxXo9tbKmwhXoFIY6w3wpU/edit?usp=sharing" class="linkw">
+            <div class="widget-small primary coloured-icon"><i class="icon fas fa-user-graduate"><span class="fas fa-user-graduate"></span></i>
+                <div class="info">
+                    <h4>2° ESPECIALIDAD</h4>
+                    <p><b>2</b></p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+</div>
+
 
 
 
