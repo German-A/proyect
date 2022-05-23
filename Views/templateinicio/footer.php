@@ -4,7 +4,7 @@
         <img src="<?= media(); ?>/archivos/logos/logoUseBlanco.png" style="width: 80%; ">
     </div>
     <div class="col-6 col-md-6 col-lg-6 col-xl-3 text-light " style="margin: auto auto;" data-aos="fade-down">
-        <h5>Oficina de Unidad de Seguimiento del Egresado</h5>
+        <h5>Unidad de Seguimiento del Egresado</h5>
         <br>
         <h5>use@unitru.edu.pe</h5>
         <br>

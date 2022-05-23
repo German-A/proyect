@@ -71,7 +71,7 @@ obj($data);
     <br><br>
     <div class="col-md-12">
       <div class="row" data-aos="fade-down-left">
-        <div class="col-md-7 align-self-center mt-4" data-aos="flip-right">
+        <div class="col-12 col-md-6 align-self-center mt-4" data-aos="flip-right">
           <br><br>
           <div class="row d-flex justify-content-center">
             <img class="col-6 col-md-6 imglogooo" src="<?= media(); ?>/archivos/logos/logoDpa.png">
@@ -79,7 +79,7 @@ obj($data);
           </div>
         </div>
         <br>
-        <div class="col-md-5 mt-5 mt-4 text-right">
+        <div class="col-12 col-md-5  mt-5 mt-4 text-right">
           <h3 class="mostaza">Nuestra Visión</h3>
           <h4 class="blueoscuro">Al 2025 la DPA será un órgano técnico que integre de modo tecnológico, eficiente y eficaz, los procesos de implementación, ejecución y evaluación de las políticas académicas de la alta Dirección y del Vicerrectorado Académico, así como de los Programas y acciones que coadyuvan al fomento de la excelencia académica de la UNT.</h4>
         </div>
@@ -177,7 +177,7 @@ obj($data);
       <img class="equipoimg" src="<?= media(); ?>/img/JEAN.png" alt="">
       <div class="col-4 cont-info">
         <br>
-        <h6>JEAN PÁUL ROMERO <br> LOBATÓN </h6>
+        <h6>JEAN PÁUL<br>  ROMERO LOBATÓN </h6>
         <p><small>INGENIERÍA DE SISTEMAS</small></p>
       </div>
     </div><br><br><br>

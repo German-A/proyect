@@ -88,7 +88,7 @@
 											 'url_recovery' => $url_recovery);
 						if($requestUpdate){
 					
-							//$sendEmail = sendMailLocal($dataUsuario,'email_cambioPassword');
+							$sendEmail = sendMailLocal($dataUsuario,'email_cambioPassword');
 
 							if(sendMailLocal($dataUsuario,'email_cambioPassword')){
 								$arrResponse = array('status' => true, 

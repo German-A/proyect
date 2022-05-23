@@ -88,24 +88,134 @@ function sendMailLocal($data, $template)
 {
     //Create an instance; passing `true` enables exceptions
     $mail = new PHPMailer(true);
-    ob_start();
-    require_once("Views/Template/Email/" . $template . ".php");
-    $mensaje = ob_get_clean();
-    $bandera=false;
+    //ob_start();
+    //require_once("Views/Template/Email/" . $template . ".php");
+    //$mensaje = ob_get_clean();
+    //$mensaje = 'hola';
+
+    $mensaje = '<!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <title>Recuperar cuenta</title>
+        <style type="text/css">
+            p{
+                font-family: arial;
+                letter-spacing: 1px;
+                color: #7f7f7f;
+                font-size: 15px;
+            }
+            a{
+                color: #3b74d7;
+                font-family: arial;
+                text-decoration: none;
+                text-align: center;
+                display: block;
+                font-size: 18px;
+            }
+            .x_sgwrap p{
+                font-size: 20px;
+                line-height: 32px;
+                color: #244180;
+                font-family: arial;
+                text-align: center;
+            }
+            .x_title_gray {
+                color: #0a4661;
+                padding: 5px 0;
+                font-size: 15px;
+                border-top: 1px solid #CCC;
+            }
+            .x_title_blue {
+                padding: 08px 0;
+                line-height: 25px;
+                text-transform: uppercase;
+                border-bottom: 1px solid #CCC;
+            }
+            .x_title_blue h1{
+                color: #0a4661;
+                font-size: 25px;
+     
+            }
+            .x_bluetext {
+                color: #244180 !important;
+            }
+            .x_title_gray a{
+                text-align: center;
+                padding: 10px;
+                margin: auto;
+                color: #0a4661;
+            }
+            .x_text_white a{
+                color: #FFF;
+            }
+            .x_button_link {
+                width: 100%;
+                max-width: 470px;
+                height: 40px;
+                display: block;
+                color: #FFF;
+                margin: 20px auto;
+                line-height: 40px;
+                text-transform: uppercase;
+                font-family: Arial Black,Arial Bold,Gadget,sans-serif;
+            }
+            .x_link_blue {
+                background-color: #307cf4;
+            }
+            .x_textwhite {
+                background-color: rgb(50, 67, 128);
+                color: #ffffff;
+                padding: 10px;
+                font-size: 15px;
+                line-height: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <table align="center" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="text-align:center;">
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="x_sgwrap x_title_blue"><p>Hola ' . $data['nombreUsuario'] . '</p>
+                            <h1>' . $data['NOMBRE_EMPESA'] . '</h1>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Solicitud de acceso para el usuario: <strong> ' . $data['email'] . '</strong></p>
+                        <p>Has solicitado los datos de tu usuario, accede al enlace de abajo para confirmar tu contraseña. </p>
+                        <p class="x_text_white">
+                        <a href=" ' . $data['url_recovery'] . '" target="_blank" class="x_button_link x_link_blue">Confirmar datos</a>
+                        </p>
+                        <br>
+                        <p>Si no te funciona el botón puedes copiar y pegar la siguiente dirección en tu navegador.</p>
+                        <span> ' . $data['url_recovery'] . '</span>
+                        <p class="x_title_gray"><a href="<?= WEB_EMPRESA; ?>" target="_blanck"><?= WEB_EMPRESA; ?></a></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+    </html>';
+
 
     try {
-        //Server settings
         $mail->SMTPDebug = 0;                      //Enable verbose debug output
         $mail->isSMTP();                                            //Send using SMTP
-        $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+        $mail->Host       = 'use-dpa.unitru.edu.pe';                     //Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-        $mail->Username   = 'jeanromerolobaton@gmail.com';                     //SMTP username
-        $mail->Password   = 'JPsistemas321';                               //SMTP password
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-        $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+        //$mail->Username   = 'jeanromerolobaton@gmail.com';                     //SMTP username
+        //$mail->Password   = 'JPsistemas321';                               //SMTP password
+        $mail->Username   = 'notificaciones@use-dpa.unitru.edu.pe';                     //SMTP username
+        $mail->Password   = 'JPnotificaciones';
+        $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
+        $mail->Port       = 465;                             //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
         //Recipients
-        $mail->setFrom('toolsfordeveloper@gmail.com', 'Servidor Local');
+        $mail->setFrom('notificaciones@use-dpa.unitru.edu.pe', 'UNIDAD DE SEGUIMIENTO DEL EGRESADO');
         $mail->addAddress($data['email']);     //Add a recipient
         if (!empty($data['emailCopia'])) {
             $mail->addBCC($data['emailCopia']);
@@ -117,8 +227,7 @@ function sendMailLocal($data, $template)
         $mail->Body    = $mensaje;
 
         $mail->send();
-       return 1;
-        
+        return 1;
     } catch (Exception $e) {
         echo "Error en el envío del mensaje: {$mail->ErrorInfo}";
     }
@@ -286,7 +395,7 @@ function sendMailLocalEmpleo($data, $template)
     // require_once("Views/Template/Email/" . $template . ".php");
     // $mensaje = ob_get_clean();
 
-    $mensaje='<!DOCTYPE html>
+    $mensaje = '<!DOCTYPE html>
     <html lang="es">
     <head>
         <meta charset="UTF-8">
@@ -379,18 +488,18 @@ function sendMailLocalEmpleo($data, $template)
                 <tr>
                     <td>
                         <div class="x_sgwrap">
-                            <p>Hola '. $data['nombreUsuario'].'</p>
+                            <p>Hola ' . $data['nombreUsuario'] . '</p>
                         </div>
                         <p>tenemos una oferta laboral para ti</p>
-                        <p>La cuenta de Acceso a plataforma es: <strong>'.$data['email'].'</strong></p>
+                        <p>La cuenta de Acceso a plataforma es: <strong>' . $data['email'] . '</strong></p>
                         <p>La contraseña es tu numero de Dni. </p>
                         <p class="x_text_white">
-                        <a href="'. base_url() .'" target="_blank" class="x_button_link x_link_blue">Ingresar al sistema</a>
+                        <a href="' . base_url() . '" target="_blank" class="x_button_link x_link_blue">Ingresar al sistema</a>
                         </p>
                         <br>       
                         <p>Si no te funciona el botón puedes copiar y pegar la siguiente dirección en tu navegador.</p>
                         
-                        <p class="x_title_gray"><a href="'. base_url() .'" target="_blanck">'. base_url() .'</a></p>
+                        <p class="x_title_gray"><a href="' . base_url() . '" target="_blanck">' . base_url() . '</a></p>
                     </td>
                 </tr>
             </tbody>
@@ -407,7 +516,7 @@ function sendMailLocalEmpleo($data, $template)
         //$mail->Username   = 'jeanromerolobaton@gmail.com';                     //SMTP username
         //$mail->Password   = 'JPsistemas321';                               //SMTP password
         $mail->Username   = 'notificaciones@use-dpa.unitru.edu.pe';                     //SMTP username
-        $mail->Password   = 'JPnotificaciones';   
+        $mail->Password   = 'JPnotificaciones';
         $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
         $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
@@ -417,7 +526,7 @@ function sendMailLocalEmpleo($data, $template)
         if (!empty($data['emailCopia'])) {
             $mail->addBCC($data['emailCopia']);
         }
-        $data['asunto']='Oferta Laboral';
+        $data['asunto'] = 'Oferta Laboral';
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML
         $mail->Subject = $data['asunto'];

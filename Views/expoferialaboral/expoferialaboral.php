@@ -127,6 +127,7 @@ $n = 1;
     <aside>
         <div class="contenedor-temario" id="temario">
             <h4 class="text-center">Expoferia Laboral</h4>
+            <br><br>
             <h4>2021</h4>
             <ul class="lista">
                 <li class="activo">
@@ -167,13 +168,13 @@ $n = 1;
             </ul>
         </div>
     </aside>
-    <main>
+    <main><br><br>
         <video class="video" autoplay loop muted>
             <source src="<?= media(); ?>/videos/expoferia.mp4" type="video/mp4">
         </video>
     </main>
 </div>
-
+<br><br><br>
 
 <script src="js/main.js"></script>
 <script>

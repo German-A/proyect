@@ -44,6 +44,7 @@ $n = 1;
 
     <br>
 
+    <br>
 
     <div class="col-md-10 r m-auto">
         <h3 class="mostaza">Video Tutoriales</h3>
@@ -65,16 +66,15 @@ $n = 1;
     <br>
 
     <br>
+    <br>
 
 
     <div class="col-md-10 r m-auto">
-        <h3 class="mostaza">Capacitaciones</h3>
+        <h3 class="mostaza">Video Conferencias</h3>
     </div>
 
     <br>
-    <div class="col-md-10 r m-auto">
 
-    </div>
     <div class="d-flex flex-row">
         <div class="col-md-10  m-auto">
             <div class="row">
@@ -88,6 +88,11 @@ $n = 1;
     </div>
     <br>
 
+
+    <br>
+    <br>
+    <br>
+    <br>
 
 
 

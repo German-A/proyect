@@ -50,8 +50,11 @@ $perfiles = $año->selectañoEspecialidades();
     </div>
 
 </div>
+<div class="d-flex align-items-end flex-column">
+  <div class="p-2"><h5>Al 31 de Diciembre 2021</h5></div>
+</div>
 
-?><br><br>
+
 
 <h3 class="text-center">EGRESADOS - 2022</h3>
 
@@ -91,6 +94,10 @@ $perfiles = $año->selectañoEspecialidades();
     </div>
 
 </div>
+<div class="d-flex align-items-end flex-column" >
+  <div class="p-2"><h5>Al 20 de Mayo 2022</h5></div>
+</div>
+
 
 
 
