@@ -147,7 +147,7 @@
 
             <?php if (!empty($_SESSION['permisos'][25]['r'])) { ?>
                 <li>
-                    <a class="app-menu__item" href="<?= base_url(); ?>/configuracionegresado">
+                    <a class="app-menu__item" href="<?= base_url(); ?>/usuarios/perfilUsuario">
                         <i class="app-menu__icon fa fa-sign-out" aria-hidden="true"></i>
                         <span class="app-menu__label">CONFIGURACIÓN</span>
                     </a>

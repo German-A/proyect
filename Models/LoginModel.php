@@ -32,6 +32,7 @@
 							p.apellidop,
 							p.apellidom,
 							p.email_user,
+							p.telefono,
 							p.imagen,
 							p.dni,					
 							r.idrol,

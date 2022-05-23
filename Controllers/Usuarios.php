@@ -7,7 +7,7 @@ class usuarios extends Controllers
 	{
 		session_start();
 		parent::__construct();
-		
+
 		//session_regenerate_id(true);
 		if (empty($_SESSION['login'])) {
 			header('Location: ' . base_url() . '/login');
@@ -60,25 +60,21 @@ class usuarios extends Controllers
 						if ($request_user > 0) {
 
 							$arrData = $this->model->obtenerRol($request_user);
-						
 
-								if($arrData['idrol']==4){
 
-									$txtEmpresa = ucwords(strClean($_POST['txtEmpresa']));
-									$txtDireccion = ucwords(strClean($_POST['txtDireccion']));
-									$txtRuc = ucwords(strClean($_POST['txtRuc']));
+							if ($arrData['idrol'] == 4) {
 
-									$this->model->insertUsuarioEmpresa(
-										$txtEmpresa,
-										$txtDireccion,
-										$txtRuc,
-										$request_user							
-									);
+								$txtEmpresa = ucwords(strClean($_POST['txtEmpresa']));
+								$txtDireccion = ucwords(strClean($_POST['txtDireccion']));
+								$txtRuc = ucwords(strClean($_POST['txtRuc']));
 
-								}
-
-						
-							
+								$this->model->insertUsuarioEmpresa(
+									$txtEmpresa,
+									$txtDireccion,
+									$txtRuc,
+									$request_user
+								);
+							}
 						}
 					}
 				} else {
@@ -130,15 +126,15 @@ class usuarios extends Controllers
 	}
 
 
-	
+
 
 
 	public function getusuarios()
 	{
-	
+
 		if ($_SESSION['permisosMod']['r']) {
-			 $arrData = $this->model->selectUsuarios();
-	
+			$arrData = $this->model->selectUsuarios();
+
 
 			for ($i = 0; $i < count($arrData); $i++) {
 				$btnView = '';
@@ -223,40 +219,7 @@ class usuarios extends Controllers
 		$this->views->getView($this, "perfil", $data);
 	}
 
-	public function putPerfil()
-	{
-		if ($_POST) {
-			if (empty($_POST['txtNombre']) || empty($_POST['txtApellido']) || empty($_POST['txtTelefono'])) {
-				$arrResponse = array("status" => false, "msg" => 'Datos incorrectos.');
-			} else {
-				$idUsuario = $_SESSION['idUser'];
 
-				$strNombre = strClean($_POST['txtNombre']);
-				$strApellido = strClean($_POST['txtApellido']);
-				$strTelefono = strClean($_POST['txtTelefono']);
-				$strPassword = "";
-				if (!empty($_POST['txtPassword'])) {
-					$strPassword = hash("SHA256", $_POST['txtPassword']);
-				}
-				$request_user = $this->model->updatePerfil(
-					$idUsuario,
-
-					$strNombre,
-					$strApellido,
-					$strTelefono,
-					$strPassword
-				);
-				if ($request_user) {
-					sessionUser($_SESSION['idUser']);
-					$arrResponse = array('status' => true, 'msg' => 'Datos Actualizados correctamente.');
-				} else {
-					$arrResponse = array("status" => false, "msg" => 'No es posible actualizar los datos.');
-				}
-			}
-			echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
-		}
-		die();
-	}
 
 	public function putDFical()
 	{
@@ -285,4 +248,120 @@ class usuarios extends Controllers
 		}
 		die();
 	}
+
+	public function perfilUsuario()
+	{
+		$data['page_tag'] = "Perfil";
+		$data['page_title'] = "Perfil de usuario";
+		$data['page_name'] = "perfil";
+		$data['page_functions_js'] = "functions_usuarios.js";
+		$this->views->getView($this, "perfilUsuario", $data);
+	}
+
+	public function getEgresado($idpersona)
+	{
+		
+			$idusuario = intval($idpersona);
+			if ($idusuario > 0) {
+				$arrData = $this->model->selectUsuario($idusuario);
+				if (empty($arrData)) {
+					$arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
+				} else {
+					$arrResponse = array('status' => true, 'data' => $arrData);
+				}
+				echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+			}
+		
+		die();
+	}
+
+	public function putPerfilEgresado()
+	{
+		if ($_POST) {
+			if (empty($_POST['txtNombre']) || empty($_POST['txtApellidop']) || empty($_POST['txtApellidom'])) {
+				$arrResponse = array("status" => false, "msg" => 'Los campos con (*) no pueden estar vacios.');
+			} else {
+				$idUsuario = strClean($_POST['idUsuario']);
+				$strNombre = strClean($_POST['txtNombre']);
+				$strApellidop = strClean($_POST['txtApellidop']);
+				$strApellidom = strClean($_POST['txtApellidom']);
+				$strTelefono = strClean($_POST['txtTelefono']);
+
+				$strPassword = strClean($_POST['txtPassword']);
+			
+				// if (!empty($_POST['txtPassword'])) {
+				// 	$strPassword = hash("SHA256", $_POST['txtPassword']);
+				// }
+				$request_user = $this->model->updatePerfil(
+					$idUsuario,
+					$strNombre,
+					$strApellidop,
+					$strApellidom,
+					$strTelefono,
+					$strPassword
+				);
+				if ($request_user) {
+					sessionUser($_SESSION['idUser']);
+					$arrResponse = array('status' => true, 'msg' => 'Datos Actualizados correctamente.');
+				} else {
+					$arrResponse = array("status" => false, "msg" => 'No es posible actualizar los datos.');
+				}
+		
+			echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+		}
+		die();
+	}
+	}
+
+	public function putPerfilFotoEgresado()
+	{
+		if ($_POST) {
+		
+			if (empty($_POST['idUsuario2'])) {
+		
+				$arrResponse = array("status" => false, "msg" => 'Los campos con (*) no pueden estar vacios.');
+			} else {
+		
+				$idUsuario = intval($_POST['idUsuario2']);
+
+
+				$ubicacionTemporal = $_FILES['file']['tmp_name'];
+				$nombre = $_FILES['file']['name'];
+
+			
+
+				$nuevonombre =  $nombre;
+
+				if (!file_exists('Assets/archivos/egresados/')) {
+					mkdir('Assets/archivos/egresados/', 0777, true);
+					if (file_exists('Assets/archivos/egresados/')) {
+						if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/egresados/' . $nuevonombre)) {
+							$request_user = $this->model->updateFoto($idUsuario,$nuevonombre);
+						} else {
+							echo "no se pudo guardar";
+						}
+					}
+				} else {
+					if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/egresados/' . $nuevonombre)) {
+						$request_user = $this->model->updateFoto($idUsuario,$nuevonombre);
+					} else {
+						echo "no se pudo guardarrr";
+					}
+				}
+
+
+
+				if ($request_user) {
+					sessionUser($_SESSION['idUser']);
+					$arrResponse = array('status' => true, 'msg' => 'Datos Actualizados correctamente.');
+				} else {
+					$arrResponse = array("status" => false, "msg" => 'No es posible actualizar los datos.');
+				}
+		
+			echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+		}
+		die();
+	}
+	}
+	
 }
