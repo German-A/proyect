@@ -89,6 +89,9 @@
                         <?php if (!empty($_SESSION['permisos'][12]['r'])) { ?>
                             <li><a class="treeview-item" href="<?= base_url(); ?>/empresaapobarempleoadmin"><i class="icon fa fa-circle-o"></i>Aprobacion Empleos</a></li>
                         <?php } ?>
+                        <?php if (!empty($_SESSION['permisos'][12]['r'])) { ?>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/sendcorreo"><i class="icon fa fa-circle-o"></i>Correo</a></li>
+                        <?php } ?>
                     </ul>
                 </li>
             <?php } ?>
