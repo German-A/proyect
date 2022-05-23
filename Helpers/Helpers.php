@@ -232,6 +232,55 @@ function sendMailLocal($data, $template)
         echo "Error en el envío del mensaje: {$mail->ErrorInfo}";
     }
 }
+
+
+
+
+function sendMailLocalCarreras($data, $template)
+{
+    //Create an instance; passing `true` enables exceptions
+    $mail = new PHPMailer(true);
+    //ob_start();
+    //require_once("Views/Template/Email/" . $template . ".php");
+    //$mensaje = ob_get_clean();
+    //$mensaje = 'hola';
+
+    $mensaje = $data;
+
+
+    try {
+    //Server settings
+    $mail->SMTPDebug = 0;                      //Enable verbose debug output
+    $mail->isSMTP();                                            //Send using SMTP
+    $mail->Host       = 'smtp.gmail.com';    //server de servicio de correo                 //Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+    $mail->Username   = 'jeanromerolobaton@gmail.com';                     //SMTP username
+    $mail->Password   = 'JPsistemas321';                               //SMTP password
+    $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
+    $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+                          //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+        //Recipients
+        $mail->setFrom('notificaciones@use-dpa.unitru.edu.pe', 'UNIDAD DE SEGUIMIENTO DEL EGRESADO');
+        $mail->addAddress('stifs.jprl18@gmail.com');     //Add a recipient
+        if (!empty($data['emailCopia'])) {
+            $mail->addBCC($data['emailCopia']);
+        }
+
+        //Content
+        $mail->isHTML(true);                                  //Set email format to HTML
+        $mail->Subject = 'use';
+        $mail->Body    = $mensaje;
+
+        $mail->send();
+        return 1;
+    } catch (Exception $e) {
+        echo "Error en el envío del mensaje: {$mail->ErrorInfo}";
+    }
+}
+
+
+
 /*
 
 function sendMailLocalEmpleo($data, $template)

@@ -60,12 +60,12 @@ getModal('modalBanner', $data);
     var datax = $("#frmempleo").serializeArray();
     $.ajax({
         method: "POST",
-        url: "" + base_url + "/sendcorreo/sendcorreo",
+        url: "" + base_url + "/sendcorreo/enviarCorreo",
         data: datax
 
     }).done(function() {
         //swal("Atención!", "TERMINADO", "warning");
-        window.location.href = "" + base_url + "/empresaempleoadmin/empresaempleoadmin/" + idEmpresa + "";
+        window.location.href = "" + base_url + "/empresaempleoadmin/empresaempleoadmin";
     });
 }
 </script>

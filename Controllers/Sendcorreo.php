@@ -201,7 +201,12 @@ class sendcorreo extends Controllers
 		die();
 	}
 
-	public function sendcorreo(){
-		$_POST['txtNombre']		;:
+	public function enviarCorreo()
+	{
+
+		$sendEmail = sendMailLocalCarreras($_POST['DescripcionPuesto'],'email_cambioPassword');
+	
+		echo$_POST['DescripcionPuesto'];
+		die();
 	}
 }
