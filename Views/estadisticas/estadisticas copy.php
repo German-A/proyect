@@ -51,9 +51,7 @@ $perfiles = $año->selectañoEspecialidades();
 
 </div>
 <div class="d-flex align-items-end flex-column">
-    <div class="p-2">
-        <h5>Al 31 de Diciembre 2021</h5>
-    </div>
+  <div class="p-2"><h5>Al 31 de Diciembre 2021</h5></div>
 </div>
 
 
@@ -96,10 +94,8 @@ $perfiles = $año->selectañoEspecialidades();
     </div>
 
 </div>
-<div class="d-flex align-items-end flex-column">
-    <div class="p-2">
-        <h5>Al 20 de Mayo 2022</h5>
-    </div>
+<div class="d-flex align-items-end flex-column" >
+  <div class="p-2"><h5>Al 20 de Mayo 2022</h5></div>
 </div>
 
 
@@ -116,11 +112,11 @@ $perfiles = $año->selectañoEspecialidades();
             <h3 class="text-muted m-b-15 text-center">Más detalle</h3>
             <br>
             <div class="d-flex justify-content-around">
-                <a class="btn btn-primary" target="_blank" href="https://docs.google.com/spreadsheets/d/1wKk9gGxt-gt1tgz90FWCPGrwnWzx_lsVm_wrnxV9kSE/edit?usp=sharing">
+                <a class="btn btn-primary" target="_blank" href="https://docs.google.com/spreadsheets/d/1wKk9gGxt-gt1tgz90FWCPGrwnWzx_lsVm_wrnxV9kSE/edit?usp=sharing" >
                     <h5>Facultades</h5>
                 </a>
 
-                <a class="btn btn-primary" target="_blank" href="https://docs.google.com/spreadsheets/d/1ySjbiL7jFv7lLXbw4WSVfRuOZHgS_iVetHcuw6gujbU/edit?usp=sharing">
+                <a class="btn btn-primary" target="_blank" href="https://docs.google.com/spreadsheets/d/1ySjbiL7jFv7lLXbw4WSVfRuOZHgS_iVetHcuw6gujbU/edit?usp=sharing" >
                     <h5>Escuelas</h5>
                 </a>
             </div>
@@ -129,29 +125,29 @@ $perfiles = $año->selectañoEspecialidades();
 
 
             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                - <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a href="https://docs.google.com/spreadsheets/d/1Qsl3g_XTSYhMlZg4MMZg2QKGl_0gRNTMsVuV8KGXGFM/edit?usp=sharing" class="nav-link" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="false">
                         <h3>Egresados por Año</h3>
                     </a>
-                </li>
-                <li class="nav-item">
+                </li> -->
+                <!-- <li class="nav-item">
                     <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">
                         <h3>SISEU</h3>
                     </a>
-                </li>
-                <li class="nav-item">
+                </li> -->
+                <!-- <li class="nav-item">
                     <a class="nav-link active show" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="true">Contact</a>
-                </li>
-            </ul>
+                </li> -->
+                <!-- </ul>
             <div class="tab-content" id="pills-tabContent">
 
                 <div class="col-12 col-md-6">
                     <h2 for="TipoContrato">Seleccionar el año de Egresado:</h2>
                 </div>
                 <br><br>
-
-                <div class="col-12 col-md-12 ">
-                    <h4>Filtros:</h4><select onchange="Buscar()" id="id" class="form-control" name="TipoContrato" id="TipoContrato">
+                
+                <div class="col-12 col-md-12 ">        
+                <h4>Filtros:</h4><select  onchange="Buscar()" id="id" class="form-control" name="TipoContrato" id="TipoContrato" >
                         <option disabled selected>Seleccionar una Opcion</option>
                         <?php foreach ($perfiles as $key => $fila) { ?>
                             <option value="<?php echo $fila['año'] ?>"><?php echo $fila['año'] ?></option>
@@ -160,8 +156,9 @@ $perfiles = $año->selectañoEspecialidades();
                 </div>
                 <br><br>
 
+           
+                <div class="row p-2">           
 
-                <div class="row p-2">
                     <div class="col-md-6 col-lg-3">
                         <a href="<?= base_url() ?>/clientes" class="linkw">
                             <div class="widget-small info coloured-icon"><i class="icon fas fa-graduation-cap"></i>
@@ -194,62 +191,40 @@ $perfiles = $año->selectañoEspecialidades();
                             </div>
                         </a>
                     </div>
+
                 </div>
-            </div>
+
+
+
+            </div> 
+
+
+            <!-- seccion siseu -->
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    <h3>Profile</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste nobis, fugit pariatur minima! Dolorum modi pariatur aperiam quas odio nulla, illo necessitatibus dolor a.
+                    </p>
+                </div>
+                <!-- <div class="tab-pane fade active show" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                    <h3>Cotanct</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste nobis, fugit pariatur minima! Dolorum modi pariatur aperiam quas odio nulla, illo necessitatibus dolor a.
+                    </p>
+                </div> -->
+        </div>
+
+
+
+
+
+
     </div>
 </div>
 </div>
 -->
 
 <br>
-
-
-<div class="card-body">
-    <p class="text-muted m-b-15 text-center">To center/justify the tabs and pills, use the <code>.nav-justified</code> class.</p>
-
-    <ul class="nav nav-pills mb-3 text-center" id="pills-tab" role="tablist">
-        <li class="nav-item">
-            <a class="nav-link active show" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true"><h5>Máestrias</h5></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false"><h5>Doctorados</h5></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false"><h5>Segundas Especialidades</h5></a>
-        </li>
-    </ul>
-    <br>
-    <div class="tab-content" id="pills-tabContent">
-        <div class="tab-pane fade active show" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-            <h3>Máestrias</h3>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste nobis, fugit pariatur minima! Dolorum modi pariatur aperiam quas odio nulla, illo necessitatibus dolor a.
-            </p>
-        </div>
-        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-            <h3>Doctorados</h3>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste nobis, fugit pariatur minima! Dolorum modi pariatur aperiam quas odio nulla, illo necessitatibus dolor a.
-            </p>
-        </div>
-        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-            <h3>Segundas Especialidades</h3>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste nobis, fugit pariatur minima! Dolorum modi pariatur aperiam quas odio nulla, illo necessitatibus dolor a.
-            </p>
-        </div>
-    </div>
-
-
-
-
-
-
-</div>
-
-
-
-<br><br>
 
 
 <?php footer($data); ?>
