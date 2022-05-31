@@ -145,79 +145,95 @@ $perfiles = $año->selectañoEspecialidades();
             </ul>
             <div class="tab-content" id="pills-tabContent">
 
-                <div class="col-12 col-md-6">
-                    <h2 for="TipoContrato">Seleccionar el año de Egresado:</h2>
-                </div>
-                <br><br>
 
-                <div class="col-12 col-md-12 ">
-                    <h4>Filtros:</h4><select onchange="Buscar()" id="id" class="form-control" name="TipoContrato" id="TipoContrato">
-                        <option disabled selected>Seleccionar una Opcion</option>
-                        <?php foreach ($perfiles as $key => $fila) { ?>
-                            <option value="<?php echo $fila['año'] ?>"><?php echo $fila['año'] ?></option>
-                        <?php } ?>
-                    </select>
-                </div>
-                <br><br>
-
-
-                <div class="row p-2">
-                    <div class="col-md-6 col-lg-3">
-                        <a href="<?= base_url() ?>/clientes" class="linkw">
-                            <div class="widget-small info coloured-icon"><i class="icon fas fa-graduation-cap"></i>
-                                <div class="info">
-                                    <h4>BACHILLERES</h4>
-                                    <p><b id="bachiller"></b></p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-md-6 col-lg-3">
-                        <a href="<?= base_url() ?>/productos" class="linkw">
-                            <div class="widget-small warning coloured-icon"><i class="icon fas fa-user-graduate"></i>
-                                <div class="info">
-                                    <h4>TITULADOS</h4>
-                                    <p><b id="titulo"></b></p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-md-6 col-lg-3">
-                        <a href="<?= base_url() ?>/pedidos" class="linkw">
-                            <div class="widget-small primary coloured-icon"><i class="icon fas fa-user-graduate"><span class="fas fa-user-graduate"></span></i>
-                                <div class="info">
-                                    <h4>2° ESPECIALIDAD</h4>
-                                    <p><b id="segundaespecialidad"></b></p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
             </div>
+            <br><br>
+
+
+
+        </div>
     </div>
 </div>
 </div>
--->
 
 <br>
 
+<div class="col-12 col-md-6">
+    <h4 for="TipoContrato">Seleccionar el año de Egresado:</h4>
+</div>
+
+
+<div class="col-12 col-md-12 ">
+    <div class="col-3">
+        <h4>Filtros:</h4>
+    </div>
+    <div class="col-7">
+        <select onchange="Buscar()" id="id" class="form-control" name="TipoContrato" id="TipoContrato">
+            <option disabled selected>Seleccionar una Opcion</option>
+            <?php foreach ($perfiles as $key => $fila) { ?>
+                <option value="<?php echo $fila['año'] ?>"><?php echo $fila['año'] ?></option>
+            <?php } ?>
+        </select>
+    </div>
+</div>
+
+<br><br>
+
+<div class="row p-2">
+    <div class="col-md-6 col-lg-3">
+        <a href="<?= base_url() ?>/clientes" class="linkw">
+            <div class="widget-small info coloured-icon"><i class="icon fas fa-graduation-cap"></i>
+                <div class="info">
+                    <h4>BACHILLERES</h4>
+                    <p><b id="bachiller"></b></p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+        <a href="<?= base_url() ?>/productos" class="linkw">
+            <div class="widget-small warning coloured-icon"><i class="icon fas fa-user-graduate"></i>
+                <div class="info">
+                    <h4>TITULADOS</h4>
+                    <p><b id="titulo"></b></p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+        <a href="<?= base_url() ?>/pedidos" class="linkw">
+            <div class="widget-small primary coloured-icon"><i class="icon fas fa-user-graduate"><span class="fas fa-user-graduate"></span></i>
+                <div class="info">
+                    <h4>2° ESPECIALIDAD</h4>
+                    <p><b id="segundaespecialidad"></b></p>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
 
 <div class="card-body">
-    <p class="text-muted m-b-15 text-center">To center/justify the tabs and pills, use the <code>.nav-justified</code> class.</p>
-
     <ul class="nav nav-pills mb-3 text-center" id="pills-tab" role="tablist">
         <li class="nav-item">
-            <a class="nav-link active show" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true"><h5>Máestrias</h5></a>
+            <a class="nav-link active show" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">
+                <h5>Máestrias</h5>
+            </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false"><h5>Doctorados</h5></a>
+            <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">
+                <h5>Doctorados</h5>
+            </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false"><h5>Segundas Especialidades</h5></a>
+            <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">
+                <h5>Segundas Especialidades</h5>
+            </a>
         </li>
     </ul>
+    <br>
+
     <br>
     <div class="tab-content" id="pills-tabContent">
         <div class="tab-pane fade active show" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">

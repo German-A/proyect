@@ -58,8 +58,6 @@ class especialidades extends Controllers
 		die();
 	}
 
-
-
 	//facultades
 	public function getFacultad()
 	{
@@ -80,12 +78,9 @@ class especialidades extends Controllers
 		die();
 	}
 
-
-
 	//obtener un baner para actualizar
 	public function getcantidades()
 	{
-
 		$id = intval($_POST['id']);
 
 		if ($id > 0) {

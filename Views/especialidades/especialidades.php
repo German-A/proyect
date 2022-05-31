@@ -1,6 +1,7 @@
 <?php
 headerAdmin($data);
 getModal('modalEspecialidad', $data);
+getModal('modalPostgrado', $data);
 ?>
 
 <main class="app-content">
@@ -8,7 +9,12 @@ getModal('modalEspecialidad', $data);
     <div>
       <h1><i class="fas fa-user-tag"></i> <?= $data['page_title'] ?>
         <?php if ($_SESSION['permisosMod']['w']) { ?>
-          <button class="btn btn-primary" type="button" onclick="openModal();"><i class="fas fa-plus-circle"></i> Registrar Banner</button>
+          <button class="btn btn-primary" type="button" onclick="openModal();"><i class="fas fa-plus-circle"></i> Registrar Especialidades</button>
+        <?php } ?>
+      </h1>
+      <h1><i class="fas fa-user-tag"></i> <?= $data['page_title'] ?>
+        <?php if ($_SESSION['permisosMod']['w']) { ?>
+          <button class="btn btn-primary" type="button" onclick="openModal();"><i class="fas fa-plus-circle"></i> Registrar POSTGRADO</button>
         <?php } ?>
       </h1>
     </div>
@@ -44,5 +50,9 @@ getModal('modalEspecialidad', $data);
       </div>
     </div>
   </div>
+  
 </main>
+
+
+
 <?php footerAdmin($data); ?>
