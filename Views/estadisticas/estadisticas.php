@@ -7,6 +7,7 @@
 $año = new HomeModel();
 
 $perfiles = $año->selectañoEspecialidades();
+$segundasEspecialidades = $año->SegundasEspecialidades();
 //$perfiless = $año->selectañoEspecialidadesporaño($id);
 
 
@@ -238,6 +239,11 @@ $perfiles = $año->selectañoEspecialidades();
     <div class="tab-content" id="pills-tabContent">
         <div class="tab-pane fade active show" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
             <h3>Máestrias</h3>
+
+            <div class="col-12 col-md-6">
+                <h1>dfhdsfihsdufhsdufi</h1>
+            </div>
+
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste nobis, fugit pariatur minima! Dolorum modi pariatur aperiam quas odio nulla, illo necessitatibus dolor a.
             </p>
@@ -249,49 +255,59 @@ $perfiles = $año->selectañoEspecialidades();
             </p>
         </div>
         <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-            <h3>Segundas Especialidades</h3>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste nobis, fugit pariatur minima! Dolorum modi pariatur aperiam quas odio nulla, illo necessitatibus dolor a.
-            </p>
+
+            <div class="row">
+                <div class="col-12 text-center  m-auto">
+
+                    <?php foreach ($segundasEspecialidades as $key => $fila) { ?>
+
+                        <div class="btn text-center btn-outline-primary m-1 col-12 col-md-2">
+                            <h5>
+                                <?php echo $fila['descripcion'] ?>
+                            </h5>
+                        </div>
+                    <?php } ?>
+                </div>
+            </div>
+    
         </div>
+
+
+
+
+
+
     </div>
 
 
 
+    <br><br>
 
 
+    <?php footer($data); ?>
 
-</div>
+    <script>
+        function Buscar() {
+            var id = document.getElementById("id").value;
 
+            cadena = "id=" + id;
 
+            $.ajax({
+                type: "POST",
+                async: true,
+                url: "Home/getcantidades",
+                data: cadena,
 
-<br><br>
+                success: function(response) {
+                    console.log(response);
 
+                    var info = JSON.parse(response);
+                    //console.log(info.data[0]['bachiller']);
 
-<?php footer($data); ?>
-
-<script>
-    function Buscar() {
-        var id = document.getElementById("id").value;
-
-        cadena = "id=" + id;
-
-        $.ajax({
-            type: "POST",
-            async: true,
-            url: "Home/getcantidades",
-            data: cadena,
-
-            success: function(response) {
-                console.log(response);
-
-                var info = JSON.parse(response);
-                //console.log(info.data[0]['bachiller']);
-
-                document.getElementById('bachiller').innerHTML = info.data[0]['bachiller'];
-                document.getElementById('titulo').innerHTML = info.data[0]['titulo'];
-                document.getElementById('segundaespecialidad').innerHTML = info.data[0]['segundaespecialidad'];
-            }
-        });
-    }
-</script>
+                    document.getElementById('bachiller').innerHTML = info.data[0]['bachiller'];
+                    document.getElementById('titulo').innerHTML = info.data[0]['titulo'];
+                    document.getElementById('segundaespecialidad').innerHTML = info.data[0]['segundaespecialidad'];
+                }
+            });
+        }
+    </script>

@@ -143,6 +143,8 @@ class especialidades extends Controllers
 		die();
 	}
 
+
+
 	//obtener un baner para actualizar
 	public function getone($idpersona)
 	{
@@ -181,4 +183,91 @@ class especialidades extends Controllers
 		}
 		die();
 	}
+
+
+	//insertar y actualizar los postgrado
+	public function setpostgrado()
+	{
+		if ($_POST) {
+			if (empty($_POST['tipopostgrado'])) {
+				$arrResponse = array("status" => false, "msg" => 'Datos incorrectos en el Banner.');
+			} else {
+				$idUsuario = intval($_POST['id']);
+
+				$tipopostgrado = $_POST['tipopostgrado'];
+				$escuelaid = $_POST['escuelaid'];
+
+				$request_user = "";
+				if ($idUsuario == 0) {
+
+					$option = 1;
+
+					$insert = $this->model->registerpostgrado($tipopostgrado,  $escuelaid);
+				} else {
+					$option = 2;
+
+					$cantidadBanner = "";
+					$cantidadBanner = $this->model->cantidadBanner();
+
+					//Actualizar sin Imagen
+
+
+				}
+
+				if ($insert > 0) {
+					if ($option == 1) {
+						$arrResponse = array('status' => true, 'msg' => 'Datos guardados correctamente.');
+					} else {
+						$arrResponse = array('status' => true, 'msg' => 'Datos Actualizados correctamente.');
+					}
+				} else {
+					$arrResponse = array("status" => false, "msg" => 'No es posible almacenar los datos.');
+				}
+			}
+			echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+		}
+		die();
+	}
+
+
+	//listado de los banners
+	public function getpostgrado()
+	{
+		if ($_SESSION['permisosMod']['r']) {
+			$arrData = $this->model->listapostgrado();
+			for ($i = 0; $i < count($arrData); $i++) {
+				$btnView = '';
+				$btnEdit = '';
+				$btnDelete = '';
+				$btnVie = '';
+
+				$btnVie = '<a class="btn btn-success btn-sm " href="' . base_url() . '/especialidadespostgrado/especialidadespostgrado/' . $arrData[$i]['idpostgrado'] . '"  title="Postgrado">Empleo</a>';
+
+				if ($_SESSION['permisosMod']['r']) {
+					$btnView = '<button class="btn btn-info btn-sm fntView" onClick="fntView(' . $arrData[$i]['idpostgrado'] . ')" title="Ver Banner"><i class="far fa-eye"></i></button>';
+				}
+				if ($_SESSION['permisosMod']['u']) {
+					if (($_SESSION['userData']['idrol'] == 1) || ($_SESSION['userData']['idrol'] == 2)) {
+						$btnEdit = '<button class="btn btn-primary  btn-sm fntEdit" onClick="fntEdit(this,' . $arrData[$i]['idpostgrado'] . ')" title="Editar Banner"><i class="fas fa-pencil-alt"></i></button>';
+					} else {
+						$btnEdit = '<button class="btn btn-secondary btn-sm" disabled ><i class="fas fa-pencil-alt"></i></button>';
+					}
+				}
+				if ($_SESSION['permisosMod']['d']) {
+					if (($_SESSION['userData']['idrol'] == 1) || ($_SESSION['userData']['idrol'] == 2)) {
+						$btnDelete = '<button class="btn btn-danger btn-sm fntDelete" onClick="fntDelete(' . $arrData[$i]['idpostgrado'] . ')" title="Eliminar Banner"><i class="far fa-trash-alt"></i></button>';
+					} else {
+						$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
+					}
+				}
+
+				$arrData[$i]['options'] = '<div class="text-center">' . $btnVie . ' ' .  $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
+			}
+			echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
+		}
+		die();
+	}
+
+
+
 }

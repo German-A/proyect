@@ -186,6 +186,17 @@
 			return $request;
 		}
 
+		/*ESPECIALIDADES*/
+
+		public function SegundasEspecialidades()
+		{		
+			$sql = "SELECT descripcion
+			FROM segundaespecialidades 
+			where status>0";
+			$request = $this->select_all($sql);
+			return $request;
+		}
+
 
 		
 

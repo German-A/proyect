@@ -9,6 +9,7 @@
 		private $segundaespecialidad;
 		private $escuelaid;
 		private $año;
+		private $tipopostgrado;
 		private $intborrar=0;
 
 		public function __construct()
@@ -152,5 +153,34 @@
 			$request = $this->select($sql);			
 			return $request;
 		}
+
+		public function registerpostgrado($tipopostgrado,  $escuelaid){			
+			$this->tipopostgrado = $tipopostgrado;
+			$this->escuelaid = $escuelaid;
+			$return = 0;
+			$query_insert  = "INSERT INTO postgrado(tipopostgrado,escuelaid)
+								  VALUES(?,?)";
+	        	$arrData = array(
+        						$this->tipopostgrado,
+        						$this->escuelaid);
+	        	$request_insert = $this->insert($query_insert,$arrData);
+	        	$return = $request_insert;
+	        return $return;
+		}
+
+
+
+		public function listapostgrado()
+		{
+			$sql = "SELECT * 
+			from postgrado p
+			inner join escuela e on e.idEscuela=p.escuelaid
+			where p.status!=0";
+			$request = $this->select_all($sql);			
+			return $request;
+		}
+
+
+		
 	}
  ?>

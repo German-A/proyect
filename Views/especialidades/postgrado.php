@@ -12,11 +12,7 @@ getModal('modalPostgrado', $data);
           <button class="btn btn-primary" type="button" onclick="openModal();"><i class="fas fa-plus-circle"></i> Registrar Especialidades</button>
         <?php } ?>
       </h1>
-      <h1>
-        <?php if ($_SESSION['permisosMod']['w']) { ?>
-          <button class="btn btn-primary" type="button" onclick="openModalPostGrado();"><i class="fas fa-plus-circle"></i> Registrar POSTGRADO</button>
-        <?php } ?>
-      </h1>
+      <input id="idespecialidad"  type="text" value="<?= $data['idespecialidad'] ?>">
     </div>
     <ul class="app-breadcrumb breadcrumb">
       <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
@@ -29,40 +25,13 @@ getModal('modalPostgrado', $data);
       <div class="tile">
         <div class="tile-body">
           <div class="table-responsive">
-            <table class="table table-hover table-bordered" id="datatable">
+            <table class="table table-hover table-bordered" id="detallepostgrado">
               <thead>
                 <tr>
                   <th>ID</th>
                   <th>Bachiller</th>
                   <th>Titulo</th>
-                  <th>Segundaespecialidad</th>
-                  <th>Año</th>
-                  <th>Nombre Escuela</th>         
-                  <th>Acciones</th>
-                </tr>
-              </thead>
-              <tbody>
 
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-12">
-      <div class="tile">
-        <div class="tile-body">
-          <div class="table-responsive">
-            <table class="table table-hover table-bordered" id="postgrado">
-              <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>tipopostgrado</th>
-                  <th>escuelaid</th>
-                  <th>Acciones</th>
                 </tr>
               </thead>
               <tbody>
