@@ -239,9 +239,6 @@ class especialidades extends Controllers
 				$btnView = '';
 				$btnEdit = '';
 				$btnDelete = '';
-				$btnVie = '';
-
-				$btnVie = '<a class="btn btn-success btn-sm " href="' . base_url() . '/especialidadespostgrado/especialidadespostgrado/' . $arrData[$i]['idpostgrado'] . '"  title="Postgrado">Empleo</a>';
 
 				if ($_SESSION['permisosMod']['r']) {
 					$btnView = '<button class="btn btn-info btn-sm fntView" onClick="fntView(' . $arrData[$i]['idpostgrado'] . ')" title="Ver Banner"><i class="far fa-eye"></i></button>';
@@ -261,7 +258,7 @@ class especialidades extends Controllers
 					}
 				}
 
-				$arrData[$i]['options'] = '<div class="text-center">' . $btnVie . ' ' .  $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
+				$arrData[$i]['options'] = '<div class="text-center"> ' .  $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
 			}
 			echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
 		}

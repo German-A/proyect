@@ -70,7 +70,7 @@ $idmaestria = $año->listaFacultadpostgrado();
             <div class="widget-small info coloured-icon"><i class="icon fas fa-graduation-cap"></i>
                 <div class="info">
                     <h4>BACHILLERES</h4>
-                    <p><b>211</b></p>
+                    <p><b>544</b></p>
                 </div>
             </div>
         </a>
@@ -81,7 +81,7 @@ $idmaestria = $año->listaFacultadpostgrado();
             <div class="widget-small warning coloured-icon"><i class="icon fas fa-user-graduate"></i>
                 <div class="info">
                     <h4>TITULADOS</h4>
-                    <p><b>177</b></p>
+                    <p><b>332</b></p>
                 </div>
             </div>
         </a>
@@ -92,7 +92,7 @@ $idmaestria = $año->listaFacultadpostgrado();
             <div class="widget-small primary coloured-icon"><i class="icon fas fa-user-graduate"><span class="fas fa-user-graduate"></span></i>
                 <div class="info">
                     <h4>2° ESPECIALIDAD</h4>
-                    <p><b>2</b></p>
+                    <p><b>17</b></p>
                 </div>
             </div>
         </a>
@@ -101,7 +101,7 @@ $idmaestria = $año->listaFacultadpostgrado();
 </div>
 <div class="d-flex align-items-end flex-column">
     <div class="p-2">
-        <h5>Al 20 de Mayo 2022</h5>
+        <h5>Al 01 de Junio 2022</h5>
     </div>
 </div>
 
