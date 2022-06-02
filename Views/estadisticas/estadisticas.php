@@ -8,6 +8,8 @@ $año = new HomeModel();
 
 $perfiles = $año->selectañoEspecialidades();
 $segundasEspecialidades = $año->SegundasEspecialidades();
+$doctorados = $año->doctorados();
+$idmaestria = $año->listaFacultadpostgrado();
 //$perfiless = $año->selectañoEspecialidadesporaño($id);
 
 
@@ -125,95 +127,12 @@ $segundasEspecialidades = $año->SegundasEspecialidades();
                     <h5>Escuelas</h5>
                 </a>
             </div>
-
-
-
-
-            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                - <li class="nav-item">
-                    <a href="https://docs.google.com/spreadsheets/d/1Qsl3g_XTSYhMlZg4MMZg2QKGl_0gRNTMsVuV8KGXGFM/edit?usp=sharing" class="nav-link" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="false">
-                        <h3>Egresados por Año</h3>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">
-                        <h3>SISEU</h3>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active show" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="true">Contact</a>
-                </li>
-            </ul>
-            <div class="tab-content" id="pills-tabContent">
-
-
-            </div>
-            <br><br>
-
-
-
         </div>
     </div>
 </div>
-</div>
-
-<br>
-
-<div class="col-12 col-md-6">
-    <h4 for="TipoContrato">Seleccionar el año de Egresado:</h4>
-</div>
 
 
-<div class="col-12 col-md-12 ">
-    <div class="col-3">
-        <h4>Filtros:</h4>
-    </div>
-    <div class="col-7">
-        <select onchange="Buscar()" id="id" class="form-control" name="TipoContrato" id="TipoContrato">
-            <option disabled selected>Seleccionar una Opcion</option>
-            <?php foreach ($perfiles as $key => $fila) { ?>
-                <option value="<?php echo $fila['año'] ?>"><?php echo $fila['año'] ?></option>
-            <?php } ?>
-        </select>
-    </div>
-</div>
 
-<br><br>
-
-<div class="row p-2">
-    <div class="col-md-6 col-lg-3">
-        <a href="<?= base_url() ?>/clientes" class="linkw">
-            <div class="widget-small info coloured-icon"><i class="icon fas fa-graduation-cap"></i>
-                <div class="info">
-                    <h4>BACHILLERES</h4>
-                    <p><b id="bachiller"></b></p>
-                </div>
-            </div>
-        </a>
-    </div>
-
-    <div class="col-md-6 col-lg-3">
-        <a href="<?= base_url() ?>/productos" class="linkw">
-            <div class="widget-small warning coloured-icon"><i class="icon fas fa-user-graduate"></i>
-                <div class="info">
-                    <h4>TITULADOS</h4>
-                    <p><b id="titulo"></b></p>
-                </div>
-            </div>
-        </a>
-    </div>
-
-    <div class="col-md-6 col-lg-3">
-        <a href="<?= base_url() ?>/pedidos" class="linkw">
-            <div class="widget-small primary coloured-icon"><i class="icon fas fa-user-graduate"><span class="fas fa-user-graduate"></span></i>
-                <div class="info">
-                    <h4>2° ESPECIALIDAD</h4>
-                    <p><b id="segundaespecialidad"></b></p>
-                </div>
-            </div>
-        </a>
-    </div>
-</div>
 
 <div class="card-body">
     <ul class="nav nav-pills mb-3 text-center" id="pills-tab" role="tablist">
@@ -235,41 +154,62 @@ $segundasEspecialidades = $año->SegundasEspecialidades();
     </ul>
     <br>
 
-    <br>
     <div class="tab-content" id="pills-tabContent">
         <div class="tab-pane fade active show" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-            <h3>Máestrias</h3>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <?php foreach ($idmaestria as $key => $fila) { ?>
+                        <h4 cllas="text-center"> <?php echo $fila['nombreFacultad'] ?></h5>
 
-            <div class="col-12 col-md-6">
-                <h1>dfhdsfihsdufhsdufi</h1>
+                            <?php $maestria = $año->listaFacultadpostgradodetalle($fila['Facultadid']); ?>
+
+                            <?php foreach ($maestria as $key => $fila) { ?>
+
+                                <div class="btn text-center btn-outline-primary m-1 col-12 col-md-3">
+                                    <p>
+                                        <?php echo $fila['tipopostgrado'] ?>
+                                    </p>
+                                </div>
+                            <?php } ?>
+
+                        <?php } ?>
+                </div>
             </div>
 
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste nobis, fugit pariatur minima! Dolorum modi pariatur aperiam quas odio nulla, illo necessitatibus dolor a.
-            </p>
         </div>
         <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-            <h3>Doctorados</h3>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste nobis, fugit pariatur minima! Dolorum modi pariatur aperiam quas odio nulla, illo necessitatibus dolor a.
-            </p>
-        </div>
-        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
 
             <div class="row">
                 <div class="col-12 text-center  m-auto">
 
-                    <?php foreach ($segundasEspecialidades as $key => $fila) { ?>
+                    <?php foreach ($doctorados as $key => $fila) { ?>
 
-                        <div class="btn text-center btn-outline-primary m-1 col-12 col-md-2">
-                            <h5>
+                        <div class="btn text-center btn-outline-primary m-1 col-12 col-md-3">
+                            <p>
                                 <?php echo $fila['descripcion'] ?>
-                            </h5>
+                            </p>
                         </div>
                     <?php } ?>
                 </div>
             </div>
-    
+
+
+
+        </div>
+        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+            <div class="row">
+                <div class="col-12 text-center  m-auto">
+                    <?php foreach ($segundasEspecialidades as $key => $fila) { ?>
+                        <div class="btn text-center btn-outline-primary m-1 col-12 col-md-3">
+                            <p>
+                                <?php echo $fila['descripcion'] ?>
+                            </p>
+                            <?php $idmaestria = $año->listaFacultadpostgrado() ?>
+                        </div>
+                    <?php } ?>
+                </div>
+            </div>
+
         </div>
 
 

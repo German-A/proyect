@@ -53,13 +53,13 @@
 		{
 			$response = null;
 			//$sql = "SELECT idTitulaciones,nombreTitulaciones from titulaciones where status!=0";
-			$sql = "SELECT idEscuela,nombreEscuela from escuela where status!=0";
+			$sql = "SELECT idFacultad,nombreFacultad from facultad where status!=0";
 			$request = $this->select_all($sql);
 	
 			foreach ($request as $user) {
 				$response[] = array(
-					"id" => $user['idEscuela'],
-					"text" => $user['nombreEscuela']
+					"id" => $user['idFacultad'],
+					"text" => $user['nombreFacultad']
 				);
 			}
 	
@@ -68,13 +68,13 @@
 		public function selectIdiom($search)
 		{
 			//$sql = "SELECT idTitulaciones,nombreTitulaciones from titulaciones where status!=0";
-			$sql = "SELECT idEscuela,nombreEscuela from escuela where status!=0 and nombreEscuela LIKE '%$search%' ORDER BY idFacultad";
+			$sql = "SELECT idFacultad,nombreFacultad from facultad where status!=0 and nombreFacultad LIKE '%$search%' ORDER BY idFacultad";
 			$request = $this->select_all($sql);
 	
 			foreach ($request as $user) {
 				$response[] = array(
-					"id" => $user['idEscuela'],
-					"text" => $user['nombreEscuela']
+					"id" => $user['idFacultad'],
+					"text" => $user['nombreFacultad']
 				);
 			}
 			return $response;
@@ -158,7 +158,7 @@
 			$this->tipopostgrado = $tipopostgrado;
 			$this->escuelaid = $escuelaid;
 			$return = 0;
-			$query_insert  = "INSERT INTO postgrado(tipopostgrado,escuelaid)
+			$query_insert  = "INSERT INTO maestria(tipopostgrado,Facultadid)
 								  VALUES(?,?)";
 	        	$arrData = array(
         						$this->tipopostgrado,
@@ -173,12 +173,15 @@
 		public function listapostgrado()
 		{
 			$sql = "SELECT * 
-			from postgrado p
-			inner join escuela e on e.idEscuela=p.escuelaid
-			where p.status!=0";
+			from maestria m
+			inner join facultad f on f.idFacultad=m.Facultadid
+			where m.status!=0";
 			$request = $this->select_all($sql);			
 			return $request;
 		}
+
+	
+		
 
 
 		

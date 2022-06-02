@@ -197,7 +197,35 @@
 			return $request;
 		}
 
+		public function doctorados()
+		{		
+			$sql = "SELECT descripcion
+			FROM doctorado 
+			where status>0";
+			$request = $this->select_all($sql);
+			return $request;
+		}
+		public function listaFacultadpostgrado()
+		{
+			$sql = "SELECT Facultadid,nombreFacultad
+			from maestria m
+			inner join facultad f on m.Facultadid=f.idFacultad
+			where m.status!=0
+			group by m.Facultadid";
+			$request = $this->select_all($sql);			
+			return $request;
+		}
 
+		public function listaFacultadpostgradodetalle($id)
+		{
+			$sql = "SELECT tipopostgrado
+			from maestria m
+			inner join facultad f on m.Facultadid=f.idFacultad
+			where m.status!=0 and m.Facultadid=$id";
+			$request = $this->select_all($sql);			
+			return $request;
+		}
+		
 		
 
 

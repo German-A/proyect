@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
             "columns": [
                 { "data": "idpostgrado" },
                 { "data": "tipopostgrado" },
-                { "data": "nombreEscuela" },
+                { "data": "nombreFacultad" },
                 { "data": "options" }
             ],
             'dom': 'lBfrtip',
