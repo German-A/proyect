@@ -6,11 +6,13 @@
   font-weight: 800;
 }
 
+
 body,
 html {
   overflow-x: hidden;
 
 }
+
 
 :root {
   --colorMenu: #ffffff;
@@ -283,4 +285,8 @@ a:link, a:visited, a:active {
 }
 .blanco {
   color: var(--blanco);
+}
+
+.bgbluemedio{
+  background-color:  var(--azul-medio);;  
 }

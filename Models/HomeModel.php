@@ -205,17 +205,21 @@
 			$request = $this->select_all($sql);
 			return $request;
 		}
+
+		/*lista de Factultades */
 		public function listaFacultadpostgrado()
 		{
-			$sql = "SELECT Facultadid,nombreFacultad
+			$sql = "SELECT m.Facultadid,f.nombreFacultad,fi.descripcion
 			from maestria m
 			inner join facultad f on m.Facultadid=f.idFacultad
+			inner join facultadiconos fi on fi.Facultadid=f.idFacultad
 			where m.status!=0
 			group by m.Facultadid";
 			$request = $this->select_all($sql);			
 			return $request;
 		}
-
+		
+		/*detalle de maestria*/
 		public function listaFacultadpostgradodetalle($id)
 		{
 			$sql = "SELECT tipopostgrado
