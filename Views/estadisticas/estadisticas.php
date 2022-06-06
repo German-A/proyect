@@ -168,7 +168,6 @@ $idmaestria = $año->listaFacultadpostgrado();
         height: 100%;
         background: #FFC90D;
         position: absolute;
-        color: red;
         z-index: 1;
         top: -800px;
         left: 0;
@@ -200,7 +199,7 @@ $idmaestria = $año->listaFacultadpostgrado();
         <div class="col-12 col-md-9">
             <div class="d-flex justify-content-around mt-2">
                 <a href="javascript:void(0);" class="col-4 col-md-3 pt-2 pb-2 text-center" style="background-color: #CC9966;" onclick="openModalMaestrias()">
-                    <h5 class="blanco">Máestrias</h5>
+                    <h5 class="blanco">Maestrías</h5>
                     <img src="<?= media() ?>/images/postgrado/maestria.png" style="max-height: 150px; max-height: 50px;">
                 </a>
                 <div class="col-4 col-md-3 pt-2 pb-2 text-center" style="background-color: #4886ff;" onclick="openModalDoctorados()">
@@ -216,6 +215,29 @@ $idmaestria = $año->listaFacultadpostgrado();
     </div>
 </div>
 
+<br><br><br>
+
+<div class="contedor90 pt-4 pb-4">
+    <div class="col-12 text-center">
+        <h1 class="text-center">Perfiles de Egreso</h1>
+    </div>
+    <div class="row">
+        <?php foreach ($idmaestria as $key => $fila) { ?>
+            <a href="javascript:void(0);" onclick="openModal(<?= $fila['Facultadid'] ?>);" class="col-12 amarillo  col-md-3 text-center pt-3 pb-3 p-2 m-3">
+                <div class="col-12 text-cente col-md-12">
+                    <h1 class="t mostaza bg-white m-auto p-1 col-3 col-md-7"><?php echo $fila['descripcion'] ?></h1>
+                    <br>
+                </div>
+                <div class="col-12 text-cente col-md-12">
+                    <h5 class="t bluemedio">Maestría en <?php echo $fila['nombreFacultad'] ?></h5>
+                </div>
+                <div class="t col-12 text-cente col-md-12">
+                    <p class="t bluemedio">Ver maestrías</p>
+                </div>
+            </a>
+        <?php } ?>
+    </div>
+</div>
 
 
 
@@ -245,9 +267,6 @@ $idmaestria = $año->listaFacultadpostgrado();
                             </a>
                         <?php } ?>
                     </div>
-
-
-
                 </div>
             </div>
         </div>
@@ -302,7 +321,7 @@ $idmaestria = $año->listaFacultadpostgrado();
     </div>
 </div>
 
-
+<!-- Doctorados -->
 <div class="modal fade" id="modalDoctorados" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -330,7 +349,7 @@ $idmaestria = $año->listaFacultadpostgrado();
                     <?php } ?>
                 </div>
                 <br>
-                <div class="row m-auto">
+                <div class="col-12 m-auto">
                     <a href="https://posgrado.unitru.edu.pe/doctorados/" target="_blank" class="btn btn-primary"><span>Más Información</span></a>
                 </div>
             </div>
@@ -338,6 +357,7 @@ $idmaestria = $año->listaFacultadpostgrado();
     </div>
 </div>
 
+<!-- SEGUNDAS ESPECIALIDADES -->
 <div class="modal fade" id="modalSegundasEspecialidades" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
