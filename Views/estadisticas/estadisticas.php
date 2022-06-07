@@ -168,6 +168,7 @@ $idmaestria = $año->listaFacultadpostgrado();
         height: 100%;
         background: #FFC90D;
         position: absolute;
+        
         z-index: 1;
         top: -800px;
         left: 0;
@@ -177,6 +178,7 @@ $idmaestria = $año->listaFacultadpostgrado();
     .amarillo:hover::after {
         top: 0;
         transition: .5s ease-in-out all;
+   
     }
 
 
@@ -184,6 +186,7 @@ $idmaestria = $año->listaFacultadpostgrado();
         position: relative;
         z-index: 2;
         transition: .2s ease all;
+    
     }
 </style>
 
@@ -217,24 +220,48 @@ $idmaestria = $año->listaFacultadpostgrado();
 
 <br><br><br>
 
+
+<style>
+    .fondo{
+        color: blue;
+        border-color: #aaaaaa;
+        border-width: 1px;
+        border-style: solid;
+        border-bottom-right-radius: 80px;        
+    }
+    .fondo:hover h1{ 
+        color: white;
+    }
+    .fondo:hover h5{ 
+        color: white;
+    }
+
+
+    .fondo:hover {
+        background-color: #FFC90D;
+        color: white;
+    }
+
+</style>
+
 <div class="contedor90 pt-4 pb-4">
     <div class="col-12 text-center">
         <h1 class="text-center">Perfiles de Egreso</h1>
     </div>
-    <div class="row">
+    <div class="row d-flex justify-content-around ">
         <?php foreach ($idmaestria as $key => $fila) { ?>
-            <a href="javascript:void(0);" onclick="openModal(<?= $fila['Facultadid'] ?>);" class="col-12 amarillo  col-md-3 text-center pt-3 pb-3 p-2 m-3">
-                <div class="col-12 text-cente col-md-12">
-                    <h1 class="t mostaza bg-white m-auto p-1 col-3 col-md-7"><?php echo $fila['descripcion'] ?></h1>
+            <div class="col-8 col-md-4 col-lg-3  fondo m-2">
+            <a href="javascript:void(0);"  class=" m-4  p-2 ">
+                <div class="col-12 text-right col-md-12">
+                    <h1 class="mostaza "><?php echo $fila['descripcion'] ?></h1>
                     <br>
                 </div>
-                <div class="col-12 text-cente col-md-12">
-                    <h5 class="t bluemedio">Maestría en <?php echo $fila['nombreFacultad'] ?></h5>
-                </div>
-                <div class="t col-12 text-cente col-md-12">
-                    <p class="t bluemedio">Ver maestrías</p>
+                <div class="col-12 text-left col-md-12">
+                    <h5 class=""><?php echo $fila['nombreFacultad'] ?></h5>
                 </div>
             </a>
+            </div>
+
         <?php } ?>
     </div>
 </div>
