@@ -30,10 +30,13 @@
 
     <!-- <script type="text/javascript" src="<?= media();?>/js/plugins/bootstrap-select.min.js"></script> -->
 
-      <script type="text/javascript" src="<?= media(); ?>/js/plugins/select2.min.js"></script> 
+      <!-- <script type="text/javascript" src="<?= media(); ?>/js/plugins/select2.min.js"></script> 
+ -->
+
+      <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 
 
-  
     <script type="text/javascript" src="<?= media();?>/js/functions_admin.js"></script>
     <script src="<?= media(); ?>/js/<?= $data['page_functions_js']; ?>"></script>
 

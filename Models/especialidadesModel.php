@@ -180,6 +180,18 @@
 			return $request;
 		}
 
+
+		/* perfiles academicos*/
+		public function listaperfilesacademicos()
+		{
+			$sql = "SELECT pa.idperfilesacademicos,pa.archivo,pa.status,e.nombreEscuela
+			from perfilesacademicos pa
+			inner join escuela e on pa.escuelaid=e.idEscuela
+			where pa.status!=0";
+			$request = $this->select_all($sql);			
+			return $request;
+		}
+
 	
 		
 
