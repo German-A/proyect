@@ -11,6 +11,7 @@ getModal('modalpefilesAcademicos', $data);
           <button class="btn btn-primary" type="button" onclick="openModal();"><i class="fas fa-plus-circle"></i> Registrar Especialidades</button>
         <?php } ?>
       </h1>
+
     </div>
     <ul class="app-breadcrumb breadcrumb">
       <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>

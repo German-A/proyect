@@ -104,48 +104,18 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+  
+
+
 }, false);
 
 window.addEventListener('load', function() {
     //fntRolesUsuario();
 }, false);
 
-$('.js-example-basic-single').select2();
-
-//get Facultades
-$(".idFacultad").select2({
-    maximumSelectionLength: 1,
-    
-    ajax: {
-        url: " " + base_url + "/especialidades/getFacultad",
-        type: "post",
-        dataType: 'json',
-        delay: 250,
-        data: function(params) {
-            return {
-                
-                palabraClave: params.term
-            };
-        },
-        processResults: function(response) {
-            return {
-                results: response,
-                
-            };
-        },
-        cache: true,
-        
-
-    }
-});
 $('.js-example-basic-single').select2({
-    placeholder: 'Select an option'
-  });
-// In your Javascript (external .js resource or <script> tag)
-$(document).ready(function() {
-    $('.js-example-basic-single').select2();
+    dropdownParent: $("#modalRegistro")
 });
-
 
 //visualizar informacion 
 function fntView(idbtn) {

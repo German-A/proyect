@@ -1,6 +1,10 @@
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+<style>
+  .select2-container {
+    min-width: 200px;
 
-
+  }
+</style>
+1
 <!-- Modal -->
 <div class="modal fade" id="modalRegistro" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-lg">
@@ -24,20 +28,7 @@
 
           </select>
 
-
-          </body>
-
-          </html>
-          <script>
-            $(document).ready(function() {
-              $(function() {
-                $('.js-example-basic-single').select2();
-
-
-
-              });
-            });
-          </script>
+          <br><br>
 
 
 
@@ -52,3 +43,6 @@
     </div>
   </div>
 </div>
+<script>
+  
+</script>
