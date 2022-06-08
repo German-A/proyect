@@ -15,10 +15,9 @@ $idmaestria = $año->listaFacultadpostgrado();
 
 ?><br><br>
 
-<h3 class="text-center">EGRESADOS - 2021</h3>
 
 <br>
-<div class="row" style="margin: auto;">
+<!-- <div class="row" style="margin: auto;">
     <div class="col-md-6 col-lg-4">
         <a target="_blank" href="https://docs.google.com/spreadsheets/d/1v8pgqvTEWWA_QkMyxV1aTjt2lVYJligto6tNGKtp2Hk/edit?usp=sharing" class="linkw">
             <div class="widget-small info coloured-icon"><i class="icon fas fa-graduation-cap"></i>
@@ -58,10 +57,23 @@ $idmaestria = $año->listaFacultadpostgrado();
         <h5>Al 31 de Diciembre 2021</h5>
     </div>
 </div>
-
+ -->
 
 
 <h3 class="text-center">EGRESADOS - 2022</h3>
+
+<br>
+<div class="d-flex justify-content-center">
+    <div class="widget-small info coloured-icon"><i class="icon fas fa-graduation-cap"></i>
+        <div class="">&nbsp&nbsp&nbsp&nbsp
+            <h4>&nbsp&nbsp Total de Egresados</h4>
+            <h4><b>&nbsp&nbsp&nbsp1195</b></h4>
+        </div>
+    </div>
+
+
+
+</div>
 
 <br>
 <div class="row" style="margin: auto;">
@@ -70,7 +82,7 @@ $idmaestria = $año->listaFacultadpostgrado();
             <div class="widget-small info coloured-icon"><i class="icon fas fa-graduation-cap"></i>
                 <div class="info">
                     <h4>BACHILLERES</h4>
-                    <p><b>544</b></p>
+                    <p><b>634</b></p>
                 </div>
             </div>
         </a>
@@ -81,7 +93,7 @@ $idmaestria = $año->listaFacultadpostgrado();
             <div class="widget-small warning coloured-icon"><i class="icon fas fa-user-graduate"></i>
                 <div class="info">
                     <h4>TITULADOS</h4>
-                    <p><b>332</b></p>
+                    <p><b>529</b></p>
                 </div>
             </div>
         </a>
@@ -92,7 +104,7 @@ $idmaestria = $año->listaFacultadpostgrado();
             <div class="widget-small primary coloured-icon"><i class="icon fas fa-user-graduate"><span class="fas fa-user-graduate"></span></i>
                 <div class="info">
                     <h4>2° ESPECIALIDAD</h4>
-                    <p><b>17</b></p>
+                    <p><b>32</b></p>
                 </div>
             </div>
         </a>
@@ -168,7 +180,7 @@ $idmaestria = $año->listaFacultadpostgrado();
         height: 100%;
         background: #FFC90D;
         position: absolute;
-        
+
         z-index: 1;
         top: -800px;
         left: 0;
@@ -178,7 +190,7 @@ $idmaestria = $año->listaFacultadpostgrado();
     .amarillo:hover::after {
         top: 0;
         transition: .5s ease-in-out all;
-   
+
     }
 
 
@@ -186,7 +198,7 @@ $idmaestria = $año->listaFacultadpostgrado();
         position: relative;
         z-index: 2;
         transition: .2s ease all;
-    
+
     }
 </style>
 
@@ -222,17 +234,19 @@ $idmaestria = $año->listaFacultadpostgrado();
 
 
 <style>
-    .fondo{
+    .fondo {
         color: blue;
         border-color: #aaaaaa;
         border-width: 1px;
         border-style: solid;
-        border-bottom-right-radius: 80px;        
+        border-bottom-right-radius: 80px;
     }
-    .fondo:hover h1{ 
+
+    .fondo:hover h1 {
         color: white;
     }
-    .fondo:hover h5{ 
+
+    .fondo:hover h5 {
         color: white;
     }
 
@@ -241,7 +255,6 @@ $idmaestria = $año->listaFacultadpostgrado();
         background-color: #FFC90D;
         color: white;
     }
-
 </style>
 
 <div class="contedor90 pt-4 pb-4">
@@ -251,15 +264,15 @@ $idmaestria = $año->listaFacultadpostgrado();
     <div class="row d-flex justify-content-around ">
         <?php foreach ($idmaestria as $key => $fila) { ?>
             <div class="col-8 col-md-4 col-lg-3  fondo m-2">
-            <a href="javascript:void(0);"  class=" m-4  p-2 ">
-                <div class="col-12 text-right col-md-12">
-                    <h1 class="mostaza "><?php echo $fila['descripcion'] ?></h1>
-                    <br>
-                </div>
-                <div class="col-12 text-left col-md-12">
-                    <h5 class=""><?php echo $fila['nombreFacultad'] ?></h5>
-                </div>
-            </a>
+                <a href="javascript:void(0);" class=" m-4  p-2 ">
+                    <div class="col-12 text-right col-md-12">
+                        <h1 class="mostaza "><?php echo $fila['descripcion'] ?></h1>
+                        <br>
+                    </div>
+                    <div class="col-12 text-left col-md-12">
+                        <h5 class=""><?php echo $fila['nombreFacultad'] ?></h5>
+                    </div>
+                </a>
             </div>
 
         <?php } ?>

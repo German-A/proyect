@@ -181,7 +181,7 @@ window.addEventListener('load', function() {
 $(".idFacultad").select2({
     maximumSelectionLength: 1,
     ajax: {
-        url: " " + base_url + "/especialidades/getFacultad",
+        url: " " + base_url + "/Especialidades/getEscuelas",
         type: "post",
         dataType: 'json',
         delay: 250,

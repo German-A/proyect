@@ -58,25 +58,6 @@ class especialidades extends Controllers
 		die();
 	}
 
-	//facultades
-	public function getFacultad()
-	{
-		$search = "";
-
-		if ($_SESSION['permisosMod']['r']) {
-
-			if (!isset($_POST['palabraClave'])) {
-
-				$arrData = $this->model->selectIdio();
-			} else {
-				$search = $_POST['palabraClave'];
-
-				$arrData = $this->model->selectIdiom($search);
-			}
-			echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
-		}
-		die();
-	}
 
 	//obtener un baner para actualizar
 	public function getcantidades()
@@ -143,8 +124,6 @@ class especialidades extends Controllers
 		die();
 	}
 
-
-
 	//obtener un baner para actualizar
 	public function getone($idpersona)
 	{
@@ -183,7 +162,6 @@ class especialidades extends Controllers
 		}
 		die();
 	}
-
 
 	//insertar y actualizar los postgrado
 	public function setpostgrado()
@@ -229,7 +207,6 @@ class especialidades extends Controllers
 		die();
 	}
 
-
 	//listado de los banners
 	public function getpostgrado()
 	{
@@ -265,12 +242,11 @@ class especialidades extends Controllers
 		die();
 	}
 
+	/***************************************************************************
+	
+	PERFILES ACADEMICOS
 
-
-
-
-
-	/*PERFILES ACADEMICOS*/
+	 ****************************************************************************/
 	public function pefilesAcademicos()
 	{
 		if (empty($_SESSION['permisosMod']['r'])) {
@@ -286,33 +262,58 @@ class especialidades extends Controllers
 	public function getperfilesacademicos()
 	{
 
-			$arrData = $this->model->listaperfilesacademicos();
-			for ($i = 0; $i < count($arrData); $i++) {
-				$btnView = '';
-				$btnEdit = '';
-				$btnDelete = '';
-				if ($_SESSION['permisosMod']['r']) {
-					$btnView = '<button class="btn btn-info btn-sm fntView" onClick="fntView(' . $arrData[$i]['idperfilesacademicos'] . ')" title="Ver Banner"><i class="far fa-eye"></i></button>';
-				}
-				if ($_SESSION['permisosMod']['u']) {
-					if (($_SESSION['userData']['idrol'] == 1) || ($_SESSION['userData']['idrol'] == 2)) {
-						$btnEdit = '<button class="btn btn-primary  btn-sm fntEdit" onClick="fntEdit(this,' . $arrData[$i]['idperfilesacademicos'] . ')" title="Editar Banner"><i class="fas fa-pencil-alt"></i></button>';
-					} else {
-						$btnEdit = '<button class="btn btn-secondary btn-sm" disabled ><i class="fas fa-pencil-alt"></i></button>';
-					}
-				}
-				if ($_SESSION['permisosMod']['d']) {
-					if (($_SESSION['userData']['idrol'] == 1) || ($_SESSION['userData']['idrol'] == 2)) {
-						$btnDelete = '<button class="btn btn-danger btn-sm fntDelete" onClick="fntDelete(' . $arrData[$i]['idperfilesacademicos'] . ')" title="Eliminar Banner"><i class="far fa-trash-alt"></i></button>';
-					} else {
-						$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
-					}
-				}
-
-				$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
+		$arrData = $this->model->listaperfilesacademicos();
+		for ($i = 0; $i < count($arrData); $i++) {
+			$btnView = '';
+			$btnEdit = '';
+			$btnDelete = '';
+			if ($_SESSION['permisosMod']['r']) {
+				$btnView = '<button class="btn btn-info btn-sm fntView" onClick="fntView(' . $arrData[$i]['idperfilesacademicos'] . ')" title="Ver Banner"><i class="far fa-eye"></i></button>';
 			}
-			echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
-		
+			if ($_SESSION['permisosMod']['u']) {
+				if (($_SESSION['userData']['idrol'] == 1) || ($_SESSION['userData']['idrol'] == 2)) {
+					$btnEdit = '<button class="btn btn-primary  btn-sm fntEdit" onClick="fntEdit(this,' . $arrData[$i]['idperfilesacademicos'] . ')" title="Editar Banner"><i class="fas fa-pencil-alt"></i></button>';
+				} else {
+					$btnEdit = '<button class="btn btn-secondary btn-sm" disabled ><i class="fas fa-pencil-alt"></i></button>';
+				}
+			}
+			if ($_SESSION['permisosMod']['d']) {
+				if (($_SESSION['userData']['idrol'] == 1) || ($_SESSION['userData']['idrol'] == 2)) {
+					$btnDelete = '<button class="btn btn-danger btn-sm fntDelete" onClick="fntDelete(' . $arrData[$i]['idperfilesacademicos'] . ')" title="Eliminar Banner"><i class="far fa-trash-alt"></i></button>';
+				} else {
+					$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
+				}
+			}
+
+			$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
+		}
+		echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
+
 		die();
 	}
+	//facultades
+
+
+		//getCarreras
+		public function getEscuelas()
+		{
+			$search="";
+			
+			if ($_SESSION['permisosMod']['r']) {
+	
+				if(!isset($_POST['palabraClave'])){
+					
+					$arrData = $this->model->selectCarreras();
+				}else{
+					$search = $_POST['palabraClave'];
+				
+					$arrData = $this->model->selectCarrerass($search);
+					
+				}		
+				echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
+			}
+			die();
+		}
+
+		
 }

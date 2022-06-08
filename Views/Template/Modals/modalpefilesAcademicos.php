@@ -21,16 +21,18 @@
           <p class="text-primary">Todos los campos son obligatorios.</p>
 
 
-          <select class="js-example-basic-single" id="miCombo" style="width: 100%; ">
+          <select class="js-example-basic-single" id="id" name="id" style="width: 100%; ">
             <option>Seleccionar</option>
-            <option>aaaaa</option>
-            <option>vvvvvvvvvvv</option>
-
           </select>
 
           <br><br>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="nombres">nombres</label>
+              <input type="text" class="form-control" id="nombres" name="nombres" required="">
+            </div>
 
-
+          </div>
 
 
 
@@ -44,5 +46,5 @@
   </div>
 </div>
 <script>
-  
+
 </script>

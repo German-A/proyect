@@ -114,8 +114,28 @@ window.addEventListener('load', function() {
 }, false);
 
 $('.js-example-basic-single').select2({
-    dropdownParent: $("#modalRegistro")
+    dropdownParent: $("#modalRegistro"),
+    ajax: {
+        url: " " + base_url + "/especialidades/getEscuelas",
+        type: "post",
+        dataType: 'json',
+        delay: 250,
+        data: function(params) {
+            return {
+                palabraClave: params.term
+            };
+        },
+        processResults: function(response) {
+            return {
+                results: response,
+            };
+        },
+        cache: true,
+
+    }
 });
+
+
 
 //visualizar informacion 
 function fntView(idbtn) {

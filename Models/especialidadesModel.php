@@ -91,6 +91,39 @@
 			return $request;
 		}
 
+		
+	public function selectCarreras()
+	{
+		$response=null;
+		//$sql = "SELECT idTitulaciones,nombreTitulaciones from titulaciones where status!=0";
+		$sql = "SELECT idEscuela,nombreEscuela from escuela where status!=0";
+		$request = $this->select_all($sql);
+
+		foreach ($request as $user) {
+			$response[] = array(
+				"id" => $user['idEscuela'],
+				"text" => $user['nombreEscuela']
+			);
+		}
+
+		return $response;
+	}
+	public function selectCarrerass($search)
+	{	
+		//$sql = "SELECT idTitulaciones,nombreTitulaciones from titulaciones where status!=0";
+		$sql = "SELECT idEscuela,nombreEscuela from escuela where status!=0 and nombreEscuela LIKE '%$search%' ORDER BY nombreEscuela";
+		$request = $this->select_all($sql);
+
+		foreach ($request as $user) {
+			$response[] = array(
+				"id" => $user['idEscuela'],
+				"text" => $user['nombreEscuela']
+			);
+		}
+		return $response;
+	}
+
+
 
 
 
