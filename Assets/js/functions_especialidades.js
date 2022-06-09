@@ -178,10 +178,10 @@ window.addEventListener('load', function() {
 }, false);
 
 //get Facultades
-$(".idFacultad").select2({
-    maximumSelectionLength: 1,
+$('.js-example-basic-single').select2({
+    dropdownParent: $("#modalRegistro"),
     ajax: {
-        url: " " + base_url + "/Especialidades/getEscuelas",
+        url: " " + base_url + "/especialidades/getEscuelas",
         type: "post",
         dataType: 'json',
         delay: 250,
