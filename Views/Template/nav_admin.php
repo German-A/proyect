@@ -65,6 +65,10 @@
                         <?php if (!empty($_SESSION['permisos'][22]['r'])) { ?>
                             <li><a class="treeview-item" href="<?= base_url(); ?>/galeriavida2022"><i class="icon fa fa-circle-o"></i> galeriavida2022</a></li>
                         <?php } ?>
+                        <?php if (!empty($_SESSION['permisos'][23]['r'])) { ?>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/especialidades"><i class="icon fa fa-circle-o"></i>Trasnparencia</a></li>
+                        <?php } ?>
+
 
                     </ul>
                 </li>
@@ -96,9 +100,6 @@
                 </li>
             <?php } ?>
 
-            <?php if (!empty($_SESSION['permisos'][23]['r'])) { ?>
-                <li><a class="treeview-item" href="<?= base_url(); ?>/especialidades"><i class="icon fa fa-circle-o"></i>Especialidades</a></li>
-            <?php } ?>
 
 
             <!------------------------- modulo de empresa  ----------------------->

@@ -20,16 +20,19 @@
           <input type="hidden" id="id" name="id" value="">
           <p class="text-primary">Todos los campos son obligatorios.</p>
 
-
-          <select class="js-example-basic-single" id="id" name="id" style="width: 100%; ">
-            <option>Seleccionar</option>
-          </select>
-
-          <br><br>
           <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="nombres">nombres</label>
-              <input type="text" class="form-control" id="nombres" name="nombres" required="">
+            <div class="form-group col-md-12">
+              <label for="">Seleccionar Carrera:</label>
+              <select class="js-example-basic-single" id="escuela" name="escuela" style="width: 100%;">         
+              </select>
+            </div>
+          </div>
+
+
+          <div class="form-row">
+            <div class="form-group col-md-12">
+            <label for="">Archivo a subir:</label>
+              <input type="file" id="archivoSubido" name="archivoSubido">
             </div>
 
           </div>

@@ -22,8 +22,8 @@
 
           <div class="form-row">
             <div class="form-group col-md-9">
-              <label for="numeroresoulcion">Numero de Resolucion</label>
-              <input type="text" class="form-control" id="numeroresoulcion" name="numeroresoulcion" required="">
+              <label for="numeroresolucion">Numero de Resolucion</label>
+              <input type="text" class="form-control" id="numeroresolucion" name="numeroresolucion" required="">
             </div>
             <div class="form-group col-md-3">
               <label for="fecharesolucion">Fecha</label>
@@ -37,28 +37,47 @@
             </div>
           </div>
 
-
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="escuelaid">Elegir la Escuela</label>
+            </div>
+            <div class="form-group col-md-2">
+              <label for="bachiller">Bachilleres</label>
+            </div>
+            <div class="form-group col-md-2">
+              <label for="titulo">Titulados</label>
+            </div>
+            <div class="form-group col-md-2">
+              <label for="segundaespecialidad">2° Especialidades</label>
+            </div>
+            <div class="form-group col-md-2">
+              <label for="segundaespecialidad">Eliminar</label>
+            </div>
+          </div>
 
           <div id='items'>
             <div id='form'>
               <div class='form-row'>
                 <input type="hidden" class=" id">
                 <div class="form-group col-md-4">
-                  <label for="escuelaid">Elegir la Escuela</label>
-                  <select class="js-example-basic-single form-control " name="escuelaid" >
+       
+                  <select class="js-example-basic-single form-control " name="escuelaid">
                   </select>
                 </div>
                 <div class="form-group col-md-2">
-                  <label for="bachiller">Bachilleres</label>
+            
                   <input type="text" class="form-control" id="bachiller" name="bachiller" required="">
                 </div>
                 <div class="form-group col-md-2">
-                  <label for="titulo">Titulados</label>
+             
                   <input type="number" class="form-control" id="titulo" name="titulo" required="">
                 </div>
                 <div class="form-group col-md-2">
-                  <label for="segundaespecialidad">2° Especialidades</label>
+                  
                   <input type="number" class="form-control" id="segundaespecialidad" name="segundaespecialidad" required="">
+                </div>
+                <div class='col-md-1' style="text-align:center">
+                  <p class=" btn btn-outline-danger delete" onclick="quitarLote(this)">x</p>
                 </div>
               </div>
             </div>
@@ -90,28 +109,32 @@
     select();
   }
 
+  function quitarLote(element) {
+    document.getElementById("items").removeChild(element.parentElement.parentElement.parentElement);
+  }
+
   function select() {
     $('.js-example-basic-single').select2({
-    dropdownParent: $("#modalRegistro"),
-    ajax: {
+      dropdownParent: $("#modalRegistro"),
+      ajax: {
         url: " " + base_url + "/especialidades/getEscuelas",
         type: "post",
         dataType: 'json',
         delay: 250,
         data: function(params) {
-            return {
-                palabraClave: params.term
-            };
+          return {
+            palabraClave: params.term
+          };
         },
         processResults: function(response) {
-            return {
-                results: response,
-            };
+          return {
+            results: response,
+          };
         },
         cache: true,
 
-    }
-});
+      }
+    });
 
   }
 </script>
