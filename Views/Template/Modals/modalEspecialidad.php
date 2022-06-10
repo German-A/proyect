@@ -16,8 +16,8 @@
 
           <div class="form-row">
             <div class="form-group col-md-9">
-              <label for="numeroresoulcion">Numero de Resolucion</label>
-              <input type="text" class="form-control" id="numeroresoulcion" name="numeroresoulcion" required="">
+              <label for="numeroresolucion">Numero de Resolucion</label>
+              <input type="text" class="form-control" id="numeroresolucion" name="numeroresolucion" required="">
             </div>
             <div class="form-group col-md-3">
               <label for="fecharesolucion">Fecha</label>
@@ -31,7 +31,23 @@
             </div>
           </div>
 
-
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="escuelaid">Elegir la Escuela</label>
+            </div>
+            <div class="form-group col-md-2">
+              <label for="bachiller">Bachilleres</label>
+            </div>
+            <div class="form-group col-md-2">
+              <label for="titulo">Titulados</label>
+            </div>
+            <div class="form-group col-md-2">
+              <label for="segundaespecialidad">2° Especialidades</label>
+            </div>
+            <div class="form-group col-md-2">
+              <label for="segundaespecialidad">Eliminar</label>
+            </div>
+          </div>
 
           <div id='items'>
             <div id='form'>
@@ -43,16 +59,19 @@
                   </select>
                 </div>
                 <div class="form-group col-md-2">
-                  <label for="bachiller">Bachilleres</label>
+            
                   <input type="text" class="form-control" id="bachiller" name="bachiller" required="">
                 </div>
                 <div class="form-group col-md-2">
-                  <label for="titulo">Titulados</label>
+             
                   <input type="number" class="form-control" id="titulo" name="titulo" required="">
                 </div>
                 <div class="form-group col-md-2">
-                  <label for="segundaespecialidad">2° Especialidades</label>
+                  
                   <input type="number" class="form-control" id="segundaespecialidad" name="segundaespecialidad" required="">
+                </div>
+                <div class='col-md-1' style="text-align:center">
+                  <p class=" btn btn-outline-danger delete" onclick="quitarLote(this)">x</p>
                 </div>
               </div>
             </div>
@@ -82,6 +101,10 @@
     idsItem++;
     element.appendChild(clon);
     select();
+  }
+
+  function quitarLote(element) {
+    document.getElementById("items").removeChild(element.parentElement.parentElement.parentElement);
   }
 
   function select() {

@@ -54,25 +54,20 @@ document.addEventListener('DOMContentLoaded', function() {
         let formmodal = document.querySelector("#formmodal");
         formmodal.onsubmit = function(e) {
             e.preventDefault();
-            let strNombre = document.querySelector('#nombreArchivo').value;
-            let posicion = document.querySelector('#posicion').value;
+            let escuela = document.getElementById('escuela').value;
             const input = document.getElementById('archivoSubido');
             let id = document.querySelector('#id').value;
 
             if (id != 0) {
 
             } else {
-                if (strNombre == '' || posicion == '' || input.files['length'] == 0) {
+                if ( escuela == '' || input.files['length'] == 0) {
                     swal("Atención", "Todos los campos son obligatorios.", "error");
                     return false;
                 }
             }
 
-            //|| input.files['length']==0
-            if (strNombre == '' || posicion == '') {
-                swal("Atención", "Todos los campos son obligatorios.", "error");
-                return false;
-            }
+ 
             let elementsValid = document.getElementsByClassName("valid");
             for (let i = 0; i < elementsValid.length; i++) {
                 if (elementsValid[i].classList.contains('is-invalid')) {
@@ -82,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             divLoading.style.display = "flex";
             let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-            let ajaxUrl = base_url + '/Banner/set';
+            let ajaxUrl = base_url + '/especialidades/setPerfilesAcademicos';
             let formData = new FormData(formmodal);
             request.open("POST", ajaxUrl, true);
             request.send(formData);
@@ -230,8 +225,8 @@ function openModal() {
     document.querySelector('#id').value = "";
     document.querySelector('.modal-header').classList.replace("headerUpdate", "headerRegister");
     document.querySelector('#btnActionForm').classList.replace("btn-info", "btn-primary");
-    document.querySelector('#btnText').innerHTML = "Publicar Imagen";
-    document.querySelector('#titleModal').innerHTML = "Publicar Imagen en el Banner";
+    document.querySelector('#btnText').innerHTML = "Publicar Perfil Academico";
+    document.querySelector('#titleModal').innerHTML = "Publicar Perfil Academico";
     document.querySelector("#formmodal").reset();
     $('#modalRegistro').modal('show');
 }

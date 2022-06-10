@@ -81,23 +81,26 @@ class especialidades extends Controllers
 	public function set()
 	{
 		if ($_POST) {
-			if (empty($_POST['bachiller'])) {
+			if (empty($_POST['numeroresolucion'])) {
 				$arrResponse = array("status" => false, "msg" => 'Datos incorrectos en el Banner.');
 			} else {
 				$idUsuario = intval($_POST['id']);
 
+				$numeroresolucion = $_POST['numeroresolucion'];
+				$fecharesolucion = $_POST['fecharesolucion'];
+
+				$escuelaid = $_POST['escuelaid'];
 				$bachiller = $_POST['bachiller'];
 				$titulo = $_POST['titulo'];
 				$segundaespecialidad = $_POST['segundaespecialidad'];
-				$escuelaid = $_POST['escuelaid'];
-				$año = $_POST['año'];
+
 
 				$request_user = "";
 				if ($idUsuario == 0) {
 
 					$option = 1;
 
-					$insert = $this->model->register($bachiller, $titulo, $segundaespecialidad, $escuelaid, $año);
+					$insert = $this->model->register($bachiller, $titulo, $segundaespecialidad, $escuelaid );
 				} else {
 					$option = 2;
 
@@ -258,6 +261,8 @@ class especialidades extends Controllers
 		$data['page_functions_js'] = "functions_pefilesAcademicos.js";
 		$this->views->getView($this, "pefilesAcademicos", $data);
 	}
+
+
 	//listado de los perfiles academicos
 	public function getperfilesacademicos()
 	{
@@ -293,27 +298,91 @@ class especialidades extends Controllers
 	}
 	//facultades
 
-
-		//getCarreras
-		public function getEscuelas()
-		{
-			$search="";
-			
-			if ($_SESSION['permisosMod']['r']) {
-	
-				if(!isset($_POST['palabraClave'])){
-					
-					$arrData = $this->model->selectCarreras();
-				}else{
-					$search = $_POST['palabraClave'];
-				
-					$arrData = $this->model->selectCarrerass($search);
-					
-				}		
-				echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
-			}
-			die();
-		}
+	//insertar y actualizar los Banners
+	public function setPerfilesAcademicos()
+	{
+		if ($_POST) {
+			if (empty($_POST['escuela'])) {
+				$arrResponse = array("status" => false, "msg" => 'Datos incorrectos en el Banner.');
+			} else {
+				$idUsuario = intval($_POST['id']);
 
 		
+				$escuela = $_POST['escuela'];
+
+				$request_user = "";
+
+				if ($idUsuario == 0) {
+
+					$option = 1;
+
+					$ubicacionTemporal = $_FILES['archivoSubido']['tmp_name'];
+					$nombre = $_FILES['archivoSubido']['name'];
+
+					$nuevonombre =  $nombre;
+
+					if (!file_exists('Assets/archivos/perfilacademicos/')) {
+						mkdir('Assets/archivos/perfilacademicos/', 0777, true);
+						if (file_exists('Assets/archivos/perfilacademicos/')) {
+							if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/perfilacademicos/' . $nuevonombre)) {
+								$insert = $this->model->registerPerfilesAcademicos($escuela, $nuevonombre);
+							} else {
+								echo "no se pudo guardar ";
+							}
+						}
+					} else {
+						if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/perfilacademicos/' . $nuevonombre)) {
+							$insert = $this->model->registerPerfilesAcademicos($escuela, $nuevonombre);
+						} else {
+							echo "no se pudo guardar";
+						}
+					}
+
+
+
+				} else {
+					$option = 2;
+
+					$cantidadBanner = "";
+					$cantidadBanner = $this->model->cantidadBanner();
+
+					//Actualizar sin Imagen
+
+
+				}
+
+				if ($insert > 0) {
+					if ($option == 1) {
+						$arrResponse = array('status' => true, 'msg' => 'Datos guardados correctamente.');
+					} else {
+						$arrResponse = array('status' => true, 'msg' => 'Datos Actualizados correctamente.');
+					}
+				} else {
+					$arrResponse = array("status" => false, "msg" => 'No es posible almacenar los datos.');
+				}
+			}
+			echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+		}
+		die();
+	}
+
+	//getCarreras
+	public function getEscuelas()
+	{
+		$search = "";
+
+		if ($_SESSION['permisosMod']['r']) {
+
+			if (!isset($_POST['palabraClave'])) {
+
+				$arrData = $this->model->selectCarreras();
+			} else {
+				$search = $_POST['palabraClave'];
+
+				$arrData = $this->model->selectCarrerass($search);
+			}
+			echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
+		}
+		die();
+	}
 }

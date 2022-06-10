@@ -225,6 +225,22 @@
 			return $request;
 		}
 
+
+		public function registerPerfilesAcademicos($escuela, $nuevonombre){			
+			$this->escuela = $escuela;
+			$this->nuevonombre = $nuevonombre;
+			$return = 0;
+			$query_insert  = "INSERT INTO perfilesacademicos(escuelaid,archivo)
+								  VALUES(?,?)";
+	        	$arrData = array(
+        						$this->escuela,
+        						$this->nuevonombre
+							);
+	        	$request_insert = $this->insert($query_insert,$arrData);
+	        	$return = $request_insert;
+	        return $return;
+		}
+
 	
 		
 
