@@ -1,10 +1,4 @@
-<style>
-  .select2-container {
-    min-width: 200px;
 
-  }
-</style>
-1
 <!-- Modal -->
 <div class="modal fade" id="modalRegistro" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-lg">
@@ -32,8 +26,8 @@
           </div>
 
           <div class="form-row">
-            <div class="form-group col-md-9 text-center">
-              <button class="bt- btn-primary" onclick="nuevoItem()">agregar</button>
+            <div class="form-group col-md-12 text-center">
+              <button class="btn btn-primary" onclick="nuevoItem()">agregar</button>
             </div>
           </div>
 
@@ -43,9 +37,9 @@
             <div id='form'>
               <div class='form-row'>
                 <input type="hidden" class=" id">
-                <div class="form-group col-md-4">
-                  <label for="escuelaid">Elegir la Escuela</label>
-                  <select class="js-example-basic-single form-control " name="escuelaid" >
+                <div class="form-group col-md-6">
+                  <label  for="escuelaid">Elegir la Escuela</label>
+                  <select class="js-example-basic-single form-control"  name="escuelaid">
                   </select>
                 </div>
                 <div class="form-group col-md-2">
@@ -92,26 +86,26 @@
 
   function select() {
     $('.js-example-basic-single').select2({
-    dropdownParent: $("#modalRegistro"),
-    ajax: {
+      dropdownParent: $("#modalRegistro"),
+      ajax: {
         url: " " + base_url + "/especialidades/getEscuelas",
         type: "post",
         dataType: 'json',
         delay: 250,
         data: function(params) {
-            return {
-                palabraClave: params.term
-            };
+          return {
+            palabraClave: params.term
+          };
         },
         processResults: function(response) {
-            return {
-                results: response,
-            };
+          return {
+            results: response,
+          };
         },
         cache: true,
 
-    }
-});
+      }
+    });
 
   }
 </script>

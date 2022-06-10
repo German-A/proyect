@@ -1,10 +1,4 @@
-<style>
-  .select2-container {
-    min-width: 200px;
 
-  }
-</style>
-1
 <!-- Modal -->
 <div class="modal fade" id="modalRegistroPostgrado" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-lg">

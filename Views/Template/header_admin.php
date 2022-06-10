@@ -14,7 +14,7 @@
     
     <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/main.css">
 
-    <!-- <link rel="stylesheet" type="text/css" href="<?= media();?>/css/select2.min.css">  -->
+
 
 
     <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/style.css">
@@ -25,9 +25,9 @@
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
   
 
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" /> -->
 
-
+   <link rel="stylesheet" type="text/css" href="<?= media();?>/css/select2.min.css">
 
     
 
