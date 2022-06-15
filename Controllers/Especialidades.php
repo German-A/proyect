@@ -256,7 +256,7 @@ class especialidades extends Controllers
 			header("Location:" . base_url() . '/dashboard');
 		}
 		$data['page_tag'] = "Especialidades";
-		$data['page_title'] = "Banner <small>Unidad de Seguimiento del Egresado</small>";
+		$data['page_title'] = "Perfiles Academicos-<small>Unidad de Seguimiento del Egresado</small>";
 		$data['page_name'] = "USE-banner";
 		$data['page_functions_js'] = "functions_pefilesAcademicos.js";
 		$this->views->getView($this, "pefilesAcademicos", $data);
@@ -309,6 +309,8 @@ class especialidades extends Controllers
 
 		
 				$escuela = $_POST['escuela'];
+				$año = $_POST['año'];
+
 
 				$request_user = "";
 
@@ -325,14 +327,14 @@ class especialidades extends Controllers
 						mkdir('Assets/archivos/perfilacademicos/', 0777, true);
 						if (file_exists('Assets/archivos/perfilacademicos/')) {
 							if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/perfilacademicos/' . $nuevonombre)) {
-								$insert = $this->model->registerPerfilesAcademicos($escuela, $nuevonombre);
+								$insert = $this->model->registerPerfilesAcademicos($escuela, $nuevonombre,$año);
 							} else {
 								echo "no se pudo guardar ";
 							}
 						}
 					} else {
 						if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/perfilacademicos/' . $nuevonombre)) {
-							$insert = $this->model->registerPerfilesAcademicos($escuela, $nuevonombre);
+							$insert = $this->model->registerPerfilesAcademicos($escuela, $nuevonombre,$año);
 						} else {
 							echo "no se pudo guardar";
 						}

@@ -21,10 +21,15 @@
           <p class="text-primary">Todos los campos son obligatorios.</p>
 
           <div class="form-row">
-            <div class="form-group col-md-12">
+            <div class="form-group col-md-10">
               <label for="">Seleccionar Carrera:</label>
               <select class="js-example-basic-single" id="escuela" name="escuela" style="width: 100%;">         
               </select>
+            </div>
+
+            <div class="form-group col-md-2">
+            <label for="">Año</label>
+              <input type="date" id="año" name="año">
             </div>
           </div>
 
@@ -34,7 +39,6 @@
             <label for="">Archivo a subir:</label>
               <input type="file" id="archivoSubido" name="archivoSubido">
             </div>
-
           </div>
 
 

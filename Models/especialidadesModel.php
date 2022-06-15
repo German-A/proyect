@@ -217,7 +217,7 @@
 		/* perfiles academicos*/
 		public function listaperfilesacademicos()
 		{
-			$sql = "SELECT pa.idperfilesacademicos,pa.archivo,pa.status,e.nombreEscuela
+			$sql = "SELECT pa.idperfilesacademicos,pa.archivo,pa.año,pa.status,e.nombreEscuela
 			from perfilesacademicos pa
 			inner join escuela e on pa.escuelaid=e.idEscuela
 			where pa.status!=0";
@@ -226,15 +226,17 @@
 		}
 
 
-		public function registerPerfilesAcademicos($escuela, $nuevonombre){			
+		public function registerPerfilesAcademicos($escuela, $nuevonombre,$año){			
 			$this->escuela = $escuela;
 			$this->nuevonombre = $nuevonombre;
+			$this->año = $año;
 			$return = 0;
-			$query_insert  = "INSERT INTO perfilesacademicos(escuelaid,archivo)
-								  VALUES(?,?)";
+			$query_insert  = "INSERT INTO perfilesacademicos(escuelaid,archivo,año)
+								  VALUES(?,?,?)";
 	        	$arrData = array(
         						$this->escuela,
-        						$this->nuevonombre
+        						$this->nuevonombre,
+								$this->año
 							);
 	        	$request_insert = $this->insert($query_insert,$arrData);
 	        	$return = $request_insert;

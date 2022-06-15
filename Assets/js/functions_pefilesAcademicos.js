@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
             { "data": "idperfilesacademicos" },
             { "data": "archivo" },
             { "data": "nombreEscuela" },
+            { "data": "año" },
             { "data": "status" },
             { "data": "options" }
         ],

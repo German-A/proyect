@@ -30,6 +30,7 @@ getModal('modalpefilesAcademicos', $data);
                   <th>ID</th>
                   <th>Bachiller</th>
                   <th>Titulo</th>
+                  <th>Año</th>
                   <th>estado</th>
                   <th>opcine</th>
 
