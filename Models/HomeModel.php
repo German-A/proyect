@@ -1,146 +1,147 @@
-<?php 
+<?php
 
-	class HomeModel extends Mysql
+class HomeModel extends Mysql
+{
+	public function __construct()
 	{
-		public function __construct()
-		{
-			parent::__construct();
-		}
+		parent::__construct();
+	}
 
-		public function selectBanner()
-		{
-		
-			$sql = "SELECT NombreArchivo ,Posicion from banner WHERE Habilitado>0 order by Posicion desc";
-			$request = $this->select_all($sql);
-			return $request;
-		}
+	public function selectBanner()
+	{
 
-		public function selectBannervidaysaluda2022()
-		{
-		
-			$sql = "SELECT NombreArchivo ,Posicion from bannervida2022 WHERE Habilitado>0 order by Posicion asc";
-			$request = $this->select_all($sql);
-			return $request;
-		}
+		$sql = "SELECT NombreArchivo ,Posicion from banner WHERE Habilitado>0 order by Posicion desc";
+		$request = $this->select_all($sql);
+		return $request;
+	}
 
-		public function selectGaleriavidaysaluda2022()
-		{
-		
-			$sql = "SELECT NombreArchivo ,Posicion from galeriavida2022 WHERE Habilitado>0 order by Posicion asc";
-			$request = $this->select_all($sql);
-			return $request;
-		}
+	public function selectBannervidaysaluda2022()
+	{
+
+		$sql = "SELECT NombreArchivo ,Posicion from bannervida2022 WHERE Habilitado>0 order by Posicion asc";
+		$request = $this->select_all($sql);
+		return $request;
+	}
+
+	public function selectGaleriavidaysaluda2022()
+	{
+
+		$sql = "SELECT NombreArchivo ,Posicion from galeriavida2022 WHERE Habilitado>0 order by Posicion asc";
+		$request = $this->select_all($sql);
+		return $request;
+	}
 
 
 
-		public function selectManual()
-		{
-		
-			$sql = "SELECT Nombre,NombreArchivo from manuales  WHERE Habilitado>0 order by Posicion asc";
-		
-					$request = $this->select_all($sql);
-					return $request;
-		}
+	public function selectManual()
+	{
 
-		public function selectprimerManual()
-		{
-		
-			$sql = "SELECT NombreArchivo FROM manuales WHERE Habilitado ='1' ORDER BY IdManuales ASC LIMIT 1";
-					$request = $this->select_all($sql);
-					return $request;
-		}
-		
-		public function selectLegal()
-		{
-		
-			$sql = "SELECT Nombre,NombreArchivo	from basenacional WHERE Habilitado = '1' order by Posicion asc";
-			$request = $this->select_all($sql);
-			return $request;
-		}
-		public function selectLegalInicio()
-		{
-		
-			$sql = "SELECT Nombre,NombreArchivo	from basenacional WHERE Habilitado = '1' order by Posicion asc";
-			$request = $this->select_all($sql);
-			return $request;
-		}
+		$sql = "SELECT Nombre,NombreArchivo from manuales  WHERE Habilitado>0 order by Posicion asc";
 
-		public function selectinstitucional()
-		{
-		
-			$sql = "SELECT Nombre,NombreArchivo
+		$request = $this->select_all($sql);
+		return $request;
+	}
+
+	public function selectprimerManual()
+	{
+
+		$sql = "SELECT NombreArchivo FROM manuales WHERE Habilitado ='1' ORDER BY IdManuales ASC LIMIT 1";
+		$request = $this->select_all($sql);
+		return $request;
+	}
+
+	public function selectLegal()
+	{
+
+		$sql = "SELECT Nombre,NombreArchivo	from basenacional WHERE Habilitado = '1' order by Posicion asc";
+		$request = $this->select_all($sql);
+		return $request;
+	}
+	public function selectLegalInicio()
+	{
+
+		$sql = "SELECT Nombre,NombreArchivo	from basenacional WHERE Habilitado = '1' order by Posicion asc";
+		$request = $this->select_all($sql);
+		return $request;
+	}
+
+	public function selectinstitucional()
+	{
+
+		$sql = "SELECT Nombre,NombreArchivo
 			from baseintitucional WHERE Habilitado = '1' order by Posicion asc";
-			$request = $this->select_all($sql);
-			return $request;
-		}
-		public function selectprimerNacional()
-		{
-		
-			$sql = "SELECT NombreArchivo FROM basenacional WHERE Habilitado ='1' ORDER BY IdNacional ASC LIMIT 1";
-			$request = $this->select_all($sql);
-			return $request;
-		}
+		$request = $this->select_all($sql);
+		return $request;
+	}
+	public function selectprimerNacional()
+	{
 
-		public function selectCursosMOOC()
-		{
-		
-			$sql = "SELECT  Nombre,UrlVideo from cursosmooc WHERE Habilitado = '1' and TipoCursoMooc ='MOOC'  order by Posicion asc";
-			$request = $this->select_all($sql);
-			return $request;
-		}
+		$sql = "SELECT NombreArchivo FROM basenacional WHERE Habilitado ='1' ORDER BY IdNacional ASC LIMIT 1";
+		$request = $this->select_all($sql);
+		return $request;
+	}
 
-		public function selectCursosTUTORIALES()
-		{
-		
-			$sql = "SELECT  Nombre,UrlVideo from cursosmooc WHERE Habilitado = '1' and TipoCursoMooc ='TUTORIALES' order by Posicion asc";
-			$request = $this->select_all($sql);
-			return $request;
-		}
+	public function selectCursosMOOC()
+	{
 
-		public function selectCursosCAPACITACIONES()
-		{
-		
-			$sql = "SELECT  Nombre,UrlVideo from cursosmooc WHERE Habilitado = '1' and TipoCursoMooc ='CAPACITACIONES' order by Posicion asc";
-			$request = $this->select_all($sql);
-			return $request;
-		}
+		$sql = "SELECT  Nombre,UrlVideo from cursosmooc WHERE Habilitado = '1' and TipoCursoMooc ='MOOC'  order by Posicion asc";
+		$request = $this->select_all($sql);
+		return $request;
+	}
 
-		public function selectCursosPRINCIPAL()
-		{
-		
-			$sql = " SELECT UrlVideo FROM cursosmooc WHERE Habilitado ='1' ORDER BY idcursosmooc ASC LIMIT 1";
-			$request = $this->select_all($sql);
-			return $request;
-		}
+	public function selectCursosTUTORIALES()
+	{
+
+		$sql = "SELECT  Nombre,UrlVideo from cursosmooc WHERE Habilitado = '1' and TipoCursoMooc ='TUTORIALES' order by Posicion asc";
+		$request = $this->select_all($sql);
+		return $request;
+	}
+
+	public function selectCursosCAPACITACIONES()
+	{
+
+		$sql = "SELECT  Nombre,UrlVideo from cursosmooc WHERE Habilitado = '1' and TipoCursoMooc ='CAPACITACIONES' order by Posicion asc";
+		$request = $this->select_all($sql);
+		return $request;
+	}
+
+	public function selectCursosPRINCIPAL()
+	{
+
+		$sql = " SELECT UrlVideo FROM cursosmooc WHERE Habilitado ='1' ORDER BY idcursosmooc ASC LIMIT 1";
+		$request = $this->select_all($sql);
+		return $request;
+	}
 
 
-		public function empleosAll(){
+	public function empleosAll()
+	{
 
-			$sql = "SELECT em.idEmpleos,em.status,emp.nombreEmpresa,u.imagen,
+		$sql = "SELECT em.idEmpleos,em.status,emp.nombreEmpresa,u.imagen,
 			em.NombrePuesto,em.DescripcionPuesto,em.InformacionAdicional,em.LugarTrabajo,em.TrabajoRemoto,em.NumeroVacantes,em.Experiencias,
 			em.TipoContrato,em.JornadaLaboral,em.HorasSemanales,em.HorarioTrabajo,em.RemuneracionBruta,em.Contacto,em.FechaInico,em.FechaFin
 			from empleos em
 			inner join empresa emp on em.empresaid = emp.idempresa
 			inner join usuario u on u.idpersona =emp.personaid";
-			$request = $this->select_all($sql);
-			return $request;
+		$request = $this->select_all($sql);
+		return $request;
+	}
 
-		}
+	public function empleo($id)
+	{
 
-		public function empleo($id){
-
-			$sql = "SELECT * from empleos em
+		$sql = "SELECT * from empleos em
 			inner join empresa emp on em.empresaid = emp.idempresa
 			inner join usuario u on u.idpersona=emp.personaid
 			where em.idEmpleos=$id";
-			$request = $this->select_all($sql);
-			return $request;
+		$request = $this->select_all($sql);
+		return $request;
+	}
 
-		}
+	public function conferenciasAll()
+	{
 
-		public function conferenciasAll(){
-
-			$sql = "SELECT c.idConferencia idConferencia ,c.nombreConferencia nombreConferencia,day(c.fechaConferencia) as diafechaConferencia,
+		$sql = "SELECT c.idConferencia idConferencia ,c.nombreConferencia nombreConferencia,day(c.fechaConferencia) as diafechaConferencia,
 			MONTH(c.fechaConferencia) as mesfechaConferencia,year(c.fechaConferencia) as añofechaConferencia,c.fechaConferencia fechaConferencia,
 			c.nombreExpositor nombreExpositor,c.fotoExpositor fotoExpositor,c.cargoExpositor cargoExpositor,c.linkConferencia linkConferencia,
 			c.idEmpresa idEmpresa,e.idEmpresa as idEmpresa,e.nombreEmpresa nombreEmpresa,e.ruc ruc,e.Direccion Direccion,
@@ -150,88 +151,111 @@
 			inner join conferencia c on c.idEmpresa=e.idempresa
 			inner join usuario u on e.personaid=u.idpersona
 			where c.habilitado=1";
-			$request = $this->select_all($sql);
-			return $request;
+		$request = $this->select_all($sql);
+		return $request;
+	}
 
-		}
+	//modulo estadistica
+	public function selectañoEspecialidades()
+	{
+		$sql = "SELECT año,status FROM especialidades  where status>0  order by año asc ";
+		$request = $this->select_all($sql);
+		return $request;
+	}
 
-		//modulo estadistica
-		public function selectañoEspecialidades()
-		{		
-			$sql = "SELECT año,status FROM especialidades  where status>0  order by año asc ";
-			$request = $this->select_all($sql);
-			return $request;
-		}
-
-				//modulo estadistica
-		public function selectañoEspecialidadesporaño($año)
-		{		
-			$sql = "SELECT año , sum(bachiller) bachiller ,sum(titulo) titulo ,sum(segundaespecialidad) segundaespecialidad 
+	//modulo estadistica
+	public function selectañoEspecialidadesporaño($año)
+	{
+		$sql = "SELECT año , sum(bachiller) bachiller ,sum(titulo) titulo ,sum(segundaespecialidad) segundaespecialidad 
 			FROM especialidades  
 			where status>0 and año = $año 
 			group by año";
-			$request = $this->select_all($sql);
-			return $request;
-		}
+		$request = $this->select_all($sql);
+		return $request;
+	}
 
 
-		
-		public function getCantidades($año)
-		{		
-			$sql = "SELECT  año, sum(bachiller) bachiller ,sum(titulo) titulo ,sum(segundaespecialidad) segundaespecialidad 
+
+	public function getCantidades($año)
+	{
+		$sql = "SELECT  año, sum(bachiller) bachiller ,sum(titulo) titulo ,sum(segundaespecialidad) segundaespecialidad 
 			FROM especialidades  
 			where status>0 and año = $año 
 			group by año ";
-			$request = $this->select_all($sql);
-			return $request;
-		}
+		$request = $this->select_all($sql);
+		return $request;
+	}
 
-		/*ESPECIALIDADES*/
+	/*ESPECIALIDADES*/
 
-		public function SegundasEspecialidades()
-		{		
-			$sql = "SELECT descripcion
+	public function SegundasEspecialidades()
+	{
+		$sql = "SELECT descripcion
 			FROM segundaespecialidades 
 			where status>0";
-			$request = $this->select_all($sql);
-			return $request;
-		}
+		$request = $this->select_all($sql);
+		return $request;
+	}
 
-		public function doctorados()
-		{		
-			$sql = "SELECT descripcion
+	public function doctorados()
+	{
+		$sql = "SELECT descripcion
 			FROM doctorado 
 			where status>0";
-			$request = $this->select_all($sql);
-			return $request;
-		}
+		$request = $this->select_all($sql);
+		return $request;
+	}
 
-		/*lista de Factultades */
-		public function listaFacultadpostgrado()
-		{
-			$sql = "SELECT m.Facultadid,f.nombreFacultad,fi.descripcion
+	/*lista de Factultades */
+	public function listaFacultadpostgrado()
+	{
+		$sql = "SELECT m.Facultadid,f.nombreFacultad,fi.descripcion
 			from maestria m
 			inner join facultad f on m.Facultadid=f.idFacultad
 			inner join facultadiconos fi on fi.Facultadid=f.idFacultad
 			where m.status!=0
 			group by m.Facultadid";
-			$request = $this->select_all($sql);			
-			return $request;
-		}
-		
-		/*detalle de maestria*/
-		public function listaFacultadpostgradodetalle($id)
-		{
-			$sql = "SELECT tipopostgrado
+		$request = $this->select_all($sql);
+		return $request;
+	}
+
+	/*detalle de maestria*/
+	public function listaFacultadpostgradodetalle($id)
+	{
+		$sql = "SELECT tipopostgrado
 			from maestria m
 			inner join facultad f on m.Facultadid=f.idFacultad
 			where m.status!=0 and m.Facultadid=$id";
-			$request = $this->select_all($sql);			
+		$request = $this->select_all($sql);
+		return $request;
+	}
+
+
+	/*detalle de maestria*/
+	public function listaPerfilesAcademicos()
+	{
+		$sql = "SELECT f.idFacultad,f.nombreFacultad,fi.descripcion
+		from perfilesacademicos pa
+		inner join escuela e on pa.escuelaid=e.idEscuela
+		inner join facultad f on f.idFacultad=e.idFacultad
+		inner join facultadiconos fi on fi.Facultadid=f.idFacultad
+		where pa.status!=0
+		group by f.nombreFacultad";
+		$request = $this->select_all($sql);
+		return $request;
+	}
+
+		/*detalle de maestria*/
+		public function listaEscuelasPerfilesAcademicos()
+		{
+			$sql = "SELECT e.idEscuela,e.nombreEscuela
+			from perfilesacademicos pa
+			inner join escuela e on pa.escuelaid=e.idEscuela
+			inner join facultad f on f.idFacultad=e.idFacultad
+			inner join facultadiconos fi on fi.Facultadid=f.idFacultad
+			where pa.status!=0 and f.idFacultad =1
+			group by e.nombreEscuela";
+			$request = $this->select_all($sql);
 			return $request;
 		}
-		
-		
-
-
-	}
- ?>
+}

@@ -4,12 +4,12 @@
 <?php
 
 //require_once  "../Models/HomeModel.php";
-$año = new HomeModel();
+$home = new HomeModel();
 
-$perfiles = $año->selectañoEspecialidades();
-$segundasEspecialidades = $año->SegundasEspecialidades();
-$doctorados = $año->doctorados();
-$idmaestria = $año->listaFacultadpostgrado();
+
+$perfiles = $home->listaPerfilesAcademicos();
+
+$escuelas = $home->listaEscuelasPerfilesAcademicos();
 //$perfiless = $año->selectañoEspecialidadesporaño($id);
 
 
@@ -107,9 +107,9 @@ $idmaestria = $año->listaFacultadpostgrado();
         <h1 class="text-center">Perfiles de Egreso</h1>
     </div>
     <div class="row d-flex justify-content-around ">
-        <?php foreach ($idmaestria as $key => $fila) { ?>
+        <?php foreach ($perfiles as $key => $fila) { ?>
             <div class="col-8 col-md-4 col-lg-3  fondo m-2">
-                <a href="javascript:void(0);" class=" m-4  p-2 ">
+                <a href="javascript:void(0);" class=" m-4  p-2 " onclick="openModalSegundaEspecialidades(<?php echo $fila['idFacultad'] ?>)">
                     <div class="col-12 text-right col-md-12">
                         <h1 class="mostaza "><?php echo $fila['descripcion'] ?></h1>
                         <br>
@@ -127,145 +127,19 @@ $idmaestria = $año->listaFacultadpostgrado();
 
 
 <!-- Modal -->
-<!-- Modal -->
-
-
-<div class="modal fade" id="modalMaestria" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-body">
-
-                <div class="contedor80">
-                    <div class="row d-flex justify-content-around">
-                        <?php foreach ($idmaestria as $key => $fila) { ?>
-                            <a href="javascript:void(0);" onclick="openModal(<?= $fila['Facultadid'] ?>);" class="col-12 amarillo  col-md-3 text-center pt-3 pb-3 p-2 m-3">
-                                <div class="col-12 text-cente col-md-12">
-                                    <h1 class="t mostaza bg-white m-auto p-1 col-3 col-md-7"><?php echo $fila['descripcion'] ?></h1>
-                                    <br>
-                                </div>
-                                <div class="col-12 text-cente col-md-12">
-                                    <h5 class="t bluemedio">Maestría en <?php echo $fila['nombreFacultad'] ?></h5>
-                                </div>
-                                <div class="t col-12 text-cente col-md-12">
-                                    <p class="t bluemedio">Ver maestrías</p>
-                                </div>
-                            </a>
-                        <?php } ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="modal fade" id="modalRegistro" tabindex="-4" role="dialog" aria-hidden="true" style="overflow-y: scroll;">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-body">
-                <h4 class="bluemedio text-center" id="titulo"></h4>
-                <br>
-                <div class="row">
-                    <div class="col-12">
-                        <h5 class="bluemedio" id="titulo1"></h5>
-                        <p class="text-justify" id="descripcion">
-                        </p>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-12 col-lg-6">
-                        <h5 class="bluemedio" id="titulo2"></h5>
-                        <p class="text-justify" id="ventajas">
-
-                        </p>
-                    </div>
-                    <div class="col-12 mb-2 col-lg-6 text-center" id="imgmaestria">
-
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-8">
-
-                        <h5 class="bluemedio" id="titulo3"></h5>
-                        <p class="text-justify" id="mencion">
-
-                        </p>
-                    </div>
-
-                    <div class="col-4" id="linkmaestria">
-                        <br> <br>
-                        <br><br>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Doctorados -->
-<div class="modal fade" id="modalDoctorados" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-body">
-
-                <div class="row">
-                    <div class="col-12">
-                        <h1 class="text-center">Doctorados</h1>
-                    </div>
-                    <br>
-                    <div class="col-12">
-                        <h6>La Escuela de Posgrado de la UNT oferta a todos aquellos que han cursado estudios de maestría, un conjunto de 26 programas de doctorado que cubre un amplio rango de disciplinas científicas, de ingeniería y humanísticas. </h6>
-                    </div>
-                    <br><br>
-                    <div class="col-12 text-center">
-                        <img src="<?= media() ?>/images/postgrado/postGrado.jpg" style="max-height: 250px; max-height: 150px;">
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <?php foreach ($doctorados as $key => $fila) { ?>
-                        <div class="col-12 col-md-6">
-                            <h6><?php echo $fila['descripcion'] ?></h6>
-                        </div>
-                    <?php } ?>
-                </div>
-                <br>
-                <div class="col-12 m-auto">
-                    <a href="https://posgrado.unitru.edu.pe/doctorados/" target="_blank" class="btn btn-primary"><span>Más Información</span></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- SEGUNDAS ESPECIALIDADES -->
 <div class="modal fade" id="modalSegundasEspecialidades" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-body">
-
                 <div class="row">
-                    <div class="col-12">
-                        <h1 class="text-center">SEGUNDAS ESPECIALIDADES</h1>
-                    </div>
-                    <br>
-                    <div class="col-12 text-center">
-                        <img src="<?= media() ?>/images/postgrado/postGrado.jpg" style="max-height: 250px; max-height: 150px;">
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <?php foreach ($segundasEspecialidades as $key => $fila) { ?>
-                        <div class="col-12 col-md-3">
-                            <h6><?php echo $fila['descripcion'] ?></h6>
+                    <?php foreach ($escuelas as $key => $fila) { ?>
+                        <div class="col-12 col-md-12 text-center">
+                            <h6><?php echo $fila['nombreEscuela'] ?></h6>
                         </div>
                     <?php } ?>
                 </div>
-
             </div>
         </div>
     </div>
@@ -641,15 +515,100 @@ $idmaestria = $año->listaFacultadpostgrado();
         }
     }
 
-    function openModalMaestrias() {
-        $('#modalMaestria').modal('show');
-    }
 
-    function openModalDoctorados() {
-        $('#modalDoctorados').modal('show');
-    }
-
-    function openModalSegundaEspecialidades() {
+    function openModalSegundaEspecialidades(id) {
+        console.log(id);
         $('#modalSegundasEspecialidades').modal('show');
     }
+</script>
+
+
+<script type="text/javascript">
+    function tiempoReal() {
+        var tabla = $.ajax({
+            url: " " + base_url + "/empleos/getBanners",
+            dataType: 'text',
+            async: false
+        }).responseText;
+
+        document.getElementById("miTabla").innerHTML = tabla;
+    } //setInterval(tiempoReal, 1000);
+
+    function cargarFunciones() {
+        tiempoReal();
+    }
+
+    window.onload = cargarFunciones;
+</script>
+
+
+
+<script type="text/javascript">
+    function BuscarProducto() {
+        $.ajax({
+                method: "POST",
+                url: " " + base_url + "/empleos/getBanners/" + $("#producto").val(),
+            })
+            .done(function(text) {
+                json = JSON.parse(text);
+                console.log(json[0].nombreEmpresa);
+                listado = '';
+                for (i = 0; i < json.length; i++) {
+
+                    listado = listado +
+                        ` 
+            <div class="col-12 col-md-6">     
+          <div class="card">
+          <div class="card-header ">
+            <h3 class="text-primary">` + json[i].nombreEmpresa + `</h3>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-8">
+                <h4>` + json[i].NombrePuesto + `</h4>
+                <h6 class=" text-sm"><b>DescripcionPuesto: </b>
+                  <br>` + json[i].DescripcionPuesto + `
+                </h6>
+              </div>
+              <div class="col-4">
+
+                  <img class="col-12" src="<?= base_url(); ?>/Assets/archivos/empresa/` + json[i].imagen + `" style="width: 200px; height: 50px; border-radius: 10% ;" alt="User Image">
+
+              </div>
+            </div>
+            <div class="row">  
+                <h6 class=""><b>Carreras: </b>&nbsp;&nbsp;` + json[i].escuelaid + `</h6>
+            </div>
+            <div class="row">
+              <ul class="ml-4 mb-0 fa-ul ">
+                <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span>
+                  <h5><b>Tipo De Contrato: </b>
+                    <td>` + json[i].TipoContrato + `</td>
+                </li>
+                </h4>
+              </ul>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="text-right">
+              <a href="javascript:void(0)" class="btn btn-sm btn-primary" onclick="verOfertaEmpleo(` + json[i].idEmpleos + `)"> <i class="fas fa-user"></i> VER MÁS
+              </a>
+            </div>
+          </div>
+        </div>
+        <br>
+      </div>`;
+
+                }
+
+
+                $("#div_productos").html(listado);
+            });
+    } //setInterval(tiempoReal, 1000);
+
+    function cargarFunciones() {
+        BuscarProducto();
+    }
+
+    window.onload = cargarFunciones;
 </script>
