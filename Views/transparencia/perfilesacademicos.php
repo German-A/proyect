@@ -558,28 +558,28 @@ $escuelas = $home->listaEscuelasPerfilesAcademicos();
                     listado = listado +
                         ` 
             <div class="col-12 col-md-6">     
-          <div class="card">
-          <div class="card-header ">
-            <h3 class="text-primary">` + json[i].nombreEmpresa + `</h3>
-          </div>
-          <div class="card-body">
-            <div class="row">
-              <div class="col-8">
-                <h4>` + json[i].NombrePuesto + `</h4>
-                <h6 class=" text-sm"><b>DescripcionPuesto: </b>
-                  <br>` + json[i].DescripcionPuesto + `
-                </h6>
-              </div>
-              <div class="col-4">
+                <div class="card">
+                <div class="card-header ">
+                    <h3 class="text-primary">` + json[i].nombreEmpresa + `</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                    <div class="col-8">
+                        <h4>` + json[i].NombrePuesto + `</h4>
+                        <h6 class=" text-sm"><b>DescripcionPuesto: </b>
+                        <br>` + json[i].DescripcionPuesto + `
+                        </h6>
+                    </div>
+                    <div class="col-4">
 
-                  <img class="col-12" src="<?= base_url(); ?>/Assets/archivos/empresa/` + json[i].imagen + `" style="width: 200px; height: 50px; border-radius: 10% ;" alt="User Image">
+                        <img class="col-12" src="<?= base_url(); ?>/Assets/archivos/empresa/` + json[i].imagen + `" style="width: 200px; height: 50px; border-radius: 10% ;" alt="User Image">
 
-              </div>
-            </div>
-            <div class="row">  
-                <h6 class=""><b>Carreras: </b>&nbsp;&nbsp;` + json[i].escuelaid + `</h6>
-            </div>
-            <div class="row">
+                    </div>
+                    </div>
+                    <div class="row">  
+                        <h6 class=""><b>Carreras: </b>&nbsp;&nbsp;` + json[i].escuelaid + `</h6>
+                    </div>
+                    <div class="row">
               <ul class="ml-4 mb-0 fa-ul ">
                 <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span>
                   <h5><b>Tipo De Contrato: </b>
