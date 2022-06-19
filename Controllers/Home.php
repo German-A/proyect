@@ -36,4 +36,22 @@ class Home extends Controllers
 
 		die();
 	}
+
+
+	//obtener un baner para actualizar
+	public function getfacultadPerfiles($id)
+	{	
+
+		if ($id > 0) {
+			$arrData = $this->model->listaEscuelasPerfilesAcademicos($id);
+			if (empty($arrData)) {
+				$arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
+			} else {
+				$arrResponse = array('status' => true, 'data' => $arrData);
+			}
+			echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+		}
+
+		die();
+	}
 }

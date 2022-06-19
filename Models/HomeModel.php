@@ -245,17 +245,17 @@ class HomeModel extends Mysql
 		return $request;
 	}
 
-		/*detalle de maestria*/
-		public function listaEscuelasPerfilesAcademicos()
-		{
-			$sql = "SELECT e.idEscuela,e.nombreEscuela
-			from perfilesacademicos pa
-			inner join escuela e on pa.escuelaid=e.idEscuela
-			inner join facultad f on f.idFacultad=e.idFacultad
-			inner join facultadiconos fi on fi.Facultadid=f.idFacultad
-			where pa.status!=0 and f.idFacultad =1
-			group by e.nombreEscuela";
-			$request = $this->select_all($sql);
-			return $request;
-		}
+	/*detalle de maestria*/
+	public function listaEscuelasPerfilesAcademicos($id)
+	{
+		$sql = "SELECT e.idEscuela,e.nombreEscuela
+		from perfilesacademicos pa
+		inner join escuela e on pa.escuelaid=e.idEscuela
+		inner join facultad f on f.idFacultad=e.idFacultad
+		inner join facultadiconos fi on fi.Facultadid=f.idFacultad
+		where pa.status!=0 and f.idFacultad =$id
+		group by e.nombreEscuela";
+		$request = $this->select_all($sql);
+		return $request;
+	}
 }
