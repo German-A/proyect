@@ -15,15 +15,15 @@
           <p class="text-primary">Todos los campos son obligatorios.</p>
 
           <div class="form-row">
-            <div class="form-group col-md-7">
+            <div class="form-group col-md-12">
               <label for="numeroresolucion">Numero de Resolucion</label>
               <input type="text" class="form-control" id="numeroresolucion" name="numeroresolucion" required="">
             </div>
-            <div class="form-group col-md-3">
+            <div class="form-group col-md-9">
               <label for="numeroresolucion">Archivo</label>
-              <input type="file" id="archivoSubido" name="archivoSubido">
+              <input type="file" class="form-control" id="archivoSubido" name="archivoSubido">
             </div>
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-3">
               <label for="fecharesolucion">Fecha</label>
               <input type="date" class="form-control" id="fecharesolucion" name="fecharesolucion" required="">
             </div>
@@ -58,7 +58,7 @@
               <div class='form-row'>
                 <input type="hidden" class=" id">
                 <div class="form-group col-md-4">
-                  <select class="js-example-basic-single form-control"  name="escuelaid">
+                  <select class="js-example-basic-single form-control"  name="escuelaid" required="">
                   </select>
                 </div>
                 <div class="form-group col-md-2">            
