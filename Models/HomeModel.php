@@ -245,7 +245,7 @@ class HomeModel extends Mysql
 		return $request;
 	}
 
-	/*detalle de maestria*/
+	/*Escuelas que tienen perfil Academico*/
 	public function listaEscuelasPerfilesAcademicos($id)
 	{
 		$sql = "SELECT e.idEscuela,e.nombreEscuela
@@ -258,4 +258,41 @@ class HomeModel extends Mysql
 		$request = $this->select_all($sql);
 		return $request;
 	}
+
+		/*Escuelas que tienen perfil Academico*/
+		public function listaEscuelasPerfilesAcademicosAnios($id)
+		{
+			$sql = "SELECT e.idEscuela,e.nombreEscuela,YEAR(pa.año) as año,pa.archivo
+			from perfilesacademicos pa
+			inner join escuela e on pa.escuelaid=e.idEscuela
+			inner join facultad f on f.idFacultad=e.idFacultad
+			inner join facultadiconos fi on fi.Facultadid=f.idFacultad
+			where pa.status!=0 and e.idEscuela=$id
+			";
+			$request = $this->select_all($sql);
+			return $request;
+		}
+
+		/*año*/
+		public function cantidadvisitas()
+		{
+			$sql = "SELECT idanios,cantidad 
+			FROM anios";
+			$request = $this->select($sql);
+			return $request;
+		}
+
+		
+		public function updatevisitas($idanios,$visitas){
+			$this->idanios = $idanios;
+			$this->visitas = $visitas;
+
+			$sql = "UPDATE anios SET cantidad=?
+			WHERE idanios = $this->idanios ";
+					$arrData = array(
+					$this->visitas);
+	
+				$request = $this->update($sql,$arrData);
+	        return $request;
+		}
 }

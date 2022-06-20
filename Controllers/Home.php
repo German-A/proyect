@@ -40,8 +40,7 @@ class Home extends Controllers
 
 	//obtener un baner para actualizar
 	public function getfacultadPerfiles($id)
-	{	
-
+	{
 		if ($id > 0) {
 			$arrData = $this->model->listaEscuelasPerfilesAcademicos($id);
 			if (empty($arrData)) {
@@ -51,6 +50,41 @@ class Home extends Controllers
 			}
 			echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
 		}
+		die();
+	}
+
+	//obtener un baner para actualizar
+	public function getfacultadPerfilesAnios($id)
+	{
+		if ($id > 0) {
+			$arrData = $this->model->listaEscuelasPerfilesAcademicosAnios($id);
+			if (empty($arrData)) {
+				$arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
+			} else {
+				$arrResponse = array('status' => true, 'data' => $arrData);
+			}
+			echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+		}
+		die();
+	}
+
+	//obtener un baner para actualizar
+	public function cantidadvisitas()
+	{
+
+		$arrData = $this->model->cantidadvisitas();
+		$idanios = $arrData['idanios'];
+		$visitas = $arrData['cantidad'] + 1;
+
+		$arrData = $this->model->updatevisitas($idanios,$visitas);
+		$arrData = $this->model->cantidadvisitas();
+		
+		if (empty($arrData)) {
+			$arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
+		} else {
+			$arrResponse = array('status' => true, 'data' => $arrData);
+		}
+		echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
 
 		die();
 	}

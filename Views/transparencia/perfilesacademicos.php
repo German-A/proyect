@@ -11,96 +11,8 @@ $perfiles = $home->listaPerfilesAcademicos();
 
 
 //$perfiless = $año->selectañoEspecialidadesporaño($id);
-
-
 ?><br><br>
 
-
-
-
-<style>
-    .contedor80 {
-        max-width: 80%;
-        margin: auto;
-    }
-
-    .contedor90 {
-        max-width: 100%;
-        margin: auto;
-    }
-
-    @media (min-width: 1024px) {
-        .contedor90 {
-            max-width: 1000px;
-            margin: auto;
-        }
-    }
-
-
-
-    .amarillo {
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .amarillo::after {
-        content: "";
-        width: 100%;
-        height: 100%;
-        background: #FFC90D;
-        position: absolute;
-
-        z-index: 1;
-        top: -800px;
-        left: 0;
-        transition: .5s ease-in-out all;
-    }
-
-    .amarillo:hover::after {
-        top: 0;
-        transition: .5s ease-in-out all;
-
-    }
-
-
-    .amarillo .t {
-        position: relative;
-        z-index: 2;
-        transition: .2s ease all;
-
-    }
-</style>
-
-
-<style>
-    .fondo {
-        color: blue;
-        border-color: #aaaaaa;
-        border-width: 1px;
-        border-style: solid;
-        border-bottom-right-radius: 80px;
-    }
-
-    .fondo:hover h1 {
-        color: white;
-    }
-
-    .fondo:hover h5 {
-        color: white;
-    }
-
-
-    .fondo:hover {
-        background-color: #FFC90D;
-        color: white;
-    }
-</style>
 
 <div class="contedor90 pt-4 pb-4">
     <div class="col-12 text-center">
@@ -125,7 +37,6 @@ $perfiles = $home->listaPerfilesAcademicos();
 </div>
 
 
-
 <!-- Modal -->
 
 <!-- SEGUNDAS ESPECIALIDADES -->
@@ -133,15 +44,32 @@ $perfiles = $home->listaPerfilesAcademicos();
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-body">
-                <div class="row">
-                    <div id="escuelas">
+                <div class="row d-flex justify-content-center" id="escuelas">
 
-                    </div>
+
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+<!-- SEGUNDAS ESPECIALIDADES POR AÑO -->
+<div class="modal fade" id="modalPerfilesAño" tabindex="0" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class=" d-flex justify-content-center" id="escuelasPefilesaño">
+                 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br><br><br><br><br><br>
+
+
 
 <?php footer($data); ?>
 
@@ -175,25 +103,56 @@ $perfiles = $home->listaPerfilesAcademicos();
             url: " " + base_url + "/home/getfacultadPerfiles/" + id,
             dataType: 'json',
             success: function(data) {
-                if (data.status) {              
+                if (data.status) {
                     console.log(data.data[0].idEscuela);
                     console.log(data.data[0].nombreEscuela);
                     listado = '';
 
                     for (i = 0; i < data.data.length; i++) {
 
-                    listado = listado + 
+                        listado = listado +
                         `
-                        <div class="col-12 col-md-12 text-center">
-                            <h6>`+data.data[i].nombreEscuela+`</h6>
-                        </div>
+                            <a href="javascript:void(0);" class="pefilescuela mb-2 p-3 col-10 bgbluemedio" onclick="openModalSegundaEspecialidadesporaño(` + data.data[i].idEscuela + `)">
+                                <div class="text-center  mb-2">
+                                    <h5 class="blanco azul">` + data.data[i].nombreEscuela + `</h5>
+                                </div>
+                            </a>
                         `;
                     }
-
                     $("#escuelas").html(listado);
                 }
-
                 $('#modalPerfiles').modal('show');
+            }
+        });
+    }
+
+    function openModalSegundaEspecialidadesporaño(id) {
+        $.ajax({
+            method: "post",
+            url: " " + base_url + "/home/getfacultadPerfilesAnios/" + id,
+            dataType: 'json',
+            success: function(data) {
+                if (data.status) {
+                    console.log(data.data[0].idEscuela);
+                    console.log(data.data[0].archivo);
+                    listado = '';
+
+                    for (i = 0; i < data.data.length; i++) {
+                        listado = listado +
+                        `    
+                           
+                            <a class="pefilescuela m-2 p-3 col-3 bgbluemedio" href="<?= media(); ?>/archivos/perfilacademicos/` + data.data[i].archivo + `" target="_blank">
+                        <div class="text-center  ">
+                            <h6 class="blanco azul">` + data.data[i].año + `</h6>
+                        </div>
+                    </a>
+                        `;
+                    }
+                    $("#escuelasPefilesaño").html(listado);
+                }
+                $('#modalPerfiles').modal('hide');
+
+                $('#modalPerfilesAño').modal('show');
 
 
             }

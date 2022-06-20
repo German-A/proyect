@@ -4,15 +4,15 @@ obj($data);
 ?>
 
 <?php
-  //require_once  "../Models/HomeModel.php";
-  $obj = new HomeModel();
-  $perfiles = $obj->selectBanner();
-  $legal = $obj->selectLegalInicio();
+//require_once  "../Models/HomeModel.php";
+$obj = new HomeModel();
+$perfiles = $obj->selectBanner();
+$legal = $obj->selectLegalInicio();
 ?>
 
 <div class="contenedorPrincipal ">
 
-<br>
+  <br>
 
   <div class="swiper mySwiper" data-aos="fade-down" data-aos-duration="500">
     <div class="swiper-wrapper">
@@ -29,8 +29,8 @@ obj($data);
 
   <br>
 
-  <div class="col-12 d-flex justify-content-center" >
-    <div class="col-10 col-md-6 col-xl-5 col-xg-6 p-1  text-center" style="border-radius:20px; background-color: var(--amarillo-mostaza);" >
+  <div class="col-12 d-flex justify-content-center">
+    <div class="col-10 col-md-6 col-xl-5 col-xg-6 p-1  text-center" style="border-radius:20px; background-color: var(--amarillo-mostaza);">
       <h5 class="blanco p-1">Unidad de Seguimiento del Egresado UNT</h5>
     </div>
   </div>
@@ -40,7 +40,7 @@ obj($data);
   <div class="col-12 d-flex justify-content-center text-center">
     <div class="col-4 col-md-3" data-aos="fade-down-left">
       <h2 class="mostaza" style="font-size: 35px;"><b>98%</b></h2>
-      <h5 class="blueoscuro">De nuestros egresados <big><strong >actualmente trabajan</strong></big></h5>
+      <h5 class="blueoscuro">De nuestros egresados <big><strong>actualmente trabajan</strong></big></h5>
     </div>
     <div class="col-4 col-md-3" data-aos="fade-down">
       <h2 class="mostaza" style="font-size: 35px;">3366</h2>
@@ -90,7 +90,7 @@ obj($data);
 
 
   <br><br>
-  <h2 class="mostaza text-center mb-5"  data-aos="fade-down">PLATAFORMAS</h2>
+  <h2 class="mostaza text-center mb-5" data-aos="fade-down">PLATAFORMAS</h2>
 
 
   <div class="row d-flex justify-content-around text-center" style="max-width: 80%; margin:auto">
@@ -152,7 +152,7 @@ obj($data);
       <div class="cont-titulo">
         <h5 class="bluemedio text-area">DIRECTOR DE LA UNIDAD DE <br> SEGUIMIENTO DEL EGRESADO</h5>
       </div>
-      <img class="equipoimg" src="<?= media(); ?>/img/sosa.png" alt=""> 
+      <img class="equipoimg" src="<?= media(); ?>/img/sosa.png" alt="">
       <div class="cont-info">
         <br>
         <h6>EDUARDO TEÓFILO <br> SOSA ANCAJIMA</h6>
@@ -177,7 +177,7 @@ obj($data);
       <img class="equipoimg" src="<?= media(); ?>/img/JEAN.png" alt="">
       <div class="col-4 cont-info">
         <br>
-        <h6>JEAN PÁUL<br>  ROMERO LOBATÓN </h6>
+        <h6>JEAN PÁUL<br> ROMERO LOBATÓN </h6>
         <p><small>INGENIERÍA DE SISTEMAS</small></p>
       </div>
     </div><br><br><br>
@@ -212,8 +212,10 @@ obj($data);
 
 
 
+
   </body>
 
 </div>
 
 <?php footer($data); ?>
+

@@ -45,12 +45,48 @@
                     <button class="input bg-warning enviar pt-2 pb-2 pl-5 pr-5 text-white" type="submit" value="Enviar">
                         <h4>ENVIAR</h4>
                     </button>
+                    <div class="p-3 text-center" id="visitas">    
+
+                    </div>
 
                 </div>
             </div>
         </form>
     </div>
 </footer>
+
+<script>
+  function fecha() {
+
+    $.ajax({
+      method: "post",
+      url: " " + base_url + "/home/cantidadvisitas/",
+      dataType: 'json',
+      success: function(data) {
+        if (data.status) {
+          console.log(data['data']['cantidad']);
+     
+          listado = '';
+
+            listado = 
+              `
+                <h4>` + data['data']['cantidad'] + `</h4>
+                <h4>Visitantes</h4>
+                    
+                `;
+         
+          $("#visitas").html(listado);
+        }
+      
+      }
+    });
+  }
+
+  window.onload = function () {
+      console.log("function called...");
+      fecha();
+    }
+</script>
 
 
 

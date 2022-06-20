@@ -290,3 +290,54 @@ a:link, a:visited, a:active {
 .bgbluemedio{
   background-color:  var(--azul-medio);;  
 }
+
+
+/* PERFILES ACADEMICOS */
+
+/*#region perfiles*/
+
+.fondo {
+  color: blue;
+  border-color: #aaaaaa;
+  border-width: 1px;
+  border-style: solid;
+  border-bottom-right-radius: 80px;
+}
+
+.fondo:hover h1 {
+  color: white;
+}
+
+.fondo:hover h5 {
+  color: white;
+}
+
+.fondo:hover {
+  background-color: #FFC90D;
+  color: white;
+}
+
+.pefilescuela {
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px
+}
+
+.pefilescuela:hover {
+  background-color: white;
+  border: 3px solid #000;
+  color: var(--azul-medio);
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px
+}
+
+.pefilescuela:hover .azul {
+  color: var(--azul-medio);
+
+}
+
+.pefilborder {
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px
+}
+
+/*#endregion perfiles*/
