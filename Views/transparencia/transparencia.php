@@ -60,14 +60,14 @@ $idmaestria = $año->listaFacultadpostgrado();
  -->
 
 
-<h3 class="text-center">EGRESADOS - 2022</h3>
+<h3 class="text-center">EGRESADOS - 2021</h3>
 
 <br>
 <div class="d-flex justify-content-center">
     <div class="widget-small info coloured-icon"><i class="icon fas fa-graduation-cap"></i>
         <div class="">&nbsp&nbsp&nbsp&nbsp
             <h4>&nbsp&nbsp Total de Egresados</h4>
-            <h4><b>&nbsp&nbsp&nbsp1195</b></h4>
+            <h4><b>&nbsp&nbsp&nbsp3366</b></h4>
         </div>
     </div>
 
@@ -82,7 +82,7 @@ $idmaestria = $año->listaFacultadpostgrado();
             <div class="widget-small info coloured-icon"><i class="icon fas fa-graduation-cap"></i>
                 <div class="info">
                     <h4>BACHILLERES</h4>
-                    <p><b>634</b></p>
+                    <p><b>2117</b></p>
                 </div>
             </div>
         </a>
@@ -93,7 +93,7 @@ $idmaestria = $año->listaFacultadpostgrado();
             <div class="widget-small warning coloured-icon"><i class="icon fas fa-user-graduate"></i>
                 <div class="info">
                     <h4>TITULADOS</h4>
-                    <p><b>529</b></p>
+                    <p><b>1139</b></p>
                 </div>
             </div>
         </a>
@@ -104,7 +104,7 @@ $idmaestria = $año->listaFacultadpostgrado();
             <div class="widget-small primary coloured-icon"><i class="icon fas fa-user-graduate"><span class="fas fa-user-graduate"></span></i>
                 <div class="info">
                     <h4>2° ESPECIALIDAD</h4>
-                    <p><b>32</b></p>
+                    <p><b>110</b></p>
                 </div>
             </div>
         </a>
@@ -113,6 +113,6 @@ $idmaestria = $año->listaFacultadpostgrado();
 </div>
 <div class="d-flex align-items-end flex-column">
     <div class="p-2">
-        <h5>Al 01 de Junio 2022</h5>
+        <h5>Al 21 de Junio 2022</h5>
     </div>
 </div>
