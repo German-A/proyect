@@ -183,13 +183,13 @@ $legal = $obj->selectLegalInicio();
     </div><br><br><br>
     <div class="col-12 col-sm-5 col-md-5 col-lg-2 mb-2">
       <div class="cont-titulo ">
-        <h5 class="bluemedio text-area">ÁREA<br> LEGAL</h5>
+        <h5 class="bluemedio text-area">ÁREA DE<br> RELACIONES PÚBLICAS</h5>
       </div>
-      <img class="equipoimg" src="<?= media(); ?>/img/milena.png" alt="">
+      <img class="equipoimg" src="<?= media(); ?>/img/katyrodriguez.png" alt="">
       <div class="col-4 cont-info">
         <br>
-        <h6>MILENA ALEXANDRA <br> LÓPEZ ARIAS</h6>
-        <p><small>ABOGADA</small></p>
+        <h6>KATHERINE NOELY<br> RODRIGUEZ GUZMAN</h6>
+        <p><small>COMUNICADORA/INTERPRETE</small></p>
       </div>
 
     </div><br><br><br>
