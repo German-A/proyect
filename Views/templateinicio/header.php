@@ -39,9 +39,16 @@
         <nav class="main-nav">
             <ul class="menu " id="menu">
                 <img class="logo" src="<?= media(); ?>/archivos/logos/uselogoWhite.png" style="height: 80px;">
-                <li class="menu__item "><a scrollto href="home" class="menu__link  m select">INICIO</a></li>
+                <li class="menu__item "><a scrollto href="<?= base_url(); ?>/home" class="menu__link  m select">INICIO</a></li>
                 <li class="menu__item"><a href="<?= base_url(); ?>/manuales" class="menu__link m">CAPACITACIÓN</a></li>
-                <li class="menu__item"><a target="_blank" href="https://jobboard.universia.net/unitruoportunidades" class="menu__link m">BOLSA DE TRABAJO</a></li>
+                <!-- <li class="menu__item"><a target="_blank" href="https://jobboard.universia.net/unitruoportunidades" class="menu__link m">BOLSA DE TRABAJO</a></li> -->
+                <li class="menu__item container-submenu"><a href="#" class="menu__link submenu-btn">BOLSA DE TRABAJO&nbsp;<i class="fas fa-chevron-down"></i></a>
+                    <ul class="submenu">
+                        <li class="menu__item"><a href="<?= base_url(); ?>/transparencia" class="al menu__link">BOLSA DE TRABAJO UNT</a></li>
+                        <li class="menu__item"><a href="<?= base_url(); ?>/solicitudempleo" class="al menu__link">SOLICITUD DE OFERTA LABORAL</a></li>
+                        <li class="menu__item"><a href="<?= base_url(); ?>/transparencia/gradosytitulos" class="al menu__link">EMPLEOS REGIONALES</a></li>
+                    </ul>
+                </li>
                 <li class="menu__item container-submenu"><a href="#" class="menu__link submenu-btn">PLATAFORMA SISEU&nbsp;<i class="fas fa-chevron-down"></i></a>
                     <ul class="submenu">
                         <li class="menu__item"><a href="https://siseu-rep.sineace.gob.pe:6041/login" target="_blank" class="al menu__link">PROGRAMA DE ESTUDIOS</a></li>

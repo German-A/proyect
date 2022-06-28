@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         datatable.api().ajax.reload();
                         $('#modalRegistro').modal("hide");
                         formmodal.reset();
-                        swal("Usuarios", objData.msg, "success");
+                        swal("Perfil Academico", objData.msg, "success");
                     } else {
                         swal("Error", objData.msg, "error");
                     }
@@ -200,7 +200,7 @@ function fntDelete(IdBaner) {
 
         if (isConfirm) {
             let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-            let ajaxUrl = base_url + '/Banner/delete/' + IdBaner;
+            let ajaxUrl = base_url + '/especialidades/deleteperfilesacademico/' + IdBaner;
             let strData = "IdBaner=" + IdBaner;
             request.open("POST", ajaxUrl, true);
             request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");

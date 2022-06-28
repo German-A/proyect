@@ -29,7 +29,7 @@
 
             <div class="form-group col-md-2">
             <label for="">Año</label>
-              <input type="date" id="año" name="año">
+              <input type="date" id="año" name="año" required>
             </div>
           </div>
 

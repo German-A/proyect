@@ -100,7 +100,7 @@ class especialidades extends Controllers
 
 					$option = 1;
 
-					$insert = $this->model->register($bachiller, $titulo, $segundaespecialidad, $escuelaid );
+					$insert = $this->model->register($bachiller, $titulo, $segundaespecialidad, $escuelaid);
 				} else {
 					$option = 2;
 
@@ -290,7 +290,7 @@ class especialidades extends Controllers
 				}
 			}
 
-			$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
+			$arrData[$i]['options'] = '<div class="text-center"> ' . $btnDelete . '</div>';
 		}
 		echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
 
@@ -298,7 +298,7 @@ class especialidades extends Controllers
 	}
 	//facultades
 
-	//insertar y actualizar los Banners
+	//insertar y actualizar los perfiles academicos
 	public function setPerfilesAcademicos()
 	{
 		if ($_POST) {
@@ -307,7 +307,7 @@ class especialidades extends Controllers
 			} else {
 				$idUsuario = intval($_POST['id']);
 
-		
+
 				$escuela = $_POST['escuela'];
 				$año = $_POST['año'];
 
@@ -327,21 +327,18 @@ class especialidades extends Controllers
 						mkdir('Assets/archivos/perfilacademicos/', 0777, true);
 						if (file_exists('Assets/archivos/perfilacademicos/')) {
 							if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/perfilacademicos/' . $nuevonombre)) {
-								$insert = $this->model->registerPerfilesAcademicos($escuela, $nuevonombre,$año);
+								$insert = $this->model->registerPerfilesAcademicos($escuela, $nuevonombre, $año);
 							} else {
 								echo "no se pudo guardar ";
 							}
 						}
 					} else {
 						if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/perfilacademicos/' . $nuevonombre)) {
-							$insert = $this->model->registerPerfilesAcademicos($escuela, $nuevonombre,$año);
+							$insert = $this->model->registerPerfilesAcademicos($escuela, $nuevonombre, $año);
 						} else {
 							echo "no se pudo guardar";
 						}
 					}
-
-
-
 				} else {
 					$option = 2;
 
@@ -364,6 +361,27 @@ class especialidades extends Controllers
 				}
 			}
 			echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+		}
+		die();
+	}
+
+	//borrar los perfiles academicos
+	public function deleteperfilesacademico()
+	{
+		if ($_POST) {
+			if ($_SESSION['permisosMod']['d']) {
+				$IdBaner = intval($_POST['IdBaner']);
+				$requestDelete = $this->model->getOne($IdBaner);
+				//borrar documentos
+				//$requestDelete = $this->model->remove($IdBaner);
+				//@unlink('Assets/archivos/banner/' . $NombreArchivo['NombreArchivo']);
+				if ($requestDelete) {
+					$arrResponse = array('status' => true, 'msg' => 'Se ha eliminado el Banner');
+				} else {
+					$arrResponse = array('status' => false, 'msg' => 'Error al eliminar el Bnner.');
+				}
+				echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+			}
 		}
 		die();
 	}

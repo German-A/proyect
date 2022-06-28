@@ -95,7 +95,7 @@ $legal = $obj->selectLegalInicio();
 
   <div class="row d-flex justify-content-around text-center" style="max-width: 80%; margin:auto">
     <div class="plataform-use  col-md-6 col-lg-4 col-xl-4" data-aos="flip-up">
-      <a href="<?= base_url(); ?>/cursosmooc">
+      <a href="<?= base_url(); ?>/manuales">
         <img class="logosplaforma" src="<?= media(); ?>/archivos/logos/cursomooc.png" alt="">
         <br><br>
         <h5 class="text-cursosmooc text-center">CURSOS MOOC</h5>
