@@ -20,7 +20,9 @@
     <!-- barra de navegacion -->
 
     <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/cssjp.css">
-
+    
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<?= media();?>/css/select2.min.css">
 
 
     <title>UNIDAD DE SEGUIMIENTO DEL EGRESADO</title>
