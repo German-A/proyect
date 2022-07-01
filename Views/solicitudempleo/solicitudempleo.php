@@ -1,8 +1,8 @@
 <?php head($data); ?>
 
 <div class="row">
-    <div class="d-none d-xl-block col-md-2 bg-danger">
-        <img src="<?= media(); ?>/images/empleo/unt.jpg" alt="" style="max-width: 250px; height: 800px; object-fit: cover;">
+    <div class="d-none d-xl-block col-xl-2 ">
+        <img class="img-fluid" src="<?= media(); ?>/images/empleo/unt.jpg" alt="" style=" height: 100%; object-fit: cover;">
 
     </div>
     <div class="col-12 col-xl-10">
@@ -18,13 +18,8 @@
                 <h1 class="text-center">SOLICITUD DE <br> REQUERIMIENTO LABORAL</h1>
             </div>
         </div>
-        <br><br>
-        <div class="col-5 bg-primary">
-            <h1>prima</h1>
-        </div>
-        <div class="col-5 bg-secondary">
-            <h1>prima</h1>
-        </div>
+
+
 
         <form id="formmodal" name="formmodal" class="form-horizontal">
             <input type="hidden" id="id" name="id" value="">
@@ -33,13 +28,13 @@
             <div class="row">
 
                 <!-- izquierda -->
-                <div class="col-md-5">
+                <div class="col-md-6">
                     <div class="form-row">
-                        <h2 class="text-center">Acerca de la Oferta</h2>
+                        <h5 class="text-center">Datos de la Empresa</h5>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="nombreempresa">Datos de la Empres <span class="text-danger">*</span></label>
+                            <label for="nombreempresa">Nombre de la Empresa<span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="nombreempresa" name="nombreempresa" required="">
                         </div>
                         <div class="form-group col-md-6">
@@ -56,7 +51,7 @@
                         </div>
                     </div>
                     <div class="form-row">
-                        <h2 class="text-center">Acerca de la Oferta</h2>
+                        <h4 class="text-center">Acerca de la Oferta</h4>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-12">
@@ -76,28 +71,47 @@
                             <input type="text" class="form-control" id="LugarTrabajo" name="LugarTrabajo" required="">
                         </div>
                     </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="FechaFin">Fecha límite de postulación</label>
+                            <input type="date" class="form-control" name="FechaFin" id="FechaFin" placeholder="Ingresar Fecha Fin">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <h4 class="text-center">Acerca del Puesto</h4>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="DescripcionPuesto">Descripción del Puesto<span class="text-danger">*</span></label>
+                            <textarea type="text" class="form-control summernote" id="DescripcionPuesto" name="DescripcionPuesto" placeholder="Ingresar Descripción Puesto"></textarea>
+                        </div>
+                    </div>
+
+
                 </div>
 
                 <!-- derecha -->
-                <div class="col-md-5">
+                <div class="col-md-6">
                     <div class="form-row">
-                        <h2 class="text-center">Requisitos</h2>
+                        <h5 class="text-center">Requisitos</h5>
                     </div>
                     <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="nombreempresa">Datos de la Empres <span class="text-danger">*</span></label>
+                        <div class="form-group col-md-12">
+                            <label for="nombreempresa">Carreras Profesionales<span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="nombreempresa" name="nombreempresa" required="">
                         </div>
-                        <div class="form-group col-md-6">
-                            <label for="ruc">Ruc <span class="text-danger">*</span></label>
+                        <div class="form-group col-md-12">
+                            <label for="ruc">Grado Academico <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="ruc" name="ruc" required="">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="contacto">Contacto <span class="text-danger">*</span></label>
+                            <label for="contacto">Experiencia <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="contacto" name="contacto" required="">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="logo">Logo <span class="text-danger">*</span></label>
+                            <label for="logo">Idiomas <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="logo" name="logo" required="">
                         </div>
                     </div>
@@ -180,3 +194,28 @@
 
 
 <?php footer($data); ?>
+
+<script>
+    $(document).ready(function() {
+        $('.summernote').summernote({
+            toolbar: [
+                // [groupName, [list of button]]
+                ['style', ['clear']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['lineHeights', ['0.2']],
+
+            ]
+        });
+    });
+</script>
+
+
+<script>
+
+
+    //get Idiomas
+    $(".select2").select2({
+        
+    });
+    
+</script>
