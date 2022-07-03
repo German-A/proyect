@@ -33,19 +33,20 @@
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="ruc">Ruc <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control"  onchange="buscar()" id="ruc" name="ruc" x>
+                            <input type="text" class="form-control"  onchange="buscar()" id="ruc" name="ruc" required>
                         </div>
                         <div class="form-group col-md-8">
                             <label for="nombreempresa">Nombre de la Empresa<span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="nombreempresa" name="nombreempresa" x>
+                            <input type="text" class="form-control" id="nombreempresa" disabled name="nombreempresa" x>
                         </div>
+             
                         <div class="form-group col-md-8">
                             <label for="correo">Correo <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="correo" name="correo" x>
+                            <input type="text" class="form-control" id="correo" disabled name="correo" x>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="celular">Celular <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="celular" name="celular" x>
+                            <input type="text" class="form-control" id="celular" disabled name="celular" x>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="">Foto:</label>
@@ -237,7 +238,7 @@
 
 
 
-
+        var ruc = $("#ruc").val();
 
         var titulaciones = $("#titulaciones").val();
 
@@ -261,6 +262,11 @@
         var JornadaLaboral = $("#JornadaLaboral").val();
 
 
+        if (ruc == 0) {
+            console.log('paso');
+            swal("Atención!", "Debe Ingresar el número de Ruc", "warning");
+            return;
+        }
 
 
         // if (NombrePuesto == 0) {
@@ -373,24 +379,40 @@
 <script>
      function buscar() {
         var ruc = document.getElementById("ruc").value;
-
         cadena = "ruc=" + ruc;
-
+        // $.ajax({
+        //     type: "GET",
+        //     async: true,
+        //     url: 'https://consultaruc.win/api/ruc/'+ruc,
+        //     success: function(response) {            
+        //         console.log(response.result['razon_social']);
+        //         console.log(response.result['estado']);
+        //         console.log(response.result['condicion']);
+        //     }
+        // });
         $.ajax({
             type: "POST",
             async: true,
             url: "solicitudempleo/buscarruc",
             data: cadena,
-
             success: function(response) {
-                console.log(response);
-
-                var info = JSON.parse(response.data['nombreEmpresa']);
-                //console.log(info.data[0]['bachiller']);
-
-                //document.getElementById('correo').value = info.data[0]['bachiller'];
-                //document.getElementById('email').innerHTML = info.data[0]['titulo'];
-                //document.getElementById('segundaespecialidad').innerHTML = info.data[0]['segundaespecialidad'];
+                var info = JSON.parse(response);  
+                if(info.status==true){
+                    $("#nombreempresa").attr("disabled", true);
+                    $("#correo").attr("disabled", true);
+                    $("#celular").attr("disabled", true);
+                    document.getElementById('nombreempresa').value = info.data['nombreEmpresa'];
+                    document.getElementById('correo').value = info.data['email_user'];
+                    document.getElementById('celular').value = info.data['telefono'];
+                }
+                if(info.status==false){
+                    $("#nombreempresa").attr("disabled", false);
+                    $("#correo").attr("disabled", false);
+                    $("#celular").attr("disabled", false);
+                    document.getElementById('nombreempresa').value ="";
+                    document.getElementById('correo').value ="";
+                    document.getElementById('celular').value ="";
+                }
             }
         });
     }

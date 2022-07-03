@@ -10,6 +10,7 @@ $perfiles = $obj->selectBanner();
 $legal = $obj->selectLegalInicio();
 ?>
 
+
 <div class="contenedorPrincipal ">
 
   <br>

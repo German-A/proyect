@@ -20,9 +20,9 @@
     <!-- barra de navegacion -->
 
     <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/cssjp.css">
-    
+
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="<?= media();?>/css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/select2.min.css">
 
 
     <title>UNIDAD DE SEGUIMIENTO DEL EGRESADO</title>
@@ -34,6 +34,40 @@
 </head>
 
 <body>
+
+<style>#divLoading {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(254, 254, 255, .65);
+    z-index: 9999;
+    display: none;
+}
+
+#divLoading img {
+    width: 150px;
+    height: 150px;
+}
+</style>
+
+    <div class="pace  pace-inactive">
+        <div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+            <div class="pace-progress-inner"></div>
+        </div>
+        <div class="pace-activity"></div>
+    </div>
+
+    <div id="divLoading">
+        <div>
+            <img src="<?= media(); ?>/images/loading.svg" alt="Loading">
+        </div>
+    </div>
+
+
     <header>
         <span id="btnMenu" class="nav-bar">
             <h2><i class="fas fa-bars"></i></h2>
@@ -46,9 +80,9 @@
                 <!-- <li class="menu__item"><a target="_blank" href="https://jobboard.universia.net/unitruoportunidades" class="menu__link m">BOLSA DE TRABAJO</a></li> -->
                 <li class="menu__item container-submenu"><a href="#" class="menu__link submenu-btn">BOLSA DE TRABAJO&nbsp;<i class="fas fa-chevron-down"></i></a>
                     <ul class="submenu">
-                        <li class="menu__item"><a href="<?= base_url(); ?>/transparencia" class="al menu__link">BOLSA DE TRABAJO UNT</a></li>
+                        <li class="menu__item"><a href="https://jobboard.universia.net/unitruoportunidades" class="al menu__link">BOLSA DE TRABAJO UNT</a></li>
                         <li class="menu__item"><a href="<?= base_url(); ?>/solicitudempleo" class="al menu__link">SOLICITUD DE OFERTA LABORAL</a></li>
-                        <li class="menu__item"><a href="<?= base_url(); ?>/transparencia/gradosytitulos" class="al menu__link">EMPLEOS REGIONALES</a></li>
+                        <!-- <li class="menu__item"><a href="<?= base_url(); ?>/transparencia/gradosytitulos" class="al menu__link">EMPLEOS REGIONALES</a></li> -->
                     </ul>
                 </li>
                 <li class="menu__item container-submenu"><a href="#" class="menu__link submenu-btn">PLATAFORMA SISEU&nbsp;<i class="fas fa-chevron-down"></i></a>

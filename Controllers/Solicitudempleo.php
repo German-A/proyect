@@ -9,7 +9,6 @@ class solicitudempleo extends Controllers
 	//pagina Banner
 	public function solicitudempleo()
 	{
-
 		$data['page_tag'] = "Banner";
 		$data['page_title'] = "Banner <small>Unidad de Seguimiento del Egresado</small>";
 		$data['page_name'] = "USE-banner";
@@ -24,20 +23,13 @@ class solicitudempleo extends Controllers
 	public function getTitulaciones()
 	{
 		$search = "";
-
-
-
-
 		if (!isset($_POST['palabraClave'])) {
-
 			$arrData = $this->model->selectTitulaciones();
 		} else {
 			$search = $_POST['palabraClave'];
-
 			$arrData = $this->model->selectTitulacioness($search);
 		}
 		echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
-
 		die();
 	}
 
@@ -45,11 +37,7 @@ class solicitudempleo extends Controllers
 	public function getCarreras()
 	{
 		$search = "";
-
-
-
 		if (!isset($_POST['palabraClave'])) {
-
 			$arrData = $this->model->selectCarreras();
 		} else {
 			$search = $_POST['palabraClave'];
@@ -57,7 +45,6 @@ class solicitudempleo extends Controllers
 			$arrData = $this->model->selectCarrerass($search);
 		}
 		echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
-
 		die();
 	}
 
@@ -65,19 +52,13 @@ class solicitudempleo extends Controllers
 	public function getCompetencias()
 	{
 		$search = "";
-
-
-
 		if (!isset($_POST['palabraClave'])) {
-
 			$arrData = $this->model->selectCompetencias();
 		} else {
 			$search = $_POST['palabraClave'];
-
 			$arrData = $this->model->selectCompetenciass($search);
 		}
 		echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
-
 		die();
 	}
 
@@ -85,11 +66,7 @@ class solicitudempleo extends Controllers
 	public function getIdiomas()
 	{
 		$search = "";
-
-
-
 		if (!isset($_POST['palabraClave'])) {
-
 			$arrData = $this->model->selectIdiomas();
 		} else {
 			$search = $_POST['palabraClave'];
@@ -97,7 +74,6 @@ class solicitudempleo extends Controllers
 			$arrData = $this->model->selectIdiomass($search);
 		}
 		echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
-
 		die();
 	}
 
@@ -113,9 +89,9 @@ class solicitudempleo extends Controllers
 		$empresa = $this->model->getOne($ruc);
 
 		if ($empresa > 0) {
-			echo ($empresa['idempresa']);
+			//	echo ($empresa['idempresa']);
 
-			$idEmpresa =$empresa['idempresa'];
+			$idEmpresa = $empresa['idempresa'];
 		} else {
 			/*registro de empresa nueva*/
 
@@ -217,17 +193,17 @@ class solicitudempleo extends Controllers
 		die();
 	}
 
-	public function buscarruc(){
+	public function buscarruc()
+	{
 		$ruc = $_POST['ruc'];
-		$idEmpresa = $this->model->getOne($ruc);
+		$idEmpresa = $this->model->getAllEmpresa($ruc);
 
 		if ($idEmpresa > 0) {
-			$arrData =array('status' => true, 'data' => $idEmpresa);
+			$arrData = array('status' => true, 'data' => $idEmpresa);
 		} else {
 			$arrData = array("status" => false, "msg" => 'No es posible almacenar los datos.');
 		}
 
 		echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
 	}
-
 }

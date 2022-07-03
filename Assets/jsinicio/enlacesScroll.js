@@ -25,8 +25,8 @@ window.addEventListener("scroll", function() {
 });
 
 
-$(document).on('click', 'a', function() {
-    $("a").removeClass("select");
-    $(this).addClass('select').siblings().removeClass('select');
+// $(document).on('click', 'a', function() {
+//     $("a").removeClass("select");
+//     $(this).addClass('select').siblings().removeClass('select');
 
-});
+// });
