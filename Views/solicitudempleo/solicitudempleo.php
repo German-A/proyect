@@ -33,13 +33,13 @@
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="ruc">Ruc <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control"  onchange="buscar()" id="ruc" name="ruc" required>
+                            <input type="text" class="form-control" onchange="buscar()" id="ruc" name="ruc" required>
                         </div>
                         <div class="form-group col-md-8">
                             <label for="nombreempresa">Nombre de la Empresa<span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="nombreempresa" disabled name="nombreempresa" x>
                         </div>
-             
+
                         <div class="form-group col-md-8">
                             <label for="correo">Correo <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="correo" disabled name="correo" x>
@@ -237,11 +237,12 @@
     function publicarOferta() {
 
 
-
         var ruc = $("#ruc").val();
-
+        var nombreempresa = $("#nombreempresa").val();
+        var correo = $("#correo").val();
+        var celular = $("#celular").val();
+        var archivoSubido = $("#archivoSubido").val();
         var titulaciones = $("#titulaciones").val();
-
         var NombrePuesto = $("#NombrePuesto").val();
         var carreras = $("#carreras").val();
         var DescripcionPuesto = $("#DescripcionPuesto").val();
@@ -355,19 +356,53 @@
         //     swal("Atención!", "Seleccione la Fecha Fin", "warning");
         //     return;
         // }
+        var listaLotes = new Array();
+        for (var i = 0; i < carreras.length; i++) {
+            listaLotes.push({
+                carreras: carreras[i],
+
+            });
+ 
+        }
 
 
 
         var datax = $("#frmempleo").serializeArray();
 
-        var fd = new FormData(document.getElementById("frmempleo"));
+        //var fd = new FormData(document.getElementById("frmempleo"));
+
+        var fd = new FormData();
+        fd.append("ruc", ruc);
+        fd.append("nombreempresa", nombreempresa);
+        fd.append("correo", correo);
+        fd.append("celular", celular);
+        fd.append("archivoSubido", archivoSubido);
+        fd.append("titulaciones", titulaciones);
+        fd.append("NombrePuesto", NombrePuesto);
+        fd.append("carreras", JSON.stringify(listaLotes));
+        fd.append("DescripcionPuesto", DescripcionPuesto);
+        fd.append("InformacionAdicional", InformacionAdicional);
+        fd.append("LugarTrabajo", LugarTrabajo);
+        fd.append("TrabajoRemoto", TrabajoRemoto);
+        fd.append("NumeroVacantes", NumeroVacantes);
+        fd.append("competencias", competencias);
+        fd.append("idiomas", idiomas);
+        fd.append("Experiencias", Experiencias);
+        fd.append("TipoContrato", TipoContrato);
+        fd.append("HorasSemanales", HorasSemanales);
+        fd.append("HorarioTrabajo", HorarioTrabajo);
+        fd.append("RemuneracionBruta", RemuneracionBruta);
+        fd.append("FechaInico", FechaInico);
+        fd.append("FechaFin", FechaFin);
+        fd.append("Contacto", Contacto);
+
         $.ajax({
             method: "POST",
             url: "" + base_url + "/solicitudempleo/registrarempleoEmpresa",
             //data: datax
             data: fd,
-            processData: false,  // tell jQuery not to process the data
-            contentType: false   // tell jQuery not to set contentType
+            processData: false, // tell jQuery not to process the data
+            contentType: false // tell jQuery not to set contentType
 
         }).done(function() {
             //swal("Atención!", "TERMINADO", "warning");
@@ -377,7 +412,7 @@
 </script>
 
 <script>
-     function buscar() {
+    function buscar() {
         var ruc = document.getElementById("ruc").value;
         cadena = "ruc=" + ruc;
         // $.ajax({
@@ -396,8 +431,8 @@
             url: "solicitudempleo/buscarruc",
             data: cadena,
             success: function(response) {
-                var info = JSON.parse(response);  
-                if(info.status==true){
+                var info = JSON.parse(response);
+                if (info.status == true) {
                     $("#nombreempresa").attr("disabled", true);
                     $("#correo").attr("disabled", true);
                     $("#celular").attr("disabled", true);
@@ -405,13 +440,13 @@
                     document.getElementById('correo').value = info.data['email_user'];
                     document.getElementById('celular').value = info.data['telefono'];
                 }
-                if(info.status==false){
+                if (info.status == false) {
                     $("#nombreempresa").attr("disabled", false);
                     $("#correo").attr("disabled", false);
                     $("#celular").attr("disabled", false);
-                    document.getElementById('nombreempresa').value ="";
-                    document.getElementById('correo').value ="";
-                    document.getElementById('celular').value ="";
+                    document.getElementById('nombreempresa').value = "";
+                    document.getElementById('correo').value = "";
+                    document.getElementById('celular').value = "";
                 }
             }
         });

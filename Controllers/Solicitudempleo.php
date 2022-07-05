@@ -118,25 +118,11 @@ class solicitudempleo extends Controllers
 					$personaid = $this->model->register($email_user, $telefono, $imagen, $password);
 					$insert = $this->model->registerEmpresa($nombreEmpresa, $ruc, $personaid);
 				} else {
-					echo "no se pudo guardar";
+					//echo "no se pudo guardar";
 				}
 			}
 			$idEmpresa = $insert;
 		}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 		$NombrePuesto = $_POST['NombrePuesto'];
 		$TrabajoRemoto = $_POST['TrabajoRemoto'];
@@ -155,7 +141,23 @@ class solicitudempleo extends Controllers
 		$RemuneracionBruta = $_POST['RemuneracionBruta'];
 
 		$carreras = [];
-		$carreras = $_POST['carreras'];
+		$carreras =json_decode($_POST['carreras'],true);
+		
+		/*obetener carreras*/
+		$escuelas[] = "";
+		$data[]= "";
+
+		print_r($carreras);
+		foreach ($carreras as $carrera) {
+			echo  $carrera['carreras'];
+		}
+
+		// for ($i = 0; $i < count($carreras); $i++) {
+		//  	$data = $this->model->listaCarreras($carreras[$i]);			
+		// 	$escuelas[$i]=  $data;
+		// }
+		
+	
 
 		$titulaciones = [];
 		$titulaciones = $_POST['titulaciones'];
@@ -172,23 +174,56 @@ class solicitudempleo extends Controllers
 
 		$arrData = $this->model->insertarEmpleo($idEmpresa, $NombrePuesto, $FechaInico, $FechaFin, $titulaciones, $carreras, $competencias, $idiomas, $DescripcionPuesto, $InformacionAdicional, $NumeroVacantes, $Experiencias, $TipoContrato, $HorasSemanales, $HorarioTrabajo, $RemuneracionBruta, $Contacto, $LugarTrabajo, $TrabajoRemoto, $JornadaLaboral);
 
-
-
-
 		if ($idEmpresa > 0) {
 			$arrData = array('status' => true, 'msg' => 'Datos guardados correctamente.');
 		} else {
 			$arrData = array("status" => false, "msg" => 'No es posible almacenar los datos.');
 		}
 
+		$today = getdate();
+		$hora = $today["hours"];
+		if ($hora < 6) {
+			$saludo= ("Buenos días");
+		} elseif ($hora < 12) {
+			$saludo= ("Buenos días");
+		} elseif ($hora <= 18) {
+			$saludo= ("Buenas Tardes");
+		} else {
+			$saludo= ("Buenas Noches");
+		}
+	
+
+
+		
+	
+
+		$dataUsuario = array(
+			'email' => $Contacto,
+			'saludo' => $saludo,
+			'escuelas' => $escuelas,
+			'nombreEmpresa' => $nombreEmpresa,
+			'NombrePuesto' => $NombrePuesto,
+			'FechaInico' => $FechaInico,
+			'FechaFin' => $FechaFin,
+			'telefono' => $telefono,
+			'asunto' => 'Publicacion de Empleo - ',
+		);
+
+		if (sendMailPublicacionEmpleo($dataUsuario, 'email_cambioPassword')) {
+			$arrResponse = array(
+				'status' => true,
+				'msg' => 'Tu mensaje a sido enviado con éxito, así mismo se enviara una copia en el correo que registraste.'
+			);
+		} else {
+			$arrResponse = array(
+				'status' => false,
+				'msg' => 'No es posible realizar el proceso, intenta más tarde.'
+			);
+		}
 
 
 
-
-
-
-
-		echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
+		echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
 
 		die();
 	}
