@@ -181,6 +181,15 @@ class SolicitudempleoModel extends Mysql
 	}
 
 
+	public function listaCarreras($idempresa)
+	{
+		$sql = "SELECT nombreEscuela
+				FROM escuela
+				where status = 1 and idEscuela = $idempresa";
+		$request = $this->select($sql);
+		return $request;
+	}
+
 
 
 
@@ -247,7 +256,7 @@ class SolicitudempleoModel extends Mysql
 
 		//insertar en el detalle de titulaciones
 		foreach ($titulaciones as $val) {
-			$this->idTitulaciones = $val;
+			$this->idTitulaciones = $val['titulaciones'];
 			$query_insert  = "INSERT INTO detalletitulaciones(titulacionesid,empleosid)
 						VALUES(?,?)";
 			$arrData = array(
@@ -258,9 +267,10 @@ class SolicitudempleoModel extends Mysql
 		}
 		$return = $request_in;
 
+
 		//insertar en el detalle de carreras
 		foreach ($carreras as $val) {
-			$this->escuelaid = $val;
+			$this->escuelaid = $val['carreras'];
 			$query_insert  = "INSERT INTO detallecarreras(escuelaid,empleosid)
 						VALUES(?,?)";
 			$arrData = array(
@@ -272,7 +282,7 @@ class SolicitudempleoModel extends Mysql
 		$return = $request_in;
 		//insertar en el detalle de competencias
 		foreach ($competencias as $val) {
-			$this->competenciasid = $val;
+			$this->competenciasid = $val['competencias'];
 			$query_insert  = "INSERT INTO detallecompetencias(competenciasid,empleosid)
 						VALUES(?,?)";
 			$arrData = array(
@@ -284,7 +294,7 @@ class SolicitudempleoModel extends Mysql
 		$return = $request_in;
 		//insertar en el detalle de idiomas
 		foreach ($idiomas as $val) {
-			$this->idiomaid = $val;
+			$this->idiomaid = $val['idiomas'];
 			$query_insert  = "INSERT INTO detalleidiomas(idiomaid,empleosid)
 						VALUES(?,?)";
 			$arrData = array(
@@ -303,7 +313,7 @@ class SolicitudempleoModel extends Mysql
 	//obtener ruc
 	public function getOne($ruc)
 	{
-		$sql = "SELECT ruc
+		$sql = "SELECT ruc,idempresa
             FROM empresa
             where status=1 and ruc=$ruc
 			";

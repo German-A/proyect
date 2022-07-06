@@ -14,7 +14,7 @@
                 <img class="img-fluid" src="<?= media(); ?>/img/logoDpa.png" alt="">
             </div>
 
-            <div class="col-12 col-md-6 col-xl-6 border-right-2 bg-danger">
+            <div class="col-12 col-md-6 col-xl-6 border-right-2 " style="border-radius:20px; background-color: var(--amarillo-mostaza);">
                 <h1 class="text-center">SOLICITUD DE <br> REQUERIMIENTO LABORAL</h1>
             </div>
         </div>
@@ -59,12 +59,13 @@
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="NombrePuesto">Puesto<span class="text-danger">*</span></label>
-                            <textarea type="text" class="form-control" name="NombrePuesto" id="NombrePuesto" placeholder="Ingresar Nombre Puesto" x></textarea>
+                            <input type="text" class="form-control" name="NombrePuesto" id="NombrePuesto" placeholder="Ingresar Nombre Puesto" x>
+                            <!-- <textarea type="text" class="form-control" name="NombrePuesto" id="NombrePuesto" placeholder="Ingresar Nombre Puesto" x></textarea> -->
                         </div>
                         <div class="form-group col-md-4">
                             <label for="TrabajoRemoto">Modalidad <span class="text-danger">*</span></label>
                             <select class="form-control select2" name="TrabajoRemoto" id="TrabajoRemoto" data-live-search="true" class="mdb-select md-form" x>
-                                <option disabled selected>Seleccionar una Opcion</option>
+                                <option disabled selected>Seleccionar una Opción</option>
                                 <option value="Remoto">Remoto</option>
                                 <option value="Presencial">Presencial</option>
                                 <option value="Remoto/Presencial">Remoto/Presencial</option>
@@ -72,7 +73,7 @@
                             </select>
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="NumeroVacantes">Vacantes <span class="text-danger">*</span></label>
+                            <label for="NumeroVacantes">N° Vacantes <span class="text-danger">*</span></label>
                             <input type="number" class="form-control" name="NumeroVacantes" id="NumeroVacantes" placeholder="Ingresar el Número de Vacantes" x>
                         </div>
                         <div class="form-group col-md-4">
@@ -82,11 +83,11 @@
                     </div>
 
                     <div class="form-row">
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-5">
                             <label for="FechaFin">Fecha inicio de postulación<span class="text-danger">*</span></label>
                             <input type="date" class="form-control" name="FechaInico" id="FechaInico" placeholder="Ingresar FechaInico">
                         </div>
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-5">
                             <label for="FechaFin">Fecha límite de postulación<span class="text-danger">*</span></label>
                             <input type="date" class="form-control" name="FechaFin" id="FechaFin" placeholder="Ingresar Fecha Fin">
                         </div>
@@ -101,8 +102,6 @@
                             <textarea type="text" class="form-control summernote" id="DescripcionPuesto" name="DescripcionPuesto" placeholder="Ingresar Descripción Puesto"></textarea>
                         </div>
                     </div>
-
-
                 </div>
 
                 <!-- derecha -->
@@ -122,9 +121,16 @@
                             </select>
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="contacto">Experiencia <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" name="Experiencias" id="Experiencias" placeholder="Ingresar las Experiencias" x>
-                        </div>
+                            <label for="Experiencias">Experiencia <span class="text-danger">*</span></label>
+                            <select class="form-control select2 narrow wrap " name="Experiencias" id="Experiencias" class="form-control-lg mdb-select md-form">
+                                <option disabled selected>Seleccionar una Opción</option>
+                                <option value="0">Sin Experiencia</option>
+                                <option value="1">1 año</option>
+                                <option value="2">2 año</option>
+                                <option value="3">3 año</option>
+                                <option value="4">4 año</option>     
+                            </select>
+                       </div>
                         <div class="form-group col-md-6">
                             <label for="logo">Idiomas <span class="text-danger">*</span></label>
                             <select class="idiomas form-control" name="idiomas[]" id="idiomas" multiple="multiple" x>
@@ -146,18 +152,18 @@
                         <div class="form-group col-md-6">
                             <label for="TipoContrato">Modalidad de Contrato<span class="text-danger">*</span></label>
                             <select class="form-control select2 narrow wrap " name="TipoContrato" id="TipoContrato" class="form-control-lg mdb-select md-form">
-                                <option disabled selected>Seleccionar una Opcion</option>
+                                <option disabled selected>Seleccionar una Opción</option>
                                 <option value="Ofertalaboral">Oferta de Empleo</option>
-                                <option value="preprofesionales">Practicas Pre Profesionales </option>
-                                <option value="proprefesionales">Practicas Pro Profesionales</option>
+                                <option value="preprofesionales">Practicas Pre Profesional </option>
+                                <option value="proprefesionales">Practicas Profesionales</option>
                             </select>
 
                         </div>
 
                         <div class="form-group col-md-6">
-                            <label for="JornadaLaboral">JornadaLaboral<span class="text-danger">*</span></label>
+                            <label for="JornadaLaboral">Jornada Laboral<span class="text-danger">*</span></label>
                             <select class="form-control select2 narrow wrap " name="JornadaLaboral" id="JornadaLaboral" class="mdb-select md-form">
-                                <option disabled selected>Seleccionar una Opcion</option>
+                                <option disabled selected>Seleccionar una Opción</option>
                                 <option value="Parcial">Parcial </option>
                                 <option value="Completa">Completa</option>
                                 <option value="Otro">Otro</option>
@@ -165,38 +171,33 @@
                         </div>
 
                         <div class="form-group col-md-4">
-                            <label for="HorasSemanales">HorasSemanales</label>
+                            <label for="HorasSemanales">Horas Semanales</label>
                             <input type="number" class="form-control" name="HorasSemanales" id="HorasSemanales" placeholder="Ingresar la Horas Semanales" x>
                         </div>
                         <div class="form-group col-md-8">
-                            <label for="HorarioTrabajo">HorarioTrabajo</label>
+                            <label for="HorarioTrabajo">Horario de Trabajo</label>
                             <input type="text" class="form-control" name="HorarioTrabajo" id="HorarioTrabajo" placeholder="Ingresar las Horario Trabajo" x>
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="RemuneracionBruta">Remuneración Bruta</label>
-                            <input type="number" class="form-control" name="RemuneracionBruta" id="RemuneracionBruta" placeholder="Ingresar la Remuneración Bruta" x>
+                            <label for="RemuneracionBruta">S/. Remuneración</label>
+                            <select class="form-control select2 narrow wrap " name="RemuneracionBruta" id="RemuneracionBruta" class="mdb-select md-form">
+                                <option disabled selected>Seleccionar una Opción</option>
+                                <option value="1025">1025 a 1500 </option>
+                                <option value="1500">1500 a 2000</option>
+                                <option value="2000">2000 a 2500</option>
+                                <option value="2500">2500 a 3000</option>
+                                <option value="4000">4000</option>
+                                <option value="Otro">Otro</option>
+                            </select>
                         </div>
-
-                        <div class="row">
-                            <div class="form-group col-md-12">
-
-                                <button type="button" class="btn btn-primary col-6" onclick="publicarOferta()">PUBLICAR OFERTA LABORAL</button>
-                            </div>
-                            <div class="form-group col-md-12">
-                                <button type="button" class="btn btn-danger col-6" class="close" data-dismiss="modal">Close</button>
-                            </div>
+                        <div class="form-group  text-center col-md-12">
+                            <button type="button" class="btn btn-primary " onclick="publicarOferta()">PUBLICAR OFERTA LABORAL</button>
                         </div>
                     </div>
-
-
                 </div>
 
-            </div>
-
+        </form>
     </div>
-
-    </form>
-</div>
 
 
 
@@ -206,6 +207,20 @@
 
 <br><br>
 <br>
+
+<!-- SEGUNDAS ESPECIALIDADES -->
+<div class="modal fade" id="modalPerfiles" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row d-flex justify-content-center" id="correoweb">
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <?php footer($data); ?>
@@ -241,7 +256,12 @@
         var nombreempresa = $("#nombreempresa").val();
         var correo = $("#correo").val();
         var celular = $("#celular").val();
-        var archivoSubido = $("#archivoSubido").val();
+
+
+        var inputElement = document.getElementById("archivoSubido");
+        console.log(inputElement.files[0]);
+        var archivoSubido = inputElement.files[0];
+
         var titulaciones = $("#titulaciones").val();
         var NombrePuesto = $("#NombrePuesto").val();
         var carreras = $("#carreras").val();
@@ -356,14 +376,37 @@
         //     swal("Atención!", "Seleccione la Fecha Fin", "warning");
         //     return;
         // }
+
+
         var listaLotes = new Array();
         for (var i = 0; i < carreras.length; i++) {
             listaLotes.push({
                 carreras: carreras[i],
-
             });
- 
         }
+
+        var listaTitulaciones = new Array();
+        for (var i = 0; i < titulaciones.length; i++) {
+            listaTitulaciones.push({
+                titulaciones: titulaciones[i],
+            });
+        }
+
+        var listaCompetencias = new Array();
+        for (var i = 0; i < competencias.length; i++) {
+            listaCompetencias.push({
+                competencias: competencias[i],
+            });
+        }
+
+        var listaIdiomas = new Array();
+        for (var i = 0; i < idiomas.length; i++) {
+            listaIdiomas.push({
+                idiomas: idiomas[i],
+            });
+        }
+
+
 
 
 
@@ -377,7 +420,7 @@
         fd.append("correo", correo);
         fd.append("celular", celular);
         fd.append("archivoSubido", archivoSubido);
-        fd.append("titulaciones", titulaciones);
+        fd.append("titulaciones", JSON.stringify(listaTitulaciones));
         fd.append("NombrePuesto", NombrePuesto);
         fd.append("carreras", JSON.stringify(listaLotes));
         fd.append("DescripcionPuesto", DescripcionPuesto);
@@ -385,8 +428,8 @@
         fd.append("LugarTrabajo", LugarTrabajo);
         fd.append("TrabajoRemoto", TrabajoRemoto);
         fd.append("NumeroVacantes", NumeroVacantes);
-        fd.append("competencias", competencias);
-        fd.append("idiomas", idiomas);
+        fd.append("competencias", JSON.stringify(listaCompetencias));
+        fd.append("idiomas", JSON.stringify(listaIdiomas));
         fd.append("Experiencias", Experiencias);
         fd.append("TipoContrato", TipoContrato);
         fd.append("HorasSemanales", HorasSemanales);
@@ -395,7 +438,7 @@
         fd.append("FechaInico", FechaInico);
         fd.append("FechaFin", FechaFin);
         fd.append("Contacto", Contacto);
-
+        divLoading.style.display = "flex";
         $.ajax({
             method: "POST",
             url: "" + base_url + "/solicitudempleo/registrarempleoEmpresa",
@@ -404,7 +447,20 @@
             processData: false, // tell jQuery not to process the data
             contentType: false // tell jQuery not to set contentType
 
-        }).done(function() {
+        }).done(function(response) {
+            var info = JSON.parse(response);
+            divLoading.style.display = "none";
+            if (info.status == true) { 
+                listado =
+                        `
+                            <div class="text-center  mb-2">
+                                <h5 class="azul">` + info.msg + `</h5>
+                            </div>                          
+                        `;
+                    $("#correoweb").html(listado);
+
+            }
+            $('#modalPerfiles').modal('show');
             //swal("Atención!", "TERMINADO", "warning");
             //window.location.href = "" + base_url + "/empresaempleoadmin/empresaempleoadmin/" + idEmpresa + "";
         });

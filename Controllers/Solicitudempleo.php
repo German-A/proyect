@@ -79,22 +79,20 @@ class solicitudempleo extends Controllers
 
 	public function registrarempleoEmpresa()
 	{
-
-
 		$ruc = $_POST['ruc'];
 		$email_user = $_POST['correo'];
 		$telefono = $_POST['celular'];
 		$nombreEmpresa = $_POST['nombreempresa'];
 
+
 		$empresa = $this->model->getOne($ruc);
 
 		if ($empresa > 0) {
 			//	echo ($empresa['idempresa']);
-
 			$idEmpresa = $empresa['idempresa'];
+
 		} else {
 			/*registro de empresa nueva*/
-
 
 			$ubicacionTemporal = $_FILES['archivoSubido']['tmp_name'];
 			$nombre = $_FILES['archivoSubido']['name'];
@@ -131,7 +129,6 @@ class solicitudempleo extends Controllers
 		$FechaInico = $_POST['FechaInico'];
 		$FechaFin = $_POST['FechaFin'];
 		$DescripcionPuesto = $_POST['DescripcionPuesto'];
-
 		$Experiencias = $_POST['Experiencias'];
 		$InformacionAdicional = $_POST['InformacionAdicional'];
 		$TipoContrato = $_POST['TipoContrato'];
@@ -140,37 +137,20 @@ class solicitudempleo extends Controllers
 		$HorarioTrabajo = $_POST['HorarioTrabajo'];
 		$RemuneracionBruta = $_POST['RemuneracionBruta'];
 
-		$carreras = [];
-		$carreras =json_decode($_POST['carreras'],true);
-		
-		/*obetener carreras*/
-		$escuelas[] = "";
-		$data[]= "";
-
-		print_r($carreras);
-		foreach ($carreras as $carrera) {
-			echo  $carrera['carreras'];
-		}
-
-		// for ($i = 0; $i < count($carreras); $i++) {
-		//  	$data = $this->model->listaCarreras($carreras[$i]);			
-		// 	$escuelas[$i]=  $data;
-		// }
-		
-	
-
-		$titulaciones = [];
-		$titulaciones = $_POST['titulaciones'];
-
-		$idiomas = [];
-		$idiomas = $_POST['idiomas'];
-
-
-		$competencias = [];
-		$competencias = $_POST['competencias'];
-
-
 		$Contacto = $email_user;
+
+		$carreras= array();
+		$titulaciones= array();
+		$idiomas= array();
+		$competencias= array();
+		//$escuelas= array();
+
+		// $titulaciones = [];
+		// $titulaciones = $_POST['titulaciones'];
+		$carreras =json_decode($_POST['carreras'],true);
+		$titulaciones =json_decode($_POST['titulaciones'],true);
+		$idiomas =json_decode($_POST['idiomas'],true);
+		$competencias =json_decode($_POST['competencias'],true);		
 
 		$arrData = $this->model->insertarEmpleo($idEmpresa, $NombrePuesto, $FechaInico, $FechaFin, $titulaciones, $carreras, $competencias, $idiomas, $DescripcionPuesto, $InformacionAdicional, $NumeroVacantes, $Experiencias, $TipoContrato, $HorasSemanales, $HorarioTrabajo, $RemuneracionBruta, $Contacto, $LugarTrabajo, $TrabajoRemoto, $JornadaLaboral);
 
@@ -191,11 +171,10 @@ class solicitudempleo extends Controllers
 		} else {
 			$saludo= ("Buenas Noches");
 		}
-	
-
-
 		
-	
+		for ($i = 0; $i < count($carreras); $i++) {
+			$escuelas[$i]= $this->model->listaCarreras($carreras[$i]['carreras']);
+		}
 
 		$dataUsuario = array(
 			'email' => $Contacto,
@@ -206,13 +185,13 @@ class solicitudempleo extends Controllers
 			'FechaInico' => $FechaInico,
 			'FechaFin' => $FechaFin,
 			'telefono' => $telefono,
-			'asunto' => 'Publicacion de Empleo - ',
+			'asunto' => 'Publicación de Empleo',
 		);
 
 		if (sendMailPublicacionEmpleo($dataUsuario, 'email_cambioPassword')) {
 			$arrResponse = array(
 				'status' => true,
-				'msg' => 'Tu mensaje a sido enviado con éxito, así mismo se enviara una copia en el correo que registraste.'
+				'msg' => 'Tu publicación de empleo en breves momento será aprobada, así mismo se enviara una copia en el correo que registraste.'
 			);
 		} else {
 			$arrResponse = array(
@@ -220,11 +199,7 @@ class solicitudempleo extends Controllers
 				'msg' => 'No es posible realizar el proceso, intenta más tarde.'
 			);
 		}
-
-
-
 		echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
-
 		die();
 	}
 

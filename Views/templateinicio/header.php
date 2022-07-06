@@ -82,7 +82,7 @@
                     <ul class="submenu">
                         <li class="menu__item"><a target="_blank" href="https://jobboard.universia.net/unitruoportunidades" class="al menu__link">BOLSA DE TRABAJO UNT</a></li>
                         <li class="menu__item"><a href="<?= base_url(); ?>/solicitudempleo" class="al menu__link">SOLICITUD DE OFERTA LABORAL</a></li>
-                        <li class="menu__item"><a target="_blank" href="https://www.empleosperu.gob.pe/portal-mtpe/#/" class="al menu__link">PORTAL EMPLEOS PERÚ</a></li>
+                        <li class="menu__item"><a target="_blank" href="https://www.empleosperu.gob.pe/portal-mtpe/" class="al menu__link">PORTAL EMPLEOS PERÚ</a></li>
                     </ul>
                 </li>
                 <li class="menu__item container-submenu"><a href="#" class="menu__link submenu-btn">PLATAFORMA SISEU&nbsp;<i class="fas fa-chevron-down"></i></a>
