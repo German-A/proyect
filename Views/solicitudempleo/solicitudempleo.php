@@ -125,10 +125,10 @@
                             <select class="form-control select2 narrow wrap " name="Experiencias" id="Experiencias" class="form-control-lg mdb-select md-form">
                                 <option disabled selected>Seleccionar una Opción</option>
                                 <option value="0">Sin Experiencia</option>
-                                <option value="1">1 año</option>
+                                <option value="1">Menos de 1 año</option>
                                 <option value="2">2 año</option>
                                 <option value="3">3 año</option>
-                                <option value="4">4 año</option>     
+                                <option value="4">4 año a más</option>     
                             </select>
                        </div>
                         <div class="form-group col-md-6">
