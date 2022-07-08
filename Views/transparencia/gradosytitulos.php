@@ -27,20 +27,30 @@ $idmaestria = $año->listaFacultadpostgrado();
 
         <div class="card-body">
             <h3 class="text-muted m-b-15 text-center">Más detalle</h3>
-            <br>
+            <br><br><br>
             <div class="d-flex justify-content-around">
-                <a class="btn btn-primary" target="_blank" href="<?= media(); ?>/documentos/Facultades.pdf">
+                <a class="btn btn-primary" target="_blank" href="<?= media(); ?>/documentos/DEPARTAMENTOSACADÉMICOS.pdf">
+                    <h5>Departamentos Académicos</h5>
+                </a>
+
+                <a class="btn btn-primary" target="_blank" href="<?= media(); ?>/documentos/FACULTADES.pdf">
                     <h5>Facultades</h5>
                 </a>
 
-                <a class="btn btn-primary" target="_blank" href="https://docs.google.com/spreadsheets/d/1ySjbiL7jFv7lLXbw4WSVfRuOZHgS_iVetHcuw6gujbU/edit?usp=sharing">
+                <a class="btn btn-primary" target="_blank" href="<?= media(); ?>/documentos/ESCUELASPROFESIONALES.pdf">
                     <h5>Escuelas</h5>
+                </a>
+                <a class="btn btn-primary" target="_blank" href="<?= media(); ?>/documentos/GRADOSACADÉMICOS.pdf">
+                    <h5>Grados Académicos</h5>
+                </a>
+                <a class="btn btn-primary" target="_blank" href="<?= media(); ?>/documentos/TÍTULOSPROFESIONALES.pdf">
+                    <h5>Títulos Profesionales</h5>
                 </a>
             </div>
         </div>
     </div>
 </div>
-
+<br>
 <style>
     .contedor80 {
         max-width: 80%;
@@ -102,7 +112,7 @@ $idmaestria = $año->listaFacultadpostgrado();
 
 
 
-<br>
+<br><br><br>
 
 <div class="contedor90 pt-4 pb-4  bgbluemedio rounded ">
     <div class="row">
@@ -119,10 +129,10 @@ $idmaestria = $año->listaFacultadpostgrado();
                     <h5 class="blanco">Doctorados</h5>
                     <img src="<?= media() ?>/images/postgrado/doctorado.png" style="max-height: 150px; max-height: 50px;">
                 </div>
-                <div class="col-4 col-md-3 pt-2 pb-2 text-center" style="background-color: #009688;" onclick="openModalSegundaEspecialidades()">
+                <a  class="col-4 col-md-3 pt-2 pb-2 text-center"  target="_blank"  style="background-color: #009688;" href="<?= media(); ?>/documentos/SEGUNDASESPECIALIDADES.pdf">
                     <h5 class="blanco">Segundas Especialidades</h5>
                     <img src="<?= media() ?>/images/postgrado/segundaespecialidad.png" style="max-height: 150px; max-height: 50px;">
-                </div>
+                </a>
             </div>
         </div>
     </div>
@@ -236,7 +246,7 @@ $idmaestria = $año->listaFacultadpostgrado();
         </div>
     </div>
 </div>
-
+<br><br>
 <!-- Doctorados -->
 <div class="modal fade" id="modalDoctorados" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg">

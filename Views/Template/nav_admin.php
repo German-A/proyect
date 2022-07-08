@@ -100,6 +100,26 @@
                 </li>
             <?php } ?>
 
+            <!------------------------- modulo de administador   ----------------------->
+            <?php if (!empty($_SESSION['permisos'][8]['r']) || !empty($_SESSION['permisos'][9]['r']) || !empty($_SESSION['permisos'][12]['r'])) { ?>
+                <li class="treeview">
+                    <a class="app-menu__item" href="#" data-toggle="treeview">
+                        <i class="app-menu__icon fas fa-briefcase" aria-hidden="true"></i>
+                        <span class="app-menu__label">objetivoseducacionales</span>
+                        <i class="treeview-indicator fa fa-angle-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <?php if (!empty($_SESSION['permisos'][3]['r'])) { ?>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/objetivoseducacionales"><i class="icon fa fa-circle-o"></i>objetivoseducacionales</a></li>
+                        <?php } ?>
+
+                    </ul>
+                </li>
+            <?php } ?>
+
+
+            
+
 
 
             <!------------------------- modulo de empresa  ----------------------->
