@@ -29,7 +29,7 @@ $idmaestria = $año->listaFacultadpostgrado();
             <h3 class="text-muted m-b-15 text-center">Más detalle</h3>
             <br>
             <div class="d-flex justify-content-around">
-                <a class="btn btn-primary" target="_blank" href="https://docs.google.com/spreadsheets/d/1wKk9gGxt-gt1tgz90FWCPGrwnWzx_lsVm_wrnxV9kSE/edit?usp=sharing">
+                <a class="btn btn-primary" target="_blank" href="<?= media(); ?>/documentos/Facultades.pdf">
                     <h5>Facultades</h5>
                 </a>
 
