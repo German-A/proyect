@@ -21,6 +21,8 @@
         <form id="frmempleo" class="col-12 d-flex flex-column" name="frmempleo" method="post" submit="return false">
             <input type="hidden" name="accion" id="accion" value="REGISTRAR_EMPLEO">
 
+ 
+
             <p class="text-primary">Campos obligatorios <span class="text-danger">*</span></p>
 
             <div class="row">
