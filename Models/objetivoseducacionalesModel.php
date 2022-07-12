@@ -19,13 +19,13 @@ class objetivoseducacionalesModel extends Mysql
 		return $request;
 	}
 
-	//obtener ruc
+	//obtener buscarusuario
 	public function buscarusuario($personaid)
 	{
 		$sql = "SELECT personaid
 				FROM claseobjetivos 
 				where status>0 and personaid=$personaid
-				";
+			";
 		$request = $this->select($sql);
 		return $request;
 	}
@@ -38,35 +38,59 @@ class objetivoseducacionalesModel extends Mysql
 		$this->cursoobjetivosid = $cursoobjetivosid;
 		$return = 0;
 		$query_insert  = "INSERT INTO claseobjetivos(tarea,cursoobjetivosid,personaid)
-								  VALUES(?,?,?)";
+							VALUES(?,?,?)";
 		$arrData = array(
 			$this->tarea,
-			$this->personaid,
-			$this->cursoobjetivosid
+			$this->cursoobjetivosid,
+			$this->personaid
 		);
 		$request_insert = $this->insert($query_insert, $arrData);
 		$return = $request_insert;
 		return $return;
 	}
+	
 
-	public function toupdate($nombreArchivo, $nuevonombre, $cantidad, $idUsuario, $posicion)
+	public function toupdate($tarea,$personaid,$cursoobjetivosid,$idOjetivo)
 	{
-		$this->nombreArchivo = $nombreArchivo;
-		$this->nuevonombre = $nuevonombre;
-		$this->cantidad = $cantidad;
-		$this->idUsuario = $idUsuario;
-		$this->posicion = $posicion;
-		$sql = "UPDATE banner SET Nombre=?, NombreArchivo=?, Posicion=?
-			WHERE IdBaner = $this->idUsuario ";
+		$this->tarea = $tarea;
+		$this->personaid = $personaid;
+		$this->idOjetivo = $idOjetivo;
+		$sql = "UPDATE claseobjetivos SET tarea=?
+			WHERE idclaseobjetivos = $this->idOjetivo";
 		$arrData = array(
-			$this->nombreArchivo,
-			$this->nuevonombre,
-			$this->posicion
+			$this->tarea,			
+			
+			
 		);
 
 		$request = $this->update($sql, $arrData);
 		return $request;
 	}
+
+
+	public function getOne($idusuario)
+	{
+		$sql = "SELECT idclaseobjetivos
+        FROM claseobjetivos
+        where status=1 and personaid=$idusuario
+		";
+		$request = $this->select($sql);
+		return $request;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	public function updatePosicion($nombreArchivo, $idUsuario, $posicion)
 	{
@@ -93,13 +117,5 @@ class objetivoseducacionalesModel extends Mysql
 		$request = $this->update($sql, $arrData);
 		return $request;
 	}
-	public function getOne($idusuario)
-	{
-		$sql = "SELECT * 
-            FROM banner
-            where Habilitado=1 and IdBaner=$idusuario
-			";
-		$request = $this->select($sql);
-		return $request;
-	}
+
 }

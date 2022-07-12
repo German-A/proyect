@@ -12,20 +12,22 @@ class objetivoseducacionales extends Controllers
 		}
 		getPermisos(3);
 	}
-	//pagina Banner
+
+	//pagina objetivos educacionales
 	public function objetivoseducacionales()
 	{
 		if (empty($_SESSION['permisosMod']['r'])) {
 			header("Location:" . base_url() . '/dashboard');
 		}
-		$data['page_tag'] = "Banner";
+		$data['page_tag'] = "Objetivos Educacionales";
 		$data['page_title'] = "Banner <small>Unidad de Seguimiento del Egresado</small>";
-		$data['page_name'] = "USE-banner";
+		$data['page_name'] = "USE-Obj. Educacionales";
 		$data['page_functions_js'] = "functions_objetivoseducacionales.js";
+		$data['idusario'] = $_SESSION['idUser'];
 		$this->views->getView($this, "objetivoseducacionales", $data);
 	}
 
-	//insertar y actualizar los Banners
+	//insertar y actualizar los objetivos educacionales
 	public function set()
 	{
 		if ($_POST) {
@@ -36,31 +38,23 @@ class objetivoseducacionales extends Controllers
 				$tarea = trim($_POST['textObjetivos']);
 				$personaid =$_SESSION['idUser'];
 				$cursoobjetivosid =1;
-				
-				/*buscar si hay un usuario registrado*/
-				$personaid = $this->model->buscarusuario($personaid);
-		
-				if ($idEmpresa > 0) {
-					$arrData = array('status' => true, 'data' => $idEmpresa);
-				} else {
-					$arrData = array("status" => false, "msg" => 'No es posible almacenar los datos.');
-				}
 
+				/*buscar si hay un usuario registrado*/
+				//$personaid = $this->model->buscarusuario($personaid);
+				//echo $personaid;
 
 				$request_user = "";
 				if ($idOjetivo == 0) {
 					$option = 1;
-					$insert = $this->model->register($tarea,$personaid,$cursoobjetivosid);				
+					$insert = $this->model->register($tarea,$personaid,$cursoobjetivosid);
 				} else {
 					$option = 2;
-
-					$insert = $this->model->toupdate($tarea,$personaid,$cursoobjetivosid);			
-
+					$insert = $this->model->toupdate($tarea,$personaid,$cursoobjetivosid,$idOjetivo);
 				}
 
 				if ($insert > 0) {
 					if ($option == 1) {
-						$arrResponse = array('status' => true, 'msg' => 'Datos guardados correctamente.');
+						$arrResponse = array('status' => true, 'msg' => 'Datos Guardados correctamente.');
 					} else {
 						$arrResponse = array('status' => true, 'msg' => 'Datos Actualizados correctamente.');
 					}
@@ -72,6 +66,25 @@ class objetivoseducacionales extends Controllers
 		}
 		die();
 	}
+
+	//obtener un objetivo educacional
+	public function getobjetivo($idpersona)
+	{
+		if ($_SESSION['permisosMod']['r']) {
+			$idusuario = intval($idpersona);
+			if ($idusuario > 0) {
+				$arrData = $this->model->getOne($idusuario);
+				if (empty($arrData)) {
+					$arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
+				} else {
+					$arrResponse = array('status' => true, 'data' => $arrData);
+				}
+				echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+			}
+		}
+		die();
+	}
+
 
 
 
@@ -119,24 +132,6 @@ class objetivoseducacionales extends Controllers
 	}
 
 
-
-	//obtener un baner para actualizar
-	public function getone($idpersona)
-	{
-		if ($_SESSION['permisosMod']['r']) {
-			$idusuario = intval($idpersona);
-			if ($idusuario > 0) {
-				$arrData = $this->model->getOne($idusuario);
-				if (empty($arrData)) {
-					$arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
-				} else {
-					$arrResponse = array('status' => true, 'data' => $arrData);
-				}
-				echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
-			}
-		}
-		die();
-	}
 
 	//borrar un banner
 	public function delete()
