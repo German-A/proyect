@@ -1,4 +1,16 @@
 <?php head($data); ?>
+<style>
+    .titulo {
+            font-size: 35;
+            font-weight: 900
+        }  
+    @media (min-width: 1024px) {
+        .titulo {
+            font-size: 50px;
+            font-weight: 900
+        }        
+    }
+</style>
 
 <div class="row">
     <div class="d-none d-xl-block col-xl-2 ">
@@ -14,14 +26,14 @@
                 <img class="img-fluid" src="<?= media(); ?>/img/logoDpa.png" alt="">
             </div>
 
-            <div class="col-12 col-md-6 col-xl-6 border-right-2 " style="border-radius:20px; background-color: var(--amarillo-mostaza);">
-                <h1 class="text-center">SOLICITUD DE <br> REQUERIMIENTO LABORAL</h1>
+            <div class="col-12 col-md-6 col-xl-6 border-right-2 " style="border-radius:20px; background-color: var(--amarillo-mostaza); ">
+                <h1 class="text-center titulo">SOLICITUD DE <br> REQUERIMIENTO LABORAL</h1>
             </div>
         </div>
         <form id="frmempleo" class="col-12 d-flex flex-column" name="frmempleo" method="post" submit="return false">
             <input type="hidden" name="accion" id="accion" value="REGISTRAR_EMPLEO">
 
- 
+
 
             <p class="text-primary">Campos obligatorios <span class="text-danger">*</span></p>
 
@@ -51,7 +63,7 @@
                             <input type="text" class="form-control" id="celular" disabled name="celular" x>
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="">Foto:</label>
+                            <label for="">Logo de la Empresa:</label>
                             <input type="file" id="archivoSubido" name="archivoSubido">
                         </div>
                     </div>
@@ -76,7 +88,7 @@
                         </div>
                         <div class="form-group col-md-4">
                             <label for="NumeroVacantes">N° Vacantes <span class="text-danger">*</span></label>
-                            <input type="number" class="form-control" name="NumeroVacantes" id="NumeroVacantes" placeholder="Ingresar el Número de Vacantes" x>
+                            <input type="number" class="form-control" min="1" name="NumeroVacantes" id="NumeroVacantes" placeholder="Ingresar el Número de Vacantes" x>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="LugarTrabajo">Lugar de Trabajo <span class="text-danger">*</span></label>
@@ -86,11 +98,11 @@
 
                     <div class="form-row">
                         <div class="form-group col-md-5">
-                            <label for="FechaFin">Fecha inicio de postulación<span class="text-danger">*</span></label>
+                            <label for="FechaFin">Fecha inicio para postulación<span class="text-danger">*</span></label>
                             <input type="date" class="form-control" name="FechaInico" id="FechaInico" placeholder="Ingresar FechaInico">
                         </div>
                         <div class="form-group col-md-5">
-                            <label for="FechaFin">Fecha límite de postulación<span class="text-danger">*</span></label>
+                            <label for="FechaFin">Fecha límite para postulación<span class="text-danger">*</span></label>
                             <input type="date" class="form-control" name="FechaFin" id="FechaFin" placeholder="Ingresar Fecha Fin">
                         </div>
                     </div>
@@ -118,7 +130,7 @@
                             </select>
                         </div>
                         <div class="form-group col-md-12">
-                            <label for="ruc">Grado Academico <span class="text-danger">*</span></label>
+                            <label for="ruc">Grado Académico <span class="text-danger">*</span></label>
                             <select class="titulaciones form-control" name="titulaciones[]" data-live-search="true" id="titulaciones" multiple="multiple" x>
                             </select>
                         </div>
@@ -130,11 +142,11 @@
                                 <option value="1">Menos de 1 año</option>
                                 <option value="2">2 año</option>
                                 <option value="3">3 año</option>
-                                <option value="4">4 año a más</option>     
+                                <option value="4">4 año a más</option>
                             </select>
-                       </div>
+                        </div>
                         <div class="form-group col-md-6">
-                            <label for="logo">Idiomas <span class="text-danger">*</span></label>
+                            <label for="logo">Idiomas</label>
                             <select class="idiomas form-control" name="idiomas[]" id="idiomas" multiple="multiple" x>
                             </select>
                         </div>
@@ -156,8 +168,8 @@
                             <select class="form-control select2 narrow wrap " name="TipoContrato" id="TipoContrato" class="form-control-lg mdb-select md-form">
                                 <option disabled selected>Seleccionar una Opción</option>
                                 <option value="Ofertalaboral">Oferta de Empleo</option>
-                                <option value="preprofesionales">Practicas Pre Profesional </option>
-                                <option value="proprefesionales">Practicas Profesionales</option>
+                                <option value="preprofesionales">Prácticas PreProfesionales</option>
+                                <option value="proprefesionales">Prácticas Profesionales</option>
                             </select>
 
                         </div>
@@ -174,7 +186,7 @@
 
                         <div class="form-group col-md-4">
                             <label for="HorasSemanales">Horas Semanales</label>
-                            <input type="number" class="form-control" name="HorasSemanales" id="HorasSemanales" placeholder="Ingresar la Horas Semanales" x>
+                            <input type="number" class="form-control" onkeypress="comprueba(this)" name="HorasSemanales" id="HorasSemanales" placeholder="Ingresar la Horas Semanales" x>
                         </div>
                         <div class="form-group col-md-8">
                             <label for="HorarioTrabajo">Horario de Trabajo</label>
@@ -188,12 +200,11 @@
                                 <option value="1500">1500 a 2000</option>
                                 <option value="2000">2000 a 2500</option>
                                 <option value="2500">2500 a 3000</option>
-                                <option value="4000">4000</option>
-                                <option value="Otro">Otro</option>
+                                <option value="4000">4000 a más</option>
                             </select>
                         </div>
                         <div class="form-group  text-center col-md-12">
-                            <button type="button" class="btn btn-primary " onclick="publicarOferta()">PUBLICAR OFERTA LABORAL</button>
+                            <button type="button" class="btn btn-primary " onclick="publicarOferta()">ENVIAR PARA APROBACIÓN</button>
                         </div>
                     </div>
                 </div>
@@ -251,6 +262,19 @@
 
 
 <script>
+    
+
+
+
+function comprueba(value) {
+   var valor = $(value).val();
+    if (!isNaN(valor) && valor >= 0){
+      $(value).val(value);
+    }else{
+      $(value).val(5);
+    }
+}
+
     function publicarOferta() {
 
 
@@ -273,7 +297,7 @@
         var TrabajoRemoto = $("#TrabajoRemoto").val();
         var NumeroVacantes = $("#NumeroVacantes").val();
         var competencias = $("#competencias").val();
-        var idiomas = $("#idiomas").val();
+        //var idiomas = $("#idiomas").val();
         var Experiencias = $("#Experiencias").val();
         var TipoContrato = $("#TipoContrato").val();
         var HorasSemanales = $("#HorasSemanales").val();
@@ -452,14 +476,14 @@
         }).done(function(response) {
             var info = JSON.parse(response);
             divLoading.style.display = "none";
-            if (info.status == true) { 
+            if (info.status == true) {
                 listado =
-                        `
+                    `
                             <div class="text-center  mb-2">
                                 <h5 class="azul">` + info.msg + `</h5>
                             </div>                          
                         `;
-                    $("#correoweb").html(listado);
+                $("#correoweb").html(listado);
 
             }
             $('#modalPerfiles').modal('show');

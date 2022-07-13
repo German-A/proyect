@@ -26,24 +26,41 @@ $idmaestria = $año->listaFacultadpostgrado();
         </div>
 
         <div class="card-body">
+            <h3 class="text-muted m-b-15 text-center">FACULTADES, ESCUELAS PROFESIONALES Y DEPARTAMENTOS ACADEMICOS</h3>
+            <br><br><br>
+            <div class="d-flex justify-content-around">
+                <a class="btn btn-outline-primary" target="_blank" href="<?= media(); ?>/documentos/FACULTADES.pdf">
+                    <h5>Facultades</h5>
+                </a>
+            </div>
+
+        </div>
+
+
+        <div class="card-body">
             <h3 class="text-muted m-b-15 text-center">Más detalle</h3>
             <br><br><br>
             <div class="d-flex justify-content-around">
-                <a class="btn btn-primary" target="_blank" href="<?= media(); ?>/documentos/DEPARTAMENTOSACADÉMICOS.pdf">
-                    <h5>Departamentos Académicos</h5>
-                </a>
-
-                <a class="btn btn-primary" target="_blank" href="<?= media(); ?>/documentos/FACULTADES.pdf">
+                <a class="btn btn-outline-primary" target="_blank" href="<?= media(); ?>/documentos/FACULTADES.pdf">
                     <h5>Facultades</h5>
                 </a>
 
-                <a class="btn btn-primary" target="_blank" href="<?= media(); ?>/documentos/ESCUELASPROFESIONALES.pdf">
+                <a class="btn btn-outline-primary" target="_blank" href="<?= media(); ?>/documentos/ESCUELASPROFESIONALES.pdf">
                     <h5>Escuelas</h5>
                 </a>
-                <a class="btn btn-primary" target="_blank" href="<?= media(); ?>/documentos/GRADOSACADÉMICOS.pdf">
+                <a class="btn btn-outline-primary" target="_blank" href="<?= media(); ?>/documentos/DEPARTAMENTOSACADÉMICOS.pdf">
+                    <h5>Departamentos</h5>
+                </a>
+
+
+            </div>
+            <br><br>
+            <div class="d-flex justify-content-around">
+
+                <a class="btn btn-outline-primary" target="_blank" href="<?= media(); ?>/documentos/GRADOSACADÉMICOS.pdf">
                     <h5>Grados Académicos</h5>
                 </a>
-                <a class="btn btn-primary" target="_blank" href="<?= media(); ?>/documentos/TÍTULOSPROFESIONALES.pdf">
+                <a class="btn btn-outline-primary" target="_blank" href="<?= media(); ?>/documentos/TÍTULOSPROFESIONALES.pdf">
                     <h5>Títulos Profesionales</h5>
                 </a>
             </div>
@@ -64,7 +81,7 @@ $idmaestria = $año->listaFacultadpostgrado();
 
     @media (min-width: 1024px) {
         .contedor90 {
-            max-width: 1000px;
+            max-width: 800px;
             margin: auto;
         }
     }
@@ -116,10 +133,10 @@ $idmaestria = $año->listaFacultadpostgrado();
 
 <div class="contedor90 pt-4 pb-4  bgbluemedio rounded ">
     <div class="row">
-        <div class="col-12 col-md-3">
+        <!-- <div class="col-12 col-md-3">
             <h5 class="blanco text-center">¡Información sobre una formación superior de excelencia!</h5>
-        </div>
-        <div class="col-12 col-md-9">
+        </div> -->
+        <div class="col-12 col-md-12">
             <div class="d-flex justify-content-around mt-2">
                 <a href="javascript:void(0);" class="col-4 col-md-3 pt-2 pb-2 text-center" style="background-color: #CC9966;" onclick="openModalMaestrias()">
                     <h5 class="blanco">Maestrías</h5>
@@ -129,7 +146,7 @@ $idmaestria = $año->listaFacultadpostgrado();
                     <h5 class="blanco">Doctorados</h5>
                     <img src="<?= media() ?>/images/postgrado/doctorado.png" style="max-height: 150px; max-height: 50px;">
                 </div>
-                <a  class="col-4 col-md-3 pt-2 pb-2 text-center"  target="_blank"  style="background-color: #009688;" href="<?= media(); ?>/documentos/SEGUNDASESPECIALIDADES.pdf">
+                <a class="col-4 col-md-3 pt-2 pb-2 text-center" target="_blank" style="background-color: #009688;" href="<?= media(); ?>/documentos/SEGUNDASESPECIALIDADES.pdf">
                     <h5 class="blanco">Segundas Especialidades</h5>
                     <img src="<?= media() ?>/images/postgrado/segundaespecialidad.png" style="max-height: 150px; max-height: 50px;">
                 </a>
