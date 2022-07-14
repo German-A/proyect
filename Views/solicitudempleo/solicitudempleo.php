@@ -1,4 +1,25 @@
 <?php head($data); ?>
+<style>
+    .titulo {
+        font-size: 35;
+        font-weight: 900
+    }
+
+    @media (min-width: 700px) {
+        .titulo {
+            font-size: 40px;
+            font-weight: 900
+        }
+    }
+
+    
+    @media (min-width: 1400px) {
+        .titulo {
+            font-size: 45px;
+            font-weight: 900
+        }
+    }
+</style>
 
 <div class="row">
     <div class="d-none d-xl-block col-xl-2 ">
@@ -14,14 +35,14 @@
                 <img class="img-fluid" src="<?= media(); ?>/img/logoDpa.png" alt="">
             </div>
 
-            <div class="col-12 col-md-6 col-xl-6 border-right-2 " style="border-radius:20px; background-color: var(--amarillo-mostaza);">
-                <h1 class="text-center">SOLICITUD DE <br> REQUERIMIENTO LABORAL</h1>
+            <div class="col-12 col-md-6 col-xl-6 border-right-2 " style="border-radius:20px; background-color: var(--amarillo-mostaza); ">
+                <h1 class="text-center titulo">SOLICITUD DE <br> REQUERIMIENTO LABORAL</h1>
             </div>
         </div>
         <form id="frmempleo" class="col-12 d-flex flex-column" name="frmempleo" method="post" submit="return false">
             <input type="hidden" name="accion" id="accion" value="REGISTRAR_EMPLEO">
 
- 
+
 
             <p class="text-primary">Campos obligatorios <span class="text-danger">*</span></p>
 
@@ -51,7 +72,7 @@
                             <input type="text" class="form-control" id="celular" disabled name="celular" x>
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="">Foto:</label>
+                            <label for="">Logo de la Empresa:</label>
                             <input type="file" id="archivoSubido" name="archivoSubido">
                         </div>
                     </div>
@@ -67,7 +88,7 @@
                         <div class="form-group col-md-4">
                             <label for="TrabajoRemoto">Modalidad <span class="text-danger">*</span></label>
                             <select class="form-control select2" name="TrabajoRemoto" id="TrabajoRemoto" data-live-search="true" class="mdb-select md-form" x>
-                                <option disabled selected>Seleccionar una Opción</option>
+                                <option disabled selected>Seleccionar</option>
                                 <option value="Remoto">Remoto</option>
                                 <option value="Presencial">Presencial</option>
                                 <option value="Remoto/Presencial">Remoto/Presencial</option>
@@ -86,11 +107,11 @@
 
                     <div class="form-row">
                         <div class="form-group col-md-5">
-                            <label for="FechaFin">Fecha inicio de postulación<span class="text-danger">*</span></label>
+                            <label for="FechaFin">Fecha inicio para postulación<span class="text-danger">*</span></label>
                             <input type="date" class="form-control" name="FechaInico" id="FechaInico" placeholder="Ingresar FechaInico">
                         </div>
                         <div class="form-group col-md-5">
-                            <label for="FechaFin">Fecha límite de postulación<span class="text-danger">*</span></label>
+                            <label for="FechaFin">Fecha límite para postulación<span class="text-danger">*</span></label>
                             <input type="date" class="form-control" name="FechaFin" id="FechaFin" placeholder="Ingresar Fecha Fin">
                         </div>
                     </div>
@@ -118,23 +139,23 @@
                             </select>
                         </div>
                         <div class="form-group col-md-12">
-                            <label for="ruc">Grado Academico <span class="text-danger">*</span></label>
+                            <label for="ruc">Grado Académico <span class="text-danger">*</span></label>
                             <select class="titulaciones form-control" name="titulaciones[]" data-live-search="true" id="titulaciones" multiple="multiple" x>
                             </select>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="Experiencias">Experiencia <span class="text-danger">*</span></label>
                             <select class="form-control select2 narrow wrap " name="Experiencias" id="Experiencias" class="form-control-lg mdb-select md-form">
-                                <option disabled selected>Seleccionar una Opción</option>
+                                <option disabled selected>Seleccionar</option>
                                 <option value="0">Sin Experiencia</option>
                                 <option value="1">Menos de 1 año</option>
                                 <option value="2">2 año</option>
                                 <option value="3">3 año</option>
-                                <option value="4">4 año a más</option>     
+                                <option value="4">4 año a más</option>
                             </select>
-                       </div>
+                        </div>
                         <div class="form-group col-md-6">
-                            <label for="logo">Idiomas <span class="text-danger">*</span></label>
+                            <label for="logo">Idiomas</label>
                             <select class="idiomas form-control" name="idiomas[]" id="idiomas" multiple="multiple" x>
                             </select>
                         </div>
@@ -154,10 +175,10 @@
                         <div class="form-group col-md-6">
                             <label for="TipoContrato">Modalidad de Contrato<span class="text-danger">*</span></label>
                             <select class="form-control select2 narrow wrap " name="TipoContrato" id="TipoContrato" class="form-control-lg mdb-select md-form">
-                                <option disabled selected>Seleccionar una Opción</option>
+                                <option disabled selected>Seleccionar</option>
                                 <option value="Ofertalaboral">Oferta de Empleo</option>
-                                <option value="preprofesionales">Practicas Pre Profesional </option>
-                                <option value="proprefesionales">Practicas Profesionales</option>
+                                <option value="preprofesionales">Prácticas PreProfesionales</option>
+                                <option value="proprefesionales">Prácticas Profesionales</option>
                             </select>
 
                         </div>
@@ -165,7 +186,7 @@
                         <div class="form-group col-md-6">
                             <label for="JornadaLaboral">Jornada Laboral<span class="text-danger">*</span></label>
                             <select class="form-control select2 narrow wrap " name="JornadaLaboral" id="JornadaLaboral" class="mdb-select md-form">
-                                <option disabled selected>Seleccionar una Opción</option>
+                                <option disabled selected>Seleccionar</option>
                                 <option value="Parcial">Parcial </option>
                                 <option value="Completa">Completa</option>
                                 <option value="Otro">Otro</option>
@@ -174,11 +195,11 @@
 
                         <div class="form-group col-md-4">
                             <label for="HorasSemanales">Horas Semanales</label>
-                            <input type="number" class="form-control" name="HorasSemanales" id="HorasSemanales" placeholder="Ingresar la Horas Semanales" x>
+                            <input type="number" class="form-control" onchange="comprueba()" name="HorasSemanales" id="HorasSemanales" placeholder="" x>
                         </div>
                         <div class="form-group col-md-8">
                             <label for="HorarioTrabajo">Horario de Trabajo</label>
-                            <input type="text" class="form-control" name="HorarioTrabajo" id="HorarioTrabajo" placeholder="Ingresar las Horario Trabajo" x>
+                            <input type="text" class="form-control" name="HorarioTrabajo" id="HorarioTrabajo" placeholder="" x>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="RemuneracionBruta">S/. Remuneración</label>
@@ -188,12 +209,11 @@
                                 <option value="1500">1500 a 2000</option>
                                 <option value="2000">2000 a 2500</option>
                                 <option value="2500">2500 a 3000</option>
-                                <option value="4000">4000</option>
-                                <option value="Otro">Otro</option>
+                                <option value="4000">4000 a más</option>
                             </select>
                         </div>
                         <div class="form-group  text-center col-md-12">
-                            <button type="button" class="btn btn-primary " onclick="publicarOferta()">PUBLICAR OFERTA LABORAL</button>
+                            <button type="button" class="btn btn-primary " onclick="publicarOferta()">ENVIAR PARA APROBACIÓN</button>
                         </div>
                     </div>
                 </div>
@@ -251,6 +271,27 @@
 
 
 <script>
+    $('#HorasSemanales').on('change', function(event) {
+        const HorasSemanales = event.target.value;
+        var inputHorasSemanales = document.getElementById("HorasSemanales");
+        if (HorasSemanales < 0) {     
+            swal("Atención!", "Las horas semanales no puden ser menor a 0", "warning");
+            inputHorasSemanales.value = 1;
+        }
+    });
+
+    $('#NumeroVacantes').on('change', function(event) {
+        const NumeroVacantes = event.target.value;
+        var inputNumeroVacantes = document.getElementById("NumeroVacantes");
+        if (NumeroVacantes < 0) {     
+            swal("Atención!", "El número de vacantes no puden ser menor a 0", "warning");
+            inputNumeroVacantes.value = 1;
+        }
+    });
+
+
+
+
     function publicarOferta() {
 
 
@@ -273,7 +314,7 @@
         var TrabajoRemoto = $("#TrabajoRemoto").val();
         var NumeroVacantes = $("#NumeroVacantes").val();
         var competencias = $("#competencias").val();
-        var idiomas = $("#idiomas").val();
+        //var idiomas = $("#idiomas").val();
         var Experiencias = $("#Experiencias").val();
         var TipoContrato = $("#TipoContrato").val();
         var HorasSemanales = $("#HorasSemanales").val();
@@ -452,14 +493,14 @@
         }).done(function(response) {
             var info = JSON.parse(response);
             divLoading.style.display = "none";
-            if (info.status == true) { 
+            if (info.status == true) {
                 listado =
-                        `
+                    `
                             <div class="text-center  mb-2">
                                 <h5 class="azul">` + info.msg + `</h5>
                             </div>                          
                         `;
-                    $("#correoweb").html(listado);
+                $("#correoweb").html(listado);
 
             }
             $('#modalPerfiles').modal('show');
