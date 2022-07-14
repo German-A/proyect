@@ -20,72 +20,71 @@ $n = 1;
 <div style="margin: auto; max-width: 85%;">
 
     <div class="col-md-10 r m-auto">
-        <h3 class="mostaza">Manuales y Guías</h3>
+        <h3 class="blueoscuro">Manuales y Guías</h3>
     </div>
 
     <br>
     <div class="col-md-10 r m-auto">
 
     </div>
-    <div class="d-flex justify-content-between">
+    <div class="row">
         <div class="col-md-10  m-auto">
-            <div class="row">
-                <?php foreach ($perfiles as $key => $fila) { ?>
-                    <a class="col-md-5 ml-2" href="<?= media(); ?>/archivos/manuales/<?php echo $fila['NombreArchivo']  ?>" target="_blank">
-                        <h5 class="blueclaro"><img style="height: 30px;" src="<?= media(); ?>/archivos/logos/archivo.png" alt=""><?php echo $fila['Nombre'] ?></h5>
-                    </a>
-                <?php } ?>
-            </div>
+            <?php foreach ($perfiles as $key => $fila) { ?>
+                <a class="col-md-12 ml-2 btn btn-outline-warning p-2 m-2  d-flex justify-content-center" href="<?= media(); ?>/archivos/manuales/<?php echo $fila['NombreArchivo']  ?>" target="_blank">
+                    <h1 class="text-danger" style="height: 40px;"><i class="fas fa-file-pdf"></i></h1>
+                    <div class="col-11">
+                        <h5 class=""><?php echo $fila['Nombre'] ?></h5>
+                    </div>
+                    <h3 class="text-primary" style="height: 20px;"> <i class="fas fa-download"></i></h3>
+                </a>
+            <?php } ?>
         </div>
     </div>
-    <br>
 
-
-
-    <br>
-
-    <br>
+    <br><br><br>
 
     <div class="col-md-10 r m-auto">
-        <h3 class="mostaza">Video Tutoriales</h3>
+        <h3 class="blueoscuro">Video Tutoriales</h3>
     </div>
-
     <br>
 
-    <div class="d-flex flex-row">
+    <div class="row">
         <div class="col-md-10  m-auto">
-            <div class="row">
-                <?php foreach ($tutoriales as $key => $fila) { ?>
-                    <a class="col-md-6 p-1" href="<?php echo $fila['UrlVideo'] ?>" target="_blank">
-                        <h5 class="blueclaro"><img style="height: 30px;" src="<?= media(); ?>/archivos/logos/archivo.png" alt=""><?php echo $fila['Nombre'] ?></h5>
-                    </a>
-                <?php } ?>
-            </div>
+            <?php foreach ($tutoriales as $key => $fila) { ?>
+                <a class="col-md-12 ml-2 btn btn-outline-warning p-2 m-2  d-flex justify-content-center" href="<?php echo $fila['UrlVideo'] ?>" target="_blank">
+                    <h1 class="text-danger" style="height: 40px;"><i class="fab fa-youtube"></i></h1>
+                    <div class="col-11">
+                        <h5 class=""><?php echo $fila['Nombre'] ?></h5>
+                    </div>
+                    <h3 class="text-primary" style="height: 20px;"> <i class="fas fa-play"></i></h3>
+                </a>
+            <?php } ?>
         </div>
     </div>
-    <br>
 
-    <br>
-    <br>
-
+    <br><br><br>
 
     <div class="col-md-10 r m-auto">
-        <h3 class="mostaza">Video Conferencias</h3>
+        <h3 class="blueoscuro">Video Conferencias</h3>
     </div>
 
     <br>
 
-    <div class="d-flex flex-row">
+
+    <div class="row">
         <div class="col-md-10  m-auto">
-            <div class="row">
-                <?php foreach ($capacitaciones as $key => $fila) { ?>
-                    <a class="col-md-6 p-1" href="<?php echo $fila['UrlVideo'] ?>" target="_blank">
-                        <h5 class="blueclaro"><img style="height: 30px;" src="<?= media(); ?>/archivos/logos/archivo.png" alt=""><?php echo $fila['Nombre'] ?></h5>
-                    </a>
-                <?php } ?>
-            </div>
+            <?php foreach ($capacitaciones as $key => $fila) { ?>
+                <a class="col-md-12 ml-2 btn btn-outline-warning p-2 m-2  d-flex justify-content-center" href="<?php echo $fila['UrlVideo'] ?>" target="_blank">
+                    <h1 class="text-danger" style="height: 40px;"><i class="fab fa-youtube"></i></h1>
+                    <div class="col-11">
+                        <h5 class=""><?php echo $fila['Nombre'] ?></h5>
+                    </div>
+                    <h3 class="text-primary" style="height: 20px;"> <i class="fas fa-play"></i></h3>
+                </a>
+            <?php } ?>
         </div>
     </div>
+
     <br>
 
 

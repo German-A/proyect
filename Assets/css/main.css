@@ -2770,8 +2770,8 @@ fieldset:disabled a.btn {
 
 .btn-primary:hover {
     color: #FFF;
-    background-color: #007065;
-    border-color: #00635a;
+    background-color: #0069d9;
+    border-color: #0062cc;
 }
 
 .btn-primary:focus,
@@ -2783,23 +2783,23 @@ fieldset:disabled a.btn {
 .btn-primary.disabled,
 .btn-primary:disabled {
     color: #FFF;
-    background-color: #009688;
-    border-color: #009688;
+    background-color: #007bff;
+    border-color: #007bff;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active,
 .btn-primary:not(:disabled):not(.disabled).active,
 .show>.btn-primary.dropdown-toggle {
     color: #FFF;
-    background-color: #00635a;
-    border-color: #00564e;
+    background-color: #0062cc;
+    border-color: #005cbf;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active:focus,
 .btn-primary:not(:disabled):not(.disabled).active:focus,
 .show>.btn-primary.dropdown-toggle:focus {
-    -webkit-box-shadow: 0 0 0 0 rgba(38, 166, 154, 0.5);
-    box-shadow: 0 0 0 0 rgba(38, 166, 154, 0.5);
+    -webkit-box-shadow: 0 0 0 0 rgba(38, 143, 255, 0.5);
+    box-shadow: 0 0 0 0 rgba(38, 143, 255, 0.55);
 }
 
 .btn-secondary {
@@ -3095,13 +3095,13 @@ fieldset:disabled a.btn {
 
 .btn-outline-primary:focus,
 .btn-outline-primary.focus {
-    -webkit-box-shadow: 0 0 0 0 rgba(0, 150, 136, 0.5);
-    box-shadow: 0 0 0 0 rgba(0, 150, 136, 0.5);
+    -webkit-box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.5);
+    box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.5);
 }
 
 .btn-outline-primary.disabled,
 .btn-outline-primary:disabled {
-    color: #009688;
+    color: #12377B;
     background-color: transparent;
 }
 
@@ -3109,15 +3109,15 @@ fieldset:disabled a.btn {
 .btn-outline-primary:not(:disabled):not(.disabled).active,
 .show>.btn-outline-primary.dropdown-toggle {
     color: #FFF;
-    background-color: #009688;
-    border-color: #009688;
+    background-color: #12377B;
+    border-color: #12377B;
 }
 
 .btn-outline-primary:not(:disabled):not(.disabled):active:focus,
 .btn-outline-primary:not(:disabled):not(.disabled).active:focus,
 .show>.btn-outline-primary.dropdown-toggle:focus {
-    -webkit-box-shadow: 0 0 0 0 rgba(0, 150, 136, 0.5);
-    box-shadow: 0 0 0 0 rgba(0, 150, 136, 0.5);
+    -webkit-box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.5);
+    box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.5);
 }
 
 .btn-outline-secondary {
@@ -10727,13 +10727,13 @@ button.bg-dark:focus {
 }
 
 .text-primary {
-    color: #009688 !important;
-}
-
-a.text-primary:hover,
-a.text-primary:focus {
-    color: #004a43 !important;
-}
+    color: #007bff !important;
+  }
+  
+  a.text-primary:hover, a.text-primary:focus {
+    color: #0056b3 !important;
+  }
+  
 
 .text-secondary {
     color: #6c757d !important;
