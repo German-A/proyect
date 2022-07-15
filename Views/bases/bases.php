@@ -15,44 +15,53 @@ $n = 1;
 <br><br>
 <div style="margin: auto; max-width: 85%;">
     <br>
-
+<!-- 
     <div class="col-md-10 r m-auto">
-        <h3 class="mostaza">Normativa</h3>
-    </div>
+        <h3 class="blueoscuro">Normativa</h3>
+    </div> -->
 
     <br>
     <div class="col-md-10 r m-auto">
-        <h3 class="mostaza">Normativa Nacional</h3>
+        <h3 class="blueoscuro">Normativa Nacional</h3>
     </div>
-    <div class="d-flex justify-content-between">
+
+    <div class="row">
         <div class="col-md-10  m-auto">
-            <div class="row">
-                <?php foreach ($perfiles as $key => $fila) { ?>
-                    <a class="col-md-6 p-1" href="<?= media(); ?>/archivos/documentoslegales/<?php echo $fila['NombreArchivo']  ?>" target="_blank">
-                        <h5 class="blueclaro"><img style="height: 30px;" src="<?= media(); ?>/archivos/logos/archivo.png" alt=""><?php echo $fila['Nombre'] ?></h5>
-                    </a>
-                <?php } ?>
-            </div>
+            <?php foreach ($perfiles as $key => $fila) { ?>
+                <a class="col-md-12 ml-2 btn btn-outline-warning p-2 m-2  d-flex justify-content-center" href="<?= media(); ?>/archivos/documentoslegales/<?php echo $fila['NombreArchivo']  ?>" target="_blank">
+                    <h1 class="text-danger" style="height: 40px;"><i class="fas fa-file-pdf"></i></h1>
+                    <div class="col-11">
+                        <h5 class=""><?php echo $fila['Nombre'] ?></h5>
+                    </div>
+                    <h3 class="text-primary" style="height: 20px;"> <i class="fas fa-download"></i></h3>
+                </a>
+            <?php } ?>
         </div>
     </div>
-    <br>
 
     <br>
+
     <div class="col-md-10 r m-auto">
-        <h3 class="mostaza">Normativa Insititucional</h3>
+        <h3 class="blueoscuro">Normativa Insititucional</h3>
     </div>
-    <div class="d-flex justify-content-between">
+
+
+
+    <div class="row">
         <div class="col-md-10  m-auto">
-            <div class="row">
-                <?php foreach ($perfiless as $key => $fila) { ?>
-                    <a class="col-md-6 p-1" href="<?= media(); ?>/archivos/documentoslegales/<?php echo $fila['NombreArchivo']  ?>" target="_blank">
-                        <h5>
-                            <h5 class="blueclaro"><img style="height: 30px;" src="<?= media(); ?>/archivos/logos/archivo.png" alt=""><?php echo $fila['Nombre'] ?></h5>
-                    </a>
-                <?php } ?>
-            </div>
+            <?php foreach ($perfiless as $key => $fila) { ?>
+                <a class="col-md-12 ml-2 btn btn-outline-warning pl-5 pr-5 m-2  d-flex justify-content-center" href="<?= media(); ?>/archivos/documentoslegales/<?php echo $fila['NombreArchivo']  ?>" target="_blank">
+                    <h1 class="text-danger" >  <img style="max-height: 40px;"  src="<?= media(); ?>/archivos/logos/word.png" alt="">   </h1>
+                    <div class="col-11">
+                        <h5 class=""><?php echo $fila['Nombre'] ?></h5>
+                    </div>
+                    <h3 class="text-primary" style="height: 20px;"> <i class="fas fa-download"></i></h3>
+                </a>
+            <?php } ?>
         </div>
     </div>
+
+
     <br>
 
 

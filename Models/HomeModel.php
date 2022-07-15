@@ -53,7 +53,7 @@ class HomeModel extends Mysql
 	public function selectLegal()
 	{
 
-		$sql = "SELECT Nombre,NombreArchivo	from basenacional WHERE Habilitado = '1' order by Posicion asc";
+		$sql = "SELECT Nombre,NombreArchivo,tipo	from basenacional WHERE Habilitado = '1' order by Posicion asc";
 		$request = $this->select_all($sql);
 		return $request;
 	}
@@ -68,7 +68,7 @@ class HomeModel extends Mysql
 	public function selectinstitucional()
 	{
 
-		$sql = "SELECT Nombre,NombreArchivo
+		$sql = "SELECT Nombre,NombreArchivo,tipo
 			from baseintitucional WHERE Habilitado = '1' order by Posicion asc";
 		$request = $this->select_all($sql);
 		return $request;
