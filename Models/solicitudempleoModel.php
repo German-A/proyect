@@ -7,6 +7,10 @@ class SolicitudempleoModel extends Mysql
 	private $nuevonombre;
 	private $cantidad;
 	private $intborrar = 0;
+	private $request_in = 0;
+
+
+
 
 	public function __construct()
 	{
@@ -157,8 +161,8 @@ class SolicitudempleoModel extends Mysql
 			$this->password,
 			$this->imagen
 		);
-		$request_insert = $this->insert($query_insert, $arrData);
-		$return = $request_insert;
+		$this->request_insert = $this->insert($query_insert, $arrData);
+		$return =$this->request_insert;
 		return $return;
 	}
 
@@ -263,9 +267,9 @@ class SolicitudempleoModel extends Mysql
 				$this->idTitulaciones,
 				$this->idEmpleos
 			);
-			$request_in = $this->insert($query_insert, $arrData);
+			$this->request_in = $this->insert($query_insert, $arrData);
 		}
-		$return = $request_in;
+		$return = $this->request_in;
 
 
 		//insertar en el detalle de carreras
@@ -277,9 +281,9 @@ class SolicitudempleoModel extends Mysql
 				$this->escuelaid,
 				$this->idEmpleos
 			);
-			$request_in = $this->insert($query_insert, $arrData);
+			$this->request_in = $this->insert($query_insert, $arrData);
 		}
-		$return = $request_in;
+		$return = $this->request_in;
 		//insertar en el detalle de competencias
 		foreach ($competencias as $val) {
 			$this->competenciasid = $val['competencias'];
@@ -289,9 +293,9 @@ class SolicitudempleoModel extends Mysql
 				$this->competenciasid,
 				$this->idEmpleos
 			);
-			$request_in = $this->insert($query_insert, $arrData);
+			$this->request_in = $this->insert($query_insert, $arrData);
 		}
-		$return = $request_in;
+		$return = $this->request_in;
 		//insertar en el detalle de idiomas
 		foreach ($idiomas as $val) {
 			$this->idiomaid = $val['idiomas'];
@@ -301,9 +305,9 @@ class SolicitudempleoModel extends Mysql
 				$this->idiomaid,
 				$this->idEmpleos
 			);
-			$request_in = $this->insert($query_insert, $arrData);
+			$this->request_in = $this->insert($query_insert, $arrData);
 		}
-		$return = $request_in;
+		$return = $this->request_in;
 
 
 

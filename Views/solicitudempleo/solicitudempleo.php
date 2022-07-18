@@ -1,22 +1,23 @@
 <?php head($data); ?>
 <style>
     .titulo {
-        font-size: 35;
-        font-weight: 900
+        font-size: 35px;
+        font-weight: 700;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     }
 
     @media (min-width: 700px) {
         .titulo {
-            font-size: 40px;
-            font-weight: 900
+            font-size: 35px;
+            font-weight: 700
         }
     }
 
     
     @media (min-width: 1400px) {
         .titulo {
-            font-size: 45px;
-            font-weight: 900
+            font-size: 35px;
+            font-weight: 700
         }
     }
 </style>
@@ -35,7 +36,7 @@
                 <img class="img-fluid" src="<?= media(); ?>/img/logoDpa.png" alt="">
             </div>
 
-            <div class="col-12 col-md-6 col-xl-6 border-right-2 " style="border-radius:20px; background-color: var(--amarillo-mostaza); ">
+            <div class="d-flex align-items-center justify-content-center col-12 col-md-6 col-xl-6 border-right-2 " style="border-radius:20px; background-color: var(--amarillo-mostaza); ">
                 <h1 class="text-center titulo">SOLICITUD DE <br> REQUERIMIENTO LABORAL</h1>
             </div>
         </div>
@@ -85,7 +86,7 @@
                             <input type="text" class="form-control" name="NombrePuesto" id="NombrePuesto" placeholder="Ingresar Nombre Puesto" x>
                             <!-- <textarea type="text" class="form-control" name="NombrePuesto" id="NombrePuesto" placeholder="Ingresar Nombre Puesto" x></textarea> -->
                         </div>
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-6">
                             <label for="TrabajoRemoto">Modalidad <span class="text-danger">*</span></label>
                             <select class="form-control select2" name="TrabajoRemoto" id="TrabajoRemoto" data-live-search="true" class="mdb-select md-form" x>
                                 <option disabled selected>Seleccionar</option>
@@ -95,11 +96,11 @@
                                 <option value="Otro">Otro</option>
                             </select>
                         </div>
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-6">
                             <label for="NumeroVacantes">N° Vacantes <span class="text-danger">*</span></label>
                             <input type="number" class="form-control" name="NumeroVacantes" id="NumeroVacantes" placeholder="Ingresar el Número de Vacantes" x>
                         </div>
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-12">
                             <label for="LugarTrabajo">Lugar de Trabajo <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" name="LugarTrabajo" id="LugarTrabajo" placeholder="Ingresar el Lugar Trabajo" x>
                         </div>
@@ -154,6 +155,8 @@
                                 <option value="4">4 año a más</option>
                             </select>
                         </div>
+
+                        
                         <div class="form-group col-md-6">
                             <label for="logo">Idiomas</label>
                             <select class="idiomas form-control" name="idiomas[]" id="idiomas" multiple="multiple" x>
@@ -314,7 +317,7 @@
         var TrabajoRemoto = $("#TrabajoRemoto").val();
         var NumeroVacantes = $("#NumeroVacantes").val();
         var competencias = $("#competencias").val();
-        //var idiomas = $("#idiomas").val();
+        var idiomas = $("#idiomas").val();
         var Experiencias = $("#Experiencias").val();
         var TipoContrato = $("#TipoContrato").val();
         var HorasSemanales = $("#HorasSemanales").val();
@@ -333,39 +336,39 @@
         }
 
 
-        // if (NombrePuesto == 0) {
-        //     swal("Atención!", "Ingresar el Nombre del Puesto", "warning");
-        //     return;
-        // }
+        if (NombrePuesto == 0) {
+            swal("Atención!", "Ingresar el Nombre del Puesto", "warning");
+            return;
+        }
 
-        // if (carreras == 0) {
-        //     swal("Atención!", "Seleccionar una Carrera ", "warning");
-        //     return;
-        // }
-        // if (titulaciones == 0) {
-        //     swal("Atención!", "Seleccionar una Titulaciones ", "warning");
-        //     return;
-        // }
-
-
-        // if (DescripcionPuesto == 0) {
-        //     swal("Atención!", "Ingresar una Descripción del Puesto", "warning");
-        //     return;
-        // }
-        // if (LugarTrabajo == 0) {
-        //     swal("Atención!", "Ingresar el Lugar de Trabajo", "warning");
-        //     return;
-        // }
+        if (carreras == 0) {
+            swal("Atención!", "Seleccionar una Carrera ", "warning");
+            return;
+        }
+        if (titulaciones == 0) {
+            swal("Atención!", "Seleccionar un Grado Académico", "warning");
+            return;
+        }
 
 
-        // if (TrabajoRemoto == null) {
-        //     swal("Atención!", "Seleccionar la Modalidad de Trabajo", "warning");
-        //     return;
-        // }
-        // if (NumeroVacantes == 0) {
-        //     swal("Atención!", "Ingresar el Número de Vacantes", "warning");
-        //     return;
-        // }
+        if (DescripcionPuesto == 0) {
+            swal("Atención!", "Ingresar una Descripción del Puesto", "warning");
+            return;
+        }
+        if (LugarTrabajo == 0) {
+            swal("Atención!", "Ingresar el Lugar de Trabajo", "warning");
+            return;
+        }
+
+
+        if (TrabajoRemoto == null) {
+            swal("Atención!", "Seleccionar la Modalidad de Trabajo", "warning");
+            return;
+        }
+        if (NumeroVacantes == 0) {
+            swal("Atención!", "Ingresar el Número de Vacantes", "warning");
+            return;
+        }
         // if (competencias == 0) {
         //     swal("Atención!", "Seleccionar las Competencias", "warning");
         //     return;
@@ -375,50 +378,50 @@
         //     swal("Atención!", "Seleccionar el nivel del Idiomas", "warning");
         //     return;
         // }
-        // if (Experiencias == 0) {
-        //     swal("Atención!", "Ingresar si sé requiere Experencia", "warning");
-        //     return;
-        // }
-        // if (TipoContrato == 0) {
-        //     swal("Atención!", "Seleccionar el Tipo de Contrato", "warning");
-        //     return;
-        // }
+        if (Experiencias == 0) {
+            swal("Atención!", "Ingresar si sé requiere Experencia", "warning");
+            return;
+        }
+        if (TipoContrato == 0) {
+            swal("Atención!", "Seleccionar el Tipo de Contrato", "warning");
+            return;
+        }
 
-        // if (JornadaLaboral == null) {
-        //     swal("Atención!", "Ingresar la Jornada Laboral", "warning");
-        //     return;
-        // }
-
-
-        // if (HorasSemanales == 0) {
-        //     swal("Atención!", "Ingresar el número de Horas Semanales", "warning");
-        //     return;
-        // }
-        // if (HorarioTrabajo == 0) {
-        //     swal("Atención!", "Ingresar el Horario Trabajo", "warning");
-        //     return;
-        // }
-
-        // if (Contacto == 0) {
-        //     swal("Atención!", "Ingresar el correo o número de Contacto", "warning");
-        //     return;
-        // }
+        if (JornadaLaboral == null) {
+            swal("Atención!", "Seleccionar la Jornada Laboral", "warning");
+            return;
+        }
 
 
-        // if (RemuneracionBruta == 0) {
-        //     swal("Atención!", "Ingresar la Remuneración Bruta", "warning");
-        //     return;
-        // }
+        if (HorasSemanales == 0) {
+            swal("Atención!", "Ingresar el número de Horas Semanales", "warning");
+            return;
+        }
+        if (HorarioTrabajo == 0) {
+            swal("Atención!", "Ingresar el Horario Trabajo", "warning");
+            return;
+        }
 
-        // if (FechaInico == 0) {
-        //     swal("Atención!", "Seleccione la Fecha Inicio", "warning");
-        //     return;
-        // }
+        if (Contacto == 0) {
+            swal("Atención!", "Ingresar el correo o número de Contacto", "warning");
+            return;
+        }
 
-        // if (FechaFin == 0) {
-        //     swal("Atención!", "Seleccione la Fecha Fin", "warning");
-        //     return;
-        // }
+
+        if (RemuneracionBruta == 0 || RemuneracionBruta==null) {
+            swal("Atención!", "Ingresar la Remuneración Bruta", "warning");
+            return;
+        }
+
+        if (FechaInico == 0) {
+            swal("Atención!", "Seleccione la Fecha Inicio", "warning");
+            return;
+        }
+
+        if (FechaFin == 0) {
+            swal("Atención!", "Seleccione la Fecha Fin", "warning");
+            return;
+        }
 
 
         var listaLotes = new Array();
@@ -477,6 +480,7 @@
         fd.append("TipoContrato", TipoContrato);
         fd.append("HorasSemanales", HorasSemanales);
         fd.append("HorarioTrabajo", HorarioTrabajo);
+        fd.append("JornadaLaboral", JornadaLaboral);
         fd.append("RemuneracionBruta", RemuneracionBruta);
         fd.append("FechaInico", FechaInico);
         fd.append("FechaFin", FechaFin);
@@ -492,6 +496,7 @@
 
         }).done(function(response) {
             var info = JSON.parse(response);
+            console.log(info);
             divLoading.style.display = "none";
             if (info.status == true) {
                 listado =
@@ -501,7 +506,16 @@
                             </div>                          
                         `;
                 $("#correoweb").html(listado);
-
+            }
+            if (info.status == false) {
+                console.log(info.status);
+                listado =
+                    `
+                            <div class="text-center  mb-2">
+                                <h5 class="azul">` + info.msg + `</h5>
+                            </div>                          
+                        `;
+                $("#correoweb").html(listado);
             }
             $('#modalPerfiles').modal('show');
             //swal("Atención!", "TERMINADO", "warning");
@@ -535,17 +549,21 @@
                     $("#nombreempresa").attr("disabled", true);
                     $("#correo").attr("disabled", true);
                     $("#celular").attr("disabled", true);
+                    $("#archivoSubido").attr("disabled", true);
                     document.getElementById('nombreempresa').value = info.data['nombreEmpresa'];
                     document.getElementById('correo').value = info.data['email_user'];
                     document.getElementById('celular').value = info.data['telefono'];
+                    document.getElementById('archivoSubido').value = info.data['archivoSubido'];
                 }
                 if (info.status == false) {
                     $("#nombreempresa").attr("disabled", false);
                     $("#correo").attr("disabled", false);
                     $("#celular").attr("disabled", false);
+                    $("#archivoSubido").attr("disabled", false);
                     document.getElementById('nombreempresa').value = "";
                     document.getElementById('correo').value = "";
                     document.getElementById('celular').value = "";
+                    document.getElementById('archivoSubido').value = "";
                 }
             }
         });

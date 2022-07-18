@@ -143,7 +143,7 @@ class solicitudempleo extends Controllers
 		$titulaciones= array();
 		$idiomas= array();
 		$competencias= array();
-		//$escuelas= array();
+		$escuelas= array();
 
 		// $titulaciones = [];
 		// $titulaciones = $_POST['titulaciones'];
@@ -154,12 +154,7 @@ class solicitudempleo extends Controllers
 
 		$arrData = $this->model->insertarEmpleo($idEmpresa, $NombrePuesto, $FechaInico, $FechaFin, $titulaciones, $carreras, $competencias, $idiomas, $DescripcionPuesto, $InformacionAdicional, $NumeroVacantes, $Experiencias, $TipoContrato, $HorasSemanales, $HorarioTrabajo, $RemuneracionBruta, $Contacto, $LugarTrabajo, $TrabajoRemoto, $JornadaLaboral);
 
-		if ($idEmpresa > 0) {
-			$arrData = array('status' => true, 'msg' => 'Datos guardados correctamente.');
-		} else {
-			$arrData = array("status" => false, "msg" => 'No es posible almacenar los datos.');
-		}
-
+		
 		$today = getdate();
 		$hora = $today["hours"];
 		if ($hora < 6) {
@@ -188,19 +183,19 @@ class solicitudempleo extends Controllers
 			'asunto' => 'Publicación de Empleo',
 		);
 
-		if (sendMailPublicacionEmpleo($dataUsuario, 'email_cambioPassword')) {
-			$arrResponse = array(
-				'status' => true,
-				'msg' => 'Tu publicación de empleo en breves momento será aprobada, así mismo se enviara una copia en el correo que registraste.'
-			);
+		if ($arrData != 0) {
+			$arrResponse=sendMailPublicacionEmpleo($dataUsuario, 'email_cambioPassword');
 		} else {
-			$arrResponse = array(
-				'status' => false,
-				'msg' => 'No es posible realizar el proceso, intenta más tarde.'
-			);
+			$arrResponse = array("status" => false, "msg" => 'No es posible almacenar los datos.');
 		}
+
+			
+		
+				
 		echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
 		die();
+
+		
 	}
 
 	public function buscarruc()

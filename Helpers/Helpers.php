@@ -364,7 +364,7 @@ function sendMailTicketLocal($data, $template)
         $mail->setFrom('notificaciones@use-dpa.unitru.edu.pe', 'UNIDAD DE SEGUIMIENTO DEL EGRESADO');
         $mail->addAddress('use@unitru.edu.pe');     //Add a recipient
         $mail->addCC($data['email']);
-        
+
 
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML
@@ -380,12 +380,12 @@ function sendMailTicketLocal($data, $template)
 
 function sendMailPublicacionEmpleo($data, $template)
 {
-    $escu='';
+    $escu = '';
 
     foreach ($data['escuelas'] as &$escuela) {
-        $escu = $escu . $escuela['nombreEscuela'].', ';       
+        $escu = $escu . $escuela['nombreEscuela'] . ', ';
     }
-   
+
     $mail = new PHPMailer(true);
 
     $mensaje = '<!DOCTYPE html>
@@ -470,16 +470,16 @@ function sendMailPublicacionEmpleo($data, $template)
                 <tr>
                     <td>
                         <div class="x_sgwrap x_title_blue">
-                            <h1>' . $data['saludo'].' usuarios de la empresa <b>'.$data['nombreEmpresa'] . '</b></h1>
+                            <h1>' . $data['saludo'] . ' usuarios de la empresa <b>' . $data['nombreEmpresa'] . '</b></h1>
                         </div>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <div class="x_sgwrap">
-                            <p>La publicación de empleo para el puesto: ' .$data['NombrePuesto'] . '</p>
+                            <p>La publicación de empleo para el puesto: ' . $data['NombrePuesto'] . '</p>
                             <p>para las carreras de:  ' . $escu . '</p>
-                            <p>Con la fecha de termino: <strong>' .$data['FechaFin'] . '</strong></p>
+                            <p>Con la fecha de termino: <strong>' . $data['FechaFin'] . '</strong></p>
                             <p>En breves momento será aprobada </p>
                         </div>
                     </td>
@@ -506,8 +506,6 @@ function sendMailPublicacionEmpleo($data, $template)
         $mail->setFrom('notificaciones@use-dpa.unitru.edu.pe', 'UNIDAD DE SEGUIMIENTO DEL EGRESADO');
         $mail->addAddress('use@unitru.edu.pe');     //Add a recipient
         $mail->addCC($data['email']);
-        $mail->addCC($data['email']);
-        
 
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML
@@ -515,9 +513,19 @@ function sendMailPublicacionEmpleo($data, $template)
         $mail->Body    = $mensaje;
 
         $mail->send();
-        return 1;
+        $arrResponse = array(
+            'status' => true,
+            'msg' => 'Tu publicación de empleo en breves momento será aprobada, así mismo se enviara una copia en el correo que registraste.'
+        );
+        return $arrResponse;
     } catch (Exception $e) {
-        echo "Error en el envío del mensaje: {$mail->ErrorInfo}";
+
+        $arrResponse = array(
+            'status' => true,
+            'msg' => "Correo invalido: " . $data['email']
+            // 'msg' => "$mail->ErrorInfo"
+        );
+        return   $arrResponse;
     }
 }
 
@@ -535,16 +543,16 @@ function sendMailLocalCarreras($data, $template)
 
 
     try {
-    //Server settings
-    $mail->SMTPDebug = 0;                      //Enable verbose debug output
-    $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = 'smtp.gmail.com';    //server de servicio de correo                 //Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'jeanromerolobaton@gmail.com';                     //SMTP username
-    $mail->Password   = 'JPsistemas321';                               //SMTP password
-    $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
-    $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-                          //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+        //Server settings
+        $mail->SMTPDebug = 0;                      //Enable verbose debug output
+        $mail->isSMTP();                                            //Send using SMTP
+        $mail->Host       = 'smtp.gmail.com';    //server de servicio de correo                 //Set the SMTP server to send through
+        $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+        $mail->Username   = 'jeanromerolobaton@gmail.com';                     //SMTP username
+        $mail->Password   = 'JPsistemas321';                               //SMTP password
+        $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
+        $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+        //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
         //Recipients
         $mail->setFrom('notificaciones@use-dpa.unitru.edu.pe', 'UNIDAD DE SEGUIMIENTO DEL EGRESADO');
@@ -871,7 +879,11 @@ function sendMailLocalEmpleo($data, $template)
         $mail->send();
         return 1;
     } catch (Exception $e) {
-        echo "Error en el envío del mensaje: {$mail->ErrorInfo}";
+        $arrResponse = array(
+            'status' => true,
+            'msg' => "$mail->ErrorInfo"
+        );
+        return $arrResponse;
     }
 }
 
