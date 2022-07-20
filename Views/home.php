@@ -135,10 +135,10 @@ $legal = $obj->selectLegalInicio();
 
     </div>
     <div class="plataform-use  col-md-6 col-lg-4 col-xl-4" data-aos="flip-down">
-      <a href="<?= base_url(); ?>/manuales">
-        <img class="logosplaforma" src="<?= media(); ?>/archivos/logos/manuales.png" alt="">
+      <a href="<?= base_url(); ?>/solicitudempleo">
+        <img class="logosplaforma" src="<?= media(); ?>/archivos/logos/publicarTrabajo.png" alt="">
         <br><br>
-        <h5 class="text-cursosmooc text-center">MANUALES Y GUIAS DE USUARIO</h5>
+        <h5 class="text-cursosmooc text-center">PUBLICA TU OFERTA</h5>
       </a>
 
     </div>

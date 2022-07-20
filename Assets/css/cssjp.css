@@ -26,7 +26,7 @@ html {
   --texroBarra: #ffffff;
   --barra: #12377b;
   --enlaceNavegador: rgb(25, 30, 98);
-  --enlaceNavegadorHover: #e6ad09;
+  --enlaceNavegadorHover: #ffc107;
   /*HeaderSecundario*/
 
   --primario: #ffc107;
@@ -297,7 +297,7 @@ a:link, a:visited, a:active {
 /*#region perfiles*/
 
 .fondo {
-  color: blue;
+  color: var(--azul-medio);
   border-color: #aaaaaa;
   border-width: 1px;
   border-style: solid;
@@ -341,3 +341,63 @@ a:link, a:visited, a:active {
 }
 
 /*#endregion perfiles*/
+
+
+/*variables*/
+.contedor80 {
+  max-width: 80%;
+  margin: auto;
+}
+
+.contedor90 {
+  max-width: 100%;
+  margin: auto;
+}
+
+@media (min-width: 1024px) {
+  .contedor90 {
+      max-width: 800px;
+      margin: auto;
+  }
+}
+
+
+
+.amarillo {
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.amarillo::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #FFC90D;
+  position: absolute;
+
+  z-index: 1;
+  top: -800px;
+  left: 0;
+  transition: .5s ease-in-out all;
+}
+
+.amarillo:hover::after {
+  top: 0;
+  transition: .5s ease-in-out all;
+
+}
+
+
+.amarillo .t {
+  position: relative;
+  z-index: 2;
+  transition: .2s ease all;
+
+}
+

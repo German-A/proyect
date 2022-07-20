@@ -129,4 +129,37 @@ class Home extends Controllers
 
 		die();
 	}
+
+
+
+	//obtener un baner para actualizar
+	public function getObjetivosEducacionales($id)
+	{
+		if ($id > 0) {
+			$arrData = $this->model->listaEscuelasObjetivosEducacionales($id);
+			if (empty($arrData)) {
+				$arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
+			} else {
+				$arrResponse = array('status' => true, 'data' => $arrData);
+			}
+			echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+		}
+		die();
+	}
+
+	//obtener un baner para actualizar
+	public function getObjetivosEducacionalesAnios($id)
+	{
+		if ($id > 0) {
+			$arrData = $this->model->listaEscuelasObjetivosEducacionalesAnios($id);
+			if (empty($arrData)) {
+				$arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
+			} else {
+				$arrResponse = array('status' => true, 'data' => $arrData);
+			}
+			echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+		}
+		die();
+	}
+
 }

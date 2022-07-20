@@ -7,7 +7,7 @@
 $home = new HomeModel();
 
 
-$perfiles = $home->listaPerfilesAcademicos();
+$perfiles = $home->listaObjetivosEducacionales();
 
 
 //$perfiless = $año->selectañoEspecialidadesporaño($id);
@@ -16,12 +16,12 @@ $perfiles = $home->listaPerfilesAcademicos();
 <div class="card-header">
     <h4 class="text-center">Transparencia - Unidad de Seguimiento del Egresado</h4>
 </div>
+
+
 <br>
-
-
 <div class="contedor90 pt-4 pb-4">
     <div class="col-12 text-center">
-        <h1 class="text-center">Perfiles de Egreso</h1>
+        <h1 class="text-center">Objetivos Educacionales</h1>
     </div>
     <div class="row d-flex justify-content-around ">
         <?php foreach ($perfiles as $key => $fila) { ?>
@@ -106,7 +106,7 @@ $perfiles = $home->listaPerfilesAcademicos();
 
         $.ajax({
             method: "post",
-            url: " " + base_url + "/home/getfacultadPerfiles/" + id,
+            url: " " + base_url + "/home/getObjetivosEducacionales/" + id,
             dataType: 'json',
             success: function(data) {
                 if (data.status) {
@@ -135,7 +135,7 @@ $perfiles = $home->listaPerfilesAcademicos();
     function openModalSegundaEspecialidadesporaño(id) {
         $.ajax({
             method: "post",
-            url: " " + base_url + "/home/getfacultadPerfilesAnios/" + id,
+            url: " " + base_url + "/home/getObjetivosEducacionalesAnios/" + id,
             dataType: 'json',
             success: function(data) {
                 if (data.status) {
@@ -147,7 +147,7 @@ $perfiles = $home->listaPerfilesAcademicos();
                         listado = listado +
                         `    
                            
-                            <a class="pefilescuela m-2 p-3 col-3 bgbluemedio" href="<?= media(); ?>/archivos/perfilacademicos/` + data.data[i].archivo + `" target="_blank">
+                            <a class="pefilescuela m-2 p-3 col-3 bgbluemedio" href="<?= media(); ?>/archivos/objetivosEducacionales/` + data.data[i].archivo + `" target="_blank">
                         <div class="text-center  ">
                             <h6 class="blanco azul">` + data.data[i].año + `</h6>
                         </div>

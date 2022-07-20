@@ -295,4 +295,48 @@ class HomeModel extends Mysql
 				$request = $this->update($sql,$arrData);
 	        return $request;
 		}
+
+
+			/*detalle de maestria*/
+	public function listaObjetivosEducacionales()
+	{
+		$sql = "SELECT f.idFacultad,f.nombreFacultad,fi.descripcion
+		from objetivoseducacionales pa
+		inner join escuela e on pa.escuelaid=e.idEscuela
+		inner join facultad f on f.idFacultad=e.idFacultad
+		inner join facultadiconos fi on fi.Facultadid=f.idFacultad
+		where pa.status!=0
+		group by f.nombreFacultad";
+		$request = $this->select_all($sql);
+		return $request;
+	}
+
+	/*Escuelas que tienen perfil Academico*/
+	public function listaEscuelasObjetivosEducacionales($id)
+	{
+		$sql = "SELECT e.idEscuela,e.nombreEscuela
+		from objetivoseducacionales pa
+		inner join escuela e on pa.escuelaid=e.idEscuela
+		inner join facultad f on f.idFacultad=e.idFacultad
+		inner join facultadiconos fi on fi.Facultadid=f.idFacultad
+		where pa.status!=0 and f.idFacultad =$id
+		group by e.nombreEscuela";
+		$request = $this->select_all($sql);
+		return $request;
+	}
+
+		/*Escuelas que tienen perfil Academico*/
+		public function listaEscuelasObjetivosEducacionalesAnios($id)
+		{
+			$sql = "SELECT e.idEscuela,e.nombreEscuela,YEAR(pa.año) as año,pa.archivo
+			from objetivoseducacionales pa
+			inner join escuela e on pa.escuelaid=e.idEscuela
+			inner join facultad f on f.idFacultad=e.idFacultad
+			inner join facultadiconos fi on fi.Facultadid=f.idFacultad
+			where pa.status!=0 and e.idEscuela=$id
+			";
+			$request = $this->select_all($sql);
+			return $request;
+		}
+
 }

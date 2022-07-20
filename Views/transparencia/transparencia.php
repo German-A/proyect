@@ -13,7 +13,12 @@ $idmaestria = $año->listaFacultadpostgrado();
 //$perfiless = $año->selectañoEspecialidadesporaño($id);
 
 
-?><br><br>
+?>
+
+<div class="card-header">
+    <h4 class="text-center">Transparencia - Unidad de Seguimiento del Egresado</h4>
+</div>
+
 
 
 <br>

@@ -405,4 +405,147 @@ class especialidades extends Controllers
 		}
 		die();
 	}
+
+
+
+
+	/***************************************************************************
+	
+	OBJETIVOS EDUCACIONALES
+
+	 ****************************************************************************/
+	public function objetivosEducacionales()
+	{
+		if (empty($_SESSION['permisosMod']['r'])) {
+			header("Location:" . base_url() . '/dashboard');
+		}
+		$data['page_tag'] = "Especialidades";
+		$data['page_title'] = "Perfiles Academicos-<small>Unidad de Seguimiento del Egresado</small>";
+		$data['page_name'] = "USE-banner";
+		$data['page_functions_js'] = "functions_objetivosEducacionaless.js";
+		$this->views->getView($this, "objetivosEducacionales", $data);
+	}
+
+
+	//listado de los perfiles academicos
+	public function getobjetivosEducacionales()
+	{
+
+		$arrData = $this->model->listaobjetivosEducacionales();
+		for ($i = 0; $i < count($arrData); $i++) {
+			$btnView = '';
+			$btnEdit = '';
+			$btnDelete = '';
+			if ($_SESSION['permisosMod']['r']) {
+				$btnView = '<button class="btn btn-info btn-sm fntView" onClick="fntView(' . $arrData[$i]['idobjetivoseducacionales'] . ')" title="Ver Banner"><i class="far fa-eye"></i></button>';
+			}
+			if ($_SESSION['permisosMod']['u']) {
+				if (($_SESSION['userData']['idrol'] == 1) || ($_SESSION['userData']['idrol'] == 2)) {
+					$btnEdit = '<button class="btn btn-primary  btn-sm fntEdit" onClick="fntEdit(this,' . $arrData[$i]['idobjetivoseducacionales'] . ')" title="Editar Banner"><i class="fas fa-pencil-alt"></i></button>';
+				} else {
+					$btnEdit = '<button class="btn btn-secondary btn-sm" disabled ><i class="fas fa-pencil-alt"></i></button>';
+				}
+			}
+			if ($_SESSION['permisosMod']['d']) {
+				if (($_SESSION['userData']['idrol'] == 1) || ($_SESSION['userData']['idrol'] == 2)) {
+					$btnDelete = '<button class="btn btn-danger btn-sm fntDelete" onClick="fntDelete(' . $arrData[$i]['idobjetivoseducacionales'] . ')" title="Eliminar Banner"><i class="far fa-trash-alt"></i></button>';
+				} else {
+					$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
+				}
+			}
+
+			$arrData[$i]['options'] = '<div class="text-center"> ' . $btnDelete . '</div>';
+		}
+		echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
+
+		die();
+	}
+	//facultades
+
+	//insertar y actualizar los perfiles academicos
+	public function setobjetivosEducacionales()
+	{
+		if ($_POST) {
+			if (empty($_POST['escuela'])) {
+				$arrResponse = array("status" => false, "msg" => 'Datos incorrectos en el Banner.');
+			} else {
+				$idUsuario = intval($_POST['id']);
+
+
+				$escuela = $_POST['escuela'];
+				$año = $_POST['año'];
+
+
+				$request_user = "";
+
+				if ($idUsuario == 0) {
+
+					$option = 1;
+
+					$ubicacionTemporal = $_FILES['archivoSubido']['tmp_name'];
+					$nombre = $_FILES['archivoSubido']['name'];
+
+					$nuevonombre =  $escuela.$nombre;
+
+					if (!file_exists('Assets/archivos/objetivosEducacionales/')) {
+						mkdir('Assets/archivos/objetivosEducacionales/', 0777, true);
+						if (file_exists('Assets/archivos/objetivosEducacionales/')) {
+							if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/objetivosEducacionales/' . $nuevonombre)) {
+								$insert = $this->model->registerobjetivosEducacionales($escuela, $nuevonombre, $año);
+							} else {
+								echo "no se pudo guardar ";
+							}
+						}
+					} else {
+						if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/objetivosEducacionales/' . $nuevonombre)) {
+							$insert = $this->model->registerobjetivosEducacionales($escuela, $nuevonombre, $año);
+						} else {
+							echo "no se pudo guardar";
+						}
+					}
+				} else {
+					$option = 2;
+					$cantidadBanner = "";
+					$cantidadBanner = $this->model->cantidadBanner();
+					//Actualizar sin Imagen
+				}
+
+				if ($insert > 0) {
+					if ($option == 1) {
+						$arrResponse = array('status' => true, 'msg' => 'Datos guardados correctamente.');
+					} else {
+						$arrResponse = array('status' => true, 'msg' => 'Datos Actualizados correctamente.');
+					}
+				} else {
+					$arrResponse = array("status" => false, "msg" => 'No es posible almacenar los datos.');
+				}
+			}
+			echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+		}
+		die();
+	}
+
+	//borrar los perfiles academicos
+	public function deleteobjetivosEducacionales()
+	{
+		if ($_POST) {
+			if ($_SESSION['permisosMod']['d']) {
+				$IdBaner = intval($_POST['IdBaner']);
+				$requestDelete = $this->model->getOne($IdBaner);
+				//borrar documentos
+				//$requestDelete = $this->model->remove($IdBaner);
+				//@unlink('Assets/archivos/banner/' . $NombreArchivo['NombreArchivo']);
+				if ($requestDelete) {
+					$arrResponse = array('status' => true, 'msg' => 'Se ha eliminado el Banner');
+				} else {
+					$arrResponse = array('status' => false, 'msg' => 'Error al eliminar el Bnner.');
+				}
+				echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+			}
+		}
+		die();
+	}
+
+	
+
 }

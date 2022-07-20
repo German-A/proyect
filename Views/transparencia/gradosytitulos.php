@@ -17,191 +17,131 @@ $idmaestria = $año->listaFacultadpostgrado();
 <div class="card-header">
     <h4 class="text-center">Transparencia - Unidad de Seguimiento del Egresado</h4>
 </div>
+<br>
+<div class="" style="width: 80%; margin: 0 auto;">
+    <h4>FACULTADES, ESCUELAS Y DEPARTAMENTOS</h4>
+</div>
 
 <div class="contedor90 pt-4 pb-1">
-    <!-- <div class="col-12 text-center">
-        <h1 class="text-center">Perfiles de Egreso</h1>
-    </div> -->
+
     <div class="row d-flex justify-content-around ">
-        <div class="col-8 col-md-4 col-lg-3  fondo m-2">
-            <a target="_blank" href="<?= media(); ?>/documentos/FACULTADES.pdf" class=" m-4  p-2 ">
-                <div class="col-12 text-right col-md-12">
-                    <h1 class="mostaza "><i class="fas fa-university"></i></h1>
-                    <br>
-                </div>
-                <div class="col-12 text-left col-md-12">
-                    <h5 class="">Facultades</h5>
-                </div>
-            </a>
-        </div>
 
-        <div class="col-8 col-md-4 col-lg-3  fondo m-2">
-            <a target="_blank" href="<?= media(); ?>/documentos/ESCUELASPROFESIONALES.pdf" class=" m-4  p-2 ">
-                <div class="col-12 text-right col-md-12">
-                    <h1 class="mostaza "><i class="far fa-school"></i></h1>
-                    <br>
-                </div>
-                <div class="col-12 text-left col-md-12">
-                    <h5 class="">Escuelas</h5>
-                </div>
-            </a>
-        </div>
+        <a class="col-8 col-md-4 col-lg-3 fondo m-2" target="_blank" href="<?= media(); ?>/documentos/FACULTADES.pdf">
+            <div class="col-12 text-right col-md-12">
+                <h1 class="mostaza"><i class="fas fa-university"></i></h1>
+                <br><br> <br>
+            </div>
+            <div class="col-12 text-left col-md-12">
+                <h5 class="">Facultades</h5>
+            </div>
+        </a>
 
-        <div class="col-8 col-md-4 col-lg-3  fondo m-2">
-            <a target="_blank" href="<?= media(); ?>/documentos/DEPARTAMENTOSACADÉMICOS.pdf" class=" m-4  p-2 ">
-                <div class="col-12 text-right col-md-12">
-                    <h1 class="mostaza "><i class="fas fa-users"></i></i></h1>
-                    <br>
-                </div>
-                <div class="col-12 text-left col-md-12">
-                    <h5 class="">Departamentos Académicos</h5>
-                </div>
-            </a>
-        </div>
+        <a class="col-8 col-md-4 col-lg-3 fondo m-2" target="_blank" href="<?= media(); ?>/documentos/ESCUELASPROFESIONALES.pdf">
+            <div class="col-12 text-right col-md-12">
+                <h1 class="mostaza"><i class="far fa-school"></i></h1>
+                <br><br> <br>
+            </div>
+            <div class="col-12 text-left col-md-12">
+                <h5 class="">Escuelas</h5>
+            </div>
+        </a>
 
-        <div class="col-8 col-md-4 col-lg-3  fondo m-2">
-            <a target="_blank" href="<?= media(); ?>/documentos/GRADOSACADÉMICOS.pdf" class=" m-4  p-2 ">
-                <div class="col-12 text-right col-md-12">
-                    <h1 class="mostaza "><i class="fas fa-university"></i></h1>
-                    <br>
-                </div>
-                <div class="col-12 text-left col-md-12">
-                    <h5 class="">Grados Académicos</h5>
-                </div>
-            </a>
-        </div>
+        <a class="col-8 col-md-4 col-lg-3 fondo m-2" target="_blank" href="<?= media(); ?>/documentos/DEPARTAMENTOSACADÉMICOS.pdf">
+            <div class="col-12 text-right col-md-12">
+                <h1 class="mostaza"><i class="fas fa-id-card"></i></h1>
+                <br><br> <br>
+            </div>
+            <div class="col-12 text-left col-md-12">
+                <h5 class="">Departamentos Académicos</h5>
+            </div>
+        </a>
 
-        <div class="col-8 col-md-4 col-lg-3  fondo m-2">
-            <a target="_blank" href="<?= media(); ?>/documentos/TÍTULOSPROFESIONALES.pdf" class=" m-4  p-2 ">
-                <div class="col-12 text-right col-md-12">
-                    <h1 class="mostaza "><i class="far fa-school"></i></h1>
-                    <br>
-                </div>
-                <div class="col-12 text-left col-md-12">
-                    <h5 class="">Títulos Profesionales</h5>
-                </div>
-            </a>
-        </div>
     </div>
 </div>
 
+<div class="" style="width: 80%; margin: 0 auto;">
+    <h4>GRADOS Y TÍTULOS</h4>
+</div>
+
+<div class="contedor90 pt-4 pb-1">
+
+    <div class="row d-flex justify-content-around ">
+
+
+        <a class="col-8 col-md-4 col-lg-3 fondo m-2" target="_blank" href="<?= media(); ?>/documentos/GRADOSACADÉMICOS.pdf">
+            <div class="col-12 text-right col-md-12">
+                <h1 class="mostaza"><i class="fas fa-graduation-cap"></i></h1>
+                <br><br> <br>
+            </div>
+            <div class="col-12 text-left col-md-12">
+                <h5 class="">Grados Académicos</h5>
+            </div>
+        </a>
+
+        <a class="col-8 col-md-4 col-lg-3 fondo m-2" target="_blank" href="<?= media(); ?>/documentos/TÍTULOSPROFESIONALES.pdf">
+            <div class="col-12 text-right col-md-12">
+                <h1 class="mostaza"><i class="fas fa-user-graduate"></i></h1>
+                <br><br> <br>
+            </div>
+            <div class="col-12 text-left col-md-12">
+                <h5 class="">Títulos Profesionales</h5>
+            </div>
+        </a>
+
+        <a class="col-8 col-md-4 col-lg-3 fondo m-2" target="_blank" href="<?= media(); ?>/documentos/SEGUNDASESPECIALIDADES.pdf">
+            <div class="col-12 text-right col-md-12">
+                <h1 class="mostaza"><i class="fas fa-user-graduate"></i>&nbsp;<i class="fas fa-user-graduate"></i></h1>
+                <br><br> <br>
+            </div>
+            <div class="col-12 text-left col-md-12">
+                <h5 class="">Segundas Especialidades</h5>
+            </div>
+        </a>
+        
+    </div>
+</div>
+
+
+
+<div class="" style="width: 80%; margin: 0 auto;">
+    <h4>MAESTRÍAS Y DOCTORADOS</h4>
+</div>
+
+<div class="contedor90 pt-4 pb-1">
+
+    <div class="row d-flex justify-content-around ">
+
+        <a class="col-8 col-md-4 col-lg-3 fondo m-2" onclick="openModalMaestrias()">
+            <div class="col-12 text-right col-md-12">
+                <h1 class="mostaza"><img class="bg-warning" src="<?= media() ?>/images/postgrado/segundaespecialidad.png" style="max-height: 150px; max-height: 50px;"></h1>
+                <br><br> <br>
+            </div>
+            <div class="col-12 text-left col-md-12">
+                <h5 class="">Maestrías</h5>
+            </div>
+        </a>
+
+        <a class="col-8 col-md-4 col-lg-3 fondo m-2"  onclick="openModalDoctorados()">
+            <div class="col-12 text-right col-md-12">
+                <h1 class="mostaza"><img class="bg-warning" src="<?= media() ?>/images/postgrado/doctorado.png" style="max-height: 150px; max-height: 50px;"></h1>
+                <br><br> <br>
+            </div>
+            <div class="col-12 text-left col-md-12">
+                <h5 class="">Doctorados</h5>
+            </div>
+        </a>        
+    </div>
+</div>
 
 
 <br>
 <style>
-    .contedor80 {
-        max-width: 80%;
-        margin: auto;
-    }
 
-    .contedor90 {
-        max-width: 100%;
-        margin: auto;
-    }
-
-    @media (min-width: 1024px) {
-        .contedor90 {
-            max-width: 800px;
-            margin: auto;
-        }
-    }
-
-
-
-    .amarillo {
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .amarillo::after {
-        content: "";
-        width: 100%;
-        height: 100%;
-        background: #FFC90D;
-        position: absolute;
-
-        z-index: 1;
-        top: -800px;
-        left: 0;
-        transition: .5s ease-in-out all;
-    }
-
-    .amarillo:hover::after {
-        top: 0;
-        transition: .5s ease-in-out all;
-
-    }
-
-
-    .amarillo .t {
-        position: relative;
-        z-index: 2;
-        transition: .2s ease all;
-
-    }
 </style>
 
 
 
 <br><br><br>
-
-<div class="contedor90 pt-4 pb-4  bgbluemedio rounded ">
-    <div class="row">
-        <!-- <div class="col-12 col-md-3">
-            <h5 class="blanco text-center">¡Información sobre una formación superior de excelencia!</h5>
-        </div> -->
-        <div class="col-12 col-md-12">
-            <div class="d-flex justify-content-around mt-2">
-                <a class="col-4 col-md-3 pt-2 pb-2 text-center" target="_blank" style="background-color: #009688;" href="<?= media(); ?>/documentos/SEGUNDASESPECIALIDADES.pdf">
-                    <h5 class="blanco">Segundas Especialidades</h5>
-                    <img src="<?= media() ?>/images/postgrado/segundaespecialidad.png" style="max-height: 150px; max-height: 50px;">
-                </a>
-                <a href="javascript:void(0);" class="col-4 col-md-3 pt-2 pb-2 text-center" style="background-color: #CC9966;" onclick="openModalMaestrias()">
-                    <h5 class="blanco">Maestrías</h5>
-                    <img src="<?= media() ?>/images/postgrado/maestria.png" style="max-height: 150px; max-height: 50px;">
-                </a>
-                <div class="col-4 col-md-3 pt-2 pb-2 text-center" style="background-color: #4886ff;" onclick="openModalDoctorados()">
-                    <h5 class="blanco">Doctorados</h5>
-                    <img src="<?= media() ?>/images/postgrado/doctorado.png" style="max-height: 150px; max-height: 50px;">
-                </div>
-
-            </div>
-        </div>
-    </div>
-</div>
-
-<br><br><br>
-
-
-<style>
-    .fondo {
-        color: blue;
-        border-color: #aaaaaa;
-        border-width: 1px;
-        border-style: solid;
-        border-bottom-right-radius: 80px;
-    }
-
-    .fondo:hover h1 {
-        color: white;
-    }
-
-    .fondo:hover h5 {
-        color: white;
-    }
-
-
-    .fondo:hover {
-        background-color: #FFC90D;
-        color: white;
-    }
-</style>
 
 
 

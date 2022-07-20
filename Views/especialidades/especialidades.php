@@ -7,10 +7,11 @@ getModal('modalPostgrado', $data);
 <main class="app-content">
   <div class="app-title text-center">
     <ul class="app-breadcrumb breadcrumb">
- 
       <a href="<?= base_url(); ?>/especialidades/pefilesAcademicos" class="btn btn-primary">Perfiles academicos</a>
-
- </ul>
+    </ul>
+    <ul class="app-breadcrumb breadcrumb">
+      <a href="<?= base_url(); ?>/especialidades/objetivosEducacionales" class="btn btn-primary">Objetivos Educacionales</a>
+    </ul>
   </div>
 
   <div class="card-body bg-white">
