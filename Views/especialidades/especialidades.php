@@ -12,6 +12,9 @@ getModal('modalPostgrado', $data);
     <ul class="app-breadcrumb breadcrumb">
       <a href="<?= base_url(); ?>/especialidades/objetivosEducacionales" class="btn btn-primary">Objetivos Educacionales</a>
     </ul>
+    <ul class="app-breadcrumb breadcrumb">
+      <a href="<?= base_url(); ?>/especialidades/preguntasobjetivosEducacionales" class="btn btn-primary">Preguntas Objetivos Educacionales</a>
+    </ul>
   </div>
 
   <div class="card-body bg-white">

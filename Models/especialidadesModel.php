@@ -283,4 +283,36 @@ class EspecialidadesModel extends Mysql
 		$return = $request_insert;
 		return $return;
 	}
+
+	/* OBJETIVOS EDUCACIONALES*/
+	public function listapreguntasObjetivosEducacionales()
+	{
+		$sql = "SELECT pa.idpreguntasobjetivoseducacionales,pa.archivo,pa.año,pa.status,e.nombreEscuela,pa.cantidadPreguntas
+					from preguntasObjetivoseducacionales pa
+					inner join escuela e on pa.escuelaid=e.idEscuela
+					where pa.status!=0";
+		$request = $this->select_all($sql);
+		return $request;
+	}
+
+
+	public function registerpreguntasObjetivosEducacionales($escuela, $nuevonombre, $año,$cantidadPreguntas)
+	{
+		$this->escuela = $escuela;
+		$this->nuevonombre = $nuevonombre;
+		$this->año = $año;
+		$this->cantidadPreguntas = $cantidadPreguntas;
+		$return = 0;
+		$query_insert  = "INSERT INTO preguntasObjetivoseducacionales(escuelaid,archivo,año,cantidadPreguntas)
+										  VALUES(?,?,?,?)";
+		$arrData = array(
+			$this->escuela,
+			$this->nuevonombre,
+			$this->año,
+			$this->cantidadPreguntas
+		);
+		$request_insert = $this->insert($query_insert, $arrData);
+		$return = $request_insert;
+		return $return;
+	}
 }

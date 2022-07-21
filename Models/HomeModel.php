@@ -259,45 +259,47 @@ class HomeModel extends Mysql
 		return $request;
 	}
 
-		/*Escuelas que tienen perfil Academico*/
-		public function listaEscuelasPerfilesAcademicosAnios($id)
-		{
-			$sql = "SELECT e.idEscuela,e.nombreEscuela,YEAR(pa.año) as año,pa.archivo
+	/*Escuelas que tienen perfil Academico*/
+	public function listaEscuelasPerfilesAcademicosAnios($id)
+	{
+		$sql = "SELECT e.idEscuela,e.nombreEscuela,YEAR(pa.año) as año,pa.archivo
 			from perfilesacademicos pa
 			inner join escuela e on pa.escuelaid=e.idEscuela
 			inner join facultad f on f.idFacultad=e.idFacultad
 			inner join facultadiconos fi on fi.Facultadid=f.idFacultad
 			where pa.status!=0 and e.idEscuela=$id
 			";
-			$request = $this->select_all($sql);
-			return $request;
-		}
+		$request = $this->select_all($sql);
+		return $request;
+	}
 
-		/*año*/
-		public function cantidadvisitas()
-		{
-			$sql = "SELECT idanios,cantidad 
+	/*año*/
+	public function cantidadvisitas()
+	{
+		$sql = "SELECT idanios,cantidad 
 			FROM anios";
-			$request = $this->select($sql);
-			return $request;
-		}
+		$request = $this->select($sql);
+		return $request;
+	}
 
-		
-		public function updatevisitas($idanios,$visitas){
-			$this->idanios = $idanios;
-			$this->visitas = $visitas;
 
-			$sql = "UPDATE anios SET cantidad=?
+	public function updatevisitas($idanios, $visitas)
+	{
+		$this->idanios = $idanios;
+		$this->visitas = $visitas;
+
+		$sql = "UPDATE anios SET cantidad=?
 			WHERE idanios = $this->idanios ";
-					$arrData = array(
-					$this->visitas);
-	
-				$request = $this->update($sql,$arrData);
-	        return $request;
-		}
+		$arrData = array(
+			$this->visitas
+		);
+
+		$request = $this->update($sql, $arrData);
+		return $request;
+	}
 
 
-			/*detalle de maestria*/
+	/*detalle de maestria*/
 	public function listaObjetivosEducacionales()
 	{
 		$sql = "SELECT f.idFacultad,f.nombreFacultad,fi.descripcion
@@ -325,18 +327,65 @@ class HomeModel extends Mysql
 		return $request;
 	}
 
-		/*Escuelas que tienen perfil Academico*/
-		public function listaEscuelasObjetivosEducacionalesAnios($id)
-		{
-			$sql = "SELECT e.idEscuela,e.nombreEscuela,YEAR(pa.año) as año,pa.archivo
+	/*Escuelas que tienen perfil Academico*/
+	public function listaEscuelasObjetivosEducacionalesAnios($id)
+	{
+		$sql = "SELECT e.idEscuela,e.nombreEscuela,YEAR(pa.año) as año,pa.archivo
 			from objetivoseducacionales pa
 			inner join escuela e on pa.escuelaid=e.idEscuela
 			inner join facultad f on f.idFacultad=e.idFacultad
 			inner join facultadiconos fi on fi.Facultadid=f.idFacultad
 			where pa.status!=0 and e.idEscuela=$id
 			";
-			$request = $this->select_all($sql);
-			return $request;
-		}
+		$request = $this->select_all($sql);
+		return $request;
+	}
 
+
+	/*--------------------------------------------------------------------------------------------------/*
+	/*detalle de maestria*/
+	/*--------------------------------------------------------------------------------------------------*/
+	public function listaPreguntasObjetivosEducacionales()
+	{
+		$sql = "SELECT f.idFacultad,f.nombreFacultad,fi.descripcion
+		from preguntasObjetivoseducacionales pa
+		inner join escuela e on pa.escuelaid=e.idEscuela
+		inner join facultad f on f.idFacultad=e.idFacultad
+		inner join facultadiconos fi on fi.Facultadid=f.idFacultad
+		where pa.status!=0
+		group by f.nombreFacultad";
+		$request = $this->select_all($sql);
+		return $request;
+	}
+
+	/*Escuelas que tienen perfil Academico*/
+	public function listaPreguntasEscuelasObjetivosEducacionales($id)
+	{
+		$sql = "SELECT e.idEscuela,e.nombreEscuela
+		from preguntasObjetivoseducacionales pa
+		inner join escuela e on pa.escuelaid=e.idEscuela
+		inner join facultad f on f.idFacultad=e.idFacultad
+		inner join facultadiconos fi on fi.Facultadid=f.idFacultad
+		where pa.status!=0 and f.idFacultad =$id
+		group by e.nombreEscuela";
+		$request = $this->select_all($sql);
+		return $request;
+	}
+
+	/*Escuelas que tienen perfil Academico*/
+	public function listaPreguntasEscuelasObjetivosEducacionalesAnios($id)
+	{
+		$sql = "SELECT e.idEscuela,e.nombreEscuela,YEAR(pa.año) as año,pa.archivo
+			from preguntasObjetivoseducacionales pa
+			inner join escuela e on pa.escuelaid=e.idEscuela
+			inner join facultad f on f.idFacultad=e.idFacultad
+			inner join facultadiconos fi on fi.Facultadid=f.idFacultad
+			where pa.status!=0 and e.idEscuela=$id
+			";
+		$request = $this->select_all($sql);
+		return $request;
+	}
+
+
+	
 }

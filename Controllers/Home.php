@@ -108,7 +108,7 @@ class Home extends Controllers
 				'mensaje' => $mensaje,
 				'contacto' => $contacto,
 				'asunto' => 'Recuperar cuenta - ' . NOMBRE_REMITENTE
-			);	
+			);
 
 			if (sendMailTicketLocal($dataUsuario, 'email_cambioPassword')) {
 				$arrResponse = array(
@@ -162,4 +162,33 @@ class Home extends Controllers
 		die();
 	}
 
+	//obtener un baner para actualizar
+	public function getPreguntasObjetivosEducacionales($id)
+	{
+		if ($id > 0) {
+			$arrData = $this->model->listaPreguntasEscuelasObjetivosEducacionales($id);
+			if (empty($arrData)) {
+				$arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
+			} else {
+				$arrResponse = array('status' => true, 'data' => $arrData);
+			}
+			echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+		}
+		die();
+	}
+
+	//obtener un baner para actualizar
+	public function getPreguntasObjetivosEducacionalesAnios($id)
+	{
+		if ($id > 0) {
+			$arrData = $this->model->listaPreguntasEscuelasObjetivosEducacionalesAnios($id);
+			if (empty($arrData)) {
+				$arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
+			} else {
+				$arrResponse = array('status' => true, 'data' => $arrData);
+			}
+			echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+		}
+		die();
+	}
 }
