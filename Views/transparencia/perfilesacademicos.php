@@ -21,7 +21,7 @@ $perfiles = $home->listaPerfilesAcademicos();
 
 <div class="contedor90 pt-4 pb-4">
     <div class="col-12 text-center">
-        <h1 class="text-center">Perfiles de Egreso</h1>
+        <h1 class="text-center">Perfiles de egreso</h1>
     </div>
     <div class="row d-flex justify-content-around ">
         <?php foreach ($perfiles as $key => $fila) { ?>
