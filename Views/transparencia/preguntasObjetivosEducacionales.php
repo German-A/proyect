@@ -64,7 +64,7 @@ $perfiles = $home->listaPreguntasObjetivosEducacionales();
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-body">
-                <h2 class="text-center">Perfil de Egreso del Currículo</h2>
+                <h2 class="text-center">Preguntas Objetivos Educacionales</h2>
                 <div class=" d-flex justify-content-center" id="escuelasPefilesaño">
                  
                 </div>
