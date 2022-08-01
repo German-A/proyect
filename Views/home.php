@@ -179,7 +179,7 @@ $legal = $obj->selectLegalInicio();
       <div class="col-4 cont-info">
         <br>
         <h6>JEAN PÁUL<br> ROMERO LOBATÓN </h6>
-        <p><small>INGENIERÍA DE SISTEMAS</small></p>
+        <p><small>INGENIERO DE SISTEMAS</small></p>
       </div>
     </div><br><br><br>
     <div class="col-12 col-sm-5 col-md-5 col-lg-2 mb-2">
@@ -194,7 +194,7 @@ $legal = $obj->selectLegalInicio();
       </div>
 
     </div><br><br><br>
-    <div class="col-12 col-sm-5 col-md-5 col-lg-2 mb-2">
+    <!-- <div class="col-12 col-sm-5 col-md-5 col-lg-2 mb-2">
       <div class="cont-titulo ">
         <h5 class="bluemedio text-area">ÁREA DE <br>MARKETING</h5>
       </div>
@@ -204,7 +204,9 @@ $legal = $obj->selectLegalInicio();
         <h6>RENZO OMAR HURTADO CARBONEL</h6>
         <p><small>COMUNICADOR/DISEÑADOR</small></p>
       </div>
-    </div><br><br><br>
+    </div> -->
+    
+    <br><br><br>
   </div>
 
 

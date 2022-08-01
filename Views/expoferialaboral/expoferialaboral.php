@@ -153,7 +153,7 @@ $n = 1;
                     <div class="itemY">
                         <h1 data-id=""></h1>
                         <a href="#">
-                            <h5>Ciencias Básicas y Tecnológicas (28 al 30 de septiembre)</h5>
+                            <h5>Ciencias Básicas y Tecnológicas (03 al 05 de octubre)</h5>
                         </a>
                     </div>
                 </li>
