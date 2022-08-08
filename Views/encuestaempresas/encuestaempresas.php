@@ -21,13 +21,14 @@ $idmaestria = $año->listaFacultadpostgrado();
 <br><br><br>
 <style>
     .ancho {
-        max-width: 1000px;
+        max-width: 1200px;
         margin: auto;
 
     }
 </style>
 
 <div class="ancho">
+
     <div class="col-12 col-xl-10">
         <div class="row">
             <div class="col-6 col-md-3 pt-4 pb-4">
@@ -131,6 +132,18 @@ $idmaestria = $año->listaFacultadpostgrado();
         </div>
 
     </div>
+    <style>
+        th {
+            background-color: #04AA6D;
+            color: white;
+        }
+        td{
+            border:2px solid black;
+        }
+        .default{
+            width:80%;
+        }
+    </style>
 
     <div class="row">
 
@@ -141,6 +154,31 @@ $idmaestria = $año->listaFacultadpostgrado();
             </p>
         </div>
         <div class="col-12">
+            <table class="default">
+
+                <tr>
+                    <th></th>
+                    <th>Básico</th>
+                    <th>Completo</th>
+                </tr>
+                <tr>
+                    <th>Instalación</th>
+                    <td rowspan="2">Gratis!</td>
+                    <td>$49.99</td>
+                </tr>
+                <tr>
+                    <th>Primer año</th>
+                    <td>$19.99</td>
+                </tr>
+                <tr>
+                    <th>Segundo año</th>
+                    <td>$9.99</td>
+                    <td>$29.99</td>
+                </tr>
+
+            </table>
+
+
             <h1>Pregunta 1</h1>
             <div class="col-10">
                 <p>En su organización, tiene laborando trabajadores egresados de la Universidad Nacional de Trujillo</p>
@@ -159,6 +197,7 @@ $idmaestria = $año->listaFacultadpostgrado();
                     </label>
                 </div>
             </div>
+
         </div>
 
 
@@ -167,6 +206,7 @@ $idmaestria = $año->listaFacultadpostgrado();
 
 
     </div>
+
 </div>
 
 

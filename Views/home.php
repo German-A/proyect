@@ -192,8 +192,22 @@ $legal = $obj->selectLegalInicio();
         <h6>KATHERINE NOELY<br> RODRIGUEZ GUZMAN</h6>
         <p><small>COMUNICADORA/INTERPRETE</small></p>
       </div>
+    </div>
+    
+    <br><br><br>
 
-    </div><br><br><br>
+    <div class="col-12 col-sm-5 col-md-5 col-lg-2 mb-2">
+      <div class="cont-titulo ">
+        <h5 class="bluemedio text-area">ÁREA DE<br>MARKETING</h5>
+      </div>
+      <img class="equipoimg" src="<?= media(); ?>/img/marinesTrinidad.png" alt="">
+      <div class="col-4 cont-info">
+        <br>
+        <h6>MARINÉS TRINIDAD<br>RAMÍREZ RODRÍGUEZ</h6>
+        <p><small>COMUNICADOR/DISEÑADOR</small></p>
+      </div>
+    </div>
+
     <!-- <div class="col-12 col-sm-5 col-md-5 col-lg-2 mb-2">
       <div class="cont-titulo ">
         <h5 class="bluemedio text-area">ÁREA DE <br>MARKETING</h5>
@@ -205,7 +219,7 @@ $legal = $obj->selectLegalInicio();
         <p><small>COMUNICADOR/DISEÑADOR</small></p>
       </div>
     </div> -->
-    
+
     <br><br><br>
   </div>
 
@@ -221,4 +235,3 @@ $legal = $obj->selectLegalInicio();
 </div>
 
 <?php footer($data); ?>
-
