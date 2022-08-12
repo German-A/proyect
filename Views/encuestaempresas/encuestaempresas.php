@@ -313,6 +313,19 @@ $idmaestria = $año->listaFacultadpostgrado();
 </div>
 
 <br>
+<!-- SEGUNDAS ESPECIALIDADES -->
+<div class="modal fade" id="modalRespuesta" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row d-flex justify-content-center" id="msgmodal">
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <?php footer($data); ?>
 
@@ -403,7 +416,7 @@ $idmaestria = $año->listaFacultadpostgrado();
         divLoading.style.display = "flex";
         $.ajax({
             method: "POST",
-            url: "" + base_url + "/solicitudempleo/registrarempleoEmpresa",
+            url: "" + base_url + "/encuestaempresas/set",
             data: fd,
             processData: false, // tell jQuery not to process the data
             contentType: false // tell jQuery not to set contentType
@@ -419,7 +432,7 @@ $idmaestria = $año->listaFacultadpostgrado();
                             <h5 class="azul">` + info.msg + `</h5>
                         </div>                          
                     `;
-                $("#correoweb").html(listado);
+                $("#msgmodal").html(listado);
             }
             if (info.status == false) {
                 console.log(info.status);
@@ -429,9 +442,9 @@ $idmaestria = $año->listaFacultadpostgrado();
                             <h5 class="azul">` + info.msg + `</h5>
                         </div>                          
                     `;
-                $("#correoweb").html(listado);
+                $("#msgmodal").html(listado);
             }
-            $('#modalPerfilef').modal('show');
+            $('#modalRespuesta').modal('show');
         });
     }
 </script>

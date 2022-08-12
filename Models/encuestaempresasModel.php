@@ -27,18 +27,17 @@
 			return $request;
 		}
 
-		public function register($nombreArchivo,$nuevonombre,$cantidad,$posicion){			
-			$this->nombreArchivo = $nombreArchivo;
-			$this->nuevonombre = $nuevonombre;
-			$this->cantidad = $cantidad;
-			$this->posicion = $posicion;
+		public function register($pregunta1, $pregunta2, $pregunta3){			
+			$this->pregunta1 = $pregunta1;
+			$this->pregunta2 = $pregunta2;
+			$this->pregunta3 = $pregunta3;
 			$return = 0;
-			$query_insert  = "INSERT INTO banner(Nombre,NombreArchivo,Posicion)
+			$query_insert  = "INSERT INTO encuestaEducacion(p1,p2,p3)
 								  VALUES(?,?,?)";
 	        	$arrData = array(
-        						$this->nombreArchivo,
-        						$this->nuevonombre,
-        						$this->posicion);
+        						$this->pregunta1,
+        						$this->pregunta2,
+        						$this->pregunta3);
 	        	$request_insert = $this->insert($query_insert,$arrData);
 	        	$return = $request_insert;
 	        return $return;

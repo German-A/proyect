@@ -38,8 +38,16 @@ class encuestaempresas extends Controllers
 				$pregunta1 = intval($_POST['pregunta1']);
 				$pregunta2 = intval($_POST['pregunta2']);
 				$pregunta3 = intval($_POST['pregunta3']);
+				$pregunta4 = intval($_POST['pregunta4']);
+				$pregunta5 = intval($_POST['pregunta5']);
+				$pregunta6 = intval($_POST['pregunta6']);
+				$pregunta7 = intval($_POST['pregunta7']);
+				$pregunta8 = intval($_POST['pregunta8']);
+				$pregunta9 = intval($_POST['pregunta9']);
+				$pregunta10 = intval($_POST['pregunta10']);
+				$pregunta11 = intval($_POST['pregunta11']);
 
-				$insert = $this->model->register($pregunta1, $pregunta2, $pregunta3);	
+				$insert = $this->model->register($pregunta1, $pregunta2, $pregunta3,$pregunta4,$pregunta5,$pregunta6,$pregunta7,$pregunta8,$pregunta9,$pregunta10,$pregunta11);	
 
 				if ($insert > 0) {
 					$arrResponse = array('status' => true, 'msg' => 'La Encuesta fue llenada con éxito!.');
