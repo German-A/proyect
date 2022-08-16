@@ -406,7 +406,28 @@ class especialidades extends Controllers
 		die();
 	}
 
+	//getCarreras
+	public function getBachilleres()
+	{
+		$search = "";
 
+		if ($_SESSION['permisosMod']['r']) {
+
+			if (!isset($_POST['palabraClave'])) {
+
+				$arrData = $this->model->selectBachiller();
+			} else {
+				$search = $_POST['palabraClave'];
+
+				$arrData = $this->model->selectBachillers($search);
+			}
+			echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
+		}
+		die();
+	}
+
+
+	
 
 
 	/***************************************************************************
@@ -485,7 +506,7 @@ class especialidades extends Controllers
 					$ubicacionTemporal = $_FILES['archivoSubido']['tmp_name'];
 					$nombre = $_FILES['archivoSubido']['name'];
 
-					$nuevonombre =  $escuela.$nombre;
+					$nuevonombre =  $escuela . $nombre;
 
 					if (!file_exists('Assets/archivos/objetivosEducacionales/')) {
 						mkdir('Assets/archivos/objetivosEducacionales/', 0777, true);
@@ -548,7 +569,7 @@ class especialidades extends Controllers
 
 
 
-		/***************************************************************************
+	/***************************************************************************
 	
 	PREGUNTAS OBJETIVOS EDUCACIONALES
 
@@ -614,7 +635,7 @@ class especialidades extends Controllers
 				$escuela = $_POST['escuela'];
 				$año = $_POST['año'];
 				$cantidadPreguntas = $_POST['cantidadPreguntas'];
-				
+
 
 
 				$request_user = "";
@@ -626,20 +647,20 @@ class especialidades extends Controllers
 					$ubicacionTemporal = $_FILES['archivoSubido']['tmp_name'];
 					$nombre = $_FILES['archivoSubido']['name'];
 
-					$nuevonombre =  $escuela.$nombre;
+					$nuevonombre =  $escuela . $nombre;
 
 					if (!file_exists('Assets/archivos/preguntasObjetivosEducacionales/')) {
 						mkdir('Assets/archivos/preguntasObjetivosEducacionales/', 0777, true);
 						if (file_exists('Assets/archivos/preguntasObjetivosEducacionales/')) {
 							if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/preguntasObjetivosEducacionales/' . $nuevonombre)) {
-								$insert = $this->model->registerpreguntasObjetivosEducacionales($escuela, $nuevonombre, $año,$cantidadPreguntas);
+								$insert = $this->model->registerpreguntasObjetivosEducacionales($escuela, $nuevonombre, $año, $cantidadPreguntas);
 							} else {
 								echo "no se pudo guardar ";
 							}
 						}
 					} else {
 						if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/preguntasObjetivosEducacionales/' . $nuevonombre)) {
-							$insert = $this->model->registerpreguntasObjetivosEducacionales($escuela, $nuevonombre, $año,$cantidadPreguntas);
+							$insert = $this->model->registerpreguntasObjetivosEducacionales($escuela, $nuevonombre, $año, $cantidadPreguntas);
 						} else {
 							echo "no se pudo guardar";
 						}
@@ -686,7 +707,4 @@ class especialidades extends Controllers
 		// }
 		die();
 	}
-
-	
-
 }

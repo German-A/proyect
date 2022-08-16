@@ -127,6 +127,37 @@ class EspecialidadesModel extends Mysql
 
 
 
+	public function selectBachiller()
+	{
+		$response = null;
+		//$sql = "SELECT idTitulaciones,nombreTitulaciones from titulaciones where status!=0";
+		$sql = "SELECT idEscuela,nombrebachiller from escuelabachilleres where status!=0";
+		$request = $this->select_all($sql);
+
+		foreach ($request as $user) {
+			$response[] = array(
+				"id" => $user['idEscuela'],
+				"text" => $user['nombrebachiller']
+			);
+		}
+
+		return $response;
+	}
+	public function selectBachillers($search)
+	{
+		//$sql = "SELECT idTitulaciones,nombreTitulaciones from titulaciones where status!=0";
+		$sql = "SELECT idEscuela,nombrebachiller from escuelabachilleres where status!=0 and nombrebachiller LIKE '%$search%' ORDER BY nombrebachiller";
+		$request = $this->select_all($sql);
+
+		foreach ($request as $user) {
+			$response[] = array(
+				"id" => $user['idEscuela'],
+				"text" => $user['nombrebachiller']
+			);
+		}
+		return $response;
+	}
+
 
 
 

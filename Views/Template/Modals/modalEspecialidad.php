@@ -1,4 +1,9 @@
+<style>
+  .select2-container {
+    min-width: 200px;
 
+  }
+</style>
 <!-- Modal -->
 <div class="modal fade" id="modalRegistro" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-lg">
@@ -36,38 +41,57 @@
           </div>
 
           <div class="form-row">
-            <div class="form-group col-md-4">
-              <label for="escuelaid">Elegir la Escuela</label>
-            </div>
-            <div class="form-group col-md-2">
-              <label for="bachiller">Bachilleres</label>
-            </div>
             <div class="form-group col-md-2">
               <label for="titulo">Titulados</label>
             </div>
+          </div>
+
+          <!-- BACHILLERES -->
+
+          <div id='itemstitulo'>
+            <div id='formtitulo'>
+              <div class='form-row'>
+                <input type="hidden" class="id">
+                <div class="form-group col-md-4">
+                  <select class="jsbachilleres select2  form-control" name="escuelaid" required="">
+                  </select>
+                </div>
+                <div class="form-group col-md-2">
+                  <input type="number" class="form-control titulo" name="titulo" required="">
+                </div>
+                <div class='col-md-1' style="text-align:center">
+                  <p class=" btn btn-outline-danger delete" onclick="quitarLote(this)">x</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
             <div class="form-group col-md-2">
-              <label for="segundaespecialidad">2° Especialidades</label>
+              <label for="titulo">Titulados</label>
             </div>
             <div class="form-group col-md-2">
               <label for="segundaespecialidad">Eliminar</label>
             </div>
           </div>
 
+          <!-- BACHILLERES -->
+
           <div id='items'>
             <div id='form'>
               <div class='form-row'>
-                <input type="hidden" class=" id">
+                <input type="hidden" class="id">
                 <div class="form-group col-md-4">
-                  <select class="js-example-basic-single form-control"  name="escuelaid" required="">
+                  <select class="jsbachilleres select2  form-control" name="escuelaid" required="">
                   </select>
                 </div>
-                <div class="form-group col-md-2">            
+                <div class="form-group col-md-2">
                   <input type="text" class="form-control" id="bachiller" name="bachiller" required="">
                 </div>
-                <div class="form-group col-md-2">             
+                <div class="form-group col-md-2">
                   <input type="number" class="form-control" id="titulo" name="titulo" required="">
                 </div>
-                <div class="form-group col-md-2">                  
+                <div class="form-group col-md-2">
                   <input type="number" class="form-control" id="segundaespecialidad" name="segundaespecialidad" required="">
                 </div>
                 <div class='col-md-1' style="text-align:center">
@@ -87,6 +111,7 @@
   </div>
 </div>
 
+
 <script>
   var clone = document.getElementById("form").cloneNode(true);
   var cantidadItem = 1;
@@ -101,10 +126,37 @@
     idsItem++;
     element.appendChild(clon);
     select();
+    selectBachilleres();
   }
+
 
   function quitarLote(element) {
     document.getElementById("items").removeChild(element.parentElement.parentElement.parentElement);
+  }
+
+  function selectBachilleres() {
+    $('.jsbachilleres').select2({
+      dropdownParent: $("#modalRegistro"),
+      ajax: {
+        url: " " + base_url + "/especialidades/getBachilleres",
+        type: "post",
+        dataType: 'json',
+        delay: 250,
+        data: function(params) {
+          return {
+            palabraClave: params.term
+          };
+        },
+        processResults: function(response) {
+          return {
+            results: response,
+          };
+        },
+        cache: true,
+
+      }
+    });
+
   }
 
   function select() {
