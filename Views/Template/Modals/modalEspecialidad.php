@@ -36,35 +36,13 @@
 
           <div class="form-row">
             <div class="form-group col-md-12 text-center">
-              <button class="btn btn-primary" onclick="nuevoItem()">Agregar Escuela</button>
+              <button class="btn btn-primary" onclick="nuevoItem()">Agregar titulo</button>
             </div>
           </div>
 
-          <div class="form-row">
-            <div class="form-group col-md-2">
-              <label for="titulo">Titulados</label>
-            </div>
-          </div>
 
-          <!-- BACHILLERES -->
 
-          <div id='itemstitulo'>
-            <div id='formtitulo'>
-              <div class='form-row'>
-                <input type="hidden" class="id">
-                <div class="form-group col-md-4">
-                  <select class="jsbachilleres select2  form-control" name="escuelaid" required="">
-                  </select>
-                </div>
-                <div class="form-group col-md-2">
-                  <input type="number" class="form-control titulo" name="titulo" required="">
-                </div>
-                <div class='col-md-1' style="text-align:center">
-                  <p class=" btn btn-outline-danger delete" onclick="quitarLote(this)">x</p>
-                </div>
-              </div>
-            </div>
-          </div>
+
 
           <div class="form-row">
             <div class="form-group col-md-2">
@@ -101,6 +79,40 @@
             </div>
           </div>
 
+          <div class="form-row">
+            <div class="form-group col-md-2">
+              <label for="titulo">Bachilleres</label>
+            </div>
+          </div>
+
+
+
+          <!-- BACHILLERES -->
+
+          <div id='itemstitulo'>
+            <div id='formtitulo'>
+              <div class='form-row'>
+                <input type="hidden" class="id">
+                <div class="form-group col-md-4">
+                  <select class="jsbachilleres select2  form-control" name="escuelaid" required="">
+                  </select>
+                </div>
+                <div class="form-group col-md-2">
+                  <input type="number" class="form-control titulo" name="titulo" required="">
+                </div>
+                <div class='col-md-1' style="text-align:center">
+                  <p class=" btn btn-outline-danger delete" onclick="quitarLotetitulo(this)">x</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-12 text-center">
+              <button class="btn btn-primary" onclick="nuevoItembc()">Agregar Bachiller</button>
+            </div>
+          </div>
+
           <div class="tile-footer">
             <button id="btnActionForm" class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i><span id="btnText">Guardar</span></button>&nbsp;&nbsp;&nbsp;
             <button class="btn btn-danger" type="button" data-dismiss="modal"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cerrar</button>
@@ -119,6 +131,7 @@
   let numeroLineas;
   //Añadir una fila
   function nuevoItem() {
+    console.log('ss');
     var element = document.getElementById("items");
     cantidadItem++;
     var clon = clone.cloneNode(true);
@@ -128,12 +141,34 @@
     select();
     selectBachilleres();
   }
-
-
   function quitarLote(element) {
     document.getElementById("items").removeChild(element.parentElement.parentElement.parentElement);
   }
+  /*bachilleres*/
 
+  var clonetitulo = document.getElementById("formtitulo").cloneNode(true);
+  var cantidadItembc = 1;
+  var idsItembc = 1;
+  let numeroLineasbc;
+  //Añadir una fila
+  function nuevoItembc() {
+    console.log('s');
+    var elementbc = document.getElementById("itemstitulo");
+    cantidadItembc++;
+    var clonetitul = clonetitulo.cloneNode(true);
+    clonetitulo.setAttribute("id", "form_" + idsItembc);
+    idsItembc++;
+    elementbc.appendChild(clonetitul);
+    select();
+    selectBachilleres();
+  }
+
+
+
+  function quitarLotetitulo(element) {
+    document.getElementById("items").removeChild(element.parentElement.parentElement.parentElement);
+  }
+  
   function selectBachilleres() {
     $('.jsbachilleres').select2({
       dropdownParent: $("#modalRegistro"),
