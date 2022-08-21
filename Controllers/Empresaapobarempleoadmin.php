@@ -18,16 +18,19 @@ class empresaapobarempleoadmin extends Controllers
 		if (empty($_SESSION['permisosMod']['r'])) {
 			header("Location:" . base_url() . '/dashboard');
 		}
-		$data['page_tag'] = "Banner";
-		$data['page_title'] = "Banner <small>Unidad de Seguimiento del Egresado</small>";
-		$data['page_name'] = "USE-banner";
-		$data['page_functions_js'] = "functions_empresaapobarempleoadmin.js";
+
+		$data = [
+            'page_tag' => 'Empleos-Admin',
+            'page_title' => "Empleos <small>Unidad de Seguimiento del Egresado</small>",
+            'page_name' => "USE-banner",
+            'page_functions_js' => "functions_empresaapobarempleoadmin.js",
+        ];
+
 		$this->views->getView($this, "empresaapobarempleoadmin", $data);
 	}
 	//listado de los banners
 	public function get()
-	{
-		
+	{		
 		if ($_SESSION['permisosMod']['r']) {
 			$arrData = $this->model->listaEmpleos();
 			for ($i = 0; $i < count($arrData); $i++) {
