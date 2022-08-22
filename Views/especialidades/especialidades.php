@@ -118,32 +118,13 @@ getModal('modalPostgrado', $data);
 
 <script>
   $(document).ready(function() {
-    console.log('sdd');
 
     $('.select2').select2();
 
-    $('.jsbachilleres').select2({
-      dropdownParent: $("#modalRegistro"),
-      ajax: {
-        url: " " + base_url + "/especialidades/getBachilleres",
-        type: "post",
-        dataType: 'json',
-        delay: 250,
-        data: function(params) {
-          return {
-            palabraClave: params.term
-          };
-        },
-        processResults: function(response) {
-          return {
-            results: response,
-          };
-        },
-        cache: true,
+    selectBachilleres();
 
-      }
-    });
+    selecTitulo();
+
+
   });
-
-  
 </script>

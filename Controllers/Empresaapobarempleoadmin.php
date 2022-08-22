@@ -33,37 +33,73 @@ class empresaapobarempleoadmin extends Controllers
 	{		
 		if ($_SESSION['permisosMod']['r']) {
 			$arrData = $this->model->listaEmpleos();
-			for ($i = 0; $i < count($arrData); $i++) {
+
+			foreach ($arrData as &$line) {
+
 				$btnView = '';
 				$btnEdit = '';
 				$btnDelete = '';
 
-				$arrData[$i]['titulacionesid'] = "";
+				//echo $line['idEmpleos'];
 
-				$arrData[$i]['escuelaid'] = "";
+				$line['titulacionesid']= "";
+				$line['escuelaid']= "";
 
-				$arrD = $this->model->listaTitulaciones($arrData[$i]['idEmpleos']);
+				$arrTitulaciones = $this->model->listaTitulaciones($line['idEmpleos']);
+				$arrCarreras = $this->model->listaCarreras($line['idEmpleos']);
 
-				$arrDD = $this->model->listaCarreras($arrData[$i]['idEmpleos']);
-
-				for ($j = 0; $j < count($arrD); $j++) {
-					$arrData[$i]['titulacionesid'] = $arrData[$i]['titulacionesid'] . '<h5><span class="badge badge-primary">' . $arrD[$j]['nombreTitulaciones'] . '</span></h5> ';
+				foreach ($arrTitulaciones as &$titulaciones) {
+					$line['titulacionesid'] = 	$line['titulacionesid'].'<h5><span class="badge badge-primary">' . $titulaciones['nombreTitulaciones'] . '</span></h5> ';		
 				}
 
-				for ($j = 0; $j < count($arrDD); $j++) {
-					$arrData[$i]['escuelaid'] = $arrData[$i]['escuelaid'] . '<h5><span class="badge badge-info">' . $arrDD[$j]['nombreEscuela'] . '</span></h5> ';
+				foreach ($arrCarreras as &$carreras) {
+					$line['escuelaid'] = 	$line['escuelaid'].'<h5><span class="badge badge-info">' . $carreras['nombreEscuela'] . '</span></h5> ';		
 				}
-
-
+				
 				if ($_SESSION['permisosMod']['u']) {
 					if (( $_SESSION['userData']['idrol'] == 1) ||( $_SESSION['userData']['idrol'] == 2)) {
-							$btnDelete = '<button class="btn btn-success btn-sm btnDelUsuario" onClick="fntAprobarBanner(' . $arrData[$i]['idEmpleos'] . ')" title="Aprobar Empleo"><i class="fas fa-check-circle"></i></button>';
+							$btnDelete = '<button class="btn btn-success btn-sm btnDelUsuario" onClick="fntAprobarBanner(' . $line['idEmpleos'] . ')" title="Aprobar Empleo"><i class="fas fa-check-circle"></i></button>';
 					} else {
 						$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
 					}
 				}
-				$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
+				$line['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';			
 			}
+			//echo "<pre>";
+			//print_r($arrData) ;
+			//echo "<pre>";
+
+
+
+			// for ($i = 0; $i < count($arrData); $i++) {
+			// 	$btnView = '';
+			// 	$btnEdit = '';
+			// 	$btnDelete = '';
+			// 	$arrData[$i]['titulacionesid'] = "";
+			// 	$arrData[$i]['escuelaid'] = "";
+
+			// 	$arrD = $this->model->listaTitulaciones($arrData[$i]['idEmpleos']);
+			// 	$arrDD = $this->model->listaCarreras($arrData[$i]['idEmpleos']);
+
+			// 	for ($j = 0; $j < count($arrD); $j++) {
+			// 		$arrData[$i]['titulacionesid'] = $arrData[$i]['titulacionesid'] . '<h5><span class="badge badge-primary">' . $arrD[$j]['nombreTitulaciones'] . '</span></h5> ';
+			// 	}
+
+			// 	for ($j = 0; $j < count($arrDD); $j++) {
+			// 		$arrData[$i]['escuelaid'] = $arrData[$i]['escuelaid'] . '<h5><span class="badge badge-info">' . $arrDD[$j]['nombreEscuela'] . '</span></h5> ';
+			// 	}
+
+
+			// 	if ($_SESSION['permisosMod']['u']) {
+			// 		if (( $_SESSION['userData']['idrol'] == 1) ||( $_SESSION['userData']['idrol'] == 2)) {
+			// 				$btnDelete = '<button class="btn btn-success btn-sm btnDelUsuario" onClick="fntAprobarBanner(' . $arrData[$i]['idEmpleos'] . ')" title="Aprobar Empleo"><i class="fas fa-check-circle"></i></button>';
+			// 		} else {
+			// 			$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
+			// 		}
+			// 	}
+			// 	$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
+			// }
+			
 			echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
 		}
 		die();
