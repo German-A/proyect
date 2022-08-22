@@ -2,7 +2,7 @@
 
 class empleos extends Controllers
 {
-	private $idempleo ;
+	private $idempleo;
 	public function __construct()
 	{
 		session_start();
@@ -16,16 +16,13 @@ class empleos extends Controllers
 	//pagina Banner
 	public function empleos()
 	{
-
-
-
 		if (empty($_SESSION['permisosMod']['r'])) {
 			header("Location:" . base_url() . '/dashboard');
 		}
 		$data['page_tag'] = "Empleos";
 		$data['page_title'] = "Empleos <small>Unidad de Seguimiento del Egresado</small>";
 		$data['page_name'] = "USE-Empleos";
-	
+
 		$data['page_functions_js'] = "functions_empleos.js";
 		$this->views->getView($this, "empleos", $data);
 	}
@@ -111,10 +108,10 @@ class empleos extends Controllers
 
 					//$nombre = null;
 
-					if ($_FILES['archivoSubido']['name']=="") {
+					if ($_FILES['archivoSubido']['name'] == "") {
 						$insert = $this->model->updatePosicion($nombreArchivo, $idUsuario, $posicion);
-					} else{
-						
+					} else {
+
 						$cantidad = $cantidadBanner['cant'];
 						$ubicacionTemporal = $_FILES['archivoSubido']['tmp_name'];
 						$nombre = $_FILES['archivoSubido']['name'];
@@ -159,7 +156,7 @@ class empleos extends Controllers
 		}
 		die();
 	}
-	
+
 	//obtener un baner para actualizar
 	public function getunBanner($idpersona)
 	{

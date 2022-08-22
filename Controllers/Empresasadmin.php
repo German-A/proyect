@@ -45,42 +45,36 @@ class empresasadmin extends Controllers
 				if ($_SESSION['permisos'][10]['r']) {
 					$btnConfe = '<a class="btn btn-warning btn-sm" href="' . base_url() . '/conferenciaempresaadmin/conferenciaempresaadmin/' . $arrData[$i]['idempresa'] . '" title="Ver Conferencia "><i class="far fa-eye"></i>Conferencia</a>';
 				}
-			
+
 				//visualizar
 				if ($_SESSION['permisosMod']['r']) {
 					$btnView = '<button class="btn btn-info btn-sm fntView" onClick="fntView(' . $arrData[$i]['idpersona'] . ')" title="Ver Empresa"><i class="far fa-eye"></i></button>';
 				}
 				//editar
 				if ($_SESSION['permisosMod']['u']) {
-					if (($_SESSION['idUser'] == 1 and $_SESSION['userData']['idrol'] == 1) ||
-						($_SESSION['userData']['idrol'] == 1 and $arrData[$i]['idrol'] != 1)
-					) {
-						$btnEdit = '<button class="btn btn-primary  btn-sm fntEdit" onClick="fntEdit(this,' . $arrData[$i]['idpersona'] . ')" title="Editar Empresa"><i class="fas fa-pencil-alt"></i></button>';
-					} else {
-						$btnEdit = '<button class="btn btn-secondary btn-sm" disabled ><i class="fas fa-pencil-alt"></i></button>';
-					}
+					$btnEdit = '<button class="btn btn-primary  btn-sm fntEdit" onClick="fntEdit(this,' . $arrData[$i]['idpersona'] . ')" title="Editar Empresa"><i class="fas fa-pencil-alt"></i></button>';
+				} else {
+					$btnEdit = '<button class="btn btn-secondary btn-sm" disabled ><i class="fas fa-pencil-alt"></i></button>';
 				}
-				
+
 				//eliminar
 				if ($_SESSION['permisosMod']['d']) {
-					if (( $_SESSION['userData']['idrol'] == 1) ||( $_SESSION['userData']['idrol'] == 2)) {
-						$btnDelete = '<button class="btn btn-danger btn-sm fntDelete" onClick="fntDelete(' . $arrData[$i]['idpersona'] . ')" title="Eliminar empresa"><i class="far fa-trash-alt"></i></button>';
-					} else {
-						$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
-					}
+					$btnDelete = '<button class="btn btn-danger btn-sm fntDelete" onClick="fntDelete(' . $arrData[$i]['idpersona'] . ')" title="Eliminar empresa"><i class="far fa-trash-alt"></i></button>';
+				} else {
+					$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
 				}
 
-				$Habilitado= 'Habilitado';
-				$Desabilitado= 'Desabilitado';
+				$Habilitado = 'Habilitado';
+				$Desabilitado = 'Desabilitado';
 
-				if($arrData[$i]['status']=1){
-					$arrData[$i]['status'] = '<a ><span class="badge badge-success"  >' . $Habilitado. '</span></a> ';
-				}elseif($arrData[$i]['status']=2){
-					$arrData[$i]['status'] = '<a ><span class="badge badge-primary"  >' . $Desabilitado. '</span></a> ';
+				if ($arrData[$i]['status'] = 1) {
+					$arrData[$i]['status'] = '<a ><span class="badge badge-success"  >' . $Habilitado . '</span></a> ';
+				} elseif ($arrData[$i]['status'] = 2) {
+					$arrData[$i]['status'] = '<a ><span class="badge badge-primary"  >' . $Desabilitado . '</span></a> ';
 				}
 
-				$imagen= 'ver imagen';
-				$arrData[$i]['imagen'] = '<a href="' . base_url() . '/Assets/archivos/empresa/' . $arrData[$i]['imagen'] . '"target="_blank"><span class="badge badge-primary"  >' . $imagen. '</span></a> ';
+				$imagen = 'ver imagen';
+				$arrData[$i]['imagen'] = '<a href="' . base_url() . '/Assets/archivos/empresa/' . $arrData[$i]['imagen'] . '"target="_blank"><span class="badge badge-primary"  >' . $imagen . '</span></a> ';
 
 				$arrData[$i]['options'] = '<div class="text-center">' . $btnConfe . ' ' . $btnVie . ' ' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
 			}
@@ -106,33 +100,33 @@ class empresasadmin extends Controllers
 				$nombreEmpresa = $_POST['nombreEmpresa'];
 				$ruc = $_POST['ruc'];
 				$Direccion = $_POST['Direccion'];
-				$password =$dni;
+				$password = $dni;
 
 				$request_user = "";
 				if ($idUsuario == 0) {
 
 					$option = 1;
-			
+
 					$ubicacionTemporal = $_FILES['archivoSubido']['tmp_name'];
 					$nombre = $_FILES['archivoSubido']['name'];
 
 					$imagen = $ruc . $nombre;
-					
+
 
 					if (!file_exists('Assets/archivos/empresa/')) {
 						mkdir('Assets/archivos/empresa/', 0777, true);
 						if (file_exists('Assets/archivos/empresa/')) {
 							if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/empresa/' . $imagen)) {
-								$personaid = $this->model->register($nombres, $apellidop, $apellidom, $email_user,$dni, $telefono,$password,$imagen);
-								$insert = $this->model->registerEmpresa($nombreEmpresa, $ruc, $Direccion,$personaid);
+								$personaid = $this->model->register($nombres, $apellidop, $apellidom, $email_user, $dni, $telefono, $password, $imagen);
+								$insert = $this->model->registerEmpresa($nombreEmpresa, $ruc, $Direccion, $personaid);
 							} else {
 								echo "no se pudo guardar ";
 							}
 						}
 					} else {
 						if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/empresa/' . $imagen)) {
-							$personaid = $this->model->register($nombres, $apellidop, $apellidom, $email_user,$dni, $telefono,$password,$imagen);
-							$insert = $this->model->registerEmpresa($nombreEmpresa, $ruc, $Direccion,$personaid);
+							$personaid = $this->model->register($nombres, $apellidop, $apellidom, $email_user, $dni, $telefono, $password, $imagen);
+							$insert = $this->model->registerEmpresa($nombreEmpresa, $ruc, $Direccion, $personaid);
 						} else {
 							echo "no se pudo guardar";
 						}
@@ -143,40 +137,40 @@ class empresasadmin extends Controllers
 
 					//$nombre = null;
 					//Actualizar sin Imagen
-					if ($_FILES['archivoSubido']['name']=="") {
-						$personaid = $this->model->toupdate($nombres, $apellidop, $apellidom, $email_user,$dni, $telefono,$idUsuario);
-						$insert = $this->model->toupdateEmpresa($nombreEmpresa, $ruc, $Direccion,$idUsuario);
-					} else{
+					if ($_FILES['archivoSubido']['name'] == "") {
+						$personaid = $this->model->toupdate($nombres, $apellidop, $apellidom, $email_user, $dni, $telefono, $idUsuario);
+						$insert = $this->model->toupdateEmpresa($nombreEmpresa, $ruc, $Direccion, $idUsuario);
+					} else {
 
-					//Actualizar con Imagen
-					$ubicacionTemporal = $_FILES['archivoSubido']['tmp_name'];			
-					$nombre = $_FILES['archivoSubido']['name'];
-					$imagen = $ruc . $nombre;
-			
+						//Actualizar con Imagen
+						$ubicacionTemporal = $_FILES['archivoSubido']['tmp_name'];
+						$nombre = $_FILES['archivoSubido']['name'];
+						$imagen = $ruc . $nombre;
 
-					$imagen='ss';
+
+						$imagen = 'ss';
 
 						if (!file_exists('Assets/archivos/empresa/')) {
 							mkdir('Assets/archivos/empresa/', 0777, true);
 							if (file_exists('Assets/archivos/empresa/')) {
 								if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/empresa/' . $imagen)) {
-									$personaid = $this->model->toupdateimg($nombres, $apellidop, $apellidom, $email_user,$dni, $telefono,$idUsuario,$imagen);
-									$insert = $this->model->toupdateEmpresa($nombreEmpresa, $ruc, $Direccion,$idUsuario);
+									$personaid = $this->model->toupdateimg($nombres, $apellidop, $apellidom, $email_user, $dni, $telefono, $idUsuario, $imagen);
+									$insert = $this->model->toupdateEmpresa($nombreEmpresa, $ruc, $Direccion, $idUsuario);
 								} else {
 									echo "no se pudo guardar ";
 								}
 							}
 						} else {
 							if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/empresa/' . $imagen)) {
-								$personaid = $this->model->toupdateimg($nombres, $apellidop, $apellidom, $email_user,$dni, $telefono,$idUsuario,$imagen);
-								$insert = $this->model->toupdateEmpresa($nombreEmpresa, $ruc, $Direccion,$idUsuario);
+								$personaid = $this->model->toupdateimg($nombres, $apellidop, $apellidom, $email_user, $dni, $telefono, $idUsuario, $imagen);
+								$insert = $this->model->toupdateEmpresa($nombreEmpresa, $ruc, $Direccion, $idUsuario);
 							} else {
 								echo "no se pudo guardar";
 							}
 						}
 					}
 				}
-				
+
 				if ($insert > 0) {
 					if ($option == 1) {
 						$arrResponse = array('status' => true, 'msg' => 'Datos guardados correctamente.');
@@ -191,7 +185,7 @@ class empresasadmin extends Controllers
 		}
 		die();
 	}
-	
+
 	//obtener un baner para actualizar
 	public function getone($idpersona)
 	{
@@ -216,10 +210,10 @@ class empresasadmin extends Controllers
 		if ($_POST) {
 			if ($_SESSION['permisosMod']['d']) {
 				$IdBaner = intval($_POST['IdBaner']);
-				$NombreArchivo= $this->model->getOne($IdBaner);
+				$NombreArchivo = $this->model->getOne($IdBaner);
 				//borrar documentos
 				$requestDelete = $this->model->remove($IdBaner);
-				@unlink('Assets/archivos/empresa/'.$NombreArchivo['imagen']);
+				@unlink('Assets/archivos/empresa/' . $NombreArchivo['imagen']);
 				if ($requestDelete) {
 					$arrResponse = array('status' => true, 'msg' => 'Se ha eliminado la Empresa');
 				} else {

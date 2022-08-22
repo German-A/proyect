@@ -12,7 +12,8 @@ class empresaapobarempleoadmin extends Controllers
 		}
 		getPermisos(12);
 	}
-	//pagina Banner
+
+	//PAGINA APROBAR EMPLEO
 	public function empresaapobarempleoadmin()
 	{
 		if (empty($_SESSION['permisosMod']['r'])) {
@@ -20,17 +21,18 @@ class empresaapobarempleoadmin extends Controllers
 		}
 
 		$data = [
-            'page_tag' => 'Empleos-Admin',
-            'page_title' => "Empleos <small>Unidad de Seguimiento del Egresado</small>",
-            'page_name' => "USE-banner",
-            'page_functions_js' => "functions_empresaapobarempleoadmin.js",
-        ];
+			'page_tag' => 'Empleos-Admin',
+			'page_title' => "Empleos <small>Unidad de Seguimiento del Egresado</small>",
+			'page_name' => "USE-banner",
+			'page_functions_js' => "functions_empresaapobarempleoadmin.js",
+		];
 
 		$this->views->getView($this, "empresaapobarempleoadmin", $data);
 	}
-	//listado de los banners
+
+	//LISTA DE EMPLEOS POR APROBAR
 	public function get()
-	{		
+	{
 		if ($_SESSION['permisosMod']['r']) {
 			$arrData = $this->model->listaEmpleos();
 
@@ -42,29 +44,32 @@ class empresaapobarempleoadmin extends Controllers
 
 				//echo $line['idEmpleos'];
 
-				$line['titulacionesid']= "";
-				$line['escuelaid']= "";
+				$line['titulacionesid'] = "";
+				$line['escuelaid'] = "";
 
 				$arrTitulaciones = $this->model->listaTitulaciones($line['idEmpleos']);
 				$arrCarreras = $this->model->listaCarreras($line['idEmpleos']);
 
 				foreach ($arrTitulaciones as &$titulaciones) {
-					$line['titulacionesid'] = 	$line['titulacionesid'].'<h5><span class="badge badge-primary">' . $titulaciones['nombreTitulaciones'] . '</span></h5> ';		
+					$line['titulacionesid'] = 	$line['titulacionesid'] . '<h5><span class="badge badge-primary">' . $titulaciones['nombreTitulaciones'] . '</span></h5> ';
 				}
 
 				foreach ($arrCarreras as &$carreras) {
-					$line['escuelaid'] = 	$line['escuelaid'].'<h5><span class="badge badge-info">' . $carreras['nombreEscuela'] . '</span></h5> ';		
+					$line['escuelaid'] = 	$line['escuelaid'] . '<h5><span class="badge badge-info">' . $carreras['nombreEscuela'] . '</span></h5> ';
 				}
-				
+
+				if ($_SESSION['permisos'][11]['r']) {
+				}
+
 				if ($_SESSION['permisosMod']['u']) {
-					if (( $_SESSION['userData']['idrol'] == 1) ||( $_SESSION['userData']['idrol'] == 2)) {
-							$btnDelete = '<button class="btn btn-success btn-sm btnDelUsuario" onClick="fntAprobarBanner(' . $line['idEmpleos'] . ')" title="Aprobar Empleo"><i class="fas fa-check-circle"></i></button>';
-					} else {
-						$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
-					}
+					$btnDelete = '<button class="btn btn-success btn-sm btnDelUsuario" onClick="fntAprobarBanner(' . $line['idEmpleos'] . ')" title="Aprobar Empleo"><i class="fas fa-check-circle"></i></button>';
+				} else {
+					$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
 				}
-				$line['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';			
+				$line['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
 			}
+
+
 			//echo "<pre>";
 			//print_r($arrData) ;
 			//echo "<pre>";
@@ -99,25 +104,23 @@ class empresaapobarempleoadmin extends Controllers
 			// 	}
 			// 	$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
 			// }
-			
+
 			echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
 		}
 		die();
 	}
 
-
-
-	//borrar un banner
+	//APROBACION DE EMPLEO
 	public function aprobarEmpleo()
 	{
 		if ($_POST) {
 			if ($_SESSION['permisosMod']['d']) {
 				$idempleo = intval($_POST['idempleo']);
-				$requestDelete = $this->model->aprobarEmpleo($idempleo);		
-				
-				$this->enviarCorreo($idempleo);		
+				$requestDelete = $this->model->aprobarEmpleo($idempleo);
 
-				if ($requestDelete) {				
+				$this->enviarCorreo($idempleo);
+
+				if ($requestDelete) {
 					$arrResponse = array('status' => true, 'msg' => 'Se ha publicado correctamente');
 				} else {
 					$arrResponse = array('status' => false, 'msg' => 'Error al publicar el Empleo.');
@@ -128,30 +131,112 @@ class empresaapobarempleoadmin extends Controllers
 		die();
 	}
 
-	public function enviarCorreo($idempleo){
-		$nombreUsuario=null;
-		$email=null;
+	//CORREO A LA EMPRESA Y LA USE
+	public function enviarCorreo($idempleo)
+	{
+		$nombreUsuario = null;
+		$email = null;
 
 		$arrData['nombres'] = "";
 		$arrData['email_user'] = "";
-		
+
 		$arrData = $this->model->listaCarrerasid($idempleo); //datos del usuario
-		for( $i=0; $i <= count($arrData); $i++){		
+		for ($i = 0; $i <= count($arrData); $i++) {
 
 			//$nombreUsuario = empty($arrData[$i]['nombres']);
-			if(!empty($arrData[$i]['nombres'])){$nombreUsuario = $arrData[$i]['nombres'];}
-			if(!empty($arrData[$i]['email_user'])){$email = $arrData[$i]['email_user'];}
-			
+			if (!empty($arrData[$i]['nombres'])) {
+				$nombreUsuario = $arrData[$i]['nombres'];
+			}
+			if (!empty($arrData[$i]['email_user'])) {
+				$email = $arrData[$i]['email_user'];
+			}
+
 			$dataUsuario = array(
-			'nombreUsuario' => $nombreUsuario,
-			'email' => $email,
-			'asunto' => 'Recuperar cuenta - '.NOMBRE_REMITENTE);
-			sendMailLocalEmpleo($dataUsuario,'email_empleo');
-			$dataUsuario=null;
+				'nombreUsuario' => $nombreUsuario,
+				'email' => $email,
+				'asunto' => 'Recuperar cuenta - ' . NOMBRE_REMITENTE
+			);
+			sendMailLocalEmpleo($dataUsuario, 'email_empleo');
+			$dataUsuario = null;
 		}
-		
-	
-		
 	}
-	
+
+	//PAGINA APROBAR EMPLEO
+	public function validarruc()
+	{
+		if (empty($_SESSION['permisosMod']['r'])) {
+			header("Location:" . base_url() . '/dashboard');
+		}
+
+		$data = [
+			'page_tag' => 'Empleos-Admin',
+			'page_title' => "Empleos <small>Unidad de Seguimiento del Egresado</small>",
+			'page_name' => "USE-banner",
+			'page_functions_js' => "functions_empresaapobarempleoadmin.js",
+		];
+
+		$this->views->getView($this, "validarruc", $data);
+	}
+
+	//LISTA DE EMPLEOS POR APROBAR
+	public function getEmpleosRuc()
+	{
+		if ($_SESSION['permisosMod']['r']) {
+			$arrData = $this->model->listaEmpleosParaValidarRuc();
+
+			foreach ($arrData as &$line) {
+
+				$btnView = '';
+				$btnEdit = '';
+				$btnDelete = '';
+
+				//echo $line['idEmpleos'];
+
+				$line['titulacionesid'] = "";
+				$line['escuelaid'] = "";
+
+				$arrTitulaciones = $this->model->listaTitulaciones($line['idEmpleos']);
+				$arrCarreras = $this->model->listaCarreras($line['idEmpleos']);
+
+				foreach ($arrTitulaciones as &$titulaciones) {
+					$line['titulacionesid'] = 	$line['titulacionesid'] . '<h5><span class="badge badge-primary">' . $titulaciones['nombreTitulaciones'] . '</span></h5> ';
+				}
+
+				foreach ($arrCarreras as &$carreras) {
+					$line['escuelaid'] = 	$line['escuelaid'] . '<h5><span class="badge badge-info">' . $carreras['nombreEscuela'] . '</span></h5> ';
+				}
+
+				if ($_SESSION['permisos'][11]['r']) {
+				}
+
+				if ($_SESSION['permisosMod']['u']) {
+					$btnDelete = '<button class="btn btn-success btn-sm btnDelUsuario" onClick="fntAprobarBanner(' . $line['idEmpleos'] . ')" title="Aprobar Empleo"><i class="fas fa-check-circle"></i></button>';
+				} else {
+					$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
+				}
+				$line['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
+			}
+
+			echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
+		}
+		die();
+	}
+	//VALIDAR EL RUC DE LA EMPRESA
+	public function aprobarRucEmpleo()
+	{
+		if ($_POST) {
+			if ($_SESSION['permisosMod']['d']) {
+				$idempleo = intval($_POST['idempleo']);
+				$requestDelete = $this->model->aprobarRucEmpleo($idempleo);
+
+				if ($requestDelete) {
+					$arrResponse = array('status' => true, 'msg' => 'Se ha publicado correctamente');
+				} else {
+					$arrResponse = array('status' => false, 'msg' => 'Error al publicar el Empleo.');
+				}
+				echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+			}
+		}
+		die();
+	}
 }

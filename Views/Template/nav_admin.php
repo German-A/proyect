@@ -96,6 +96,10 @@
                         <?php if (!empty($_SESSION['permisos'][12]['r'])) { ?>
                             <li><a class="treeview-item" href="<?= base_url(); ?>/sendcorreo"><i class="icon fa fa-circle-o"></i>Correo</a></li>
                         <?php } ?>
+
+                        <?php if (!empty($_SESSION['permisos'][25]['r'])) { ?>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/empresaapobarempleoadmin/validarruc"><i class="icon fa fa-circle-o"></i>validar ruc</a></li>              
+                        <?php } ?>
                     </ul>
                 </li>
             <?php } ?>
@@ -118,7 +122,7 @@
             <?php } ?>
 
 
-            
+
 
 
 
@@ -169,14 +173,16 @@
                 </li>
             <?php } ?>
 
-            <?php if (!empty($_SESSION['permisos'][25]['r'])) { ?>
+            <!-- <?php if (!empty($_SESSION['permisos'][25]['r'])) { ?>
                 <li>
                     <a class="app-menu__item" href="<?= base_url(); ?>/usuarios/perfilUsuario">
                         <i class="app-menu__icon fa fa-sign-out" aria-hidden="true"></i>
                         <span class="app-menu__label">CONFIGURACIÓN</span>
                     </a>
                 </li>
-            <?php } ?>
+            <?php } ?> -->
+
+
 
 
 
