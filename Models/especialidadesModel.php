@@ -94,38 +94,36 @@ class EspecialidadesModel extends Mysql
 	}
 
 
-	public function selectCarreras()
+
+
+	public function getCarreras($search=null)
 	{
-		$response = null;
-		//$sql = "SELECT idTitulaciones,nombreTitulaciones from titulaciones where status!=0";
-		$sql = "SELECT idEscuela,nombreEscuela from escuela where status!=0";
-		$request = $this->select_all($sql);
-
-		foreach ($request as $user) {
-			$response[] = array(
-				"id" => $user['idEscuela'],
-				"text" => $user['nombreEscuela']
-			);
+		$where = "";
+		$request=null;
+		if($search !=null){
+			$where = "WHERE status!=0 and nombreEscuela like'%".$search."%' ORDER BY nombreEscuela";
 		}
-
-		return $response;
-	}
-	public function selectCarrerass($search)
-	{
-		//$sql = "SELECT idTitulaciones,nombreTitulaciones from titulaciones where status!=0";
-		$sql = "SELECT idEscuela,nombreEscuela from escuela where status!=0 and nombreEscuela LIKE '%$search%' ORDER BY nombreEscuela";
-		$request = $this->select_all($sql);
-
-		foreach ($request as $user) {
-			$response[] = array(
-				"id" => $user['idEscuela'],
-				"text" => $user['nombreEscuela']
-			);
-		}
-		return $response;
+		$sql = "SELECT idEscuela as id,nombreEscuela as text
+		from escuela 
+		$where";
+		$request = $this->select_all($sql);	
+		return $request;
 	}
 
 
+	public function getSegundasEspecialidades($search=null)
+	{
+		$where = "";
+		$request=null;
+		if($search !=null){
+			$where = "WHERE status!=0 and descripcion like'%".$search."%' ORDER BY descripcion";
+		}
+		$sql = "SELECT idsegundaespecialidades as id,descripcion as text
+		from segundaespecialidades 
+		$where";
+		$request = $this->select_all($sql);	
+		return $request;
+	}
 
 	public function selectBachiller()
 	{
@@ -146,7 +144,8 @@ class EspecialidadesModel extends Mysql
 	public function selectBachillers($search)
 	{
 		//$sql = "SELECT idTitulaciones,nombreTitulaciones from titulaciones where status!=0";
-		$sql = "SELECT idEscuela,nombrebachiller from escuelabachilleres where status!=0 and nombrebachiller LIKE '%$search%' ORDER BY nombrebachiller";
+		$sql = "SELECT idEscuela,nombrebachiller from escuelabachilleres 
+		where status!=0 and nombrebachiller LIKE '%$search%' ORDER BY nombrebachiller";
 		$request = $this->select_all($sql);
 
 		foreach ($request as $user) {
@@ -169,43 +168,6 @@ class EspecialidadesModel extends Mysql
 
 
 
-
-	public function toupdate($nombreArchivo, $nuevonombre, $cantidad, $idUsuario, $posicion)
-	{
-		$this->nombreArchivo = $nombreArchivo;
-		$this->nuevonombre = $nuevonombre;
-		$this->cantidad = $cantidad;
-		$this->idUsuario = $idUsuario;
-		$this->posicion = $posicion;
-		$sql = "UPDATE banner SET Nombre=?, NombreArchivo=?, Posicion=?
-			WHERE IdBaner = $this->idUsuario ";
-		$arrData = array(
-			$this->nombreArchivo,
-			$this->nuevonombre,
-			$this->posicion
-		);
-
-		$request = $this->update($sql, $arrData);
-		return $request;
-	}
-
-	public function updatePosicion($nombreArchivo, $idUsuario, $posicion)
-	{
-		$this->nombreArchivo = $nombreArchivo;
-
-		$this->idUsuario = $idUsuario;
-		$this->posicion = $posicion;
-		$sql = "UPDATE banner SET Nombre=?,Posicion=?
-			WHERE IdBaner = $this->idUsuario ";
-		$arrData = array(
-			$this->nombreArchivo,
-
-			$this->posicion
-		);
-
-		$request = $this->update($sql, $arrData);
-		return $request;
-	}
 	public function remove(int $IdBaner)
 	{
 		$this->intIdUsuario = $IdBaner;

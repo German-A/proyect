@@ -122,8 +122,8 @@ getModal('modalPostgrado', $data);
     $('.select2').select2();
 
     selectBachilleres();
-
     selecTitulo();
+    selecSegundaEsp();
 
 
   });

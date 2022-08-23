@@ -96,6 +96,41 @@
               <a href="javascript:void(0);" class="btn btn-primary" onclick="nuevoItemTitulo()">Agregar Titulo</a>
             </div>
           </div>
+          <!-- Titulos -->
+
+          <!-- Segundas especialidades -->
+          <div class="form-row">
+            <div class="form-group col-md-8">
+              <label for="titulo">Segundas especialidades</label>
+            </div>
+            <div class="form-group col-md-2">
+              <label for="segundaespecialidad">Eliminar</label>
+            </div>
+          </div>
+
+          <div id='itemssegunda'>
+            <div id='formsegunda'>
+              <div class='form-row'>
+                <input type="hidden" class="id">
+                <div class="form-group col-md-8">
+                  <select class="js-segundaespecialidad select2 form-control " style="width: 100%" name="tituloid" required="">
+                  </select>
+                </div>
+                <div class="form-group col-md-2">
+                  <input type="number" class="form-control titulo" name="titulo" required="">
+                </div>
+                <div class='col-md-1' style="text-align:center">
+                  <p class=" btn btn-outline-danger delete" onclick="quitarSegunaEspecialidad(this)">x</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12 text-center">
+              <a href="javascript:void(0);" class="btn btn-primary" onclick="nuevoItemSegundaEspecialidad()">Agregar Segundas especialidades</a>
+            </div>
+          </div>
+          <!-- Titulos -->
 
           <div class="tile-footer">
             <button type="button" class="btn btn-primary " onclick="publicarOferta()">ENVIAR PARA APROBACIÓN</button>
@@ -199,6 +234,54 @@
     });
 
   }
+
+
+  /*segundas especialidades*/
+  var clonesegunda = document.getElementById("formsegunda").cloneNode(true);
+  var cantidadItemsg= 1;
+  var idsItemsg = 1;
+  let numeroLineasse;
+
+  //Añadir una fila
+  function nuevoItemSegundaEspecialidad() {
+    var elementsg = document.getElementById("itemssegunda");
+    cantidadItemsg++;
+    var clonesegundas = clonesegunda.cloneNode(true);
+    clonesegundas.setAttribute("id", "formsegunda_" + idsItemsg);
+    idsItemsg++;
+    elementsg.appendChild(clonesegundas);
+    selecSegundaEsp();
+  }
+
+  function quitarSegunaEspecialidad(element) {
+    document.getElementById("itemssegunda").removeChild(element.parentElement.parentElement.parentElement);
+  }
+
+  function selecSegundaEsp() {
+    $('.js-segundaespecialidad').select2({
+      dropdownParent: $("#formmodal"),
+      ajax: {
+        url: " " + base_url + "/especialidades/getSegundasEspecialidades",
+        type: "post",
+        dataType: 'json',
+        delay: 250,
+        data: function(params) {
+          return {
+            palabraClave: params.term
+          };
+        },
+        processResults: function(response) {
+          return {
+            results: response,
+          };
+        },
+        cache: true,
+
+      }
+    });
+
+  }
+
 
 
   function publicarOferta() {
