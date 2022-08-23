@@ -97,8 +97,12 @@
                             <li><a class="treeview-item" href="<?= base_url(); ?>/sendcorreo"><i class="icon fa fa-circle-o"></i>Correo</a></li>
                         <?php } ?>
 
+                        
                         <?php if (!empty($_SESSION['permisos'][25]['r'])) { ?>
-                            <li><a class="treeview-item" href="<?= base_url(); ?>/empresaapobarempleoadmin/validarruc"><i class="icon fa fa-circle-o"></i>validar ruc</a></li>              
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/empresaapobarempleoadmin/difusionempleos"><i class="icon fa fa-circle-o"></i>validar ruc</a></li>              
+                        <?php } ?>
+                        <?php if (!empty($_SESSION['permisos'][25]['r'])) { ?>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/empresaapobarempleoadmin/validarruc"><i class="icon fa fa-circle-o"></i>Marketin</a></li>              
                         <?php } ?>
                     </ul>
                 </li>

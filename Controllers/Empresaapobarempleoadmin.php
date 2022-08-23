@@ -161,6 +161,8 @@ class empresaapobarempleoadmin extends Controllers
 		}
 	}
 
+	/*PAGINA PARA SECRETARIADO*/
+
 	//PAGINA APROBAR EMPLEO
 	public function validarruc()
 	{
@@ -172,7 +174,7 @@ class empresaapobarempleoadmin extends Controllers
 			'page_tag' => 'Empleos-Admin',
 			'page_title' => "Empleos <small>Unidad de Seguimiento del Egresado</small>",
 			'page_name' => "USE-banner",
-			'page_functions_js' => "functions_empresaapobarempleoadmin.js",
+			'page_functions_js' => "functions_empresaapobarempleoadmin-ruc.js",we
 		];
 
 		$this->views->getView($this, "validarruc", $data);
@@ -183,6 +185,91 @@ class empresaapobarempleoadmin extends Controllers
 	{
 		if ($_SESSION['permisosMod']['r']) {
 			$arrData = $this->model->listaEmpleosParaValidarRuc();
+
+			foreach ($arrData as &$line) {
+
+				$btnView = '';
+				$btnEdit = '';
+				$btnDelete = '';
+				$btnValidar = '';
+
+				//echo $line['idEmpleos'];
+
+				$line['titulacionesid'] = "";
+				$line['escuelaid'] = "";
+
+				$arrTitulaciones = $this->model->listaTitulaciones($line['idEmpleos']);
+				$arrCarreras = $this->model->listaCarreras($line['idEmpleos']);
+
+				foreach ($arrTitulaciones as &$titulaciones) {
+					$line['titulacionesid'] = 	$line['titulacionesid'] . '<h5><span class="badge badge-primary">' . $titulaciones['nombreTitulaciones'] . '</span></h5> ';
+				}
+
+				foreach ($arrCarreras as &$carreras) {
+					$line['escuelaid'] = 	$line['escuelaid'] . '<h5><span class="badge badge-info">' . $carreras['nombreEscuela'] . '</span></h5> ';
+				}
+
+				if ($_SESSION['permisos'][11]['r']) {
+					$btnValidar = '<button class="btn btn-primary" type="button" onclick="buscar(' . $line['ruc'] . ');"><i class="fas fa-plus-circle"></i>Validar Ruc</button>';
+				}
+
+				if ($_SESSION['permisosMod']['u']) {
+					$btnDelete = '<button class="btn btn-success btn-sm btnDelUsuario" onClick="fntAprobarBanner(' . $line['idEmpleos'] . ')" title="Aprobar Empleo"><i class="fas fa-check-circle"> Confirmar Ruc</i></button>';
+				} else {
+					$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
+				}
+				$line['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . ' ' . $btnValidar . '</div>';
+			}
+
+			echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
+		}
+		die();
+	}
+	//VALIDAR EL RUC DE LA EMPRESA
+	public function aprobarRucEmpleo()
+	{
+		if ($_POST) {
+			if ($_SESSION['permisosMod']['d']) {
+				$idempleo = intval($_POST['idempleo']);
+				$requestDelete = $this->model->aprobarRucEmpleo($idempleo);
+
+				if ($requestDelete) {
+					$arrResponse = array('status' => true, 'msg' => 'Se ha publicado correctamente');
+				} else {
+					$arrResponse = array('status' => false, 'msg' => 'Error al publicar el Empleo.');
+				}
+				echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+			}
+		}
+		die();
+	}
+
+
+
+	/*PAGINA PARA MARKETING*/
+
+	//PAGINA APROBAR EMPLEO
+	public function difusionempleos()
+	{
+		if (empty($_SESSION['permisosMod']['r'])) {
+			header("Location:" . base_url() . '/dashboard');
+		}
+
+		$data = [
+			'page_tag' => 'Empleos-Admin',
+			'page_title' => "Empleos <small>Unidad de Seguimiento del Egresado</small>",
+			'page_name' => "USE-banner",
+			'page_functions_js' => "functions_empresaapobarempleoadmin-marketing.js",
+		];
+
+		$this->views->getView($this, "difusionempleos", $data);
+	}
+
+	//LISTA DE EMPLEOS POR APROBAR
+	public function getdifusionempleos()
+	{
+		if ($_SESSION['permisosMod']['r']) {
+			$arrData = $this->model->listaEmpleos();
 
 			foreach ($arrData as &$line) {
 
@@ -221,13 +308,16 @@ class empresaapobarempleoadmin extends Controllers
 		}
 		die();
 	}
-	//VALIDAR EL RUC DE LA EMPRESA
-	public function aprobarRucEmpleo()
+
+	//APROBACION DE EMPLEO
+	public function aprobarEmpleodifusionempleos()
 	{
 		if ($_POST) {
 			if ($_SESSION['permisosMod']['d']) {
 				$idempleo = intval($_POST['idempleo']);
-				$requestDelete = $this->model->aprobarRucEmpleo($idempleo);
+				$requestDelete = $this->model->aprobarEmpleo($idempleo);
+
+				$this->enviarCorreo($idempleo);
 
 				if ($requestDelete) {
 					$arrResponse = array('status' => true, 'msg' => 'Se ha publicado correctamente');
