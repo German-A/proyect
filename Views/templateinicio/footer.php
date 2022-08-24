@@ -1,5 +1,5 @@
 <br>
-<footer class="row p-5" style="background-color: var(--azul-medio);">
+<footer class="row p-2" style="background-color: var(--azul-medio);">
     <div class="col-6 col-md-6 col-lg-6 col-xl-3 text-light text-center" style="margin: auto;" data-aos="fade-down-left">
         <img src="<?= media(); ?>/archivos/logos/logoUseBlanco.png" style="width: 80%; ">
     </div>
@@ -8,7 +8,7 @@
         <br>
         <h5>use@unitru.edu.pe</h5>
         <br>
-        <div>
+        <div class="col-12 ">
             <a target="_blank" href="https://www.facebook.com/use.unt">
                 <img src="<?= media(); ?>/archivos/logos/fbwite.png" style="width:10%">
             </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -26,6 +26,11 @@
             </a>
         </div>
         <br>
+        <div class="col-12">
+            <div class="col-6 m-auto">
+                <img class="img-fluid" src="<?= media(); ?>/img/libro-reclamaciones.png" alt="">
+            </div>            
+        </div>
     </div>
     <div class="col-12 col-md-12 col-lg-12 col-xl-6 text-light" style="margin: auto auto;" data-aos="fade-down-rigth">
         <!-- <form class="formulario" action="enviar-prueba.php" method="POST"> -->
@@ -56,6 +61,7 @@
             </div>
         </form>
     </div>
+
 </footer>
 
 <!-- SEGUNDAS ESPECIALIDADES -->
@@ -80,29 +86,23 @@
             dataType: 'json',
             success: function(data) {
                 if (data.status) {
-
                     listado = '';
-
                     listado =
-                        `
-                <h4>` + data['data']['cantidad'] + `</h4>
-                <h4>Visitantes</h4>
-                    
-                `;
-
+                    `
+                        <h4>` + data['data']['cantidad'] + `</h4>
+                        <h4>Visitantes</h4>                        
+                    `;
                     $("#visitas").html(listado);
                 }
-
             }
         });
     }
 
     window.onload = function() {
         fecha();
+   
         divLoading.style.display = "none";
     }
-
-
 
     function crearTicket() {
         let divLoading = document.querySelector("#divLoading");
@@ -152,46 +152,27 @@
     }
 </script>
 
-
-
 <script>
     const base_url = "<?= base_url(); ?>";
 </script>
 
-
 <script type="text/javascript" src="<?= media(); ?>/jsinicio/menu.js"></script>
-
 <script type="text/javascript" src="<?= media(); ?>/aos/aos.js"></script>
 <script type="text/javascript" src="<?= media(); ?>/jsinicio/menu.js"></script>
-
 <script type="text/javascript" src="<?= media(); ?>/jsinicio/aos.js"></script>
 <script type="text/javascript" src="<?= media(); ?>/jsinicio/Swiper8.0.6.js"></script>
 <script type="text/javascript" src="<?= media(); ?>/jsinicio/sliderSwiper.js"></script>
 <script type="text/javascript" src="<?= media(); ?>/jsinicio/funciones.js"></script>
-
-
 <script type="text/javascript" src="<?= media(); ?>/jsinicio/enlacesScroll.js"></script>
-
 <script type="text/javascript" src="<?= media(); ?>/jsinicio/main.js"></script>
-
 <script type="text/javascript" src="<?= media(); ?>/jsinicio/jquery3.1.0.min.js"></script>
-
 
 <script src="<?= media(); ?>/js/bootstrap.min.js"></script>
 <script src="<?= media(); ?>/js/main.js"></script>
 <script src="<?= media(); ?>/js/fontawesome.js"></script>
-
 <script type="text/javascript" src="<?= media(); ?>/js/plugins/sweetalert.min.js"></script>
-
-
 <script src="<?= media(); ?>/js/popper.min.js"></script>
 <script src="<?= media(); ?>/js/bootstrap.min.js"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
-
-
-
-
 <script src="<?= media(); ?>/js/<?= $data['page_functions_js']; ?>"></script>
-
 <script type="text/javascript" src="<?= media(); ?>/js/plugins/select2.min.js"></script>

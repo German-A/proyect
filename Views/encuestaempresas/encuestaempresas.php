@@ -42,7 +42,7 @@ $idmaestria = $año->listaFacultadpostgrado();
         <div class="row">
             <br>
             <div class="col-12 text-left">
-                <h4>Lea detenidamente cada pregunta y elija la respuesta más pertinente</h1>
+                <h4 class="text-center">Lea detenidamente cada pregunta y elija la respuesta más pertinente</h1>
 
                     <div class="row mb-4">
                         <div class="col-12 col-md-12">

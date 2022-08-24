@@ -81,7 +81,7 @@ function fntAprobarBanner(idempleo) {
 
         if (isConfirm) {
             let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-            let ajaxUrl = base_url + '/empresaapobarempleoadmin/aprobarEmpleo/' + idempleo;
+            let ajaxUrl = base_url + '/empresaapobarempleoadmin/aprobarRucEmpleo/' + idempleo;
             let strData = "idempleo=" + idempleo;
             request.open("POST", ajaxUrl, true);
             request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
