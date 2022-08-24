@@ -69,6 +69,8 @@
                             <li><a class="treeview-item" href="<?= base_url(); ?>/especialidades"><i class="icon fa fa-circle-o"></i>Trasnparencia</a></li>
                         <?php } ?>
 
+                        <li><a class="treeview-item" href="<?= base_url(); ?>/encuestaempresasadmin"><i class="icon fa fa-circle-o"></i>encuestaempresasadmin</a></li>
+
 
                     </ul>
                 </li>

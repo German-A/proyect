@@ -27,11 +27,26 @@ getModal('modalBanner', $data);
               <thead>
                 <tr>
                   <th>ID</th>
-                  <th>Nombres</th>
-                  <th>NombreArchivo</th>
-                  <th>Posicion</th>
-                  <th>FechaRegistro</th>
-                  <th>Acciones</th>
+                  <th>p1</th>
+                  <th>p2</th>
+                  <th>p3</th>
+                  <th>p4</th>
+                  <th>p5</th>
+                  <th>p6</th>
+                  <th>p7</th>
+                  <th>p8</th>
+                  <th>p9</th>
+                  <th>p10</th>
+                  <th>p11</th>
+                  <th>p12</th>
+
+                  <th>p13</th>
+                  <th>p14</th>
+                  <th>p15</th>
+                  <th>p16</th>
+                  <th>p17</th>
+          
+                
                 </tr>
               </thead>
               <tbody>
