@@ -33,23 +33,34 @@ getModal('modalEmpresa', $data);
         <!-- /.card-header -->
         <div class="card-body">
           <table id="example1" class="table table-bordered table-striped">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>ruc</th>
-                <th>nombreEmpresa</th>
-                <th>Direccion</th>
-                <th>FechaInico</th>
-                <th>FechaFin</th>
-                <th>Nombre Puesto</th>
-                <th>Lugar Trabajo</th>
-                <th>Contacto</th>
-                <th>Acciones</th>
-              </tr>
-            </thead>
-            <tbody>
+          <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>NombrePuesto</th>
+                  <th>Escuelas</th>
+                  <th>titulacionesid</th>
+                  <th>FechaInico</th>                  
+                  <th>FechaFin</th>
+                  <th>nombreEmpresa</th>                  
+                  <th>NombrePuesto</th>
+                  <th>DescripcionPuesto</th>
+                  <th>InformacionAdicional</th>
+                  <th>LugarTrabajo</th>                  
+                  <th>TrabajoRemoto</th>
+                  <th>NumeroVacantes</th>
 
-            </tbody>
+                  <th>Experiencias</th>
+                  <th>JornadaLaboral</th>
+                  <th>HorasSemanales</th>
+                  <th>HorarioTrabajo</th>                  
+                  <th>RemuneracionBruta</th>
+                  <th>Contacto</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
           </table>
         </div>
         <!-- /.card-body -->
@@ -73,24 +84,3 @@ getModal('modalEmpresa', $data);
 <script src="<?= media(); ?>/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
 <script src="<?= media(); ?>/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
 
-<script>
-  function buscar(ruc) {
-    //var ruc = document.getElementById("ruc").value;
-    cadena = "ruc=" + ruc;
-    $.ajax({
-      type: "GET",
-      async: true,
-      url: 'https://consultaruc.win/api/ruc/' + ruc,
-      success: function(response) {
-        if (response.response == true) {
-          swal("Resultado!",
-            response.result['razon_social'] + ' - ' + response.result['estado'] + ' - ' + response.result['condicion'],
-            "success");
-        } else {
-          swal("Atención!", "Error en el Servidor, hacerlo de manera manual", "warning");
-        }
-      }
-    });
-
-  }
-</script>

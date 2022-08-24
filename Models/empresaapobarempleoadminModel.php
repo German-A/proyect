@@ -89,9 +89,8 @@
 
 		public function listaEmpleosParaValidarRuc()
 		{
-			$sql = "SELECT u.idpersona,em.idEmpleos,em.status,emp.nombreEmpresa,
-			em.NombrePuesto,em.DescripcionPuesto,em.InformacionAdicional,em.LugarTrabajo,em.TrabajoRemoto,em.NumeroVacantes,em.Experiencias,
-			em.TipoContrato,em.JornadaLaboral,em.HorasSemanales,em.HorarioTrabajo,em.RemuneracionBruta,em.Contacto,em.FechaInico,em.FechaFin
+			$sql = "SELECT em.idEmpleos,emp.ruc,emp.nombreEmpresa,emp.Direccion,u.idpersona,em.status,
+			em.NombrePuesto,em.LugarTrabajo,em.Contacto,em.FechaInico,em.FechaFin
 			from empleos em
 			inner join empresa emp
 			on em.empresaid = emp.idempresa

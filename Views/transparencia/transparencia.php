@@ -32,7 +32,7 @@ $idmaestria = $año->listaFacultadpostgrado();
             <h1>2021</h1>
         </div>
         <div class="col-3 col-md-3 col-lg-2   fondo m-1">
-            <a href="https://docs.google.com/spreadsheets/d/1xYxEek786_fSzrd7mXVBG9zKjvxmaKQu/edit?usp=sharing&ouid=103502351721971787980&rtpof=true&sd=true" target="_blank" class=" m-3  p-1 ">
+            <a href="https://docs.google.com/spreadsheets/d/1oIeFyv6n7g6I_WZvFLz_5Waw9wEbEZc2/edit?usp=sharing&ouid=103502351721971787980&rtpof=true&sd=true" target="_blank" class=" m-3  p-1 ">
                 <div class="col-12 text-right col-md-12">
                     <h1 class="mostaza "><i class="icon fas fa-graduation-cap"></i></h1>
                     <br>
@@ -44,7 +44,7 @@ $idmaestria = $año->listaFacultadpostgrado();
             </a>
         </div>
         <div class="col-4 col-md-3 col-lg-2   fondo m-1">
-            <a href="https://docs.google.com/spreadsheets/d/1xYxEek786_fSzrd7mXVBG9zKjvxmaKQu/edit?usp=sharing&ouid=103502351721971787980&rtpof=true&sd=true" target="_blank" class=" m-3  p-1 ">
+            <a href="https://docs.google.com/spreadsheets/d/1oIeFyv6n7g6I_WZvFLz_5Waw9wEbEZc2/edit?usp=sharing&ouid=103502351721971787980&rtpof=true&sd=true" target="_blank" class=" m-3  p-1 ">
                 <div class="col-12 text-right col-md-12">
                     <h1 class="mostaza "><i class="icon fas fa-user-graduate"></i></h1>
                     <br>
@@ -56,7 +56,7 @@ $idmaestria = $año->listaFacultadpostgrado();
             </a>
         </div>
         <div class="col-4 col-md-3 col-lg-2   fondo m-1">
-            <a href="https://docs.google.com/spreadsheets/d/1xYxEek786_fSzrd7mXVBG9zKjvxmaKQu/edit?usp=sharing&ouid=103502351721971787980&rtpof=true&sd=true" target="_blank" class=" m-3  p-1 ">
+            <a href="https://docs.google.com/spreadsheets/d/1oIeFyv6n7g6I_WZvFLz_5Waw9wEbEZc2/edit?usp=sharing&ouid=103502351721971787980&rtpof=true&sd=true" target="_blank" class=" m-3  p-1 ">
                 <div class="col-12 text-right col-md-12">
                     <h1 class="mostaza "><i class="icon fas fa-user-graduate"></i><i class="icon fas fa-user-graduate"></i></h1>
                     <br>
@@ -68,7 +68,7 @@ $idmaestria = $año->listaFacultadpostgrado();
             </a>
         </div>
         <div class="col-4 col-md-3 col-lg-2   fondo m-1">
-            <a href="https://docs.google.com/spreadsheets/d/1xYxEek786_fSzrd7mXVBG9zKjvxmaKQu/edit?usp=sharing&ouid=103502351721971787980&rtpof=true&sd=true" target="_blank" class=" m-3  p-1 ">
+            <a href="https://docs.google.com/spreadsheets/d/1oIeFyv6n7g6I_WZvFLz_5Waw9wEbEZc2/edit?usp=sharing&ouid=103502351721971787980&rtpof=true&sd=true" target="_blank" class=" m-3  p-1 ">
                 <div class="col-12 text-right col-md-12">
                     <h1 class="mostaza "><i class="far fa-university"></i></h1>
                     <br>
@@ -80,7 +80,7 @@ $idmaestria = $año->listaFacultadpostgrado();
             </a>
         </div>
         <div class="col-4 col-md-3 col-lg-2   fondo m-1">
-            <a href="https://docs.google.com/spreadsheets/d/1xYxEek786_fSzrd7mXVBG9zKjvxmaKQu/edit?usp=sharing&ouid=103502351721971787980&rtpof=true&sd=true" target="_blank" class=" m-3  p-1 ">
+            <a href="https://docs.google.com/spreadsheets/d/1oIeFyv6n7g6I_WZvFLz_5Waw9wEbEZc2/edit?usp=sharing&ouid=103502351721971787980&rtpof=true&sd=true" target="_blank" class=" m-3  p-1 ">
                 <div class="col-12 text-right col-md-12">
                     <h1 class="mostaza "><i class="far fa-university"></i><i class="far fa-university"></i></h1>
                     <br>
