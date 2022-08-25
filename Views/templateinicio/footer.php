@@ -28,8 +28,10 @@
         <br>
         <div class="col-12">
             <div class="col-6 m-auto">
-                <img class="img-fluid" src="<?= media(); ?>/img/libro-reclamaciones.png" alt="">
-            </div>            
+                <a href="<?= base_url(); ?>/libroreclamaciones">
+                    <img class="img-fluid" src="<?= media(); ?>/img/libro-reclamaciones.png" alt="">
+                </a>
+            </div>
         </div>
     </div>
     <div class="col-12 col-md-12 col-lg-12 col-xl-6 text-light" style="margin: auto auto;" data-aos="fade-down-rigth">
@@ -88,7 +90,7 @@
                 if (data.status) {
                     listado = '';
                     listado =
-                    `
+                        `
                         <h4>` + data['data']['cantidad'] + `</h4>
                         <h4>Visitantes</h4>                        
                     `;
@@ -100,7 +102,7 @@
 
     window.onload = function() {
         fecha();
-   
+
         divLoading.style.display = "none";
     }
 
@@ -132,7 +134,7 @@
             success: function(response) {
                 var info = JSON.parse(response);
                 divLoading.style.display = "none";
-                if (info.status == true) {                  
+                if (info.status == true) {
                     listado =
                         `
                             <div class="text-center  mb-2">
@@ -140,13 +142,13 @@
                             </div>                          
                         `;
                     $("#correoweb").html(listado);
-                    document.getElementById('email').value ="";
-                    document.getElementById('mensaje').value ="";
-                    document.getElementById('contacto').value ="";
+                    document.getElementById('email').value = "";
+                    document.getElementById('mensaje').value = "";
+                    document.getElementById('contacto').value = "";
                 }
                 $('#modalPerfiles').modal('show');
 
-               
+
             }
         });
     }

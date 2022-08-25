@@ -1,23 +1,28 @@
 <?php
 
-class Libroreclamaciones extends Controllers
+class banner extends Controllers
 {
-
 	public function __construct()
 	{
+		session_start();
+		//session_regenerate_id(true);
 		parent::__construct();
+		if (empty($_SESSION['login'])) {
+			header('Location: ' . base_url() . '/login');
+		}
+		getPermisos(3);
 	}
-	
-	public function libroreclamaciones()
+	//pagina Banner
+	public function banner()
 	{
-
-
-		$data['page_id'] = 1;
-		$data['page_tag'] = "libroreclamaciones";
-		$data['page_title'] = "Página principal";
-		$data['page_name'] = "libroreclamaciones";
-		$data['page_content'] = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, quis. Perspiciatis repellat perferendis accusamus, ea natus id omnis, ratione alias quo dolore tempore dicta cum aliquid corrupti enim deserunt voluptas.";
-		$this->views->getView($this, "libroreclamaciones", $data);
+		if (empty($_SESSION['permisosMod']['r'])) {
+			header("Location:" . base_url() . '/dashboard');
+		}
+		$data['page_tag'] = "Banner";
+		$data['page_title'] = "Banner <small>Unidad de Seguimiento del Egresado</small>";
+		$data['page_name'] = "USE-banner";
+		$data['page_functions_js'] = "functions_banner.js";
+		$this->views->getView($this, "banner", $data);
 	}
 	//listado de los banners
 	public function get()
