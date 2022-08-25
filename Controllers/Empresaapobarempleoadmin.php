@@ -136,10 +136,15 @@ class empresaapobarempleoadmin extends Controllers
 	public function enviarCorreo($idempleo)
 	{
 		$nombreUsuario = null;
-		$email = null;
+		$email_user = null;
+		$NombrePuesto = null;
+		$FechaFin = null;
 
 		$arrData['nombres'] = "";
 		$arrData['email_user'] = "";
+		$arrData['NombrePuesto'] = "";
+		$arrData['FechaFin'] = "";
+
 
 		$arrData = $this->model->listaCarrerasid($idempleo); //datos del usuario
 		for ($i = 0; $i <= count($arrData); $i++) {
@@ -149,12 +154,21 @@ class empresaapobarempleoadmin extends Controllers
 				$nombreUsuario = $arrData[$i]['nombres'];
 			}
 			if (!empty($arrData[$i]['email_user'])) {
-				$email = $arrData[$i]['email_user'];
+				$email_user = $arrData[$i]['email_user'];
 			}
+			if (!empty($arrData[$i]['NombrePuesto'])) {
+				$NombrePuesto = $arrData[$i]['NombrePuesto'];
+			}
+			if (!empty($arrData[$i]['FechaFin'])) {
+				$FechaFin = $arrData[$i]['FechaFin'];
+			}
+
 
 			$dataUsuario = array(
 				'nombreUsuario' => $nombreUsuario,
-				'email' => $email,
+				'email_user' => $email_user,
+				'NombrePuesto' => $NombrePuesto,
+				'FechaFin' => $FechaFin,
 				'asunto' => 'Recuperar cuenta - ' . NOMBRE_REMITENTE
 			);
 			sendAprobacionCorreo($dataUsuario, 'email_empleo');

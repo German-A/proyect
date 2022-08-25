@@ -139,6 +139,21 @@
     </button>
 </form>
 
+<!-- SEGUNDAS ESPECIALIDADES -->
+<div class="modal fade" id="modalRespuesta" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row d-flex justify-content-center" id="msgmodal">
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 
 <?php footer($data); ?>
@@ -171,53 +186,53 @@
         var p10 = $(".p10").val();
         var p11 = $(".p11").val();
 
-  
+
         var fd = new FormData();
         fd.append("p1", p1);
         fd.append("p2", p2);
         fd.append("p3", p3);
         fd.append("p4", p4);
         fd.append("archivoSubido", archivoSubido);
-        fd.append("p6",  JSON.stringify(p6));
+        fd.append("p6", JSON.stringify(p6));
         fd.append("p7", p7);
         fd.append("p8", p8);
         fd.append("p9", p9);
-        fd.append("p10",p10);
+        fd.append("p10", p10);
         fd.append("p11", p11);
- 
 
-        // divLoading.style.display = "flex";
-        // $.ajax({
-        //     method: "POST",
-        //     url: "" + base_url + "/encuestaempresas/set",
-        //     data: fd,
-        //     processData: false, // tell jQuery not to process the data
-        //     contentType: false // tell jQuery not to set contentType
 
-        // }).done(function(response) {
-        //     var info = JSON.parse(response);
-        //     console.log(info);
-        //     divLoading.style.display = "none";
-        //     if (info.status == true) {
-        //         listado =
-        //             `
-        //         <div class="text-center  mb-2">
-        //             <h5 class="azul">` + info.msg + `</h5>
-        //         </div>                          
-        //     `;
-        //         $("#msgmodal").html(listado);
-        //     }
-        //     if (info.status == false) {
-        //         console.log(info.status);
-        //         listado =
-        //             `
-        //         <div class="text-center  mb-2">
-        //             <h5 class="azul">` + info.msg + `</h5>
-        //         </div>                          
-        //     `;
-        //         $("#msgmodal").html(listado);
-        //     }
-        //     $('#modalRespuesta').modal('show');
-        // });
+        divLoading.style.display = "flex";
+        $.ajax({
+            method: "POST",
+            url: "" + base_url + "/Libroreclamacionesadmin/set",
+            data: fd,
+            processData: false, // tell jQuery not to process the data
+            contentType: false // tell jQuery not to set contentType
+
+        }).done(function(response) {
+            var info = JSON.parse(response);
+            console.log(info);
+            divLoading.style.display = "none";
+            if (info.status == true) {
+                listado =
+                    `
+                <div class="text-center  mb-2">
+                    <h5 class="azul">` + info.msg + `</h5>
+                </div>                          
+            `;
+                $("#msgmodal").html(listado);
+            }
+            if (info.status == false) {
+                console.log(info.status);
+                listado =
+                    `
+                <div class="text-center  mb-2">
+                    <h5 class="azul">` + info.msg + `</h5>
+                </div>                          
+            `;
+                $("#msgmodal").html(listado);
+            }
+            $('#modalRespuesta').modal('show');
+        });
     }
 </script>

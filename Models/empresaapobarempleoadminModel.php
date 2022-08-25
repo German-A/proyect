@@ -64,12 +64,11 @@
 
 		public function listaCarrerasid($idempresa)
 		{
-			$sql = "SELECT dt.empleosid,u.nombres, u.email_user,e.nombreEscuela
-			FROM detallecarreras dt
-			inner join escuela e on dt.escuelaid = e.idEscuela
-			inner join egresado eg on eg.idescuela = e.idEscuela
-			inner join usuario u on u.idpersona = eg.personaid
-			where empleosid = $idempresa";
+			$sql = "SELECT u.nombres, u.email_user,e.FechaFin,e.NombrePuesto
+			FROM empleos e
+			inner join empresa emp on e.empresaid = emp.idempresa
+			inner join usuario u on u.idpersona = emp.personaid
+			where e.idempleos =  $idempresa";
 			$request = $this->select_all($sql);			
 			return $request;
 		}

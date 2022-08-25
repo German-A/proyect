@@ -71,7 +71,8 @@
                         <?php } ?>
 
                         <li><a class="treeview-item" href="<?= base_url(); ?>/encuestaempresasadmin"><i class="icon fa fa-circle-o"></i>encuestaempresasadmin</a></li>
-
+                        <li><a class="treeview-item" href="<?= base_url(); ?>/Libroreclamacionesadmin"><i class="icon fa fa-circle-o"></i>Libroreclamacionesadmin</a></li>
+                        
 
                     </ul>
                 </li>
