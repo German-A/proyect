@@ -46,16 +46,24 @@ $idmaestria = $año->listaFacultadpostgrado();
 
                     <div class="row mb-4">
                         <div class="col-12 col-md-12">
-                            <p>1. En su organización, tiene laborando trabajadores egresados de la Universidad Nacional de Trujillo..</p>
+                            <p>1. Tiempo que el egresado (a) labora en su empresa.</p>
                         </div>
                         <div class="col-12 col-md-12">
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" name="p1" type="radio" value="1">
-                                <label class="form-check-label" for="p1">Sí</label>
+                                <label class="form-check-label" for="p1">primera vez</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" name="p1" type="radio" value="2">
-                                <label class="form-check-label" for="p1">No</label>
+                                <label class="form-check-label" for="p1">menos de 1 año</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="p1" type="radio" value="2">
+                                <label class="form-check-label" for="p1">1 a 2 años</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="p1" type="radio" value="2">
+                                <label class="form-check-label" for="p1">5 años a más</label>
                             </div>
                         </div>
                     </div>
@@ -90,90 +98,99 @@ $idmaestria = $año->listaFacultadpostgrado();
 
                     <div class="row mb-4">
                         <div class="col-12 col-md-12">
-                            <p>3. La egresada ha recibido algún tipo de reconocimiento por su destacado desempeño que sea demostrable (resoluciones, diplomas u otros) Si así fuera, mencione el tipo de reconocimiento, mes y año y la IE que se le otorgó.</p>
+                            <p>3. Señale el cargo que desempeña el egresado (a).</p>
                         </div>
                         <div class="col-12 col-md-12">
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" name="p3" type="radio" value="1">
-                                <label class="form-check-label" for="p3">Si</label>
+                                <label class="form-check-label" for="p3">Practicante profesional</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" name="p3" type="radio" value="2">
-                                <label class="form-check-label" for="p3">No</label>
+                                <label class="form-check-label" for="p3">Auxiliar</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="p3" type="radio" value="2">
+                                <label class="form-check-label" for="p3">Asistente</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="p3" type="radio" value="2">
+                                <label class="form-check-label" for="p3">Directivo </label>
                             </div>
                         </div>
                     </div>
 
-                    <p class="bluemedio bg-danger">4. Seleccione una opción, De acuerdo a su satisfacción con el desempeño de la egresada en relación a la competencia de gestión del proceso de enseñanza aprendizaje (planificación, implementación, ejecución y evaluación de actividades de aprendizaje con niños de 0 a 6 años).</p>
-
                     <div class="row mb-4">
                         <div class="col-12 col-md-12">
-                            <p>4. Cómo considera al estudiante de la Universidad Nacional de Trujillo</p>
+                            <p>4. Medios utiliza para realizar los procesos de selección. (Puede seleccionar más de uno).</p>
                         </div>
                         <div class="col-12 col-md-12">
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" name="p4" type="radio" value="1">
-                                <label class="form-check-label" for="p4">Muy insatisfactorio /Nunca </label>
+                                <label class="form-check-label" for="p4">Prueba: Conocimientos.</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" name="p4" type="radio" value="2">
-                                <label class="form-check-label" for="p4">Insatisfactorio /Casi nunca</label>
+                                <label class="form-check-label" for="p4">Entrevista: Selección individual.</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" name="p4" type="radio" value="3">
-                                <label class="form-check-label" for="p4">Satisfactorio /Casi siempre</label>
+                                <label class="form-check-label" for="p4">Entrevista: Selección grupal.</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" name="p4" type="radio" value="4">
-                                <label class="form-check-label" for="p4">Muy satisfactorio /Siempre</label>
+                                <label class="form-check-label" for="p4">Test: Aptitudes intelectuales.</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="p4" type="radio" value="4">
+                                <label class="form-check-label" for="p4">Test: Personalidad.</label>
                             </div>
                         </div>
                     </div>
 
                     <div class="row mb-4">
                         <div class="col-12 col-md-12">
-                            <p>5.La carrera estudiada</p>
+                            <p>5. El egresado (a) ha recibido algún tipo de reconocimiento por su destacado desempeño que sea demostrable (resoluciones, diplomas u otros) Si así fuera, mencione el tipo de reconocimiento, mes y año.</p>
                         </div>
                         <div class="col-12 col-md-12">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p5" type="radio" value="1">
-                                <label class="form-check-label" for="p5">Muy insatisfactorio /Nunca </label>
+                                <input class="form-check-input" onchange="p51();" name="p5" type="radio" value="1">
+                                <label class="form-check-label" for="p5">si</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p5" type="radio" value="2">
-                                <label class="form-check-label" for="p5">Insatisfactorio /Casi nunca</label>
+                                <input class="form-check-input" onchange="p52();" name="p5" type="radio" value="2">
+                                <label class="form-check-label" for="p5">no</label>
                             </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p5" type="radio" value="3">
-                                <label class="form-check-label" for="p5">Satisfactorio /Casi siempre</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p5" type="radio" value="4">
-                                <label class="form-check-label" for="p5">Muy satisfactorio /Siempre</label>
+                            <div class="col-12" id="oficiomarsa" hidden>
+                                <input class="col-12" type="text" id="textp5">
                             </div>
                         </div>
                     </div>
 
                     <div class="row mb-4">
                         <div class="col-12 col-md-12">
-                            <p>6.Las notas del expediente académico.</p>
+                            <p>6. Señale su satisfacción con el desempeño laboral del egresado (a).</p>
                         </div>
                         <div class="col-12 col-md-12">
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" name="p6" type="radio" value="1">
-                                <label class="form-check-label" for="p6">Muy insatisfactorio /Nunca </label>
+                                <label class="form-check-label" for="p6">Muy satisfecha</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" name="p6" type="radio" value="2">
-                                <label class="form-check-label" for="p6">Insatisfactorio /Casi nunca</label>
+                                <label class="form-check-label" for="p6">Satisfecha</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" name="p6" type="radio" value="3">
-                                <label class="form-check-label" for="p6">Satisfactorio /Casi siempre</label>
+                                <label class="form-check-label" for="p6">Medianamente satisfecha</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" name="p6" type="radio" value="4">
-                                <label class="form-check-label" for="p6">Muy satisfactorio /Siempre</label>
+                                <label class="form-check-label" for="p6">Medianamente insatisfecha</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="p6" type="radio" value="4">
+                                <label class="form-check-label" for="p6">Insatisfecha</label>
                             </div>
                         </div>
                     </div>
@@ -181,314 +198,85 @@ $idmaestria = $año->listaFacultadpostgrado();
 
                     <div class="row mb-4">
                         <div class="col-12 col-md-12">
-                            <p>7. La especialización dentro de la carrera.</p>
+                            <p>7. ¿Conoce si el egresado (a) ha desarrollo producción intelectual?.</p>
                         </div>
                         <div class="col-12 col-md-12">
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" name="p7" type="radio" value="1">
-                                <label class="form-check-label" for="p7">Muy satisfecha</label>
+                                <label class="form-check-label" for="p7">Artículos en revistas indexadas.</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" name="p7" type="radio" value="2">
-                                <label class="form-check-label" for="p7">Satisfecha</label>
+                                <label class="form-check-label" for="p7">Artículos de opinión.</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" name="p7" type="radio" value="3">
-                                <label class="form-check-label" for="p7">Medianamente Satisfecha</label>
+                                <label class="form-check-label" for="p7">Separatas.</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" name="p7" type="radio" value="4">
-                                <label class="form-check-label" for="p7">Medianamente Insatisfecha</label>
+                                <label class="form-check-label" for="p7">Libros.</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" name="p7" type="radio" value="5">
-                                <label class="form-check-label" for="p7">Insatisfecha </label>
+                                <label class="form-check-label" for="p7">Blog.</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="p7" type="radio" value="5">
+                                <label class="form-check-label" for="p7">Página web.</label>
                             </div>
                         </div>
                     </div>
 
                     <div class="row mb-4">
                         <div class="col-12 col-md-12">
-                            <p>8. La reputación del centro universitario.</p>
+                            <p>8. Conoce si la egresada ha desarrollado estudios complementarios.</p>
                         </div>
                         <div class="col-12 col-md-12">
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" name="p8" type="radio" value="1">
-                                <label class="form-check-label" for="p8">Muy satisfecha</label>
+                                <label class="form-check-label" for="p8">Maestría.</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" name="p8" type="radio" value="2">
-                                <label class="form-check-label" for="p8">Satisfecha</label>
+                                <label class="form-check-label" for="p8">Doctorado.</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" name="p8" type="radio" value="3">
-                                <label class="form-check-label" for="p8">Medianamente Satisfecha</label>
+                                <label class="form-check-label" for="p8">Segunda especialidad.</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" name="p8" type="radio" value="4">
-                                <label class="form-check-label" for="p8">Medianamente Insatisfecha</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p8" type="radio" value="5">
-                                <label class="form-check-label" for="p8">Insatisfecha </label>
+                                <label class="form-check-label" for="p8">Segunda profesión.</label>
                             </div>
                         </div>
                     </div>
 
                     <div class="row mb-4">
                         <div class="col-12 col-md-12">
-                            <p>9. Los conocimientos informáticos.</p>
+                            <p>9. El/la egresado (a) ha recibido alguna capacitación por parte de entidad laboral.</p>
                         </div>
                         <div class="col-12 col-md-12">
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" name="p9" type="radio" value="1">
-                                <label class="form-check-label" for="p9">Muy satisfecha</label>
+                                <label class="form-check-label" for="p9">De 1 a 2.</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" name="p9" type="radio" value="2">
-                                <label class="form-check-label" for="p9">Satisfecha</label>
+                                <label class="form-check-label" for="p9">De 3 a 5.</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" name="p9" type="radio" value="3">
-                                <label class="form-check-label" for="p9">Medianamente Satisfecha</label>
+                                <label class="form-check-label" for="p9">De 6 a 8.</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" name="p9" type="radio" value="4">
-                                <label class="form-check-label" for="p9">Medianamente Insatisfecha</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p9" type="radio" value="5">
-                                <label class="form-check-label" for="p9">Insatisfecha </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row mb-4">
-                        <div class="col-12 col-md-12">
-                            <p>10. La experiencia laboral previa.</p>
-                        </div>
-                        <div class="col-12 col-md-12">
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p10" type="radio" value="1">
-                                <label class="form-check-label" for="p10">Muy satisfecha</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p10" type="radio" value="2">
-                                <label class="form-check-label" for="p10">Satisfecha</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p10" type="radio" value="3">
-                                <label class="form-check-label" for="p10">Medianamente Satisfecha</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p10" type="radio" value="4">
-                                <label class="form-check-label" for="p10">Medianamente Insatisfecha</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p10" type="radio" value="5">
-                                <label class="form-check-label" for="p10">Insatisfecha </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row mb-4">
-                        <div class="col-12 col-md-12">
-                            <p>11. El conocimiento de idiomas.</p>
-                        </div>
-                        <div class="col-12 col-md-12">
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p11" type="radio" value="1">
-                                <label class="form-check-label" for="p11">Muy satisfecha</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p11" type="radio" value="2">
-                                <label class="form-check-label" for="p11">Satisfecha</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p11" type="radio" value="3">
-                                <label class="form-check-label" for="p11">Medianamente Satisfecha</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p11" type="radio" value="4">
-                                <label class="form-check-label" for="p11">Medianamente Insatisfecha</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p11" type="radio" value="5">
-                                <label class="form-check-label" for="p11">Insatisfecha </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row mb-4">
-                        <div class="col-12 col-md-12">
-                            <p>12. Estancias en el extranjero.</p>
-                        </div>
-                        <div class="col-12 col-md-12">
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p12" type="radio" value="1">
-                                <label class="form-check-label" for="p12">Muy satisfecha</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p12" type="radio" value="2">
-                                <label class="form-check-label" for="p12">Satisfecha</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p12" type="radio" value="3">
-                                <label class="form-check-label" for="p12">Medianamente Satisfecha</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p12" type="radio" value="4">
-                                <label class="form-check-label" for="p12">Medianamente Insatisfecha</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p12" type="radio" value="5">
-                                <label class="form-check-label" for="p12">Insatisfecha </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row mb-4">
-                        <div class="col-12 col-md-12">
-                            <p>13. Capacidad para adaptarse a los cambios.</p>
-                        </div>
-                        <div class="col-12 col-md-12">
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p13" type="radio" value="1">
-                                <label class="form-check-label" for="p13">Muy satisfecha</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p13" type="radio" value="2">
-                                <label class="form-check-label" for="p13">Satisfecha</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p13" type="radio" value="3">
-                                <label class="form-check-label" for="p13">Medianamente Satisfecha</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p13" type="radio" value="4">
-                                <label class="form-check-label" for="p13">Medianamente Insatisfecha</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p13" type="radio" value="5">
-                                <label class="form-check-label" for="p13">Insatisfecha </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row mb-4">
-                        <div class="col-12 col-md-12">
-                            <p>14. Capacidad de análisis.</p>
-                        </div>
-                        <div class="col-12 col-md-12">
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p14" type="radio" value="1">
-                                <label class="form-check-label" for="p14">Muy satisfecha</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p14" type="radio" value="2">
-                                <label class="form-check-label" for="p14">Satisfecha</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p14" type="radio" value="3">
-                                <label class="form-check-label" for="p14">Medianamente Satisfecha</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p14" type="radio" value="4">
-                                <label class="form-check-label" for="p14">Medianamente Insatisfecha</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p14" type="radio" value="5">
-                                <label class="form-check-label" for="p14">Insatisfecha </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row mb-4">
-                        <div class="col-12 col-md-12">
-                            <p>15. Compromiso.</p>
-                        </div>
-                        <div class="col-12 col-md-12">
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p15" type="radio" value="1">
-                                <label class="form-check-label" for="p15">Muy satisfecha</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p15" type="radio" value="2">
-                                <label class="form-check-label" for="p15">Satisfecha</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p15" type="radio" value="3">
-                                <label class="form-check-label" for="p15">Medianamente Satisfecha</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p15" type="radio" value="4">
-                                <label class="form-check-label" for="p15">Medianamente Insatisfecha</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p15" type="radio" value="5">
-                                <label class="form-check-label" for="p15">Insatisfecha </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row mb-4">
-                        <div class="col-12 col-md-12">
-                            <p>16. Trabajo en equipo.</p>
-                        </div>
-                        <div class="col-12 col-md-12">
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p16" type="radio" value="1">
-                                <label class="form-check-label" for="p16">Muy satisfecha</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p16" type="radio" value="2">
-                                <label class="form-check-label" for="p16">Satisfecha</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p16" type="radio" value="3">
-                                <label class="form-check-label" for="p16">Medianamente Satisfecha</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p16" type="radio" value="4">
-                                <label class="form-check-label" for="p16">Medianamente Insatisfecha</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p16" type="radio" value="5">
-                                <label class="form-check-label" for="p16">Insatisfecha </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row mb-4">
-                        <div class="col-12 col-md-12">
-                            <p>17. Trabajo bajo presión.</p>
-                        </div>
-                        <div class="col-12 col-md-12">
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p17" type="radio" value="1">
-                                <label class="form-check-label" for="p17">Muy satisfecha</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p17" type="radio" value="2">
-                                <label class="form-check-label" for="p17">Satisfecha</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p17" type="radio" value="3">
-                                <label class="form-check-label" for="p17">Medianamente Satisfecha</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p17" type="radio" value="4">
-                                <label class="form-check-label" for="p17">Medianamente Insatisfecha</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p17" type="radio" value="5">
-                                <label class="form-check-label" for="p17">Insatisfecha </label>
+                                <label class="form-check-label" for="p9">Más de 8.</label>
                             </div>
                         </div>
                     </div>
             </div>
             <br>
-
         </div>
         <button type="button" class="input bg-warning enviar pt-2 pb-2 pl-5 pr-5 text-white" onclick="enviarCuestionario()">
             <h4>ENVIAR</h4>
@@ -515,6 +303,12 @@ $idmaestria = $año->listaFacultadpostgrado();
 <?php footer($data); ?>
 
 <script>
+    function p51(){
+        $('#oficiomarsa').attr('hidden',true);
+    }
+    function p52(){
+        $('#oficiomarsa').attr('hidden',false);
+    }
     function enviarCuestionario() {
 
         if (!document.querySelector('input[name="p1"]:checked')) {
@@ -541,6 +335,8 @@ $idmaestria = $año->listaFacultadpostgrado();
             swal("Atención!", "Debe seleccior la Pregunta Nº5", "warning");
             hasError = true;
             return;
+        }else{
+            console.log(document.querySelector('input[name="p5"]:checked').value);
         }
         if (!document.querySelector('input[name="p6"]:checked')) {
             swal("Atención!", "Debe seleccior la Pregunta Nº6", "warning");
@@ -562,84 +358,37 @@ $idmaestria = $año->listaFacultadpostgrado();
             hasError = true;
             return;
         }
-        if (!document.querySelector('input[name="p10"]:checked')) {
-            swal("Atención!", "Debe seleccior la Pregunta Nº10", "warning");
-            hasError = true;
-            return;
-        }
-        if (!document.querySelector('input[name="p11"]:checked')) {
-            swal("Atención!", "Debe seleccior la Pregunta Nº11", "warning");
-            hasError = true;
-            return;
-        }
-        if (!document.querySelector('input[name="p12"]:checked')) {
-            swal("Atención!", "Debe seleccior la Pregunta Nº12", "warning");
-            hasError = true;
-            return;
-        }
-        if (!document.querySelector('input[name="p13"]:checked')) {
-            swal("Atención!", "Debe seleccior la Pregunta Nº13", "warning");
-            hasError = true;
-            return;
-        }
-        if (!document.querySelector('input[name="p14"]:checked')) {
-            swal("Atención!", "Debe seleccior la Pregunta Nº14", "warning");
-            hasError = true;
-            return;
-        }
-        if (!document.querySelector('input[name="p15"]:checked')) {
-            swal("Atención!", "Debe seleccior la Pregunta Nº15", "warning");
-            hasError = true;
-            return;
-        }
-        if (!document.querySelector('input[name="p16"]:checked')) {
-            swal("Atención!", "Debe seleccior la Pregunta Nº16", "warning");
-            hasError = true;
-            return;
-        }
 
-        if (!document.querySelector('input[name="p17"]:checked')) {
-            swal("Atención!", "Debe seleccior la Pregunta Nº17", "warning");
-            hasError = true;
-            return;
-        }
+
 
         var pregunta1 = document.querySelector('input[name="p1"]:checked').value;
         var pregunta2 = document.querySelector('input[name="p2"]:checked').value;
         var pregunta3 = document.querySelector('input[name="p3"]:checked').value;
         var pregunta4 = document.querySelector('input[name="p4"]:checked').value;
-        var pregunta5 = document.querySelector('input[name="p5"]:checked').value;
+        if(document.querySelector('input[name="p5"]:checked').value==1){
+            var pregunta5 = document.querySelector('input[name="p5"]:checked').value;
+        }else{
+            console.log('---------');
+            var pregunta5 = document.getElementById('textp5').value;
+            console.log(pregunta5);
+        }
+     
         var pregunta6 = document.querySelector('input[name="p6"]:checked').value;
         var pregunta7 = document.querySelector('input[name="p7"]:checked').value;
         var pregunta8 = document.querySelector('input[name="p8"]:checked').value;
         var pregunta9 = document.querySelector('input[name="p9"]:checked').value;
-        var pregunta10 = document.querySelector('input[name="p10"]:checked').value;
-        var pregunta11 = document.querySelector('input[name="p11"]:checked').value;
-        var pregunta12 = document.querySelector('input[name="p12"]:checked').value;
-        var pregunta13 = document.querySelector('input[name="p13"]:checked').value;
-        var pregunta14 = document.querySelector('input[name="p14"]:checked').value;
-        var pregunta15 = document.querySelector('input[name="p15"]:checked').value;
-        var pregunta16 = document.querySelector('input[name="p16"]:checked').value;
-        var pregunta17 = document.querySelector('input[name="p17"]:checked').value;
+
 
         var fd = new FormData();
         fd.append("pregunta1", pregunta1);
         fd.append("pregunta2", pregunta2);
         fd.append("pregunta3", pregunta3);
         fd.append("pregunta4", pregunta4);
-        fd.append("pregunta5", pregunta5);
+        fd.append("pregunta5", pregunta5);    
         fd.append("pregunta6", pregunta6);
         fd.append("pregunta7", pregunta7);
         fd.append("pregunta8", pregunta8);
         fd.append("pregunta9", pregunta9);
-        fd.append("pregunta10", pregunta10);
-        fd.append("pregunta11", pregunta11);
-        fd.append("pregunta12", pregunta12);
-        fd.append("pregunta13", pregunta13);
-        fd.append("pregunta14", pregunta14);
-        fd.append("pregunta15", pregunta15);
-        fd.append("pregunta16", pregunta16);
-        fd.append("pregunta17", pregunta17);
 
         divLoading.style.display = "flex";
         $.ajax({

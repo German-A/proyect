@@ -36,17 +36,6 @@ getModal('modalBanner', $data);
                   <th>p7</th>
                   <th>p8</th>
                   <th>p9</th>
-                  <th>p10</th>
-                  <th>p11</th>
-                  <th>p12</th>
-
-                  <th>p13</th>
-                  <th>p14</th>
-                  <th>p15</th>
-                  <th>p16</th>
-                  <th>p17</th>
-          
-                
                 </tr>
               </thead>
               <tbody>
