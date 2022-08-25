@@ -11,6 +11,7 @@ class empresaapobarempleoadmin extends Controllers
 			header('Location: ' . base_url() . '/login');
 		}
 		getPermisos(12);
+
 	}
 
 	//PAGINA APROBAR EMPLEO
@@ -33,7 +34,7 @@ class empresaapobarempleoadmin extends Controllers
 	//LISTA DE EMPLEOS POR APROBAR
 	public function get()
 	{
-		if ($_SESSION['permisosMod']['r']) {
+		if ($_SESSION['permisos'][12]['r']) {
 			$arrData = $this->model->listaEmpleos();
 
 			foreach ($arrData as &$line) {
@@ -58,10 +59,10 @@ class empresaapobarempleoadmin extends Controllers
 					$line['escuelaid'] = 	$line['escuelaid'] . '<h5><span class="badge badge-info">' . $carreras['nombreEscuela'] . '</span></h5> ';
 				}
 
-				if ($_SESSION['permisos'][11]['r']) {
+				if ($_SESSION['permisos'][12]['r']) {
 				}
 
-				if ($_SESSION['permisosMod']['u']) {
+				if ($_SESSION['permisos'][12]['u']) {
 					$btnDelete = '<button class="btn btn-success btn-sm btnDelUsuario" onClick="fntAprobarBanner(' . $line['idEmpleos'] . ')" title="Aprobar Empleo"><i class="fas fa-check-circle"></i></button>';
 				} else {
 					$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
@@ -156,7 +157,7 @@ class empresaapobarempleoadmin extends Controllers
 				'email' => $email,
 				'asunto' => 'Recuperar cuenta - ' . NOMBRE_REMITENTE
 			);
-			sendMailLocalEmpleo($dataUsuario, 'email_empleo');
+			sendAprobacionCorreo($dataUsuario, 'email_empleo');
 			$dataUsuario = null;
 		}
 	}
@@ -166,7 +167,7 @@ class empresaapobarempleoadmin extends Controllers
 	//PAGINA APROBAR EMPLEO
 	public function validarruc()
 	{
-		if (empty($_SESSION['permisosMod']['r'])) {
+		if (empty($_SESSION['permisos'][25]['r'])){
 			header("Location:" . base_url() . '/dashboard');
 		}
 
@@ -174,7 +175,7 @@ class empresaapobarempleoadmin extends Controllers
 			'page_tag' => 'Empleos-Admin',
 			'page_title' => "Empleos <small>Unidad de Seguimiento del Egresado</small>",
 			'page_name' => "USE-banner",
-			'page_functions_js' => "functions_empresaapobarempleoadmin-ruc.js",we
+			'page_functions_js' => "functions_empresaapobarempleoadmin-ruc.js",
 		];
 
 		$this->views->getView($this, "validarruc", $data);
@@ -183,7 +184,7 @@ class empresaapobarempleoadmin extends Controllers
 	//LISTA DE EMPLEOS POR APROBAR
 	public function getEmpleosRuc()
 	{
-		if ($_SESSION['permisosMod']['r']) {
+		if ($_SESSION['permisos'][25]['r']) {
 			$arrData = $this->model->listaEmpleosParaValidarRuc();
 
 			foreach ($arrData as &$line) {
@@ -209,11 +210,11 @@ class empresaapobarempleoadmin extends Controllers
 					$line['escuelaid'] = 	$line['escuelaid'] . '<h5><span class="badge badge-info">' . $carreras['nombreEscuela'] . '</span></h5> ';
 				}
 
-				if ($_SESSION['permisos'][11]['r']) {
+				if ($_SESSION['permisos'][25]['r']) {
 					$btnValidar = '<button class="btn btn-primary" type="button" onclick="buscar(' . $line['ruc'] . ');"><i class="fas fa-plus-circle"></i>Validar Ruc</button>';
 				}
 
-				if ($_SESSION['permisosMod']['u']) {
+				if ($_SESSION['permisos'][25]['r']) {
 					$btnDelete = '<button class="btn btn-success btn-sm btnDelUsuario" onClick="fntAprobarBanner(' . $line['idEmpleos'] . ')" title="Aprobar Empleo"><i class="fas fa-check-circle"> Confirmar Ruc</i></button>';
 				} else {
 					$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
@@ -229,7 +230,7 @@ class empresaapobarempleoadmin extends Controllers
 	public function aprobarRucEmpleo()
 	{
 		if ($_POST) {
-			if ($_SESSION['permisosMod']['d']) {
+			if ($_SESSION['permisos'][25]['r']) {
 				$idempleo = intval($_POST['idempleo']);
 				$requestDelete = $this->model->aprobarRucEmpleo($idempleo);
 
@@ -317,8 +318,7 @@ class empresaapobarempleoadmin extends Controllers
 				$idempleo = intval($_POST['idempleo']);
 				$requestDelete = $this->model->aprobarEmpleo($idempleo);
 
-				$this->enviarCorreo($idempleo);
-
+		
 				if ($requestDelete) {
 					$arrResponse = array('status' => true, 'msg' => 'Se ha publicado correctamente');
 				} else {
