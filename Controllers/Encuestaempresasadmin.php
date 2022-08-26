@@ -1,6 +1,6 @@
 <?php
 
-class Encuestaempresasadmin extends Controllers
+class encuestaempresasadmin extends Controllers
 {
 	public function __construct()
 	{
@@ -18,9 +18,9 @@ class Encuestaempresasadmin extends Controllers
 		if (empty($_SESSION['permisosMod']['r'])) {
 			header("Location:" . base_url() . '/dashboard');
 		}
-		$data['page_tag'] = "Banner";
-		$data['page_title'] = "Banner <small>Unidad de Seguimiento del Egresado</small>";
-		$data['page_name'] = "USE-banner";
+		$data['page_tag'] = "Encuesta Empresa";
+		$data['page_title'] = "Encuesta Empresa <small>Unidad de Seguimiento del Egresado</small>";
+		$data['page_name'] = "USE-Encuesta Empresa";
 		$data['page_functions_js'] = "functions_encuestaempresasadmin.js";
 		$this->views->getView($this, "encuestaempresasadmin", $data);
 	}

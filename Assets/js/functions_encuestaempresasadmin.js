@@ -23,7 +23,8 @@ document.addEventListener('DOMContentLoaded', function() {
             { "data": "p6" },
             { "data": "p7" },
             { "data": "p8" },
-            { "data": "p9" }
+            { "data": "p9" },
+            { "data": "p10" }
         ],
         'dom': 'lBfrtip',
         'buttons': [{
