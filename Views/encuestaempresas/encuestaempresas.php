@@ -18,10 +18,10 @@ $idmaestria = $año->listaFacultadpostgrado();
 <div class="card-header">
     <h4 class="text-center">Transparencia - Unidad de Seguimiento del Egresado</h4>
 </div>
-<br><br><br>
+<br>
 <style>
     .encuesta {
-        max-width: 1200px;
+        max-width: 1000px;
         margin: auto;
 
     }
@@ -29,11 +29,11 @@ $idmaestria = $año->listaFacultadpostgrado();
 
 <div class="encuesta">
     <div class="col-12 col-xl-10">
-        <div class="row">
+        <div class="d-flex justify-content-around">
             <div class="col-6 col-md-3 pt-4 pb-4">
                 <img class="img-fluid" src="<?= media(); ?>/img/logoUse.jpg" alt="">
             </div>
-            <div class="col-6 col-md-3 pt-4 pb-4">
+            <div class="col-6 col-md-3 pt-4 pb-4 text-rigth">
                 <img class="img-fluid" src="<?= media(); ?>/img/logoDpa.png" alt="">
             </div>
         </div>
@@ -46,7 +46,7 @@ $idmaestria = $año->listaFacultadpostgrado();
 
                     <div class="row mb-4">
                         <div class="col-12 col-md-12">
-                            <p>1. Tiempo que el egresado (a) labora en su empresa.</p>
+                            <p>1. Tiempo que el/la egresado (a) labora en su empresa.</p>
                         </div>
                         <div class="col-12 col-md-12">
                             <div class="form-check form-check-inline">
@@ -58,47 +58,47 @@ $idmaestria = $año->listaFacultadpostgrado();
                                 <label class="form-check-label" for="p1">menos de 1 año</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p1" type="radio" value="2">
+                                <input class="form-check-input" name="p1" type="radio" value="3">
                                 <label class="form-check-label" for="p1">1 a 2 años</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p1" type="radio" value="2">
-                                <label class="form-check-label" for="p1">5 años a más</label>
+                                <input class="form-check-input" name="p1" type="radio" value="4">
+                                <label class="form-check-label" for="p1">3 años a más</label>
                             </div>
                         </div>
                     </div>
 
                     <div class="row mb-4">
                         <div class="col-12 col-md-12">
-                            <p>2. Formación académica/profesional que exige principalmente a sus trabajadores (Seleccione sólo una opción)</p>
+                            <p>2. Formación académica/profesional que exige principalmente a sus trabajadores (Seleccione sólo una opción).</p>
                         </div>
                         <div class="col-12 col-md-12">
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" name="p2" type="radio" value="1">
-                                <label class="form-check-label" for="p2">TÉCNICO</label>
+                                <label class="form-check-label" for="p2">Técnico</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" name="p2" type="radio" value="2">
-                                <label class="form-check-label" for="p2">BACHILLER</label>
+                                <label class="form-check-label" for="p2">Bachiller</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" name="p2" type="radio" value="3">
-                                <label class="form-check-label" for="p2">TITULADO</label>
+                                <label class="form-check-label" for="p2">Titulado</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p2" type="radio" value="3">
-                                <label class="form-check-label" for="p2">MAESTRÍA</label>
+                                <input class="form-check-input" name="p2" type="radio" value="4">
+                                <label class="form-check-label" for="p2">Maestría</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p2" type="radio" value="3">
-                                <label class="form-check-label" for="p2">DOCTORADO</label>
+                                <input class="form-check-input" name="p2" type="radio" value="5">
+                                <label class="form-check-label" for="p2">Doctorado</label>
                             </div>
                         </div>
                     </div>
 
                     <div class="row mb-4">
                         <div class="col-12 col-md-12">
-                            <p>3. Señale el cargo que desempeña el egresado (a).</p>
+                            <p>3. Señale el cargo que desempeña el/la egresado(a).</p>
                         </div>
                         <div class="col-12 col-md-12">
                             <div class="form-check form-check-inline">
@@ -110,19 +110,19 @@ $idmaestria = $año->listaFacultadpostgrado();
                                 <label class="form-check-label" for="p3">Auxiliar</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p3" type="radio" value="2">
+                                <input class="form-check-input" name="p3" type="radio" value="3">
                                 <label class="form-check-label" for="p3">Asistente</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p3" type="radio" value="2">
-                                <label class="form-check-label" for="p3">Directivo </label>
+                                <input class="form-check-input" name="p3" type="radio" value="4">
+                                <label class="form-check-label" for="p3">Directivo</label>
                             </div>
                         </div>
                     </div>
 
                     <div class="row mb-4">
                         <div class="col-12 col-md-12">
-                            <p>4. Medios utiliza para realizar los procesos de selección. (Puede seleccionar más de uno).</p>
+                            <p>4. Medios que utiliza para realizar los procesos de selección. (Puede marcar más de uno).</p>
                         </div>
                         <div class="col-12 col-md-12">
                             <div class="form-check form-check-inline">
@@ -142,7 +142,7 @@ $idmaestria = $año->listaFacultadpostgrado();
                                 <label class="form-check-label" for="p4">Test: Aptitudes intelectuales.</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p4" type="radio" value="4">
+                                <input class="form-check-input" name="p4" type="radio" value="5">
                                 <label class="form-check-label" for="p4">Test: Personalidad.</label>
                             </div>
                         </div>
@@ -150,47 +150,56 @@ $idmaestria = $año->listaFacultadpostgrado();
 
                     <div class="row mb-4">
                         <div class="col-12 col-md-12">
-                            <p>5. El egresado (a) ha recibido algún tipo de reconocimiento por su destacado desempeño que sea demostrable (resoluciones, diplomas u otros) Si así fuera, mencione el tipo de reconocimiento, mes y año.</p>
+                            <p>5. ¿Conoce si el egresado (a) ha desarrollo producción intelectual?.</p>
                         </div>
                         <div class="col-12 col-md-12">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" onchange="p51();" name="p5" type="radio" value="1">
-                                <label class="form-check-label" for="p5">si</label>
+                                <input class="form-check-input" name="p5" type="radio" value="1">
+                                <label class="form-check-label" for="p5">Artículos en revistas indexadas.</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" onchange="p52();" name="p5" type="radio" value="2">
-                                <label class="form-check-label" for="p5">no</label>
+                                <input class="form-check-input" name="p5" type="radio" value="2">
+                                <label class="form-check-label" for="p5">Artículos de opinión.</label>
                             </div>
-                            <div class="col-12" id="oficiomarsa" hidden>
-                                <input class="col-12" type="text" id="textp5">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="p5" type="radio" value="3">
+                                <label class="form-check-label" for="p5">Separatas.</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="p5" type="radio" value="4">
+                                <label class="form-check-label" for="p5">Libros.</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="p5" type="radio" value="5">
+                                <label class="form-check-label" for="p5">Blog.</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="p5" type="radio" value="6">
+                                <label class="form-check-label" for="p5">Página web.</label>
                             </div>
                         </div>
                     </div>
 
                     <div class="row mb-4">
                         <div class="col-12 col-md-12">
-                            <p>6. Señale su satisfacción con el desempeño laboral del egresado (a).</p>
+                            <p>6. Conoce si el/la egresado(a) ha desarrollado estudios complementarios.</p>
                         </div>
                         <div class="col-12 col-md-12">
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" name="p6" type="radio" value="1">
-                                <label class="form-check-label" for="p6">Muy satisfecha</label>
+                                <label class="form-check-label" for="p6">Maestría.</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" name="p6" type="radio" value="2">
-                                <label class="form-check-label" for="p6">Satisfecha</label>
+                                <label class="form-check-label" for="p6">Doctorado.</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" name="p6" type="radio" value="3">
-                                <label class="form-check-label" for="p6">Medianamente satisfecha</label>
+                                <label class="form-check-label" for="p6">Segunda especialidad.</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" name="p6" type="radio" value="4">
-                                <label class="form-check-label" for="p6">Medianamente insatisfecha</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p6" type="radio" value="4">
-                                <label class="form-check-label" for="p6">Insatisfecha</label>
+                                <label class="form-check-label" for="p6">Segunda profesión.</label>
                             </div>
                         </div>
                     </div>
@@ -198,83 +207,104 @@ $idmaestria = $año->listaFacultadpostgrado();
 
                     <div class="row mb-4">
                         <div class="col-12 col-md-12">
-                            <p>7. ¿Conoce si el egresado (a) ha desarrollo producción intelectual?.</p>
+                            <p>7. El/la egresado(a) ha recibido alguna capacitación por parte de entidad laboral.</p>
                         </div>
                         <div class="col-12 col-md-12">
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" name="p7" type="radio" value="1">
-                                <label class="form-check-label" for="p7">Artículos en revistas indexadas.</label>
+                                <label class="form-check-label" for="p7">De 1 a 2.</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" name="p7" type="radio" value="2">
-                                <label class="form-check-label" for="p7">Artículos de opinión.</label>
+                                <label class="form-check-label" for="p7">De 3 a 5.</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" name="p7" type="radio" value="3">
-                                <label class="form-check-label" for="p7">Separatas.</label>
+                                <label class="form-check-label" for="p7">De 6 a 8.</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" name="p7" type="radio" value="4">
-                                <label class="form-check-label" for="p7">Libros.</label>
+                                <label class="form-check-label" for="p7">Más de 8.</label>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row mb-4">
+                        <div class="col-12 col-md-12">
+                            <p>8. El/la egresado(a) ha recibido algún tipo de reconocimiento por su destacado desempeño que sea demostrable (resoluciones, diplomas u otros) Si así fuera, mencione el tipo de reconocimiento, mes y año.</p>
+                        </div>
+                        <div class="col-12 col-md-12">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" onchange="p51();" name="p8" type="radio" value="1">
+                                <label class="form-check-label" for="p8">si</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p7" type="radio" value="5">
-                                <label class="form-check-label" for="p7">Blog.</label>
+                                <input class="form-check-input" onchange="p52();" name="p8" type="radio" value="2">
+                                <label class="form-check-label" for="p8">no</label>
                             </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p7" type="radio" value="5">
-                                <label class="form-check-label" for="p7">Página web.</label>
+                            <div class="col-12" id="oficiomarsa" hidden>
+                                <input class="col-12" type="text" id="textp8">
                             </div>
                         </div>
                     </div>
 
                     <div class="row mb-4">
                         <div class="col-12 col-md-12">
-                            <p>8. Conoce si la egresada ha desarrollado estudios complementarios.</p>
-                        </div>
-                        <div class="col-12 col-md-12">
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p8" type="radio" value="1">
-                                <label class="form-check-label" for="p8">Maestría.</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p8" type="radio" value="2">
-                                <label class="form-check-label" for="p8">Doctorado.</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p8" type="radio" value="3">
-                                <label class="form-check-label" for="p8">Segunda especialidad.</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" name="p8" type="radio" value="4">
-                                <label class="form-check-label" for="p8">Segunda profesión.</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row mb-4">
-                        <div class="col-12 col-md-12">
-                            <p>9. El/la egresado (a) ha recibido alguna capacitación por parte de entidad laboral.</p>
+                            <p>9. Señale su satisfacción con el desempeño laboral del egresado(a).</p>
                         </div>
                         <div class="col-12 col-md-12">
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" name="p9" type="radio" value="1">
-                                <label class="form-check-label" for="p9">De 1 a 2.</label>
+                                <label class="form-check-label" for="p9">Muy satisfecha</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" name="p9" type="radio" value="2">
-                                <label class="form-check-label" for="p9">De 3 a 5.</label>
+                                <label class="form-check-label" for="p9">Satisfecha</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" name="p9" type="radio" value="3">
-                                <label class="form-check-label" for="p9">De 6 a 8.</label>
+                                <label class="form-check-label" for="p9">Medianamente satisfecha</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" name="p9" type="radio" value="4">
-                                <label class="form-check-label" for="p9">Más de 8.</label>
+                                <label class="form-check-label" for="p9">Medianamente insatisfecha</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="p9" type="radio" value="5">
+                                <label class="form-check-label" for="p9">Insatisfecha</label>
                             </div>
                         </div>
                     </div>
+
+                    <div class="row mb-4">
+                        <div class="col-12 col-md-12">
+                            <p>10. ¿Como considera al egresado(a) de la Universidad Nacional de Trujillo?</p>
+                        </div>
+                        <div class="col-12 col-md-12">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="p10" type="radio" value="1">
+                                <label class="form-check-label" for="p10">Muy malo</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="p10" type="radio" value="2">
+                                <label class="form-check-label" for="p10">Malo</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="p10" type="radio" value="3">
+                                <label class="form-check-label" for="p10">Bueno</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="p10" type="radio" value="4">
+                                <label class="form-check-label" for="p10">Muy bueno</label>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
             </div>
             <br>
         </div>
@@ -286,7 +316,7 @@ $idmaestria = $año->listaFacultadpostgrado();
 </div>
 
 <br>
-<!-- SEGUNDAS ESPECIALIDADES -->
+<!-- MODAL ENCUESTA -->
 <div class="modal fade" id="modalRespuesta" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -303,12 +333,14 @@ $idmaestria = $año->listaFacultadpostgrado();
 <?php footer($data); ?>
 
 <script>
-    function p51(){
-        $('#oficiomarsa').attr('hidden',true);
+    function p51() {
+        $('#oficiomarsa').attr('hidden', true);
     }
-    function p52(){
-        $('#oficiomarsa').attr('hidden',false);
+
+    function p52() {
+        $('#oficiomarsa').attr('hidden', false);
     }
+
     function enviarCuestionario() {
 
         if (!document.querySelector('input[name="p1"]:checked')) {
@@ -335,7 +367,7 @@ $idmaestria = $año->listaFacultadpostgrado();
             swal("Atención!", "Debe seleccior la Pregunta Nº5", "warning");
             hasError = true;
             return;
-        }else{
+        } else {
             console.log(document.querySelector('input[name="p5"]:checked').value);
         }
         if (!document.querySelector('input[name="p6"]:checked')) {
@@ -365,18 +397,20 @@ $idmaestria = $año->listaFacultadpostgrado();
         var pregunta2 = document.querySelector('input[name="p2"]:checked').value;
         var pregunta3 = document.querySelector('input[name="p3"]:checked').value;
         var pregunta4 = document.querySelector('input[name="p4"]:checked').value;
-        if(document.querySelector('input[name="p5"]:checked').value==1){
-            var pregunta5 = document.querySelector('input[name="p5"]:checked').value;
-        }else{
-            console.log('---------');
-            var pregunta5 = document.getElementById('textp5').value;
-            console.log(pregunta5);
-        }
-     
+        var pregunta5 = document.querySelector('input[name="p5"]:checked').value;
         var pregunta6 = document.querySelector('input[name="p6"]:checked').value;
         var pregunta7 = document.querySelector('input[name="p7"]:checked').value;
-        var pregunta8 = document.querySelector('input[name="p8"]:checked').value;
+
+        if (document.querySelector('input[name="p8"]:checked').value == 1) {
+            var pregunta8 = document.querySelector('input[name="p8"]:checked').value;
+        } else {
+            console.log('---------');
+            var pregunta8 = document.getElementById('textp8').value;
+            console.log(pregunta8);
+        }
+
         var pregunta9 = document.querySelector('input[name="p9"]:checked').value;
+        var pregunta10 = document.querySelector('input[name="p10"]:checked').value;
 
 
         var fd = new FormData();
@@ -384,11 +418,12 @@ $idmaestria = $año->listaFacultadpostgrado();
         fd.append("pregunta2", pregunta2);
         fd.append("pregunta3", pregunta3);
         fd.append("pregunta4", pregunta4);
-        fd.append("pregunta5", pregunta5);    
+        fd.append("pregunta5", pregunta5);
         fd.append("pregunta6", pregunta6);
         fd.append("pregunta7", pregunta7);
         fd.append("pregunta8", pregunta8);
         fd.append("pregunta9", pregunta9);
+        fd.append("pregunta10", pregunta10);
 
         divLoading.style.display = "flex";
         $.ajax({
