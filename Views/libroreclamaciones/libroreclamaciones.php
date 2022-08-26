@@ -18,7 +18,7 @@
             <h4>1. ¿De que sede eres?</h4>
             <div class="form-group col-md-6">
                 <select class="form-control select2" name="p1" id="p1" data-live-search="true" class="mdb-select md-form" x>
-                    <option disabled selected>Seleccionar</option>
+                    <option value="" disabled selected>Seleccionar</option>
                     <option value="HUAMACHUCO">FILIAL HUAMACHUCO</option>
                     <option value="SANTIAGO">FILIAL SANTIAGO DE CHUCO </option>
                     <option value="JEQUETEPEQUE">FILIAL VALLE JEQUETEPEQUE</option>
@@ -107,7 +107,7 @@
             <h4>8. ¿En qué sede te encontrabas?</h4>
             <div class="form-group col-md-6">
                 <select class="form-control select2" name="p8" id="p8" data-live-search="true" class="mdb-select md-form" x>
-                    <option disabled selected>Seleccionar</option>
+                    <option value="" disabled selected>Seleccionar</option>
                     <option value="1">Dni</option>
                     <option value="2">Carnet de Extranjeria</option>
                     <option value="3">Pasaporte</option>
@@ -165,26 +165,52 @@
     function enviarCuestionario() {
 
 
-        var p1 = $("#p1").val();
-        var p2 = $("#p2").val();
-        var p3 = $("#p3").val();
-        var p4 = $("#p4").val();
+        var p1 = document.getElementById("p1").value;
+        //var p1 = $("#p1").val();
+        var p2 = document.getElementById("p2").value;
+        var p3 = document.getElementById("p3").value;
+        var p4 = document.getElementById("p4").value;
 
         var inputElement = document.getElementById("archivoSubido");
         var archivoSubido = inputElement.files[0];
-
         let pregunta6 = document.querySelectorAll('input[name="p6"]:checked');
         var p6 = new Array();
         pregunta6.forEach((checkbox) => {
             p6.push(checkbox.value);
         });
 
+    
+        var p8 = document.getElementById("p8").value;
+        var p9 = document.getElementsByClassName("p9").value;
+        var p10 = document.getElementsByClassName("p10").value;
+        var p11 = document.getElementsByClassName("p11").value;
 
-        var p7 = document.querySelector('input[name="p7"]:checked').value;
-        var p8 = $("#p8").val();
-        var p9 = $(".p9").val();
-        var p10 = $(".p10").val();
-        var p11 = $(".p11").val();
+
+
+        if (!document.querySelector('input[name="p7"]:checked')) {
+            console.log('paso');
+            swal("Atención!", "Debe seleccionar la Pregunta Nº7", "warning");
+            return;
+        } else {
+            var p7 = document.querySelector('input[name="p7"]:checked').value;
+        }
+
+
+        if (p9 == '' || p9 == undefined) {
+            swal("Atención!", "Debe seleccionar la Pregunta Nº9", "warning");
+            return;
+        }
+        if (p10 == ''|| p10 == undefined) {
+            swal("Atención!", "Debe seleccionar la Pregunta Nº10", "warning");
+            return;
+        }
+        if (p11 == ''|| p11 == undefined) {
+            swal("Atención!", "Debe seleccionar la Pregunta Nº11", "warning");
+            return;
+        }
+
+
+
 
 
         var fd = new FormData();
@@ -204,7 +230,7 @@
         divLoading.style.display = "flex";
         $.ajax({
             method: "POST",
-            url: "" + base_url + "/Libroreclamacionesadmin/set",
+            url: "" + base_url + "/home/setLibroReclamaciones",
             data: fd,
             processData: false, // tell jQuery not to process the data
             contentType: false // tell jQuery not to set contentType

@@ -386,6 +386,52 @@ class HomeModel extends Mysql
 		return $request;
 	}
 
+	/***************************************************************************************
+		LIBRO DE RECLAMACIONES
+	****************************************************************************************/
+
+	public function cantidadlibroreclamaciones()
+	{
+		$sql = "SELECT count(idlibroreclamaciones) cant FROM libroreclamaciones where status = 1 order by fecharegistro desc";
+		$request = $this->select($sql);
+		return $request;
+	}
+
+	public function registerlibroreclamaciones($p1, $p2, $p3, $p4, $p5, $p6, $p7, $p8, $p9, $p10, $p11)
+	{
+		$this->p1 = $p1;
+		$this->p2 = $p2;
+		$this->p3 = $p3;
+		$this->p4 = $p4;
+		$this->p5 = $p5;
+		$this->p6 = $p6;
+		$this->p7 = $p7;
+		$this->p8 = $p8;
+		$this->p9 = $p9;
+		$this->p10 = $p10;
+		$this->p11 = $p11;
+
+		$return = 0;
+		$query_insert  = "INSERT INTO libroreclamaciones(p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11)
+								  VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+		$arrData = array(
+			$this->p1,
+			$this->p2,
+			$this->p3,
+			$this->p4,
+			$this->p5,
+			$this->p6,
+			$this->p7,
+			$this->p8,
+			$this->p9,
+			$this->p10,
+			$this->p11
+		);
+		$request_insert = $this->insert($query_insert, $arrData);
+		$return = $request_insert;
+		return $return;
+	}
+
 
 	
 }
