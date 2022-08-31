@@ -8,7 +8,8 @@
 		private $cantidad;
 
 		private $intValidarRuc=2;
-		private $intAprobarEmpleo=3;
+		private $intAprobarEmpleo=3
+		;
 		private $intDifusionEmpleo=4;
 
 		public function __construct()
@@ -16,7 +17,8 @@
 			parent::__construct();
 		}
 
-		public function listaEmpleos()
+		//LISTA DE EMPLEOS POR APROBAR
+		public function listParaAprobar()
 		{
 			$sql = "SELECT u.idpersona,em.idEmpleos,em.status,emp.nombreEmpresa,
 			em.NombrePuesto,em.DescripcionPuesto,em.InformacionAdicional,em.LugarTrabajo,em.TrabajoRemoto,em.NumeroVacantes,em.Experiencias,
@@ -53,15 +55,17 @@
 			return $request;
 		}
 
-		public function aprobarEmpleo(int $IdBaner)
+		// APROBACION DE EMPLEO
+		public function aprobarEmpleo(int $idempleo)
 		{
-			$this->intIdUsuario = $IdBaner;
-			$sql = "UPDATE empleos SET status = ? WHERE idEmpleos = $this->intIdUsuario ";
+			$this->idempleo = $idempleo;
+			$sql = "UPDATE empleos SET status = ? WHERE idEmpleos = $this->idempleo ";
 			$arrData = array($this->intAprobarEmpleo);
 			$request = $this->update($sql,$arrData);
 			return $request;
 		}
 
+		// BUSCAR CARRERAS PARA ENVIAR POR CORREO 
 		public function listaCarrerasid($idempresa)
 		{
 			$sql = "SELECT u.nombres, u.email_user,e.FechaFin,e.NombrePuesto
@@ -73,19 +77,20 @@
 			return $request;
 		}
 
-		public function listaParaAprobarEmpleo($idempleo)
-		{
-			$sql = "SELECT em.idEmpleos,emp.nombreEmpresa, u.email_user,em.FechaFin,em.NombrePuesto
-			from empleos em
-			inner join empresa emp
-			on em.empresaid = emp.idempresa
-			inner join usuario u
-			on u.idpersona=emp.personaid
-			where em.status =2 and  em.idempleos = $idempleo";
-			$request = $this->select($sql);			
-			return $request;
-		}
+		// public function listaParaAprobarEmpleo($idempleo)
+		// {
+		// 	$sql = "SELECT em.idEmpleos,emp.nombreEmpresa, u.email_user,em.FechaFin,em.NombrePuesto
+		// 	from empleos em
+		// 	inner join empresa emp
+		// 	on em.empresaid = emp.idempresa
+		// 	inner join usuario u
+		// 	on u.idpersona=emp.personaid
+		// 	where em.status =2 and  em.idempleos = $idempleo";
+		// 	$request = $this->select($sql);			
+		// 	return $request;
+		// }
 
+		/*PAGINA PARA SECRETARIADO*/		
 		public function listaEmpleosParaValidarRuc()
 		{
 			$sql = "SELECT em.idEmpleos,emp.ruc,emp.nombreEmpresa,emp.Direccion,u.idpersona,em.status,
@@ -100,10 +105,10 @@
 			return $request;
 		}
 
-		public function aprobarRucEmpleo(int $IdBaner)
+		public function aprobarRucEmpleo(int $idempleo)
 		{
-			$this->intIdUsuario = $IdBaner;
-			$sql = "UPDATE empleos SET status = ? WHERE idEmpleos = $this->intIdUsuario ";
+			$this->idempleo = $idempleo;
+			$sql = "UPDATE empleos SET status = ? WHERE idEmpleos = $this->idempleo ";
 			$arrData = array($this->intValidarRuc);
 			$request = $this->update($sql,$arrData);
 			return $request;
