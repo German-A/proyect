@@ -7,8 +7,7 @@ class usuarios extends Controllers
 	{
 		session_start();
 		parent::__construct();
-
-		//session_regenerate_id(true);
+		session_regenerate_id(true);
 		if (empty($_SESSION['login'])) {
 			header('Location: ' . base_url() . '/login');
 		}
@@ -238,7 +237,7 @@ class usuarios extends Controllers
 					$strDirFiscal
 				);
 				if ($request_datafiscal) {
-					sessionUser($_SESSION['idUser']);
+				//	sessionUser($_SESSION['idUser']);
 					$arrResponse = array('status' => true, 'msg' => 'Datos Actualizados correctamente.');
 				} else {
 					$arrResponse = array("status" => false, "msg" => 'No es posible actualizar los datos.');
@@ -301,7 +300,7 @@ class usuarios extends Controllers
 					$strPassword
 				);
 				if ($request_user) {
-					sessionUser($_SESSION['idUser']);
+				//	sessionUser($_SESSION['idUser']);
 					$arrResponse = array('status' => true, 'msg' => 'Datos Actualizados correctamente.');
 				} else {
 					$arrResponse = array("status" => false, "msg" => 'No es posible actualizar los datos.');
@@ -352,7 +351,7 @@ class usuarios extends Controllers
 
 
 				if ($request_user) {
-					sessionUser($_SESSION['idUser']);
+					//sessionUser($_SESSION['idUser']);
 					$arrResponse = array('status' => true, 'msg' => 'Datos Actualizados correctamente.');
 				} else {
 					$arrResponse = array("status" => false, "msg" => 'No es posible actualizar los datos.');

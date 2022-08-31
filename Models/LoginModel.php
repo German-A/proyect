@@ -18,8 +18,7 @@
 			$this->strPassword = $password;
 			$sql = "SELECT idpersona,status FROM usuario WHERE 
 					email_user = '$this->strUsuario' and 
-					password = '$this->strPassword' and 
-					status != 0 ";
+					password = '$this->strPassword' ";
 			$request = $this->select($sql);
 			return $request;
 		}
@@ -32,19 +31,22 @@
 							p.apellidop,
 							p.apellidom,
 							p.email_user,
-							p.telefono,
 							p.imagen,
-							p.dni,					
-							r.idrol,
-							r.nombrerol,						
+							p.dni,						
+							p.telefono,					
 							p.datecreated,
-							p.status 
+							p.status,			
+							r.idrol,
+							r.nombrerol						
 					FROM usuario p
 					INNER JOIN rol r
 					ON p.rolid = r.idrol
-					WHERE p.idpersona = $this->intIdUsuario";
+					WHERE p.idpersona = $this->intIdUsuario 
+					and p.status > 0
+					and r.status > 0
+					";
 			$request = $this->select($sql);
-			$_SESSION['userData'] = $request;
+			//$_SESSION['userData'] = $request;
 			return $request;
 		}
 
@@ -64,7 +66,7 @@
 		public function sessionEgresado(int $iduser){
 			$this->intIdUsuario = $iduser;
 			//BUSCAR ROLE 
-			$sql = "SELECT e.idegresado 
+			$sql = "SELECT e. 
 			FROM usuario u
 			inner join egresado e
 			on u.idpersona = e.personaid

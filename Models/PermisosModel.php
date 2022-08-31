@@ -62,7 +62,7 @@
 					FROM permisos p 
 					INNER JOIN modulo m
 					ON p.moduloid = m.idmodulo
-					WHERE p.rolid = $this->intRolid";
+					WHERE p.rolid = $this->intRolid and status>0";
 			$request = $this->select_all($sql);
 			$arrPermisos = array();
 			for ($i=0; $i < count($request); $i++) { 

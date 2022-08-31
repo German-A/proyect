@@ -11,7 +11,7 @@ class legalnacional extends Controllers
 		if (empty($_SESSION['login'])) {
 			header('Location: ' . base_url() . '/login');
 		}
-		getPermisos(3);
+		getPermisos(5);
 	}
 
 	public function legalnacional()

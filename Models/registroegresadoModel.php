@@ -79,9 +79,6 @@ class RegistroegresadoModel extends Mysql
 		return $return;
 	}
 
-
-
-
 	public function insertEgresado($valorA, $valorF, $valorG, 	$valorI, $valorJ, $valorK, $valorL, $ultimoregistro)
 	{
 		$this->numeroMatricula = $valorA;
@@ -113,7 +110,7 @@ class RegistroegresadoModel extends Mysql
 		return $return;
 	}
 
-	public function listadoBanner()
+	public function list()
 	{
 		$sql = "SELECT u.idpersona,CONCAT(u.nombres, ' ',u.apellidop, ' ',u.apellidom) AS nombres ,
 		u.email_user ,u.imagen ,u.dni ,u.status ,u.telefono ,r.descripcion,u.rolid
@@ -189,7 +186,7 @@ class RegistroegresadoModel extends Mysql
 		return $return;
 	}
 
-	public function getunBanner($idusuario)
+	public function getOne($idusuario)
 	{
 		$sql = "SELECT  u.idpersona,u.nombres,u.apellidop,u.apellidom,u.email_user,u.password,u.imagen,u.dni ,u.telefono ,
 		e.numeroMatricula,e.direccion,e.telefonoFijo,e.sexo,e.idescuela,e.idsede,f.idFacultad,f.nombreFacultad,es.nombreEscuela,s.idSede,s.nombreSede

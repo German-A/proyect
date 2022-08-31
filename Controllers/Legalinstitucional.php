@@ -11,7 +11,7 @@ class legalinstitucional extends Controllers
 		if (empty($_SESSION['login'])) {
 			header('Location: ' . base_url() . '/login');
 		}
-		getPermisos(3);
+		getPermisos(6);
 	}
 
 	public function legalinstitucional()

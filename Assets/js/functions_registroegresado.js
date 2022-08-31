@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
         //     "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
         // },
         "ajax": {
-            "url": " " + base_url + "/registroegresado/getBanners",
+            "url": " " + base_url + "/registroegresado/getEgresados",
             "dataSrc": ""
         },
         "columns": [
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             divLoading.style.display = "flex";
             let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-            let ajaxUrl = base_url + '/registroegresado/setBanner';
+            let ajaxUrl = base_url + '/registroegresado/setEgresados';
             let formData = new FormData(formUsuario);
             request.open("POST", ajaxUrl, true);
             request.send(formData);
@@ -134,7 +134,7 @@ function fntEditBanner(element, idpersona) {
 
     //let idpersona = idpersona;
     let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-    let ajaxUrl = base_url + '/registroegresado/getunBanner/' + idpersona;
+    let ajaxUrl = base_url + '/registroegresado/getunEgresado/' + idpersona;
     request.open("GET", ajaxUrl, true);
     request.send();
     request.onreadystatechange = function() {

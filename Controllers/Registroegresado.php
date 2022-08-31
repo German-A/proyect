@@ -6,16 +6,13 @@ require 'vendor/autoload.php';
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Cell\Coordinate;
 
-
-
 class registroegresado extends Controllers
 {
 	public function __construct()
 	{
 		session_start();
 		parent::__construct();
-
-		//session_regenerate_id(true);
+		session_regenerate_id(true);
 		if (empty($_SESSION['login'])) {
 			header('Location: ' . base_url() . '/login');
 		}
@@ -36,25 +33,15 @@ class registroegresado extends Controllers
 
 	public function setUsuario()
 	{
-
 		$ultimoregistro = null;
 
-
-		//$nombre = null;
-
 		if ($_FILES['dataCliente']['name'] == "") {
-
 			$arrResponse = array("status" => false, "msg" => 'No se selecciono ningún documento.');
 		} else {
-
 			if ($_POST) {
-
 				$tipo       = $_FILES['dataCliente']['type'];
 				$tamanio    = $_FILES['dataCliente']['size'];
 				$archivotmp = $_FILES['dataCliente']['tmp_name'];
-
-
-
 				//$nombreArchivo = 'oficiosEmitidos.xlsx';
 				/*nombre del Archivo: vamos a cargar el archivo para poderr leer*/
 				$documento = IOFactory::load($archivotmp);
@@ -69,13 +56,10 @@ class registroegresado extends Controllers
 				$numeroFilas = $hojaActual->getHighestDataRow();
 				/*ultima letra con datos */
 				$letra = $hojaActual->getHighestDataColumn();
-
 				$numeroLetra = Coordinate::columnIndexFromString($letra);
-
 				$registrados = 0;
 
-				for ($indiceFila = 2; $indiceFila <= $numeroFilas; $indiceFila++) {
-
+				for ($indiceFila = 2; $indiceFila <= $numeroFilas; $indiceFila++) {			
 					$valorA = $hojaActual->getCellByColumnAndRow(1, $indiceFila);
 					/*numeroMatricula*/
 					$valorB = $hojaActual->getCellByColumnAndRow(2, $indiceFila);
@@ -103,7 +87,6 @@ class registroegresado extends Controllers
 					$cantidadBanner = $this->model->validardni($valorE);
 
 					if ($cantidadBanner == null) {
-
 						//registro tabla usuario
 						$registrados++;
 						$ultimoregistro = $this->model->insertUsuarioEgresado($valorB, $valorC, $valorD, 	$valorE, $valorH, $valorE, $valorI);
@@ -120,15 +103,14 @@ class registroegresado extends Controllers
 			}
 		}
 		echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
-
 		die();
 	}
 
 	//listado de los egresados
-	public function getBanners()
+	public function getEgresados()
 	{
 		if ($_SESSION['permisosMod']['r']) {
-			$arrData = $this->model->listadoBanner();
+			$arrData = $this->model->list();
 			for ($i = 0; $i < count($arrData); $i++) {
 				$btnView = '';
 				$btnEdit = '';
@@ -164,16 +146,14 @@ class registroegresado extends Controllers
 	}
 
 	//insertar y actualizar los Banners
-	public function setBanner()
+	public function setEgresados()
 	{
-
 		$insert = 0;
 		if ($_POST) {
 			if (empty($_POST['nombres'])) {
 				$arrResponse = array("status" => false, "msg" => 'Datos incorrectos en el Banner nose envio.');
 			} else {
 				$idUsuario = intval($_POST['idBanner']);
-
 				$nombres = trim($_POST['nombres']);
 				$apellidop = trim($_POST['apellidop']);
 				$apellidom = trim($_POST['apellidom']);
@@ -186,14 +166,12 @@ class registroegresado extends Controllers
 				$sexo = trim($_POST['sexo']);
 				$idescuela = $_POST['idescuela'];
 				$idsede = $_POST['idsede'];
-
 				$password = $dni;
 
 				$request_user = "";
 				if ($idUsuario == 0) {
 
 					$option = 1;
-
 					$cantidadBanner = $this->model->validardni($dni);
 
 					if ($cantidadBanner == null) {
@@ -293,12 +271,12 @@ class registroegresado extends Controllers
 	}
 
 	//obtener un baner para actualizar
-	public function getunBanner($idpersona)
+	public function getunEgresado($idpersona)
 	{
 		if ($_SESSION['permisosMod']['r']) {
 			$idusuario = intval($idpersona);
 			if ($idusuario > 0) {
-				$arrData = $this->model->getunBanner($idusuario);
+				$arrData = $this->model->getOne($idusuario);
 				if (empty($arrData)) {
 					$arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
 				} else {
@@ -327,7 +305,6 @@ class registroegresado extends Controllers
 		}
 		die();
 	}
-
 
 	public function getFacultades()
 	{

@@ -1,11 +1,11 @@
 <?php 
 
 	class roles extends Controllers{
+		
 		public function __construct()
 		{
 			session_start();
-			parent::__construct();
-			
+			parent::__construct();			
 			session_regenerate_id(true);
 			if(empty($_SESSION['login']))
 			{

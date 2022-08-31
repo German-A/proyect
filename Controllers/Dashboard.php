@@ -15,7 +15,7 @@
 
 		public function dashboard()
 		{
-			$data['page_id'] = 2;
+			$data['page_id'] =2 ;
 			$data['page_tag'] = "Dashboard - U.S.E.";
 			$data['page_title'] = "Dashboard - U.S.E.";
 			$data['page_name'] = "dashboard";

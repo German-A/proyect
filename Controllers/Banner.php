@@ -5,7 +5,7 @@ class banner extends Controllers
 	public function __construct()
 	{
 		session_start();
-		//session_regenerate_id(true);
+		session_regenerate_id(true);
 		parent::__construct();
 		if (empty($_SESSION['login'])) {
 			header('Location: ' . base_url() . '/login');
@@ -15,6 +15,8 @@ class banner extends Controllers
 	//pagina Banner
 	public function banner()
 	{
+		dep($_SESSION['permisos'][3]['u'] );
+
 		if (empty($_SESSION['permisosMod']['r'])) {
 			header("Location:" . base_url() . '/dashboard');
 		}
@@ -50,7 +52,7 @@ class banner extends Controllers
 						$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
 					}
 				}
-				$arrData[$i]['NombreArchivo'] = '<a href="' . base_url() . '/Assets/archivos/banner/' . $arrData[$i]['NombreArchivo'] . '"target="_blank"><span class="badge badge-primary"  >' . $arrData[$i]['NombreArchivo'] . '</span></a> ';
+				$arrData[$i]['NombreArchivo'] = '<a href="' . base_url() . '/Assets/archivos/banner/' . $arrData[$i]['NombreArchivo'] . '"target="_blank"><span class="badge badge-primary"  > Ver Imagen <i class="fas fa-image"></i></span></a> ';
 			
 				$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
 			}

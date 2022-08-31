@@ -1,7 +1,13 @@
     <!-- Sidebar menu-->
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     <aside class="app-sidebar">
-        <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="<?= media(); ?>/images/avatar.png" alt="User Image">
+        <div class="app-sidebar__user">
+            <?php if (empty($_SESSION['userData']['imagen'])) { ?>
+                <img class="app-sidebar__user-avatar img-fluid" src="<?= media(); ?>/images/avatar.png" alt="User Image">
+            <?php } else { ?>
+                <img class="app-sidebar__user-avatar img-fluid" src="<?= media(); ?>/archivos/empresa/<?= $_SESSION['userData']['imagen'] ?>" alt="User Image">
+            <?php } ?>
+
             <div>
                 <p class="app-sidebar__user-name"><?= $_SESSION['userData']['nombres']; ?></p>
                 <p class="app-sidebar__user-designation"><?= $_SESSION['userData']['nombrerol']; ?></p>
@@ -31,12 +37,14 @@
                 </li>
             <?php } ?>
 
-            <?php if (
+            <?php
+            if (
                 !empty($_SESSION['permisos'][3]['r']) || !empty($_SESSION['permisos'][4]['r']) ||
                 !empty($_SESSION['permisos'][5]['r']) || !empty($_SESSION['permisos'][6]['r']) ||  !empty($_SESSION['permisos'][7]['r'])
                 ||  !empty($_SESSION['permisos'][21]['r']) ||  !empty($_SESSION['permisos'][22]['r'])
-             
-            ) { ?>
+
+            ) {
+            ?>
                 <li class="treeview">
                     <a class="app-menu__item" href="#" data-toggle="treeview">
                         <i class="app-menu__icon fas fa-upload" aria-hidden="true"></i>
@@ -52,10 +60,10 @@
                             <li><a class="treeview-item" href="<?= base_url(); ?>/manualesyguias"><i class="icon fa fa-circle-o"></i> manualesyguias</a></li>
                         <?php } ?>
                         <?php if (!empty($_SESSION['permisos'][5]['r'])) { ?>
-                            <li><a class="treeview-item" href="<?= base_url(); ?>/legalnacional"><i class="icon fa fa-circle-o"></i> Nacional</a></li>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/legalnacional"><i class="icon fa fa-circle-o"></i>Normativa Nacional</a></li>
                         <?php } ?>
                         <?php if (!empty($_SESSION['permisos'][6]['r'])) { ?>
-                            <li><a class="treeview-item" href="<?= base_url(); ?>/Legalinstitucional"><i class="icon fa fa-circle-o"></i> Institucional</a></li>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/Legalinstitucional"><i class="icon fa fa-circle-o"></i>Normativa Institucional</a></li>
                         <?php } ?>
                         <!-- <?php if (!empty($_SESSION['permisos'][17]['r'])) { ?>
                             <li><a class="treeview-item" href="<?= base_url(); ?>/cursosmoocintranet"><i class="icon fa fa-circle-o"></i> cursosmoocintranet</a></li>
@@ -72,17 +80,18 @@
 
                         <li><a class="treeview-item" href="<?= base_url(); ?>/encuestaempresasadmin"><i class="icon fa fa-circle-o"></i>encuestaempresasadmin</a></li>
                         <li><a class="treeview-item" href="<?= base_url(); ?>/Libroreclamacionesadmin"><i class="icon fa fa-circle-o"></i>Libroreclamacionesadmin</a></li>
-                        
+
 
                     </ul>
                 </li>
             <?php } ?>
 
             <!------------------------- modulo de administador   ----------------------->
-            <?php if (!empty($_SESSION['permisos'][8]['r']) || !empty($_SESSION['permisos'][9]['r']) 
-            || !empty($_SESSION['permisos'][12]['r'])
-            ||  !empty($_SESSION['permisos'][25]['r'])||  !empty($_SESSION['permisos'][26]['r'])
-            
+            <?php if (
+                !empty($_SESSION['permisos'][8]['r']) || !empty($_SESSION['permisos'][9]['r'])
+                || !empty($_SESSION['permisos'][12]['r'])
+                ||  !empty($_SESSION['permisos'][25]['r']) ||  !empty($_SESSION['permisos'][26]['r'])
+
             ) { ?>
                 <li class="treeview">
                     <a class="app-menu__item" href="#" data-toggle="treeview">
@@ -105,12 +114,12 @@
                             <li><a class="treeview-item" href="<?= base_url(); ?>/sendcorreo"><i class="icon fa fa-circle-o"></i>Correo</a></li>
                         <?php } ?>
 
-                        
+
                         <?php if (!empty($_SESSION['permisos'][26]['r'])) { ?>
-                            <li><a class="treeview-item" href="<?= base_url(); ?>/empresaapobarempleoadmin/difusionempleos"><i class="icon fa fa-circle-o"></i>Difusion empleos</a></li>              
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/empresaapobarempleoadmin/difusionempleos"><i class="icon fa fa-circle-o"></i>Difusion empleos</a></li>
                         <?php } ?>
                         <?php if (!empty($_SESSION['permisos'][25]['r'])) { ?>
-                            <li><a class="treeview-item" href="<?= base_url(); ?>/empresaapobarempleoadmin/validarruc"><i class="icon fa fa-circle-o"></i>validar ruc</a></li>              
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/empresaapobarempleoadmin/validarruc"><i class="icon fa fa-circle-o"></i>validar ruc</a></li>
                         <?php } ?>
                     </ul>
                 </li>
