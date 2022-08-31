@@ -39,9 +39,10 @@
 
             <?php
             if (
-                !empty($_SESSION['permisos'][3]['r']) || !empty($_SESSION['permisos'][4]['r']) ||
-                !empty($_SESSION['permisos'][5]['r']) || !empty($_SESSION['permisos'][6]['r']) ||  !empty($_SESSION['permisos'][7]['r'])
-                ||  !empty($_SESSION['permisos'][21]['r']) ||  !empty($_SESSION['permisos'][22]['r'])
+                !empty($_SESSION['permisos'][3]['r']) ||  !empty($_SESSION['permisos'][4]['r']) ||
+                !empty($_SESSION['permisos'][5]['r']) ||  !empty($_SESSION['permisos'][6]['r']) ||
+                !empty($_SESSION['permisos'][7]['r']) ||  !empty($_SESSION['permisos'][21]['r']) ||
+                !empty($_SESSION['permisos'][22]['r'])
 
             ) {
             ?>
@@ -119,28 +120,13 @@
                             <li><a class="treeview-item" href="<?= base_url(); ?>/empresaapobarempleoadmin/difusionempleos"><i class="icon fa fa-circle-o"></i>Difusion empleos</a></li>
                         <?php } ?>
                         <?php if (!empty($_SESSION['permisos'][25]['r'])) { ?>
-                            <li><a class="treeview-item" href="<?= base_url(); ?>/empresaapobarempleoadmin/validarruc"><i class="icon fa fa-circle-o"></i>validar ruc</a></li>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/empresaapobarempleoadmin/validarruc"><i class="icon fa fa-circle-o"></i>Validar Ruc</a></li>
                         <?php } ?>
                     </ul>
                 </li>
             <?php } ?>
 
-            <!------------------------- modulo de administador   ----------------------->
-            <?php if (!empty($_SESSION['permisos'][8]['r']) || !empty($_SESSION['permisos'][9]['r']) || !empty($_SESSION['permisos'][12]['r'])) { ?>
-                <li class="treeview">
-                    <a class="app-menu__item" href="#" data-toggle="treeview">
-                        <i class="app-menu__icon fas fa-briefcase" aria-hidden="true"></i>
-                        <span class="app-menu__label">objetivoseducacionales</span>
-                        <i class="treeview-indicator fa fa-angle-right"></i>
-                    </a>
-                    <ul class="treeview-menu">
-                        <?php if (!empty($_SESSION['permisos'][3]['r'])) { ?>
-                            <li><a class="treeview-item" href="<?= base_url(); ?>/objetivoseducacionales"><i class="icon fa fa-circle-o"></i>objetivoseducacionales</a></li>
-                        <?php } ?>
 
-                    </ul>
-                </li>
-            <?php } ?>
 
 
 
@@ -200,6 +186,25 @@
                         <i class="app-menu__icon fa fa-sign-out" aria-hidden="true"></i>
                         <span class="app-menu__label">CONFIGURACIÓN</span>
                     </a>
+                </li>
+            <?php } ?> -->
+
+
+            <!------------------------- modulo de administador   ----------------------->
+          
+            <!-- <?php if (!empty($_SESSION['permisos'][50]['r']) || !empty($_SESSION['permisos'][50]['r']) || !empty($_SESSION['permisos'][50]['r'])) { ?>
+                <li class="treeview">
+                    <a class="app-menu__item" href="#" data-toggle="treeview">
+                        <i class="app-menu__icon fas fa-briefcase" aria-hidden="true"></i>
+                        <span class="app-menu__label">objetivoseducacionales</span>
+                        <i class="treeview-indicator fa fa-angle-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <?php if (!empty($_SESSION['permisos'][50]['r'])) { ?>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/objetivoseducacionales"><i class="icon fa fa-circle-o"></i>objetivoseducacionales</a></li>
+                        <?php } ?>
+
+                    </ul>
                 </li>
             <?php } ?> -->
 
