@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', function() {
     datatable = $('#example1').dataTable({
         "aProcessing": true,
         "aServerSide": true,
-        // "language": {
-        //     "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
-        // },
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
+        },
         "ajax": {
             "url": " " + base_url + "/empresaapobarempleoadmin/get",
             "dataSrc": ""
@@ -20,24 +20,19 @@ document.addEventListener('DOMContentLoaded', function() {
             { "data": "titulacionesid" },
             { "data": "FechaInico" },
             { "data": "FechaFin" },
-            { "data": "nombreEmpresa"},
-
+            { "data": "nombreEmpresa"},            
             { "data": "NombrePuesto" },
             { "data": "DescripcionPuesto" },
             { "data": "InformacionAdicional" },
             { "data": "LugarTrabajo" },
             { "data": "TrabajoRemoto" },
             { "data": "NumeroVacantes" },
-
-
             { "data": "Experiencias" },
             { "data": "JornadaLaboral" },
             { "data": "HorasSemanales" },
             { "data": "HorarioTrabajo" },
             { "data": "RemuneracionBruta" },
             { "data": "Contacto" },
-
-
             { "data": "options" }
         ],
 

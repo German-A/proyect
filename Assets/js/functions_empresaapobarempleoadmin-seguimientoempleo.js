@@ -7,22 +7,34 @@ document.addEventListener('DOMContentLoaded', function() {
         "aProcessing": true,
         "aServerSide": true,
         "language": {
-            "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
+             "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
         },
         "ajax": {
-            "url": " " + base_url + "/empresaapobarempleoadmin/getEmpleosRuc",
+            "url": " " + base_url + "/empresaapobarempleoadmin/getSeguimientoEmpleo",
             "dataSrc": ""
         },
         "columns": [
             { "data": "idEmpleos" },
-            { "data": "ruc" },
-            { "data": "nombreEmpresa" },
-            { "data": "Direccion" },
+            { "data": "NombrePuesto" },
+            { "data": "escuelaid" },
+            { "data": "titulacionesid" },
             { "data": "FechaInico" },
             { "data": "FechaFin" },
+            { "data": "nombreEmpresa"},
             { "data": "NombrePuesto" },
+            { "data": "DescripcionPuesto" },
+            { "data": "InformacionAdicional" },
             { "data": "LugarTrabajo" },
+            { "data": "TrabajoRemoto" },
+            { "data": "NumeroVacantes" },
+            { "data": "Experiencias" },
+            { "data": "JornadaLaboral" },
+            { "data": "HorasSemanales" },
+            { "data": "HorarioTrabajo" },
+            { "data": "RemuneracionBruta" },
             { "data": "Contacto" },
+
+
             { "data": "options" }
         ],
 
@@ -62,10 +74,31 @@ window.addEventListener('load', function() {
     //fntRolesUsuario();
 }, false);
 
+//visualizar informacion 
+function fntView(idbtn) {
+
+    let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+    let ajaxUrl = base_url + '/Banner/getone/' + idbtn;
+    request.open("GET", ajaxUrl, true);
+    request.send();
+    request.onreadystatechange = function() {
+        if (request.readyState == 4 && request.status == 200) {
+            let objData = JSON.parse(request.responseText);
+            if (objData.status) {
+                document.querySelector("#vnombreArchivo").value = objData.data.Nombre;
+                document.querySelector("#vposicion").value = objData.data.Posicion;
+                console.log(objData.data.Nombre);
+                $('#modalView').modal('show');
+            } else {
+                swal("Error", objData.msg, "error");
+            }
+        }
+    }
+}
 
 
 //visualizar Borrar 
-function fntAprobarBanner(idempleo) {
+function fntdifusionempleos(idempleo) {
 
     //let idBanner = idbtn;
     swal({
@@ -81,7 +114,7 @@ function fntAprobarBanner(idempleo) {
 
         if (isConfirm) {
             let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-            let ajaxUrl = base_url + '/empresaapobarempleoadmin/aprobarRucEmpleo/' + idempleo;
+            let ajaxUrl = base_url + '/empresaapobarempleoadmin/aprobarEmpleodifusionempleos/' + idempleo;
             let strData = "idempleo=" + idempleo;
             request.open("POST", ajaxUrl, true);
             request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");

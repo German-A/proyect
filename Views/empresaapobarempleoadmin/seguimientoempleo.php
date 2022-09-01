@@ -10,15 +10,12 @@ getModal('modalEmpresa', $data);
 
 <main class="app-content">
 
-  <div class="app-title">
-
-  </div>
 
   <div class="row">
     <div class="col-12">
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">LISTA DE EMPLEOS PENDIENTES PARA DIFUNDIR</h3>
+          <h3 class="card-title">LISTA DE EMPLEOS POR APROBAR</h3>
         </div>
         <!-- /.card-header -->
         <div class="card-body">
@@ -28,16 +25,17 @@ getModal('modalEmpresa', $data);
                   <th>ID</th>
                   <th>NombrePuesto</th>
                   <th>Escuelas</th>
-                  <th>Titulaciones</th>
-                  <th>Fecha Inico</th>                  
-                  <th>Fecha Fin</th>
-                  <th>Nombre Empresa</th>                  
-                  <th>Nombre Puesto</th>
+                  <th>titulacionesid</th>
+                  <th>FechaInico</th>                  
+                  <th>FechaFin</th>
+                  <th>nombreEmpresa</th>                  
+                  <th>NombrePuesto</th>
                   <th>DescripcionPuesto</th>
                   <th>InformacionAdicional</th>
                   <th>LugarTrabajo</th>                  
                   <th>TrabajoRemoto</th>
                   <th>NumeroVacantes</th>
+
                   <th>Experiencias</th>
                   <th>JornadaLaboral</th>
                   <th>HorasSemanales</th>

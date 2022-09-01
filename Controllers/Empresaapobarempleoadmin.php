@@ -139,11 +139,9 @@ class empresaapobarempleoadmin extends Controllers
 
 
 
-	/*****
-				PAGINA PARA SECRETARIADO
-	*****/
+	/***** PAGINA PARA SECRETARIADO *****/
 
-	//EMPLEOS PARA VALIDAR RUC
+	//PAGINA DE EMPLEOS PARA VALIDAR RUC
 	public function validarruc()
 	{
 		if (empty($_SESSION['permisos'][25]['r'])) {
@@ -151,9 +149,7 @@ class empresaapobarempleoadmin extends Controllers
 		}
 
 		$data = [
-			'page_tag' => 'Empleos-Admin',
-			'page_title' => "Empleos <small>Unidad de Seguimiento del Egresado</small>",
-			'page_name' => "USE-banner",
+			'page_tag' => 'Empleos - Validar Ruc',	
 			'page_functions_js' => "functions_empresaapobarempleoadmin-ruc.js",
 		];
 
@@ -168,37 +164,23 @@ class empresaapobarempleoadmin extends Controllers
 
 			foreach ($arrData as &$line) {
 
-				$btnView = '';
-				$btnEdit = '';
-				$btnDelete = '';
+				$btnAprobar = '';
 				$btnValidar = '';
-
-				//echo $line['idEmpleos'];
 
 				$line['titulacionesid'] = "";
 				$line['escuelaid'] = "";
-
-				$arrTitulaciones = $this->model->listaTitulaciones($line['idEmpleos']);
-				$arrCarreras = $this->model->listaCarreras($line['idEmpleos']);
-
-				foreach ($arrTitulaciones as &$titulaciones) {
-					$line['titulacionesid'] = 	$line['titulacionesid'] . '<h5><span class="badge badge-primary">' . $titulaciones['nombreTitulaciones'] . '</span></h5> ';
-				}
-
-				foreach ($arrCarreras as &$carreras) {
-					$line['escuelaid'] = 	$line['escuelaid'] . '<h5><span class="badge badge-info">' . $carreras['nombreEscuela'] . '</span></h5> ';
-				}
 
 				if ($_SESSION['permisos'][25]['r']) {
 					$btnValidar = '<button class="btn btn-primary" type="button" onclick="buscar(' . $line['ruc'] . ');"><i class="fas fa-plus-circle"></i>Validar Ruc</button>';
 				}
 
 				if ($_SESSION['permisos'][25]['r']) {
-					$btnDelete = '<button class="btn btn-success btn-sm btnDelUsuario" onClick="fntAprobarBanner(' . $line['idEmpleos'] . ')" title="Aprobar Empleo"><i class="fas fa-check-circle"> Confirmar Ruc</i></button>';
+					$btnAprobar = '<button class="btn btn-success btn-sm btnDelUsuario" onClick="fntAprobarBanner(' . $line['idEmpleos'] . ')" title="Aprobar Empleo"><i class="fas fa-check-circle"> Confirmar Ruc</i></button>';
 				} else {
-					$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
+					$btnAprobar = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
 				}
-				$line['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . ' ' . $btnValidar . '</div>';
+
+				$line['options'] = '<div class="text-center">' . $btnAprobar . ' ' . $btnValidar . '</div>';
 			}
 
 			echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
@@ -225,21 +207,18 @@ class empresaapobarempleoadmin extends Controllers
 	}
 
 
-
-	/*PAGINA PARA MARKETING*/
+	/***** PAGINA PARA DIFUSION EMPLEOS *****/
 
 	//PAGINA APROBAR EMPLEO
 	public function difusionempleos()
 	{
-		if (empty($_SESSION['permisosMod']['r'])) {
+		if ($_SESSION['permisos'][26]['r']==0) {
 			header("Location:" . base_url() . '/dashboard');
 		}
 
 		$data = [
-			'page_tag' => 'Empleos-Admin',
-			'page_title' => "Empleos <small>Unidad de Seguimiento del Egresado</small>",
-			'page_name' => "USE-banner",
-			'page_functions_js' => "functions_empresaapobarempleoadmin-marketing.js",
+			'page_tag' => 'Empleos-Difusión',
+			'page_functions_js' => "functions_empresaapobarempleoadmin-difusionempleo.js",
 		];
 
 		$this->views->getView($this, "difusionempleos", $data);
@@ -248,8 +227,8 @@ class empresaapobarempleoadmin extends Controllers
 	//LISTA DE EMPLEOS POR APROBAR
 	public function getdifusionempleos()
 	{
-		if ($_SESSION['permisosMod']['r']) {
-			$arrData = $this->model->listaEmpleos();
+		if ($_SESSION['permisos'][26]['r']) {
+			$arrData = $this->model->listaEmpleosDifusion();
 
 			foreach ($arrData as &$line) {
 
@@ -273,11 +252,8 @@ class empresaapobarempleoadmin extends Controllers
 					$line['escuelaid'] = 	$line['escuelaid'] . '<h5><span class="badge badge-info">' . $carreras['nombreEscuela'] . '</span></h5> ';
 				}
 
-				if ($_SESSION['permisos'][11]['r']) {
-				}
-
-				if ($_SESSION['permisosMod']['u']) {
-					$btnDelete = '<button class="btn btn-success btn-sm btnDelUsuario" onClick="fntAprobarBanner(' . $line['idEmpleos'] . ')" title="Aprobar Empleo"><i class="fas fa-check-circle"></i></button>';
+				if ($_SESSION['permisos'][26]['u']) {
+					$btnDelete = '<button class="btn btn-success btn-sm btnDelUsuario" onClick="fntdifusionempleos(' . $line['idEmpleos'] . ')" title="Aprobar Empleo"><i class="fas fa-check-circle"></i></button>';
 				} else {
 					$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
 				}
@@ -293,11 +269,9 @@ class empresaapobarempleoadmin extends Controllers
 	public function aprobarEmpleodifusionempleos()
 	{
 		if ($_POST) {
-			if ($_SESSION['permisosMod']['d']) {
+			if ($_SESSION['permisos'][26]['r']) {
 				$idempleo = intval($_POST['idempleo']);
-				$requestDelete = $this->model->aprobarEmpleo($idempleo);
-
-
+				$requestDelete = $this->model->difusionCompletado($idempleo);
 				if ($requestDelete) {
 					$arrResponse = array('status' => true, 'msg' => 'Se ha publicado correctamente');
 				} else {
@@ -308,4 +282,62 @@ class empresaapobarempleoadmin extends Controllers
 		}
 		die();
 	}
+
+	//SEGUIMIENTO EMPLEO
+	public function seguimientoempleo()
+	{
+		if ($_SESSION['permisos'][27]['r'] = 0) {
+			header("Location:" . base_url() . '/dashboard');
+		}
+
+		$data = [
+			'page_tag' => 'Empleos-Seguimiento',
+			'page_functions_js' => "functions_empresaapobarempleoadmin-seguimientoempleo.js",
+		];
+
+		$this->views->getView($this, "seguimientoempleo", $data);
+	}
+
+		//LISTA DE EMPLEOS POR APROBAR
+		public function getSeguimientoEmpleo()
+		{
+			if ($_SESSION['permisos'][27]['r']) {
+				$arrData = $this->model->listaSeguimientoEmpleo();
+	
+				foreach ($arrData as &$line) {
+	
+					$btnView = '';
+					$btnEdit = '';
+					$btnDelete = '';
+	
+					//echo $line['idEmpleos'];
+	
+					$line['titulacionesid'] = "";
+					$line['escuelaid'] = "";
+	
+					$arrTitulaciones = $this->model->listaTitulaciones($line['idEmpleos']);
+					$arrCarreras = $this->model->listaCarreras($line['idEmpleos']);
+	
+					foreach ($arrTitulaciones as &$titulaciones) {
+						$line['titulacionesid'] = 	$line['titulacionesid'] . '<h5><span class="badge badge-primary">' . $titulaciones['nombreTitulaciones'] . '</span></h5> ';
+					}
+	
+					foreach ($arrCarreras as &$carreras) {
+						$line['escuelaid'] = 	$line['escuelaid'] . '<h5><span class="badge badge-info">' . $carreras['nombreEscuela'] . '</span></h5> ';
+					}
+	
+					if ($_SESSION['permisos'][26]['u']) {
+						$btnDelete = '<button class="btn btn-success btn-sm btnDelUsuario" onClick="fntdifusionempleos(' . $line['idEmpleos'] . ')" title="Aprobar Empleo"><i class="fas fa-check-circle"></i></button>';
+					} else {
+						$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
+					}
+					$line['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
+				}
+	
+				echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
+			}
+			die();
+		}
+	
+
 }

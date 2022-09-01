@@ -11,24 +11,14 @@ getModal('modalEmpresa', $data);
 <main class="app-content">
 
   <div class="app-title">
-    <div>
-      <h1><i class="fas fa-user-tag"></i> <?= $data['page_title'] ?>
-        <?php if ($_SESSION['permisosMod']['w']) { ?>
-          <button class="btn btn-primary" type="button" onclick="openModal();"><i class="fas fa-plus-circle"></i> Registrar Empresa</button>
-        <?php } ?>
-      </h1>
-    </div>
-    <ul class="app-breadcrumb breadcrumb">
-      <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-      <li class="breadcrumb-item"><a href="<?= base_url(); ?>/empresasadmin"><?= $data['page_title'] ?></a></li>
-    </ul>
+
   </div>
 
   <div class="row">
     <div class="col-12">
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">LISTA DE EMPLEOS POR APROBAR</h3>
+          <h3 class="card-title">LISTA DE EMPLEOS PENDIENTES PARA VALIDAR EL ESTADO ACTUAL DEL RUC</h3>
         </div>
         <!-- /.card-header -->
         <div class="card-body">
@@ -37,10 +27,10 @@ getModal('modalEmpresa', $data);
               <tr>
                 <th>ID</th>
                 <th>ruc</th>
-                <th>nombreEmpresa</th>
-                <th>Direccion</th>
-                <th>FechaInico</th>
-                <th>FechaFin</th>
+                <th>Nombre Empresa</th>
+                <th>Dirección</th>
+                <th>Fecha Inico</th>
+                <th>Fecha Fin</th>
                 <th>Nombre Puesto</th>
                 <th>Lugar Trabajo</th>
                 <th>Contacto</th>

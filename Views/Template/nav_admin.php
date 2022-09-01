@@ -108,20 +108,26 @@
                             <li><a class="treeview-item" href="<?= base_url(); ?>/empresasadmin"><i class="icon fa fa-circle-o"></i>Empresas</a></li>
                         <?php } ?>
 
+                        <?php if (!empty($_SESSION['permisos'][25]['r'])) { ?>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/empresaapobarempleoadmin/validarruc"><i class="icon fa fa-circle-o"></i>Validar Ruc</a></li>
+                        <?php } ?>
+
                         <?php if (!empty($_SESSION['permisos'][12]['r'])) { ?>
                             <li><a class="treeview-item" href="<?= base_url(); ?>/empresaapobarempleoadmin"><i class="icon fa fa-circle-o"></i>Aprobacion Empleos</a></li>
                         <?php } ?>
+
+                        <?php if (!empty($_SESSION['permisos'][26]['r'])) { ?>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/empresaapobarempleoadmin/difusionempleos"><i class="icon fa fa-circle-o"></i>Difusión Empleos</a></li>
+                        <?php } ?>
+
+                        <?php if (!empty($_SESSION['permisos'][27]['r'])) { ?>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/empresaapobarempleoadmin/seguimientoempleo"><i class="icon fa fa-circle-o"></i>Seguimiento Empleos</a></li>
+                        <?php } ?>
+
                         <?php if (!empty($_SESSION['permisos'][12]['r'])) { ?>
                             <li><a class="treeview-item" href="<?= base_url(); ?>/sendcorreo"><i class="icon fa fa-circle-o"></i>Correo</a></li>
                         <?php } ?>
 
-
-                        <?php if (!empty($_SESSION['permisos'][26]['r'])) { ?>
-                            <li><a class="treeview-item" href="<?= base_url(); ?>/empresaapobarempleoadmin/difusionempleos"><i class="icon fa fa-circle-o"></i>Difusion empleos</a></li>
-                        <?php } ?>
-                        <?php if (!empty($_SESSION['permisos'][25]['r'])) { ?>
-                            <li><a class="treeview-item" href="<?= base_url(); ?>/empresaapobarempleoadmin/validarruc"><i class="icon fa fa-circle-o"></i>Validar Ruc</a></li>
-                        <?php } ?>
                     </ul>
                 </li>
             <?php } ?>

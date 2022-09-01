@@ -6,11 +6,11 @@ document.addEventListener('DOMContentLoaded', function() {
     datatable = $('#example1').dataTable({
         "aProcessing": true,
         "aServerSide": true,
-        // "language": {
-        //     "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
-        // },
+        "language": {
+             "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
+        },
         "ajax": {
-            "url": " " + base_url + "/empresaapobarempleoadmin/get",
+            "url": " " + base_url + "/empresaapobarempleoadmin/getdifusionempleos",
             "dataSrc": ""
         },
         "columns": [
@@ -21,15 +21,12 @@ document.addEventListener('DOMContentLoaded', function() {
             { "data": "FechaInico" },
             { "data": "FechaFin" },
             { "data": "nombreEmpresa"},
-
             { "data": "NombrePuesto" },
             { "data": "DescripcionPuesto" },
             { "data": "InformacionAdicional" },
             { "data": "LugarTrabajo" },
             { "data": "TrabajoRemoto" },
             { "data": "NumeroVacantes" },
-
-
             { "data": "Experiencias" },
             { "data": "JornadaLaboral" },
             { "data": "HorasSemanales" },
@@ -101,7 +98,7 @@ function fntView(idbtn) {
 
 
 //visualizar Borrar 
-function fntAprobarBanner(idempleo) {
+function fntdifusionempleos(idempleo) {
 
     //let idBanner = idbtn;
     swal({
@@ -117,7 +114,7 @@ function fntAprobarBanner(idempleo) {
 
         if (isConfirm) {
             let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-            let ajaxUrl = base_url + '/empresaapobarempleoadmin/aprobarEmpleo/' + idempleo;
+            let ajaxUrl = base_url + '/empresaapobarempleoadmin/aprobarEmpleodifusionempleos/' + idempleo;
             let strData = "idempleo=" + idempleo;
             request.open("POST", ajaxUrl, true);
             request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
