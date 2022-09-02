@@ -24,7 +24,7 @@
 		public function selectPermisosRol(int $idrol)
 		{
 			$this->intRolid = $idrol;
-			$sql = "SELECT * FROM permisos WHERE rolid = $this->intRolid";
+			$sql = "SELECT * FROM permisos WHERE rolid = $this->intRolid order by moduloid asc";
 			$request = $this->select_all($sql);
 			return $request;
 		}
@@ -62,13 +62,20 @@
 					FROM permisos p 
 					INNER JOIN modulo m
 					ON p.moduloid = m.idmodulo
-					WHERE p.rolid = $this->intRolid and status>0";
+					WHERE p.rolid = $this->intRolid";
 			$request = $this->select_all($sql);
 			$arrPermisos = array();
 			for ($i=0; $i < count($request); $i++) { 
 				$arrPermisos[$request[$i]['moduloid']] = $request[$i];
 			}
 			return $arrPermisos;
+		}
+
+		public function getRol(int $idrol){
+			$this->intRolid = $idrol;
+			$sql = "SELECT * FROM rol WHERE idrol = $this->intRolid";
+			$request = $this->select($sql);
+			return $request;
 		}
 	}
  ?>

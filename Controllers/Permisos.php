@@ -1,6 +1,6 @@
 <?php 
 
-	class Permisos extends Controllers{
+	class permisos extends Controllers{
 		public function __construct()
 		{
 			parent::__construct();
@@ -13,8 +13,9 @@
 			{
 				$arrModulos = $this->model->selectModulos();
 				$arrPermisosRol = $this->model->selectPermisosRol($rolid);
+				$arrRol = $this->model->getRol($rolid);
 				$arrPermisos = array('r' => 0, 'w' => 0, 'u' => 0, 'd' => 0);
-				$arrPermisoRol = array('idrol' => $rolid );
+				$arrPermisoRol = array('idrol' => $rolid, 'rol' => $arrRol['nombrerol']);
 
 				if(empty($arrPermisosRol))
 				{
@@ -25,7 +26,7 @@
 				}else{
 					for ($i=0; $i < count($arrModulos); $i++) {
 						$arrPermisos = array('r' => 0, 'w' => 0, 'u' => 0, 'd' => 0);
-						if(isset($arrPermisosRol[$i])){
+						if($arrPermisosRol[$i]){
 							$arrPermisos = array('r' => $arrPermisosRol[$i]['r'], 
 												 'w' => $arrPermisosRol[$i]['w'], 
 												 'u' => $arrPermisosRol[$i]['u'], 
@@ -37,8 +38,6 @@
 				}
 				$arrPermisoRol['modulos'] = $arrModulos;
 				$html = getModal("modalPermisos",$arrPermisoRol);
-				//dep($arrPermisoRol);
-
 			}
 			die();
 		}
