@@ -49,16 +49,16 @@
                 <li class="treeview">
                     <a class="app-menu__item" href="#" data-toggle="treeview">
                         <i class="app-menu__icon fas fa-upload" aria-hidden="true"></i>
-                        <span class="app-menu__label">PAGINA-WEB</span>
+                        <span class="app-menu__label">Página Web</span>
                         <i class="treeview-indicator fa fa-angle-right"></i>
                     </a>
                     <ul class="treeview-menu">
 
                         <?php if (!empty($_SESSION['permisos'][3]['r'])) { ?>
-                            <li><a class="treeview-item" href="<?= base_url(); ?>/banner"><i class="icon fa fa-circle-o"></i> banner</a></li>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/banner"><i class="icon fa fa-circle-o"></i> Banner</a></li>
                         <?php } ?>
                         <?php if (!empty($_SESSION['permisos'][4]['r'])) { ?>
-                            <li><a class="treeview-item" href="<?= base_url(); ?>/manualesyguias"><i class="icon fa fa-circle-o"></i> manualesyguias</a></li>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/manualesyguias"><i class="icon fa fa-circle-o"></i> Manuales y guias</a></li>
                         <?php } ?>
                         <?php if (!empty($_SESSION['permisos'][5]['r'])) { ?>
                             <li><a class="treeview-item" href="<?= base_url(); ?>/legalnacional"><i class="icon fa fa-circle-o"></i>Normativa Nacional</a></li>
@@ -70,17 +70,17 @@
                             <li><a class="treeview-item" href="<?= base_url(); ?>/cursosmoocintranet"><i class="icon fa fa-circle-o"></i> cursosmoocintranet</a></li>
                         <?php } ?> -->
                         <?php if (!empty($_SESSION['permisos'][21]['r'])) { ?>
-                            <li><a class="treeview-item" href="<?= base_url(); ?>/Bannervida2022"><i class="icon fa fa-circle-o"></i> Bannervida2022</a></li>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/Bannervida2022"><i class="icon fa fa-circle-o"></i> Banner Vida2022</a></li>
                         <?php } ?>
                         <?php if (!empty($_SESSION['permisos'][22]['r'])) { ?>
-                            <li><a class="treeview-item" href="<?= base_url(); ?>/galeriavida2022"><i class="icon fa fa-circle-o"></i> galeriavida2022</a></li>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/galeriavida2022"><i class="icon fa fa-circle-o"></i> Galeria vida2022</a></li>
                         <?php } ?>
                         <?php if (!empty($_SESSION['permisos'][23]['r'])) { ?>
                             <li><a class="treeview-item" href="<?= base_url(); ?>/especialidades"><i class="icon fa fa-circle-o"></i>Trasnparencia</a></li>
                         <?php } ?>
 
                         <li><a class="treeview-item" href="<?= base_url(); ?>/encuestaempresasadmin"><i class="icon fa fa-circle-o"></i>encuestaempresasadmin</a></li>
-                        <li><a class="treeview-item" href="<?= base_url(); ?>/Libroreclamacionesadmin"><i class="icon fa fa-circle-o"></i>Libroreclamacionesadmin</a></li>
+                        <li><a class="treeview-item" href="<?= base_url(); ?>/Libroreclamacionesadmin"><i class="icon fa fa-circle-o"></i>Libroreclamaciones</a></li>
 
 
                     </ul>
@@ -92,17 +92,18 @@
                 !empty($_SESSION['permisos'][8]['r']) || !empty($_SESSION['permisos'][9]['r'])
                 || !empty($_SESSION['permisos'][12]['r'])
                 ||  !empty($_SESSION['permisos'][25]['r']) ||  !empty($_SESSION['permisos'][26]['r'])
+                ||  !empty($_SESSION['permisos'][27]['r'])
 
             ) { ?>
                 <li class="treeview">
                     <a class="app-menu__item" href="#" data-toggle="treeview">
                         <i class="app-menu__icon fas fa-briefcase" aria-hidden="true"></i>
-                        <span class="app-menu__label">Expoferia-ADMIN</span>
+                        <span class="app-menu__label">Expoferia</span>
                         <i class="treeview-indicator fa fa-angle-right"></i>
                     </a>
                     <ul class="treeview-menu">
                         <?php if (!empty($_SESSION['permisos'][8]['r'])) { ?>
-                            <li><a class="treeview-item" href="<?= base_url(); ?>/registroegresado"><i class="icon fa fa-circle-o"></i>Egresado</a></li>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/registroegresado"><i class="icon fa fa-circle-o"></i>Egresados</a></li>
                         <?php } ?>
                         <?php if (!empty($_SESSION['permisos'][9]['r'])) { ?>
                             <li><a class="treeview-item" href="<?= base_url(); ?>/empresasadmin"><i class="icon fa fa-circle-o"></i>Empresas</a></li>

@@ -16,12 +16,12 @@ document.addEventListener('DOMContentLoaded', function() {
         "columns": [
             { "data": "idEmpleos" },
             { "data": "NombrePuesto" },
+            { "data": "status" },
             { "data": "escuelaid" },
             { "data": "titulacionesid" },
             { "data": "FechaInico" },
             { "data": "FechaFin" },
             { "data": "nombreEmpresa"},
-            { "data": "NombrePuesto" },
             { "data": "DescripcionPuesto" },
             { "data": "InformacionAdicional" },
             { "data": "LugarTrabajo" },
@@ -33,32 +33,8 @@ document.addEventListener('DOMContentLoaded', function() {
             { "data": "HorarioTrabajo" },
             { "data": "RemuneracionBruta" },
             { "data": "Contacto" },
-
-
             { "data": "options" }
         ],
-
-        'buttons': [{
-            "extend": "copyHtml5",
-            "text": "<i class='far fa-copy'></i> Copiar",
-            "titleAttr": "Copiar",
-            "className": "btn btn-secondary"
-        }, {
-            "extend": "excelHtml5",
-            "text": "<i class='fas fa-file-excel'></i> Excel",
-            "titleAttr": "Esportar a Excel",
-            "className": "btn btn-success"
-        }, {
-            "extend": "pdfHtml5",
-            "text": "<i class='fas fa-file-pdf'></i> PDF",
-            "titleAttr": "Esportar a PDF",
-            "className": "btn btn-danger"
-        }, {
-            "extend": "csvHtml5",
-            "text": "<i class='fas fa-file-csv'></i> CSV",
-            "titleAttr": "Esportar a CSV",
-            "className": "btn btn-info"
-        }],
         "resonsieve": "true",
         "responsive": true,
         "bDestroy": true,

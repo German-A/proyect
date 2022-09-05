@@ -13,13 +13,7 @@ $n = 1;
 
 ?>
 <br><br>
-<div style="margin: auto; max-width: 85%;">
-    <br>
-<!-- 
-    <div class="col-md-10 r m-auto">
-        <h3 class="blueoscuro">Normativa</h3>
-    </div> -->
-
+<div style="max-width: 40%;">
     <br>
     <div class="col-md-10 r m-auto">
         <h3 class="blueoscuro">Normativa Nacional</h3>
@@ -51,7 +45,7 @@ $n = 1;
         <div class="col-md-10  m-auto">
             <?php foreach ($perfiless as $key => $fila) { ?>
                 <a class="col-md-12 ml-2 btn btn-outline-warning pl-5 pr-5 m-2  d-flex justify-content-center" href="<?= media(); ?>/archivos/documentoslegales/<?php echo $fila['NombreArchivo']  ?>" target="_blank">
-                    <h1 class="text-danger" >  <img style="max-height: 40px;"  src="<?= media(); ?>/archivos/logos/word.png" alt="">   </h1>
+                    <h1 class="text-danger"> <img style="max-height: 40px;" src="<?= media(); ?>/archivos/logos/word.png" alt=""> </h1>
                     <div class="col-11">
                         <h5 class=""><?php echo $fila['Nombre'] ?></h5>
                     </div>
@@ -72,8 +66,13 @@ $n = 1;
 </div>
 
 
+<div style="max-width: 60%;">
+<object class="pdfview" type="application/pdf" id="video_id"  data="http://localhost/use/Assets/archivos/documentoslegales/0Reporte2Mayo2010.pdf"></object>
+</div>
 
+<div class="row"> 
 
+</div>
 
 
 <?php footer($data); ?>
