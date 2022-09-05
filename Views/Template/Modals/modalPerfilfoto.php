@@ -20,7 +20,7 @@
               <h5>Foto de Perfil</h5>
               <?php
               if (isset($_SESSION['userData']['imagen'])) { ?>
-                <img class="user-img" src="<?= media() . '/archivos/egresados/' . $_SESSION['userData']['imagen']; ?>" style="max-width: 120px; max-height: 100px; min-width: 120px; min-height: 100px;">
+                <img class="user-img" src="<?= media() . '/archivos/usuarios/' . $_SESSION['userData']['imagen']; ?>" style="max-width: 120px; max-height: 100px; min-width: 120px; min-height: 100px;">
               <?php } else { ?>
                 <img class="user-img" src="<?= media() ?>/images/avatar.png" style="max-width: 120px; max-height: 100px; min-width: 120px; min-height: 100px;">
               <?php } ?><br>
@@ -33,21 +33,13 @@
               <hr>
             </div>
 
-            <div class="col-12 col-md-4 d-flex justify-content-end">
-    
+            <div class="col-12 col-md-4 d-flex justify-content-end">    
                 <button id="btnActionForm" class="btn btn-info" type="submit" style="max-height: 40px;"><i class="fa fa-fw fa-lg fa-check-circle"></i><span id="btnText">Actualizar</span></button>&nbsp;&nbsp;&nbsp;
                 <button class="btn btn-danger" type="button" data-dismiss="modal" style="max-height: 40px;"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cerrar</button>
-            
-   
-
             </div>
 
 
-
-
           </div>
-
-
         </form>
       </div>
     </div>

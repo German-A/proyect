@@ -187,18 +187,28 @@
                 </li>
             <?php } ?>
 
-            <!-- <?php if (!empty($_SESSION['permisos'][25]['r'])) { ?>
+            <?php if (!empty($_SESSION['permisos'][28]['r'])) { ?>
                 <li>
                     <a class="app-menu__item" href="<?= base_url(); ?>/usuarios/perfilUsuario">
                         <i class="app-menu__icon fa fa-sign-out" aria-hidden="true"></i>
                         <span class="app-menu__label">CONFIGURACIÓN</span>
                     </a>
                 </li>
-            <?php } ?> -->
+            <?php } ?>
 
+            
+            <?php if (!empty($_SESSION['permisos'][28]['r'])) { ?>
+                <li>
+                    <a class="app-menu__item" href="<?= base_url(); ?>/configuracion/configuracionegresado">
+                        <i class="app-menu__icon fa fa-sign-out" aria-hidden="true"></i>
+                        <span class="app-menu__label">configuracion egresado</span>
+                    </a>
+                </li>
+            <?php } ?>
+            
 
             <!------------------------- modulo de administador   ----------------------->
-          
+
             <!-- <?php if (!empty($_SESSION['permisos'][50]['r']) || !empty($_SESSION['permisos'][50]['r']) || !empty($_SESSION['permisos'][50]['r'])) { ?>
                 <li class="treeview">
                     <a class="app-menu__item" href="#" data-toggle="treeview">

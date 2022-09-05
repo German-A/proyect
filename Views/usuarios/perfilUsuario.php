@@ -120,3 +120,50 @@ getModal('modalPerfilFoto', $data);
     </div>
 </main>
 <?php footerAdmin($data); ?>
+
+
+<script>
+  $(document).ready(function() {
+
+    $.ajax({
+      method: "POST",
+      url: "" + base_url + "/usuarios/registrarempleoEmpresa",
+      //data: datax
+      data: fd,
+      processData: false, // tell jQuery not to process the data
+      contentType: false // tell jQuery not to set contentType
+
+    }).done(function(response) {
+      var info = JSON.parse(response);
+      console.log(info);
+      divLoading.style.display = "none";
+      if (info.status == true) {
+        listado =
+          `
+            <div class="text-center  mb-2">
+              <h5 class="azul">` + info.msg + `</h5>
+            </div>                          
+          `;
+        $("#correoweb").html(listado);
+      }
+      if (info.status == false) {
+        console.log(info.status);
+        listado =
+          `
+                            <div class="text-center  mb-2">
+                                <h5 class="azul">` + info.msg + `</h5>
+                            </div>                          
+                        `;
+        $("#correoweb").html(listado);
+      }
+      $('#modalPerfiles').modal('show');
+      //swal("Atención!", "TERMINADO", "warning");
+      //window.location.href = "" + base_url + "/empresaempleoadmin/empresaempleoadmin/" + idEmpresa + "";
+    });
+
+
+
+
+
+  });
+</script>

@@ -137,7 +137,7 @@ class registroegresado extends Controllers
 					}
 				}
 				$imagen = 'ver imagen';
-				$arrData[$i]['imagen'] = '<a href="' . base_url() . '/Assets/archivos/egresados/' . $arrData[$i]['imagen'] . '"target="_blank"><span class="badge badge-primary"  >' . $imagen . '</span></a> ';
+				$arrData[$i]['imagen'] = '<a href="' . base_url() . '/Assets/archivos/usuarios/' . $arrData[$i]['imagen'] . '"target="_blank"><span class="badge badge-primary"  >' . $imagen . '</span></a> ';
 				$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
 			}
 			echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
@@ -184,7 +184,7 @@ class registroegresado extends Controllers
 						if (!file_exists('Assets/archivos/egresados/')) {
 							mkdir('Assets/archivos/egresados/', 0777, true);
 							if (file_exists('Assets/archivos/egresados/')) {
-								if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/egresados/' . $imagen)) {
+								if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/usuarios/' . $imagen)) {
 									$iduser = $this->model->agregarusuario($nombres, $apellidop, $apellidom, $email_user, $password, $imagen, $dni, $telefono);
 									$insert = $this->model->agregaregresado($numeroMatricula, $direccion, $telefonoFijo, $sexo, $idescuela, $idsede, $iduser);
 								} else {
@@ -192,7 +192,7 @@ class registroegresado extends Controllers
 								}
 							}
 						} else {
-							if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/egresados/' . $imagen)) {
+							if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/usuarios/' . $imagen)) {
 								$iduser = $this->model->agregarusuario($nombres, $apellidop, $apellidom, $email_user, $password, $imagen, $dni, $telefono);
 								$insert = $this->model->agregaregresado($numeroMatricula, $direccion, $telefonoFijo, $sexo, $idescuela, $idsede, $iduser);
 							} else {

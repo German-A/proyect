@@ -66,7 +66,7 @@
 		public function sessionEgresado(int $iduser){
 			$this->intIdUsuario = $iduser;
 			//BUSCAR ROLE 
-			$sql = "SELECT e. 
+			$sql = "SELECT e.* 
 			FROM usuario u
 			inner join egresado e
 			on u.idpersona = e.personaid

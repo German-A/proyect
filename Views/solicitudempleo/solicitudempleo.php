@@ -330,7 +330,6 @@
 
 
         if (ruc == 0) {
-            console.log('paso');
             swal("Atención!", "Debe Ingresar el número de Ruc", "warning");
             return;
         }
