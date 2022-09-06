@@ -50,6 +50,15 @@ class HomeModel extends Mysql
 		return $request;
 	}
 
+	public function selectprimeraBase()
+	{
+
+		$sql = "SELECT NombreArchivo FROM basenacional WHERE Habilitado ='1' ORDER BY IdNacional ASC LIMIT 1";
+		$request = $this->select_all($sql);
+		return $request;
+	}
+
+
 	public function selectLegal()
 	{
 
