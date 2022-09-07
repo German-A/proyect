@@ -20,6 +20,21 @@
 			return $request;
 		}
 
+			/*Actualizar Datos del Egresado Foto*/
+	public function updateFoto(int $idUsuario,  string $nuevonombre)
+	{
+		$this->intIdUsuario = $idUsuario;
+		$this->strNombre = $nuevonombre;
+		$sql = "UPDATE usuario SET  imagen=?
+		WHERE idpersona = $this->intIdUsuario ";
+		$arrData = array(
+			$this->strNombre
+		);
+
+		$request = $this->update($sql, $arrData);
+		return $request;
+	}
+
 
 
 
@@ -102,5 +117,6 @@
 			return $request;
 		}
 
+
+
 	}
- ?>

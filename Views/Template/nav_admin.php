@@ -5,7 +5,7 @@
             <?php if (empty($_SESSION['userData']['imagen'])) { ?>
                 <img class="app-sidebar__user-avatar img-fluid" src="<?= media(); ?>/images/avatar.png" alt="User Image">
             <?php } else { ?>
-                <img class="app-sidebar__user-avatar img-fluid" src="<?= media(); ?>/archivos/empresa/<?= $_SESSION['userData']['imagen'] ?>" alt="User Image">
+                <img class="app-sidebar__user-avatar img-fluid" src="<?= media(); ?>/archivos/usuarios/<?= $_SESSION['userData']['imagen'] ?>" alt="User Image">
             <?php } ?>
 
             <div>
