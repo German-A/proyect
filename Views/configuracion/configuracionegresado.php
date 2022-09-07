@@ -82,25 +82,22 @@ getModal('modalPerfilFoto', $data);
 
 
           <div class="form-row">
-            <div class="form-group col-md-10">
+            <div class="form-group col-md-12">
               <label for="txtTitulo">Titulo</label>
               <input type="text" class="form-control" id="txtTitulo" name="txtTitulo" required="">
             </div>
-            <div class="form-group col-md-2">
-              <label for="txtInstitucion">Institución</label>
-              <input type="text" class="form-control" id="txtInstitucion" name="txtInstitucion" required="">
-            </div>
+         
           </div>
 
           <div class="form-row">
-            
-            <div class="form-group col-md-10">
-              <label for="txtAreaEstudio">Área de estudio</label>
-              <input type="text" class="form-control" id="txtAreaEstudio" name="txtAreaEstudio" required="">
-            </div>
 
+          <div class="form-group col-md-10">
+              <label for="txtInstitucion">Institución</label>
+              <input type="text" class="form-control" id="txtInstitucion" name="txtInstitucion" required="">
+            </div>
+  
             <div class="form-group col-md-2">
-              <label for="txtTipo">Tipo</label>
+              <label for="txtTipo">Tipo</label><br>
               <select class="form-control select2" name="txtTipo" id="txtTipo" >
                 <option disabled selected>Seleccionar</option>
                 <option value="1">Diplomado</option>

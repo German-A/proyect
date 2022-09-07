@@ -35,6 +35,42 @@
 		return $request;
 	}
 
+		/*Actualizar Datos del Egresado*/
+		public function updatePerfil(int $idUsuario,  string $nombre, string $strApellidop, string $strApellidom, string $telefono, string $strPassword)
+		{
+			$this->intIdUsuario = $idUsuario;
+			$this->strNombre = $nombre;
+			$this->strApellidop = $strApellidop;
+			$this->strApellidom = $strApellidom;
+			$this->strTelefono = $telefono;
+			$this->strPassword = $strPassword;
+	
+	
+			if ($this->strPassword != "") {
+				$sql = "UPDATE usuario SET  nombres=?, apellidop=?, apellidom=?, telefono=?, password=? 
+							WHERE idpersona = $this->intIdUsuario ";
+				$arrData = array(
+					$this->strNombre,
+					$this->strApellidop,
+					$this->strApellidom,
+					$this->strTelefono,
+					$this->strPassword
+				);
+			} else {
+				$sql = "UPDATE usuario SET nombres=?, apellidop=?,  apellidom=?,telefono=? 
+							WHERE idpersona = $this->intIdUsuario ";
+				$arrData = array(
+					$this->strNombre,
+					$this->strApellidop,
+					$this->strApellidom,
+					$this->strTelefono
+				);
+			}
+			$request = $this->update($sql, $arrData);
+			return $request;
+		}
+	
+
 
 
 
