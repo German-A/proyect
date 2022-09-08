@@ -86,29 +86,94 @@ getModal('modalPerfilFoto', $data);
               <label for="txtTitulo">Titulo</label>
               <input type="text" class="form-control" id="txtTitulo" name="txtTitulo" required="">
             </div>
-         
           </div>
 
           <div class="form-row">
-
-          <div class="form-group col-md-10">
+            <div class="form-group col-md-10">
               <label for="txtInstitucion">Institución</label>
               <input type="text" class="form-control" id="txtInstitucion" name="txtInstitucion" required="">
             </div>
-  
             <div class="form-group col-md-2">
               <label for="txtTipo">Tipo</label><br>
-              <select class="form-control select2" name="txtTipo" id="txtTipo" >
+              <select class="form-control select2" name="txtTipo" id="txtTipo" style="width: 100%">
                 <option disabled selected>Seleccionar</option>
                 <option value="1">Diplomado</option>
                 <option value="2">Magister</option>
               </select>
             </div>
-            
           </div>
 
+          <div class="form-row">
+            <div class="form-group col-md-2">
+              <label for="txtCursando">¿Estás cursando?</label>
+              <select class="form-control select2" name="txtCursando" id="txtCursando" style="width: 100%">
+                <option disabled selected>Seleccionar</option>
+                <option value="1">Si</option>
+                <option value="2">No</option>
+              </select>
+            </div>
 
+            <div class="form-group col-md-2">
+              <label for="txtCursando">Desde</label>
+              <select class="form-control select2" name="txtCursando" id="txtCursando" style="width: 100%">
+                <option disabled selected>Seleccionar</option>
+                <option value="2000">2000</option>
+                <option value="2001">2001</option>
+                <option value="2002">2002</option>
+                <option value="2003">2003</option>
+                <option value="2004">2004</option>
+                <option value="2005">2005</option>
+                <option value="2006">2006</option>
+                <option value="2007">2007</option>
+                <option value="2008">2008</option>
+                <option value="2009">2009</option>
+                <option value="2010">2010</option>
+                <option value="2011">2011</option>
+                <option value="2012">2012</option>
+                <option value="2013">2013</option>
+                <option value="2014">2014</option>
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+              </select>
+            </div>
 
+            <div class="form-group col-md-2">
+              <label for="txtCursando">Hasta</label>
+              <select class="form-control select2" name="txtCursando" id="txtCursando" style="width: 100%">
+                <option disabled selected>Seleccionar</option>
+                <option value="2000">2000</option>
+                <option value="2001">2001</option>
+                <option value="2002">2002</option>
+                <option value="2003">2003</option>
+                <option value="2004">2004</option>
+                <option value="2005">2005</option>
+                <option value="2006">2006</option>
+                <option value="2007">2007</option>
+                <option value="2008">2008</option>
+                <option value="2009">2009</option>
+                <option value="2010">2010</option>
+                <option value="2011">2011</option>
+                <option value="2012">2012</option>
+                <option value="2013">2013</option>
+                <option value="2014">2014</option>
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+              </select>
+            </div>
+
+          </div>
 
           <div class="tile-footer">
             <button id="btnPostgrado" class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i><span id="btnText">Guardar</span></button>&nbsp;&nbsp;&nbsp;
@@ -119,8 +184,6 @@ getModal('modalPerfilFoto', $data);
     </div>
   </div>
 </div>
-
-
 
 
 
