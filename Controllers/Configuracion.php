@@ -128,6 +128,43 @@ class configuracion extends Controllers
 	}
 
 
+	public function postgradoegresado(){
+		if ($_POST) {
+			if (empty($_POST['txtNombre']) || empty($_POST['txtApellidop']) || empty($_POST['txtApellidom'])) {
+				$arrResponse = array("status" => false, "msg" => 'Los campos con (*) no pueden estar vacios.');
+			} else {
+				$idUsuario = strClean($_POST['idUsuario']);
+				$strNombre = strClean($_POST['txtNombre']);
+				$strApellidop = strClean($_POST['txtApellidop']);
+				$strApellidom = strClean($_POST['txtApellidom']);
+				$strTelefono = strClean($_POST['txtTelefono']);
+
+				$strPassword = strClean($_POST['txtPassword']);
+
+				// if (!empty($_POST['txtPassword'])) {
+				// 	$strPassword = hash("SHA256", $_POST['txtPassword']);
+				// }
+				$request_user = $this->model->updatePerfil(
+					$idUsuario,
+					$strNombre,
+					$strApellidop,
+					$strApellidom,
+					$strTelefono,
+					$strPassword
+				);
+				if ($request_user) {
+					//	sessionUser($_SESSION['idUser']);
+					$arrResponse = array('status' => true, 'msg' => 'Datos Actualizados correctamente.');
+				} else {
+					$arrResponse = array("status" => false, "msg" => 'No es posible actualizar los datos.');
+				}
+
+				echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+			}
+			die();
+		}
+
+	}
 
 
 

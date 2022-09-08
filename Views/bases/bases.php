@@ -59,7 +59,7 @@ $n = 1;
 </style>
 
 
-<div class="row text-center" style="max-width: 1200px;">
+<div class="row text-center" style="max-width: 1200px; margin:auto">
 
     <br><br>
     <div class="col-12  col-lg-4">

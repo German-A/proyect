@@ -45,7 +45,7 @@ getModal('modalPerfilFoto', $data);
 
         <h5>POSTGRADO</h5>
 
-        <a href="javascrip:void(0)" class="btn btn-sm btn-warning" onclick="agregarPostrado()">Agregar</a>
+        <a href="javascript:void(0)" class="btn btn-sm btn-warning" onclick="agregarPostrado()">Agregar</a>
 
       </div>
 
@@ -65,7 +65,7 @@ getModal('modalPerfilFoto', $data);
 
 
 
-<!-- Modal -->
+<!-- Modal  agregarPostrado-->
 <div class="modal fade" id="modalRegistroPostgrado" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
@@ -114,8 +114,8 @@ getModal('modalPerfilFoto', $data);
             </div>
 
             <div class="form-group col-md-2">
-              <label for="txtCursando">Desde</label>
-              <select class="form-control select2" name="txtCursando" id="txtCursando" style="width: 100%">
+              <label for="txtDesde">Desde</label>
+              <select class="form-control select2" name="txtDesde" id="txtDesde" style="width: 100%">
                 <option disabled selected>Seleccionar</option>
                 <option value="2000">2000</option>
                 <option value="2001">2001</option>
@@ -144,8 +144,8 @@ getModal('modalPerfilFoto', $data);
             </div>
 
             <div class="form-group col-md-2">
-              <label for="txtCursando">Hasta</label>
-              <select class="form-control select2" name="txtCursando" id="txtCursando" style="width: 100%">
+              <label for="txtHasta">Hasta</label>
+              <select class="form-control select2" name="txtHasta" id="txtHasta" style="width: 100%">
                 <option disabled selected>Seleccionar</option>
                 <option value="2000">2000</option>
                 <option value="2001">2001</option>
@@ -176,7 +176,7 @@ getModal('modalPerfilFoto', $data);
           </div>
 
           <div class="tile-footer">
-            <button id="btnPostgrado" class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i><span id="btnText">Guardar</span></button>&nbsp;&nbsp;&nbsp;
+            <a href="javascript:void(0)" class="btn btn-info" id="btnPostgrado" onclick="GuardarPostgrado()">Guardar</a>&nbsp;&nbsp;&nbsp;
             <button class="btn btn-danger" type="button" data-dismiss="modal"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cerrar</button>
           </div>
         </form>
@@ -336,6 +336,37 @@ getModal('modalPerfilFoto', $data);
     $('#modalRegistroPostgrado').modal('show');
   }
 
+
+  function GuardarPostgrado() {
+    var txtTitulo = $("#txtTitulo").val();
+    var txtInstitucion = $("#txtInstitucion").val();
+    var txtTipo = $("#txtTipo").val();
+    var txtCursando = $("#txtCursando").val();
+    var txtDesde = $("#txtDesde").val();
+    var txtHasta = $("#txtHasta").val();
+
+    if (txtTitulo == '') {
+      swal("Atención!", "Ingresar el Titulo", "warning");
+      return;
+    }
+    if (txtInstitucion == '') {
+      swal("Atención!", "Ingresar la Institución", "warning");
+      return;
+    }
+    if (txtTipo == '') {
+      swal("Atención!", "Seleccionar el Tipo", "warning");
+      return;
+    }
+    if (txtCursando == '') {
+      swal("Atención!", "Seleccionar si esta aun esta Cursando", "warning");
+      return;
+    }
+    if (txtDesde == '') {
+      swal("Atención!", "Seleccionar la Fecha Inicial", "warning");
+      return;
+    }
+    console.log('sdsd');
+  }
 
   $(document).ready(function() {
     datosEgresado();
