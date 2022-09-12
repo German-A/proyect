@@ -44,8 +44,11 @@ getModal('modalPerfilFoto', $data);
       <div class="col-6">
 
         <h5>POSTGRADO</h5>
+        <div id="listaPostgrados">
 
-        <a href="javascript:void(0)" class="btn btn-sm btn-warning" onclick="agregarPostrado()">Agregar</a>
+        </div>
+
+        <a href="javascript:void(0)" class="btn btn-sm btn-warning" onclick="agregarPostrado();">Agregar</a>
 
       </div>
 
@@ -96,7 +99,7 @@ getModal('modalPerfilFoto', $data);
             <div class="form-group col-md-2">
               <label for="txtTipo">Tipo</label><br>
               <select class="form-control select2" name="txtTipo" id="txtTipo" style="width: 100%">
-                <option disabled selected>Seleccionar</option>
+                <option value="0" disabled selected>Seleccionar</option>
                 <option value="1">Diplomado</option>
                 <option value="2">Magister</option>
               </select>
@@ -107,7 +110,7 @@ getModal('modalPerfilFoto', $data);
             <div class="form-group col-md-2">
               <label for="txtCursando">¿Estás cursando?</label>
               <select class="form-control select2" name="txtCursando" id="txtCursando" style="width: 100%">
-                <option disabled selected>Seleccionar</option>
+                <option value="0" disabled selected>Seleccionar</option>
                 <option value="1">Si</option>
                 <option value="2">No</option>
               </select>
@@ -116,7 +119,7 @@ getModal('modalPerfilFoto', $data);
             <div class="form-group col-md-2">
               <label for="txtDesde">Desde</label>
               <select class="form-control select2" name="txtDesde" id="txtDesde" style="width: 100%">
-                <option disabled selected>Seleccionar</option>
+                <option value="0" disabled selected>Seleccionar</option>
                 <option value="2000">2000</option>
                 <option value="2001">2001</option>
                 <option value="2002">2002</option>
@@ -146,7 +149,7 @@ getModal('modalPerfilFoto', $data);
             <div class="form-group col-md-2">
               <label for="txtHasta">Hasta</label>
               <select class="form-control select2" name="txtHasta" id="txtHasta" style="width: 100%">
-                <option disabled selected>Seleccionar</option>
+                <option value="0" disabled selected>Seleccionar</option>
                 <option value="2000">2000</option>
                 <option value="2001">2001</option>
                 <option value="2002">2002</option>
@@ -333,6 +336,10 @@ getModal('modalPerfilFoto', $data);
     document.querySelector('#btnPostgrado').innerHTML = "Guardar";
     document.querySelector('#titlePostgrado').innerHTML = "POSTGRADO";
     document.querySelector("#formmodalPostgrado").reset();
+    $('#txtTipo').val(0).trigger('change');
+    $('#txtCursando').val(0).trigger('change');
+    $('#txtDesde').val(0).trigger('change');
+    $('#txtHasta').val(0).trigger('change');
     $('#modalRegistroPostgrado').modal('show');
   }
 
@@ -353,23 +360,55 @@ getModal('modalPerfilFoto', $data);
       swal("Atención!", "Ingresar la Institución", "warning");
       return;
     }
-    if (txtTipo == '') {
+    if (txtTipo == '' || txtTipo == null) {
       swal("Atención!", "Seleccionar el Tipo", "warning");
       return;
     }
-    if (txtCursando == '') {
+    if (txtCursando == '' || txtCursando == null) {
       swal("Atención!", "Seleccionar si esta aun esta Cursando", "warning");
       return;
     }
-    if (txtDesde == '') {
+    if (txtDesde == '' || txtDesde == null) {
       swal("Atención!", "Seleccionar la Fecha Inicial", "warning");
       return;
     }
-    console.log('sdsd');
+
+    var fd = new FormData();
+    fd.append("txtTitulo", txtTitulo);
+    fd.append("txtInstitucion", txtInstitucion);
+    fd.append("txtTipo", txtTipo);
+    fd.append("txtCursando", txtCursando);
+    fd.append("txtDesde", txtDesde);
+    fd.append("txtHasta", txtHasta);
+
+    $.ajax({
+      method: "POST",
+      url: "" + base_url + "/configuracion/registrarPostgradp",
+      data: fd,
+      processData: false, // tell jQuery not to process the data
+      contentType: false // tell jQuery not to set contentType
+
+    }).done(function(response) {
+      var info = JSON.parse(response);
+      if (info.status == true) {
+        swal("Registrado", info.msg, "success");
+        $('#txtTipo').val(0).trigger('change');
+        $('#txtCursando').val(0).trigger('change');
+        $('#txtDesde').val(0).trigger('change');
+        $('#txtHasta').val(0).trigger('change');
+        $('#modalRegistroPostgrado').modal("hide");
+      }
+      if (info.status == false) {
+        swal("Error!", info.msg, "error");
+      }
+
+      return;
+    });
   }
 
   $(document).ready(function() {
     datosEgresado();
+    postgrado();
 
     // datosGenerales();
 
@@ -600,8 +639,6 @@ getModal('modalPerfilFoto', $data);
 
 
   function datosEgresado() {
-
-
     $.ajax({
       method: "GET",
       url: "" + base_url + "/configuracion/getoneEgresado",
@@ -620,6 +657,33 @@ getModal('modalPerfilFoto', $data);
       $("#email_user").html(email_user);
       $("#telefono").html(telefono);
       console.log();
+
+    });
+
+  }
+
+  function postgrado() {
+    listado = '';
+    $.ajax({
+      method: "GET",
+      url: "" + base_url + "/configuracion/getPostgrado",
+      //data: datax
+      //data: fd,
+      processData: false, // tell jQuery not to process the data
+      contentType: false // tell jQuery not to set contentType
+
+    }).done(function(response) {
+      var info = JSON.parse(response);
+      for (var i = 0; i < info.length; i++) {
+        listado = listado+ 
+          `<div class="text-center  mb-2">
+            <h5 class="azul">` + info[i].desde + ` - ` + info[i].hasta + ` - ` + info[i].options +`</h5>
+          </div>                          
+        `;
+      }
+      console.log(listado);
+
+      $("#listaPostgrados").html(listado);
 
     });
 

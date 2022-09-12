@@ -5,14 +5,14 @@ class configuracion extends Controllers
 	public function __construct()
 	{
 		session_start();
-		session_regenerate_id(true);
+		//session_regenerate_id(true);
 		parent::__construct();
 		if (empty($_SESSION['login'])) {
 			header('Location: ' . base_url() . '/login');
 		}
 		getPermisos(28);
 	}
-	//pagina Banner
+	//pagina configuracion egresado
 	public function configuracionegresado()
 	{
 		dep($_SESSION['permisos'][28]['u']);
@@ -27,7 +27,7 @@ class configuracion extends Controllers
 		$this->views->getView($this, "configuracionegresado", $data);
 	}
 
-	//obtener un baner para actualizar
+	//obtener datos del egresado
 	public function getoneEgresado()
 	{
 		if ($_SESSION['permisos'][28]['r']) {
@@ -164,6 +164,67 @@ class configuracion extends Controllers
 			die();
 		}
 
+	}
+
+	public function registrarPostgradp(){
+		if ($_POST) {
+			if (empty($_POST['txtTitulo']) || empty($_POST['txtInstitucion']) || empty($_POST['txtTipo'])|| empty($_POST['txtCursando'])|| empty($_POST['txtDesde'])) {
+				$arrResponse = array("status" => false, "msg" => 'Los campos con (*) no pueden estar vacios.');
+			} else {
+				$txtTitulo = strClean($_POST['txtTitulo']);
+				$txtInstitucion = strClean($_POST['txtInstitucion']);
+				$txtTipo = strClean($_POST['txtTipo']);
+				$txtCursando = strClean($_POST['txtCursando']);
+				$txtDesde = strClean($_POST['txtDesde']);
+				$txtHasta = strClean($_POST['txtHasta']);
+				$egresadoid=$_SESSION['Egresado'];
+
+				$request_user = $this->model->setregistrarPostgradp($txtTitulo,$txtInstitucion,$txtTipo,$txtCursando,$txtDesde,$txtHasta,$egresadoid);
+				if ($request_user) {
+					$arrResponse = array('status' => true, 'msg' => 'Datos registrados correctamente.');
+				} else {
+					$arrResponse = array("status" => false, "msg" => 'No es posible registrar los datos.');
+				}
+
+				echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+			}
+			die();
+		}
+
+	}
+
+	/*DATOS DEL POSTGRADO*/
+	public function getPostgrado()
+	{
+		$egresadoid=$_SESSION['Egresado'];
+		if ($_SESSION['permisosMod']['r']) {
+
+			$arrData = $this->model->getPostgrado($egresadoid);
+
+			foreach ($arrData as &$line) {
+
+				$btnView = '';
+				$btnEdit = '';
+				$btnDelete = '';
+				
+				if ($_SESSION['permisos'][28]['r']) {
+					$btnEdit = '<button class="btn btn-primary  btn-sm fntEdit" onClick="fntEdit(this,' . $line['idpostgradoegresado'] . ')" title="Editar Banner"><i class="fas fa-pencil-alt"></i></button>';
+				}else{
+					$btnEdit = '<button class="btn btn-secondary btn-sm" disabled ><i class="fas fa-pencil-alt"></i></button>';
+				}
+
+				if ($_SESSION['permisos'][28]['d']) {
+					$btnDelete = '<button class="btn btn-success btn-sm btnDelUsuario" onClick="fntAprobarBanner(' . $line['idpostgradoegresado'] . ')" title="Aprobar Empleo"><i class="fas fa-check-circle"></i></button>';
+				} else {
+					$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
+				}
+				$line['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
+			}
+
+		
+			echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
+		}
+		die();
 	}
 
 
