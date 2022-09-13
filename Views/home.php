@@ -95,13 +95,13 @@ $legal = $obj->selectLegalInicio();
 
 
   <div class="row d-flex justify-content-around text-center" style="max-width: 80%; margin:auto">
-    <div class="plataform-use  col-md-6 col-lg-4 col-xl-4" data-aos="flip-up">
+    <!-- <div class="plataform-use  col-md-6 col-lg-4 col-xl-4" data-aos="flip-up">
       <a href="<?= base_url(); ?>/manuales">
         <img class="logosplaforma" src="<?= media(); ?>/archivos/logos/cursomooc.png" alt="">
         <br><br>
         <h5 class="text-cursosmooc text-center">CURSOS MOOC</h5>
       </a>
-    </div>
+    </div> -->
     <div class="plataform-use  col-md-6 col-lg-4 col-xl-4" data-aos="flip-down">
       <a href="https://siseu-rep.sineace.gob.pe:6041/login" target="_blank">
         <img class="logosplaforma" src="<?= media(); ?>/archivos/logos/siseu.png" alt="">
@@ -204,7 +204,7 @@ $legal = $obj->selectLegalInicio();
       <div class="col-4 cont-info">
         <br>
         <h6>MARINÉS TRINIDAD<br>RAMÍREZ RODRÍGUEZ</h6>
-        <p><small>COMUNICADOR/DISEÑADOR</small></p>
+        <p><small>COMUNICADORA/DISEÑADORA</small></p>
       </div>
     </div>
 

@@ -677,7 +677,7 @@ getModal('modalPerfilFoto', $data);
       for (var i = 0; i < info.length; i++) {
         listado = listado+ 
           `<div class="text-center  mb-2">
-            <h5 class="azul">` + info[i].desde + ` - ` + info[i].hasta + ` - ` + info[i].options +`</h5>
+            <h5 class="azul">` + info[i].desde + ` - `+ info[i].hasta + ` - ` + info[i].titulo + ` - ` + info[i].options +`</h5>
           </div>                          
         `;
       }
