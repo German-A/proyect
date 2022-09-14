@@ -21,6 +21,8 @@
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
     <!-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" /> -->
     <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/select2.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
 </head>
 
 <style>
@@ -89,9 +91,22 @@
         padding-left: 50px;
     }
 
+    .naveg {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+    }
+
     @media(min-width:1024px) {
         .nav-barxv {
             display: none;
+        }
+
+        .naveg {
+            display: flex;
+            width: 100%;
+            flex-direction: row;
+            justify-content: end;
         }
 
 
@@ -138,7 +153,7 @@
 
             <img class="logo" src="<?= media(); ?>/archivos/logos/uselogoWhite.png" style="height: 50px;">
 
-            <div style="display: flex; width: 100%; flex-direction: row; justify-content: end;">
+            <div class="naveg">
 
                 <li class="menu__itemxv"><a href="" class="menu__linkxv">INICIO</a></li>
                 <li class="menu__itemxv"><a href="" class="menu__linkxv">NOSOTROS</a></li>
@@ -159,27 +174,138 @@
 
     <style>
         .contenedorxv2 {
-            max-width: 2500px;
+
+            margin: 0 auto;
+            text-align: center;
         }
     </style>
+
+    <div class="text-center">
+        <img src="<?= media() ?>/images/expoferiaxv/expoferiaxv2.jpg" style="width: 100%;" alt="">
+        <h1>sdsdsd</h1>
+    </div>
+
 
     <div class="contenedorxv2">
 
 
-        <div class="col-12">
-            <img class="img-fluid" src="<?= media(); ?>\images\expoferiaxv\expoferiaxv2.jpg" alt="">
-        </div>
         <br><br><br><br>
 
         <div class="col-12 text-center">
             <h1>PONENCIAS</h1>
             <br><br>
             <h3>¡Participa de todas nuestras ponencias!</h3>
-
         </div>
-
-
     </div>
+
+
+    <style>
+        html,
+        body {
+            position: relative;
+            height: 100%;
+        }
+
+        body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .swiper {
+            width: 1400px;
+            height: 500px;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 420px;
+            height: 400px;
+        }
+    </style>
+
+
+
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="divexpoxv">
+                    <img src="<?= media(); ?>/images/expoferiaxv/img1.jpg" alt="" />
+                    <div class="textimg">dsfsdf sdf sdfsdf sdfsdfsdf sdfsdfsdfsdf</div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="divexpoxv">
+                    <img src="<?= media(); ?>/images/expoferiaxv/img1.jpg" alt="" />
+                    <div class="textimg">dsfsdf sdf sdfsdf sdfsdfsdf sdfsdfsdfsdf</div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="divexpoxv">
+                    <img src="<?= media(); ?>/images/expoferiaxv/img1.jpg" alt="" />
+                    <div class="textimg">dsfsdf sdf sdfsdf sdfsdfsdf sdfsdfsdfsdf</div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="divexpoxv">
+                    <img src="<?= media(); ?>/images/expoferiaxv/img1.jpg" alt="" />
+                    <div class="textimg">dsfsdf sdf sdfsdf sdfsdfsdf sdfsdfsdfsdf</div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="divexpoxv">
+                    <img src="<?= media(); ?>/images/expoferiaxv/img1.jpg" alt="" />
+                    <div class="textimg">dsfsdf sdf sdfsdf sdfsdfsdf sdfsdfsdfsdf</div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="divexpoxv">
+                    <img src="<?= media(); ?>/images/expoferiaxv/img1.jpg" alt="" />
+                    <div class="textimg">dsfsdf sdf sdfsdf sdfsdfsdf sdfsdfsdfsdf</div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 3,
+            spaceBetween: 70,
+            freeMode: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
+
 
 
 

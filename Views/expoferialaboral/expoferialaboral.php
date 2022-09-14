@@ -153,7 +153,7 @@ $n = 1;
                     <div class="itemY">
                         <h1 data-id=""></h1>
                         <a href="<?= base_url(); ?>/expoferialaboralxv" target="_blank">
-                            <h5>Ciencias Básicas y Tecnológicas (03 al 05 de octubre)</h5>
+                            <h5>Ciencias Básicas y Tecnológicas (04 al 06 de octubre)</h5>
                         </a>
                     </div>
                 </li>
