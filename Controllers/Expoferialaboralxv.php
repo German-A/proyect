@@ -14,15 +14,16 @@
 			$data['page_name'] = "expoferialaboralxv";
 			$this->views->getView($this,"expoferialaboralxv",$data);
 		}
+		
 
 
-		public function inicio()
+		public function nosotros()
 		{
 		
 			$data['page_tag'] = "expoferialaboralxv";
 			$data['page_title'] = "expoferialaboralxv";
 			$data['page_name'] = "expoferialaboralxv";
-			$this->views->getView($this,"expoferialaboralxv",$data);
+			$this->views->getView($this,"nosotros",$data);
 		}
 
 

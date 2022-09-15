@@ -39,6 +39,18 @@ function footer($data = "")
     require_once($view_footer);
 }
 
+function headexpoferiaxv2($data = "")
+{
+    $view_header = "Views/templateexpoferiaxv2/header.php";
+    require_once($view_header);
+}
+function footerexpoferiaxv2($data = "")
+{
+    $view_footer = "Views/templateexpoferiaxv2/footer.php";
+    require_once($view_footer);
+}
+
+
 function obj($data = "")
 {
     $view_header = "Models/HomeModel.php";
