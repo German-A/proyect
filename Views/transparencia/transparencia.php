@@ -168,7 +168,7 @@ $idmaestria = $año->listaFacultadpostgrado();
     </div>
     <div class="d-flex align-items-end flex-column">
         <div class="p-2">
-            <h5>Al 25 de agosto 2022</h5>
+            <h5>Al 15 de septiembre 2022</h5>
         </div>
     </div>
 </div>

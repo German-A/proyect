@@ -182,8 +182,14 @@
     
         var p8 = document.getElementById("p8").value;
         var p9 = document.getElementsByClassName("p9").value;
+
+        
         var p10 = document.getElementsByClassName("p10").value;
         var p11 = document.getElementsByClassName("p11").value;
+
+        console.log(p9);
+
+
 
 
 
