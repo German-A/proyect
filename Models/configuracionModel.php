@@ -103,6 +103,17 @@ class ConfiguracionModel extends Mysql
 		return $request;
 	}
 
+	public function getOnePostgrado($idpostgradoegresado)
+	{
+		$sql = "SELECT * 
+		FROM postgradoegresado WHERE idpostgradoegresado=$idpostgradoegresado";
+	
+		$request = $this->select($sql);			
+		return $request;
+	}
+
+	
+	
 
 
 

@@ -12,7 +12,6 @@ document.addEventListener(
       // },
       ajax: {
         url: " " + base_url + "/usuarios/getusuarios",
-
         dataSrc: "",
       },
       columns: [
@@ -353,12 +352,8 @@ function fntViewUsuario(idpersona) {
 function fntEditUsuario(element, idpersona) {
   rowTable = element.parentNode.parentNode.parentNode;
   document.querySelector("#titleModal").innerHTML = "Actualizar Usuario";
-  document
-    .querySelector(".modal-header")
-    .classList.replace("headerRegister", "headerUpdate");
-  document
-    .querySelector("#btnActionForm")
-    .classList.replace("btn-primary", "btn-info");
+  document.querySelector(".modal-header").classList.replace("headerRegister", "headerUpdate");
+  document.querySelector("#btnActionForm").classList.replace("btn-primary", "btn-info");
   document.querySelector("#btnText").innerHTML = "Actualizar";
 
   //let idpersona = idpersona;
