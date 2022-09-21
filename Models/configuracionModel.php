@@ -70,7 +70,7 @@ class ConfiguracionModel extends Mysql
 		return $request;
 	}
 
-	public function setregistrarPostgradp($txtTitulo,$txtInstitucion,$txtTipo,$txtCursando,$txtDesde,$txtHasta,$egresadoid)
+	public function setregistrarPostgradp($txtTitulo, $txtInstitucion, $txtTipo, $txtCursando, $txtDesde, $txtHasta, $egresadoid)
 	{
 		$this->txtTitulo = $txtTitulo;
 		$this->txtInstitucion = $txtInstitucion;
@@ -96,6 +96,34 @@ class ConfiguracionModel extends Mysql
 		return $return;
 	}
 
+	public function updateregistrarPostgradp($idpostgradoegresado, $txtTitulo, $txtInstitucion, $txtTipo, $txtCursando, $txtDesde, $txtHasta, $egresadoid)
+	{
+		$this->idpostgradoegresado = $idpostgradoegresado;
+		$this->txtTitulo = $txtTitulo;
+		$this->txtInstitucion = $txtInstitucion;
+		$this->txtTipo = $txtTipo;
+		$this->txtCursando = $txtCursando;
+		$this->txtDesde = $txtDesde;
+		$this->txtHasta = $txtHasta;
+		$this->egresadoid = $egresadoid;
+
+		$sql = "UPDATE postgradoegresado SET titulo=?, institucion=?, tipo=?, estadopostgrado=?, desde=?, hasta=?, egresadoid=?
+		WHERE idpostgradoegresado = $this->idpostgradoegresado ";
+		$arrData = array(
+			$this->txtTitulo,
+			$this->txtInstitucion,
+			$this->txtTipo,
+			$this->txtCursando,
+			$this->txtDesde,
+			$this->txtHasta,
+			$this->egresadoid
+		);
+
+		$request = $this->update($sql, $arrData);
+		return $request;
+	}
+
+
 	public function getPostgrado($egresadoid)
 	{
 		$sql = "SELECT * FROM postgradoegresado where egresadoid = $egresadoid";
@@ -107,13 +135,21 @@ class ConfiguracionModel extends Mysql
 	{
 		$sql = "SELECT * 
 		FROM postgradoegresado WHERE idpostgradoegresado=$idpostgradoegresado";
-	
-		$request = $this->select($sql);			
+
+		$request = $this->select($sql);
 		return $request;
 	}
 
-	
-	
+	public function deletePostgrado(int $idpostgradoegresado)
+	{
+		$this->idpostgradoegresado = $idpostgradoegresado;
+		$sql = "DELETE FROM postgradoegresado WHERE idpostgradoegresado=$this->idpostgradoegresado ";
+		$arrData = array($this->idpostgradoegresado);
+		$request = $this->delete($sql, $arrData);
+		return $request;
+	}
+
+
 
 
 
@@ -194,12 +230,5 @@ class ConfiguracionModel extends Mysql
 		$request = $this->update($sql, $arrData);
 		return $request;
 	}
-	public function remove(int $IdBaner)
-	{
-		$this->intIdUsuario = $IdBaner;
-		$sql = "UPDATE banner SET Habilitado = ? WHERE IdBaner = $this->intIdUsuario ";
-		$arrData = array($this->intborrar);
-		$request = $this->update($sql, $arrData);
-		return $request;
-	}
+
 }

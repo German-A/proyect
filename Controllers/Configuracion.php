@@ -127,7 +127,6 @@ class configuracion extends Controllers
 		}
 	}
 
-
 	public function postgradoegresado()
 	{
 		if ($_POST) {
@@ -172,6 +171,8 @@ class configuracion extends Controllers
 			if (empty($_POST['txtTitulo']) || empty($_POST['txtInstitucion']) || empty($_POST['txtTipo']) || empty($_POST['txtCursando']) || empty($_POST['txtDesde'])) {
 				$arrResponse = array("status" => false, "msg" => 'Los campos con (*) no pueden estar vacios.');
 			} else {
+
+				$idpostgradoegresado = intval($_POST['idpostgradoegresado']);
 				$txtTitulo = strClean($_POST['txtTitulo']);
 				$txtInstitucion = strClean($_POST['txtInstitucion']);
 				$txtTipo = strClean($_POST['txtTipo']);
@@ -180,11 +181,24 @@ class configuracion extends Controllers
 				$txtHasta = strClean($_POST['txtHasta']);
 				$egresadoid = $_SESSION['Egresado'];
 
-				$request_user = $this->model->setregistrarPostgradp($txtTitulo, $txtInstitucion, $txtTipo, $txtCursando, $txtDesde, $txtHasta, $egresadoid);
-				if ($request_user) {
-					$arrResponse = array('status' => true, 'msg' => 'Datos registrados correctamente.');
+				if ($idpostgradoegresado == 0) {
+					$option = 1;
+					$insert = $this->model->setregistrarPostgradp($txtTitulo, $txtInstitucion, $txtTipo, $txtCursando, $txtDesde, $txtHasta, $egresadoid);
 				} else {
-					$arrResponse = array("status" => false, "msg" => 'No es posible registrar los datos.');
+					$option = 2;
+
+					$insert = $this->model->updateregistrarPostgradp($idpostgradoegresado, $txtTitulo, $txtInstitucion, $txtTipo, $txtCursando, $txtDesde, $txtHasta, $egresadoid);
+				}
+
+
+				if ($insert > 0) {
+					if ($option == 1) {
+						$arrResponse = array('status' => true, 'msg' => 'Datos guardados correctamente.');
+					} else {
+						$arrResponse = array('status' => true, 'msg' => 'Datos Actualizados correctamente.');
+					}
+				} else {
+					$arrResponse = array("status" => false, "msg" => 'No es posible almacenar los datos.');
 				}
 
 				echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
@@ -208,13 +222,13 @@ class configuracion extends Controllers
 				$btnDelete = '';
 
 				if ($_SESSION['permisos'][28]['u']) {
-					$btnEdit = '<button class="btn btn-primary  btn-sm fntEditPostgrado" onClick="fntEditPostgrado(' . $line['idpostgradoegresado'] . ')" title="Editar Postgrado"><i class="fas fa-pencil-alt"></i></button>';
+					$btnEdit = '<button class="btn btn-primary  btn-sm" onClick="fntEditPostgrado(' . $line['idpostgradoegresado'] . ')" title="Editar Postgrado"><i class="fas fa-pencil-alt"></i></button>';
 				} else {
 					$btnEdit = '<button class="btn btn-secondary btn-sm" disabled ><i class="fas fa-pencil-alt"></i></button>';
 				}
 
 				if ($_SESSION['permisos'][28]['d']) {
-					$btnDelete = '<button class="btn btn-success btn-sm btnDelUsuario" onClick="fntAprobarBanner(' . $line['idpostgradoegresado'] . ')" title="Aprobar Empleo"><i class="fas fa-check-circle"></i></button>';
+					$btnDelete = '<button class="btn btn-danger btn-sm" onClick="fntDeletePostgrado(' . $line['idpostgradoegresado'] . ')" title="Eliminar Postgrado"><i class="far fa-trash-alt"></i></button>';
 				} else {
 					$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
 				}
@@ -246,12 +260,30 @@ class configuracion extends Controllers
 	}
 
 
+	//obtener un baner para actualizar
+	public function deletePostgrado($id)
+	{
+		if ($_SESSION['permisos'][28]['d']) {
+			$id = intval($id);
+			if ($id > 0) {
+				$requestDelete = $this->model->deletePostgrado($id);
+				if ($requestDelete) {
+					$arrResponse = array('status' => true, 'msg' => 'Se ha eliminado el Postgrado');
+				} else {
+					$arrResponse = array('status' => false, 'msg' => 'Error al eliminar el Postgrado.');
+				}
+				echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+			}
+		}
+		die();
+	}
 
 
 
 
 
-	
+
+
 
 
 

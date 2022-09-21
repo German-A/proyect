@@ -80,7 +80,7 @@ getModal('modalPerfilFoto', $data);
       </div>
       <div class="modal-body">
         <form id="formmodalPostgrado" name="formmodalPostgrado" class="form-horizontal">
-          <input type="hidden" id="idPostgrado" name="idPostgrado" value="">
+          <input type="hidden" id="idpostgradoegresado" name="idpostgradoegresado" value="">
           <p class="text-primary">Todos los campos son obligatorios.</p>
 
 
@@ -98,7 +98,7 @@ getModal('modalPerfilFoto', $data);
             </div>
             <div class="form-group col-md-2">
               <label for="txtTipo">Tipo</label><br>
-              <select class="form-control selectedTipo" name="txtTipo" id="{selectTipo}" style="width: 100%">
+              <select class="form-control" name="selectTipo" id="selectTipo" style="width: 100%">
                 <option value="0" disabled selected>Seleccionar</option>
                 <option value="1">Diplomado</option>
                 <option value="2">Magister</option>
@@ -108,8 +108,8 @@ getModal('modalPerfilFoto', $data);
 
           <div class="form-row">
             <div class="form-group col-md-2">
-              <label for="txtCursando">¿Estás cursando?</label>
-              <select class="form-control selectCursando" name="txtCursando" id="txtCursando" style="width: 100%">
+              <label for="selectCursando">¿Estás cursando?</label>
+              <select class="form-control" name="selectCursando" id="selectCursando" style="width: 100%">
                 <option value="0" disabled selected>Seleccionar</option>
                 <option value="1">Si</option>
                 <option value="2">No</option>
@@ -117,8 +117,8 @@ getModal('modalPerfilFoto', $data);
             </div>
 
             <div class="form-group col-md-2">
-              <label for="txtDesde">Desde</label>
-              <select class="form-control selectDesde" name="txtDesde" id="txtDesde" style="width: 100%">
+              <label for="selectDesde">Desde</label>
+              <select class="form-control" name="selectDesde" id="selectDesde" style="width: 100%">
                 <option value="0" disabled selected>Seleccionar</option>
                 <option value="2000">2000</option>
                 <option value="2001">2001</option>
@@ -147,8 +147,8 @@ getModal('modalPerfilFoto', $data);
             </div>
 
             <div class="form-group col-md-2">
-              <label for="txtHasta">Hasta</label>      
-              <select class="form-control selectHasta" name="txtHasta" id="txtHasta" style="width: 100%">
+              <label for="selectHasta">Hasta</label>
+              <select class="form-control" name="selectHasta" id="selectHasta" style="width: 100%">
                 <option value="0" disabled selected>Seleccionar</option>
                 <option value="2000">2000</option>
                 <option value="2001">2001</option>
@@ -242,29 +242,30 @@ getModal('modalPerfilFoto', $data);
 
 
   function openModalPostrado() {
-    document.querySelector('#idPostgrado').value = "";
+    document.querySelector('#idpostgradoegresado').value = "";
     document.querySelector('.modal-header').classList.replace("headerUpdate", "headerRegister");
     document.querySelector('#btnPostgrado').classList.replace("btn-info", "btn-primary");
     document.querySelector('#btnPostgrado').innerHTML = "Guardar";
     document.querySelector('#titlePostgrado').innerHTML = "POSTGRADO";
     document.querySelector("#formmodalPostgrado").reset();
-    
-    $('#selectCursando').val('0').trigger('change'); 
+
+    $('#selectCursando').val('0').trigger('change');
     $('#selectTipo').val('0').trigger('change'); // Notify any JS components that the value changed
     $('#selectDesde').val('0').trigger('change');
     $('#selectHasta').val('0').trigger('change');
-
     $('#modalRegistroPostgrado').modal('show');
   }
 
 
   function GuardarPostgrado() {
+    var idpostgradoegresado = $("#idpostgradoegresado").val();
     var txtTitulo = $("#txtTitulo").val();
     var txtInstitucion = $("#txtInstitucion").val();
+
     var txtTipo = $("#selectTipo").val();
-    var txtCursando = $("#txtCursando").val();
-    var txtDesde = $("#txtDesde").val();
-    var txtHasta = $("#txtHasta").val();
+    var txtCursando = $("#selectCursando").val();
+    var txtDesde = $("#selectDesde").val();
+    var txtHasta = $("#selectHasta").val();
 
     if (txtTitulo == '') {
       swal("Atención!", "Ingresar el Titulo", "warning");
@@ -288,6 +289,7 @@ getModal('modalPerfilFoto', $data);
     }
 
     var fd = new FormData();
+    fd.append("idpostgradoegresado", idpostgradoegresado);
     fd.append("txtTitulo", txtTitulo);
     fd.append("txtInstitucion", txtInstitucion);
     fd.append("txtTipo", txtTipo);
@@ -310,6 +312,7 @@ getModal('modalPerfilFoto', $data);
         $('#txtCursando').val(0).trigger('change');
         $('#txtDesde').val(0).trigger('change');
         $('#txtHasta').val(0).trigger('change');
+        postgrado();
         $('#modalRegistroPostgrado').modal("hide");
       }
       if (info.status == false) {
@@ -320,7 +323,7 @@ getModal('modalPerfilFoto', $data);
     });
   }
 
-  function fntEditPostgrado(idrol) {
+  function fntEditPostgrado(idpostgradoegresado) {
 
     document.querySelector("#titlePostgrado").innerHTML = "ACTUALIZAR POSTGRADO";
     document.querySelector(".modal-header").classList.replace("headerRegister", "headerUpdate");
@@ -329,7 +332,7 @@ getModal('modalPerfilFoto', $data);
 
     $.ajax({
       method: "GET",
-      url: "" + base_url + "/configuracion/getonePostgrado/" + idrol,
+      url: "" + base_url + "/configuracion/getonePostgrado/" + idpostgradoegresado,
       processData: false, // tell jQuery not to process the data
       contentType: false, // tell jQuery not to set contentType
 
@@ -337,6 +340,10 @@ getModal('modalPerfilFoto', $data);
       var info = JSON.parse(response);
       console.log(info);
       if (info.status == true) {
+        postgrado();
+
+
+        document.getElementById('idpostgradoegresado').value = info.data['idpostgradoegresado'];
         document.getElementById('txtTitulo').value = info.data['titulo'];
         document.getElementById('txtInstitucion').value = info.data['institucion'];
 
@@ -346,11 +353,11 @@ getModal('modalPerfilFoto', $data);
         $('#selectCursando').val(info.data['estadopostgrado']); // Select the option with a value of '1'
         $('#selectCursando').trigger('change'); // Notify any JS components that the value changed
 
-        $('#selectTipo').val(info.data['desde']); // Select the option with a value of '1'
-        $('#selectTipo').trigger('change'); // Notify any JS components that the value changed
+        $('#selectDesde').val(info.data['desde']); // Select the option with a value of '1'
+        $('#selectDesde').trigger('change'); // Notify any JS components that the value changed
 
-        $('#selectTipo').val(info.data['hasta']); // Select the option with a value of '1'
-        $('#selectTipo').trigger('change'); // Notify any JS components that the value changed
+        $('#selectHasta').val(info.data['hasta']); // Select the option with a value of '1'
+        $('#selectHasta').trigger('change'); // Notify any JS components that the value changed
 
       }
       if (info.status == false) {
@@ -360,6 +367,49 @@ getModal('modalPerfilFoto', $data);
       $("#modalRegistroPostgrado").modal("show");
     });
   }
+
+  function fntDeletePostgrado(idpostgradoegresado) {
+  
+    $.ajax({
+      method: "POST",
+      url: "" + base_url + "/configuracion/deletePostgrado/" + idpostgradoegresado,
+      processData: false, // tell jQuery not to process the data
+      contentType: false, // tell jQuery not to set contentType
+
+    }).done(function(response) {
+      var info = JSON.parse(response);
+      console.log(info);
+      if (info.status == true) {
+        postgrado();
+
+
+        document.getElementById('idpostgradoegresado').value = info.data['idpostgradoegresado'];
+        document.getElementById('txtTitulo').value = info.data['titulo'];
+        document.getElementById('txtInstitucion').value = info.data['institucion'];
+
+        $('#selectTipo').val(info.data['tipo']); // Select the option with a value of '1'
+        $('#selectTipo').trigger('change'); // Notify any JS components that the value changed
+
+        $('#selectCursando').val(info.data['estadopostgrado']); // Select the option with a value of '1'
+        $('#selectCursando').trigger('change'); // Notify any JS components that the value changed
+
+        $('#selectDesde').val(info.data['desde']); // Select the option with a value of '1'
+        $('#selectDesde').trigger('change'); // Notify any JS components that the value changed
+
+        $('#selectHasta').val(info.data['hasta']); // Select the option with a value of '1'
+        $('#selectHasta').trigger('change'); // Notify any JS components that the value changed
+
+      }
+      if (info.status == false) {
+        swal("Error!", info.msg, "error");
+      }
+
+      $("#modalRegistroPostgrado").modal("show");
+    });
+
+
+  }
+
 
   $(document).ready(function() {
     datosEgresado();
@@ -640,23 +690,19 @@ getModal('modalPerfilFoto', $data);
     dropdownParent: $("#formmodalPostgrado"),
   });
 
-  $(".selectCursando").select2({
+  $("#selectCursando").select2({
     dropdownParent: $("#formmodalPostgrado"),
   });
 
-  $(".selectedTipo").select2({
+  $("#selectTipo").select2({
     dropdownParent: $("#formmodalPostgrado"),
   });
 
-  $(".selectDesde").select2({
+  $("#selectDesde").select2({
     dropdownParent: $("#formmodalPostgrado"),
   });
 
-  $(".selectHasta").select2({
+  $("#selectHasta").select2({
     dropdownParent: $("#formmodalPostgrado"),
   });
-
-
-    
-
 </script>
