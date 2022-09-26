@@ -341,8 +341,7 @@ getModal('modalPerfilFoto', $data);
       console.log(info);
       if (info.status == true) {
         postgrado();
-
-
+        
         document.getElementById('idpostgradoegresado').value = info.data['idpostgradoegresado'];
         document.getElementById('txtTitulo').value = info.data['titulo'];
         document.getElementById('txtInstitucion').value = info.data['institucion'];
@@ -369,43 +368,45 @@ getModal('modalPerfilFoto', $data);
   }
 
   function fntDeletePostgrado(idpostgradoegresado) {
-  
-    $.ajax({
-      method: "POST",
-      url: "" + base_url + "/configuracion/deletePostgrado/" + idpostgradoegresado,
-      processData: false, // tell jQuery not to process the data
-      contentType: false, // tell jQuery not to set contentType
 
-    }).done(function(response) {
-      var info = JSON.parse(response);
-      console.log(info);
-      if (info.status == true) {
-        postgrado();
+    swal({
+      title: "Eliminar Postgrado",
+      text: "¿Realmente quiere eliminar el Postgrado?",
+      type: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Si, eliminar!",
+      cancelButtonText: "No, cancelar!",
+      closeOnConfirm: false,
+      closeOnCancel: true
+    }, function(isConfirm) {
 
+      if (isConfirm) {
 
-        document.getElementById('idpostgradoegresado').value = info.data['idpostgradoegresado'];
-        document.getElementById('txtTitulo').value = info.data['titulo'];
-        document.getElementById('txtInstitucion').value = info.data['institucion'];
+        $.ajax({
+          method: "POST",
+          url: "" + base_url + "/configuracion/deletePostgrado/" + idpostgradoegresado,
+          processData: false, // tell jQuery not to process the data
+          contentType: false, // tell jQuery not to set contentType
 
-        $('#selectTipo').val(info.data['tipo']); // Select the option with a value of '1'
-        $('#selectTipo').trigger('change'); // Notify any JS components that the value changed
+        }).done(function(response) {
+          var info = JSON.parse(response);
+          console.log(info);
+          console.log(info.status);
 
-        $('#selectCursando').val(info.data['estadopostgrado']); // Select the option with a value of '1'
-        $('#selectCursando').trigger('change'); // Notify any JS components that the value changed
-
-        $('#selectDesde').val(info.data['desde']); // Select the option with a value of '1'
-        $('#selectDesde').trigger('change'); // Notify any JS components that the value changed
-
-        $('#selectHasta').val(info.data['hasta']); // Select the option with a value of '1'
-        $('#selectHasta').trigger('change'); // Notify any JS components that the value changed
+          if (info.status == true) {
+            swal("Eliminar!", info.msg, "success");
+            postgrado();
+          }
+          if (info.status == false) {
+            swal("Error!", info.msg, "error");
+          }
+        });
 
       }
-      if (info.status == false) {
-        swal("Error!", info.msg, "error");
-      }
 
-      $("#modalRegistroPostgrado").modal("show");
     });
+
+
 
 
   }
