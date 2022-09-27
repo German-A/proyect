@@ -128,7 +128,7 @@ $legal = $obj->selectLegalInicio();
     </div>
     <div class="plataform-use  col-md-6 col-lg-4 col-xl-4" data-aos="flip-up">
       <a href="<?= base_url(); ?>/expoferiavidaysalud" target="_blank">
-        <img class="logosplaforma" src="<?= media(); ?>/archivos/logos/expoferia.png" alt="">
+        <img class="logosplaforma" src="<?= media(); ?>/archivos/logos/expoferiasuse.jpg" alt="">
         <br><br>
         <h5 class="text-cursosmooc text-center">EXPOFERIA LABORAL</h5>
       </a>
@@ -164,7 +164,7 @@ $legal = $obj->selectLegalInicio();
       <div class="cont-titulo">
         <h5 class="bluemedio text-area">SUBUNIDAD DE ESTADÍSTICA <br> E INFORMÁTICA</h5>
       </div>
-      <img class="equipoimg" src="<?= media(); ?>/img/katherine.png" alt="">
+      <img class="equipoimg" src="<?= media(); ?>/img/ingkatherine.jpg" alt="">
       <div class="cont-info">
         <br>
         <h6>KATHERINE LIZETH <br> NUREÑA RODRÍGUEZ</h6>
@@ -189,7 +189,7 @@ $legal = $obj->selectLegalInicio();
       <img class="equipoimg" src="<?= media(); ?>/img/katyrodriguez.png" alt="">
       <div class="col-4 cont-info">
         <br>
-        <h6>KATHERINE NOELY<br> RODRIGUEZ GUZMAN</h6>
+        <h6>KATHERINE NOELY<br> RODRÍGUEZ GUZMÁN</h6>
         <p><small>COMUNICADORA/INTERPRETE</small></p>
       </div>
     </div>
@@ -198,7 +198,7 @@ $legal = $obj->selectLegalInicio();
 
     <div class="col-12 col-sm-5 col-md-5 col-lg-2 mb-2">
       <div class="cont-titulo ">
-        <h5 class="bluemedio text-area">ÁREA DE<br>MARKETING</h5>
+        <h5 class="bluemedio text-area">ÁREA DE<br>MARQUETÍN</h5>
       </div>
       <img class="equipoimg" src="<?= media(); ?>/img/marinesTrinidad.png" alt="">
       <div class="col-4 cont-info">

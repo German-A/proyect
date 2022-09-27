@@ -58,6 +58,14 @@ class HomeModel extends Mysql
 		return $request;
 	}
 
+	public function selectprimeraBaseInstitucional()
+	{
+
+		$sql = "SELECT NombreArchivo FROM baseintitucional WHERE Habilitado ='1' ORDER BY IdInstitucional ASC LIMIT 1";
+		$request = $this->select_all($sql);
+		return $request;
+	}
+
 
 	public function selectLegal()
 	{

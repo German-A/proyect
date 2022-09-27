@@ -89,11 +89,19 @@
                 </li>
                 <li class="menu__item container-submenu"><a href="#" class="menu__link submenu-btn">PLATAFORMA SISEU&nbsp;<i class="fas fa-chevron-down"></i></a>
                     <ul class="submenu">
-                        <li class="menu__item"><a href="https://siseu-rep.sineace.gob.pe:6041/login" target="_blank" class="al menu__link">PROGRAMA DE ESTUDIOS</a></li>
-                        <li class="menu__item"><a href="https://siseu-rep.sineace.gob.pe:6040/" target="_blank" class="al menu__link">EGRESADOS</a></li>
+                        <li class="menu__item"><a href="https://siseu-rep.sineace.gob.pe:6041/login" target="_blank" class="al menu__link">PARA PROGRAMA DE ESTUDIOS</a></li>
+                        <li class="menu__item"><a href="https://siseu-rep.sineace.gob.pe:6040/" target="_blank" class="al menu__link">PARA EGRESADOS</a></li>
                     </ul>
                 </li>
-                <li class="menu__item"><a href="<?= base_url(); ?>/bases" class="menu__link">NORMATIVA</a></li>
+
+                <li class="menu__item container-submenu"><a href="#" class="menu__link submenu-btn">NORMATIVA&nbsp;<i class="fas fa-chevron-down"></i></a>
+                    <ul class="submenu">
+                        <li class="menu__item"><a href="<?= base_url(); ?>/bases/nacional" class="al menu__link">NACIONAL</a></li>
+                        <li class="menu__item"><a href="<?= base_url(); ?>/bases/institucional"  class="al menu__link">INSTITUCIONAL</a></li>
+                 
+                    </ul>
+                </li>
+
                 <li class="menu__item"><a href="<?= base_url(); ?>/expoferialaboral" class="menu__link">EXPOFERIAS LABORALES </a></li>
                 <li class="menu__item container-submenu"><a href="#" class="menu__link submenu-btn">TRANSPARENCIA&nbsp;<i class="fas fa-chevron-down"></i></a>
                     <ul class="submenu">
@@ -102,6 +110,7 @@
                         <li class="menu__item"><a href="<?= base_url(); ?>/transparencia/objetivosEducacionales" class="al menu__link">OBJETIVOS EDUCACIONALES</a></li>
                         <li class="menu__item"><a href="<?= base_url(); ?>/transparencia/preguntasObjetivosEducacionales" class="al menu__link">PREGUNTAS OBJETIVOS EDUCACIONALES</a></li>
                         <li class="menu__item"><a href="<?= base_url(); ?>/transparencia/gradosytitulos" class="al menu__link">GRADOS Y TÍTULOS</a></li>
+
                         
                     </ul>
                 </li>

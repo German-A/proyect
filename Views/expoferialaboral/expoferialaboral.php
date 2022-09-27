@@ -161,7 +161,7 @@ $n = 1;
                     <div class="itemY">
                         <h2 data-id=""></h2>
                         <a href="#">
-                            <h5>Ciencias de la Persona | Ciencia Económicas (07 al 09 diciembre)</h5>
+                            <h5>Ciencias de la Persona | Ciencia Económicas (07 al 09 de diciembre)</h5>
                         </a>
                     </div>
                 </li>
