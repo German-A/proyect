@@ -14,24 +14,32 @@
 <div class="text-center">
     <img src="<?= media() ?>/images/expoferiaxv/expoferiaxv2.jpg" style="width: 100%;" alt="">
 </div>
-<br>
+<br><br><br>
 
-<div class="col-12 text-center">
-    <h1>ORGANIZA</h1>
-    <div class="row">
-        <div class="col-2">
-            <h3>use</h3>
+<div class="col-12">
+
+    <div class="text-center">
+        <h1>ORGANIZADORES</h1>
+    </div>
+    <br><br>
+
+    <div class="row d-flex justify-content-around">
+
+        <div class="col-md-2 text-center">
+            <img class="img-fluid col-md-12" src="<?= media(); ?>/images/expoferiaxv/vicerrectoradologo.png" alt="" style=" width: 100%; object-fit: cover;">
         </div>
-        <div class="col-2">
-            <h3>dpa</h3>
+
+        <div class="col-md-2 text-center">
+            <img class="img-fluid col-md-12" src="<?= media(); ?>/archivos/logos/logoDpa.png" alt="" style=" width: 100%; object-fit: cover;">
         </div>
-        <div class="col-2">
-            <h3>dpa</h3>
+
+        <div class="col-md-2 text-center">
+            <img class="img-fluid col-md-12" src="<?= media(); ?>/images/expoferiaxv/logoUse.png" alt="" style=" width: 100%; object-fit: cover;">
         </div>
-        <div class="col-2">
-            <h3>ciidn</h3>
+
+        <div class="col-md-2 text-center">
+            <img class="img-fluid col-md-12" src="<?= media(); ?>/images/expoferiaxv/CEIINDlogo1.png" alt="" style="width: 70%; object-fit: cover;">
         </div>
-        <div class="col-2"></div>
 
     </div>
 

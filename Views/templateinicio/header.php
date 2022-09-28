@@ -110,6 +110,8 @@
                         <li class="menu__item"><a href="<?= base_url(); ?>/transparencia/objetivosEducacionales" class="al menu__link">OBJETIVOS EDUCACIONALES</a></li>
                         <li class="menu__item"><a href="<?= base_url(); ?>/transparencia/preguntasObjetivosEducacionales" class="al menu__link">PREGUNTAS OBJETIVOS EDUCACIONALES</a></li>
                         <li class="menu__item"><a href="<?= base_url(); ?>/transparencia/gradosytitulos" class="al menu__link">GRADOS Y TÍTULOS</a></li>
+                        <li class="menu__item"><a href="<?= base_url(); ?>/transparencia/repositorio" class="al menu__link">REPOSITORIO</a></li>
+
 
                         
                     </ul>

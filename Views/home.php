@@ -164,7 +164,7 @@ $legal = $obj->selectLegalInicio();
       <div class="cont-titulo">
         <h5 class="bluemedio text-area">SUBUNIDAD DE ESTADÍSTICA <br> E INFORMÁTICA</h5>
       </div>
-      <img class="equipoimg" src="<?= media(); ?>/img/ingkatherine.jpg" alt="">
+      <img class="equipoimg" src="<?= media(); ?>/img/ingkatherinee.png" alt="">
       <div class="cont-info">
         <br>
         <h6>KATHERINE LIZETH <br> NUREÑA RODRÍGUEZ</h6>

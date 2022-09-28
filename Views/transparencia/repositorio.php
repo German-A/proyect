@@ -1,16 +1,16 @@
 <?php head($data); ?>
 
-<?php obj($data); ?>
-<?php
+<?php obj($data);
 
-//require_once  "../Models/HomeModel.php";
 $obj = new HomeModel();
 $obj2 = new HomeModel();
-$perfiles = $obj->selectLegal();
-$primerabase = $obj->selectprimeraBaseInstitucional();
-$perfiless = $obj2->selectinstitucional();
-$perfilesss = $obj2->selectprimerNacional();
+$perfiles = $obj->selectManual();
+$primermanual = $obj2->selectprimerManual();
+$tutoriales = $obj2->selectCursosTUTORIALES();
+$capacitaciones = $obj2->selectCursosCAPACITACIONES();
+
 $n = 1;
+
 ?>
 
 
@@ -58,68 +58,67 @@ $n = 1;
     }
 </style>
 
+<div class="card-header">
+    <h4 class="text-center">Transparencia - Unidad de Seguimiento del Egresado</h4>
+</div>
+<br>
+<br><br>
+
+<br>
 
 <div class="row text-center" style="max-width: 1600px; margin:auto">
 
-    <br><br>
     <div class="col-12  col-lg-4">
-        <br>
-
-
-        <br>
-
-        <div class="col-md-10 r m-auto">
-            <h3 class="blueoscuro">Normativa Insititucional</h3>
+        <div class="col-md-10 m-auto">
+            <h3 class="blueoscuro">Repositorio 2021-II</h3>
         </div>
 
+        <br>
 
         <div class="row">
-            <div class="col-md-10  m-auto itemY">
-                <?php foreach ($perfiless as $key => $fila) { ?>
-                    <div class="col-md-12 ml-2 btn btn-outline-warning p-2 m-2  d-flex justify-content-center">
-                        <div class="col-md-9">
-                            <label class=""><?php echo $fila['Nombre'] ?></label>
-                     
+            <div class="col-md-10  m-auto">
+               
+                    <div class="col-md-12 ml-2 btn btn-outline-warning pl-3 pr-3 d-flex justify-content-center">
+                        <div class="col-11 col-md-9">
+                            <label class="">Informe de inserción laboral y evaluación de objetivos educaciones 2021-II</label>
                         </div>
 
                         <div class="col-1 col-md-5">
                             <div class="row">
-                                <a href="#elid" class="btn btn-primary libro" onclick="verArchivo('<?php echo $fila['NombreArchivo'] ?>');"><i class="fas fa-book-open"></i></a>
+                                <a href="#elid" class="btn btn-primary libro"  onclick="verArchivo('<?php echo $fila['NombreArchivo'] ?>');"><i class="fas fa-book-open"></i></a>
                                 &nbsp
-                                <a href="<?= media(); ?>/archivos/documentoslegales/<?php echo $fila['NombreArchivo'] ?>" class="btn btn-primary" download><i class="fas fa-download"></i></a>
+                                <a href="<?= media(); ?>/archivos/repositorio/INFORME2021-II.pdf" class="btn btn-primary" download><i class="fas fa-download"></i></a>
                             </div>
                         </div>
                     </div>
-                <?php } ?>
-
+             
             </div>
         </div>
 
-        <br>
-    </div>
+        <br><br>
 
+        <br>
+        <br>
+
+    </div>
     <div class="col-8 libro" id="elid">
         <br>
-        <?php foreach ($primerabase as $key => $fila) { ?>
-            <object class="pdfview" type="application/pdf" id="video_id" data="<?= media(); ?>/archivos/documentoslegales/<?php echo $fila['NombreArchivo'] ?>"></object>
+        <?php foreach ($primermanual as $key => $fila) { ?>
+            <object class="pdfview" type="application/pdf" id="video_id" data="<?= media(); ?>/archivos/repositorio/INFORME2021-II.pdf"></object>
         <?php } ?>
     </div>
-
 
 </div>
 
 
+
+
 <?php footer($data); ?>
 
-
 <script>
-    $(document).ready(function() {
-
-    })
-
     function verArchivo(a) {
         var b = a;
-        let newUrl = `<?= media(); ?>/archivos/documentoslegales/${b}`;
+        let newUrl = `<?= media(); ?>/archivos/manuales/${b}`;
         let newUrl2 = `https://docs.google.com/viewer?url=https://use-dpa.unitru.edu.pe/INTRANET/archivos/base/${b}`;
         $("#video_id").attr("data", newUrl);
     }

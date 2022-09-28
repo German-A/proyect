@@ -122,7 +122,7 @@ $n = 1;
     }
 </style>
 <br><br>
-
+<br><br>
 <div class="contenedor">
     <aside>
         <div class="contenedor-temario" id="temario">
@@ -187,7 +187,7 @@ $n = 1;
         })
     })
 </script>
-
+<br><br>
 
 <br><br><br><br>
 
