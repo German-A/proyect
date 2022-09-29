@@ -69,6 +69,11 @@ class configuracion extends Controllers
 					$strPassword
 				);
 				if ($request_user) {
+
+					$arrData = $this->model->sessionLogin($_SESSION['idUser']);
+					$_SESSION['userData'] = $arrData;
+
+
 					//	sessionUser($_SESSION['idUser']);
 					$arrResponse = array('status' => true, 'msg' => 'Datos Actualizados correctamente.');
 				} else {
@@ -115,6 +120,8 @@ class configuracion extends Controllers
 				}
 
 				if ($request_user) {
+					$arrData = $this->model->sessionLogin($_SESSION['idUser']);
+					$_SESSION['userData'] = $arrData;
 					//sessionUser($_SESSION['idUser']);
 					$arrResponse = array('status' => true, 'msg' => 'Datos Actualizados correctamente.');
 				} else {
@@ -126,6 +133,12 @@ class configuracion extends Controllers
 			die();
 		}
 	}
+
+
+
+
+
+
 
 	public function postgradoegresado()
 	{
@@ -193,7 +206,7 @@ class configuracion extends Controllers
 
 				if ($insert > 0) {
 					if ($option == 1) {
-						$arrResponse = array('status' => true, 'msg' => 'Datos guardados correctamente.');
+						$arrResponse = array('status' => true, 'msg' => 'Datos Guardados correctamente.');
 					} else {
 						$arrResponse = array('status' => true, 'msg' => 'Datos Actualizados correctamente.');
 					}

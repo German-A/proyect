@@ -189,57 +189,6 @@ getModal('modalPerfilFoto', $data);
 
 
 <script>
-  function openModalPerfil(idpersona) {
-    //let idpersona = idpersona;
-    let request = window.XMLHttpRequest ?
-      new XMLHttpRequest() :
-      new ActiveXObject("Microsoft.XMLHTTP");
-    let ajaxUrl = base_url + "/Usuarios/getEgresado/" + idpersona;
-    request.open("GET", ajaxUrl, true);
-    request.send();
-    request.onreadystatechange = function() {
-      if (request.readyState == 4 && request.status == 200) {
-        let objData = JSON.parse(request.responseText);
-
-        if (objData.status) {
-
-          document.querySelector("#idUsuario").value = objData.data.idpersona;
-          document.querySelector("#txtNombre").value = objData.data.nombres;
-          document.querySelector("#txtApellidop").value = objData.data.apellidop;
-          document.querySelector("#txtApellidom").value = objData.data.apellidom;
-          document.querySelector("#txtTelefono").value = objData.data.telefono;
-          document.querySelector("#txtEmail").value = objData.data.email_user;
-        }
-      }
-
-      $("#modalFormPerfil").modal("show");
-    };
-  }
-
-  function openModalFotoPerfil(idpersona) {
-    //let idpersona = idpersona;
-    let request = window.XMLHttpRequest ?
-      new XMLHttpRequest() :
-      new ActiveXObject("Microsoft.XMLHTTP");
-    let ajaxUrl = base_url + "/Usuarios/getEgresado/" + idpersona;
-    request.open("GET", ajaxUrl, true);
-    request.send();
-    request.onreadystatechange = function() {
-      if (request.readyState == 4 && request.status == 200) {
-        let objData = JSON.parse(request.responseText);
-
-        if (objData.status) {
-          document.querySelector("#idUsuario").value = objData.data.idpersona;
-          document.querySelector("#idUsuario2").value = objData.data.idpersona;
-
-
-        }
-      }
-
-      $("#modalFormPerfilFoto").modal("show");
-    };
-  }
-
 
   function openModalPostrado() {
     document.querySelector('#idpostgradoegresado').value = "";
@@ -307,12 +256,12 @@ getModal('modalPerfilFoto', $data);
     }).done(function(response) {
       var info = JSON.parse(response);
       if (info.status == true) {
-        swal("Registrado", info.msg, "success");
+        swal("Postgrado", info.msg, "success");
+        postgrado();
         $('#txtTipo').val(0).trigger('change');
         $('#txtCursando').val(0).trigger('change');
         $('#txtDesde').val(0).trigger('change');
-        $('#txtHasta').val(0).trigger('change');
-        postgrado();
+        $('#txtHasta').val(0).trigger('change');       
         $('#modalRegistroPostgrado').modal("hide");
       }
       if (info.status == false) {
@@ -326,9 +275,9 @@ getModal('modalPerfilFoto', $data);
   function fntEditPostgrado(idpostgradoegresado) {
 
     document.querySelector("#titlePostgrado").innerHTML = "ACTUALIZAR POSTGRADO";
-    document.querySelector(".modal-header").classList.replace("headerRegister", "headerUpdate");
-    document.querySelector("#btnActionForm").classList.replace("btn-primary", "btn-info");
-    document.querySelector("#btnText").innerHTML = "Actualizar";
+    document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");
+    document.querySelector("#btnPostgrado").classList.replace("btn-primary", "btn-info");
+    document.querySelector("#btnPostgrado").innerHTML = "Actualizar";
 
     $.ajax({
       method: "GET",
@@ -338,7 +287,7 @@ getModal('modalPerfilFoto', $data);
 
     }).done(function(response) {
       var info = JSON.parse(response);
-      console.log(info);
+
       if (info.status == true) {
         postgrado();
         
@@ -394,7 +343,7 @@ getModal('modalPerfilFoto', $data);
           console.log(info.status);
 
           if (info.status == true) {
-            swal("Eliminar!", info.msg, "success");
+            swal("POSTGRADO", info.msg, "success");
             postgrado();
           }
           if (info.status == false) {

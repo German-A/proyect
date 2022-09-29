@@ -20,6 +20,37 @@ class ConfiguracionModel extends Mysql
 		return $request;
 	}
 
+	public function sessionLogin(int $iduser)
+	{
+		$this->intIdUsuario = $iduser;
+		//BUSCAR ROLE 
+		$sql = "SELECT  p.idpersona,
+						p.nombres,
+						p.apellidop,
+						p.apellidom,
+						p.email_user,
+						p.imagen,
+						p.dni,						
+						p.telefono,					
+						p.datecreated,
+						p.status,			
+						r.idrol,
+						r.nombrerol						
+				FROM usuario p
+				INNER JOIN rol r
+				ON p.rolid = r.idrol
+				WHERE p.idpersona = $this->intIdUsuario 
+				and p.status > 0
+				and r.status > 0
+				";
+		$request = $this->select($sql);
+		//$_SESSION['userData'] = $request;
+		return $request;
+	}
+
+
+
+
 	/*Actualizar Datos del Egresado Foto*/
 	public function updateFoto(int $idUsuario,  string $nuevonombre)
 	{
@@ -230,5 +261,4 @@ class ConfiguracionModel extends Mysql
 		$request = $this->update($sql, $arrData);
 		return $request;
 	}
-
 }
