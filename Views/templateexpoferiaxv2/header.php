@@ -23,6 +23,8 @@
     <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/select2.min.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+
+    <link rel="stylesheet"  href="<?= media(); ?>/vendor/glightbox/css/glightbox.min.css" >
 </head>
 
 <style>
@@ -166,7 +168,7 @@
                         <li class="menu__itemxv"><a href="" class="menu__linkxv">BOLSA DE TRABAJO</a></li>
                     </ul>
                 </li> -->
-                <li class="menu__itemxv"><a href="" class="menu__linkxv">PONENCIAS</a></li>
+                <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxv/ponencias"  class="menu__linkxv">PONENCIAS</a></li>
                 <li class="menu__itemxv"><a href="" class="menu__linkxv">EMPRESAS</a></li>
 
             </div>

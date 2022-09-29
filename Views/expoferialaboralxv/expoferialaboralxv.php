@@ -98,7 +98,7 @@
     <div class="swiper-wrapper">
         <div class="swiper-slide">
             <div class="divexpoxv">
-                <img src="<?= media(); ?>/images/expoferiaxv/img1.jpg" alt="" />
+                <img src="<?= media(); ?>/images/expoferiaxv/expo1.png" alt="" />
                 <br>
                 <h4>EL FUTURO DE LA EDUCACIÓN</h4>
                 <h5>11 de febrero de 2025</h5>
@@ -106,25 +106,9 @@
         </div>
         <div class="swiper-slide">
             <div class="divexpoxv">
-                <img src="<?= media(); ?>/images/expoferiaxv/img1.jpg" alt="" />
+                <img src="<?= media(); ?>/images/expoferiaxv/expo2.png" alt="" />
                 <br>
                 <h4>PRÓXIMOS CAMBIOS EN LAS POLÍTICAS</h4>
-                <h5>11 de febrero de 2025</h5>
-            </div>
-        </div>
-        <div class="swiper-slide">
-            <div class="divexpoxv">
-                <img src="<?= media(); ?>/images/expoferiaxv/img1.jpg" alt="" />
-                <br>
-                <h4>CAMBIOS EN LAS AULAS</h4>
-                <h5>11 de febrero de 2025</h5>
-            </div>
-        </div>
-        <div class="swiper-slide">
-            <div class="divexpoxv">
-                <img src="<?= media(); ?>/images/expoferiaxv/img1.jpg" alt="" />
-                <br>
-                <h4>CAMBIOS EN LAS AULAS</h4>
                 <h5>11 de febrero de 2025</h5>
             </div>
         </div>
@@ -132,7 +116,10 @@
     <div class="swiper-pagination"></div>
 </div>
 
-<!-- Swiper JS -->
+
+
+
+
 <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
 <!-- Initialize Swiper -->

@@ -26,6 +26,16 @@
 			$this->views->getView($this,"nosotros",$data);
 		}
 
+		public function ponencias()
+		{
+		
+			$data['page_tag'] = "expoferialaboralxv";
+			$data['page_title'] = "expoferialaboralxv";
+			$data['page_name'] = "expoferialaboralxv";
+			$this->views->getView($this,"ponencias",$data);
+		}
+
+
 
 
 

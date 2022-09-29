@@ -15,7 +15,7 @@
         <div class="col-md-6 text-center">
             <h1>Unidad de Seguimiento del Egresado</h1>
             <br>
-            <img class="img-fluid col-md-6 " src="<?= media(); ?>/images/expoferiaxv/logoUse.png" alt="" style=" width: 100%; object-fit: cover;">
+            <img class="img-fluid col-md-8 " src="<?= media(); ?>/images/expoferiaxv/logoUse.png" alt="" style=" width: 100%; object-fit: cover;">
             <br><br>
             <h4>Tiene por finalidad planificar, promover, ejecutar y evaluar actividades asociadas con el cumplimiento de las condiciones básicas de calidad del Modelo de Licenciamiento de la SUNEDU, indicador 53, que expresa “Existencia de mecanismos de mediación e inserción laboral”; asimismo, al cumplimiento del estándar 34 denominado “Seguimiento a egresados y objetivos educacionales” del nuevo “Modelo de Acreditación para programas de Estudios de Educación Superior Universitaria” del SINEACE.
             </h4>
