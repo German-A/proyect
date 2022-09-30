@@ -52,7 +52,7 @@
 <section id="gallery">
     <div class="container-fluid text-center" data-aos="fade-up">
         <div class="section-header">
-            <h3 class="section-title ">GALERIA</h3>
+            <h3 class="section-title ">PONENCIAS</h3>
             <br>
         </div>
         <div class="row g-0 d-flex justify-content-center">
@@ -77,6 +77,28 @@
                     </a>
                 </div>
             </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="gallery-item">
+                    <a href="<?= media(); ?>/images/expoferiaxv/expo1.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                        <img src="<?= media(); ?>/images/expoferiaxv/expo1.png">
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="gallery-item">
+                    <a href="<?= media(); ?>/images/expoferiaxv/expo1.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                        <img src="<?= media(); ?>/images/expoferiaxv/expo1.png">
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="gallery-item">
+                    <a href="<?= media(); ?>/images/expoferiaxv/expo1.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                        <img src="<?= media(); ?>/images/expoferiaxv/expo1.png">
+                    </a>
+                </div>
+            </div>
+            
         </div>
     </div>
 </section>
