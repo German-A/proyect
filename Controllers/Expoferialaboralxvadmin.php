@@ -15,7 +15,7 @@ class expoferialaboralxvadmin extends Controllers
 	//pagina Banner
 	public function Expoferialaboralxvadmin()
 	{
-		dep($_SESSION['permisos'][3]['u'] );
+		dep($_SESSION['permisos'][3]['u']);
 
 		if (empty($_SESSION['permisosMod']['r'])) {
 			header("Location:" . base_url() . '/dashboard');
@@ -26,6 +26,127 @@ class expoferialaboralxvadmin extends Controllers
 		$data['page_functions_js'] = "functions_banner.js";
 		$this->views->getView($this, "Expoferialaboralxvadmin", $data);
 	}
+
+	//pagina Banner
+	public function galeria()
+	{
+		if (empty($_SESSION['permisosMod']['r'])) {
+			header("Location:" . base_url() . '/dashboard');
+		}
+		$data['page_tag'] = "Expoferialaboralxv Galeria";
+		$data['page_title'] = "Expoferialaboralxv Galeria";
+		$data['page_name'] = "USE - Expoferia Laboral xv";
+		$data['page_functions_js'] = "functions_banner.js";
+		$this->views->getView($this, "galeria", $data);
+	}
+
+	//insertar y actualizar los Banners
+	public function setgaleria()
+	{
+		if ($_POST) {
+			if (empty($_POST['txtNombre'])) {
+				$arrResponse = array("status" => false, "msg" => 'Datos incorrectos en la Galería.');
+			} else {
+
+				$id = intval($_POST['id']);
+
+				$txtNombre = trim($_POST['txtNombre']);
+				$txtPosicion = trim($_POST['txtPosicion']);
+				$request_user = "";
+
+				if ($id == 0) {
+
+					$option = 1;
+
+					$cantidadBanner = "";
+					$cantidadBanner = $this->model->cantidadBanner();
+					$cantidad = $cantidadBanner['cant'];
+
+					$ubicacionTemporal = $_FILES['archivoSubido']['tmp_name'];
+					$nombre = $_FILES['archivoSubido']['name'];
+					$nuevonombre = $cantidad . $nombre;
+
+					if ($cantidad == null) {
+						$cantidad = 0;
+					} else {
+						$cantidad++;
+					}
+
+					if (!file_exists('Assets/archivos/exporiaxv/')) {
+						mkdir('Assets/archivos/exporiaxv/', 0777, true);
+						if (file_exists('Assets/archivos/exporiaxv/')) {
+
+							if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/exporiaxv/' . $nuevonombre)) {
+								$insert = $this->model->register($txtNombre, $txtPosicion, $nuevonombre);
+							} else {
+								echo "no se pudo guardar ";
+							}
+						}
+					} else {
+
+						if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/exporiaxv/' . $nuevonombre)) {
+							$insert = $this->model->register($txtNombre, $txtPosicion, $nuevonombre);
+						} else {
+							echo "no se pudo guardar";
+						}
+					}
+				} else {
+					$option = 2;
+
+					$cantidadBanner = "";
+					$cantidadBanner = $this->model->cantidadBanner();
+
+					//Actualizar sin Imagen
+
+					if ($_FILES['archivoSubido']['name'] == "") {
+						$insert = $this->model->updatePosicion($txtNombre, $txtPosicion);
+					} else {
+						//Actualizar con Imagen
+						$cantidad = $cantidadBanner['cant'];
+						$ubicacionTemporal = $_FILES['archivoSubido']['tmp_name'];
+						$nombre = $_FILES['archivoSubido']['name'];
+						$nuevonombre = $cantidad . $nombre;
+						$nombreArchivo = trim($_POST['txtNombre']);
+						if ($cantidad == null) {
+							$cantidad = 0;
+						} else {
+							$cantidad++;
+						}
+
+						if (!file_exists('Assets/archivos/banner/')) {
+							mkdir('Assets/archivos/banner/', 0777, true);
+							if (file_exists('Assets/archivos/banner/')) {
+								if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/banner/' . $nuevonombre)) {
+									$insert = $this->model->register($txtNombre, $txtPosicion, $cantidad, $nuevonombre);
+								} else {
+									echo "no se pudo guardar ";
+								}
+							}
+						} else {
+							if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/banner/' . $nuevonombre)) {
+								$insert = $this->model->register($txtNombre, $txtPosicion, $cantidad, $nuevonombre);
+							} else {
+								echo "no se pudo guardar";
+							}
+						}
+					}
+				}
+
+				if ($insert > 0) {
+					if ($option == 1) {
+						$arrResponse = array('status' => true, 'msg' => 'Datos guardados correctamente.');
+					} else {
+						$arrResponse = array('status' => true, 'msg' => 'Datos Actualizados correctamente.');
+					}
+				} else {
+					$arrResponse = array("status" => false, "msg" => 'No es posible almacenar los datos.');
+				}
+			}
+			echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+		}
+		die();
+	}
+
 	//listado de los banners
 	public function get()
 	{
@@ -39,21 +160,21 @@ class expoferialaboralxvadmin extends Controllers
 					$btnView = '<button class="btn btn-info btn-sm fntView" onClick="fntView(' . $arrData[$i]['IdBaner'] . ')" title="Ver Banner"><i class="far fa-eye"></i></button>';
 				}
 				if ($_SESSION['permisosMod']['u']) {
-					if (( $_SESSION['userData']['idrol'] == 1) ||( $_SESSION['userData']['idrol'] == 2)) {
+					if (($_SESSION['userData']['idrol'] == 1) || ($_SESSION['userData']['idrol'] == 2)) {
 						$btnEdit = '<button class="btn btn-primary  btn-sm fntEdit" onClick="fntEdit(this,' . $arrData[$i]['IdBaner'] . ')" title="Editar Banner"><i class="fas fa-pencil-alt"></i></button>';
 					} else {
 						$btnEdit = '<button class="btn btn-secondary btn-sm" disabled ><i class="fas fa-pencil-alt"></i></button>';
 					}
 				}
 				if ($_SESSION['permisosMod']['d']) {
-					if (( $_SESSION['userData']['idrol'] == 1) ||( $_SESSION['userData']['idrol'] == 2)) {
+					if (($_SESSION['userData']['idrol'] == 1) || ($_SESSION['userData']['idrol'] == 2)) {
 						$btnDelete = '<button class="btn btn-danger btn-sm fntDelete" onClick="fntDelete(' . $arrData[$i]['IdBaner'] . ')" title="Eliminar Banner"><i class="far fa-trash-alt"></i></button>';
 					} else {
 						$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
 					}
 				}
 				$arrData[$i]['NombreArchivo'] = '<a href="' . base_url() . '/Assets/archivos/banner/' . $arrData[$i]['NombreArchivo'] . '"target="_blank"><span class="badge badge-primary"  > Ver Imagen <i class="fas fa-image"></i></span></a> ';
-			
+
 				$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
 			}
 			echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
@@ -65,7 +186,7 @@ class expoferialaboralxvadmin extends Controllers
 	public function set()
 	{
 		if ($_POST) {
-			if (empty($_POST['txtNombre'])) { 
+			if (empty($_POST['txtNombre'])) {
 				$arrResponse = array("status" => false, "msg" => 'Datos incorrectos en la Expoferia Laboralxv.');
 			} else {
 				$idUsuario = intval($_POST['id']);
@@ -105,8 +226,7 @@ class expoferialaboralxvadmin extends Controllers
 
 						if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/banner/' . $nuevonombre)) {
 							$insert = $this->model->register($nombreArchivo, $nuevonombre, $cantidad, $posicion);
-						} 
-                        else {
+						} else {
 							echo "no se pudo guardar";
 						}
 					}
@@ -118,10 +238,10 @@ class expoferialaboralxvadmin extends Controllers
 
 					//Actualizar sin Imagen
 
-					if ($_FILES['archivoSubido']['name']=="") {
+					if ($_FILES['archivoSubido']['name'] == "") {
 						$insert = $this->model->updatePosicion($nombreArchivo, $idUsuario, $posicion);
-					} else{
-					//Actualizar con Imagen
+					} else {
+						//Actualizar con Imagen
 						$cantidad = $cantidadBanner['cant'];
 						$ubicacionTemporal = $_FILES['archivoSubido']['tmp_name'];
 						$nombre = $_FILES['archivoSubido']['name'];
@@ -166,7 +286,7 @@ class expoferialaboralxvadmin extends Controllers
 		}
 		die();
 	}
-	
+
 	//obtener un baner para actualizar
 	public function getone($idpersona)
 	{
@@ -191,10 +311,10 @@ class expoferialaboralxvadmin extends Controllers
 		if ($_POST) {
 			if ($_SESSION['permisosMod']['d']) {
 				$IdBaner = intval($_POST['IdBaner']);
-				$NombreArchivo= $this->model->getOne($IdBaner);
+				$NombreArchivo = $this->model->getOne($IdBaner);
 				//borrar documentos
 				$requestDelete = $this->model->remove($IdBaner);
-				@unlink('Assets/archivos/banner/'.$NombreArchivo['NombreArchivo']);
+				@unlink('Assets/archivos/banner/' . $NombreArchivo['NombreArchivo']);
 				if ($requestDelete) {
 					$arrResponse = array('status' => true, 'msg' => 'Se ha eliminado el Banner');
 				} else {
@@ -206,4 +326,3 @@ class expoferialaboralxvadmin extends Controllers
 		die();
 	}
 }
-

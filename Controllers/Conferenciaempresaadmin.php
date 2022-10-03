@@ -27,7 +27,7 @@ class conferenciaempresaadmin extends Controllers
 		$data['page_title'] = "Conferencias<small> Unidad de Seguimiento del Egresado</small>";
 		$data['page_name'] = "USE-Conferencias";
 		$data['page_functions_js'] = "functions_conferenciaadmin.js";
-		$this->views->getView($this, "conferenciaempresaadmin", $data);
+		$this->views->getView($this, "z", $data);
 	}
 	//listado de los banners
 	public function getBanners($i)

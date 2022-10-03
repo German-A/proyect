@@ -42,7 +42,8 @@
                 !empty($_SESSION['permisos'][3]['r']) ||  !empty($_SESSION['permisos'][4]['r']) ||
                 !empty($_SESSION['permisos'][5]['r']) ||  !empty($_SESSION['permisos'][6]['r']) ||
                 !empty($_SESSION['permisos'][7]['r']) ||  !empty($_SESSION['permisos'][21]['r']) ||
-                !empty($_SESSION['permisos'][22]['r'])
+                !empty($_SESSION['permisos'][22]['r'])||
+                !empty($_SESSION['permisos'][29]['r']) ||  !empty($_SESSION['permisos'][30]['r']) 
 
             ) {
             ?>
@@ -79,8 +80,16 @@
                             <li><a class="treeview-item" href="<?= base_url(); ?>/especialidades"><i class="icon fa fa-circle-o"></i>Trasnparencia</a></li>
                         <?php } ?>
 
-                        <li><a class="treeview-item" href="<?= base_url(); ?>/encuestaempresasadmin"><i class="icon fa fa-circle-o"></i>encuestaempresasadmin</a></li>
-                        <li><a class="treeview-item" href="<?= base_url(); ?>/Libroreclamacionesadmin"><i class="icon fa fa-circle-o"></i>Libroreclamaciones</a></li>
+                        <?php if (!empty($_SESSION['permisos'][29]['r'])) { ?>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/especialidades"><i class="icon fa fa-circle-o"></i>Trasnparencia</a></li>
+                        <?php } ?>
+
+                        <?php if (!empty($_SESSION['permisos'][30]['r'])) { ?>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/especialidades"><i class="icon fa fa-circle-o"></i>Trasnparencia</a></li>
+                        <?php } ?>
+
+                        <li><a class="treeview-item" href="<?= base_url(); ?>/expoferialaboralxvadmin/galeria"><i class="icon fa fa-circle-o"></i>Galería</a></li>
+                        <li><a class="treeview-item" href="<?= base_url(); ?>/expoferialaboralxvadmin/ponencias"><i class="icon fa fa-circle-o"></i>Ponencias</a></li>
 
 
                     </ul>

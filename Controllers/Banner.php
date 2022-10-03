@@ -15,7 +15,6 @@ class banner extends Controllers
 	//pagina Banner
 	public function banner()
 	{
-		dep($_SESSION['permisos'][3]['u'] );
 
 		if (empty($_SESSION['permisosMod']['r'])) {
 			header("Location:" . base_url() . '/dashboard');
