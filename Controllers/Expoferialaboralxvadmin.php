@@ -10,7 +10,7 @@ class expoferialaboralxvadmin extends Controllers
 		if (empty($_SESSION['login'])) {
 			header('Location: ' . base_url() . '/login');
 		}
-		getPermisos(3);
+		getPermisos(29);
 	}
 	//pagina Banner
 	public function Expoferialaboralxvadmin()
@@ -36,7 +36,7 @@ class expoferialaboralxvadmin extends Controllers
 		$data['page_tag'] = "Expoferialaboralxv Galeria";
 		$data['page_title'] = "Expoferialaboralxv Galeria";
 		$data['page_name'] = "USE - Expoferia Laboral xv";
-		$data['page_functions_js'] = "functions_banner.js";
+
 		$this->views->getView($this, "galeria", $data);
 	}
 
@@ -147,33 +147,35 @@ class expoferialaboralxvadmin extends Controllers
 		die();
 	}
 
-	//listado de los banners
-	public function get()
+	//listado de los Galeria
+	public function getGaleria()
 	{
 		if ($_SESSION['permisosMod']['r']) {
-			$arrData = $this->model->lista();
+			$arrData = $this->model->listaGaleria();
 			for ($i = 0; $i < count($arrData); $i++) {
 				$btnView = '';
 				$btnEdit = '';
 				$btnDelete = '';
+
 				if ($_SESSION['permisosMod']['r']) {
-					$btnView = '<button class="btn btn-info btn-sm fntView" onClick="fntView(' . $arrData[$i]['IdBaner'] . ')" title="Ver Banner"><i class="far fa-eye"></i></button>';
+					$btnView = '<button class="btn btn-info btn-sm fntView" onClick="fntView(' . $arrData[$i]['idexpoxvgaleria'] . ')" title="Ver Banner"><i class="far fa-eye"></i></button>';
 				}
+
 				if ($_SESSION['permisosMod']['u']) {
-					if (($_SESSION['userData']['idrol'] == 1) || ($_SESSION['userData']['idrol'] == 2)) {
-						$btnEdit = '<button class="btn btn-primary  btn-sm fntEdit" onClick="fntEdit(this,' . $arrData[$i]['IdBaner'] . ')" title="Editar Banner"><i class="fas fa-pencil-alt"></i></button>';
-					} else {
-						$btnEdit = '<button class="btn btn-secondary btn-sm" disabled ><i class="fas fa-pencil-alt"></i></button>';
-					}
+					$btnEdit = '<button class="btn btn-primary  btn-sm fntEdit" onClick="fntEdit(this,' . $arrData[$i]['idexpoxvgaleria'] . ')" title="Editar Banner"><i class="fas fa-pencil-alt"></i></button>';
+				} else {
+					$btnEdit = '<button class="btn btn-secondary btn-sm" disabled ><i class="fas fa-pencil-alt"></i></button>';
 				}
+
+
 				if ($_SESSION['permisosMod']['d']) {
-					if (($_SESSION['userData']['idrol'] == 1) || ($_SESSION['userData']['idrol'] == 2)) {
-						$btnDelete = '<button class="btn btn-danger btn-sm fntDelete" onClick="fntDelete(' . $arrData[$i]['IdBaner'] . ')" title="Eliminar Banner"><i class="far fa-trash-alt"></i></button>';
-					} else {
-						$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
-					}
+
+					$btnDelete = '<button class="btn btn-danger btn-sm fntDelete" onClick="fntDelete(' . $arrData[$i]['idexpoxvgaleria'] . ')" title="Eliminar Banner"><i class="far fa-trash-alt"></i></button>';
+				} else {
+					$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
 				}
-				$arrData[$i]['NombreArchivo'] = '<a href="' . base_url() . '/Assets/archivos/banner/' . $arrData[$i]['NombreArchivo'] . '"target="_blank"><span class="badge badge-primary"  > Ver Imagen <i class="fas fa-image"></i></span></a> ';
+
+				$arrData[$i]['archivo'] = '<a href="' . base_url() . '/Assets/archivos/exporiaxv/' . $arrData[$i]['archivo'] . '"target="_blank"><span class="badge badge-primary"  > Ver Imagen <i class="fas fa-image"></i></span></a> ';
 
 				$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
 			}

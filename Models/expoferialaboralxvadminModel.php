@@ -13,12 +13,15 @@
 			parent::__construct();
 		}
 
-		public function lista()
+		public function listaGaleria()
 		{
-			$sql = "SELECT * FROM banner where Habilitado=1";
+			$sql = "SELECT * FROM expoxvgaleria where status>0";
 			$request = $this->select_all($sql);			
 			return $request;
 		}
+
+
+
 
 		public function cantidadBanner()
 		{
