@@ -48,13 +48,13 @@ class expoferialaboralxvadmin extends Controllers
 				$arrResponse = array("status" => false, "msg" => 'Datos incorrectos en la Galería.');
 			} else {
 
-				$id = intval($_POST['id']);
+				$idexpoxvgaleria = intval($_POST['idexpoxvgaleria']);
 
 				$txtNombre = trim($_POST['txtNombre']);
 				$txtPosicion = trim($_POST['txtPosicion']);
 				$request_user = "";
 
-				if ($id == 0) {
+				if ($idexpoxvgaleria == 0) {
 
 					$option = 1;
 
@@ -77,7 +77,7 @@ class expoferialaboralxvadmin extends Controllers
 						if (file_exists('Assets/archivos/exporiaxv/')) {
 
 							if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/exporiaxv/' . $nuevonombre)) {
-								$insert = $this->model->register($txtNombre, $txtPosicion, $nuevonombre);
+								$insert = $this->model->registerGaleria($txtNombre, $txtPosicion, $nuevonombre);
 							} else {
 								echo "no se pudo guardar ";
 							}
@@ -85,7 +85,7 @@ class expoferialaboralxvadmin extends Controllers
 					} else {
 
 						if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/exporiaxv/' . $nuevonombre)) {
-							$insert = $this->model->register($txtNombre, $txtPosicion, $nuevonombre);
+							$insert = $this->model->registerGaleria($txtNombre, $txtPosicion, $nuevonombre);
 						} else {
 							echo "no se pudo guardar";
 						}
@@ -98,33 +98,33 @@ class expoferialaboralxvadmin extends Controllers
 
 					//Actualizar sin Imagen
 
-					if ($_FILES['archivoSubido']['name'] == "") {
-						$insert = $this->model->updatePosicion($txtNombre, $txtPosicion);
+					if (empty($_FILES['archivoSubido']['name'])) {
+						$insert = $this->model->toupdate($txtNombre, $txtPosicion, $idexpoxvgaleria);
 					} else {
 						//Actualizar con Imagen
 						$cantidad = $cantidadBanner['cant'];
 						$ubicacionTemporal = $_FILES['archivoSubido']['tmp_name'];
 						$nombre = $_FILES['archivoSubido']['name'];
 						$nuevonombre = $cantidad . $nombre;
-						$nombreArchivo = trim($_POST['txtNombre']);
+
 						if ($cantidad == null) {
 							$cantidad = 0;
 						} else {
 							$cantidad++;
 						}
 
-						if (!file_exists('Assets/archivos/banner/')) {
-							mkdir('Assets/archivos/banner/', 0777, true);
-							if (file_exists('Assets/archivos/banner/')) {
-								if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/banner/' . $nuevonombre)) {
-									$insert = $this->model->register($txtNombre, $txtPosicion, $cantidad, $nuevonombre);
+						if (!file_exists('Assets/archivos/exporiaxv/')) {
+							mkdir('Assets/archivos/exporiaxv/', 0777, true);
+							if (file_exists('Assets/archivos/exporiaxv/')) {
+								if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/exporiaxv/' . $nuevonombre)) {
+									$insert = $this->model->updateGaleria($txtNombre, $txtPosicion, $nuevonombre, $idexpoxvgaleria);
 								} else {
 									echo "no se pudo guardar ";
 								}
 							}
 						} else {
-							if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/banner/' . $nuevonombre)) {
-								$insert = $this->model->register($txtNombre, $txtPosicion, $cantidad, $nuevonombre);
+							if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/exporiaxv/' . $nuevonombre)) {
+								$insert = $this->model->updateGaleria($txtNombre, $txtPosicion, $nuevonombre, $idexpoxvgaleria);
 							} else {
 								echo "no se pudo guardar";
 							}
@@ -158,11 +158,12 @@ class expoferialaboralxvadmin extends Controllers
 				$btnDelete = '';
 
 				if ($_SESSION['permisosMod']['r']) {
-					$btnView = '<button class="btn btn-info btn-sm fntView" onClick="fntView(' . $arrData[$i]['idexpoxvgaleria'] . ')" title="Ver Banner"><i class="far fa-eye"></i></button>';
+					$btnView = '<button class="btn btn-info btn-sm fntView" onClick="fntView(' . $arrData[$i]['idexpoxvgaleria'] . ')" title="Ver Galería"><i class="far fa-eye"></i></button>';
 				}
 
+
 				if ($_SESSION['permisosMod']['u']) {
-					$btnEdit = '<button class="btn btn-primary  btn-sm fntEdit" onClick="fntEdit(this,' . $arrData[$i]['idexpoxvgaleria'] . ')" title="Editar Banner"><i class="fas fa-pencil-alt"></i></button>';
+					$btnEdit = '<button class="btn btn-primary  btn-sm " onClick="fntEditGaleria(' . $arrData[$i]['idexpoxvgaleria'] . ')" title="Editar Galería"><i class="fas fa-pencil-alt"></i></button>';
 				} else {
 					$btnEdit = '<button class="btn btn-secondary btn-sm" disabled ><i class="fas fa-pencil-alt"></i></button>';
 				}
@@ -170,16 +171,36 @@ class expoferialaboralxvadmin extends Controllers
 
 				if ($_SESSION['permisosMod']['d']) {
 
-					$btnDelete = '<button class="btn btn-danger btn-sm fntDelete" onClick="fntDelete(' . $arrData[$i]['idexpoxvgaleria'] . ')" title="Eliminar Banner"><i class="far fa-trash-alt"></i></button>';
+					$btnDelete = '<button class="btn btn-danger btn-sm fntDelete" onClick="fntDelete(' . $arrData[$i]['idexpoxvgaleria'] . ')" title="Eliminar Galería"><i class="far fa-trash-alt"></i></button>';
 				} else {
 					$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
 				}
+
 
 				$arrData[$i]['archivo'] = '<a href="' . base_url() . '/Assets/archivos/exporiaxv/' . $arrData[$i]['archivo'] . '"target="_blank"><span class="badge badge-primary"  > Ver Imagen <i class="fas fa-image"></i></span></a> ';
 
 				$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
 			}
 			echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
+		}
+		die();
+	}
+
+
+	//obtener un baner para actualizar
+	public function getOneGaleria($idpersona)
+	{
+		if ($_SESSION['permisosMod']['r']) {
+			$idusuario = intval($idpersona);
+			if ($idusuario > 0) {
+				$arrData = $this->model->getOneGaleria($idusuario);
+				if (empty($arrData)) {
+					$arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
+				} else {
+					$arrResponse = array('status' => true, 'data' => $arrData);
+				}
+				echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+			}
 		}
 		die();
 	}
@@ -289,23 +310,6 @@ class expoferialaboralxvadmin extends Controllers
 		die();
 	}
 
-	//obtener un baner para actualizar
-	public function getone($idpersona)
-	{
-		if ($_SESSION['permisosMod']['r']) {
-			$idusuario = intval($idpersona);
-			if ($idusuario > 0) {
-				$arrData = $this->model->getOne($idusuario);
-				if (empty($arrData)) {
-					$arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
-				} else {
-					$arrResponse = array('status' => true, 'data' => $arrData);
-				}
-				echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
-			}
-		}
-		die();
-	}
 
 	//borrar un banner
 	public function delete()

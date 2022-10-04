@@ -61,7 +61,7 @@ headerAdmin($data);
             </div>
             <div class="modal-body">
                 <form id="formmodalGaleria" name="formmodalGaleria" class="form-horizontal">
-                    <input type="hidden" id="idGaleriaegresado" name="idGaleriaegresado" value="">
+                    <input type="hidden" id="idexpoxvgaleria" name="idexpoxvgaleria" value="">
                     <p class="text-primary">Todos los campos son obligatorios.</p>
 
 
@@ -97,7 +97,7 @@ headerAdmin($data);
 
 <script>
     function openModalGaleria() {
-        document.querySelector('#idGaleriaegresado').value = "";
+        document.querySelector('#idexpoxvgaleria').value = "";
         document.querySelector('.modal-header').classList.replace("headerUpdate", "headerRegister");
         document.querySelector('#btnGaleria').classList.replace("btn-info", "btn-primary");
         document.querySelector('#btnGaleria').innerHTML = "Guardar";
@@ -109,6 +109,7 @@ headerAdmin($data);
 
     function GuardarGaleria() {
 
+        var idexpoxvgaleria = $("#idexpoxvgaleria").val();
         var txtNombre = $("#txtNombre").val();
         var txtPosicion = $("#txtPosicion").val();
         var inputElement = document.getElementById("archivoSubido");
@@ -124,12 +125,9 @@ headerAdmin($data);
             return;
         }
 
-        if (inputElement.files['length'] == 0) {
-            swal("Atención!", "Subir la Imagen", "warning");
-            return;
-        }
 
         var fd = new FormData();
+        fd.append("idexpoxvgaleria", idexpoxvgaleria);
         fd.append("txtNombre", txtNombre);
         fd.append("txtPosicion", txtPosicion);
         fd.append("archivoSubido", archivoSubido);
@@ -144,65 +142,110 @@ headerAdmin($data);
         }).done(function(response) {
             var info = JSON.parse(response);
             if (info.status == true) {
-
-
+                swal("Galeria", info.msg, "success");
+                datatable.api().ajax.reload();
+                $("#modalRegistroGaleria").modal("hide");
             }
             if (info.status == false) {
-
+                swal("Error!", info.msg, "error");
             }
 
             return;
         });
     }
 
+    function fntEditGaleria(idexpoxvgaleria) {
+
+        document.querySelector("#titleGaleria").innerHTML = "ACTUALIZAR GALERÍA";
+        document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");
+        document.querySelector("#btnGaleria").classList.replace("btn-primary", "btn-info");
+        document.querySelector("#btnGaleria").innerHTML = "Actualizar";
+
+        $.ajax({
+            method: "GET",
+            url: "" + base_url + "/expoferialaboralxvadmin/getOneGaleria/" + idexpoxvgaleria,
+            processData: false, // tell jQuery not to process the data
+            contentType: false, // tell jQuery not to set contentType
+
+        }).done(function(response) {
+            var info = JSON.parse(response);
+
+            if (info.status == true) {
+           
+                document.getElementById('idexpoxvgaleria').value = info.data['idexpoxvgaleria'];
+                document.getElementById('txtNombre').value = info.data['nombre'];
+                document.getElementById('txtPosicion').value = info.data['posicion'];
+           
+
+            }
+            if (info.status == false) {
+                swal("Error!", info.msg, "error");
+            }
+
+            $("#modalRegistroGaleria").modal("show");
+        });
+    }
+
+
     $(document).ready(function() {
         datatable = $('#datatable').dataTable({
-        "aProcessing": true,
-        "aServerSide": true,
-        // "language": {
-        //     "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
-        // },
-        "ajax": {
-            "url": " " + base_url + "/expoferialaboralxvadmin/getGaleria",
-            "dataSrc": ""
-        },
-        "columns": [
-            { "data": "idexpoxvgaleria" },
-            { "data": "nombre" },
-            { "data": "archivo" },
-            { "data": "posicion" },
-            { "data": "status" },
-            { "data": "options" }
-        ],
-        'dom': 'lBfrtip',
-        'buttons': [{
-            "extend": "copyHtml5",
-            "text": "<i class='far fa-copy'></i> Copiar",
-            "titleAttr": "Copiar",
-            "className": "btn btn-secondary"
-        }, {
-            "extend": "excelHtml5",
-            "text": "<i class='fas fa-file-excel'></i> Excel",
-            "titleAttr": "Esportar a Excel",
-            "className": "btn btn-success"
-        }, {
-            "extend": "pdfHtml5",
-            "text": "<i class='fas fa-file-pdf'></i> PDF",
-            "titleAttr": "Esportar a PDF",
-            "className": "btn btn-danger"
-        }, {
-            "extend": "csvHtml5",
-            "text": "<i class='fas fa-file-csv'></i> CSV",
-            "titleAttr": "Esportar a CSV",
-            "className": "btn btn-info"
-        }],
-        "resonsieve": "true",
-        "bDestroy": true,
-        "iDisplayLength": 10,
-        "order": [
-            [0, "desc"]
-        ]
-    });
+            "aProcessing": true,
+            "aServerSide": true,
+            // "language": {
+            //     "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
+            // },
+            "ajax": {
+                "url": " " + base_url + "/expoferialaboralxvadmin/getGaleria",
+                "dataSrc": ""
+            },
+            "columns": [{
+                    "data": "idexpoxvgaleria"
+                },
+                {
+                    "data": "nombre"
+                },
+                {
+                    "data": "archivo"
+                },
+                {
+                    "data": "posicion"
+                },
+                {
+                    "data": "status"
+                },
+                {
+                    "data": "options"
+                }
+            ],
+            'dom': 'lBfrtip',
+            'buttons': [{
+                "extend": "copyHtml5",
+                "text": "<i class='far fa-copy'></i> Copiar",
+                "titleAttr": "Copiar",
+                "className": "btn btn-secondary"
+            }, {
+                "extend": "excelHtml5",
+                "text": "<i class='fas fa-file-excel'></i> Excel",
+                "titleAttr": "Esportar a Excel",
+                "className": "btn btn-success"
+            }, {
+                "extend": "pdfHtml5",
+                "text": "<i class='fas fa-file-pdf'></i> PDF",
+                "titleAttr": "Esportar a PDF",
+                "className": "btn btn-danger"
+            }, {
+                "extend": "csvHtml5",
+                "text": "<i class='fas fa-file-csv'></i> CSV",
+                "titleAttr": "Esportar a CSV",
+                "className": "btn btn-info"
+            }],
+            "resonsieve": "true",
+            "bDestroy": true,
+            "iDisplayLength": 10,
+            "order": [
+                [0, "desc"]
+            ]
+        });
 
     });
 </script>

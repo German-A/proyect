@@ -2,15 +2,22 @@
 
 	class ExpoferialaboralxvadminModel extends Mysql
 	{
-		private $intIdUsuario;
-		private $nombreArchivo;
-		private $nuevonombre;
-		private $cantidad;
+		private $idexpoxvgaleria;
+		private $nombre;
+		private $posicion;
+		private $archivo;
 		private $intborrar=0;
 
 		public function __construct()
 		{
 			parent::__construct();
+		}
+
+		public function cantidadBanner()
+		{
+			$sql = "SELECT count(IdBaner) cant FROM banner where Habilitado = 1 order by FechaRegistro desc";
+			$request = $this->select($sql);
+			return $request;
 		}
 
 		public function listaGaleria()
@@ -20,17 +27,7 @@
 			return $request;
 		}
 
-
-
-
-		public function cantidadBanner()
-		{
-			$sql = "SELECT count(IdBaner) cant FROM banner where Habilitado = 1 order by FechaRegistro desc";
-			$request = $this->select($sql);
-			return $request;
-		}
-
-		public function register($txtNombre, $txtPosicion, $nuevonombre){			
+		public function registerGaleria($txtNombre, $txtPosicion, $nuevonombre){			
 			$this->txtNombre = $txtNombre;
 			$this->txtPosicion = $txtPosicion;		
 			$this->nuevonombre = $nuevonombre;
@@ -49,7 +46,46 @@
 	        return $return;
 		}
 
+		public function getOneGaleria($idexpoxvgaleria)
+		{
+			$sql = "SELECT * 
+            FROM expoxvgaleria
+            where status > 0 and idexpoxvgaleria = $idexpoxvgaleria
+			";
+			$request = $this->select($sql);			
+			return $request;
+		}
 
+		public function updateGaleria($txtNombre, $txtPosicion, $nuevonombre,$idexpoxvgaleria){
+			$this->nombre = $txtNombre;
+			$this->posicion = $txtPosicion;
+			$this->archivo = $nuevonombre;
+			$this->idexpoxvgaleria = $idexpoxvgaleria;
+
+			$sql = "UPDATE expoxvgaleria SET nombre=?,posicion=?,archivo=?
+			WHERE idexpoxvgaleria = $this->idexpoxvgaleria ";
+					$arrData = array(
+					$this->nombre,
+					$this->posicion,
+					$this->archivo);	
+				$request = $this->update($sql,$arrData);
+	        return $request;
+		}
+
+		public function toupdate($txtNombre, $txtPosicion, $idexpoxvgaleria){
+			$this->nombre = $txtNombre;
+			$this->posicion = $txtPosicion;
+			$this->idexpoxvgaleria = $idexpoxvgaleria;
+
+			$sql = "UPDATE expoxvgaleria SET nombre=?,posicion=?
+			WHERE idexpoxvgaleria = $this->idexpoxvgaleria ";
+					$arrData = array(
+					$this->nombre,				
+					$this->posicion);
+	
+				$request = $this->update($sql,$arrData);
+	        return $request;
+		}
 
 
 
@@ -62,23 +98,6 @@
 
 
 		
-
-		public function toupdate($nombreArchivo,$nuevonombre,$cantidad,$idUsuario,$posicion){
-			$this->nombreArchivo = $nombreArchivo;
-			$this->nuevonombre = $nuevonombre;
-			$this->cantidad = $cantidad;
-			$this->idUsuario = $idUsuario;
-			$this->posicion = $posicion;
-			$sql = "UPDATE banner SET Nombre=?, NombreArchivo=?, Posicion=?
-			WHERE IdBaner = $this->idUsuario ";
-					$arrData = array(
-					$this->nombreArchivo,
-					$this->nuevonombre,
-					$this->posicion);
-	
-				$request = $this->update($sql,$arrData);
-	        return $request;
-		}
 
 		public function updatePosicion($nombreArchivo,$idUsuario,$posicion){
 			$this->nombreArchivo = $nombreArchivo;
