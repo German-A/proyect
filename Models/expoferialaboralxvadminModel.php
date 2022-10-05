@@ -55,6 +55,15 @@
 			$request = $this->select($sql);			
 			return $request;
 		}
+		public function removeImagen($idexpoxvgaleria)
+		{
+			$this->idexpoxvgaleria = $idexpoxvgaleria;
+			$sql = "UPDATE expoxvgaleria SET status = ? WHERE idexpoxvgaleria = $this->idexpoxvgaleria ";
+			$arrData = array($this->intborrar);
+			$request = $this->update($sql,$arrData);
+			return $request;
+		}
+
 
 		public function updateGaleria($txtNombre, $txtPosicion, $nuevonombre,$idexpoxvgaleria){
 			$this->nombre = $txtNombre;

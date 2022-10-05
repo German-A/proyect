@@ -15,7 +15,6 @@ class expoferialaboralxvadmin extends Controllers
 	//pagina Banner
 	public function Expoferialaboralxvadmin()
 	{
-		dep($_SESSION['permisos'][3]['u']);
 
 		if (empty($_SESSION['permisosMod']['r'])) {
 			header("Location:" . base_url() . '/dashboard');
@@ -39,6 +38,52 @@ class expoferialaboralxvadmin extends Controllers
 
 		$this->views->getView($this, "galeria", $data);
 	}
+
+	//listado de los Galeria
+	public function getGaleria()
+	{
+		if ($_SESSION['permisosMod']['r']) {
+			$arrData = $this->model->listaGaleria();
+			for ($i = 0; $i < count($arrData); $i++) {
+				$btnView = '';
+				$btnEdit = '';
+				$btnDelete = '';
+
+				if ($_SESSION['permisosMod']['r']) {
+					$btnView = '<button class="btn btn-info btn-sm fntView" onClick="fntView(' . $arrData[$i]['idexpoxvgaleria'] . ')" title="Ver Galería"><i class="far fa-eye"></i></button>';
+				}
+
+
+				if ($_SESSION['permisosMod']['u']) {
+					$btnEdit = '<button class="btn btn-primary  btn-sm " onClick="fntEditGaleria(' . $arrData[$i]['idexpoxvgaleria'] . ')" title="Editar Galería"><i class="fas fa-pencil-alt"></i></button>';
+				} else {
+					$btnEdit = '<button class="btn btn-secondary btn-sm" disabled ><i class="fas fa-pencil-alt"></i></button>';
+				}
+
+
+				if ($_SESSION['permisosMod']['d']) {
+
+					$btnDelete = '<button class="btn btn-danger btn-sm " onClick="fntDeleteGaleria(' . $arrData[$i]['idexpoxvgaleria'] . ')" title="Eliminar Galería"><i class="far fa-trash-alt"></i></button>';
+				} else {
+					$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
+				}
+
+				if ($arrData[$i]['status'] == 1) {
+					$arrData[$i]['status'] = '<span class="badge badge-success">Habilitado</span>';
+				} else {
+					$arrData[$i]['status'] = '<span class="badge badge-danger">Eliminado</span>';
+				}
+
+
+				$arrData[$i]['archivo'] = '<a href="' . base_url() . '/Assets/archivos/exporiaxv/' . $arrData[$i]['archivo'] . '"target="_blank"><span class="badge badge-primary"  > Ver Imagen <i class="fas fa-image"></i></span></a> ';
+
+				$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
+			}
+			echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
+		}
+		die();
+	}
+
 
 	//insertar y actualizar los Banners
 	public function setgaleria()
@@ -147,53 +192,13 @@ class expoferialaboralxvadmin extends Controllers
 		die();
 	}
 
-	//listado de los Galeria
-	public function getGaleria()
-	{
-		if ($_SESSION['permisosMod']['r']) {
-			$arrData = $this->model->listaGaleria();
-			for ($i = 0; $i < count($arrData); $i++) {
-				$btnView = '';
-				$btnEdit = '';
-				$btnDelete = '';
-
-				if ($_SESSION['permisosMod']['r']) {
-					$btnView = '<button class="btn btn-info btn-sm fntView" onClick="fntView(' . $arrData[$i]['idexpoxvgaleria'] . ')" title="Ver Galería"><i class="far fa-eye"></i></button>';
-				}
-
-
-				if ($_SESSION['permisosMod']['u']) {
-					$btnEdit = '<button class="btn btn-primary  btn-sm " onClick="fntEditGaleria(' . $arrData[$i]['idexpoxvgaleria'] . ')" title="Editar Galería"><i class="fas fa-pencil-alt"></i></button>';
-				} else {
-					$btnEdit = '<button class="btn btn-secondary btn-sm" disabled ><i class="fas fa-pencil-alt"></i></button>';
-				}
-
-
-				if ($_SESSION['permisosMod']['d']) {
-
-					$btnDelete = '<button class="btn btn-danger btn-sm fntDelete" onClick="fntDelete(' . $arrData[$i]['idexpoxvgaleria'] . ')" title="Eliminar Galería"><i class="far fa-trash-alt"></i></button>';
-				} else {
-					$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
-				}
-
-
-				$arrData[$i]['archivo'] = '<a href="' . base_url() . '/Assets/archivos/exporiaxv/' . $arrData[$i]['archivo'] . '"target="_blank"><span class="badge badge-primary"  > Ver Imagen <i class="fas fa-image"></i></span></a> ';
-
-				$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
-			}
-			echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
-		}
-		die();
-	}
-
-
 	//obtener un baner para actualizar
-	public function getOneGaleria($idpersona)
+	public function getOneGaleria($idexpoxvgaleria)
 	{
 		if ($_SESSION['permisosMod']['r']) {
-			$idusuario = intval($idpersona);
-			if ($idusuario > 0) {
-				$arrData = $this->model->getOneGaleria($idusuario);
+			$idexpoxvgaleria = intval($idexpoxvgaleria);
+			if ($idexpoxvgaleria > 0) {
+				$arrData = $this->model->getOneGaleria($idexpoxvgaleria);
 				if (empty($arrData)) {
 					$arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
 				} else {
@@ -204,6 +209,28 @@ class expoferialaboralxvadmin extends Controllers
 		}
 		die();
 	}
+
+	//borrar un banner
+	public function deleteGaleria($idexpoxvgaleria)
+	{
+
+		if ($_SESSION['permisosMod']['d']) {
+			$idexpoxvgaleria = intval($idexpoxvgaleria);
+			$NombreArchivo = $this->model->getOneGaleria($idexpoxvgaleria);
+			//borrar documentos
+			$requestDelete = $this->model->removeImagen($idexpoxvgaleria);
+			@unlink('Assets/archivos/exporiaxv/' . $NombreArchivo['archivo']);
+			if ($requestDelete) {
+				$arrResponse = array('status' => true, 'msg' => 'Se ha eliminado la Imagen');
+			} else {
+				$arrResponse = array('status' => false, 'msg' => 'Error al eliminar la Imagen');
+			}
+			echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+		}
+
+		die();
+	}
+
 
 	//insertar y actualizar los Banners
 	public function set()
@@ -306,28 +333,6 @@ class expoferialaboralxvadmin extends Controllers
 				}
 			}
 			echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
-		}
-		die();
-	}
-
-
-	//borrar un banner
-	public function delete()
-	{
-		if ($_POST) {
-			if ($_SESSION['permisosMod']['d']) {
-				$IdBaner = intval($_POST['IdBaner']);
-				$NombreArchivo = $this->model->getOne($IdBaner);
-				//borrar documentos
-				$requestDelete = $this->model->remove($IdBaner);
-				@unlink('Assets/archivos/banner/' . $NombreArchivo['NombreArchivo']);
-				if ($requestDelete) {
-					$arrResponse = array('status' => true, 'msg' => 'Se ha eliminado el Banner');
-				} else {
-					$arrResponse = array('status' => false, 'msg' => 'Error al eliminar el Bnner.');
-				}
-				echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
-			}
 		}
 		die();
 	}

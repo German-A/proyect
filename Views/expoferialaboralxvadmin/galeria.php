@@ -30,8 +30,8 @@ headerAdmin($data);
                                 <tr>
                                     <th>ID</th>
                                     <th>Nombres</th>
-                                    <th>Posicion</th>
                                     <th>Archivo</th>
+                                    <th>Posicion</th>
                                     <th>Estado</th>
                                     <th>Acciones</th>
                                 </tr>
@@ -125,6 +125,15 @@ headerAdmin($data);
             return;
         }
 
+        if (idexpoxvgaleria != 0) {
+
+        } else {
+            if (inputElement.files['length'] == 0) {
+                swal("Atención", "Ingresar la Imagen.", "warning");
+                return false;
+            }
+        }
+
 
         var fd = new FormData();
         fd.append("idexpoxvgaleria", idexpoxvgaleria);
@@ -171,19 +180,63 @@ headerAdmin($data);
             var info = JSON.parse(response);
 
             if (info.status == true) {
-           
+                document.querySelector("#formmodalGaleria").reset();
                 document.getElementById('idexpoxvgaleria').value = info.data['idexpoxvgaleria'];
                 document.getElementById('txtNombre').value = info.data['nombre'];
                 document.getElementById('txtPosicion').value = info.data['posicion'];
-           
+
 
             }
             if (info.status == false) {
                 swal("Error!", info.msg, "error");
             }
-
+        
             $("#modalRegistroGaleria").modal("show");
         });
+    }
+
+    function fntDeleteGaleria(idexpoxvgaleria) {
+
+        swal({
+            title: "Eliminar Galeria",
+            text: "¿Realmente quiere eliminar el Galeria?",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Si, eliminar!",
+            cancelButtonText: "No, cancelar!",
+            closeOnConfirm: false,
+            closeOnCancel: true
+        }, function(isConfirm) {
+
+            if (isConfirm) {
+
+                $.ajax({
+                    method: "POST",
+                    url: "" + base_url + "/expoferialaboralxvadmin/deleteGaleria/" + idexpoxvgaleria,
+                    processData: false, // tell jQuery not to process the data
+                    contentType: false, // tell jQuery not to set contentType
+
+                }).done(function(response) {
+                    var info = JSON.parse(response);
+                    console.log(info);
+                    console.log(info.status);
+
+                    if (info.status == true) {
+                        swal("Galeria", info.msg, "success");
+                        datatable.api().ajax.reload();
+                    }
+                    if (info.status == false) {
+                        swal("Error!", info.msg, "error");
+                    }
+                });
+
+            }
+
+        });
+
+
+
+
     }
 
 
@@ -191,9 +244,9 @@ headerAdmin($data);
         datatable = $('#datatable').dataTable({
             "aProcessing": true,
             "aServerSide": true,
-            // "language": {
-            //     "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
-            // },
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
+            },
             "ajax": {
                 "url": " " + base_url + "/expoferialaboralxvadmin/getGaleria",
                 "dataSrc": ""
@@ -242,6 +295,7 @@ headerAdmin($data);
             "resonsieve": "true",
             "bDestroy": true,
             "iDisplayLength": 10,
+
             "order": [
                 [0, "desc"]
             ]
