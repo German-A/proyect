@@ -9,7 +9,7 @@ headerAdmin($data);
     <div class="app-title">
         <div>
             <h1><i class="fas fa-user-tag"></i> <?= $data['page_title'] ?>
-                <?php if ($_SESSION['permisosMod']['w']) { ?>
+                <?php if ($_SESSION['permisos'][29]['w']) { ?>
                     <button class="btn btn-primary" type="button" onclick="openModalGaleria();"><i class="fas fa-plus-circle"></i>Publicar Foto</button>
                 <?php } ?>
             </h1>
