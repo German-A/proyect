@@ -76,7 +76,7 @@ $n = 1;
                 <?php foreach ($perfiles as $key => $fila) { ?>
                     <div class="col-md-12 ml-2 btn btn-outline-warning pl-3 pr-3 d-flex justify-content-center">
                         <div class="col-11 col-md-9">
-                            <label class=""><?php echo $fila['Nombre'] ?></label>
+                            <h5 class=""><?php echo $fila['Nombre'] ?></h5>
                         </div>
 
                         <div class="col-1 col-md-5">

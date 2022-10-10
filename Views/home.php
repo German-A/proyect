@@ -153,7 +153,7 @@ $legal = $obj->selectLegalInicio();
       <div class="cont-titulo">
         <h5 class="bluemedio text-area">DIRECTOR DE LA UNIDAD DE <br> SEGUIMIENTO DEL EGRESADO</h5>
       </div>
-      <img class="equipoimg" src="<?= media(); ?>/img/sosa.png" alt="">
+      <img class="equipoimg" src="<?= media(); ?>/img/drEduardo.png" alt="">
       <div class="cont-info">
         <br>
         <h6>EDUARDO TEÓFILO <br> SOSA ANCAJIMA</h6>
@@ -164,7 +164,7 @@ $legal = $obj->selectLegalInicio();
       <div class="cont-titulo">
         <h5 class="bluemedio text-area">SUBUNIDAD DE ESTADÍSTICA <br> E INFORMÁTICA</h5>
       </div>
-      <img class="equipoimg" src="<?= media(); ?>/img/ingkatherinee.png" alt="">
+      <img class="equipoimg" src="<?= media(); ?>/img/mgLiseth.png" alt="">
       <div class="cont-info">
         <br>
         <h6>KATHERINE LIZETH <br> NUREÑA RODRÍGUEZ</h6>
@@ -175,10 +175,10 @@ $legal = $obj->selectLegalInicio();
       <div class="cont-titulo">
         <h5 class="bluemedio text-area">ANALISTA DE <br>PROCESOS</h5>
       </div>
-      <img class="equipoimg" src="<?= media(); ?>/img/JEAN.png" alt="">
+      <img class="equipoimg" src="<?= media(); ?>/img/ingPaul.png" alt="">
       <div class="col-4 cont-info">
         <br>
-        <h6>JEAN PÁUL<br> ROMERO LOBATÓN </h6>
+        <h6>JEAN PAÚL<br> ROMERO LOBATÓN </h6>
         <p><small>INGENIERO DE SISTEMAS</small></p>
       </div>
     </div><br><br><br>
@@ -186,7 +186,7 @@ $legal = $obj->selectLegalInicio();
       <div class="cont-titulo ">
         <h5 class="bluemedio text-area">ÁREA DE<br> RELACIONES PÚBLICAS</h5>
       </div>
-      <img class="equipoimg" src="<?= media(); ?>/img/katyrodriguez.png" alt="">
+      <img class="equipoimg" src="<?= media(); ?>/img/LicNoeli.png" alt="">
       <div class="col-4 cont-info">
         <br>
         <h6>KATHERINE NOELY<br> RODRÍGUEZ GUZMÁN</h6>
@@ -200,7 +200,7 @@ $legal = $obj->selectLegalInicio();
       <div class="cont-titulo ">
         <h5 class="bluemedio text-area">ÁREA DE<br>MARQUETÍN</h5>
       </div>
-      <img class="equipoimg" src="<?= media(); ?>/img/marinesTrinidad.png" alt="">
+      <img class="equipoimg" src="<?= media(); ?>/img/LicMarines.png" alt="">
       <div class="col-4 cont-info">
         <br>
         <h6>MARINÉS TRINIDAD<br>RAMÍREZ RODRÍGUEZ</h6>

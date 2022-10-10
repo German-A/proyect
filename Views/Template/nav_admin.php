@@ -88,6 +88,10 @@
                             <li><a class="treeview-item" href="<?= base_url(); ?>/expoferialaboralxvadmin/ponencias"><i class="icon fa fa-circle-o"></i>Ponencias</a></li>
                         <?php } ?>
 
+                        <?php if (!empty($_SESSION['permisos'][31]['r'])) { ?>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/expoferialaboralxvadmin/empresas"><i class="icon fa fa-circle-o"></i>Empresas</a></li>
+                        <?php } ?>
+
                     </ul>
                 </li>
             <?php } ?>
