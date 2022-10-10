@@ -141,6 +141,7 @@ headerAdmin($data);
         fd.append("txtPosicion", txtPosicion);
         fd.append("archivoSubido", archivoSubido);
 
+        divLoading.style.display = "flex";
         $.ajax({
             method: "POST",
             url: "" + base_url + "/expoferialaboralxvadmin/setPonencias",
@@ -158,7 +159,7 @@ headerAdmin($data);
             if (info.status == false) {
                 swal("Error!", info.msg, "error");
             }
-
+            divLoading.style.display = "none";
             return;
         });
     }

@@ -56,10 +56,7 @@
                     <button type="button" class="input bg-warning enviar pt-2 pb-2 pl-5 pr-5 text-white" onclick="crearTicket()">
                         <h4>ENVIAR</h4>
                     </button>
-                    <div class="p-3 text-center" id="visitas">
-
-                    </div>
-
+  
                 </div>
 
             </div>
@@ -84,28 +81,9 @@
     </div>
 </div>
 <script>
-    function fecha() {
-
-        $.ajax({
-            method: "post",
-            url: " " + base_url + "/home/cantidadvisitas/",
-            dataType: 'json',
-            success: function(data) {
-                if (data.status) {
-                    listado = '';
-                    listado =
-                        `
-                        <h4>` + data['data']['cantidad'] + `</h4>
-                        <h4>Visitantes</h4>                        
-                    `;
-                    $("#visitas").html(listado);
-                }
-            }
-        });
-    }
-
+  
     window.onload = function() {
-        fecha();
+
 
         divLoading.style.display = "none";
     }

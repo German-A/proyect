@@ -140,7 +140,7 @@ headerAdmin($data);
         fd.append("txtNombre", txtNombre);
         fd.append("txtPosicion", txtPosicion);
         fd.append("archivoSubido", archivoSubido);
-
+        divLoading.style.display = "flex";
         $.ajax({
             method: "POST",
             url: "" + base_url + "/expoferialaboralxvadmin/setgaleria",
@@ -158,7 +158,7 @@ headerAdmin($data);
             if (info.status == false) {
                 swal("Error!", info.msg, "error");
             }
-
+            divLoading.style.display = "none";
             return;
         });
     }
