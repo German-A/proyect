@@ -1,7 +1,14 @@
 <?php headexpoferiaxv2($data); ?>
 
+<?php obj($data);
 
-<br><br><br><br><br>
+$obj = new HomeModel();
+
+$perfiles = $obj->listaExpoferiaxv();
+
+?>
+
+
 
 <style>
     .contenedorxv2 {
@@ -14,30 +21,30 @@
 <div class="text-center">
     <img src="<?= media() ?>/images/expoferiaxv/expoferiaxv2.jpg" style="width: 100%;" alt="">
 </div>
-<br><br><br>
+<br>
 
 <div class="col-12">
 
     <div class="text-center">
-        <h1>ORGANIZADORES</h1>
+        <h2>ORGANIZADORES</h2>
     </div>
-    <br><br>
+    <br>
 
     <div class="row d-flex justify-content-around">
 
-        <div class="col-md-2 text-center">
+        <div class="col-6 col-md-3 text-center mb-4">
             <img class="img-fluid col-md-12" src="<?= media(); ?>/images/expoferiaxv/vicerrectoradologo.png" alt="" style=" width: 100%; object-fit: cover;">
         </div>
 
-        <div class="col-md-2 text-center">
+        <div class="col-6 col-md-3 text-center mb-4">
             <img class="img-fluid col-md-12" src="<?= media(); ?>/archivos/logos/logoDpa.png" alt="" style=" width: 100%; object-fit: cover;">
         </div>
 
-        <div class="col-md-2 text-center">
+        <div class="col-6 col-md-3 text-center mb-4">
             <img class="img-fluid col-md-12" src="<?= media(); ?>/images/expoferiaxv/logoUse.png" alt="" style=" width: 100%; object-fit: cover;">
         </div>
 
-        <div class="col-md-2 text-center">
+        <div class="col-6 col-md-3 text-center mb-4">
             <img class="img-fluid col-md-12" src="<?= media(); ?>/images/expoferiaxv/CEIINDlogo1.png" alt="" style="width: 70%; object-fit: cover;">
         </div>
 
@@ -49,10 +56,10 @@
 
 <div class="contenedorxv2">
 
-    <br><br><br><br>
+    <br>
 
     <div class="col-12 text-center">
-        <h1>PONENCIAS</h1>
+        <h2>PONENCIAS</h2>
         <br>
         <h5>¡Participa de todas nuestras ponencias!</h3>
             <br><br>
@@ -63,7 +70,7 @@
 <style>
     .swiper {
         max-width: 1250px;
-        height: 500px;
+        height: 350px;
     }
 
     .swiper-slide {
@@ -86,8 +93,22 @@
 
     .swiper-slide img {
         display: block;
-        width: 350px;
+        min-width: 350px;
         height: 350px;
+        object-fit: cover;
+    }
+
+    @media (min-width: 768px) {
+        .swiper-slide {
+            width: 40%;
+        }
+
+    }
+
+    @media (min-width: 992px) {
+        .swiper-slide {
+            width: 30%;
+        }
     }
 </style>
 
@@ -96,22 +117,16 @@
 <!-- Swiper -->
 <div class="swiper mySwiper">
     <div class="swiper-wrapper">
-        <div class="swiper-slide">
-            <div class="divexpoxv">
-                <img src="<?= media(); ?>/images/expoferiaxv/expo1.png" alt="" />
-                <br>
-                <h4>EL FUTURO DE LA EDUCACIÓN</h4>
-                <h5>11 de febrero de 2025</h5>
+
+        <?php foreach ($perfiles as $key => $fila) { ?>
+            <div class="swiper-slide">
+                <div class="divexpoxv">
+
+                    <img src="<?= media(); ?>/archivos/exporiaxv/<?php echo $fila['archivo'] ?>">
+                </div>
             </div>
-        </div>
-        <div class="swiper-slide">
-            <div class="divexpoxv">
-                <img src="<?= media(); ?>/images/expoferiaxv/expo2.png" alt="" />
-                <br>
-                <h4>PRÓXIMOS CAMBIOS EN LAS POLÍTICAS</h4>
-                <h5>11 de febrero de 2025</h5>
-            </div>
-        </div>
+        <?php } ?>
+
     </div>
     <div class="swiper-pagination"></div>
 </div>
@@ -125,8 +140,8 @@
 <!-- Initialize Swiper -->
 <script>
     var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 3,
-        spaceBetween: 100,
+        slidesPerView: "auto",
+        spaceBetween: 30,
         freeMode: true,
         pagination: {
             el: ".swiper-pagination",

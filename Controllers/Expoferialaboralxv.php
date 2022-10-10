@@ -33,4 +33,22 @@ class expoferialaboralxv extends Controllers
 		$data['page_name'] = "expoferialaboralxv";
 		$this->views->getView($this, "ponencias", $data);
 	}
+
+	public function galeria()
+	{
+
+		$data['page_tag'] = "expoferialaboralxv";
+		$data['page_title'] = "expoferialaboralxv";
+		$data['page_name'] = "expoferialaboralxv";
+		$this->views->getView($this, "galeria", $data);
+	}
+
+	public function empresas()
+	{
+
+		$data['page_tag'] = "expoferialaboralxv";
+		$data['page_title'] = "expoferialaboralxv";
+		$data['page_name'] = "expoferialaboralxv";
+		$this->views->getView($this, "empresas", $data);
+	}
 }

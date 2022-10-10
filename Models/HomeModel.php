@@ -449,6 +449,26 @@ class HomeModel extends Mysql
 		return $return;
 	}
 
+/*EXPOFERIA LABORAL*/
 
+	/*EXPOFERIA LABORAL PONENCIAS */
+	public function listaExpoferiaxv()
+	{
+		$sql = "SELECT e.archivo
+		from expoxvponencias e
+		where e.status>0";
+		$request = $this->select_all($sql);
+		return $request;
+	}
+
+	/*EXPOFERIA LABORAL GALERIA */
+		public function listaExpoferiaxvGaleria()
+		{
+			$sql = "SELECT e.archivo
+			from expoxvgaleria e
+			where e.status>0";
+			$request = $this->select_all($sql);
+			return $request;
+		}
 	
 }

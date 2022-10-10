@@ -10,7 +10,7 @@ headerAdmin($data);
         <div>
             <h1><i class="fas fa-user-tag"></i> <?= $data['page_title'] ?>
                 <?php if ($_SESSION['permisos'][29]['w']) { ?>
-                    <button class="btn btn-primary" type="button" onclick="openModalGaleria();"><i class="fas fa-plus-circle"></i>Publicar Foto</button>
+                    <button class="btn btn-primary" type="button" onclick="openModalPonencias();"><i class="fas fa-plus-circle"></i>Publicar Foto</button>
                 <?php } ?>
             </h1>
         </div>
@@ -50,18 +50,18 @@ headerAdmin($data);
 
 
 <!-- Modal  agregarPostrado-->
-<div class="modal fade" id="modalRegistroGaleria" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="modalRegistroPonencias" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header headerRegister">
-                <h5 class="modal-title" id="titleGaleria">Galería</h5>
+                <h5 class="modal-title" id="titlePonencias">Galería</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form id="formmodalGaleria" name="formmodalGaleria" class="form-horizontal">
-                    <input type="hidden" id="idexpoxvgaleria" name="idexpoxvgaleria" value="">
+                <form id="formmodalPonencias" name="formmodalPonencias" class="form-horizontal">
+                    <input type="hidden" id="idexpoxvPonencias" name="idexpoxvPonencias" value="">
                     <p class="text-primary">Todos los campos son obligatorios.</p>
 
 
@@ -84,7 +84,7 @@ headerAdmin($data);
                     </div>
 
                     <div class="tile-footer">
-                        <a href="javascript:void(0)" class="btn btn-info" id="btnGaleria" onclick="GuardarGaleria()">Guardar</a>&nbsp;&nbsp;&nbsp;
+                        <a href="javascript:void(0)" class="btn btn-info" id="btnPonencias" onclick="GuardarPonencias()">Guardar</a>&nbsp;&nbsp;&nbsp;
                         <button class="btn btn-danger" type="button" data-dismiss="modal"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cerrar</button>
                     </div>
                 </form>
@@ -96,20 +96,20 @@ headerAdmin($data);
 
 
 <script>
-    function openModalGaleria() {
-        document.querySelector('#idexpoxvgaleria').value = "";
+    function openModalPonencias() {
+        document.querySelector('#idexpoxvPonencias').value = "";
         document.querySelector('.modal-header').classList.replace("headerUpdate", "headerRegister");
-        document.querySelector('#btnGaleria').classList.replace("btn-info", "btn-primary");
-        document.querySelector('#btnGaleria').innerHTML = "Guardar";
-        document.querySelector('#titleGaleria').innerHTML = "Galería";
-        document.querySelector("#formmodalGaleria").reset();
+        document.querySelector('#btnPonencias').classList.replace("btn-info", "btn-primary");
+        document.querySelector('#btnPonencias').innerHTML = "Guardar";
+        document.querySelector('#titlePonencias').innerHTML = "Galería";
+        document.querySelector("#formmodalPonencias").reset();
 
-        $('#modalRegistroGaleria').modal('show');
+        $('#modalRegistroPonencias').modal('show');
     }
 
-    function GuardarGaleria() {
+    function GuardarPonencias() {
 
-        var idexpoxvgaleria = $("#idexpoxvgaleria").val();
+        var idexpoxvPonencias = $("#idexpoxvPonencias").val();
         var txtNombre = $("#txtNombre").val();
         var txtPosicion = $("#txtPosicion").val();
         var inputElement = document.getElementById("archivoSubido");
@@ -125,7 +125,7 @@ headerAdmin($data);
             return;
         }
 
-        if (idexpoxvgaleria != 0) {
+        if (idexpoxvPonencias != 0) {
 
         } else {
             if (inputElement.files['length'] == 0) {
@@ -136,14 +136,14 @@ headerAdmin($data);
 
 
         var fd = new FormData();
-        fd.append("idexpoxvgaleria", idexpoxvgaleria);
+        fd.append("idexpoxvponencias", idexpoxvPonencias);
         fd.append("txtNombre", txtNombre);
         fd.append("txtPosicion", txtPosicion);
         fd.append("archivoSubido", archivoSubido);
 
         $.ajax({
             method: "POST",
-            url: "" + base_url + "/expoferialaboralxvadmin/setgaleria",
+            url: "" + base_url + "/expoferialaboralxvadmin/setPonencias",
             data: fd,
             processData: false, // tell jQuery not to process the data
             contentType: false // tell jQuery not to set contentType
@@ -151,9 +151,9 @@ headerAdmin($data);
         }).done(function(response) {
             var info = JSON.parse(response);
             if (info.status == true) {
-                swal("Galeria", info.msg, "success");
+                swal("Ponencias", info.msg, "success");
                 datatable.api().ajax.reload();
-                $("#modalRegistroGaleria").modal("hide");
+                $("#modalRegistroPonencias").modal("hide");
             }
             if (info.status == false) {
                 swal("Error!", info.msg, "error");
@@ -163,16 +163,16 @@ headerAdmin($data);
         });
     }
 
-    function fntEditGaleria(idexpoxvgaleria) {
+    function fntEditPonencias(idexpoxvPonencias) {
 
-        document.querySelector("#titleGaleria").innerHTML = "ACTUALIZAR GALERÍA";
+        document.querySelector("#titlePonencias").innerHTML = "ACTUALIZAR GALERÍA";
         document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");
-        document.querySelector("#btnGaleria").classList.replace("btn-primary", "btn-info");
-        document.querySelector("#btnGaleria").innerHTML = "Actualizar";
+        document.querySelector("#btnPonencias").classList.replace("btn-primary", "btn-info");
+        document.querySelector("#btnPonencias").innerHTML = "Actualizar";
 
         $.ajax({
             method: "GET",
-            url: "" + base_url + "/expoferialaboralxvadmin/getOneGaleria/" + idexpoxvgaleria,
+            url: "" + base_url + "/expoferialaboralxvadmin/getOnePonencia/" + idexpoxvPonencias,
             processData: false, // tell jQuery not to process the data
             contentType: false, // tell jQuery not to set contentType
 
@@ -180,8 +180,8 @@ headerAdmin($data);
             var info = JSON.parse(response);
 
             if (info.status == true) {
-                document.querySelector("#formmodalGaleria").reset();
-                document.getElementById('idexpoxvgaleria').value = info.data['idexpoxvgaleria'];
+                document.querySelector("#formmodalPonencias").reset();
+                document.getElementById('idexpoxvPonencias').value = info.data['idexpoxvponencias'];
                 document.getElementById('txtNombre').value = info.data['nombre'];
                 document.getElementById('txtPosicion').value = info.data['posicion'];
 
@@ -191,15 +191,15 @@ headerAdmin($data);
                 swal("Error!", info.msg, "error");
             }
         
-            $("#modalRegistroGaleria").modal("show");
+            $("#modalRegistroPonencias").modal("show");
         });
     }
 
-    function fntDeleteGaleria(idexpoxvgaleria) {
+    function fntDeletePonencias(idexpoxvPonencias) {
 
         swal({
-            title: "Eliminar Galeria",
-            text: "¿Realmente quiere eliminar el Galeria?",
+            title: "Eliminar Ponencias",
+            text: "¿Realmente quiere eliminar el Ponencias?",
             type: "warning",
             showCancelButton: true,
             confirmButtonText: "Si, eliminar!",
@@ -212,7 +212,7 @@ headerAdmin($data);
 
                 $.ajax({
                     method: "POST",
-                    url: "" + base_url + "/expoferialaboralxvadmin/deleteGaleria/" + idexpoxvgaleria,
+                    url: "" + base_url + "/expoferialaboralxvadmin/deletePonencias/" + idexpoxvPonencias,
                     processData: false, // tell jQuery not to process the data
                     contentType: false, // tell jQuery not to set contentType
 
@@ -222,7 +222,7 @@ headerAdmin($data);
                     console.log(info.status);
 
                     if (info.status == true) {
-                        swal("Galeria", info.msg, "success");
+                        swal("Ponencias", info.msg, "success");
                         datatable.api().ajax.reload();
                     }
                     if (info.status == false) {
@@ -252,7 +252,7 @@ headerAdmin($data);
                 "dataSrc": ""
             },
             "columns": [{
-                    "data": "idexpoxvgaleria"
+                    "data": "idexpoxvponencias"
                 },
                 {
                     "data": "nombre"

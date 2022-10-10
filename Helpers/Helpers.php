@@ -1021,11 +1021,11 @@ function sendAprobacionCorreo($data, $template)
         $mail->Password   = 'JPnotificaciones';
         $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
         $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-        
+
         //Recipients
         $mail->setFrom('notificaciones@use-dpa.unitru.edu.pe', 'Oferta Laboral');
         $mail->addAddress($data['email_user']);     //Add a recipient
-        $mail->addAddress('use@unitru.edu.pe');  
+        $mail->addAddress('use@unitru.edu.pe');
         if (!empty($data['email_user'])) {
             $mail->addBCC($data['email_user']);
         }
@@ -1127,4 +1127,22 @@ function formatMoney($cantidad)
 {
     $cantidad = number_format($cantidad, 2, SPD, SPM);
     return $cantidad;
+}
+
+function randKey($str = '', $long = 0)
+{
+    $key = null;
+    $str = str_split($str);
+    $start = 0;
+    $limit = count($str) - 1;
+    for ($x = 0; $x < $long; $x++) {
+        $key .= $str[rand($start, $limit)];
+    }
+    return $key;
+}
+
+function removeFile($ruta, $temp)
+{
+    $path = $ruta . $temp;
+    @unlink($path);
 }

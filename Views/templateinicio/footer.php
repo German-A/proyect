@@ -1,4 +1,6 @@
 <br>
+
+<div class="col-12">
 <footer class="row p-2" style="background-color: var(--azul-medio);">
     <div class="col-6 col-md-6 col-lg-6 col-xl-3 text-light text-center" style="margin: auto;" data-aos="fade-down-left">
         <img src="<?= media(); ?>/archivos/logos/logoUseBlanco.png" style="width: 80%; ">
@@ -65,6 +67,8 @@
     </div>
 
 </footer>
+
+</div>
 
 <!-- SEGUNDAS ESPECIALIDADES -->
 <div class="modal fade" id="modalPerfiles" tabindex="-1" role="dialog" aria-hidden="true">

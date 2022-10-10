@@ -13,7 +13,7 @@
             <img class="img-fluid" src="<?= media(); ?>/images/expoferiaxv/birreteuse.jpg" alt="" />
         </div>
         <div class="col-md-6 text-center">
-            <h1>Unidad de Seguimiento del Egresado</h1>
+            <h2>Unidad de Seguimiento del Egresado</h2>
             <br>
             <img class="img-fluid col-md-8 " src="<?= media(); ?>/images/expoferiaxv/logoUse.png" alt="" style=" width: 100%; object-fit: cover;">
             <br><br>
@@ -31,7 +31,7 @@
     <div class="row">
 
         <div class="col-md-6 text-center">
-            <h1>Centro de Estudiantes de Ingeniería Industrial</h1>
+            <h2>Centro de Estudiantes de Ingeniería Industrial</h2>
             <br>
             <img class="img-fluid col-md-6 " src="<?= media(); ?>/images/expoferiaxv/CEIINDlogo1.png" alt="" style="width: 50%; object-fit: cover;">
             <br><br>

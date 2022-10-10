@@ -24,7 +24,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
 
-    <link rel="stylesheet"  href="<?= media(); ?>/vendor/glightbox/css/glightbox.min.css" >
+    <link rel="stylesheet" href="<?= media(); ?>/vendor/glightbox/css/glightbox.min.css">
 </head>
 
 <style>
@@ -37,7 +37,7 @@
     }
 
     .nav-barxv {
-        background: #E38646;
+
         padding: 20px;
         display: block;
         color: cornsilk;
@@ -56,7 +56,7 @@
     /* barra de menu poner color */
     .menuxv {
         display: none;
-      
+
         width: 100%;
         /*ddd*/
         margin-left: -100%;
@@ -73,7 +73,7 @@
     /* color de letras*/
     .menu__linkxv {
         display: block;
-        padding: 20px;      
+        padding: 20px;
         font-size: 20px;
         text-decoration: none;
     }
@@ -99,6 +99,9 @@
         display: flex;
         width: 100%;
         flex-direction: column;
+    }
+    .logoweb{
+        display: none;
     }
 
     @media(min-width:1024px) {
@@ -144,22 +147,36 @@
             position: absolute;
             top: 60;
         }
+
+        .logoweb{
+        display: block;
+    }
     }
 </style>
 
 
 <body>
-    <span id="btnMenuExpoferiaxv" class="nav-barxv">
-        <i class="fas fa-bars"></i>
+    <span id="btnMenuExpoferiaxv" class="nav-barxv text-right">
+        <div class="row">
+        <div class="col-6 text-left">
+            <img class="logo" src="<?= media(); ?>/images/expoferiaxv/logoUse.png" style="height: 60px;">
+        </div>
+
+        <div class="col-6 text-right">
+            <h2><i class="fas fa-bars text-dark"></i></h2>            
+        </div>
+
+        </div>
+
     </span>
+
     <nav class="main-navxv">
         <ul class="menuxv" id="menuxv">
 
-            <img class="logo" src="<?= media(); ?>/archivos/logos/uselogoWhite.png" style="height: 50px;">
+            <img class="logoweb" src="<?= media(); ?>/images/expoferiaxv/logoUse.png" style="height: 60px;">
 
             <div class="naveg">
-
-                <li class="menu__itemxv"><a  href="<?= base_url(); ?>/expoferialaboralxv" class="menu__linkxv">INICIO</a></li>
+                <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxv" class="menu__linkxv">INICIO</a></li>
                 <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxv/nosotros" class="menu__linkxv">NOSOTROS</a></li>
                 <!-- <li class="menu__itemxv container-submenuxv">
                     <a href="#" class="menu__linkxv submenu-btnxv">OFERTA LABORAL</a>
@@ -168,9 +185,9 @@
                         <li class="menu__itemxv"><a href="" class="menu__linkxv">BOLSA DE TRABAJO</a></li>
                     </ul>
                 </li> -->
-                <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxv/ponencias"  class="menu__linkxv">PONENCIAS</a></li>
-                <li class="menu__itemxv"><a href="" class="menu__linkxv">EMPRESAS</a></li>
-
+                <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxv/ponencias" class="menu__linkxv">PONENCIAS</a></li>
+                <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxv/galeria" class="menu__linkxv">GALERIA</a></li>
+                <!-- <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxv/empresas" class="menu__linkxv">EMPRESAS</a></li> -->
             </div>
         </ul>
     </nav>
