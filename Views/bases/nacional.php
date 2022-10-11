@@ -77,7 +77,7 @@ $n = 1;
                       
                         </div>
 
-                        <div class="col-1 col-md-5">
+                        <div class="col-1 col-md-3">
                             <div class="row">
                                 <a href="#elid" class="btn btn-primary libro" onclick="verArchivo('<?php echo $fila['NombreArchivo'] ?>');"><i class="fas fa-book-open"></i></a>
                                 &nbsp
