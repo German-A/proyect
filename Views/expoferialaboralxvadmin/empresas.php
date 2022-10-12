@@ -33,6 +33,7 @@ headerAdmin($data);
                                     <th>Url</th>
                                     <th>Archivo</th>
                                     <th>Posicion</th>
+                                    <th>Descripcion</th>
                                     <th>Estado</th>
                                     <th>Acciones</th>
                                 </tr>
@@ -83,6 +84,14 @@ headerAdmin($data);
 
                     <div class="form-row">
                         <div class="form-group col-md-12">
+                            <label for="descripcion">Descripción del Puesto<span class="text-danger">*</span></label>
+                            <textarea type="text" class="form-control summernote" id="descripcion" name="descripcion" placeholder="Ingresar Descripción Puesto"></textarea>
+                        </div>
+                    </div>
+
+
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
                             <label for="">Archivo a subir:</label>
                             <input type="file" id="archivoSubido" name="archivoSubido">
                         </div>
@@ -97,6 +106,20 @@ headerAdmin($data);
         </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function() {
+        $('.summernote').summernote({
+            toolbar: [
+                // [groupName, [list of button]]
+                ['style', ['clear']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['lineHeights', ['0.2']],
+
+            ]
+        });
+    });
+</script>
 
 
 
@@ -118,6 +141,7 @@ headerAdmin($data);
         var txtNombre = $("#txtNombre").val();
         var txtUrl = $("#txtUrl").val();
         var txtPosicion = $("#txtPosicion").val();
+        var descripcion = $("#descripcion").val();
         var inputElement = document.getElementById("archivoSubido");
         var archivoSubido = inputElement.files[0];
 
@@ -145,6 +169,7 @@ headerAdmin($data);
         fd.append("txtNombre", txtNombre);
         fd.append("txtUrl", txtUrl);
         fd.append("txtPosicion", txtPosicion);
+        fd.append("descripcion", descripcion);
         fd.append("archivoSubido", archivoSubido);
         divLoading.style.display = "flex";
         $.ajax({
@@ -190,13 +215,14 @@ headerAdmin($data);
                 document.getElementById('idexpoxvEmpresa').value = info.data['idexpoxvempresas'];
                 document.getElementById('txtNombre').value = info.data['nombre'];
                 document.getElementById('txtUrl').value = info.data['url'];
+                document.getElementById('descripcion').value = info.data['descripcion'];
                 document.getElementById('txtPosicion').value = info.data['posicion'];
 
             }
             if (info.status == false) {
                 swal("Error!", info.msg, "error");
             }
-        
+
             $("#modalRegistroEmpresa").modal("show");
         });
     }
@@ -271,6 +297,9 @@ headerAdmin($data);
                 },
                 {
                     "data": "posicion"
+                },
+                {
+                    "data": "descripcion"
                 },
                 {
                     "data": "status"

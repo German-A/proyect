@@ -58,6 +58,10 @@ $n = 1;
     }
 </style>
 
+<div id="elid">
+
+</div>
+
 
 <div class="row text-center" style="max-width: 1600px; margin:auto">
 
@@ -94,7 +98,7 @@ $n = 1;
 
     </div>
 
-    <div class="col-8 libro" id="elid">
+    <div class="col-8 libro" >
         <br>
         <?php foreach ($primerabase as $key => $fila) { ?>
             <object class="pdfview" type="application/pdf" id="video_id" data="<?= media(); ?>/archivos/documentoslegales/<?php echo $fila['NombreArchivo'] ?>"></object>

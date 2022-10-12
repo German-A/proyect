@@ -198,6 +198,19 @@ class ExpoferialaboralxvadminModel extends Mysql
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 		/*EMPRESA*/
 		public function listEmpresa()
 		{
@@ -213,20 +226,22 @@ class ExpoferialaboralxvadminModel extends Mysql
 			return $request;
 		}
 	
-		public function registerEmpresa($txtNombre, $txtUrl, $txtPosicion, $nuevonombre)
+		public function registerEmpresa($txtNombre, $txtUrl, $txtPosicion,$descripcion, $nuevonombre)
 		{
 			$this->nombre = $txtNombre;
 			$this->url = $txtUrl;
 			$this->posicion = $txtPosicion;
+			$this->descripcion = $descripcion;
 			$this->archivo = $nuevonombre;
 			$this->expoferiaslaboralesid = 2;
 			$return = 0;
-			$query_insert  = "INSERT INTO expoxvempresas(nombre,url,posicion,archivo,expoferiaslaboralesid)
-									  VALUES(?,?,?,?,?)";
+			$query_insert  = "INSERT INTO expoxvempresas(nombre,url,posicion,descripcion,archivo,expoferiaslaboralesid)
+									  VALUES(?,?,?,?,?,?)";
 			$arrData = array(
 				$this->nombre,
 				$this->url,
 				$this->posicion,
+				$this->descripcion,
 				$this->archivo,
 				$this->expoferiaslaboralesid
 			);
@@ -254,30 +269,33 @@ class ExpoferialaboralxvadminModel extends Mysql
 			return $request;
 		}
 	
-		public function updateEmpresa($txtNombre,$txtUrl, $txtPosicion, $idexpoxvempresas)
+		public function updateEmpresa($txtNombre,$txtUrl, $txtPosicion,$descripcion, $idexpoxvempresas)
 		{
 			$this->nombre = $txtNombre;
 			$this->url = $txtUrl;
 			$this->posicion = $txtPosicion;
+			$this->descripcion = $descripcion;
 			$this->idexpoxvempresas = $idexpoxvempresas;
 	
-			$sql = "UPDATE expoxvempresas SET nombre=?,url=?,posicion=?
+			$sql = "UPDATE expoxvempresas SET nombre=?,url=?,posicion=?,descripcion=?
 				WHERE idexpoxvempresas = $this->idexpoxvempresas ";
 			$arrData = array(
 				$this->nombre,
 				$this->url,
-				$this->posicion
+				$this->posicion,
+				$this->descripcion
 			);
 	
 			$request = $this->update($sql, $arrData);
 			return $request;
 		}
 	
-		public function updateGaleriaEmpresa($txtNombre,$txtUrl,$txtPosicion, $archivo, $idexpoxvempresas)
+		public function updateGaleriaEmpresa($txtNombre,$txtUrl,$txtPosicion, $descripcion, $archivo, $idexpoxvempresas)
 		{
 			$this->nombre = $txtNombre;
 			$this->url = $txtUrl;
 			$this->posicion = $txtPosicion;
+			$this->descripcion = $descripcion;
 			$this->archivo = $archivo;
 			$this->idexpoxvempresas = $idexpoxvempresas;
 	

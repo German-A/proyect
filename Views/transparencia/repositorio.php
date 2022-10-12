@@ -57,41 +57,65 @@ $n = 1;
         }
     }
 </style>
+<div id="elid">
 
+</div>
 <div class="card-header">
     <h4 class="text-center">Transparencia - Unidad de Seguimiento del Egresado</h4>
 </div>
 <br>
 <br><br>
 
+
 <br>
 
 <div class="row text-center" style="max-width: 1600px; margin:auto">
+
 
     <div class="col-12  col-lg-4">
         <div class="col-md-10 m-auto">
             <h3 class="blueoscuro">Repositorio 2021-II</h3>
         </div>
 
+
+
         <br>
 
         <div class="row">
             <div class="col-md-10  m-auto">
-               
-                    <div class="col-md-12 ml-2 btn btn-outline-warning pl-3 pr-3 d-flex justify-content-center">
-                        <div class="col-11 col-md-9">
-                            <label class="">Informe de inserción laboral y evaluación de objetivos educaciones 2021-II</label>
-                        </div>
 
-                        <div class="col-1 col-md-5">
-                            <div class="row">
-                                <a href="#elid" class="btn btn-primary libro"  onclick="verArchivo('<?php echo $fila['NombreArchivo'] ?>');"><i class="fas fa-book-open"></i></a>
-                                &nbsp
-                                <a href="<?= media(); ?>/archivos/repositorio/INFORME2021-II.pdf" class="btn btn-primary" download><i class="fas fa-download"></i></a>
-                            </div>
+                <div class="col-md-12 ml-2 btn btn-outline-warning pl-3 pr-3 d-flex justify-content-center">
+                    <div class="col-11 col-md-9">
+                        <label class="">Informe de inserción laboral y evaluación de objetivos educaciones 2021-II</label>
+                    </div>
+
+                    <div class="col-1 col-md-5">
+                        <div class="row">
+                            <a href="#elid" class="btn btn-primary libro" onclick="verArchivo('INFORME2021-II.pdf');"><i class="fas fa-book-open"></i></a>
+                            &nbsp
+                            <a href="<?= media(); ?>/archivos/repositorio/INFORME2021-II.pdf" class="btn btn-primary" download><i class="fas fa-download"></i></a>
                         </div>
                     </div>
-             
+                </div>
+
+                <div class="col-md-12 ml-2 btn btn-outline-warning pl-3 pr-3 d-flex justify-content-center">
+                    <div class="col-11 col-md-9">
+                        <label class="">PLAN DE TRABAJO AÑO 2022</label>
+                    </div>
+
+                    <div class="col-1 col-md-5">
+                        <div class="row">
+                            <a href="#elid" class="btn btn-primary libro" onclick="verArchivo('plantrabajo.pdf');"><i class="fas fa-book-open"></i></a>
+                            &nbsp
+                            <a href="<?= media(); ?>/archivos/repositorio/plantrabajo.pdf" class="btn btn-primary" download><i class="fas fa-download"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
             </div>
         </div>
 
@@ -101,7 +125,7 @@ $n = 1;
         <br>
 
     </div>
-    <div class="col-8 libro" id="elid">
+    <div class="col-8 libro">
         <br>
         <?php foreach ($primermanual as $key => $fila) { ?>
             <object class="pdfview" type="application/pdf" id="video_id" data="<?= media(); ?>/archivos/repositorio/INFORME2021-II.pdf"></object>
@@ -118,7 +142,7 @@ $n = 1;
 <script>
     function verArchivo(a) {
         var b = a;
-        let newUrl = `<?= media(); ?>/archivos/manuales/${b}`;
+        let newUrl = `<?= media(); ?>/archivos/repositorio/${b}`;
         let newUrl2 = `https://docs.google.com/viewer?url=https://use-dpa.unitru.edu.pe/INTRANET/archivos/base/${b}`;
         $("#video_id").attr("data", newUrl);
     }

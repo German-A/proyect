@@ -473,7 +473,7 @@ class HomeModel extends Mysql
 
 	public function listaExpoferiaxvEmpresas()
 	{
-		$sql = "SELECT e.archivo, e.nombre,e.url
+		$sql = "SELECT e.archivo, e.nombre,e.url,e.descripcion
 			from expoxvempresas e
 			where e.status>0 order by Posicion asc";
 		$request = $this->select_all($sql);

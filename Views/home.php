@@ -62,7 +62,7 @@ $legal = $obj->selectLegalInicio();
       <div class="row" data-aos="fade-down-right">
         <div class="col-md-8 col-lg-6  text-left ">
           <h3 class="mostaza">Nuestra Misión</h3>
-          <h4 class="blueoscuro">La DPA es un órgano técnico de gestión académica encargado de los diferentes procesos de implementación, ejecución y evaluación de las políticas académicas de la alta Dirección y del Vicerrectorado Académico, así como de los Programas y acciones que coadyuvan al fomento de la excelencia académica de la UNT.</h4>
+          <h4 class="blueoscuro">Fomentar y fortalecer los vínculos entre la universidad con sus egresados de pre y posgrado, promoviendo la inserción laboral, el emprendimiento y su formación continua, coadyuva en la evaluación de los objetivos educacionales.</h4>
         </div>
         <div class="col-md-8 col-lg-6 d-flex flex-row-reverse" data-aos="flip-left">
           <img src="<?= media(); ?>/archivos/logos/portadaUNT.jpg" style="min-width: 120px; max-height: 200px;">
@@ -82,7 +82,7 @@ $legal = $obj->selectLegalInicio();
         <br>
         <div class="col-12 col-md-5  mt-5 mt-4 text-right">
           <h3 class="mostaza">Nuestra Visión</h3>
-          <h4 class="blueoscuro">Al 2025 la DPA será un órgano técnico que integre de modo tecnológico, eficiente y eficaz, los procesos de implementación, ejecución y evaluación de las políticas académicas de la alta Dirección y del Vicerrectorado Académico, así como de los Programas y acciones que coadyuvan al fomento de la excelencia académica de la UNT.</h4>
+          <h4 class="blueoscuro">Al 2026, la USE, es reconocida nivel local y nacional por sus estrategias para fortalecer y actualizar información y conocimientos de los egresados de pre y posgrado; coadyuva en la evaluación de los objetivos educacionales como parte del proceso de mejora continua de los currículos de los programas de estudio de la UNT.</h4>
         </div>
       </div>
     </div>

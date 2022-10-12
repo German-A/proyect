@@ -500,7 +500,7 @@ class expoferialaboralxvadmin extends Controllers
 				$txtNombre = trim($_POST['txtNombre']);
 				$txtPosicion = trim($_POST['txtPosicion']);
 				$txtUrl = trim($_POST['txtUrl']);
-
+				$descripcion = trim($_POST['descripcion']);
 				$ruta = 'Assets/archivos/exporiaxv/';
 				$obj['archivo'] = null;
 
@@ -526,14 +526,14 @@ class expoferialaboralxvadmin extends Controllers
 						mkdir($ruta, 0777, true);
 						if (file_exists($ruta)) {
 							if (move_uploaded_file($ubicacionTemporal, $ruta . $filename)) {
-								$insert = $this->model->registerEmpresa($txtNombre, $txtUrl, $txtPosicion, $filename);
+								$insert = $this->model->registerEmpresa($txtNombre, $txtUrl, $txtPosicion,$descripcion, $filename);
 							} else {
 								echo "no se pudo guardar ";
 							}
 						}
 					} else {
 						if (move_uploaded_file($ubicacionTemporal, $ruta . $filename)) {
-							$insert = $this->model->registerEmpresa($txtNombre, $txtUrl, $txtPosicion, $filename);
+							$insert = $this->model->registerEmpresa($txtNombre, $txtUrl, $txtPosicion,$descripcion, $filename);
 						} else {
 							echo "no se pudo guardar";
 						}
@@ -544,7 +544,7 @@ class expoferialaboralxvadmin extends Controllers
 
 					//Actualizar sin Imagen
 					if (empty($_FILES['archivoSubido']['name'])) {
-						$insert = $this->model->updateEmpresa($txtNombre, $txtUrl, $txtPosicion, $idexpoxvempresas);
+						$insert = $this->model->updateEmpresa($txtNombre, $txtUrl, $txtPosicion,$descripcion, $idexpoxvempresas);
 					} else {
 						//Actualizar con Imagen				
 						$obj = $this->model->getOneEmpresa($idexpoxvempresas);
@@ -565,14 +565,14 @@ class expoferialaboralxvadmin extends Controllers
 							mkdir($ruta, 0777, true);
 							if (file_exists($ruta)) {
 								if (move_uploaded_file($ubicacionTemporal, $ruta . $filename)) {
-									$insert = $this->model->updateGaleriaEmpresa($txtNombre, $txtUrl, $txtPosicion, $filename, $idexpoxvempresas);
+									$insert = $this->model->updateGaleriaEmpresa($txtNombre, $txtUrl, $txtPosicion,$descripcion, $filename, $idexpoxvempresas);
 								} else {
 									echo "no se pudo guardar ";
 								}
 							}
 						} else {
 							if (move_uploaded_file($ubicacionTemporal, $ruta . $filename)) {
-								$insert = $this->model->updateGaleriaEmpresa($txtNombre, $txtUrl, $txtPosicion, $filename, $idexpoxvempresas);
+								$insert = $this->model->updateGaleriaEmpresa($txtNombre, $txtUrl, $txtPosicion,$descripcion, $filename, $idexpoxvempresas);
 							} else {
 								echo "no se pudo guardar";
 							}

@@ -26,6 +26,7 @@ $perfiles = $obj->listaExpoferiaxvEmpresas();
                 </div>
                 <div class="col-7">
                     <h4><?php echo $fila['nombre'] ?></h4>
+                    <h4><?php echo $fila['descripcion'] ?></h4>
                 </div>
             </a>
         <?php } ?>
