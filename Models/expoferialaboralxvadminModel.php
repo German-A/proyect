@@ -285,6 +285,7 @@ class ExpoferialaboralxvadminModel extends Mysql
 				WHERE idexpoxvempresas = $this->idexpoxvempresas ";
 			$arrData = array(
 				$this->nombre,
+				$this->url,
 				$this->posicion,
 				$this->archivo
 			);

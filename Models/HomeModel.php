@@ -405,7 +405,7 @@ class HomeModel extends Mysql
 
 	/***************************************************************************************
 		LIBRO DE RECLAMACIONES
-	****************************************************************************************/
+	 ****************************************************************************************/
 
 	public function cantidadlibroreclamaciones()
 	{
@@ -449,7 +449,7 @@ class HomeModel extends Mysql
 		return $return;
 	}
 
-/*EXPOFERIA LABORAL*/
+	/*EXPOFERIA LABORAL*/
 
 	/*EXPOFERIA LABORAL PONENCIAS */
 	public function listaExpoferiaxv()
@@ -462,13 +462,21 @@ class HomeModel extends Mysql
 	}
 
 	/*EXPOFERIA LABORAL GALERIA */
-		public function listaExpoferiaxvGaleria()
-		{
-			$sql = "SELECT e.archivo
+	public function listaExpoferiaxvGaleria()
+	{
+		$sql = "SELECT e.archivo
 			from expoxvgaleria e
 			where e.status>0";
-			$request = $this->select_all($sql);
-			return $request;
-		}
-	
+		$request = $this->select_all($sql);
+		return $request;
+	}
+
+	public function listaExpoferiaxvEmpresas()
+	{
+		$sql = "SELECT e.archivo, e.nombre,e.url
+			from expoxvempresas e
+			where e.status>0 order by Posicion asc";
+		$request = $this->select_all($sql);
+		return $request;
+	}
 }

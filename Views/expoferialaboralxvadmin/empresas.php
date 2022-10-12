@@ -187,7 +187,7 @@ headerAdmin($data);
 
             if (info.status == true) {
                 document.querySelector("#formmodalEmpresa").reset();
-                document.getElementById('idexpoxvEmpresa').value = info.data['idexpoxvEmpresa'];
+                document.getElementById('idexpoxvEmpresa').value = info.data['idexpoxvempresas'];
                 document.getElementById('txtNombre').value = info.data['nombre'];
                 document.getElementById('txtUrl').value = info.data['url'];
                 document.getElementById('txtPosicion').value = info.data['posicion'];

@@ -42,9 +42,7 @@
                 !empty($_SESSION['permisos'][3]['r']) ||  !empty($_SESSION['permisos'][4]['r']) ||
                 !empty($_SESSION['permisos'][5]['r']) ||  !empty($_SESSION['permisos'][6]['r']) ||
                 !empty($_SESSION['permisos'][7]['r']) ||  !empty($_SESSION['permisos'][21]['r']) ||
-                !empty($_SESSION['permisos'][22]['r'])||
-                !empty($_SESSION['permisos'][29]['r']) ||  !empty($_SESSION['permisos'][30]['r']) 
-
+                !empty($_SESSION['permisos'][22]['r'])        
             ) {
             ?>
                 <li class="treeview">
@@ -80,6 +78,29 @@
                             <li><a class="treeview-item" href="<?= base_url(); ?>/especialidades"><i class="icon fa fa-circle-o"></i>Trasnparencia</a></li>
                         <?php } ?>
 
+                        </ul>
+                </li>
+            <?php } ?>
+
+
+
+            <?php
+            if (
+
+                !empty($_SESSION['permisos'][29]['r']) ||  
+                !empty($_SESSION['permisos'][30]['r']) ||  
+                !empty($_SESSION['permisos'][31]['r']) 
+
+            ) {
+            ?>
+                <li class="treeview">
+                    <a class="app-menu__item" href="#" data-toggle="treeview">
+                        <i class="app-menu__icon fas fa-upload" aria-hidden="true"></i>
+                        <span class="app-menu__label">Página Expoferia</span>
+                        <i class="treeview-indicator fa fa-angle-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+
                         <?php if (!empty($_SESSION['permisos'][29]['r'])) { ?>
                             <li><a class="treeview-item" href="<?= base_url(); ?>/expoferialaboralxvadmin/galeria"><i class="icon fa fa-circle-o"></i>Galería</a></li>
                         <?php } ?>
@@ -95,6 +116,15 @@
                     </ul>
                 </li>
             <?php } ?>
+
+
+
+
+
+
+
+
+
 
             <!------------------------- modulo de administador   ----------------------->
             <?php if (

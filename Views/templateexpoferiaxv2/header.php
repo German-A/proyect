@@ -187,7 +187,7 @@
                 </li> -->
                 <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxv/ponencias" class="menu__linkxv">PONENCIAS</a></li>
                 <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxv/galeria" class="menu__linkxv">GALERIA</a></li>
-                <!-- <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxv/empresas" class="menu__linkxv">EMPRESAS</a></li> -->
+                <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxv/empresas" class="menu__linkxv">EMPRESAS</a></li>
             </div>
         </ul>
     </nav>
