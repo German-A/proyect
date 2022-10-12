@@ -26,7 +26,7 @@ $perfiles = $obj->listaExpoferiaxv();
 <div class="col-12">
 
     <div class="text-center">
-        <h2>ORGANIZADORES</h2>
+        <h2>ORGANIZA</h2>
     </div>
     <br>
 
