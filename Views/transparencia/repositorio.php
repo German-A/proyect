@@ -84,12 +84,12 @@ $n = 1;
         <div class="row">
             <div class="col-md-10  m-auto">
 
-                <div class="col-md-12 ml-2 btn btn-outline-warning pl-3 pr-3 d-flex justify-content-center">
+                <div class="col-md-12 ml-2 btn btn-outline-warning  p-2 m-2  d-flex justify-content-center">
                     <div class="col-11 col-md-9">
-                        <label class="">Informe de inserción laboral y evaluación de objetivos educaciones 2021-II</label>
+                        <h5 class="">Informe de inserción laboral y evaluación de objetivos educaciones 2021-II</h5>
                     </div>
 
-                    <div class="col-1 col-md-5">
+                    <div class="col-1 col-md-3">
                         <div class="row">
                             <a href="#elid" class="btn btn-primary libro" onclick="verArchivo('INFORME2021-II.pdf');"><i class="fas fa-book-open"></i></a>
                             &nbsp
@@ -98,12 +98,11 @@ $n = 1;
                     </div>
                 </div>
 
-                <div class="col-md-12 ml-2 btn btn-outline-warning pl-3 pr-3 d-flex justify-content-center">
+                <div class="col-md-12 ml-2 btn btn-outline-warning  p-2 m-2  d-flex justify-content-center">
                     <div class="col-11 col-md-9">
-                        <label class="">PLAN DE TRABAJO AÑO 2022</label>
+                        <h5 class="">Plan de Trabajo año 2022</h5>
                     </div>
-
-                    <div class="col-1 col-md-5">
+                    <div class="col-1 col-md-3">
                         <div class="row">
                             <a href="#elid" class="btn btn-primary libro" onclick="verArchivo('plantrabajo.pdf');"><i class="fas fa-book-open"></i></a>
                             &nbsp
@@ -111,6 +110,50 @@ $n = 1;
                         </div>
                     </div>
                 </div>
+
+                <div class="col-md-12 ml-2 btn btn-outline-warning  p-2 m-2  d-flex justify-content-center">
+                    <div class="col-11 col-md-9">
+                        <h5 class="">Ciclo de Deming</h5>
+                    </div>
+                    <div class="col-1 col-md-3">
+                        <div class="row">
+                            <a href="#elid" class="btn btn-primary libro" onclick="verArchivo('informebienal.pdf');"><i class="fas fa-book-open"></i></a>
+                            &nbsp
+                            <a href="<?= media(); ?>/archivos/repositorio/informebienal.pdf" class="btn btn-primary" download><i class="fas fa-download"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-md-12 ml-2 btn btn-outline-warning  p-2 m-2  d-flex justify-content-center">
+                    <div class="col-11 col-md-9">
+                        <h5 class="">Informe Bienal sobre la realidad universitaria Peruana</h5>
+                    </div>
+                    <div class="col-1 col-md-3">
+                        <div class="row">
+                            <a href="#elid" class="btn btn-primary libro" onclick="verArchivo('demming.pdf');"><i class="fas fa-book-open"></i></a>
+                            &nbsp
+                            <a href="<?= media(); ?>/archivos/repositorio/demming.pdf" class="btn btn-primary" download><i class="fas fa-download"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-12 ml-2 btn btn-outline-warning  p-2 m-2  d-flex justify-content-center">
+                    <div class="col-11 col-md-9">
+                        <h5 class="">Informe Bienal sobre la realidad universitaria Peruana</h5>
+                    </div>
+                    <div class="col-1 col-md-3">
+                        <div class="row">
+                            <a href="#elid" class="btn btn-primary libro" onclick="verArchivo('demming.pdf');"><i class="fas fa-book-open"></i></a>
+                            &nbsp
+                            <a href="<?= media(); ?>/archivos/repositorio/demming.pdf" class="btn btn-primary" download><i class="fas fa-download"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                
 
 
 
