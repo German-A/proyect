@@ -75,8 +75,8 @@ $legal = $obj->selectLegalInicio();
         <div class="col-12 col-md-6 align-self-center mt-4" data-aos="flip-right">
           <br><br>
           <div class="row d-flex justify-content-center">
-            <img class="col-6 col-md-6 imglogooo" src="<?= media(); ?>/archivos/logos/logoDpa.png">
-            <img class="col-6 col-md-6 imglogooo" src="<?= media(); ?>/archivos/logos/logoUse.png">
+            <!-- <img class="col-6 col-md-6 imglogooo" src="<?= media(); ?>/archivos/logos/logoDpa.png"> -->
+            <img class="col-8 col-md-8 imglogooo" src="<?= media(); ?>/archivos/logos/logoUse.png">
           </div>
         </div>
         <br>

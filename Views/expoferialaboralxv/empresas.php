@@ -30,9 +30,31 @@ $perfiles = $obj->listaExpoferiaxvEmpresas();
             </a>
         <?php } ?>
     </div>
-</div> -->
+</div>  -->
 
+<style>
+    .card-columns .card {
+        margin-bottom: 0.75rem;
+    }
 
+    @media (min-width: 576px) {
+        .card-columns {
+            -webkit-column-count: 5;
+            -moz-column-count: 5;
+            column-count: 5;
+            -webkit-column-gap: 1.25rem;
+            -moz-column-gap: 1.25rem;
+            column-gap: 1.25rem;
+            orphans: 1;
+            widows: 1;
+        }
+
+        .card-columns .card {
+            display: inline-block;
+            width: 100%;
+        }
+    }
+</style>
 
 
 <div class="card-columns">
@@ -41,21 +63,20 @@ $perfiles = $obj->listaExpoferiaxvEmpresas();
 
 
         <div class="card">
-        <img class="card-img-top" src="<?= media(); ?>/archivos/exporiaxv/<?php echo $fila['archivo'] ?>"" alt="Card image cap">
+            <img class="card-img-top" src="<?= media(); ?>/archivos/exporiaxv/<?php echo $fila['archivo'] ?>" style="max-width:100%;" alt="Card image cap">
 
-        <div class="card-body">
-            <h5 class="card-title text-primary"><?php echo $fila['nombre'] ?></h5>
-            <p class="card-text"><?php echo $fila['descripcion'] ?></p>
+            <div class="card-body">
+                <h5 class="card-title text-primary"><?php echo $fila['nombre'] ?></h5>
+                <p class="card-text"><?php echo $fila['descripcion'] ?></p>
+            </div>
+            <div class="text-center">
+                <a class="btn btn-primary" target="_blank" href="<?php echo $fila['url'] ?>">Más Información</a>
+            </div>
+            <br>
+
         </div>
-        <div class="text-center">
-        <a class="btn btn-primary" target="_blank" href="<?php echo $fila['url'] ?>">Más Información</a>
-        </div>
-        <br>
-        
-    </div>
 
     <?php } ?>
 
 
 </div>
-
