@@ -132,6 +132,8 @@ headerAdmin($data);
         document.querySelector('#titleEmpresa').innerHTML = "Galería";
         document.querySelector("#formmodalEmpresa").reset();
 
+       
+        $('.summernote').summernote('reset');
         $('#modalRegistroEmpresa').modal('show');
     }
 
@@ -214,8 +216,10 @@ headerAdmin($data);
                 document.querySelector("#formmodalEmpresa").reset();
                 document.getElementById('idexpoxvEmpresa').value = info.data['idexpoxvempresas'];
                 document.getElementById('txtNombre').value = info.data['nombre'];
-                document.getElementById('txtUrl').value = info.data['url'];
-                document.getElementById('descripcion').value = info.data['descripcion'];
+                document.getElementById('txtPosicion').value = info.data['posicion'];
+             //   $(".summernote").summernote("your text");
+                $('.summernote').summernote('code', info.data['descripcion']);
+               // document.getElementsByClassName('summernote').value = info.data['descripcion'];
                 document.getElementById('txtPosicion').value = info.data['posicion'];
 
             }
