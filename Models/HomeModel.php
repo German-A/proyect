@@ -456,7 +456,7 @@ class HomeModel extends Mysql
 	{
 		$sql = "SELECT e.archivo
 		from expoxvponencias e
-		where e.status>0";
+		where e.status>0 order by e.posicion asc";
 		$request = $this->select_all($sql);
 		return $request;
 	}
@@ -466,16 +466,16 @@ class HomeModel extends Mysql
 	{
 		$sql = "SELECT e.archivo
 			from expoxvgaleria e
-			where e.status>0";
+			where e.status>0 order by e.posicion asc";
 		$request = $this->select_all($sql);
 		return $request;
 	}
 
 	public function listaExpoferiaxvEmpresas()
 	{
-		$sql = "SELECT e.archivo, e.nombre,e.url,e.descripcion
+		$sql = "SELECT e.archivo, e.nombre,e.url
 			from expoxvempresas e
-			where e.status>0 order by Posicion asc";
+			where e.status>0 order by e.posicion asc";
 		$request = $this->select_all($sql);
 		return $request;
 	}

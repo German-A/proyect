@@ -35,14 +35,14 @@ $perfiles = $año->selectañoEspecialidades();
     <div class="row d-flex justify-content-around" id="empleos">
 
         <div class="col-5 pb-4 cardempleo ">
-            <div class="row bg-danger">
+            <div class="row">
                 <div class="col-3">
-                    <img class="img-fluid" src="<?= media() ?>/images/avatar.png">
+                 
                 </div>
                 <div class="col-8">
-                    <h4>puesto</h4>
+                    <h4></h4>
                     <br>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam non quidem id quas neque consectetur esse nulla, fugit voluptatibus amet error! Enim omnis natus nemo ullam unde, alias rerum eligendi.</p>
+                   <p></p>
                 </div>
             </div>
         </div>
