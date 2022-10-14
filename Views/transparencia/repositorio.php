@@ -155,6 +155,38 @@ $n = 1;
 
                 
 
+                <div class="col-md-12 ml-2 btn btn-outline-warning  p-2 m-2  d-flex justify-content-center">
+                    <div class="col-11 col-md-9">
+                        <h5 class="">Informe XIII Expoferia laboral virtual 2021- UNT</h5>
+                    </div>
+                    <div class="col-1 col-md-3">
+                        <div class="row">
+                            <a href="#elid" class="btn btn-primary libro" onclick="verArchivo('informeExpoferia2021.pdf');"><i class="fas fa-book-open"></i></a>
+                            &nbsp
+                            <a href="<?= media(); ?>/archivos/repositorio/informeExpoferia2021.pdf" class="btn btn-primary" download><i class="fas fa-download"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-12 ml-2 btn btn-outline-warning  p-2 m-2  d-flex justify-content-center">
+                    <div class="col-11 col-md-9">
+                        <h5 class="">Informe Informe XIV Expoferia laboral Modalidad Hibrida 2022 </h5>
+                    </div>
+                    <div class="col-1 col-md-3">
+                        <div class="row">
+                            <a href="#elid" class="btn btn-primary libro" onclick="verArchivo('modaldidadHibrida.pdf');"><i class="fas fa-book-open"></i></a>
+                            &nbsp
+                            <a href="<?= media(); ?>/archivos/repositorio/modaldidadHibrida.pdf" class="btn btn-primary" download><i class="fas fa-download"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+
+                
+
+                
+
 
 
 

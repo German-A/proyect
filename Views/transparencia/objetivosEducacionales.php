@@ -92,7 +92,6 @@ $perfiles = $home->listaObjetivosEducacionales();
             success: function(response) {
                 console.log(response);
                 var info = JSON.parse(response);
-                //console.log(info.data[0]['bachiller']);
                 document.getElementById('bachiller').innerHTML = info.data[0]['bachiller'];
                 document.getElementById('titulo').innerHTML = info.data[0]['titulo'];
                 document.getElementById('segundaespecialidad').innerHTML = info.data[0]['segundaespecialidad'];
