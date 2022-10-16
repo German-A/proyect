@@ -21,8 +21,8 @@ getModal('modalBanner', $data);
   <form id="frmempleo" class="col-12 d-flex flex-column" name="frmempleo" method="post" submit="return false">
 
     <div class="col-6 col-md-12">
-      <label for="DescripcionPuesto">Descripción del Puesto</label>
-      <textarea type="text" class="form-control summernote" id="DescripcionPuesto" name="DescripcionPuesto" placeholder="Ingresar Descripción Puesto"></textarea>
+      <label for="descripcion">Descripción del Puesto</label>
+      <textarea type="text" class="form-control summernote" id="descripcion" name="descripcion" placeholder="Ingresar Descripción Puesto"></textarea>
     </div>
 
 
@@ -38,16 +38,38 @@ getModal('modalBanner', $data);
 
   </form>
 
+  <div class="col-4">
+    <p id="resp"></p>
+  </div>
+
+
+  <div class="col-4">
+    <input type="checkbox" onclick="marcarCheckbox(this);" />
+    <label id="marcas">Marcar todos</label>
+  </div>
+
+  <?php
+  $i = 1;
+  foreach ($data['carreras'] as $line) { ?>
+    <tr>
+      <td>
+        <?php echo $i; ?>
+        <input type="checkbox" name="escuelas[]" id="escuelas" class="CheckedAK escuelas" value="<?php echo $line['idEscuela']; ?>" />
+      </td>
+      <td><?php echo $line['nombreEscuela']; ?></td>
+    </tr>
+  <?php $i++;
+  } ?>
 
 
 
 </main>
+
+
 <?php footerAdmin($data); ?>
 <script>
   $(document).ready(function() {
-    $('.summernote').summernote({
-
-    });
+    $('.summernote').summernote({});
   });
 </script>
 
@@ -55,17 +77,86 @@ getModal('modalBanner', $data);
 <script>
   function publicarOferta() {
 
-    console.log('sdsd');
+    var descripcion = $("#descripcion").val();
 
-    var datax = $("#frmempleo").serializeArray();
+
+
+    var listaEscuelas = new Array();
+
+
+
+
+    $('[name="escuelas[]"]:checked').each(function(index, check) {
+
+      listaEscuelas.push({
+        escuelas: check.value,
+      });
+    });
+
+
+    // for (var i = 0; i < escuelas.length; i++) {
+    //   listaEscuelas.push({
+    //     escuelas: escuelas[i],
+    //   });
+    // }
+
+    console.log(listaEscuelas);
+
+
+
+    var fd = new FormData();
+    fd.append("descripcion", descripcion);
+    fd.append("listaEscuelas", JSON.stringify(listaEscuelas));
+    //divLoading.style.display = "flex";
+
     $.ajax({
-        method: "POST",
-        url: "" + base_url + "/sendcorreo/enviarCorreo",
-        data: datax
+      method: "POST",
+      url: "" + base_url + "/sendcorreo/enviarCorreo",
+      //  data: datax,
+      data: fd,
+      processData: false, // tell jQuery not to process the data
+      contentType: false // tell jQuery not to set contentType
 
     }).done(function() {
-        //swal("Atención!", "TERMINADO", "warning");
-        window.location.href = "" + base_url + "/empresaempleoadmin/empresaempleoadmin";
+      console.log('fin');
+      //swal("Atención!", "TERMINADO", "warning");
+      //window.location.href = "" + base_url + "/empresaempleoadmin/empresaempleoadmin";
     });
-}
+  }
+</script>
+
+
+<script>
+  $(document).click(function() { //Creamos la Funcion del Click
+      var checked = $(".CheckedAK:checked").length;
+      //Creamos una Variable y Obtenemos el Numero de Checkbox que esten Seleccionados
+      $("#resp").text("Tienes Actualmente (" + checked + ") Registros " + "Seleccionado(s)");
+      //Asignamos a la Etiqueta <p> el texto de cuantos Checkbox hay Seleccionados
+
+      if (checked == 0) {
+        $('#enviarform').hide(); //ocultar
+      } else {
+        $("#enviarform").fadeIn("slow"); //mostrar
+        console.log(checked);
+      }
+    })
+    .trigger("click");
+
+
+  function marcarCheckbox(source) {
+    //checkboxes = document.getElementsByTagName('input'); 
+    checkboxes = document.getElementsByClassName('CheckedAK');
+    //obtenemos todos los controles del tipo Input
+
+    for (i = 0; i < checkboxes.length; i++)
+    //recoremos todos los controles
+    {
+      if (checkboxes[i].type == "checkbox")
+      //entramos si esta un checkbox
+      {
+        checkboxes[i].checked = source.checked;
+        //si es un checkbox le damos el valor del checkbox
+      }
+    }
+  }
 </script>

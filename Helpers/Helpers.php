@@ -538,7 +538,7 @@ function sendMailPublicacionEmpleo($data, $template)
 }
 
 
-function sendMailLocalCarreras($data, $template)
+function sendMailLocalCarreras($data, $arrData)
 {
     //Create an instance; passing `true` enables exceptions
     $mail = new PHPMailer(true);
@@ -552,22 +552,48 @@ function sendMailLocalCarreras($data, $template)
 
     try {
         //Server settings
+        // $mail->SMTPDebug = 0;                      //Enable verbose debug output
+        // $mail->isSMTP();                                            //Send using SMTP
+        // $mail->Host       = 'smtp.gmail.com';    //server de servicio de correo                 //Set the SMTP server to send through
+        // $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+        // $mail->Username   = 'jeanromerolobaton@gmail.com';                     //SMTP username
+        // $mail->Password   = 'JPsistemas321';                               //SMTP password
+        // $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
+        // $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+        //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+        $data = ['jpromero@unitru.edu.pe', 'jeanromerolobaton@gmail.com', 'use@unitr.edu.pe'];
+
         $mail->SMTPDebug = 0;                      //Enable verbose debug output
         $mail->isSMTP();                                            //Send using SMTP
-        $mail->Host       = 'smtp.gmail.com';    //server de servicio de correo                 //Set the SMTP server to send through
+        $mail->Host       = 'use-dpa.unitru.edu.pe';                     //Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-        $mail->Username   = 'jeanromerolobaton@gmail.com';                     //SMTP username
-        $mail->Password   = 'JPsistemas321';                               //SMTP password
-        $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
-        $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-        //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+        //$mail->Username   = 'jeanromerolobaton@gmail.com';                     //SMTP username
+        //$mail->Password   = 'JPsistemas321';                               //SMTP password
+        $mail->Username   = 'notificaciones@use-dpa.unitru.edu.pe';                     //SMTP username
+        $mail->Password   = 'JPnotificaciones';
+        $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
+        $mail->Port       = 465;
 
         //Recipients
         $mail->setFrom('notificaciones@use-dpa.unitru.edu.pe', 'UNIDAD DE SEGUIMIENTO DEL EGRESADO');
         $mail->addAddress('stifs.jprl18@gmail.com');     //Add a recipient
-        if (!empty($data['emailCopia'])) {
-            $mail->addBCC($data['emailCopia']);
+        // if (!empty($data)) {
+        //     $mail->addBCC($data);
+        // }
+
+
+
+        foreach ($arrData as $email_user) {
+            $mail->AddAddress($email_user['email_user']);
         }
+
+
+
+
+        // for($i = 0; $i < count($arrData); $i++) {
+        //     $mail->AddAddress($arrData[$i]);           
+        // }
 
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML

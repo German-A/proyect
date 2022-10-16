@@ -2,11 +2,7 @@
 
 	class sendcorreoModel extends Mysql
 	{
-		private $intIdUsuario;
-		private $nombreArchivo;
-		private $nuevonombre;
-		private $cantidad;
-		private $intborrar=0;
+	
 
 		public function __construct()
 		{
@@ -15,83 +11,71 @@
 
 		public function lista()
 		{
-			$sql = "SELECT * FROM banner where Habilitado=1";
+			$sql = "SELECT email_user FROM usuario where rolid=3";
 			$request = $this->select_all($sql);			
 			return $request;
 		}
 
-		public function cantidadBanner()
+		public function listaEscuelas()
 		{
-			$sql = "SELECT count(IdBaner) cant FROM banner where Habilitado = 1 order by FechaRegistro desc";
-			$request = $this->select($sql);
+			$sql = "SELECT idEscuela,nombreEscuela from escuela";
+			$request = $this->select_all($sql);			
 			return $request;
 		}
 
-		public function register($nombreArchivo,$nuevonombre,$cantidad,$posicion){			
-			$this->nombreArchivo = $nombreArchivo;
-			$this->nuevonombre = $nuevonombre;
-			$this->cantidad = $cantidad;
-			$this->posicion = $posicion;
-			$return = 0;
-			$query_insert  = "INSERT INTO banner(Nombre,NombreArchivo,Posicion)
-								  VALUES(?,?,?)";
-	        	$arrData = array(
-        						$this->nombreArchivo,
-        						$this->nuevonombre,
-        						$this->posicion);
-	        	$request_insert = $this->insert($query_insert,$arrData);
-	        	$return = $request_insert;
-	        return $return;
-		}
 
-		public function toupdate($nombreArchivo,$nuevonombre,$cantidad,$idUsuario,$posicion){
-			$this->nombreArchivo = $nombreArchivo;
-			$this->nuevonombre = $nuevonombre;
-			$this->cantidad = $cantidad;
-			$this->idUsuario = $idUsuario;
-			$this->posicion = $posicion;
-			$sql = "UPDATE banner SET Nombre=?, NombreArchivo=?, Posicion=?
-			WHERE IdBaner = $this->idUsuario ";
-					$arrData = array(
-					$this->nombreArchivo,
-					$this->nuevonombre,
-					$this->posicion);
-	
-				$request = $this->update($sql,$arrData);
-	        return $request;
-		}
 
-		public function updatePosicion($nombreArchivo,$idUsuario,$posicion){
-			$this->nombreArchivo = $nombreArchivo;
 
-			$this->idUsuario = $idUsuario;
-			$this->posicion = $posicion;
-			$sql = "UPDATE banner SET Nombre=?,Posicion=?
-			WHERE IdBaner = $this->idUsuario ";
-					$arrData = array(
-					$this->nombreArchivo,
-				
-					$this->posicion);
-	
-				$request = $this->update($sql,$arrData);
-	        return $request;
-		}
-		public function remove(int $IdBaner)
+		public function listaCorreos($carreras)
 		{
-			$this->intIdUsuario = $IdBaner;
-			$sql = "UPDATE banner SET Habilitado = ? WHERE IdBaner = $this->intIdUsuario ";
-			$arrData = array($this->intborrar);
-			$request = $this->update($sql,$arrData);
+			$where = "e.status != 0 and ";
+
+			foreach ($carreras as $carrera)
+			{			
+				$where = $where . 'e.idescuela = ' . $carrera['escuelas'].' or ';
+			}
+			
+			$where = substr($where, 0,-4);
+
+			$sql = "SELECT u.email_user
+			FROM egresado e
+			inner join usuario u on e.personaid=u.idpersona
+			WHERE  $where";
+			$request = $this->select_all($sql);			
 			return $request;
 		}
-		public function getOne($idusuario)
-		{
-			$sql = "SELECT * 
-            FROM banner
-            where Habilitado=1 and IdBaner=$idusuario
-			";
-			$request = $this->select($sql);			
-			return $request;
+
+		
+	public function selectUsuarios()
+	{
+		$whereAdmin = "";
+		if ($_SESSION["idUser"] != 1) {
+			$whereAdmin = " and p.idpersona != 1 ";
 		}
+		$sql = "SELECT p.idpersona,p.nombres,p.apellidop,p.apellidom,p.telefono,p.email_user,p.status,r.idrol,r.nombrerol 
+					FROM usuario p 
+					INNER JOIN rol r
+					ON p.rolid = r.idrol
+					WHERE p.status != 0 " . $whereAdmin;
+		$request = $this->select_all($sql);
+		return $request;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
 	}
  ?>
