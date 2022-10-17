@@ -62,7 +62,7 @@ class sendcorreo extends Controllers
 
 		
 
-		//sendMailLocalCarreras($_POST['descripcion'],$arrData);
+		sendMailLocalCarreras($_POST['descripcion'],$arrData);
 	
 		//echo $arrData;
 		echo json_encode($arrData, JSON_UNESCAPED_UNICODE);

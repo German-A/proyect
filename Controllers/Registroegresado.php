@@ -72,7 +72,7 @@ class registroegresado extends Controllers
 					/*dni,contrasenia*/
 					$valorF = $hojaActual->getCellByColumnAndRow(6, $indiceFila);
 					/*direccion*/
-					$valorG = $hojaActual->getCellByColumnAndRow(7, $indiceFila);
+					$valorG = $hojaActual->getCellByColumnAndRow(7, $indiceFila)->getValue();
 					/*telefonoFijo*/
 					$valorH = $hojaActual->getCellByColumnAndRow(8, $indiceFila);
 					/*celular*/
@@ -85,6 +85,10 @@ class registroegresado extends Controllers
 					$valorL = $hojaActual->getCellByColumnAndRow(12, $indiceFila);
 
 					$cantidadBanner = $this->model->validardni($valorE);
+
+					$valorG =  date('Y-m-d', ($valorG - 25569) * 24 * 3600);
+				
+	
 
 					if ($cantidadBanner == null) {
 						//registro tabla usuario

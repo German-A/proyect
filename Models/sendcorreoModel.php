@@ -45,22 +45,6 @@
 			return $request;
 		}
 
-		
-	public function selectUsuarios()
-	{
-		$whereAdmin = "";
-		if ($_SESSION["idUser"] != 1) {
-			$whereAdmin = " and p.idpersona != 1 ";
-		}
-		$sql = "SELECT p.idpersona,p.nombres,p.apellidop,p.apellidom,p.telefono,p.email_user,p.status,r.idrol,r.nombrerol 
-					FROM usuario p 
-					INNER JOIN rol r
-					ON p.rolid = r.idrol
-					WHERE p.status != 0 " . $whereAdmin;
-		$request = $this->select_all($sql);
-		return $request;
-	}
-
 
 
 

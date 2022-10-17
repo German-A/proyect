@@ -40,7 +40,7 @@ class RegistroegresadoModel extends Mysql
 
 	public function validardni($dni)
 	{
-		$sql = "SELECT u.Dni FROM usuario u where u.Dni = $dni and u.status >0";
+		$sql = "SELECT u.dni FROM usuario u where u.dni = '$dni' and u.status > 0";
 		$request = $this->select($sql);
 		return $request;
 	}
@@ -83,7 +83,7 @@ class RegistroegresadoModel extends Mysql
 	{
 		$this->numeroMatricula = $valorA;
 		$this->direccion = $valorF;
-		$this->telefonoFijo = $valorG;
+		$this->fechanaciomiento = $valorG;
 		$this->email = $valorI;
 		$this->sexo = $valorJ;
 		$this->idEscuela = $valorK;
@@ -93,12 +93,12 @@ class RegistroegresadoModel extends Mysql
 		$return = 0;
 
 
-		$query_insert  = "INSERT INTO egresado(numeroMatricula,direccion,telefonoFijo,sexo,idescuela,idsede,personaid) 
+		$query_insert  = "INSERT INTO egresado(numeroMatricula,direccion,fechanaciomiento,sexo,idescuela,idsede,personaid) 
 								  VALUES(?,?,?,?,?,?,?)";
 		$arrData = array(
 			$this->numeroMatricula,
 			$this->direccion,
-			$this->telefonoFijo,
+			$this->fechanaciomiento,
 			$this->sexo,
 			$this->idEscuela,
 			$this->idSede,
@@ -157,24 +157,24 @@ class RegistroegresadoModel extends Mysql
 	}
 	private $iduser;
 
-	public function agregaregresado($numeroMatricula, $direccion, $telefonoFijo, $sexo, $idescuela, $idsede, $iduser)
+	public function agregaregresado($numeroMatricula, $direccion, $fechanaciomiento, $sexo, $idescuela, $idsede, $iduser)
 	{
 		$this->numeroMatricula = $numeroMatricula;
 		$this->direccion = $direccion;
-		$this->telefonoFijo = $telefonoFijo;
+		$this->fechanaciomiento = $fechanaciomiento;
 		$this->sexo = $sexo;
 		$this->idescuela = $idescuela;
 		$this->idsede = $idsede;
 		$this->iduser = $iduser;
 
 
-		$query_insert  = "INSERT INTO egresado(numeroMatricula,direccion,telefonoFijo,sexo,idescuela,idsede,personaid) 
+		$query_insert  = "INSERT INTO egresado(numeroMatricula,direccion,fechanaciomiento,sexo,idescuela,idsede,personaid) 
 		VALUES(?,?,?,?,?,?,?)";
 
 		$arrData = array(
 			$this->numeroMatricula,
 			$this->direccion,
-			$this->telefonoFijo,
+			$this->fechanaciomiento,
 			$this->sexo,
 			$this->idescuela,
 			$this->idsede,
@@ -189,7 +189,7 @@ class RegistroegresadoModel extends Mysql
 	public function getOne($idusuario)
 	{
 		$sql = "SELECT  u.idpersona,u.nombres,u.apellidop,u.apellidom,u.email_user,u.password,u.imagen,u.dni ,u.telefono ,
-		e.numeroMatricula,e.direccion,e.telefonoFijo,e.sexo,e.idescuela,e.idsede,f.idFacultad,f.nombreFacultad,es.nombreEscuela,s.idSede,s.nombreSede
+		e.numeroMatricula,e.direccion,e.fechanaciomiento,e.sexo,e.idescuela,e.idsede,f.idFacultad,f.nombreFacultad,es.nombreEscuela,s.idSede,s.nombreSede
 		FROM usuario u
 		inner join egresado e on u.idpersona=e.personaid
 		inner join escuela es on e.idescuela=es.idEscuela
@@ -284,17 +284,17 @@ class RegistroegresadoModel extends Mysql
 		return $request;
 	}
 
-	public function updateegresadoimg($numeroMatricula, $direccion, $telefonoFijo, $sexo, $idescuela, $idsede, $idUsuario)
+	public function updateegresadoimg($numeroMatricula, $direccion, $fechanaciomiento, $sexo, $idescuela, $idsede, $idUsuario)
 	{
 		$this->numeroMatricula = $numeroMatricula;
 		$this->direccion = $direccion;
-		$this->telefonoFijo = $telefonoFijo;
+		$this->telefonfechanaciomientooFijo = $fechanaciomiento;
 		$this->sexo = $sexo;
 		$this->idescuela = $idescuela;
 		$this->idsede = $idsede;
 		$this->idUsuario = $idUsuario;
 
-		$sql = "UPDATE egresado SET numeroMatricula=?, direccion=?, telefonoFijo=?,  sexo=?, idescuela=?, idsede=?
+		$sql = "UPDATE egresado SET numeroMatricula=?, direccion=?, fechanaciomiento=?,  sexo=?, idescuela=?, idsede=?
 		WHERE personaid = $this->idUsuario";
 		$arrData = array(
 			$this->numeroMatricula,

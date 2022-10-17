@@ -576,17 +576,14 @@ function sendMailLocalCarreras($data, $arrData)
         $mail->Port       = 465;
 
         //Recipients
-        $mail->setFrom('notificaciones@use-dpa.unitru.edu.pe', 'UNIDAD DE SEGUIMIENTO DEL EGRESADO');
+        $mail->setFrom('notificaciones@use-dpa.unitru.edu.pe', 'UNT-UNIDAD DE SEGUIMIENTO DEL EGRESADO');
         $mail->addAddress('stifs.jprl18@gmail.com');     //Add a recipient
-        // if (!empty($data)) {
-        //     $mail->addBCC($data);
-        // }
-
-
-
         foreach ($arrData as $email_user) {
             $mail->AddAddress($email_user['email_user']);
         }
+
+        $mail->addCC('use@unitru.edu.pe');
+        $mail->addBCC('jpromero@unitru.edu.pe');
 
 
 
