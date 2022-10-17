@@ -21,9 +21,9 @@ class sendcorreo extends Controllers
 		if (empty($_SESSION['permisosMod']['r'])) {
 			header("Location:" . base_url() . '/dashboard');
 		}
-		$data['page_tag'] = "Banner";
-		$data['page_title'] = "Banner <small>Unidad de Seguimiento del Egresado</small>";
-		$data['page_name'] = "USE-banner";
+		$data['page_tag'] = "Correo";
+		$data['page_title'] = "Correo <small>Unidad de Seguimiento del Egresado</small>";
+		$data['page_name'] = "USE-Correo";
 		$data['page_functions_js'] = "functions_sendcorreo.js";
 
 

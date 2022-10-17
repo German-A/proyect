@@ -76,9 +76,7 @@ $n = 1;
         <div class="col-md-10 m-auto">
             <h3 class="blueoscuro">Repositorio 2021-II</h3>
         </div>
-
-
-
+        
         <br>
 
         <div class="row">
@@ -113,7 +111,7 @@ $n = 1;
 
                 <div class="col-md-12 ml-2 btn btn-outline-warning  p-2 m-2  d-flex justify-content-center">
                     <div class="col-11 col-md-9">
-                        <h5 class="">Ciclo de Deming</h5>
+                        <h5 class="">Informe Bienal sobre la realidad universitaria Peruana</h5>
                     </div>
                     <div class="col-1 col-md-3">
                         <div class="row">
@@ -128,7 +126,7 @@ $n = 1;
 
                 <div class="col-md-12 ml-2 btn btn-outline-warning  p-2 m-2  d-flex justify-content-center">
                     <div class="col-11 col-md-9">
-                        <h5 class="">Informe Bienal sobre la realidad universitaria Peruana</h5>
+                        <h5 class="">Ciclo de Deming</h5>
                     </div>
                     <div class="col-1 col-md-3">
                         <div class="row">
