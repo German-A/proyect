@@ -83,6 +83,8 @@ class registroegresado extends Controllers
 					$valorK = $hojaActual->getCellByColumnAndRow(11, $indiceFila);
 					/*idEscuela*/
 					$valorL = $hojaActual->getCellByColumnAndRow(12, $indiceFila);
+					/*año*/
+					$valorM = $hojaActual->getCellByColumnAndRow(13, $indiceFila);
 
 					$cantidadBanner = $this->model->validardni($valorE);
 
@@ -95,7 +97,7 @@ class registroegresado extends Controllers
 						$registrados++;
 						$ultimoregistro = $this->model->insertUsuarioEgresado($valorB, $valorC, $valorD, 	$valorE, $valorH, $valorE, $valorI);
 						//registro tabla egresado
-						$ultimoregistro = $this->model->insertEgresado($valorA, $valorF, $valorG, 	$valorI, $valorJ, $valorK, $valorL, $ultimoregistro);
+						$ultimoregistro = $this->model->insertEgresado($valorA, $valorF, $valorG, 	$valorI, $valorJ, $valorK, $valorL, $ultimoregistro,$valorM);
 					}
 				}
 

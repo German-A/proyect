@@ -57,30 +57,25 @@ $legal = $obj->selectLegalInicio();
   <br>
   <br>
 
-  <div class="row d-flex justify-content-around " style="max-width: 65%; margin:auto">
+  <div class="row d-flex justify-content-around" style="max-width: 900px; margin:auto">
     <div class="col-md-12">
       <div class="row" data-aos="fade-down-right">
         <div class="col-md-8 col-lg-6  text-left ">
           <h3 class="mostaza">Nuestra Misión</h3>
           <h4 class="blueoscuro">Fomentar y fortalecer los vínculos entre la universidad con sus egresados de pre y posgrado, promoviendo la inserción laboral, el emprendimiento y su formación continua, coadyuva en la evaluación de los objetivos educacionales.</h4>
         </div>
-        <div class="col-md-8 col-lg-6 d-flex flex-row-reverse" data-aos="flip-left">
-          <img src="<?= media(); ?>/archivos/logos/portadaUNT.jpg" style="min-width: 120px; max-height: 200px;">
+        <div class="col-md-8 col-lg-6 d-flex align-items-center" data-aos="flip-left">
+          <img class="col-10 img-fluid" src="<?= media(); ?>/archivos/logos/logoUse.png">
         </div>
       </div>
     </div>
     <br><br>
     <div class="col-md-12">
       <div class="row" data-aos="fade-down-left">
-        <div class="col-12 col-md-6 align-self-center mt-4" data-aos="flip-right">
-          <br><br>
-          <div class="row d-flex justify-content-center">
-            <!-- <img class="col-6 col-md-6 imglogooo" src="<?= media(); ?>/archivos/logos/logoDpa.png"> -->
-            <img class="col-8 col-md-8 imglogooo" src="<?= media(); ?>/archivos/logos/logoUse.png">
-          </div>
+        <div class="col-md-8 col-lg-6 mt-5 d-flex align-items-center" data-aos="flip-left">
+          <img class="col-10 img-fluid " src="<?= media(); ?>/archivos/logos/portadaUNT.jpg">
         </div>
-        <br>
-        <div class="col-12 col-md-5  mt-5 mt-4 text-right">
+        <div class="col-12 col-md-6  mt-5 text-right">
           <h3 class="mostaza">Nuestra Visión</h3>
           <h4 class="blueoscuro">Al 2026, la USE, es reconocida nivel local y nacional por sus estrategias para fortalecer y actualizar información y conocimientos de los egresados de pre y posgrado; coadyuva en la evaluación de los objetivos educacionales como parte del proceso de mejora continua de los currículos de los programas de estudio de la UNT.</h4>
         </div>
@@ -193,7 +188,7 @@ $legal = $obj->selectLegalInicio();
         <p><small>COMUNICADORA/INTERPRETE</small></p>
       </div>
     </div>
-    
+
     <br><br><br>
 
     <div class="col-12 col-sm-5 col-md-5 col-lg-2 mb-2">

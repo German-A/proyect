@@ -79,7 +79,7 @@ class RegistroegresadoModel extends Mysql
 		return $return;
 	}
 
-	public function insertEgresado($valorA, $valorF, $valorG, 	$valorI, $valorJ, $valorK, $valorL, $ultimoregistro)
+	public function insertEgresado($valorA, $valorF, $valorG, 	$valorI, $valorJ, $valorK, $valorL, $ultimoregistro,$valorM)
 	{
 		$this->numeroMatricula = $valorA;
 		$this->direccion = $valorF;
@@ -89,12 +89,13 @@ class RegistroegresadoModel extends Mysql
 		$this->idEscuela = $valorK;
 		$this->idSede = $valorL;
 		$this->ultimoregistro = $ultimoregistro;
+		$this->añoegreso = $valorM;
 
 		$return = 0;
 
 
-		$query_insert  = "INSERT INTO egresado(numeroMatricula,direccion,fechanaciomiento,sexo,idescuela,idsede,personaid) 
-								  VALUES(?,?,?,?,?,?,?)";
+		$query_insert  = "INSERT INTO egresado(numeroMatricula,direccion,fechanaciomiento,sexo,idescuela,idsede,personaid,añoegreso) 
+								  VALUES(?,?,?,?,?,?,?,?)";
 		$arrData = array(
 			$this->numeroMatricula,
 			$this->direccion,
@@ -102,7 +103,8 @@ class RegistroegresadoModel extends Mysql
 			$this->sexo,
 			$this->idEscuela,
 			$this->idSede,
-			$this->ultimoregistro
+			$this->ultimoregistro,
+			$this->añoegreso
 		);
 		$request_insert = $this->insert($query_insert, $arrData);
 		$return = $request_insert;
@@ -157,7 +159,7 @@ class RegistroegresadoModel extends Mysql
 	}
 	private $iduser;
 
-	public function agregaregresado($numeroMatricula, $direccion, $fechanaciomiento, $sexo, $idescuela, $idsede, $iduser)
+	public function agregaregresado($numeroMatricula, $direccion, $fechanaciomiento, $sexo, $idescuela, $idsede, $iduser,$añoegreso)
 	{
 		$this->numeroMatricula = $numeroMatricula;
 		$this->direccion = $direccion;
@@ -166,10 +168,11 @@ class RegistroegresadoModel extends Mysql
 		$this->idescuela = $idescuela;
 		$this->idsede = $idsede;
 		$this->iduser = $iduser;
+		$this->añoegreso = $añoegreso;
 
 
-		$query_insert  = "INSERT INTO egresado(numeroMatricula,direccion,fechanaciomiento,sexo,idescuela,idsede,personaid) 
-		VALUES(?,?,?,?,?,?,?)";
+		$query_insert  = "INSERT INTO egresado(numeroMatricula,direccion,fechanaciomiento,sexo,idescuela,idsede,personaid,añoegreso) 
+		VALUES(?,?,?,?,?,?,?,?)";
 
 		$arrData = array(
 			$this->numeroMatricula,
@@ -178,7 +181,8 @@ class RegistroegresadoModel extends Mysql
 			$this->sexo,
 			$this->idescuela,
 			$this->idsede,
-			$this->iduser
+			$this->iduser,
+			$this->añoegreso
 		);
 		$request_insert = $this->insert($query_insert, $arrData);
 		$return = $request_insert;
