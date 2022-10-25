@@ -530,8 +530,8 @@ function sendMailPublicacionEmpleo($data, $template)
 
         $arrResponse = array(
             'status' => true,
-            'msg' => "Correo invalido: " . $data['email']
-            // 'msg' => "$mail->ErrorInfo"
+            //'msg' => "Correo invalido: " . $data['email']
+             'msg' => "$mail->ErrorInfo"
         );
         return   $arrResponse;
     }

@@ -9,6 +9,9 @@ $obj2 = new HomeModel();
 $perfiles = $obj->selectLegal();
 $perfiless = $obj2->selectinstitucional();
 $perfilesss = $obj2->selectprimerNacional();
+
+$obj3 = new HomeModel();
+$perfiles = $obj3->selectBanner();
 $n = 1;
 
 ?>
@@ -39,16 +42,17 @@ $n = 1;
     }
 
     @media(min-width:768px) {
-        .video {          
+        .video {
             height: 250px;
         }
     }
 
     @media(min-width:1024px) {
-        .video {          
+        .video {
             height: 300px;
         }
     }
+
     @media(min-width:1200px) {
         .video {
             width: 800px;
@@ -58,7 +62,7 @@ $n = 1;
         .contenedor {
             width: 91%;
             flex-direction: row;
-          
+
         }
     }
 
@@ -121,6 +125,71 @@ $n = 1;
         border: 2px solid var(--temario-active-border);
     }
 </style>
+
+
+<style>
+    .swiper {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .swiper {
+        width: 480px;
+        height: 200px;
+        background-color: #131313;
+    }
+
+    .swiper-slide img {
+        display: block;
+        width: 430px;
+        height: 200px;
+    }
+
+    @media (min-width: 700px) {
+        .swiper {
+            width: 720px;
+            height: 400px;
+            background-color: #131313;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 680px;
+            height: 400px;
+        }
+    }
+
+    @media (min-width: 1000px) {
+        .swiper {
+            width: 700px;
+            height: 240px;
+            padding: 0px 10px;
+            background-color: #131313;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 600px;
+            height: 240px;
+        }
+    }
+
+    @media (min-width: 1800px) {
+        .swiper {
+            width: 900px;
+            height: 340px;
+            padding: 0px 10px;
+            background-color: #131313;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 800px;
+            height: 340px;
+        }
+    }
+</style>
+
 <br><br>
 <br><br>
 <div class="contenedor">
@@ -169,9 +238,29 @@ $n = 1;
         </div>
     </aside>
     <main><br><br>
-        <video class="video" autoplay loop muted>
-            <source src="<?= media(); ?>/videos/expoferia.mp4" type="video/mp4">
-        </video>
+
+
+        <div class="video">
+            <div class="swiper mySwiper" data-aos="fade-down" data-aos-duration="500">
+                <div class="swiper-wrapper">
+                    <?php foreach ($perfiles as $key => $fila) { ?>
+                        <div class="swiper-slide">
+                            <img class="imgbanner" src="<?= media(); ?>/archivos/banner/<?php echo $fila['NombreArchivo'] ?>">
+                        </div>
+                    <?php } ?>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+        </div>
+
+
+
+
+
+
     </main>
 </div>
 <br><br><br>

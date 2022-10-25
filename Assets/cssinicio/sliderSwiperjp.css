@@ -61,3 +61,18 @@
     height: 440px;
   }
 }
+
+@media (min-width: 1800px) {
+  .swiper {
+    width: 1500px;
+    height: 640px;
+    padding: 0px 10px;
+    background-color: #131313;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 1300px;
+    height: 640px;
+  }
+}

@@ -479,4 +479,13 @@ class HomeModel extends Mysql
 		$request = $this->select_all($sql);
 		return $request;
 	}
+
+	public function listaGalerias()
+	{
+		$sql = "SELECT e.archivo, e.nombre,e.url
+			from expoxvempresas e
+			where e.status>0 order by e.posicion asc";
+		$request = $this->select_all($sql);
+		return $request;
+	}
 }
