@@ -16,7 +16,7 @@
     <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/bootstrap-select.min.css">
 
     <link rel="stylesheet" type="text/css" href="<?= media(); ?>/cssinicio/swiper8.0.6.min.css">
-    <link rel="stylesheet" type="text/css" href="<?= media(); ?>/cssinicio/sliderSwiper.css">
+    <link rel="stylesheet" type="text/css" href="<?= media(); ?>/cssinicio/sliderSwiperjp.css">
     <!-- barra de navegacion -->
 
     <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/cssjp.css">
@@ -67,7 +67,6 @@
         </div>
     </div>
 
-
     <header>
         <span id="btnMenu" class="nav-bar">
             <h2><i class="fas fa-bars"></i></h2>
@@ -75,6 +74,7 @@
         <nav class="main-nav">
             <ul class="menu " id="menu">
                 <img class="logo" src="<?= media(); ?>/archivos/logos/uselogoWhite.png" style="height: 80px;">
+                
                 <li class="menu__item "><a scrollto href="<?= base_url(); ?>/home" class="menu__link  m select">INICIO</a></li>
                 <li class="menu__item"><a href="<?= base_url(); ?>/manuales" class="menu__link m">CAPACITACIÓN</a></li>
                 <li class="menu__item"><a href="<?= base_url(); ?>/bolsadetrabajo" class="menu__link m">BOLSA DE TRABAJO&nbsp;</a></li>

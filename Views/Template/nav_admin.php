@@ -18,7 +18,7 @@
                 <li>
                     <a class="app-menu__item" href="<?= base_url(); ?>/dashboard">
                         <i class="app-menu__icon fa fa-dashboard"></i>
-                        <span class="app-menu__label">Dashboard</span>
+                        <span class="app-menu__label">Inicio</span>
                     </a>
                 </li>
             <?php } ?>
@@ -41,20 +41,18 @@
             if (
                 !empty($_SESSION['permisos'][3]['r']) ||  !empty($_SESSION['permisos'][4]['r']) ||
                 !empty($_SESSION['permisos'][5]['r']) ||  !empty($_SESSION['permisos'][6]['r']) ||
-                !empty($_SESSION['permisos'][7]['r']) ||  !empty($_SESSION['permisos'][21]['r']) ||
-                !empty($_SESSION['permisos'][22]['r'])        
+                !empty($_SESSION['permisos'][7]['r'])    
             ) {
             ?>
                 <li class="treeview">
                     <a class="app-menu__item" href="#" data-toggle="treeview">
                         <i class="app-menu__icon fas fa-upload" aria-hidden="true"></i>
-                        <span class="app-menu__label">Página Web</span>
+                        <span class="app-menu__label">Página Use</span>
                         <i class="treeview-indicator fa fa-angle-right"></i>
                     </a>
                     <ul class="treeview-menu">
-
                         <?php if (!empty($_SESSION['permisos'][3]['r'])) { ?>
-                            <li><a class="treeview-item" href="<?= base_url(); ?>/banner"><i class="icon fa fa-circle-o"></i> Banner</a></li>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/banners"><i class="icon fa fa-circle-o"></i> Banners</a></li>
                         <?php } ?>
                         <?php if (!empty($_SESSION['permisos'][4]['r'])) { ?>
                             <li><a class="treeview-item" href="<?= base_url(); ?>/manualesyguias"><i class="icon fa fa-circle-o"></i> Manuales y guias</a></li>
@@ -68,15 +66,35 @@
                         <!-- <?php if (!empty($_SESSION['permisos'][17]['r'])) { ?>
                             <li><a class="treeview-item" href="<?= base_url(); ?>/cursosmoocintranet"><i class="icon fa fa-circle-o"></i> cursosmoocintranet</a></li>
                         <?php } ?> -->
+
+                        <?php if (!empty($_SESSION['permisos'][23]['r'])) { ?>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/especialidades"><i class="icon fa fa-circle-o"></i>Trasnparencia</a></li>
+                        <?php } ?>
+
+                        </ul>
+                </li>
+            <?php } ?>
+
+            <?php
+            if (
+                !empty($_SESSION['permisos'][21]['r']) ||
+                !empty($_SESSION['permisos'][22]['r'])        
+            ) {
+            ?>
+                <li class="treeview">
+                    <a class="app-menu__item" href="#" data-toggle="treeview">
+                        <i class="app-menu__icon fas fa-upload" aria-hidden="true"></i>
+                        <span class="app-menu__label">XlV Expoferia</span>
+                        <i class="treeview-indicator fa fa-angle-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+
                         <?php if (!empty($_SESSION['permisos'][21]['r'])) { ?>
                             <li><a class="treeview-item" href="<?= base_url(); ?>/Bannervida2022"><i class="icon fa fa-circle-o"></i> Banner Vida2022</a></li>
                         <?php } ?>
                         <?php if (!empty($_SESSION['permisos'][22]['r'])) { ?>
                             <li><a class="treeview-item" href="<?= base_url(); ?>/galeriavida2022"><i class="icon fa fa-circle-o"></i> Galeria vida2022</a></li>
-                        <?php } ?>
-                        <?php if (!empty($_SESSION['permisos'][23]['r'])) { ?>
-                            <li><a class="treeview-item" href="<?= base_url(); ?>/especialidades"><i class="icon fa fa-circle-o"></i>Trasnparencia</a></li>
-                        <?php } ?>
+                        <?php } ?>       
 
                         </ul>
                 </li>
@@ -96,7 +114,7 @@
                 <li class="treeview">
                     <a class="app-menu__item" href="#" data-toggle="treeview">
                         <i class="app-menu__icon fas fa-upload" aria-hidden="true"></i>
-                        <span class="app-menu__label">Página Expoferia</span>
+                        <span class="app-menu__label">XV Expoferia</span>
                         <i class="treeview-indicator fa fa-angle-right"></i>
                     </a>
                     <ul class="treeview-menu">
@@ -137,7 +155,7 @@
                 <li class="treeview">
                     <a class="app-menu__item" href="#" data-toggle="treeview">
                         <i class="app-menu__icon fas fa-briefcase" aria-hidden="true"></i>
-                        <span class="app-menu__label">Expoferia</span>
+                        <span class="app-menu__label">Expoferia Admin</span>
                         <i class="treeview-indicator fa fa-angle-right"></i>
                     </a>
                     <ul class="treeview-menu">
@@ -184,7 +202,7 @@
                 <li class="treeview">
                     <a class="app-menu__item" href="#" data-toggle="treeview">
                         <i class="app-menu__icon fa fa-users" aria-hidden="true"></i>
-                        <span class="app-menu__label">EXPOFERIA LABORAL</span>
+                        <span class="app-menu__label">Expoferia Egresados</span>
                         <i class="treeview-indicator fa fa-angle-right"></i>
                     </a>
                     <ul class="treeview-menu">
@@ -204,7 +222,7 @@
                 <li>
                     <a class="app-menu__item" href="<?= base_url(); ?>/empleos">
                         <i class="app-menu__icon fa fa-sign-out" aria-hidden="true"></i>
-                        <span class="app-menu__label">EMPLEOS</span>
+                        <span class="app-menu__label">Empleos</span>
                     </a>
                 </li>
             <?php } ?>
@@ -213,7 +231,7 @@
                 <li>
                     <a class="app-menu__item" href="<?= base_url(); ?>/conferencias">
                         <i class="app-menu__icon fa fa-sign-out" aria-hidden="true"></i>
-                        <span class="app-menu__label">CONFERENCIAS</span>
+                        <span class="app-menu__label">Conferencias</span>
                     </a>
                 </li>
             <?php } ?>
@@ -221,12 +239,12 @@
                 <li>
                     <a class="app-menu__item" href="<?= base_url(); ?>/postulaciones">
                         <i class="app-menu__icon fa fa-sign-out" aria-hidden="true"></i>
-                        <span class="app-menu__label">MIS POSTULACIONES</span>
+                        <span class="app-menu__label">Mis Postulaciones</span>
                     </a>
                 </li>
             <?php } ?>
 
-            <?php if (!empty($_SESSION['permisos'][28]['r'])) { ?>
+            <!-- <?php if (!empty($_SESSION['permisos'][28]['r'])) { ?>
                 <li>
                     <a class="app-menu__item" href="<?= base_url(); ?>/usuarios/perfilUsuario">
                         <i class="app-menu__icon fa fa-sign-out" aria-hidden="true"></i>
@@ -234,14 +252,14 @@
                     </a>
                 </li>
             <?php } ?>
-            
+             -->
 
             
             <?php if (!empty($_SESSION['permisos'][28]['r'])) { ?>
                 <li>
                     <a class="app-menu__item" href="<?= base_url(); ?>/configuracion/configuracionegresado">
                         <i class="app-menu__icon fa fa-sign-out" aria-hidden="true"></i>
-                        <span class="app-menu__label">configuracion egresado</span>
+                        <span class="app-menu__label">Configuración Egresado</span>
                     </a>
                 </li>
             <?php } ?>

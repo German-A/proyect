@@ -1,6 +1,6 @@
 <?php 
 
-	class BannerModel extends Mysql
+	class BannersModel extends Mysql
 	{
 		private $intIdUsuario;
 		private $nombreArchivo;
@@ -20,6 +20,24 @@
 			return $request;
 		}
 
+		public function buscarArchivoBanner($filename)
+		{
+			$sql = "SELECT NombreArchivo FROM banner where NombreArchivo = '$filename'";
+			$request = $this->select_all($sql);
+			return $request;
+		}
+
+		public function getOneBanner($idexpoxvgaleria)
+		{
+			$sql = "SELECT * 
+				FROM banner
+				where Habilitado > 0 and IdBaner = $idexpoxvgaleria
+				";
+			$request = $this->select($sql);
+			return $request;
+		}
+
+		
 		public function cantidadBanner()
 		{
 			$sql = "SELECT count(IdBaner) cant FROM banner where Habilitado = 1 order by FechaRegistro desc";
@@ -27,56 +45,52 @@
 			return $request;
 		}
 
-		public function register($nombreArchivo,$nuevonombre,$cantidad,$posicion){			
-			$this->nombreArchivo = $nombreArchivo;
-			$this->nuevonombre = $nuevonombre;
-			$this->cantidad = $cantidad;
-			$this->posicion = $posicion;
+		public function register($txtNombre, $txtPosicion, $filename){			
+			$this->Nombre = $txtNombre;
+			$this->NombreArchivo = $filename;
+			$this->Posicion = $txtPosicion;
 			$return = 0;
 			$query_insert  = "INSERT INTO banner(Nombre,NombreArchivo,Posicion)
 								  VALUES(?,?,?)";
 	        	$arrData = array(
-        						$this->nombreArchivo,
-        						$this->nuevonombre,
-        						$this->posicion);
+        						$this->Nombre,
+        						$this->NombreArchivo,
+        						$this->Posicion);
 	        	$request_insert = $this->insert($query_insert,$arrData);
 	        	$return = $request_insert;
 	        return $return;
 		}
 
-		public function toupdate($nombreArchivo,$nuevonombre,$cantidad,$idUsuario,$posicion){
-			$this->nombreArchivo = $nombreArchivo;
-			$this->nuevonombre = $nuevonombre;
-			$this->cantidad = $cantidad;
-			$this->idUsuario = $idUsuario;
-			$this->posicion = $posicion;
+		public function updateGaleriaBanner($txtNombre, $txtPosicion, $IdBaner , $filename){
+			$this->Nombre = $txtNombre;
+			$this->Posicion = $txtPosicion;
+			$this->IdBaner = $IdBaner;
+			$this->NombreArchivo = $filename;
 			$sql = "UPDATE banner SET Nombre=?, NombreArchivo=?, Posicion=?
-			WHERE IdBaner = $this->idUsuario ";
+			WHERE IdBaner = $this->IdBaner ";
 					$arrData = array(
-					$this->nombreArchivo,
-					$this->nuevonombre,
-					$this->posicion);
+					$this->Nombre,
+					$this->NombreArchivo,
+					$this->Posicion);
 	
 				$request = $this->update($sql,$arrData);
 	        return $request;
 		}
 
-		public function updatePosicion($nombreArchivo,$idUsuario,$posicion){
-			$this->nombreArchivo = $nombreArchivo;
-
-			$this->idUsuario = $idUsuario;
-			$this->posicion = $posicion;
+		public function updateBanner($txtNombre,$txtPosicion,$IdBaner){
+			$this->Nombre = $txtNombre;
+			$this->Posicion = $txtPosicion;
+			$this->IdBaner = $IdBaner;
 			$sql = "UPDATE banner SET Nombre=?,Posicion=?
-			WHERE IdBaner = $this->idUsuario ";
+			WHERE IdBaner = $this->IdBaner ";
 					$arrData = array(
-					$this->nombreArchivo,
-				
-					$this->posicion);
-	
+					$this->Nombre,				
+					$this->Posicion);	
 				$request = $this->update($sql,$arrData);
 	        return $request;
 		}
-		public function remove(int $IdBaner)
+
+		public function removeBanner(int $IdBaner)
 		{
 			$this->intIdUsuario = $IdBaner;
 			$sql = "UPDATE banner SET Habilitado = ? WHERE IdBaner = $this->intIdUsuario ";
@@ -84,14 +98,6 @@
 			$request = $this->update($sql,$arrData);
 			return $request;
 		}
-		public function getOne($idusuario)
-		{
-			$sql = "SELECT * 
-            FROM banner
-            where Habilitado=1 and IdBaner=$idusuario
-			";
-			$request = $this->select($sql);			
-			return $request;
-		}
+
 	}
  ?>
