@@ -84,13 +84,14 @@ class solicitudempleo extends Controllers
 		$telefono = $_POST['celular'];
 		$nombreEmpresa = $_POST['nombreempresa'];
 
-
 		$empresa = $this->model->getOne($ruc);
 
-		if ($empresa > 0) {
+		$insert = '';
+		$arrData = '';
+
+		if ($empresa['idempresa'] > 0) {
 			//	echo ($empresa['idempresa']);
 			$idEmpresa = $empresa['idempresa'];
-
 		} else {
 			/*registro de empresa nueva*/
 
@@ -100,6 +101,8 @@ class solicitudempleo extends Controllers
 			$password = $ruc;
 
 			$imagen = $ruc . $nombre;
+
+
 
 			if (!file_exists('Assets/archivos/empresa/')) {
 				mkdir('Assets/archivos/empresa/', 0777, true);
@@ -119,6 +122,7 @@ class solicitudempleo extends Controllers
 					//echo "no se pudo guardar";
 				}
 			}
+
 			$idEmpresa = $insert;
 		}
 
@@ -139,36 +143,34 @@ class solicitudempleo extends Controllers
 
 		$Contacto = $email_user;
 
-		$carreras= array();
-		$titulaciones= array();
-		$idiomas= array();
-		$competencias= array();
-		$escuelas= array();
+		$carreras = array();
+		$titulaciones = array();
+		$idiomas = array();
+		$competencias = array();
+		$escuelas = array();
+		$carreras = json_decode($_POST['carreras'], true);
+		$titulaciones = json_decode($_POST['titulaciones'], true);
+		$idiomas = json_decode($_POST['idiomas'], true);
+		$competencias = json_decode($_POST['competencias'], true);
 
-		// $titulaciones = [];
-		// $titulaciones = $_POST['titulaciones'];
-		$carreras =json_decode($_POST['carreras'],true);
-		$titulaciones =json_decode($_POST['titulaciones'],true);
-		$idiomas =json_decode($_POST['idiomas'],true);
-		$competencias =json_decode($_POST['competencias'],true);		
+		if($idEmpresa>0){
+			$arrData = $this->model->insertarEmpleo($idEmpresa, $NombrePuesto, $FechaInico, $FechaFin, $titulaciones, $carreras, $competencias, $idiomas, $DescripcionPuesto, $InformacionAdicional, $NumeroVacantes, $Experiencias, $TipoContrato, $HorasSemanales, $HorarioTrabajo, $RemuneracionBruta, $Contacto, $LugarTrabajo, $TrabajoRemoto, $JornadaLaboral);
+		}
 
-		$arrData = $this->model->insertarEmpleo($idEmpresa, $NombrePuesto, $FechaInico, $FechaFin, $titulaciones, $carreras, $competencias, $idiomas, $DescripcionPuesto, $InformacionAdicional, $NumeroVacantes, $Experiencias, $TipoContrato, $HorasSemanales, $HorarioTrabajo, $RemuneracionBruta, $Contacto, $LugarTrabajo, $TrabajoRemoto, $JornadaLaboral);
-
-		
 		$today = getdate();
 		$hora = $today["hours"];
 		if ($hora < 6) {
-			$saludo= ("Buenos días");
+			$saludo = ("Buenos días");
 		} elseif ($hora < 12) {
-			$saludo= ("Buenos días");
+			$saludo = ("Buenos días");
 		} elseif ($hora <= 18) {
-			$saludo= ("Buenas Tardes");
+			$saludo = ("Buenas Tardes");
 		} else {
-			$saludo= ("Buenas Noches");
+			$saludo = ("Buenas Noches");
 		}
-		
+
 		for ($i = 0; $i < count($carreras); $i++) {
-			$escuelas[$i]= $this->model->listaCarreras($carreras[$i]['carreras']);
+			$escuelas[$i] = $this->model->listaCarreras($carreras[$i]['carreras']);
 		}
 
 		$dataUsuario = array(
@@ -183,19 +185,14 @@ class solicitudempleo extends Controllers
 			'asunto' => 'Publicación de Empleo',
 		);
 
-		if ($arrData != 0) {
-			$arrResponse=sendMailPublicacionEmpleo($dataUsuario, 'email_cambioPassword');
+		if ($arrData > 0) {
+			$arrResponse = sendMailPublicacionEmpleo($dataUsuario, 'email_cambioPassword');
 		} else {
 			$arrResponse = array("status" => false, "msg" => 'No es posible almacenar los datos.');
 		}
 
-			
-		
-				
 		echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
 		die();
-
-		
 	}
 
 	public function buscarruc()

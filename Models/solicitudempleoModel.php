@@ -328,7 +328,7 @@ class SolicitudempleoModel extends Mysql
 	//obtener ruc
 	public function getAllEmpresa($ruc)
 	{
-		$sql = "SELECT u.imagen, u.telefono,u.email_user,emp.nombreEmpresa
+		$sql = "SELECT u.imagen, u.telefono,u.email_user,emp.nombreEmpresa,emp.idempresa
 				FROM empresa emp
 				inner join usuario u on emp.personaid = u.idpersona
 				where u.status=1 and ruc=$ruc

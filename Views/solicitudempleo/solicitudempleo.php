@@ -13,7 +13,7 @@
         }
     }
 
-    
+
     @media (min-width: 1400px) {
         .titulo {
             font-size: 35px;
@@ -28,6 +28,7 @@
 
     </div>
     <div class="col-12 col-xl-10">
+        <input type="hidden" id="idempresa">
         <div class="row ">
             <div class="col-6 col-md-3 pt-4 pb-4">
                 <img class="img-fluid" src="<?= media(); ?>/img/logoUse.jpg" alt="">
@@ -89,7 +90,7 @@
                         <div class="form-group col-md-6">
                             <label for="TrabajoRemoto">Modalidad <span class="text-danger">*</span></label>
                             <select class="form-control select2" name="TrabajoRemoto" id="TrabajoRemoto" data-live-search="true" class="mdb-select md-form" x>
-                                <option disabled selected>Seleccionar</option>
+                                <option value="0" disabled selected>Seleccionar</option>
                                 <option value="Remoto">Remoto</option>
                                 <option value="Presencial">Presencial</option>
                                 <option value="Remoto/Presencial">Remoto/Presencial</option>
@@ -137,6 +138,7 @@
                         <div class="form-group col-md-12">
                             <label for="nombreempresa">Carreras Profesionales<span class="text-danger">*</span></label>
                             <select class="carreras form-control" name="carreras[]" data-live-search="true" id="carreras" multiple="multiple" x>
+                                <option value="0" disabled selected>Seleccionar</option>
                             </select>
                         </div>
                         <div class="form-group col-md-12">
@@ -147,16 +149,16 @@
                         <div class="form-group col-md-6">
                             <label for="Experiencias">Experiencia <span class="text-danger">*</span></label>
                             <select class="form-control select2 narrow wrap " name="Experiencias" id="Experiencias" class="form-control-lg mdb-select md-form">
-                                <option disabled selected>Seleccionar</option>
-                                <option value="0">Sin Experiencia</option>
-                                <option value="1">Menos de 1 año</option>
-                                <option value="2">2 año</option>
-                                <option value="3">3 año</option>
-                                <option value="4">4 año a más</option>
+                                <option value="0" disabled selected>Seleccionar</option>
+                                <option value="1">Sin Experiencia</option>
+                                <option value="2">Menos de 1 año</option>
+                                <option value="3">2 año</option>
+                                <option value="4">3 año</option>
+                                <option value="5">4 año a más</option>
                             </select>
                         </div>
 
-                        
+
                         <div class="form-group col-md-6">
                             <label for="logo">Idiomas</label>
                             <select class="idiomas form-control" name="idiomas[]" id="idiomas" multiple="multiple" x>
@@ -178,7 +180,7 @@
                         <div class="form-group col-md-6">
                             <label for="TipoContrato">Modalidad de Contrato<span class="text-danger">*</span></label>
                             <select class="form-control select2 narrow wrap " name="TipoContrato" id="TipoContrato" class="form-control-lg mdb-select md-form">
-                                <option disabled selected>Seleccionar</option>
+                                <option value="0" disabled selected>Seleccionar</option>
                                 <option value="Ofertalaboral">Oferta de Empleo</option>
                                 <option value="preprofesionales">Prácticas PreProfesionales</option>
                                 <option value="proprefesionales">Prácticas Profesionales</option>
@@ -278,7 +280,7 @@
     $('#HorasSemanales').on('change', function(event) {
         const HorasSemanales = event.target.value;
         var inputHorasSemanales = document.getElementById("HorasSemanales");
-        if (HorasSemanales < 0) {     
+        if (HorasSemanales < 0) {
             swal("Atención!", "Las horas semanales no puden ser menor a 0", "warning");
             inputHorasSemanales.value = 1;
         }
@@ -287,7 +289,7 @@
     $('#NumeroVacantes').on('change', function(event) {
         const NumeroVacantes = event.target.value;
         var inputNumeroVacantes = document.getElementById("NumeroVacantes");
-        if (NumeroVacantes < 0) {     
+        if (NumeroVacantes < 0) {
             swal("Atención!", "El número de vacantes no puden ser menor a 0", "warning");
             inputNumeroVacantes.value = 1;
         }
@@ -306,7 +308,6 @@
 
 
         var inputElement = document.getElementById("archivoSubido");
-        console.log(inputElement.files[0]);
         var archivoSubido = inputElement.files[0];
 
         var titulaciones = $("#titulaciones").val();
@@ -326,15 +327,17 @@
         var RemuneracionBruta = $("#RemuneracionBruta").val();
         var FechaInico = $("#FechaInico").val();
         var FechaFin = $("#FechaFin").val();
-        var Contacto = $("#Contacto").val();
+
         var JornadaLaboral = $("#JornadaLaboral").val();
+
+
+
 
 
         if (ruc == 0) {
             swal("Atención!", "Debe Ingresar el número de Ruc", "warning");
             return;
         }
-
 
         if (NombrePuesto == 0) {
             swal("Atención!", "Ingresar el Nombre del Puesto", "warning");
@@ -350,7 +353,6 @@
             return;
         }
 
-
         if (DescripcionPuesto == 0) {
             swal("Atención!", "Ingresar una Descripción del Puesto", "warning");
             return;
@@ -360,7 +362,6 @@
             return;
         }
 
-
         if (TrabajoRemoto == null) {
             swal("Atención!", "Seleccionar la Modalidad de Trabajo", "warning");
             return;
@@ -369,15 +370,7 @@
             swal("Atención!", "Ingresar el Número de Vacantes", "warning");
             return;
         }
-        // if (competencias == 0) {
-        //     swal("Atención!", "Seleccionar las Competencias", "warning");
-        //     return;
-        // }
 
-        // if (idiomas == 0) {
-        //     swal("Atención!", "Seleccionar el nivel del Idiomas", "warning");
-        //     return;
-        // }
         if (Experiencias == 0) {
             swal("Atención!", "Ingresar si sé requiere Experencia", "warning");
             return;
@@ -392,7 +385,6 @@
             return;
         }
 
-
         if (HorasSemanales == 0) {
             swal("Atención!", "Ingresar el número de Horas Semanales", "warning");
             return;
@@ -402,13 +394,7 @@
             return;
         }
 
-        if (Contacto == 0) {
-            swal("Atención!", "Ingresar el correo o número de Contacto", "warning");
-            return;
-        }
-
-
-        if (RemuneracionBruta == 0 || RemuneracionBruta==null) {
+        if (RemuneracionBruta == 0 || RemuneracionBruta == null) {
             swal("Atención!", "Ingresar la Remuneración Bruta", "warning");
             return;
         }
@@ -422,6 +408,17 @@
             swal("Atención!", "Seleccione la Fecha Fin", "warning");
             return;
         }
+
+
+        if (idempresa != 0) {
+
+        } else {
+            if (inputElement.files['length'] == 0) {
+                swal("Atención", "Ingresar el logo de la Empresa.", "warning");
+                return false;
+            }
+        }
+
 
 
         var listaLotes = new Array();
@@ -452,14 +449,6 @@
             });
         }
 
-
-
-
-
-        var datax = $("#frmempleo").serializeArray();
-
-        //var fd = new FormData(document.getElementById("frmempleo"));
-
         var fd = new FormData();
         fd.append("ruc", ruc);
         fd.append("nombreempresa", nombreempresa);
@@ -484,7 +473,7 @@
         fd.append("RemuneracionBruta", RemuneracionBruta);
         fd.append("FechaInico", FechaInico);
         fd.append("FechaFin", FechaFin);
-        fd.append("Contacto", Contacto);
+
         divLoading.style.display = "flex";
         $.ajax({
             method: "POST",
@@ -501,22 +490,29 @@
             if (info.status == true) {
                 listado =
                     `
-                            <div class="text-center  mb-2">
-                                <h5 class="azul">` + info.msg + `</h5>
-                            </div>                          
-                        `;
+                    <div class="text-center  mb-2">
+                       <h5 class="azul">` + info.msg + `</h5>
+                    </div>                          
+                `;
                 $("#correoweb").html(listado);
             }
             if (info.status == false) {
                 console.log(info.status);
                 listado =
                     `
-                            <div class="text-center  mb-2">
-                                <h5 class="azul">` + info.msg + `</h5>
-                            </div>                          
-                        `;
+                    <div class="text-center  mb-2">
+                        <h5 class="azul">` + info.msg + `</h5>
+                    </div>                          
+                `;
                 $("#correoweb").html(listado);
             }
+            document.getElementById('NombrePuesto').value = "";
+            document.getElementById('NumeroVacantes').value = "";
+            document.getElementById('LugarTrabajo').value = "";
+            document.getElementById('HorasSemanales').value = "";
+            document.getElementById('HorarioTrabajo').value = "";
+            $('#Experiencias').val('0').trigger('change');
+
             $('#modalPerfiles').modal('show');
             //swal("Atención!", "TERMINADO", "warning");
             //window.location.href = "" + base_url + "/empresaempleoadmin/empresaempleoadmin/" + idEmpresa + "";
@@ -553,7 +549,8 @@
                     document.getElementById('nombreempresa').value = info.data['nombreEmpresa'];
                     document.getElementById('correo').value = info.data['email_user'];
                     document.getElementById('celular').value = info.data['telefono'];
-                    document.getElementById('archivoSubido').value = info.data['archivoSubido'];
+                    //    document.getElementById('archivoSubido').value = info.data['archivoSubido'];
+                    document.getElementById('idempresa').value = info.data['idempresa'];
                 }
                 if (info.status == false) {
                     $("#nombreempresa").attr("disabled", false);
@@ -563,7 +560,12 @@
                     document.getElementById('nombreempresa').value = "";
                     document.getElementById('correo').value = "";
                     document.getElementById('celular').value = "";
-                    document.getElementById('archivoSubido').value = "";
+                    //   document.getElementById('archivoSubido').value = "";
+                    document.getElementById('idempresa').value = "";
+                    $('select').select2({
+                        placeholder: 'This is my placeholder',
+                        allowClear: true
+                    });
                 }
             }
         });
