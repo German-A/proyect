@@ -10,7 +10,7 @@ class empresaapobarempleoadmin extends Controllers
 		if (empty($_SESSION['login'])) {
 			header('Location: ' . base_url() . '/login');
 		}
-		//getPermisos(12);
+		getPermisos(12);
 	}
 
 	//PAGINA APROBAR EMPLEO
@@ -78,7 +78,7 @@ class empresaapobarempleoadmin extends Controllers
 	public function aprobarEmpleo()
 	{
 		if ($_POST) {
-			if ($_SESSION['permisosMod']['d']) {
+			if ($_SESSION['permisos'][12]['w']) {
 				$idempleo = intval($_POST['idempleo']);
 				$requestDelete = $this->model->aprobarEmpleo($idempleo);
 

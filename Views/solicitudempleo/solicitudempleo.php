@@ -137,13 +137,12 @@
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="nombreempresa">Carreras Profesionales<span class="text-danger">*</span></label>
-                            <select class="carreras form-control" name="carreras[]" data-live-search="true" id="carreras" multiple="multiple" x>
-                                <option value="0" disabled selected>Seleccionar</option>
+                            <select class="carreras form-control selectmultiple" name="carreras[]" data-live-search="true" id="carreras" multiple="multiple" x>
                             </select>
                         </div>
                         <div class="form-group col-md-12">
                             <label for="ruc">Grado Académico <span class="text-danger">*</span></label>
-                            <select class="titulaciones form-control" name="titulaciones[]" data-live-search="true" id="titulaciones" multiple="multiple" x>
+                            <select class="titulaciones form-control selectmultiple" name="titulaciones[]" data-live-search="true" id="titulaciones" multiple="multiple" x>
                             </select>
                         </div>
                         <div class="form-group col-md-6">
@@ -161,16 +160,16 @@
 
                         <div class="form-group col-md-6">
                             <label for="logo">Idiomas</label>
-                            <select class="idiomas form-control" name="idiomas[]" id="idiomas" multiple="multiple" x>
+                            <select class="idiomas form-control selectmultiple" name="idiomas[]" id="idiomas" multiple="multiple" x>
                             </select>
                         </div>
                         <div class="form-group col-md-12">
                             <label for="InformacionAdicional">Información Adicional</label>
-                            <textarea type="text" class="form-control summernote" id="InformacionAdicional" name="InformacionAdicional" id="InformacionAdicional" placeholder="Ingresar Informacion Adicional"></textarea>
+                            <textarea type="text" class="form-control summernote" id="InformacionAdicional" name="InformacionAdicional" placeholder="Ingresar Informacion Adicional"></textarea>
                         </div>
                         <div class="form-group col-md-12">
                             <label for="InformacionAdicional">Elegir las Competencias</label>
-                            <select class="competencias form-control" name="competencias[]" data-live-search="true" id="competencias" multiple="multiple" required>
+                            <select class="competencias form-control selectmultiple" name="competencias[]" data-live-search="true" id="competencias" multiple="multiple" required>
                             </select>
                         </div>
                     </div>
@@ -511,11 +510,14 @@
             document.getElementById('LugarTrabajo').value = "";
             document.getElementById('HorasSemanales').value = "";
             document.getElementById('HorarioTrabajo').value = "";
+            $('.summernote').summernote('reset');
             $('#Experiencias').val('0').trigger('change');
-
+            $('#TrabajoRemoto').val('0').trigger('change');  
+            $('#TipoContrato').val('0').trigger('change');  
+            $('#JornadaLaboral').val('0').trigger('change');  
+            $('#RemuneracionBruta').val('0').trigger('change');            
+            $('.selectmultiple').val(null).trigger('change');
             $('#modalPerfiles').modal('show');
-            //swal("Atención!", "TERMINADO", "warning");
-            //window.location.href = "" + base_url + "/empresaempleoadmin/empresaempleoadmin/" + idEmpresa + "";
         });
     }
 </script>
@@ -562,10 +564,7 @@
                     document.getElementById('celular').value = "";
                     //   document.getElementById('archivoSubido').value = "";
                     document.getElementById('idempresa').value = "";
-                    $('select').select2({
-                        placeholder: 'This is my placeholder',
-                        allowClear: true
-                    });
+
                 }
             }
         });
