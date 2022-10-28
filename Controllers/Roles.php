@@ -14,7 +14,7 @@
 			getPermisos(2);
 		}
 
-		public function Roles()
+		public function roles()
 		{
 			if(empty($_SESSION['permisosMod']['r'])){
 				header("Location:".base_url().'/dashboard');
