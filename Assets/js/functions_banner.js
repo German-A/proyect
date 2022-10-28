@@ -46,7 +46,7 @@
         divLoading.style.display = "flex";
         $.ajax({
             method: "POST",
-            url: "" + base_url + "/portada/setportada",
+            url: "" + base_url + "/portada/setPortada",
             data: fd,
             processData: false, // tell jQuery not to process the data
             contentType: false // tell jQuery not to set contentType
@@ -66,7 +66,7 @@
         });
     }
 
-    function fntEditBanner(idBanner) {
+    function fntEditPortada(idBanner) {
 
         document.querySelector("#titleBanner").innerHTML = "ACTUALIZAR Banner";
         document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");
@@ -75,7 +75,7 @@
 
         $.ajax({
             method: "GET",
-            url: "" + base_url + "/portada/getOneBanner/" + idBanner,
+            url: "" + base_url + "/portada/getOnePortada/" + idBanner,
             processData: false, // tell jQuery not to process the data
             contentType: false, // tell jQuery not to set contentType
 
@@ -98,7 +98,7 @@
         });
     }
 
-    function fntDeleteBanner(idBanner) {
+    function fntDeletePortada(idBanner) {
 
         swal({
             title: "Eliminar Banner",
@@ -115,7 +115,7 @@
 
                 $.ajax({
                     method: "POST",
-                    url: "" + base_url + "/portada/deleteBanner/" + idBanner,
+                    url: "" + base_url + "/portada/deletePortada/" + idBanner,
                     processData: false, // tell jQuery not to process the data
                     contentType: false, // tell jQuery not to set contentType
 

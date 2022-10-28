@@ -1,6 +1,6 @@
 <?php
 
-class portada extends Controllers
+class banner extends Controllers
 {
 	public function __construct()
 	{
@@ -13,7 +13,7 @@ class portada extends Controllers
 		getPermisos(3);
 	}
 	//pagina Banner
-	public function portada()
+	public function banner()
 	{
 
 		if (empty($_SESSION['permisosMod']['r'])) {
@@ -21,12 +21,12 @@ class portada extends Controllers
 		}
 		$data['page_tag'] = "Banner";
 		$data['page_title'] = "Banner <small>Unidad de Seguimiento del Egresado</small>";
-		$data['page_name'] = "USE-portada";
-		$data['page_functions_js'] = "functions_portada.js";
-		$this->views->getView($this, "portada", $data);
+		$data['page_name'] = "USE-banner";
+		$data['page_functions_js'] = "functions_banner.js";
+		$this->views->getView($this, "banner", $data);
 	}
-	//listado de los portada
-	public function get()
+	//listado de los banner
+	public function getBanner()
 	{
 		if ($_SESSION['permisos'][3]['r']) {
 			$arrData = $this->model->lista();
@@ -39,19 +39,19 @@ class portada extends Controllers
 				}
 				if ($_SESSION['permisosMod']['u']) {
 					if (($_SESSION['userData']['idrol'] == 1) || ($_SESSION['userData']['idrol'] == 2)) {
-						$btnEdit = '<button class="btn btn-primary  btn-sm " onClick="fntEditBanner(' . $arrData[$i]['IdBaner'] . ')" title="Editar Banner"><i class="fas fa-pencil-alt"></i></button>';
+						$btnEdit = '<button class="btn btn-primary  btn-sm " onClick="fntEditbanner(' . $arrData[$i]['IdBaner'] . ')" title="Editar Banner"><i class="fas fa-pencil-alt"></i></button>';
 					} else {
 						$btnEdit = '<button class="btn btn-secondary btn-sm" disabled ><i class="fas fa-pencil-alt"></i></button>';
 					}
 				}
 				if ($_SESSION['permisosMod']['d']) {
 					if (($_SESSION['userData']['idrol'] == 1) || ($_SESSION['userData']['idrol'] == 2)) {
-						$btnDelete = '<button class="btn btn-danger btn-sm " onClick="fntDeleteBanner(' . $arrData[$i]['IdBaner'] . ')" title="Eliminar Banner"><i class="far fa-trash-alt"></i></button>';
+						$btnDelete = '<button class="btn btn-danger btn-sm " onClick="fntDeletebanner(' . $arrData[$i]['IdBaner'] . ')" title="Eliminar Banner"><i class="far fa-trash-alt"></i></button>';
 					} else {
 						$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
 					}
 				}
-				$arrData[$i]['NombreArchivo'] = '<a target="_blank" href="' . base_url() . '/upload/portada/' . $arrData[$i]['NombreArchivo'] . '"><span class="badge badge-primary"  > Ver Imagen <i class="fas fa-image"></i></span></a> ';
+				$arrData[$i]['NombreArchivo'] = '<a target="_blank" href="' . media() . '/upload/banner/' . $arrData[$i]['NombreArchivo'] . '"><span class="badge badge-primary"  > Ver Imagen <i class="fas fa-image"></i></span></a> ';
 
 				$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
 			}
@@ -61,7 +61,7 @@ class portada extends Controllers
 	}
 
 	//obtener un baner para actualizar
-	public function getOneBanner($idpersona)
+	public function getOnebanner($idpersona)
 	{
 		if ($_SESSION['permisos'][3]['u']) {
 			$idusuario = intval($idpersona);
@@ -79,7 +79,7 @@ class portada extends Controllers
 	}
 
 	//insertar y actualizar los Galeria
-	public function setportada()
+	public function setbanner()
 	{
 		if ($_POST) {
 
@@ -93,7 +93,7 @@ class portada extends Controllers
 				$txtNombre = trim($_POST['txtNombre']);
 				$txtPosicion = trim($_POST['txtPosicion']);
 
-				$ruta = 'upload/portada/';
+				$ruta = 'upload/banner/';
 				$obj['NombreArchivo'] = null;
 
 				$bandera = true;
@@ -192,7 +192,7 @@ class portada extends Controllers
 	}
 
 	//borrar un delete Galeria
-	public function deleteBanner($IdBaner)
+	public function deletebanner($IdBaner)
 	{
 
 		if ($_SESSION['permisos'][3]['d']) {
@@ -200,7 +200,7 @@ class portada extends Controllers
 
 			$archivo = $this->model->getOneBanner($IdBaner);
 
-			$ruta = 'upload/portada';
+			$ruta = 'upload/banner';
 			removeFile($ruta, $archivo['NombreArchivo']);
 
 			$requestDelete = $this->model->removeBanner($IdBaner);
