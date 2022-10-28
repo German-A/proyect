@@ -7,7 +7,7 @@ obj($data);
 //require_once  "../Models/HomeModel.php";
 $obj = new HomeModel();
 $perfiles = $obj->selectBanner();
-$legal = $obj->selectLegalInicio();
+
 ?>
 
 
@@ -19,7 +19,7 @@ $legal = $obj->selectLegalInicio();
     <div class="swiper-wrapper">
       <?php foreach ($perfiles as $key => $fila) { ?>
         <div class="swiper-slide">
-          <img class="imgbanner" src="<?= media(); ?>/archivos/banner/<?php echo $fila['NombreArchivo'] ?>">
+          <img class="imgbanner" src="<?= base_url(); ?>/upload/portada/<?php echo $fila['NombreArchivo'] ?>">
         </div>
       <?php } ?>
     </div>
