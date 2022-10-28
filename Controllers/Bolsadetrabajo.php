@@ -1,60 +1,59 @@
-<?php 
+<?php
 
-	class bolsadetrabajo extends Controllers{
-		public function __construct()
-		{
-			parent::__construct();
-		}
+class bolsadetrabajo extends Controllers
+{
+	public function __construct()
+	{
+		parent::__construct();
+	}
 
-		/*PAGINA DE INICIO*/
+	/*PAGINA DE INICIO*/
 
-		public function bolsadetrabajo()
-		{
-			$data['page_id'] = 4;
-			$data['page_tag'] = "bolsadetrabajo";
-			$data['page_title'] = "Página principal";
-			$data['page_name'] = "home";
-			$data['page_content'] = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, quis. Perspiciatis repellat perferendis accusamus, ea natus id omnis, ratione alias quo dolore tempore dicta cum aliquid corrupti enim deserunt voluptas.";
-			$this->views->getView($this,"bolsadetrabajo",$data);
-		}
+	public function bolsadetrabajo()
+	{
+		$data['page_id'] = 4;
+		$data['page_tag'] = "bolsadetrabajo";
+		$data['page_title'] = "Página principal";
+		$data['page_name'] = "home";
+		$data['page_content'] = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, quis. Perspiciatis repellat perferendis accusamus, ea natus id omnis, ratione alias quo dolore tempore dicta cum aliquid corrupti enim deserunt voluptas.";
+		$this->views->getView($this, "bolsadetrabajo", $data);
+	}
 
 
-			//LISTA DE EMPLEOS POR APROBAR
+	//LISTA DE EMPLEOS POR APROBAR
 	public function get()
 	{
-	
-			$arrData = $this->model->listParaAprobar();
 
-			foreach ($arrData as &$line) {
+		$arrData = $this->model->listParaAprobar();
 
-				$btnView = '';
-				$btnEdit = '';
-				$btnDelete = '';
+		foreach ($arrData as &$line) {
+
+			$btnView = '';
+			$btnEdit = '';
+			$btnDelete = '';
 
 
 
-				$line['titulacionesid'] = "";
-				$line['escuelaid'] = "";
+			$line['titulacionesid'] = "";
+			$line['escuelaid'] = "";
 
-				$arrTitulaciones = $this->model->listaTitulaciones($line['idEmpleos']);
-				$arrCarreras = $this->model->listaCarreras($line['idEmpleos']);
+			$arrTitulaciones = $this->model->listaTitulaciones($line['idEmpleos']);
+			$arrCarreras = $this->model->listaCarreras($line['idEmpleos']);
 
-				foreach ($arrTitulaciones as &$titulaciones) {
-					$line['titulacionesid'] = 	$line['titulacionesid'] . '<label><span class="badge badge-primary">' . $titulaciones['nombreTitulaciones'] . '</span></label> ';
-				}
-
-				foreach ($arrCarreras as &$carreras) {
-					$line['escuelaid'] = 	$line['escuelaid'] . '<label><span class="badge badge-info">' . $carreras['nombreEscuela'] . '</span></label> ';
-				}
-
-			
-				$line['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
+			foreach ($arrTitulaciones as &$titulaciones) {
+				$line['titulacionesid'] = 	$line['titulacionesid'] . '<label><span class="badge badge-primary">' . $titulaciones['nombreTitulaciones'] . '</span></label> ';
 			}
 
-			echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
-		
+			foreach ($arrCarreras as &$carreras) {
+				$line['escuelaid'] = 	$line['escuelaid'] . '<label><span class="badge badge-info">' . $carreras['nombreEscuela'] . '</span></label> ';
+			}
+
+
+			$line['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
+		}
+
+		echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
+
 		die();
 	}
-
-	}
- ?>
+}

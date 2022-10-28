@@ -52,7 +52,7 @@
                     </a>
                     <ul class="treeview-menu">
                         <?php if (!empty($_SESSION['permisos'][3]['r'])) { ?>
-                            <li><a class="treeview-item" href="<?= base_url(); ?>/banners"><i class="icon fa fa-circle-o"></i> Banners</a></li>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/baners"><i class="icon fa fa-circle-o"></i> Baners</a></li>
                         <?php } ?>
                         <?php if (!empty($_SESSION['permisos'][4]['r'])) { ?>
                             <li><a class="treeview-item" href="<?= base_url(); ?>/manualesyguias"><i class="icon fa fa-circle-o"></i> Manuales y guias</a></li>

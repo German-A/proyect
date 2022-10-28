@@ -27,7 +27,7 @@ class EmpresaapobarempleoadminModel extends Mysql
 			on em.empresaid = emp.idempresa
 			inner join usuario u
 			on u.idpersona=emp.personaid
-			";
+			where em.status =2";
 		$request = $this->select_all($sql);
 		return $request;
 	}

@@ -29,11 +29,8 @@ $perfiles = $año->selectañoEspecialidades();
 
 <br><br><br>
 
-<div class="col-12">
-
-
+<!-- <div class="col-12">
     <div class="row d-flex justify-content-around" id="empleos">
-
         <div class="col-5 pb-4 cardempleo ">
             <div class="row">
                 <div class="col-3">
@@ -46,26 +43,30 @@ $perfiles = $año->selectañoEspecialidades();
                 </div>
             </div>
         </div>
-
-
-
-
-
     </div>
+</div> -->
 
 
 
 
+<div class="col-12">
 
 </div>
 
-
-<div class="col-md-6">
-    <div id="empleos">
-
+<div class="col-6">
+    <div class="col-2">
+        <img class="img-fluid" src="<?= media() ?>/archivos/empresa/11luffy.jpg">
+    </div>
+    <div class="col-10">
+        <h3>Desarrollador</h3>
+        <h4>Empresa:web</h4>
+        <h5>Carreras:</h5>
     </div>
 </div>
 
+<div class="col-6">
+
+</div>
 
 <?php footer($data); ?>
 
