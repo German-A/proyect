@@ -12,6 +12,7 @@
 		{
 			//HomeModel.php
 			$model = get_class($this)."Model";
+			$model = ucwords($model);
 			$routClass = "Models/".$model.".php";
 			if(file_exists($routClass)){
 				require_once($routClass);

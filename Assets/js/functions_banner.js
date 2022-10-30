@@ -46,7 +46,7 @@
         divLoading.style.display = "flex";
         $.ajax({
             method: "POST",
-            url: "" + base_url + "/portada/setPortada",
+            url: "" + base_url + "/banner/setBanner",
             data: fd,
             processData: false, // tell jQuery not to process the data
             contentType: false // tell jQuery not to set contentType
@@ -66,7 +66,7 @@
         });
     }
 
-    function fntEditPortada(idBanner) {
+    function fntEditbanner(idBanner) {
 
         document.querySelector("#titleBanner").innerHTML = "ACTUALIZAR Banner";
         document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");
@@ -75,7 +75,7 @@
 
         $.ajax({
             method: "GET",
-            url: "" + base_url + "/portada/getOnePortada/" + idBanner,
+            url: "" + base_url + "/banner/getOnebanner/" + idBanner,
             processData: false, // tell jQuery not to process the data
             contentType: false, // tell jQuery not to set contentType
 
@@ -98,7 +98,7 @@
         });
     }
 
-    function fntDeletePortada(idBanner) {
+    function fntDeletebanner(idBanner) {
 
         swal({
             title: "Eliminar Banner",
@@ -115,7 +115,7 @@
 
                 $.ajax({
                     method: "POST",
-                    url: "" + base_url + "/portada/deletePortada/" + idBanner,
+                    url: "" + base_url + "/banner/deletebanner/" + idBanner,
                     processData: false, // tell jQuery not to process the data
                     contentType: false, // tell jQuery not to set contentType
 
@@ -151,7 +151,7 @@
                 "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
             },
             "ajax": {
-                "url": " " + base_url + "/portada/get",
+                "url": " " + base_url + "/banner/getList",
                 "dataSrc": ""
             },
             "columns": [{

@@ -1,6 +1,6 @@
 <?php 
 
-	class PortadaModel extends Mysql
+	class BannerModel extends Mysql
 	{
 		private $intIdUsuario;
 		private $nombreArchivo;

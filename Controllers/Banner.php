@@ -26,7 +26,7 @@ class banner extends Controllers
 		$this->views->getView($this, "banner", $data);
 	}
 	//listado de los banner
-	public function getBanner()
+	public function getList()
 	{
 		if ($_SESSION['permisos'][3]['r']) {
 			$arrData = $this->model->lista();
