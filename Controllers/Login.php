@@ -26,20 +26,33 @@ class Login extends Controllers
 		if ($_POST) {
 			if (empty($_POST['txtEmail']) || empty($_POST['txtPassword'])) {
 				$arrResponse = array('status' => false, 'msg' => 'Error de datos');
-			} else {
+			}
+			else{
+
 				$strUsuario  =  strtolower(strClean($_POST['txtEmail']));
-				$strPassword = $_POST['txtPassword'];
-				$arrData = $this->model->loginUser($strUsuario, $strPassword);
-				if (empty($arrData)) {
-					$arrResponse = array('status' => false, 'msg' => 'El usuario o la contraseña es incorrecto.');
-				} else {
+				$usuario = $this->model->buscarCorreo($strUsuario);
 
-					if ($arrData['status'] == 1) {
+				if(empty($usuario)){
+					$arrResponse = array('status' => false, 'msg' => 'El correo no se encuentra Registrado');
+				}
+				else{
+					$strUsuario  =  strtolower(strClean($_POST['txtEmail']));
+					$strPassword = $_POST['txtPassword'];
+					$arrData = $this->model->loginUser($strUsuario, $strPassword);
+					if (empty($arrData)) {
 
-						$arrResponse = array(
-							'status' => true, 
-							'msg' => 'ok'
-						);
+						$arrData['intentos'] +1 ;
+
+						$arrResponse = array('status' => false, 'msg' => 'El usuario o la contraseña es incorrecto.');
+
+					} else {
+
+						if ($arrData['status'] == 1) {
+
+							$arrResponse = array(
+								'status' => true, 
+								'msg' => 'ok'
+							);
 
 						$_SESSION['idUser'] = $arrData['idpersona'];
 						$_SESSION['login'] = true;
@@ -58,11 +71,20 @@ class Login extends Controllers
 							$_SESSION['Egresado'] = $arrEmp['idegresado'];
 						}
 
-					} else {
+					} 
+					elseif  ($arrData['status'] == 3) {
+						$arrResponse = array('status' => false, 'msg' => 'Usuario bloqueado, por superar el numero de intentos (dar click en "¿Olvidaste tu contraseña?").');
+					}
+					else{
 						$arrResponse = array('status' => false, 'msg' => 'Usuario inactivo, envíanos un mensaje desde la parte final de la sección inicio.');
 					}
+				
+
 				}
+
 			}
+		}
+	
 			echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
 		}
 		die();

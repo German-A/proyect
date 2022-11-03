@@ -245,7 +245,7 @@ $n = 1;
                 <div class="swiper-wrapper">
                     <?php foreach ($perfiles as $key => $fila) { ?>
                         <div class="swiper-slide">
-                            <img class="imgbanner" src="<?= media(); ?>/archivos/banner/<?php echo $fila['NombreArchivo'] ?>">
+                            <img class="imgbanner" src="<?= media(); ?>/upload/banner/<?php echo $fila['NombreArchivo'] ?>">
                         </div>
                     <?php } ?>
                 </div>

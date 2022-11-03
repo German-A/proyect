@@ -1,6 +1,6 @@
 <?php
 
-class banner extends Controllers
+class baner extends Controllers
 {
 	public function __construct()
 	{
@@ -13,7 +13,7 @@ class banner extends Controllers
 		getPermisos(3);
 	}
 	//pagina Banner
-	public function banner()
+	public function baner()
 	{
 
 		if (empty($_SESSION['permisosMod']['r'])) {
@@ -21,11 +21,11 @@ class banner extends Controllers
 		}
 		$data['page_tag'] = "Banner";
 		$data['page_title'] = "Banner <small>Unidad de Seguimiento del Egresado</small>";
-		$data['page_name'] = "USE-banner";
-		$data['page_functions_js'] = "functions_banner.js";
-		$this->views->getView($this, "banner", $data);
+		$data['page_name'] = "USE-baner";
+		$data['page_functions_js'] = "functions_baner.js";
+		$this->views->getView($this, "baner", $data);
 	}
-	//listado de los banner
+	//listado de los baner
 	public function getList()
 	{
 		if ($_SESSION['permisos'][3]['r']) {
@@ -39,19 +39,19 @@ class banner extends Controllers
 				}
 				if ($_SESSION['permisosMod']['u']) {
 					if (($_SESSION['userData']['idrol'] == 1) || ($_SESSION['userData']['idrol'] == 2)) {
-						$btnEdit = '<button class="btn btn-primary  btn-sm " onClick="fntEditbanner(' . $arrData[$i]['IdBaner'] . ')" title="Editar Banner"><i class="fas fa-pencil-alt"></i></button>';
+						$btnEdit = '<button class="btn btn-primary  btn-sm " onClick="fntEditbaner(' . $arrData[$i]['IdBaner'] . ')" title="Editar Banner"><i class="fas fa-pencil-alt"></i></button>';
 					} else {
 						$btnEdit = '<button class="btn btn-secondary btn-sm" disabled ><i class="fas fa-pencil-alt"></i></button>';
 					}
 				}
 				if ($_SESSION['permisosMod']['d']) {
 					if (($_SESSION['userData']['idrol'] == 1) || ($_SESSION['userData']['idrol'] == 2)) {
-						$btnDelete = '<button class="btn btn-danger btn-sm " onClick="fntDeletebanner(' . $arrData[$i]['IdBaner'] . ')" title="Eliminar Banner"><i class="far fa-trash-alt"></i></button>';
+						$btnDelete = '<button class="btn btn-danger btn-sm " onClick="fntDeletebaner(' . $arrData[$i]['IdBaner'] . ')" title="Eliminar Banner"><i class="far fa-trash-alt"></i></button>';
 					} else {
 						$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
 					}
 				}
-				$arrData[$i]['NombreArchivo'] = '<a target="_blank" href="' . media() . '/upload/banner/' . $arrData[$i]['NombreArchivo'] . '"><span class="badge badge-primary"  > Ver Imagen <i class="fas fa-image"></i></span></a> ';
+				$arrData[$i]['NombreArchivo'] = '<a target="_blank" href="' . media() . '/upload/portada/' . $arrData[$i]['NombreArchivo'] . '"><span class="badge badge-primary"  > Ver Imagen <i class="fas fa-image"></i></span></a> ';
 
 				$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
 			}
@@ -61,12 +61,12 @@ class banner extends Controllers
 	}
 
 	//obtener un baner para actualizar
-	public function getOnebanner($idpersona)
+	public function getOnebaner($idpersona)
 	{
 		if ($_SESSION['permisos'][3]['u']) {
 			$idusuario = intval($idpersona);
 			if ($idusuario > 0) {
-				$arrData = $this->model->getOneBanner($idusuario);
+				$arrData = $this->model->getOneBaner($idusuario);
 				if (empty($arrData)) {
 					$arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
 				} else {
@@ -79,13 +79,17 @@ class banner extends Controllers
 	}
 
 	//insertar y actualizar los Galeria
-	public function setbanner()
+	public function setBaner()
 	{
 		if ($_POST) {
 
+			$tipo = $_FILES['archivoSubido']['type'];
+
 			if (empty($_POST['txtNombre']) || empty($_POST['txtPosicion'])) {
+
 				$arrResponse = array("status" => false, "msg" => 'Datos incorrectos.');
-			} else {
+
+			} elseif ($tipo == "image/png" || $tipo == 'image/jpeg') {
 
 				$IdBaner = intval($_POST['idBanner']);
 				$txtNombre = trim($_POST['txtNombre']);
@@ -98,19 +102,54 @@ class banner extends Controllers
 
 				if ($IdBaner == 0) {
 
-					$tipo = $_FILES['archivoSubido']['type'];
+					$option = 1;
 
-					if ($tipo == "image/png" || $tipo == 'image/jpeg') {
+					$ubicacionTemporal = $_FILES['archivoSubido']['tmp_name'];
+					$extension = pathinfo($_FILES['archivoSubido']['name'], PATHINFO_EXTENSION);
 
-						$option = 1;
+					$filename = randKey("abcdef9876543210", 10) . round(microtime(true) * 1000) . '.' . $extension;
+
+					while ($bandera) {
+						if (!empty($this->model->buscarArchivoBaner($filename))) {
+							$filename = randKey("abcdef9876543210", 10) . round(microtime(true) * 1000) . '.' . $extension;
+						} else {
+							$bandera = false;
+						}
+					}
+
+					if (!file_exists($ruta)) {
+						mkdir($ruta, 0777, true);
+						if (file_exists($ruta)) {
+							if (move_uploaded_file($ubicacionTemporal, $ruta . $filename)) {
+								$insert = $this->model->register($txtNombre, $txtPosicion, $filename);
+							} else {
+								echo "no se pudo guardar ";
+							}
+						}
+					} else {
+						if (move_uploaded_file($ubicacionTemporal, $ruta . $filename)) {
+							$insert = $this->model->register($txtNombre, $txtPosicion, $filename);
+						} else {
+							echo "no se pudo guardar en la carpeta existente";
+						}
+					}
+				} else {
+
+					$option = 2;
+
+					//Actualizar sin Imagen
+					if (empty($_FILES['archivoSubido']['name'])) {
+						$insert = $this->model->updateBaner($txtNombre, $txtPosicion, $IdBaner);
+					} else {
+						//Actualizar con Imagen				
+						$obj = $this->model->getOneBaner($IdBaner);
 
 						$ubicacionTemporal = $_FILES['archivoSubido']['tmp_name'];
 						$extension = pathinfo($_FILES['archivoSubido']['name'], PATHINFO_EXTENSION);
-
 						$filename = randKey("abcdef9876543210", 10) . round(microtime(true) * 1000) . '.' . $extension;
 
 						while ($bandera) {
-							if (!empty($this->model->buscarArchivoBanner($filename))) {
+							if (!empty($this->model->buscarArchivoBaner($filename))) {
 								$filename = randKey("abcdef9876543210", 10) . round(microtime(true) * 1000) . '.' . $extension;
 							} else {
 								$bandera = false;
@@ -121,69 +160,17 @@ class banner extends Controllers
 							mkdir($ruta, 0777, true);
 							if (file_exists($ruta)) {
 								if (move_uploaded_file($ubicacionTemporal, $ruta . $filename)) {
-									$insert = $this->model->register($txtNombre, $txtPosicion, $filename);
+									$insert = $this->model->updateGaleriaBaner($txtNombre, $txtPosicion, $IdBaner, $filename);
 								} else {
 									echo "no se pudo guardar ";
 								}
 							}
 						} else {
 							if (move_uploaded_file($ubicacionTemporal, $ruta . $filename)) {
-								$insert = $this->model->register($txtNombre, $txtPosicion, $filename);
+								$insert = $this->model->updateGaleriaBaner($txtNombre, $txtPosicion, $IdBaner, $filename);
 							} else {
-								echo "no se pudo guardar en la carpeta existente";
+								echo "no se pudo guardar";
 							}
-						}
-					} else {
-					
-						$arrResponse = array("status" => false, "msg" => 'Solo se permiten archivos .jpg, .png.');
-
-					}
-
-				} else {
-
-					$option = 2;
-
-					//Actualizar sin Imagen
-					if (empty($_FILES['archivoSubido']['name'])) {
-						$insert = $this->model->updateBanner($txtNombre, $txtPosicion, $IdBaner);
-					} else {
-						$tipo = $_FILES['archivoSubido']['type'];
-
-						if ($tipo == "image/png" || $tipo == 'image/jpeg') {
-
-							//Actualizar con Imagen				
-							$obj = $this->model->getOneBanner($IdBaner);
-
-							$ubicacionTemporal = $_FILES['archivoSubido']['tmp_name'];
-							$extension = pathinfo($_FILES['archivoSubido']['name'], PATHINFO_EXTENSION);
-							$filename = randKey("abcdef9876543210", 10) . round(microtime(true) * 1000) . '.' . $extension;
-
-							while ($bandera) {
-								if (!empty($this->model->buscarArchivoBanner($filename))) {
-									$filename = randKey("abcdef9876543210", 10) . round(microtime(true) * 1000) . '.' . $extension;
-								} else {
-									$bandera = false;
-								}
-							}
-
-							if (!file_exists($ruta)) {
-								mkdir($ruta, 0777, true);
-								if (file_exists($ruta)) {
-									if (move_uploaded_file($ubicacionTemporal, $ruta . $filename)) {
-										$insert = $this->model->updateGaleriaBanner($txtNombre, $txtPosicion, $IdBaner, $filename);
-									} else {
-										echo "no se pudo guardar ";
-									}
-								}
-							} else {
-								if (move_uploaded_file($ubicacionTemporal, $ruta . $filename)) {
-									$insert = $this->model->updateGaleriaBanner($txtNombre, $txtPosicion, $IdBaner, $filename);
-								} else {
-									echo "no se pudo guardar";
-								}
-							}
-						} else {
-							$arrResponse = array("status" => false, "msg" => 'Solo se permiten archivos .jpg, .png.');
 						}
 					}
 				}
@@ -199,7 +186,7 @@ class banner extends Controllers
 				} else {
 					$arrResponse = array("status" => false, "msg" => 'No es posible almacenar los datos.');
 				}
-
+			} else {
 				$arrResponse = array("status" => false, "msg" => 'Solo se permiten archivos 
 				.jpg, .png.');
 			}
@@ -209,18 +196,18 @@ class banner extends Controllers
 	}
 
 	//borrar un delete Galeria
-	public function deletebanner($IdBaner)
+	public function deletebaner($IdBaner)
 	{
 
 		if ($_SESSION['permisos'][3]['d']) {
 			$IdBaner = intval($IdBaner);
 
-			$archivo = $this->model->getOneBanner($IdBaner);
+			$archivo = $this->model->getOneBaner($IdBaner);
 
-			$ruta = 'Assets/upload/banner/';
+			$ruta = 'Assets/upload/portada/';
 			removeFile($ruta, $archivo['NombreArchivo']);
 
-			$requestDelete = $this->model->removeBanner($IdBaner);
+			$requestDelete = $this->model->removeBaner($IdBaner);
 
 			if ($requestDelete) {
 				$arrResponse = array('status' => true, 'msg' => 'Se ha eliminado la Imagen');

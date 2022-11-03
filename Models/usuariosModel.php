@@ -93,15 +93,6 @@ class UsuariosModel extends Mysql
 	}
 
 
-	public function obte()
-	{
-		$request = "ho";
-		return $request;
-	}
-
-
-
-
 	public function selectUsuarios()
 	{
 		$whereAdmin = "";

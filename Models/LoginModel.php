@@ -23,6 +23,26 @@
 			return $request;
 		}
 
+		public function buscarCorreo(string $usuario){
+			$this->strUsuario = $usuario;
+				
+			$sql = "SELECT idpersona,status,intentos
+			FROM usuario 
+			WHERE email_user ='$this->strUsuario' ";
+			$request = $this->select($sql);
+			return $request;			
+		}
+		
+		public function intentos(){
+			$this->intIdUsuario = $idpersona;
+			$this->strToken = $token;
+			$sql = "UPDATE usuario SET token = ? WHERE idpersona = $this->intIdUsuario ";
+			$arrData = array($this->strToken);
+			$request = $this->update($sql,$arrData);
+			return $request;
+
+		}
+
 		public function sessionLogin(int $iduser){
 			$this->intIdUsuario = $iduser;
 			//BUSCAR ROLE 
