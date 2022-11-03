@@ -26,65 +26,68 @@ class Login extends Controllers
 		if ($_POST) {
 			if (empty($_POST['txtEmail']) || empty($_POST['txtPassword'])) {
 				$arrResponse = array('status' => false, 'msg' => 'Error de datos');
-			}
-			else{
+			} else {
 
 				$strUsuario  =  strtolower(strClean($_POST['txtEmail']));
 				$usuario = $this->model->buscarCorreo($strUsuario);
 
-				if(empty($usuario)){
+				if (empty($usuario)) {
 					$arrResponse = array('status' => false, 'msg' => 'El correo no se encuentra Registrado');
-				}
-				else{
-					$strUsuario  =  strtolower(strClean($_POST['txtEmail']));
-					$strPassword = $_POST['txtPassword'];
-					$arrData = $this->model->loginUser($strUsuario, $strPassword);
-					if (empty($arrData)) {
-
-						$arrData['intentos'] +1 ;
-
-						$arrResponse = array('status' => false, 'msg' => 'El usuario o la contraseña es incorrecto.');
-
+				} else {
+					if ($usuario['intentos'] == 5) {
+						$arrResponse = array('status' => false, 'msg' => 'Usuario inactivo, se encuentra bloqueado.');
 					} else {
 
-						if ($arrData['status'] == 1) {
+						$strUsuario  =  strtolower(strClean($_POST['txtEmail']));
+						$strPassword = $_POST['txtPassword'];
+						$arrData = $this->model->loginUser($strUsuario, $strPassword);
+						if (empty($arrData)) {
+							
+							if($usuario['intentos'] < 5){
+								$idpersona=$usuario['idpersona'];
+								$numerointentos=$usuario['intentos'] + 1;	
+								$arrData = $this->model->intentos($idpersona,$numerointentos);
+							}
+							$intentosrestantes = 5 - $usuario['intentos'] ;
 
-							$arrResponse = array(
-								'status' => true, 
-								'msg' => 'ok'
-							);
 
-						$_SESSION['idUser'] = $arrData['idpersona'];
-						$_SESSION['login'] = true;
-						
-						$arrData = $this->model->sessionLogin($_SESSION['idUser']);
-						
-						$_SESSION['userData'] = $arrData;			
+							$arrResponse = array('status' => false, 'msg' => 'La contraseña es incorrecto (te quedan '. $intentosrestantes.' intentos.).');
 
-						if ($arrData['idrol'] == 4) {
-							$arrEmp = $this->model->sessionEmpresa($_SESSION['idUser']);
-							$_SESSION['Empresario'] = $arrEmp['idempresa'];
+						} else {
+
+							if ($arrData['status'] == 1) {
+
+								$arrResponse = array(
+									'status' => true,
+									'msg' => 'ok'
+								);
+
+								$_SESSION['idUser'] = $arrData['idpersona'];
+								$_SESSION['login'] = true;
+
+								$arrData = $this->model->sessionLogin($_SESSION['idUser']);
+
+								$_SESSION['userData'] = $arrData;
+
+								if ($arrData['idrol'] == 4) {
+									$arrEmp = $this->model->sessionEmpresa($_SESSION['idUser']);
+									$_SESSION['Empresario'] = $arrEmp['idempresa'];
+								}
+
+								if ($arrData['idrol'] == 3) {
+									$arrEmp = $this->model->sessionEgresado($_SESSION['idUser']);
+									$_SESSION['Egresado'] = $arrEmp['idegresado'];
+								}
+							} elseif ($arrData['status'] == 3) {
+								$arrResponse = array('status' => false, 'msg' => 'Usuario bloqueado, por superar el numero de intentos (dar click en "¿Olvidaste tu contraseña?").');
+							} else {
+								$arrResponse = array('status' => false, 'msg' => 'Usuario inactivo, envíanos un mensaje desde la parte final de la sección inicio.');
+							}
 						}
-
-						if ($arrData['idrol'] == 3) {
-							$arrEmp = $this->model->sessionEgresado($_SESSION['idUser']);
-							$_SESSION['Egresado'] = $arrEmp['idegresado'];
-						}
-
-					} 
-					elseif  ($arrData['status'] == 3) {
-						$arrResponse = array('status' => false, 'msg' => 'Usuario bloqueado, por superar el numero de intentos (dar click en "¿Olvidaste tu contraseña?").');
 					}
-					else{
-						$arrResponse = array('status' => false, 'msg' => 'Usuario inactivo, envíanos un mensaje desde la parte final de la sección inicio.');
-					}
-				
-
 				}
-
 			}
-		}
-	
+
 			echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
 		}
 		die();

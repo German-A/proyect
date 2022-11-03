@@ -195,11 +195,11 @@ $perfiles = $obj->selectBanner();
       <div class="cont-titulo ">
         <h5 class="bluemedio text-area">ÁREA DE<br>MARQUETÍN</h5>
       </div>
-      <img class="equipoimg" src="<?= media(); ?>/img/LicMarines.png" alt="">
+      <img class="equipoimg" src="<?= media(); ?>/img/LicAndy.png" alt="">
       <div class="col-4 cont-info">
         <br>
-        <h6>MARINÉS TRINIDAD<br>RAMÍREZ RODRÍGUEZ</h6>
-        <p><small>COMUNICADORA/DISEÑADORA</small></p>
+        <h6>ANDY BRYAN<br>BENITES ZAVALETA</h6>
+        <p><small>COMUNICADOR/DISEÑADOR</small></p>
       </div>
     </div>
 

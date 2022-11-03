@@ -6,6 +6,7 @@
 		private $strUsuario;
 		private $strPassword;
 		private $strToken;
+		private $numerointentos;
 
 		public function __construct()
 		{
@@ -33,11 +34,12 @@
 			return $request;			
 		}
 		
-		public function intentos(){
-			$this->intIdUsuario = $idpersona;
-			$this->strToken = $token;
-			$sql = "UPDATE usuario SET token = ? WHERE idpersona = $this->intIdUsuario ";
-			$arrData = array($this->strToken);
+		public function intentos($idpersona,$numerointentos){
+			$this->idpersona = $idpersona;
+			$this->numerointentos = $numerointentos;
+	
+			$sql = "UPDATE usuario SET intentos = ? WHERE idpersona = $this->idpersona ";
+			$arrData = array($this->numerointentos);
 			$request = $this->update($sql,$arrData);
 			return $request;
 
