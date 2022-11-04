@@ -7,8 +7,8 @@ class galeriavida2022 extends Controllers
 		session_start();
 		//session_regenerate_id(true);
 		parent::__construct();
-		
-	
+
+
 		if (empty($_SESSION['login'])) {
 			header('Location: ' . base_url() . '/login');
 		}
@@ -40,21 +40,21 @@ class galeriavida2022 extends Controllers
 					$btnView = '<button class="btn btn-info btn-sm fntView" onClick="fntView(' . $arrData[$i]['IdBaner'] . ')" title="Ver galeriavidaysalud"><i class="far fa-eye"></i></button>';
 				}
 				if ($_SESSION['permisosMod']['u']) {
-					if (( $_SESSION['userData']['idrol'] == 1) ||( $_SESSION['userData']['idrol'] == 2)) {
+					if (($_SESSION['userData']['idrol'] == 1) || ($_SESSION['userData']['idrol'] == 2)) {
 						$btnEdit = '<button class="btn btn-primary  btn-sm fntEdit" onClick="fntEdit(this,' . $arrData[$i]['IdBaner'] . ')" title="Editar galeriavidaysalud"><i class="fas fa-pencil-alt"></i></button>';
 					} else {
 						$btnEdit = '<button class="btn btn-secondary btn-sm" disabled ><i class="fas fa-pencil-alt"></i></button>';
 					}
 				}
 				if ($_SESSION['permisosMod']['d']) {
-					if (( $_SESSION['userData']['idrol'] == 1) ||( $_SESSION['userData']['idrol'] == 2)) {
+					if (($_SESSION['userData']['idrol'] == 1) || ($_SESSION['userData']['idrol'] == 2)) {
 						$btnDelete = '<button class="btn btn-danger btn-sm fntDelete" onClick="fntDelete(' . $arrData[$i]['IdBaner'] . ')" title="Eliminar galeriavidaysalud"><i class="far fa-trash-alt"></i></button>';
 					} else {
 						$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
 					}
 				}
-				$arrData[$i]['NombreArchivo'] = '<a href="' . base_url() . '/Assets/archivos/galeriavidaysalud/' . $arrData[$i]['NombreArchivo'] . '"target="_blank"><span class="badge badge-primary"  >' . $arrData[$i]['NombreArchivo'] . '</span></a> ';
-			
+				$arrData[$i]['NombreArchivo'] = '<a href="' . base_url() . '/Assets/upload/galeriavidaysalud/' . $arrData[$i]['NombreArchivo'] . '"target="_blank"><span class="badge badge-primary"  >' . $arrData[$i]['NombreArchivo'] . '</span></a> ';
+
 				$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
 			}
 			echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
@@ -74,39 +74,48 @@ class galeriavida2022 extends Controllers
 				$nombreArchivo = trim($_POST['txtNombre']);
 
 				$request_user = "";
+				$insert = null;
 				if ($idUsuario == 0) {
 
-					$option = 1;
+					$tipo = $_FILES['archivoSubido']['type'];
 
-					$cantidadgaleriavidaysalud = "";
-					$cantidadgaleriavidaysalud = $this->model->cantidadBanner();
-					$cantidad = $cantidadgaleriavidaysalud['cant'];
-					$ubicacionTemporal = $_FILES['archivoSubido']['tmp_name'];
-					$nombre = $_FILES['archivoSubido']['name'];
+					if ($tipo == "image/png" || $tipo == 'image/jpeg') {
 
-					$nuevonombre = $cantidad . $nombre;
+						$option = 1;
 
-					if ($cantidad == null) {
-						$cantidad = 0;
-					} else {
-						$cantidad++;
-					}
+						$cantidadgaleriavidaysalud = "";
+						$cantidadgaleriavidaysalud = $this->model->cantidadBanner();
+						$cantidad = $cantidadgaleriavidaysalud['cant'];
+						$ubicacionTemporal = $_FILES['archivoSubido']['tmp_name'];
+						$nombre = $_FILES['archivoSubido']['name'];
 
-					if (!file_exists('Assets/archivos/galeriavidaysalud/')) {
-						mkdir('Assets/archivos/galeriavidaysalud/', 0777, true);
-						if (file_exists('Assets/archivos/galeriavidaysalud/')) {
-							if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/galeriavidaysalud/' . $nuevonombre)) {
+						$nuevonombre = $cantidad . $nombre;
+
+						if ($cantidad == null) {
+							$cantidad = 0;
+						} else {
+							$cantidad++;
+						}
+
+						if (!file_exists('Assets/upload/galeriavidaysalud/')) {
+							mkdir('Assets/upload/galeriavidaysalud/', 0777, true);
+							if (file_exists('Assets/upload/galeriavidaysalud/')) {
+								if (move_uploaded_file($ubicacionTemporal, 'Assets/upload/galeriavidaysalud/' . $nuevonombre)) {
+									$insert = $this->model->register($nombreArchivo, $nuevonombre, $cantidad, $posicion);
+								} else {
+									echo "no se pudo guardar ";
+								}
+							}
+						} else {
+							if (move_uploaded_file($ubicacionTemporal, 'Assets/upload/galeriavidaysalud/' . $nuevonombre)) {
 								$insert = $this->model->register($nombreArchivo, $nuevonombre, $cantidad, $posicion);
 							} else {
-								echo "no se pudo guardar ";
+								echo "no se pudo guardar";
 							}
 						}
 					} else {
-						if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/galeriavidaysalud/' . $nuevonombre)) {
-							$insert = $this->model->register($nombreArchivo, $nuevonombre, $cantidad, $posicion);
-						} else {
-							echo "no se pudo guardar";
-						}
+
+						$arrResponse = array("status" => false, "msg" => 'Solo se permiten archivos .jpg, .png.');
 					}
 				} else {
 					$option = 2;
@@ -116,36 +125,44 @@ class galeriavida2022 extends Controllers
 
 					//$nombre = null;
 
-					if ($_FILES['archivoSubido']['name']=="") {
+					if ($_FILES['archivoSubido']['name'] == "") {
 						$insert = $this->model->updatePosicion($nombreArchivo, $idUsuario, $posicion);
-					} else{
-						
-						$cantidad = $cantidadgaleriavidaysalud['cant'];
-						$ubicacionTemporal = $_FILES['archivoSubido']['tmp_name'];
-						$nombre = $_FILES['archivoSubido']['name'];
-						$nuevonombre = $cantidad . $nombre;
-						$nombreArchivo = trim($_POST['txtNombre']);
-						if ($cantidad == null) {
-							$cantidad = 0;
-						} else {
-							$cantidad++;
-						}
+					} else {
 
-						if (!file_exists('Assets/archivos/galeriavidaysalud/')) {
-							mkdir('Assets/archivos/galeriavidaysalud/', 0777, true);
-							if (file_exists('Assets/archivos/galeriavidaysalud/')) {
-								if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/galeriavidaysalud/' . $nuevonombre)) {
+						$tipo = $_FILES['archivoSubido']['type'];
+
+						if ($tipo == "image/png" || $tipo == 'image/jpeg') {
+
+
+							$cantidad = $cantidadgaleriavidaysalud['cant'];
+							$ubicacionTemporal = $_FILES['archivoSubido']['tmp_name'];
+							$nombre = $_FILES['archivoSubido']['name'];
+							$nuevonombre = $cantidad . $nombre;
+							$nombreArchivo = trim($_POST['txtNombre']);
+							if ($cantidad == null) {
+								$cantidad = 0;
+							} else {
+								$cantidad++;
+							}
+
+							if (!file_exists('Assets/upload/galeriavidaysalud/')) {
+								mkdir('Assets/upload/galeriavidaysalud/', 0777, true);
+								if (file_exists('Assets/upload/galeriavidaysalud/')) {
+									if (move_uploaded_file($ubicacionTemporal, 'Assets/upload/galeriavidaysalud/' . $nuevonombre)) {
+										$insert = $this->model->toupdate($nombreArchivo, $nuevonombre, $cantidad, $idUsuario, $posicion);
+									} else {
+										echo "no se pudo guardar ";
+									}
+								}
+							} else {
+								if (move_uploaded_file($ubicacionTemporal, 'Assets/upload/galeriavidaysalud/' . $nuevonombre)) {
 									$insert = $this->model->toupdate($nombreArchivo, $nuevonombre, $cantidad, $idUsuario, $posicion);
 								} else {
-									echo "no se pudo guardar ";
+									echo "no se pudo guardar";
 								}
 							}
 						} else {
-							if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/galeriavidaysalud/' . $nuevonombre)) {
-								$insert = $this->model->toupdate($nombreArchivo, $nuevonombre, $cantidad, $idUsuario, $posicion);
-							} else {
-								echo "no se pudo guardar";
-							}
+							$arrResponse = array("status" => false, "msg" => 'Solo se permiten archivos .jpg, .png.');
 						}
 					}
 				}
@@ -156,15 +173,13 @@ class galeriavida2022 extends Controllers
 					} else {
 						$arrResponse = array('status' => true, 'msg' => 'Datos Actualizados correctamente.');
 					}
-				} else {
-					$arrResponse = array("status" => false, "msg" => 'No es posible almacenar los datos.');
 				}
 			}
 			echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
 		}
 		die();
 	}
-	
+
 	//obtener un baner para actualizar
 	public function getone($idpersona)
 	{
@@ -189,10 +204,10 @@ class galeriavida2022 extends Controllers
 		if ($_POST) {
 			if ($_SESSION['permisosMod']['d']) {
 				$IdBaner = intval($_POST['IdBaner']);
-				$NombreArchivo= $this->model->getOne($IdBaner);
+				$NombreArchivo = $this->model->getOne($IdBaner);
 				//borrar documentos
 				$requestDelete = $this->model->remove($IdBaner);
-				@unlink('Assets/archivos/galeriavidaysalud/'.$NombreArchivo['NombreArchivo']);
+				@unlink('Assets/upload/galeriavidaysalud/' . $NombreArchivo['NombreArchivo']);
 				if ($requestDelete) {
 					$arrResponse = array('status' => true, 'msg' => 'Se ha eliminado el galeriavidaysalud');
 				} else {
