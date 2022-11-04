@@ -176,6 +176,7 @@ $perfiles = $obj->selectBanner();
         <h6>JEAN PAÚL<br> ROMERO LOBATÓN </h6>
         <p><small>INGENIERO DE SISTEMAS</small></p>
       </div>
+      
     </div><br><br><br>
     <div class="col-12 col-sm-5 col-md-5 col-lg-2 mb-2">
       <div class="cont-titulo ">
