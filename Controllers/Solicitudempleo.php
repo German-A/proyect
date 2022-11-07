@@ -153,10 +153,9 @@ class solicitudempleo extends Controllers
 		$idiomas = json_decode($_POST['idiomas'], true);
 		$competencias = json_decode($_POST['competencias'], true);
 
-		if($idEmpresa>0){
+	
 			$arrData = $this->model->insertarEmpleo($idEmpresa, $NombrePuesto, $FechaInico, $FechaFin, $titulaciones, $carreras, $competencias, $idiomas, $DescripcionPuesto, $InformacionAdicional, $NumeroVacantes, $Experiencias, $TipoContrato, $HorasSemanales, $HorarioTrabajo, $RemuneracionBruta, $Contacto, $LugarTrabajo, $TrabajoRemoto, $JornadaLaboral);
-		}
-
+	
 		$today = getdate();
 		$hora = $today["hours"];
 		if ($hora < 6) {

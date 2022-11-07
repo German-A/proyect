@@ -24,6 +24,7 @@
 			on em.empresaid = emp.idempresa
 			inner join usuario u
 			on u.idpersona=emp.personaid
+			order by idEmpleos DESC
 			";
 		$request = $this->select_all($sql);
 		return $request;

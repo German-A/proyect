@@ -222,7 +222,7 @@ function sendMailLocal($data, $template)
         //$mail->Username   = 'jeanromerolobaton@gmail.com';                     //SMTP username
         //$mail->Password   = 'JPsistemas321';                               //SMTP password
         $mail->Username   = 'notificaciones@use-dpa.unitru.edu.pe';                     //SMTP username
-        $mail->Password   = 'JPnotificaciones';
+        $mail->Password   = 'vN4Ud6,jKQ.?';
         $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
         $mail->Port       = 465;                             //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
@@ -368,7 +368,7 @@ function sendMailTicketLocal($data, $template)
         //$mail->Username   = 'jeanromerolobaton@gmail.com';                     //SMTP username
         //$mail->Password   = 'JPsistemas321';                               //SMTP password
         $mail->Username   = 'notificaciones@use-dpa.unitru.edu.pe';                     //SMTP username
-        $mail->Password   = 'JPnotificaciones';
+        $mail->Password   = 'vN4Ud6,jKQ.?';
         $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
         $mail->Port       = 465;                             //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
         //Recipients
@@ -506,7 +506,7 @@ function sendMailPublicacionEmpleo($data, $template)
         //$mail->Username   = 'jeanromerolobaton@gmail.com';                     //SMTP username
         //$mail->Password   = 'JPsistemas321';                               //SMTP password
         $mail->Username   = 'notificaciones@use-dpa.unitru.edu.pe';                     //SMTP username
-        $mail->Password   = 'JPnotificaciones';
+        $mail->Password   = 'vN4Ud6,jKQ.?';
         $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
         $mail->Port       = 465;                             //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
@@ -571,7 +571,7 @@ function sendMailLocalCarreras($data, $arrData)
         //$mail->Username   = 'jeanromerolobaton@gmail.com';                     //SMTP username
         //$mail->Password   = 'JPsistemas321';                               //SMTP password
         $mail->Username   = 'notificaciones@use-dpa.unitru.edu.pe';                     //SMTP username
-        $mail->Password   = 'JPnotificaciones';
+        $mail->Password   = 'vN4Ud6,jKQ.?';
         $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
         $mail->Port       = 465;
 
@@ -893,7 +893,7 @@ function sendMailLocalEmpleo($data, $template)
         //$mail->Username   = 'jeanromerolobaton@gmail.com';                     //SMTP username
         //$mail->Password   = 'JPsistemas321';                               //SMTP password
         $mail->Username   = 'notificaciones@use-dpa.unitru.edu.pe';                     //SMTP username
-        $mail->Password   = 'JPnotificaciones';
+        $mail->Password   = 'vN4Ud6,jKQ.?';
         $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
         $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
@@ -1041,7 +1041,7 @@ function sendAprobacionCorreo($data, $template)
         //$mail->Username   = 'jeanromerolobaton@gmail.com';                     //SMTP username
         //$mail->Password   = 'JPsistemas321';                               //SMTP password
         $mail->Username   = 'notificaciones@use-dpa.unitru.edu.pe';                     //SMTP username
-        $mail->Password   = 'JPnotificaciones';
+        $mail->Password   = 'vN4Ud6,jKQ.?';
         $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
         $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 

@@ -37,21 +37,21 @@ class manualesyguias extends Controllers
 					$btnView = '<button class="btn btn-info btn-sm fntView" onClick="fntView(' . $arrData[$i]['IdManuales'] . ')" title="Ver manualesyguias"><i class="far fa-eye"></i></button>';
 				}
 				if ($_SESSION['permisosMod']['u']) {
-					if (( $_SESSION['userData']['idrol'] == 1) ||( $_SESSION['userData']['idrol'] == 2)) {
+					if (($_SESSION['userData']['idrol'] == 1) || ($_SESSION['userData']['idrol'] == 2)) {
 						$btnEdit = '<button class="btn btn-primary  btn-sm fntEdit" onClick="fntEdit(this,' . $arrData[$i]['IdManuales'] . ')" title="Editar manualesyguias"><i class="fas fa-pencil-alt"></i></button>';
 					} else {
 						$btnEdit = '<button class="btn btn-secondary btn-sm" disabled ><i class="fas fa-pencil-alt"></i></button>';
 					}
 				}
 				if ($_SESSION['permisosMod']['d']) {
-					if (( $_SESSION['userData']['idrol'] == 1) ||( $_SESSION['userData']['idrol'] == 2)) {
+					if (($_SESSION['userData']['idrol'] == 1) || ($_SESSION['userData']['idrol'] == 2)) {
 						$btnDelete = '<button class="btn btn-danger btn-sm fntDelete" onClick="fntDelete(' . $arrData[$i]['IdManuales'] . ')" title="Eliminar manualesyguias"><i class="far fa-trash-alt"></i></button>';
 					} else {
 						$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
 					}
 				}
 				$arrData[$i]['NombreArchivo'] = '<a href="' . base_url() . '/Assets/archivos/manuales/' . $arrData[$i]['NombreArchivo'] . '"target="_blank"><span class="badge badge-primary"  >' . $arrData[$i]['NombreArchivo'] . '</span></a> ';
-			
+
 				$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
 			}
 			echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
@@ -71,39 +71,50 @@ class manualesyguias extends Controllers
 				$nombreArchivo = trim($_POST['txtNombre']);
 
 				$request_user = "";
+				$insert = null;
+
 				if ($idUsuario == 0) {
 
-					$option = 1;
 
-					$cantidadmanualesyguias = "";
-					$cantidadmanualesyguias = $this->model->cantidadmanualesyguias();
-					$cantidad = $cantidadmanualesyguias['cant'];
-					$ubicacionTemporal = $_FILES['archivoSubido']['tmp_name'];
-					$nombre = $_FILES['archivoSubido']['name'];
+					$tipo = $_FILES['archivoSubido']['type'];
 
-					$nuevonombre = $cantidad . $nombre;
+					if ($tipo == "image/png" || $tipo == 'image/jpeg') {
 
-					if ($cantidad == null) {
-						$cantidad = 0;
-					} else {
-						$cantidad++;
-					}
+						$option = 1;
 
-					if (!file_exists('Assets/archivos/manuales/')) {
-						mkdir('Assets/archivos/manuales/', 0777, true);
-						if (file_exists('Assets/archivos/manuales/')) {
+						$cantidadmanualesyguias = "";
+						$cantidadmanualesyguias = $this->model->cantidadmanualesyguias();
+						$cantidad = $cantidadmanualesyguias['cant'];
+						$ubicacionTemporal = $_FILES['archivoSubido']['tmp_name'];
+						$nombre = $_FILES['archivoSubido']['name'];
+
+						$nuevonombre = $cantidad . $nombre;
+
+						if ($cantidad == null) {
+							$cantidad = 0;
+						} else {
+							$cantidad++;
+						}
+
+						if (!file_exists('Assets/archivos/manuales/')) {
+							mkdir('Assets/archivos/manuales/', 0777, true);
+							if (file_exists('Assets/archivos/manuales/')) {
+								if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/manuales/' . $nuevonombre)) {
+									$insert = $this->model->register($nombreArchivo, $nuevonombre, $cantidad, $posicion);
+								} else {
+									echo "no se pudo guardar ";
+								}
+							}
+						} else {
 							if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/manuales/' . $nuevonombre)) {
 								$insert = $this->model->register($nombreArchivo, $nuevonombre, $cantidad, $posicion);
 							} else {
-								echo "no se pudo guardar ";
+								echo "no se pudo guardar";
 							}
 						}
 					} else {
-						if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/manuales/' . $nuevonombre)) {
-							$insert = $this->model->register($nombreArchivo, $nuevonombre, $cantidad, $posicion);
-						} else {
-							echo "no se pudo guardar";
-						}
+
+						$arrResponse = array("status" => false, "msg" => 'Solo se permiten archivos .jpg, .png.');
 					}
 				} else {
 					$option = 2;
@@ -113,10 +124,10 @@ class manualesyguias extends Controllers
 
 					//$nombre = null;
 
-					if ($_FILES['archivoSubido']['name']=="") {
+					if ($_FILES['archivoSubido']['name'] == "") {
 						$insert = $this->model->updatePosicion($nombreArchivo, $idUsuario, $posicion);
-					} else{
-						
+					} else {
+
 						$cantidad = $cantidadmanualesyguias['cant'];
 						$ubicacionTemporal = $_FILES['archivoSubido']['tmp_name'];
 						$nombre = $_FILES['archivoSubido']['name'];
@@ -161,7 +172,7 @@ class manualesyguias extends Controllers
 		}
 		die();
 	}
-	
+
 	//obtener un baner para actualizar
 	public function getone($idpersona)
 	{
@@ -186,10 +197,10 @@ class manualesyguias extends Controllers
 		if ($_POST) {
 			if ($_SESSION['permisosMod']['d']) {
 				$IdBaner = intval($_POST['IdManuales']);
-				$NombreArchivo= $this->model->getOne($IdBaner);
+				$NombreArchivo = $this->model->getOne($IdBaner);
 				//borrar documentos
 				$requestDelete = $this->model->remove($IdBaner);
-				@unlink('Assets/archivos/manuales/'.$NombreArchivo['NombreArchivo']);
+				@unlink('Assets/archivos/manuales/' . $NombreArchivo['NombreArchivo']);
 				if ($requestDelete) {
 					$arrResponse = array('status' => true, 'msg' => 'Se ha eliminado el manualesyguias');
 				} else {
