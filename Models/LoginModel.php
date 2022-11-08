@@ -19,7 +19,7 @@
 			$this->strPassword = $password;
 			$sql = "SELECT idpersona,status FROM usuario WHERE 
 					email_user = '$this->strUsuario' and 
-					password = '$this->strPassword' ";
+					password = sha2('$this->strPassword',256)  ";
 			$request = $this->select($sql);
 			return $request;
 		}
@@ -130,7 +130,7 @@
 		public function insertPassword(int $idPersona, string $password){
 			$this->intIdUsuario = $idPersona;
 			$this->strPassword = $password;
-			$sql = "UPDATE usuario SET password = ?, token = ? WHERE idpersona = $this->intIdUsuario ";
+			$sql = "UPDATE usuario SET password = sha2(?,256), token = ? WHERE idpersona = $this->intIdUsuario ";
 			$arrData = array($this->strPassword,"");
 			$request = $this->update($sql,$arrData);
 			return $request;
