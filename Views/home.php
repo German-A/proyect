@@ -62,7 +62,7 @@ $perfiles = $obj->selectBanner();
       <div class="row" data-aos="fade-down-right">
         <div class="col-md-8 col-lg-6  text-left ">
           <h3 class="mostaza">Nuestra Misión</h3>
-          <h4 class="blueoscuro">Fomentar y fortalecer los vínculos entre la universidad con sus egresados de pre y posgrado, promoviendo la inserción laboral, el emprendimiento y su formación continua, coadyuva en la evaluación de los objetivos educacionales.</h4>
+          <h4 class="blueoscuro">"Fomentar y fortalecer los vínculos entre la universidad con sus egresados de pre y posgrado, promoviendo la inserción laboral, el emprendimiento y su formación continua, coadyuva en la evaluación de los objetivos educacionales."</h4>
         </div>
         <div class="col-md-8 col-lg-6 d-flex align-items-center" data-aos="flip-left">
           <img class="col-10 img-fluid" src="<?= media(); ?>/archivos/logos/logoUse.png">
@@ -77,7 +77,7 @@ $perfiles = $obj->selectBanner();
         </div>
         <div class="col-12 col-md-6  mt-5 text-right">
           <h3 class="mostaza">Nuestra Visión</h3>
-          <h4 class="blueoscuro">Al 2026, la USE, es reconocida nivel local y nacional por sus estrategias para fortalecer y actualizar información y conocimientos de los egresados de pre y posgrado; coadyuva en la evaluación de los objetivos educacionales como parte del proceso de mejora continua de los currículos de los programas de estudio de la UNT.</h4>
+          <h4 class="blueoscuro">"Al 2026, la USE, es reconocida nivel local y nacional por sus estrategias para fortalecer y actualizar información y conocimientos de los egresados de pre y posgrado; coadyuva en la evaluación de los objetivos educacionales como parte del proceso de mejora continua de los currículos de los programas de estudio de la UNT."</h4>
         </div>
       </div>
     </div>
