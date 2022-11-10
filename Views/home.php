@@ -19,7 +19,7 @@ $perfiles = $obj->selectBanner();
     <div class="swiper-wrapper">
       <?php foreach ($perfiles as $key => $fila) { ?>
         <div class="swiper-slide">
-          <img class="imgbanner" src="<?= media(); ?>/upload/portada/<?php echo $fila['NombreArchivo'] ?>">
+          <img class="imgbanner" src="<?= media(); ?>/upload/portadas/<?php echo $fila['NombreArchivo'] ?>">
         </div>
       <?php } ?>
     </div>

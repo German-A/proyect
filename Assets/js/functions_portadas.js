@@ -46,7 +46,7 @@
         divLoading.style.display = "flex";
         $.ajax({
             method: "POST",
-            url: "" + base_url + "/portada/set",
+            url: "" + base_url + "/portadas/set",
             data: fd,
             processData: false, // tell jQuery not to process the data
             contentType: false // tell jQuery not to set contentType
@@ -75,7 +75,7 @@
 
         $.ajax({
             method: "GET",
-            url: "" + base_url + "/portada/getOne/" + id,
+            url: "" + base_url + "/portadas/getOne/" + id,
             processData: false, // tell jQuery not to process the data
             contentType: false, // tell jQuery not to set contentType
 
@@ -115,7 +115,7 @@
 
                 $.ajax({
                     method: "POST",
-                    url: "" + base_url + "/portada/delete/" + id,
+                    url: "" + base_url + "/portadas/delete/" + id,
                     processData: false, // tell jQuery not to process the data
                     contentType: false, // tell jQuery not to set contentType
 
@@ -151,7 +151,7 @@
                 "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
             },
             "ajax": {
-                "url": " " + base_url + "/portada/getList",
+                "url": " " + base_url + "/portadas/getList",
                 "dataSrc": ""
             },
             "columns": [{

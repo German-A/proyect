@@ -1,6 +1,6 @@
 <?php
 
-class portada extends Controllers
+class portadas extends Controllers
 {
 	public function __construct()
 	{
@@ -13,7 +13,7 @@ class portada extends Controllers
 		getPermisos(3);
 	}
 	//pagina Banner
-	public function portada()
+	public function portadas()
 	{
 
 		if (empty($_SESSION['permisosMod']['r'])) {
@@ -21,11 +21,11 @@ class portada extends Controllers
 		}
 		$data['page_tag'] = "Banner";
 		$data['page_title'] = "Banner <small>Unidad de Seguimiento del Egresado</small>";
-		$data['page_name'] = "USE-portada";
-		$data['page_functions_js'] = "functions_portada.js";
-		$this->views->getView($this, "portada", $data);
+		$data['page_name'] = "USE-portadas";
+		$data['page_functions_js'] = "functions_portadas.js";
+		$this->views->getView($this, "portadas", $data);
 	}
-	//listado de los portada
+	//listado de los portadas
 	public function getList()
 	{
 		if ($_SESSION['permisos'][3]['r']) {
@@ -51,7 +51,7 @@ class portada extends Controllers
 						$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
 					}
 				}
-				$arrData[$i]['NombreArchivo'] = '<a target="_blank" href="' . media() . '/upload/portada/' . $arrData[$i]['NombreArchivo'] . '"><span class="badge badge-primary"  > Ver Imagen <i class="fas fa-image"></i></span></a> ';
+				$arrData[$i]['NombreArchivo'] = '<a target="_blank" href="' . media() . '/upload/portadas/' . $arrData[$i]['NombreArchivo'] . '"><span class="badge badge-primary"  > Ver Imagen <i class="fas fa-image"></i></span></a> ';
 
 				$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
 			}
@@ -60,7 +60,7 @@ class portada extends Controllers
 		die();
 	}
 
-	//obtener un portada para actualizar
+	//obtener un portadas para actualizar
 	public function getOne($id)
 	{
 		if ($_SESSION['permisos'][3]['u']) {
@@ -91,7 +91,7 @@ class portada extends Controllers
 				$txtNombre = trim($_POST['txtNombre']);
 				$txtPosicion = trim($_POST['txtPosicion']);
 
-				$ruta = 'Assets/upload/portada/';
+				$ruta = 'Assets/upload/portadas/';
 				$obj['NombreArchivo'] = null;
 
 				$bandera = true;
@@ -211,7 +211,7 @@ class portada extends Controllers
 
 			$archivo = $this->model->getOne($IdBaner);
 
-			$ruta = 'Assets/upload/portada/';
+			$ruta = 'Assets/upload/portadas/';
 			removeFile($ruta, $archivo['NombreArchivo']);
 
 			$requestDelete = $this->model->borrar($IdBaner);
