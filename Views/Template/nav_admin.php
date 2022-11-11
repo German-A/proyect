@@ -41,7 +41,7 @@
             if (
                 !empty($_SESSION['permisos'][3]['r']) ||  !empty($_SESSION['permisos'][4]['r']) ||
                 !empty($_SESSION['permisos'][5]['r']) ||  !empty($_SESSION['permisos'][6]['r']) ||
-                !empty($_SESSION['permisos'][7]['r'])    
+                !empty($_SESSION['permisos'][7]['r'])  ||  !empty($_SESSION['permisos'][32]['r'])
             ) {
             ?>
                 <li class="treeview">
@@ -71,14 +71,18 @@
                             <li><a class="treeview-item" href="<?= base_url(); ?>/especialidades"><i class="icon fa fa-circle-o"></i>Trasnparencia</a></li>
                         <?php } ?>
 
-                        </ul>
+                        <?php if (!empty($_SESSION['permisos'][32]['r'])) { ?>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/repositorio"><i class="icon fa fa-circle-o"></i> Repositorio</a></li>
+                        <?php } ?>
+
+                    </ul>
                 </li>
             <?php } ?>
 
             <?php
             if (
                 !empty($_SESSION['permisos'][21]['r']) ||
-                !empty($_SESSION['permisos'][22]['r'])        
+                !empty($_SESSION['permisos'][22]['r'])
             ) {
             ?>
                 <li class="treeview">
@@ -94,9 +98,9 @@
                         <?php } ?>
                         <?php if (!empty($_SESSION['permisos'][22]['r'])) { ?>
                             <li><a class="treeview-item" href="<?= base_url(); ?>/galeriavida2022"><i class="icon fa fa-circle-o"></i> Galeria vida2022</a></li>
-                        <?php } ?>       
+                        <?php } ?>
 
-                        </ul>
+                    </ul>
                 </li>
             <?php } ?>
 
@@ -105,9 +109,9 @@
             <?php
             if (
 
-                !empty($_SESSION['permisos'][29]['r']) ||  
-                !empty($_SESSION['permisos'][30]['r']) ||  
-                !empty($_SESSION['permisos'][31]['r']) 
+                !empty($_SESSION['permisos'][29]['r']) ||
+                !empty($_SESSION['permisos'][30]['r']) ||
+                !empty($_SESSION['permisos'][31]['r'])
 
             ) {
             ?>
@@ -254,7 +258,7 @@
             <?php } ?>
              -->
 
-            
+
             <?php if (!empty($_SESSION['permisos'][28]['r'])) { ?>
                 <li>
                     <a class="app-menu__item" href="<?= base_url(); ?>/configuracion/configuracionegresado">
@@ -263,7 +267,7 @@
                     </a>
                 </li>
             <?php } ?>
-            
+
 
             <!------------------------- modulo de administador   ----------------------->
 
