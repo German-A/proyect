@@ -9,8 +9,75 @@ $año = new HomeModel();
 $perfiles = $año->selectañoEspecialidades();
 
 ?>
+<style>
+.contedorlinkbolsa {
+  max-width: 100%;
+  margin: auto;
+}
+
+@media (min-width: 800px) {
+  .contedorlinkbolsa {
+      max-width: 900px;
+      margin: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .contedorlinkbolsa {
+      max-width: 1200px;
+      margin: auto;
+  }
+}
+</style>
+
 
 <br><br>
+
+<div class="contedorlinkbolsa pt-4 pb-1">
+<div class="row d-flex justify-content-around ">
+    <a class="col-8 col-md-3 col-lg-2 fondo m-1" target="_blank" href="https://jobboard.universia.net/unitruoportunidades" >
+        <div class="col-12 text-right col-md-12">
+            <h1 class="mostaza"><i class="fas fa-briefcase"></i></h1>
+            <br><br> 
+        </div>
+        <div class="col-12 text-left col-md-12">
+            <h5 class="">BOLSA DE TRABAJO UNT</h5>
+        </div>
+    </a>
+
+    <a class="col-8 col-md-3 col-lg-2 fondo m-1" target="_blank" href="https://www.empleosperu.gob.pe/portal-mtpe/">
+        <div class="col-12 text-right col-md-12">
+            <h1 class="mostaza"><i class="far fa-browser"></i></h1>
+            <br><br> 
+        </div>
+        <div class="col-12 text-left col-md-12">
+            <h5 class="">PORTAL EMPLEOS PERÚ</h5>
+        </div>
+    </a>
+
+
+    <a class="col-8 col-md-3 col-lg-2 fondo m-1" target="_blank" href="<?= base_url(); ?>/solicitudempleo">
+        <div class="col-12 text-right col-md-12">
+            <h1 class="mostaza"><i class="fas fa-university"></i></h1>
+            <br><br> 
+        </div>
+        <div class="col-12 text-left col-md-12">
+            <h5 class="">SOLICITUD DE OFERTA LABORAL</h5>
+        </div>
+    </a>
+
+    <a class="col-8 col-md-3 col-lg-2 fondo m-1" target="_blank" href="<?= base_url(); ?>/encuestaempresas">
+        <div class="col-12 text-right col-md-12">
+            <h1 class="mostaza"><i class="fas fa-university"></i></h1>
+            <br><br> 
+        </div>
+        <div class="col-12 text-left col-md-12">
+            <h5 class="">ENCUESTA EMPLEADORES</h5>
+        </div>
+    </a>
+
+</div></div>
+
 
 <div class="text-center">
     <a target="_blank" href="https://jobboard.universia.net/unitruoportunidades" class="btn btn-outline-primary m-2">BOLSA DE TRABAJO UNT</a>
@@ -91,7 +158,7 @@ $perfiles = $año->selectañoEspecialidades();
             for (i = 0; i < info.length; i++) {
                 listado = listado +
 
-                `
+                    `
                     <div class="col-5 pb-4 cardempleo ">
                         <div class="row ">
                             <div class="col-3">
