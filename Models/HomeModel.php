@@ -493,4 +493,22 @@ class HomeModel extends Mysql
 		$request = $this->select_all($sql);
 		return $request;
 	}
+
+	public function listaRepositorio()
+	{
+		$sql = "SELECT nombre, filename, posicion, status
+		from repositorio
+		where status>0
+		";
+		$request = $this->select_all($sql);
+		return $request;
+	}
+
+	public function selectprimerRepositorio()
+	{
+
+		$sql = "SELECT filename FROM repositorio WHERE status > '0' ORDER BY idrepositorio ASC LIMIT 1";
+		$request = $this->select_all($sql);
+		return $request;
+	}
 }

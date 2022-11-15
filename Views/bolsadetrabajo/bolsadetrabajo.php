@@ -31,14 +31,14 @@ $perfiles = $año->selectañoEspecialidades();
 </style>
 
 
-<br><br>
+
 
 <div class="contedorlinkbolsa pt-4 pb-1">
 <div class="row d-flex justify-content-around ">
     <a class="col-8 col-md-3 col-lg-2 fondo m-1" target="_blank" href="https://jobboard.universia.net/unitruoportunidades" >
         <div class="col-12 text-right col-md-12">
             <h1 class="mostaza"><i class="fas fa-briefcase"></i></h1>
-            <br><br> 
+            <br>
         </div>
         <div class="col-12 text-left col-md-12">
             <h5 class="">BOLSA DE TRABAJO UNT</h5>
@@ -47,8 +47,8 @@ $perfiles = $año->selectañoEspecialidades();
 
     <a class="col-8 col-md-3 col-lg-2 fondo m-1" target="_blank" href="https://www.empleosperu.gob.pe/portal-mtpe/">
         <div class="col-12 text-right col-md-12">
-            <h1 class="mostaza"><i class="far fa-browser"></i></h1>
-            <br><br> 
+            <h1 class="mostaza"><i class="fas fa-briefcase"></i></h1>
+            <br>
         </div>
         <div class="col-12 text-left col-md-12">
             <h5 class="">PORTAL EMPLEOS PERÚ</h5>
@@ -56,20 +56,20 @@ $perfiles = $año->selectañoEspecialidades();
     </a>
 
 
-    <a class="col-8 col-md-3 col-lg-2 fondo m-1" target="_blank" href="<?= base_url(); ?>/solicitudempleo">
+    <a class="col-8 col-md-3 col-lg-2 fondo m-1"  href="<?= base_url(); ?>/solicitudempleo">
         <div class="col-12 text-right col-md-12">
-            <h1 class="mostaza"><i class="fas fa-university"></i></h1>
-            <br><br> 
+            <h1 class="mostaza"><i class="fas fa-edit"></i></h1>
+            <br>
         </div>
         <div class="col-12 text-left col-md-12">
             <h5 class="">SOLICITUD DE OFERTA LABORAL</h5>
         </div>
     </a>
 
-    <a class="col-8 col-md-3 col-lg-2 fondo m-1" target="_blank" href="<?= base_url(); ?>/encuestaempresas">
+    <a class="col-8 col-md-3 col-lg-2 fondo m-1" href="<?= base_url(); ?>/encuestaempresas">
         <div class="col-12 text-right col-md-12">
-            <h1 class="mostaza"><i class="fas fa-university"></i></h1>
-            <br><br> 
+            <h1 class="mostaza"><i class="fas fa-user-edit"></i></h1>
+            <br>
         </div>
         <div class="col-12 text-left col-md-12">
             <h5 class="">ENCUESTA EMPLEADORES</h5>
@@ -79,24 +79,14 @@ $perfiles = $año->selectañoEspecialidades();
 </div></div>
 
 
-<div class="text-center">
-    <a target="_blank" href="https://jobboard.universia.net/unitruoportunidades" class="btn btn-outline-primary m-2">BOLSA DE TRABAJO UNT</a>
-
-    <a target="_blank" href="https://www.empleosperu.gob.pe/portal-mtpe/" class="btn btn-outline-primary m-2">PORTAL EMPLEOS PERÚ</a>
-
-    <a target="_blank" href="<?= base_url(); ?>/solicitudempleo" class="btn btn-outline-primary m-2">SOLICITUD DE OFERTA LABORAL</a>
-
-    <a target="_blank" href="<?= base_url(); ?>/encuestaempresas" class="btn btn-outline-primary m-2">ENCUESTA EMPLEADORES</a>
-
-
-</div>
 
 
 
 
-<br><br><br>
+<br><br>
 
-<!-- <div class="col-12">
+
+ <div class="col-12">
     <div class="row d-flex justify-content-around" id="empleos">
         <div class="col-5 pb-4 cardempleo ">
             <div class="row">
@@ -111,12 +101,12 @@ $perfiles = $año->selectañoEspecialidades();
             </div>
         </div>
     </div>
-</div> -->
+</div>
 
 
 
 
-<div class="col-12">
+<!-- <div class="col-12">
 
 </div>
 
@@ -133,7 +123,7 @@ $perfiles = $año->selectañoEspecialidades();
 
 <div class="col-6">
 
-</div>
+</div> -->
 
 <?php footer($data); ?>
 
