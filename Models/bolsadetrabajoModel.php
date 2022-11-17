@@ -1,6 +1,6 @@
 <?php 
 
-	class BolsadetrabajoModel extends Mysql
+	class bolsadetrabajoModel extends Mysql
 	{
 		private $intIdUsuario;
 		private $nombreArchivo;
@@ -23,8 +23,9 @@
 			inner join empresa emp
 			on em.empresaid = emp.idempresa
 			inner join usuario u
-			on u.idpersona=emp.personaid
-			order by idEmpleos DESC
+			on u.idpersona=emp.personaid			
+			where em.status >2
+			order by em.idEmpleos DESC
 			";
 		$request = $this->select_all($sql);
 		return $request;
