@@ -75,19 +75,13 @@ $n = 1;
         <div class="row">
             <div class="col-md-10  m-auto itemY">
                 <?php foreach ($perfiles as $key => $fila) { ?>
-                    <div class="col-md-12 ml-2 btn btn-outline-warning p-2 m-2  d-flex justify-content-center">
+                    <a class="col-md-12 ml-2  mb-1 btn btn-outline-warning p-2 m-2  d-flex justify-content-center" onclick="verArchivo('<?php echo $fila['NombreArchivo'] ?>');">
                         <div class="col-11 col-md-9">
                             <h5 class=""><?php echo $fila['Nombre'] ?></h5>                      
                         </div>
 
-                        <div class="col-1 col-md-3">
-                            <div class="row">
-                                <a href="#elid" class="btn btn-primary libro" onclick="verArchivo('<?php echo $fila['NombreArchivo'] ?>');"><i class="fas fa-book-open"></i></a>
-                                &nbsp
-                                <a href="<?= media(); ?>/archivos/documentoslegales/<?php echo $fila['NombreArchivo'] ?>" class="btn btn-primary" download><i class="fas fa-download"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                 
+                    </a>
                 <?php } ?>
                 
             </div>
