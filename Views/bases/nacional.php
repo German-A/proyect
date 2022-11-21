@@ -78,9 +78,7 @@ $n = 1;
                     <a class="col-md-12 ml-2  mb-1 btn btn-outline-warning p-2 m-2  d-flex justify-content-center" onclick="verArchivo('<?php echo $fila['NombreArchivo'] ?>');">
                         <div class="col-11 col-md-9">
                             <h5 class=""><?php echo $fila['Nombre'] ?></h5>                      
-                        </div>
-
-                 
+                        </div>                 
                     </a>
                 <?php } ?>
                 

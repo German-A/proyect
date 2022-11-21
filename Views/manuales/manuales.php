@@ -78,8 +78,7 @@ $n = 1;
                         <div class="col-12 ">
                             <h5 class=""><?php echo $fila['Nombre'] ?></h5>
                         </div>       
-                    </a>   
-                   
+                    </a>                      
                 <?php } ?>
              
             </div>
