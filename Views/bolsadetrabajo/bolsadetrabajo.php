@@ -151,35 +151,38 @@ $perfiles = $año->selectañoEspecialidades();
 
         }).done(function(response) {
             var info = JSON.parse(response);
-            console.log(info.nombreEmpresa);
-
             listado = '';
 
             for (i = 0; i < info.length; i++) {
                 listado = listado +
 
-                    `
+                `
                     <div class="col-12 row">
                         <div class="col-2">
                             <img class="img-fluid" src="<?= media() ?>/archivos/empresa/` + info[i].imagen + `">
                         </div>
-                    <div class="col-10">
-                        <h4>Desarrollador: <span>` + info[i].NombrePuesto + `</span></h4>
-                        <h4>Empresa: <span>ss</span></h4>
-                        <h4>Carreras:<span> ` + info[i].escuelaid + `</span></h4>
+                        <div class="col-10">
+                            <h4>Desarrollador: <span>` + info[i].NombrePuesto + `</span></h4>2
+                            <h4>Empresa: <span>ss</span></h4>
+                            <h4>Carreras:<span> ` + info[i].nombreEscuela + `</span></h4>
+                        </div>
+                       
                     </div>
-                </div>
+                    <a href="javascript:void(0);" onclick="ver(` +  info[i].idEmpleos + ` )" >ver</a>
                 `;
 
             }
 
-            console.log(listado);
+            //console.log(listado);
 
             $("#empleos").html(listado);
 
         });
     }
 
+    function ver(id){
+        console.log(id);
+    }
     $(document).ready(function() {
         empleos();
     });

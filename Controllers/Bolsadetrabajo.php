@@ -35,7 +35,7 @@ class bolsadetrabajo extends Controllers
 
 
 			$line['titulacionesid'] = "";
-			$line['escuelaid'] = "";
+			$line['nombreEscuela'] = "";
 
 			$arrTitulaciones = $this->model->listaTitulaciones($line['idEmpleos']);
 			$arrCarreras = $this->model->listaCarreras($line['idEmpleos']);
@@ -45,7 +45,7 @@ class bolsadetrabajo extends Controllers
 			}
 
 			foreach ($arrCarreras as &$carreras) {
-				$line['escuelaid'] = 	$line['escuelaid'] . '<label><span class="badge badge-info">' . $carreras['nombreEscuela'] . '</span></label> ';
+				$line['nombreEscuela'] = 	$line['nombreEscuela'] . '<label><span class="badge badge-info">' . $carreras['nombreEscuela'] . '</span></label> ';
 			}
 
 

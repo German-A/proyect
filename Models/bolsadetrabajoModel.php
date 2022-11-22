@@ -24,7 +24,8 @@
 			on em.empresaid = emp.idempresa
 			inner join usuario u
 			on u.idpersona=emp.personaid			
-			where em.status >2
+			-- where em.status >2
+			where em.status >0
 			order by em.idEmpleos DESC
 			";
 		$request = $this->select_all($sql);
