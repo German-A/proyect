@@ -80,12 +80,12 @@ $n = 1;
         <div class="row">
             <div class="col-md-10  m-auto itemY">
                 <?php foreach ($perfiless as $key => $fila) { ?>
-                    <div class="col-md-12 ml-2  btn btn-outline-warning p-2 m-2  d-flex justify-content-center" onclick="verArchivo('<?php echo $fila['NombreArchivo'] ?>');">
+                    <a class="col-md-12 ml-2  btn btn-outline-warning p-2 m-2  d-flex justify-content-center" onclick="verArchivo('<?php echo $fila['NombreArchivo'] ?>');">
                         <div class="col-md-9">
                             <h5 class=""><?php echo $fila['Nombre'] ?></h5>
                      
                         </div>
-                    </div>
+                    </a>
                 <?php } ?>
 
             </div>

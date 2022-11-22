@@ -4,11 +4,6 @@
 <?php
 
 //require_once  "../Models/HomeModel.php";
-$obj = new HomeModel();
-$obj2 = new HomeModel();
-$perfiles = $obj->selectLegal();
-$perfiless = $obj2->selectinstitucional();
-$perfilesss = $obj2->selectprimerNacional();
 
 $obj3 = new HomeModel();
 $perfiles = $obj3->selectBanner();
@@ -245,7 +240,7 @@ $n = 1;
                 <div class="swiper-wrapper">
                     <?php foreach ($perfiles as $key => $fila) { ?>
                         <div class="swiper-slide">
-                            <img class="imgbanner" src="<?= media(); ?>/upload/banner/<?php echo $fila['NombreArchivo'] ?>">
+                            <img class="imgbanner" src="<?= media(); ?>/upload/portadas/<?php echo $fila['NombreArchivo'] ?>">
                         </div>
                     <?php } ?>
                 </div>

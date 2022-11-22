@@ -511,4 +511,13 @@ class HomeModel extends Mysql
 		$request = $this->select_all($sql);
 		return $request;
 	}
+
+	public function selectEcpoferiaxi()
+	{
+
+		$sql = "SELECT NombreArchivo ,Posicion from banner WHERE Habilitado > 0 order by Posicion desc";
+		$request = $this->select_all($sql);
+		return $request;
+	}
+
 }
