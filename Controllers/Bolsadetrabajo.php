@@ -24,7 +24,44 @@ class bolsadetrabajo extends Controllers
 	public function get()
 	{
 
-		$arrData = $this->model->listParaAprobar();
+		$arrData = $this->model->listEmpleos();
+
+		foreach ($arrData as &$line) {
+
+			$btnView = '';
+			$btnEdit = '';
+			$btnDelete = '';
+
+
+
+			$line['titulacionesid'] = "";
+			$line['nombreEscuela'] = "";
+
+			$arrTitulaciones = $this->model->listaTitulaciones($line['idEmpleos']);
+			$arrCarreras = $this->model->listaCarreras($line['idEmpleos']);
+
+			foreach ($arrTitulaciones as &$titulaciones) {
+				$line['titulacionesid'] = 	$line['titulacionesid'] . '<label><span class="badge badge-primary">' . $titulaciones['nombreTitulaciones'] . '</span></label> ';
+			}
+
+			foreach ($arrCarreras as &$carreras) {
+				$line['nombreEscuela'] = 	$line['nombreEscuela'] . '<label><span class="badge badge-info">' . $carreras['nombreEscuela'] . '</span></label> ';
+			}
+
+
+			$line['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
+		}
+
+		echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
+
+		die();
+	}
+
+	//LISTA DE EMPLEOS POR APROBAR
+	public function getOne($id)
+	{
+
+		$arrData = $this->model->oneEmpleo($id);
 
 		foreach ($arrData as &$line) {
 

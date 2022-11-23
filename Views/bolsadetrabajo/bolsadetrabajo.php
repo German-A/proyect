@@ -105,10 +105,28 @@ $perfiles = $año->selectañoEspecialidades();
 </div>
  -->
 
+<style>
+    .contenedor{
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .listempleos {
+        min-height: 60vh;
+        max-height: 60vh;
+        overflow-y: auto;
+
+    }
+</style>
 
 
-<div class="col-12 row">
-    <div class="col-4" id="empleos">
+
+<!-- <div class="listempleos bg-danger">
+
+ </div> -->
+
+<div class="col-12 row contenedor">
+    <div class="col-4 listempleos " id="empleos">
         <div class="col-12 row">
             <div class="col-2">
                 <img class="img-fluid" src="<?= media() ?>/archivos/empresa/11luffy.jpg">
@@ -121,7 +139,15 @@ $perfiles = $año->selectañoEspecialidades();
         </div>
 
     </div>
-    <div class="col-8">
+    <div class="col-8 listempleos">
+        <h4>PUESTO:</h4><h5 id="nombrePuesto"></h5>
+        <br>
+        <h4>Descripcion Puesto:</h4><h5 id="DescripcionPuesto"></h5>
+        <br>
+
+
+
+        <a href="" class="btn btn-danger">aplicar</a>
 
     </div>
 
@@ -156,7 +182,7 @@ $perfiles = $año->selectañoEspecialidades();
             for (i = 0; i < info.length; i++) {
                 listado = listado +
 
-                `
+                    `
                     <div class="col-12 row">
                         <div class="col-2">
                             <img class="img-fluid" src="<?= media() ?>/archivos/empresa/` + info[i].imagen + `">
@@ -168,7 +194,7 @@ $perfiles = $año->selectañoEspecialidades();
                         </div>
                        
                     </div>
-                    <a href="javascript:void(0);" onclick="ver(` +  info[i].idEmpleos + ` )" >ver</a>
+                    <a href="javascript:void(0);" onclick="ver(` + info[i].idEmpleos + ` )" >ver</a>
                 `;
 
             }
@@ -180,10 +206,33 @@ $perfiles = $año->selectañoEspecialidades();
         });
     }
 
-    function ver(id){
-        console.log(id);
-    }
-    $(document).ready(function() {
-        empleos();
-    });
+    function ver(id) {
+
+        $.ajax({
+            method: "GET",
+            url: "" + base_url + "/bolsadetrabajo/getOne/"+id,
+            //data: datax
+            //data: fd,
+            processData: false, // tell jQuery not to process the data
+            contentType: false // tell jQuery not to set contentType
+
+        }).done(function(response) {
+            var info = JSON.parse(response);
+            console.log( info );
+            console.log( info[0].NombrePuesto );
+
+            $("#nombrePuesto").html( info[0].NombrePuesto);
+            $("#DescripcionPuesto").html( info[0].DescripcionPuesto);
+
+
+            //console.log(listado);
+
+       
+
+        });}
+
+
+        $(document).ready(function() {
+            empleos();
+        });
 </script>

@@ -14,7 +14,7 @@
 		}
 
 	// LISTA DE EMPLEOS POR APROBAR
-	public function listParaAprobar()
+	public function listEmpleos()
 	{
 		$sql = "SELECT u.imagen,u.idpersona,em.idEmpleos,em.status,emp.nombreEmpresa,
 			em.NombrePuesto,em.DescripcionPuesto,em.InformacionAdicional,em.LugarTrabajo,em.TrabajoRemoto,em.NumeroVacantes,em.Experiencias,
@@ -53,6 +53,25 @@
 		$request = $this->select_all($sql);
 		return $request;
 	}
+
+	public function oneEmpleo($id)
+	{
+		$sql = "SELECT u.imagen,u.idpersona,em.idEmpleos,em.status,emp.nombreEmpresa,
+			em.NombrePuesto,em.DescripcionPuesto,em.InformacionAdicional,em.LugarTrabajo,em.TrabajoRemoto,em.NumeroVacantes,em.Experiencias,
+			em.TipoContrato,em.JornadaLaboral,em.HorasSemanales,em.HorarioTrabajo,em.RemuneracionBruta,em.Contacto,em.FechaInico,em.FechaFin,em.NombrePuesto
+			from empleos em
+			inner join empresa emp
+			on em.empresaid = emp.idempresa
+			inner join usuario u
+			on u.idpersona=emp.personaid			
+			-- where em.status >2
+			where em.status >0 and em.idEmpleos = $id
+			order by em.idEmpleos DESC
+			";
+		$request = $this->select_all($sql);
+		return $request;
+	}
+
 		public function getOne($idusuario)
 		{
 			$sql = "SELECT * 
