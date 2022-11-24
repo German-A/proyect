@@ -116,37 +116,7 @@ $perfiles = $año->selectañoEspecialidades();
         max-height: 60vh;
         overflow-y: auto;
     }
-</style>
 
-
-
-<!-- <div class="listempleos bg-danger">
-
- </div> -->
-
-<div class="col-12 row contenedor">
-    <div class="col-5 listempleos " id="empleos">
-  
-
-    </div>
-    <div class="col-7 listempleos">
-        <h5 id="nombrePuesto"></h5>
-        <br>
-        <h4>Descripcion Puesto:</h4>
-        <p id="DescripcionPuesto"></p>
-        <br>
-
-
-
-        <!-- <a href="" class="btn btn-danger">aplicar</a> -->
-
-    </div>
-
-
-
-</div>
-
-<style>
     .callout.callout-danger {
         border-left-color: #12377b;
 
@@ -162,16 +132,35 @@ $perfiles = $año->selectañoEspecialidades();
     }
 </style>
 
-<div class="col-6">
+
+
+<!-- <div class="listempleos bg-danger">
+
+ </div> -->
+
+<div class="col-12 row contenedor">
+
+    <div class="col-5 listempleos " id="empleos">
+
+    </div>
+
+    <div class="col-7 listempleos  ">
+        <h5 id="nombrePuesto"></h5>
+        <br>
+        
+        <p id="DescripcionPuesto"></p>
+        <br>
+    </div> 
 
 </div>
 
+
+
 <?php footer($data); ?>
 
-
 <script>
-    function empleos() {
 
+    function empleos() {
         $.ajax({
             method: "GET",
             url: "" + base_url + "/bolsadetrabajo/get",
@@ -191,16 +180,19 @@ $perfiles = $año->selectañoEspecialidades();
                     <div class="col-12 row callout callout-danger">
                         <div class="col-4">
                             <img class="img-fluid" src="<?= media() ?>/archivos/empresa/` + info[i].imagen + `">
-                            <a href="javascript:void(0);" class="btn btn-outline-primary" onclick="ver(` + info[i].idEmpleos + ` )" >VER</a>
                         </div>
                         <div class="col-8">
-                            <h4>Desarrollador: <span>` + info[i].NombrePuesto + `</span></h4>
-                            <h4>Empresa: <span>` + info[i].nombreEmpresa + `</span></h4>
-                            <h4>Carreras:<span> ` + info[i].nombreEscuela + `</span></h4>
-                        </div>
-                       
+                            <h5><span>` + info[i].NombrePuesto + `</span></h5>
+                            <h5>Empresa: <span>` + info[i].nombreEmpresa + `</span></h5>                           
+                        </div>                      
+                            <div class="col-12">
+                                <h5><span> ` + info[i].nombreEscuela + `</span></h5>
+                            </div>
+                            <div class="col-12 text-center">
+                                <a href="javascript:void(0);" class="btn btn-outline-primary" onclick="ver(` + info[i].idEmpleos + ` )" >Más Información</a>
+                            </div>                       
                     </div>
-                    
+                   
                 `;
 
             }
@@ -213,7 +205,6 @@ $perfiles = $año->selectañoEspecialidades();
     }
 
     function ver(id) {
-
         $.ajax({
             method: "GET",
             url: "" + base_url + "/bolsadetrabajo/getOne/" + id,
@@ -227,8 +218,12 @@ $perfiles = $año->selectañoEspecialidades();
             console.log(info);
             console.log(info[0].NombrePuesto);
 
+            var descripcionpuesto =null;
+
+            descripcionpuesto= '<h4>Descripcion Puesto:</h4>' + info[0].DescripcionPuesto;
+
             $("#nombrePuesto").html(info[0].NombrePuesto);
-            $("#DescripcionPuesto").html(info[0].DescripcionPuesto);
+            $("#DescripcionPuesto").html(descripcionpuesto);
 
 
             //console.log(listado);
@@ -238,8 +233,8 @@ $perfiles = $año->selectañoEspecialidades();
         });
     }
 
-
     $(document).ready(function() {
         empleos();
     });
+
 </script>
