@@ -106,7 +106,7 @@ $perfiles = $año->selectañoEspecialidades();
  -->
 
 <style>
-    .contenedor{
+    .contenedor {
         max-width: 1200px;
         margin: auto;
     }
@@ -115,7 +115,6 @@ $perfiles = $año->selectañoEspecialidades();
         min-height: 60vh;
         max-height: 60vh;
         overflow-y: auto;
-
     }
 </style>
 
@@ -126,28 +125,20 @@ $perfiles = $año->selectañoEspecialidades();
  </div> -->
 
 <div class="col-12 row contenedor">
-    <div class="col-4 listempleos " id="empleos">
-        <div class="col-12 row">
-            <div class="col-2">
-                <img class="img-fluid" src="<?= media() ?>/archivos/empresa/11luffy.jpg">
-            </div>
-            <div class="col-10">
-                <h4>Desarrollador: <span>ss</span></h4>
-                <h4>Empresa: <span>ss</span></h4>
-                <h4>Carreras:<span>ss</span></h4>
-            </div>
-        </div>
+    <div class="col-5 listempleos " id="empleos">
+  
 
     </div>
-    <div class="col-8 listempleos">
-        <h4>PUESTO:</h4><h5 id="nombrePuesto"></h5>
+    <div class="col-7 listempleos">
+        <h5 id="nombrePuesto"></h5>
         <br>
-        <h4>Descripcion Puesto:</h4><h5 id="DescripcionPuesto"></h5>
+        <h4>Descripcion Puesto:</h4>
+        <p id="DescripcionPuesto"></p>
         <br>
 
 
 
-        <a href="" class="btn btn-danger">aplicar</a>
+        <!-- <a href="" class="btn btn-danger">aplicar</a> -->
 
     </div>
 
@@ -155,7 +146,21 @@ $perfiles = $año->selectañoEspecialidades();
 
 </div>
 
+<style>
+    .callout.callout-danger {
+        border-left-color: #12377b;
 
+    }
+
+    .callout {
+        border-radius: 0.25rem;
+        box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+        background-color: #fff;
+        border-left: 5px solid #e9ecef;
+        margin-bottom: 1rem;
+        padding: 1rem;
+    }
+</style>
 
 <div class="col-6">
 
@@ -183,18 +188,19 @@ $perfiles = $año->selectañoEspecialidades();
                 listado = listado +
 
                     `
-                    <div class="col-12 row">
-                        <div class="col-2">
+                    <div class="col-12 row callout callout-danger">
+                        <div class="col-4">
                             <img class="img-fluid" src="<?= media() ?>/archivos/empresa/` + info[i].imagen + `">
+                            <a href="javascript:void(0);" class="btn btn-outline-primary" onclick="ver(` + info[i].idEmpleos + ` )" >VER</a>
                         </div>
-                        <div class="col-10">
-                            <h4>Desarrollador: <span>` + info[i].NombrePuesto + `</span></h4>2
-                            <h4>Empresa: <span>ss</span></h4>
+                        <div class="col-8">
+                            <h4>Desarrollador: <span>` + info[i].NombrePuesto + `</span></h4>
+                            <h4>Empresa: <span>` + info[i].nombreEmpresa + `</span></h4>
                             <h4>Carreras:<span> ` + info[i].nombreEscuela + `</span></h4>
                         </div>
                        
                     </div>
-                    <a href="javascript:void(0);" onclick="ver(` + info[i].idEmpleos + ` )" >ver</a>
+                    
                 `;
 
             }
@@ -210,7 +216,7 @@ $perfiles = $año->selectañoEspecialidades();
 
         $.ajax({
             method: "GET",
-            url: "" + base_url + "/bolsadetrabajo/getOne/"+id,
+            url: "" + base_url + "/bolsadetrabajo/getOne/" + id,
             //data: datax
             //data: fd,
             processData: false, // tell jQuery not to process the data
@@ -218,21 +224,22 @@ $perfiles = $año->selectañoEspecialidades();
 
         }).done(function(response) {
             var info = JSON.parse(response);
-            console.log( info );
-            console.log( info[0].NombrePuesto );
+            console.log(info);
+            console.log(info[0].NombrePuesto);
 
-            $("#nombrePuesto").html( info[0].NombrePuesto);
-            $("#DescripcionPuesto").html( info[0].DescripcionPuesto);
+            $("#nombrePuesto").html(info[0].NombrePuesto);
+            $("#DescripcionPuesto").html(info[0].DescripcionPuesto);
 
 
             //console.log(listado);
 
-       
-
-        });}
 
 
-        $(document).ready(function() {
-            empleos();
         });
+    }
+
+
+    $(document).ready(function() {
+        empleos();
+    });
 </script>
