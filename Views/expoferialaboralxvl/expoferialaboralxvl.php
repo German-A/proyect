@@ -28,14 +28,22 @@
 </head>
 
 <style>
-    * {
+    *:before,
+    *::after {
         box-sizing: border-box;
+        margin: 0px;
+        padding: 0px;
+        font-weight: 800;
+
+    }
+
+
+    body,
+    html {
+        overflow-x: hidden;
         background-color: #12377b;
     }
 
-    body {
-        margin: 0;
-    }
 
 
 
@@ -158,120 +166,183 @@
         }
     }
 
-    
-header {
-  z-index: 999;
-  background: linear-gradient(
-    to bottom,
-    var(--enlaceNavegador),
-    var(--enlaceNavegador)
-  );
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-  transition: 0.6s;
-  padding: 10px 0;
-}
 
-header.down {
-  /* background: rgb(255, 255, 255); */
-  position: fixed;
-  top: 0;
-  left: 0;
-  margin: 0px auto;
-  padding: 5px 0;
-}
+    header {
+        z-index: 999;
+        background: linear-gradient(to bottom,
+                var(--enlaceNavegador),
+                var(--enlaceNavegador));
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        transition: 0.6s;
+        padding: 10px 0;
+    }
 
-header .brand {
-  color: rgb(82, 8, 201);
-  font-size: 10px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
+    header.down {
+        /* background: rgb(255, 255, 255); */
+        position: fixed;
+        top: 0;
+        left: 0;
+        margin: 0px auto;
+        padding: 5px 0;
+    }
+
+    header .brand {
+        color: rgb(82, 8, 201);
+        font-size: 10px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .menu .menu__link .enlacesDown {
+        color: red;
+    }
 </style>
 
+<header>
 
-<body>
-    <span id="btnMenuExpoferiaxv" class="nav-barxv text-right">
-        <div class="row">
-            <div class="col-6 text-left">
-                <img class="logo" src="<?= media(); ?>/images/expoferiaxv/logoUse.png" style="height: 60px;">
+    <body>
+        <span id="btnMenuExpoferiaxv" class="nav-barxv text-right">
+            <div class="row">
+                <div class="col-6 text-left">
+                    <img class="logo" src="<?= media(); ?>/images/expoferiaxv/logoUse.png" style="height: 60px;">
+                </div>
+
+                <div class="col-6 text-right">
+                    <h2><i class="fas fa-bars text-dark"></i></h2>
+                </div>
+
             </div>
 
-            <div class="col-6 text-right">
-                <h2><i class="fas fa-bars text-dark"></i></h2>
-            </div>
+        </span>
 
-        </div>
+        <nav class="main-navxv">
+            <ul class="menuxv" id="menuxv">
 
-    </span>
+                <img class="logoweb" src="<?= media(); ?>/images/expoferiaxv/logoUse.png" style="height: 60px;">
 
-    <nav class="main-navxv">
-        <ul class="menuxv" id="menuxv">
-
-            <img class="logoweb" src="<?= media(); ?>/images/expoferiaxv/logoUse.png" style="height: 60px;">
-
-            <div class="naveg">
-                <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxv" class="menu__linkxv">INICIO</a></li>
-                <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxv/nosotros" class="menu__linkxv">NOSOTROS</a></li>
-                <!-- <li class="menu__itemxv container-submenuxv">
+                <div class="naveg">
+                    <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxv" class="menu__linkxv">INICIO</a></li>
+                    <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxv/nosotros" class="menu__linkxv">NOSOTROS</a></li>
+                    <!-- <li class="menu__itemxv container-submenuxv">
                     <a href="#" class="menu__linkxv submenu-btnxv">OFERTA LABORAL</a>
                     <ul class="submenuxv">
                         <li class="menu__itemxv"><a href="" class="menu__linkxv">BOLSA DE TRABAJO UNT</a></li>
                         <li class="menu__itemxv"><a href="" class="menu__linkxv">BOLSA DE TRABAJO</a></li>
                     </ul>
                 </li> -->
-                <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxv/ponencias" class="menu__linkxv">PONENCIAS</a></li>
-                <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxv/galeria" class="menu__linkxv">GALERIA</a></li>
-                <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxv/empresas" class="menu__linkxv">EMPRESAS</a></li>
-            </div>
-        </ul>
-    </nav>
+                    <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxv/ponencias" class="menu__linkxv">PONENCIAS</a></li>
+                    <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxv/galeria" class="menu__linkxv">GALERIA</a></li>
+                    <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxv/empresas" class="menu__linkxv">EMPRESAS</a></li>
+                </div>
+            </ul>
+        </nav>
+</header>
+<p>w</p>
+<p>w</p>
+<p>w</p>
+<p>w</p>
+<p>w</p>
+<p>w</p>
+<p>w</p>
+<p>w</p>
 
-    <p>w</p>
-    <p>w</p>
-    <p>w</p>
-    <p>w</p>
-    <p>w</p>
-    <p>w</p>
-    <p>w</p>
-    <p>w</p>
+<p>w</p>
+<p>w</p>
+<p>w</p>
+<p>w</p>
+<p>w</p>
 
-    <p>w</p>
-    <p>w</p>
-    <p>w</p>
-    <p>w</p>
-    <p>w</p>
-
-
-
-    <script>
-        const btnMenuExpoferiaXV = document.querySelector("#btnMenuExpoferiaxv");
-        const menu = document.querySelector("#menuxv");
-
-
-        btnMenuExpoferiaXV.addEventListener("click", function() {
-            menu.classList.toggle("mostrarxv");
-        });
+<p>w</p>
+<p>w</p>
+<p>w</p>
+<p>w</p>
+<p>w</p>
+<p>w</p>
+<p>w</p>
+<p>w</p>
 
 
-        const subMenuBtn = document.querySelectorAll(".submenu-btnxv");
-        for (let i = 0; i < subMenuBtn.length; i++) {
-            subMenuBtn[i].addEventListener("click", function() {
-                if (window.innerWidth < 1024) {
-                    const subMenu = this.nextElementSibling;
-                    const height = subMenu.scrollHeight;
 
-                    if (subMenu.classList.contains("desplegarxv")) {
-                        subMenu.classList.remove("desplegarxv");
-                        subMenu.removeAttribute("style");
-                    } else {
-                        subMenu.classList.add("desplegarxv");
-                        subMenu.style.height = height + "px";
-                    }
 
+<div class="col-12 row">
+    <div class="col-6">
+        <h5 class="text-white">Este evento académico, ofrecerá alternativas de
+            inserción laboral efectiva a nuestros egresados;
+            siendo una alternativa la organización de una
+            expoferia que vincule de manera efectiva, a los
+            egresados con los empleadores de la región y
+            del país. </h5>
+    </div>
+    <div class="col-6">
+
+    </div>
+</div>
+
+<p>w</p>
+<p>w</p>
+<p>w</p>
+<p>w</p>
+<p>w</p>
+
+
+
+<script>
+    const btnMenuExpoferiaXV = document.querySelector("#btnMenuExpoferiaxv");
+    const menu = document.querySelector("#menuxv");
+
+
+    btnMenuExpoferiaXV.addEventListener("click", function() {
+        menu.classList.toggle("mostrarxv");
+    });
+
+
+    const subMenuBtn = document.querySelectorAll(".submenu-btnxv");
+    for (let i = 0; i < subMenuBtn.length; i++) {
+        subMenuBtn[i].addEventListener("click", function() {
+            if (window.innerWidth < 1024) {
+                const subMenu = this.nextElementSibling;
+                const height = subMenu.scrollHeight;
+
+                if (subMenu.classList.contains("desplegarxv")) {
+                    subMenu.classList.remove("desplegarxv");
+                    subMenu.removeAttribute("style");
+                } else {
+                    subMenu.classList.add("desplegarxv");
+                    subMenu.style.height = height + "px";
                 }
-            });
+
+            }
+        });
+    }
+</script>
+
+<script>
+    window.addEventListener("scroll", function() {
+        var header = document.querySelector("header");
+
+        // var alink = document.querySelectorAll(".menu__link");
+        var alink = document.querySelectorAll("a");
+        header.classList.toggle('down', window.scrollY > 0);
+
+        for (let i = 0; i < alink.length; i++) {
+            alink[i].classList.toggle('enlacesDown', window.scrollY > 0);
         }
-    </script>
+
+        //change logo
+        var logo = document.querySelector("img");
+
+        for (let i = 0; i < alink.length; i++) {
+            alink[i].classList.toggle('enlacesDown', window.scrollY > 0);
+        }
+
+        // if (window.scrollY > 0) {
+        //     logo.setAttribute('src', 'Assets/img/logoUse.png');
+        // } else {
+        //     logo.setAttribute('src', 'Assets/img/uselogoazul.jpg');
+        // }
+
+    });
+</script>
