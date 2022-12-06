@@ -36,21 +36,33 @@
         visibility: visible;
     }
 
+    figure:hover>.capa h3 {
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+
     figure:hover>img {
         transform: scale(1.3);
     }
 
+    figure .capa h3 {
+        color:black;
+        background-color: #fff;
+        font-weight: 400;
+        margin-bottom: 120px;
+        transition: all 400ms ease-out;
+        margin-top: 30px;
+    }
 
     figure .capa p {
         height: 250px;
         background-color: #fff;
-        padding: 40px 0 40px ;
         color: black;
         font-size: 15px;
         line-height: 1.5;
         width: 100%;
-        max-width: 250px;
-        margin-left: 20px;
+        max-width: 220px;
+        margin: auto;
     }
 </style>
 
@@ -64,12 +76,26 @@
     <figure>
         <img class="equipoimg" src="<?= media(); ?>/img/ingPaul.png" alt="">
         <div class="capa">
-     
+            <h3>jprl</h3>
             <p>IDEOLOGIA DE GENERO O SUBERSION CULTURAL.</p>
         </div>
     </figure>
 
+    <figure>
+        <img class="equipoimg" src="<?= media(); ?>/img/ingPaul.png" alt="">
+        <div class="capa">
+            <h3>jprl</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic iste tempore ratione illum fugiat sed, voluptatem veritatis quidem quia inventore soluta, nemo quos voluptate, amet nesciunt provident laboriosam. Aliquid, nemo.</p>
+        </div>
+    </figure>
 
+    <figure>
+        <img class="equipoimg" src="<?= media(); ?>/img/ingPaul.png" alt="">
+        <div class="capa">
+            <h3>jprl</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic iste tempore ratione illum fugiat sed, voluptatem veritatis quidem quia inventore soluta, nemo quos voluptate, amet nesciunt provident laboriosam. Aliquid, nemo.</p>
+        </div>
+    </figure>
     </div>
 
 </div>
