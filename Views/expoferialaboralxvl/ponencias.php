@@ -1,101 +1,81 @@
-<?php headexpoferiaxv2($data); ?>
-
-
-<?php obj($data);
-
-$obj = new HomeModel();
-
-$perfiles = $obj->listaExpoferiaxv();
-
-?>
+<?php headexpoferiaxv3($data); ?>
 
 
 <style>
-    /* Gallery Section--------------------------------*/
-
-    #gallery {
-        background: #fff;
-        padding: 60px 0 0 0;
+    figure {
+        position: relative;
+        height: 250px;
+        cursor: pointer;
+        width: 450px;
         overflow: hidden;
+        border-radius: 6px;
+        box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.50);
     }
 
-    #gallery .container-fluid {
-        padding: 0px;
-    }
-
-    #gallery .gallery-overlay {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
+    figure img {
         width: 100%;
         height: 100%;
-        opacity: 1;
-        transition: all ease-in-out 0.4s;
+        transition: all 400ms ease-out;
+        will-change: transform;
     }
 
-    #gallery .gallery-item {
-        overflow: hidden;
-        position: relative;
-        padding: 0;
-        vertical-align: middle;
+    figure .capa {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 103, 123, 0.7);
+        transition: all 400ms ease-out;
+        opacity: 0;
+        visibility: hidden;
         text-align: center;
     }
 
-    #gallery .gallery-item img {
-        transition: all ease-in-out 0.4s;
-        width: 100%;
-    }
-
-    #gallery .gallery-item:hover img {
-        transform: scale(1.1);
-    }
-
-    #gallery .gallery-item:hover .gallery-overlay {
+    figure:hover>.capa {
         opacity: 1;
-        background: rgba(0, 0, 0, 0.7);
+        visibility: visible;
+    }
+
+    figure:hover>.capa h3 {
+        margin-top: 70px;
+        margin-bottom: 15px;
+    }
+
+    figure:hover>img {
+        transform: scale(1.3);
+    }
+
+    figure .capa h3 {
+        color: #fff;
+        font-weight: 400;
+        margin-bottom: 120px;
+        transition: all 400ms ease-out;
+        margin-top: 30px;
+    }
+
+    figure .capa p {
+        color: #fff;
+        font-size: 15px;
+        line-height: 1.5;
+        width: 100%;
+        max-width: 220px;
+        margin: auto;
     }
 </style>
 
-<section id="gallery">
-    <div class="container-fluid text-center" data-aos="fade-up">
-        <div class="section-header">
-            <h3 class="section-title ">PONENCIAS</h3>
-            <br>
+<div class="contenedor">
+    <figure>
+        <img class="equipoimg" src="<?= media(); ?>/img/ingPaul.png" alt="">
+        <div class="capa">
+            <h3>jprl</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic iste tempore ratione illum fugiat sed, voluptatem veritatis quidem quia inventore soluta, nemo quos voluptate, amet nesciunt provident laboriosam. Aliquid, nemo.</p>
         </div>
-        <div class="row g-0 d-flex justify-content-center">
 
-            <?php foreach ($perfiles as $key => $fila) { ?>
+    </figure>
 
-                <div class="col-lg-4 col-md-6">
-                    <div class="gallery-item">
-                        <a href="<?= media(); ?>/archivos/exporiaxv/<?php echo $fila['archivo'] ?>" data-gall="portfolioGallery" class="gallery-lightbox">
-                            <img src="<?= media(); ?>/archivos/exporiaxv/<?php echo $fila['archivo'] ?>">
-                        </a>
-                    </div>
-                </div>
 
-            <?php } ?>
-
-        </div>
-    </div>
-</section>
+</div>
 
 
 
-<script src="<?= media(); ?>/vendor/glightbox/js/glightbox.min.js"></script>
-
-<script>
-    /**
-     * Initiate gallery lightbox 
-     */
-    const galleryLightbox = GLightbox({
-        selector: '.gallery-lightbox'
-    });
-</script>
-<!-- Swiper JS -->
-
-
-
-<?php footerexpoferiaxv2($data); ?>
+<?php footerexpoferiaxv3($data); ?>
