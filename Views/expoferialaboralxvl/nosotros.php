@@ -34,11 +34,11 @@
 
 <div class="conten">
 
-    <h1 class="text-white text-center quienes">QUIÉNES SOMOS</h1>
+    <h1 class=" text-center quienes titulos">QUIÉNES SOMOS</h1>
     <br><br>
 
     <div class="row">
-        <div class="col-md-6 text-center">
+        <div class="col-md-6 text-center titulos">
             <h2>UNIDAD DE SEGUIMIENTO DEL EGRESADO</h2>
             <br>
 
@@ -74,7 +74,7 @@
 
 
 <br>
-  <h2 class="mostaza text-center" data-aos="fade-down">NUESTRO EQUIPO</h2>
+  <h2 class="mostaza text-center titulos" data-aos="fade-down">NUESTRO EQUIPO</h2>
   <br>
 
   <div class="row contepersonald-flex justify-content-around text-center " data-aos="fade-down">

@@ -199,6 +199,10 @@
     .menu .menu__link .enlacesDown {
         color: red;
     }
+
+    .titulos{
+        color: #ffc107;
+    }
 </style>
 
 <header>

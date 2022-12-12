@@ -9,72 +9,74 @@
 <p>w</p>
 <p>w</p>
 
-<p>w</p>
-<p>w</p>
-<p>w</p>
-<p>w</p>
-<p>w</p>
-
-<p>w</p>
-<p>w</p>
-<p>w</p>
-<p>w</p>
-<p>w</p>
-<p>w</p>
-<p>w</p>
-<p>w</p>
-
+<style>
+    .organizan{
+        background-color: #ffc107;
+        padding: 10px;
+   
+    }
+</style>
 
 
 
 <div class="col-12 row">
-    <div class="col-6">
-        <h5 class="text-white">Este evento académico, ofrecerá alternativas de
-            inserción laboral efectiva a nuestros egresados;
-            siendo una alternativa la organización de una
-            expoferia que vincule de manera efectiva, a los
-            egresados con los empleadores de la región y
-            del país. </h5>
+    <div class="col-6 text-center">
+        <div class="text-center">
+            <img src="<?= media() ?>/images/expoferiaxvl/logoxvi.png" style="width: 35%;" alt="">
+        </div>
+        <div class="col-9 m-auto">
+            <br>
+            <h5 class="text-white text-center">Este evento académico, ofrecerá alternativas de
+                inserción laboral efectiva a nuestros egresados;
+                siendo una alternativa la organización de una
+                expoferia que vincule de manera efectiva, a los
+                egresados con los empleadores de la región y
+                del país. </h5>
+        </div>
+
     </div>
     <div class="col-6 text-white">
-        <h3>MODALIDAD</h3>
-        <h3>HÍBRIDA</h3>
+        <h4>MODALIDAD</h4>
+        <h4>HÍBRIDA</h4>
         <br>
-        <h3>LUGAR</h3>
-        <h3>-Modalidad virtual: Plataforma Digital Meet y/o Zoom</h3>
-        <h3>-Modalidad presencial: Auditorio de la Facultad de Educación</h3>
+        <h4>LUGAR</h4>
+        <h4>-Modalidad virtual: Plataforma Digital Meet y/o Zoom</h4>
+        <h4>-Modalidad presencial: Auditorio de la Facultad de Educación</h4>
         <br>
-        <h3>EXPOSITORES</h3>
-        <h3>-Empresas e instituciones públicas y privadas de la macro región norte y el país.</h3>
+        <h4>EXPOSITORES</h4>
+        <h4>-Empresas e instituciones públicas y privadas de la macro región norte y el país.</h4>
     </div>
 </div>
 
-<br><br>
+<br><br><br>
 
 <div class="col-12">
 
-
     <div class="row">
 
-        <div class="col-2">
-            <h2>ORGANIZAN</h2>
+        <div class="col-md-12 ">
+            <div class="col-2 m-auto">
+            <h2 class="organizan">ORGANIZAN</h2>
+            </div>
+     
         </div>
+        <br>
 
-        <div class="row col-10">
+        <div class="row col-md-12">
 
-            <div class="col-6 col-md-3 text-center mb-2">
-                <img class="img-fluid col-md-12" src="<?= media(); ?>/images/expoferiaxv/vicerrectoradologo.png" alt="" style=" width: 150%; ">
+            <div class="col-6 col-md-4 col-lg-3 text-center mb-2">
+                <img class="img-fluid col-md-12" src="<?= media(); ?>/images/expoferiaxvl/vicerrectordoWhite.png" alt="" style=" width: 150%; ">
             </div>
 
-            <div class="col-6 col-md-3 text-center mb-2">
-                <img class="img-fluid col-md-12" src="<?= media(); ?>/archivos/logos/logoDpa.png" alt="" style=" width: 150%; ">
+            <div class="col-6 col-md-4 col-lg-3  text-center mb-2">
+                <img class="img-fluid col-md-12" src="<?= media(); ?>/images/expoferiaxvl/dpaWhite.png" alt="" style=" width: 150%; ">
             </div>
 
-            <div class="col-6 col-md-3 text-center mb-2">
-                <img class="img-fluid col-md-12" src="<?= media(); ?>/images/expoferiaxv/logoUse.png" alt="" style=" width: 150%; ">
+            <div class="col-6 col-md-4 col-lg-3  text-center mb-2">
+                <img class="img-fluid col-md-12" src="<?= media(); ?>/images/expoferiaxvl/useWhite.png" alt="" style=" width: 150%; ">
             </div>
 
-            <div class="col-6 col-md-3 text-center mb-2">
+            <div class="col-6 col-md-4 col-lg-3  text-center mb-2">
                 <img class="img-fluid col-md-12" src="<?= media(); ?>/images/expoferiaxv/CEIINDlogo1.png" alt="" style="width: 70%; ">
             </div>
         </div>
