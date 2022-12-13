@@ -1,13 +1,9 @@
 <?php headexpoferiaxv3($data); ?>
 
-<p>w</p>
-<p>w</p>
-<p>w</p>
-<p>w</p>
-<p>w</p>
-<p>w</p>
-<p>w</p>
-<p>w</p>
+<div class="row col-12">
+<img class="img-fluid col-md-12" src="<?= media(); ?>/images/expoferiaxvl/flyerexpo.png" alt="" style=" width: 100%; ">
+</div>
+
 
 <style>
     .organizan{
@@ -89,11 +85,7 @@
 
 
 
-<p>w</p>
-<p>w</p>
-<p>w</p>
-<p>w</p>
-<p>w</p>
+
 
 
 <?php footerexpoferiaxv3($data); ?>

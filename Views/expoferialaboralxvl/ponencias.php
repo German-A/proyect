@@ -62,7 +62,7 @@
 
 
     <figure>
-        <img class="equipoimg" src="<?= media(); ?>/img/ingPaul.png" alt="">
+        <img class="equipoimg" src="<?= media(); ?>/upload/exporiaxvl/ingPaul.png" alt="">
         <div class="capa">
      
             <p>IDEOLOGIA DE GENERO O SUBERSION CULTURAL.</p>

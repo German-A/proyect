@@ -41,7 +41,8 @@
     body,
     html {
         overflow-x: hidden;
-        background-color: #12377b;
+        background-color: #003366;
+        background-image: linear-gradient(#003366, #003355);
     }
 
 
@@ -128,7 +129,6 @@
             flex-direction: row;
             justify-content: end;
         }
-
 
         .menuxv {
             margin-left: 0;
