@@ -61,7 +61,7 @@ class expoferialaboralxvladmin extends Controllers
 				}
 
 
-				$arrData[$i]['archivo'] = '<a href="' . base_url() . '/Assets/upload/exporiaxv/' . $arrData[$i]['archivo'] . '"target="_blank"><span class="badge badge-primary"  > Ver Imagen <i class="fas fa-image"></i></span></a> ';
+				$arrData[$i]['archivo'] = '<a href="' . base_url() . '/Assets/upload/exporiaxvl/' . $arrData[$i]['archivo'] . '"target="_blank"><span class="badge badge-primary"  > Ver Imagen <i class="fas fa-image"></i></span></a> ';
 
 				$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
 			}
@@ -82,7 +82,7 @@ class expoferialaboralxvladmin extends Controllers
 				$txtNombre = trim($_POST['txtNombre']);
 				$txtPosicion = trim($_POST['txtPosicion']);
 
-				$ruta = 'Assets/upload/exporiaxv/';
+				$ruta = 'Assets/upload/exporiaxvl/';
 				$obj['archivo'] = null;
 
 				$bandera = true;
@@ -220,7 +220,7 @@ class expoferialaboralxvladmin extends Controllers
 
 			$archivo = $this->model->getOneGaleria($idexpoxvgaleria);
 
-			$ruta = 'Assets/upload/exporiaxv/';
+			$ruta = 'Assets/upload/exporiaxvl/';
 			removeFile($ruta, $archivo['archivo']);
 
 			$requestDelete = $this->model->removeGaleria($idexpoxvgaleria);
@@ -265,17 +265,17 @@ class expoferialaboralxvladmin extends Controllers
 				$btnDelete = '';
 
 				if ($_SESSION['permisos'][29]['r']) {
-					$btnView = '<button class="btn btn-info btn-sm " onClick="fntView(' . $arrData[$i]['idexpoxvponencias'] . ')" title="Ver Ponencias"><i class="far fa-eye"></i></button>';
+					$btnView = '<button class="btn btn-info btn-sm " onClick="fntView(' . $arrData[$i]['idexpoxvlponencias'] . ')" title="Ver Ponencias"><i class="far fa-eye"></i></button>';
 				}
 
 				if ($_SESSION['permisos'][29]['u']) {
-					$btnEdit = '<button class="btn btn-primary  btn-sm " onClick="fntEditPonencias(' . $arrData[$i]['idexpoxvponencias'] . ')" title="Editar Ponencias"><i class="fas fa-pencil-alt"></i></button>';
+					$btnEdit = '<button class="btn btn-primary  btn-sm " onClick="fntEditPonencias(' . $arrData[$i]['idexpoxvlponencias'] . ')" title="Editar Ponencias"><i class="fas fa-pencil-alt"></i></button>';
 				} else {
 					$btnEdit = '<button class="btn btn-secondary btn-sm" disabled ><i class="fas fa-pencil-alt"></i></button>';
 				}
 
 				if ($_SESSION['permisos'][29]['d']) {
-					$btnDelete = '<button class="btn btn-danger btn-sm " onClick="fntDeletePonencias(' . $arrData[$i]['idexpoxvponencias'] . ')" title="Eliminar Ponencias"><i class="far fa-trash-alt"></i></button>';
+					$btnDelete = '<button class="btn btn-danger btn-sm " onClick="fntDeletePonencias(' . $arrData[$i]['idexpoxvlponencias'] . ')" title="Eliminar Ponencias"><i class="far fa-trash-alt"></i></button>';
 				} else {
 					$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
 				}
@@ -287,7 +287,7 @@ class expoferialaboralxvladmin extends Controllers
 				}
 
 
-				$arrData[$i]['archivo'] = '<a href="' . base_url() . '/Assets/upload/exporiaxv/' . $arrData[$i]['archivo'] . '"target="_blank"><span class="badge badge-primary"  > Ver Imagen <i class="fas fa-image"></i></span></a> ';
+				$arrData[$i]['archivo'] = '<a href="' . base_url() . '/Assets/upload/exporiaxvl/' . $arrData[$i]['archivo'] . '"target="_blank"><span class="badge badge-primary"  > Ver Imagen <i class="fas fa-image"></i></span></a> ';
 
 				$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
 			}
@@ -304,17 +304,17 @@ class expoferialaboralxvladmin extends Controllers
 				$arrResponse = array("status" => false, "msg" => 'Datos incorrectos en la Galería.');
 			} else {
 
-				$idexpoxvponencias = intval($_POST['idexpoxvponencias']);
+				$idexpoxvlponencias = intval($_POST['idexpoxvlponencias']);
 				$txtNombre = trim($_POST['txtNombre']);
 				$txtPosicion = trim($_POST['txtPosicion']);
 
-				$ruta = 'Assets/upload/exporiaxv/';
+				$ruta = 'Assets/upload/exporiaxvl/';
 				$obj['archivo'] = null;
 
 				$bandera = true;
 				$insert = null;
 
-				if ($idexpoxvponencias == 0) {
+				if ($idexpoxvlponencias == 0) {
 
 					$tipo = $_FILES['archivoSubido']['type'];
 
@@ -359,14 +359,14 @@ class expoferialaboralxvladmin extends Controllers
 
 					//Actualizar sin Imagen
 					if (empty($_FILES['archivoSubido']['name'])) {
-						$insert = $this->model->updatePonencia($txtNombre, $txtPosicion, $idexpoxvponencias);
+						$insert = $this->model->updatePonencia($txtNombre, $txtPosicion, $idexpoxvlponencias);
 					} else {
 
 						$tipo = $_FILES['archivoSubido']['type'];
 
 						if ($tipo == "image/png" || $tipo == 'image/jpeg') {
 							//Actualizar con Imagen				
-							$obj = $this->model->getOnePonencia($idexpoxvponencias);
+							$obj = $this->model->getOnePonencia($idexpoxvlponencias);
 
 							$ubicacionTemporal = $_FILES['archivoSubido']['tmp_name'];
 							$extension = pathinfo($_FILES['archivoSubido']['name'], PATHINFO_EXTENSION);
@@ -384,14 +384,14 @@ class expoferialaboralxvladmin extends Controllers
 								mkdir($ruta, 0777, true);
 								if (file_exists($ruta)) {
 									if (move_uploaded_file($ubicacionTemporal, $ruta . $filename)) {
-										$insert = $this->model->updatePonenciaArchivo($txtNombre, $txtPosicion, $filename, $idexpoxvponencias);
+										$insert = $this->model->updatePonenciaArchivo($txtNombre, $txtPosicion, $filename, $idexpoxvlponencias);
 									} else {
 										echo "no se pudo guardar ";
 									}
 								}
 							} else {
 								if (move_uploaded_file($ubicacionTemporal, $ruta . $filename)) {
-									$insert = $this->model->updatePonenciaArchivo($txtNombre, $txtPosicion, $filename, $idexpoxvponencias);
+									$insert = $this->model->updatePonenciaArchivo($txtNombre, $txtPosicion, $filename, $idexpoxvlponencias);
 								} else {
 									echo "no se pudo guardar";
 								}
@@ -419,12 +419,12 @@ class expoferialaboralxvladmin extends Controllers
 	}
 
 	//obtener un PONENCIAS para actualizar
-	public function getOnePonencia($idexpoxvponencias)
+	public function getOnePonencia($idexpoxvlponencias)
 	{
 		if ($_SESSION['permisos'][29]['u']) {
-			$idexpoxvponencias = intval($idexpoxvponencias);
-			if ($idexpoxvponencias > 0) {
-				$arrData = $this->model->getOnePonencia($idexpoxvponencias);
+			$idexpoxvlponencias = intval($idexpoxvlponencias);
+			if ($idexpoxvlponencias > 0) {
+				$arrData = $this->model->getOnePonencia($idexpoxvlponencias);
 				if (empty($arrData)) {
 					$arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
 				} else {
@@ -445,7 +445,7 @@ class expoferialaboralxvladmin extends Controllers
 			$NombreArchivo = $this->model->getOnePonencia($idexpoxvgaleria);
 			//borrar documentos
 			$requestDelete = $this->model->removePonencias($idexpoxvgaleria);
-			@unlink('Assets/upload/exporiaxv/' . $NombreArchivo['archivo']);
+			@unlink('Assets/upload/exporiaxvl/' . $NombreArchivo['archivo']);
 			if ($requestDelete) {
 				$arrResponse = array('status' => true, 'msg' => 'Se ha eliminado la Imagen');
 			} else {
@@ -508,7 +508,7 @@ class expoferialaboralxvladmin extends Controllers
 				}
 
 
-				$arrData[$i]['archivo'] = '<a href="' . base_url() . '/Assets/upload/exporiaxv/' . $arrData[$i]['archivo'] . '"target="_blank"><span class="badge badge-primary"  > Ver Imagen <i class="fas fa-image"></i></span></a> ';
+				$arrData[$i]['archivo'] = '<a href="' . base_url() . '/Assets/upload/exporiaxvl/' . $arrData[$i]['archivo'] . '"target="_blank"><span class="badge badge-primary"  > Ver Imagen <i class="fas fa-image"></i></span></a> ';
 
 				$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
 			}
@@ -531,7 +531,7 @@ class expoferialaboralxvladmin extends Controllers
 				$txtUrl = trim($_POST['txtUrl']);
 				$descripcion = trim($_POST['descripcion']);
 
-				$ruta = 'Assets/upload/exporiaxv/';
+				$ruta = 'Assets/upload/exporiaxvl/';
 				$obj['archivo'] = null;
 
 				$bandera = true;
@@ -670,7 +670,7 @@ class expoferialaboralxvladmin extends Controllers
 
 			$archivo = $this->model->getOneEmpresa($idexpoxvempresas);
 
-			$ruta = 'Assets/upload/exporiaxv/';
+			$ruta = 'Assets/upload/exporiaxvl/';
 			removeFile($ruta, $archivo['archivo']);
 
 			$requestDelete = $this->model->removeEmpresa($idexpoxvempresas);
