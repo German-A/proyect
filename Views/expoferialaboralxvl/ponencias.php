@@ -44,7 +44,7 @@
     figure .capa p {
         height: 250px;
         background-color: #fff;
-        padding: 40px 0 40px ;
+        padding: 40px 0 40px;
         color: black;
         font-size: 15px;
         line-height: 1.5;
@@ -58,22 +58,14 @@
 
     <div class="col-12 row">
 
+        <figure>
+            <img class="equipoimg" src="<?= media(); ?>/upload/exporiaxvl/ingPaul.png" alt="">
+            <div class="capa">
 
-
-
-    <figure>
-        <img class="equipoimg" src="<?= media(); ?>/upload/exporiaxvl/ingPaul.png" alt="">
-        <div class="capa">
-     
-            <p>IDEOLOGIA DE GENERO O SUBERSION CULTURAL.</p>
-        </div>
-    </figure>
-
+                <p>IDEOLOGIA DE GENERO O SUBERSION CULTURAL.</p>
+            </div>
+        </figure>
 
     </div>
 
 </div>
-
-
-
-<?php footerexpoferiaxv3($data); ?>
