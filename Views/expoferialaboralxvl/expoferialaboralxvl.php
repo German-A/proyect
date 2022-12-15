@@ -1,19 +1,17 @@
 <?php headexpoferiaxv3($data); ?>
 
-<div class="row col-12">
-<img class="img-fluid col-md-12" src="<?= media(); ?>/images/expoferiaxvl/flyerexpo.png" alt="" style=" width: 100%; ">
+<div class="row col-10 m-auto">
+    <img class="img-fluid col-md-12" src="<?= media(); ?>/images/expoferiaxvl/flyerexpo.png" alt="" style=" width: 100%; ">
 </div>
 
-
 <style>
-    .organizan{
+    .organizan {
         background-color: #ffc107;
         padding: 10px;
-   
+
     }
 </style>
-
-
+<br>
 
 <div class="col-12 row">
     <div class="col-6 text-center">
@@ -29,8 +27,8 @@
                 egresados con los empleadores de la región y
                 del país. </h5>
         </div>
-
     </div>
+
     <div class="col-6 text-white">
         <h4>MODALIDAD</h4>
         <h4>HÍBRIDA</h4>
@@ -44,48 +42,34 @@
     </div>
 </div>
 
-<br><br><br>
+<br><br>
 
-<div class="col-12">
-
-    <div class="row">
-
-        <div class="col-md-12 ">
-            <div class="col-2 m-auto">
+<div class="col-12 row">
+    <div class="col-md-12 ">
+        <div class="col-2 m-auto">
             <h2 class="organizan">ORGANIZAN</h2>
-            </div>
-     
         </div>
-        <br>
-
-        <div class="row col-md-12">
-
-            <div class="col-6 col-md-4 col-lg-3 text-center mb-2">
-                <img class="img-fluid col-md-12" src="<?= media(); ?>/images/expoferiaxvl/vicerrectordoWhite.png" alt="" style=" width: 150%; ">
-            </div>
-
-            <div class="col-6 col-md-4 col-lg-3  text-center mb-2">
-                <img class="img-fluid col-md-12" src="<?= media(); ?>/images/expoferiaxvl/dpaWhite.png" alt="" style=" width: 150%; ">
-            </div>
-
-            <div class="col-6 col-md-4 col-lg-3  text-center mb-2">
-                <img class="img-fluid col-md-12" src="<?= media(); ?>/images/expoferiaxvl/useWhite.png" alt="" style=" width: 150%; ">
-            </div>
-
-            <div class="col-6 col-md-4 col-lg-3  text-center mb-2">
-                <img class="img-fluid col-md-12" src="<?= media(); ?>/images/expoferiaxv/CEIINDlogo1.png" alt="" style="width: 70%; ">
-            </div>
-        </div>
-
-
     </div>
+    <br>
 
+    <div class="row col-md-12">
 
+        <div class="col-6 col-md-4 col-lg-3 text-center mb-2">
+            <img class="img-fluid col-md-12" src="<?= media(); ?>/images/expoferiaxvl/vicerrectordoWhite.png" alt="" style=" width: 150%; ">
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3  text-center mb-2">
+            <img class="img-fluid col-md-12" src="<?= media(); ?>/images/expoferiaxvl/dpaWhite.png" alt="" style=" width: 150%; ">
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3  text-center mb-2">
+            <img class="img-fluid col-md-12" src="<?= media(); ?>/images/expoferiaxvl/useWhite.png" alt="" style=" width: 150%; ">
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3  text-center mb-2">
+            <img class="img-fluid col-md-12" src="<?= media(); ?>/images/expoferiaxv/CEIINDlogo1.png" alt="" style="width: 70%; ">
+        </div>
+    </div>
 </div>
 
-
-
-
-
-
-<?php footerexpoferiaxv3($data); ?>
+</body>
