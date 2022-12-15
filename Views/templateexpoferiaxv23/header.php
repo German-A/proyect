@@ -211,7 +211,7 @@
         <span id="btnMenuExpoferiaxv" class="nav-barxv text-right">
             <div class="row">
                 <div class="col-6 text-left">
-                    <img class="logo" src="<?= media(); ?>/images/expoferiaxv/logoUse.png" style="height: 60px;">
+                    <img class="logo" src="<?= media(); ?>/images/expoferiaxvl/useWhite.png" style="height: 60px;">
                 </div>
 
                 <div class="col-6 text-right">
@@ -225,7 +225,7 @@
         <nav class="main-navxv">
             <ul class="menuxv" id="menuxv">
 
-                <img class="logoweb" src="<?= media(); ?>/images/expoferiaxv/logoUse.png" style="height: 60px;">
+                <img class="logoweb" src="<?= media(); ?>/images/expoferiaxvl/useWhite.png" style="height: 60px;">
 
                 <div class="naveg">
                     <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxvl" class="menu__linkxv">INICIO</a></li>
