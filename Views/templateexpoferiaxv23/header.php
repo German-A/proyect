@@ -37,19 +37,13 @@
 
     }
 
-
     body,
     html {
         overflow-x: hidden;
-        background-color: #003366;
-        background-image: linear-gradient(#003366, #003355);
+        background-image: linear-gradient(100deg, #0170b8, #0170b8);  
     }
 
-
-
-
     .nav-barxv {
-
         padding: 20px;
         display: block;
         color: cornsilk;
@@ -68,7 +62,6 @@
     /* barra de menu poner color */
     .menuxv {
         display: none;
-
         width: 100%;
         /*ddd*/
         margin-left: -100%;
@@ -207,11 +200,12 @@
 
 <header>
 
+
     <body>
         <span id="btnMenuExpoferiaxv" class="nav-barxv text-right">
             <div class="row">
                 <div class="col-6 text-left">
-                    <img class="logo" src="<?= media(); ?>/images/expoferiaxvl/useWhite.png" style="height: 60px;">
+                    <img class="logo" src="<?= media(); ?>/images/expoferiaxvl/useWhite.png"  style="height: 70px;">
                 </div>
 
                 <div class="col-6 text-right">
@@ -225,7 +219,7 @@
         <nav class="main-navxv">
             <ul class="menuxv" id="menuxv">
 
-                <img class="logoweb" src="<?= media(); ?>/images/expoferiaxvl/useWhite.png" style="height: 60px;">
+                <img class="logoweb" src="<?= media(); ?>/images/expoferiaxvl/useWhite.png"  style="height: 70px;">
 
                 <div class="naveg">
                     <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxvl" class="menu__linkxv">INICIO</a></li>

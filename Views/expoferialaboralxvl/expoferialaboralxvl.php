@@ -1,4 +1,5 @@
 <?php headexpoferiaxv3($data); ?>
+<br>
 
 <div class="row col-10 m-auto">
     <img class="img-fluid col-md-12" src="<?= media(); ?>/images/expoferiaxvl/flyerexpo.png" alt="" style=" width: 100%; ">
@@ -11,7 +12,7 @@
 
     }
 </style>
-<br>
+<br><br>
 
 <div class="col-12 row">
     <div class="col-6 text-center">
@@ -31,7 +32,7 @@
 
     <div class="col-6 text-white">
         <h4>MODALIDAD</h4>
-        <h4>HÍBRIDA</h4>
+        <h4>-HÍBRIDA</h4>
         <br>
         <h4>LUGAR</h4>
         <h4>-Modalidad virtual: Plataforma Digital Meet y/o Zoom</h4>
@@ -47,7 +48,7 @@
 <div class="col-12 row">
     <div class="col-md-12 ">
         <div class="col-2 m-auto">
-            <h2 class="organizan">ORGANIZAN</h2>
+            <h2 class="organizan text-center">ORGANIZAN</h2>
         </div>
     </div>
     <br>
