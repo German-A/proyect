@@ -40,7 +40,7 @@
     body,
     html {
         overflow-x: hidden;
-        background-image: linear-gradient(100deg, #0170b8, #0170b8);  
+        background-image: linear-gradient(90deg, #0170b8, #0170b8);  
     }
 
     .nav-barxv {
@@ -232,8 +232,8 @@
                     </ul>
                 </li> -->
                     <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxvl/ponencias" class="menu__linkxv">PONENCIAS</a></li>
-                    <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxvl/galeria" class="menu__linkxv">GALERIA</a></li>
-                    <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxvl/empresas" class="menu__linkxv">EMPRESAS</a></li>
+                    <!-- <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxvl/galeria" class="menu__linkxv">GALERIA</a></li>
+                    <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxvl/empresas" class="menu__linkxv">EMPRESAS</a></li> -->
                 </div>
             </ul>
         </nav>
