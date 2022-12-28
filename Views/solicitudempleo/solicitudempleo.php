@@ -328,9 +328,7 @@
         var FechaFin = $("#FechaFin").val();
 
         var JornadaLaboral = $("#JornadaLaboral").val();
-
-
-
+        var idempresa = $("#idempresa").val();
 
 
         if (ruc == 0) {
