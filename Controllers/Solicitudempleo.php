@@ -97,12 +97,9 @@ class solicitudempleo extends Controllers
 
 			$ubicacionTemporal = $_FILES['archivoSubido']['tmp_name'];
 			$nombre = $_FILES['archivoSubido']['name'];
-
 			$password = $ruc;
 
 			$imagen = $ruc . $nombre;
-
-
 
 			if (!file_exists('Assets/archivos/empresa/')) {
 				mkdir('Assets/archivos/empresa/', 0777, true);
