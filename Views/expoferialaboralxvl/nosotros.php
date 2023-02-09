@@ -159,4 +159,3 @@
 
 
 
-<?php footerexpoferiaxv3($data); ?>

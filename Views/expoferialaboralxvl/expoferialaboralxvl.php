@@ -43,17 +43,19 @@
     </div>
 </div>
 
-<br><br>
 
 <div class="col-12 row">
-    <div class="col-md-12 ">
+
+    <div class="col-md-12 mb-3 ">
+        <br><br><br>
         <div class="col-2 m-auto">
             <h2 class="organizan text-center">ORGANIZAN</h2>
         </div>
     </div>
-    <br>
 
-    <div class="row col-md-12">
+
+    <div class="row col-md-12 mb-3">
+ 
 
         <div class="col-6 col-md-4 col-lg-3 text-center mb-2">
             <img class="img-fluid col-md-12" src="<?= media(); ?>/images/expoferiaxvl/vicerrectordoWhite.png" alt="" style=" width: 150%; ">
