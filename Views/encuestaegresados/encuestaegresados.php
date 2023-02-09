@@ -74,7 +74,7 @@ $año = new HomeModel();
                     </div>
                     <div class="col-12 col-md-12">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="pg1" type="radio" value="1">
+                            <input class="form-check-input" name="pg1" type="radio" value="1" disabled>
                             <label class="form-check-label" for="pg1">Desarrollo del Pensamiento Lógico Matemático</label>
                         </div>
                         <div class="form-check form-check-inline">
