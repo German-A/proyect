@@ -74,67 +74,67 @@ $año = new HomeModel();
                     </div>
                     <div class="col-12 col-md-12">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="p1" type="radio" value="1">
-                            <label class="form-check-label" for="p1">Desarrollo del Pensamiento Lógico Matemático</label>
+                            <input class="form-check-input" name="pg1" type="radio" value="1">
+                            <label class="form-check-label" for="pg1">Desarrollo del Pensamiento Lógico Matemático</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="p2" type="radio" value="2">
-                            <label class="form-check-label" for="p2">Desarrollo Personal</label>
+                            <input class="form-check-input" name="pg2" type="radio" value="2">
+                            <label class="form-check-label" for="pg2">Desarrollo Personal</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="p3" type="radio" value="3">
-                            <label class="form-check-label" for="p3">Lectura Crítica y Redacción de Textos</label>
+                            <input class="form-check-input" name="pg3" type="radio" value="3">
+                            <label class="form-check-label" for="pg3">Lectura Crítica y Redacción de Textos</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="p4" type="radio" value="4">
-                            <label class="form-check-label" for="p4">Introducción al Análisis Matemático</label>
+                            <input class="form-check-input" name="pg4" type="radio" value="4">
+                            <label class="form-check-label" for="pg4">Introducción al Análisis Matemático</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="p5" type="radio" value="1">
-                            <label class="form-check-label" for="p5">Química General</label>
+                            <input class="form-check-input" name="pg5" type="radio" value="1">
+                            <label class="form-check-label" for="pg5">Química General</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="p6" type="radio" value="2">
-                            <label class="form-check-label" for="p6">Física General</label>
+                            <input class="form-check-input" name="pg6" type="radio" value="2">
+                            <label class="form-check-label" for="pg6">Física General</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="p7" type="radio" value="3">
-                            <label class="form-check-label" for="p7">Biología General</label>
+                            <input class="form-check-input" name="pg7" type="radio" value="3">
+                            <label class="form-check-label" for="pg7">Biología General</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="p8" type="radio" value="4">
-                            <label class="form-check-label" for="p8">Estadística General</label>
+                            <input class="form-check-input" name="pg8" type="radio" value="4">
+                            <label class="form-check-label" for="pg8">Estadística General</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="p9" type="radio" value="4">
-                            <label class="form-check-label" for="p9">Sociedad Cultura y Ecología</label>
+                            <input class="form-check-input" name="pg9" type="radio" value="4">
+                            <label class="form-check-label" for="pg9">Sociedad Cultura y Ecología</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="p10" type="radio" value="1">
-                            <label class="form-check-label" for="p10">Cultura Investigativa y Pensamiento Crítico</label>
+                            <input class="form-check-input" name="pg10" type="radio" value="1">
+                            <label class="form-check-label" for="pg10">Cultura Investigativa y Pensamiento Crítico</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="p11" type="radio" value="2">
-                            <label class="form-check-label" for="p11">Ética, Convivencia Humana y Ciudadanía</label>
+                            <input class="form-check-input" name="pg11" type="radio" value="2">
+                            <label class="form-check-label" for="pg11">Ética, Convivencia Humana y Ciudadanía</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="p12" type="radio" value="3">
-                            <label class="form-check-label" for="p12">Análisis Matemático</label>
+                            <input class="form-check-input" name="pg12" type="radio" value="3">
+                            <label class="form-check-label" for="pg12">Análisis Matemático</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="p13" type="radio" value="4">
-                            <label class="form-check-label" for="p13">Dibujo Arquitectónico</label>
+                            <input class="form-check-input" name="pg13" type="radio" value="4">
+                            <label class="form-check-label" for="pg13">Dibujo Arquitectónico</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="p14" type="radio" value="4">
-                            <label class="form-check-label" for="p14">Introducción a la Ingeniería</label>
+                            <input class="form-check-input" name="pg14" type="radio" value="4">
+                            <label class="form-check-label" for="pg14">Introducción a la Ingeniería</label>
                         </div>
                     </div>
                 </div>
 
                 <div class="row mb-4">
                     <div class="col-12 col-md-12 pregunta ">
-                        <p>Seleccione DOS CURSOS que CUMPLIERON SUS EXPECTATIVAS en estudios generales</p>
+                        <p>Seleccione DOS CURSOS que NO CUMPLIERON SUS EXPECTATIVAS en estudios generales</p>
                     </div>
                     <div class="col-12 col-md-12">
                         <div class="form-check form-check-inline">
@@ -198,108 +198,146 @@ $año = new HomeModel();
 
                 <div class="row mb-4">
                     <div class="col-12 col-md-12 pregunta">
-                        <p>3. Señale el cargo que desempeña el/la egresado(a).</p>
+                        <p>1. La relación de los estudios generales con los demás cursos impartidos durante su formación académica</p>
+                    </div>
+                    <div class="col-12 col-md-12">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="p1" type="radio" value="1">
+                            <label class="form-check-label" for="p1">Muy Buena</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="p1" type="radio" value="2">
+                            <label class="form-check-label" for="p1">Buena</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="p1" type="radio" value="3">
+                            <label class="form-check-label" for="p1">Regular</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="p1" type="radio" value="4">
+                            <label class="form-check-label" for="p1">Mala</label>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row mb-4">
+                    <div class="col-12 col-md-12 pregunta">
+                        <p>2. El impacto que tuvo los estudios generales en tu formación integral</p>
+                    </div>
+                    <div class="col-12 col-md-12">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="p2" type="radio" value="1">
+                            <label class="form-check-label" for="p2">Muy Buena</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="p2" type="radio" value="2">
+                            <label class="form-check-label" for="p2">Buena</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="p2" type="radio" value="3">
+                            <label class="form-check-label" for="p2">Regular</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="p2" type="radio" value="4">
+                            <label class="form-check-label" for="p2">Mala</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-12 col-md-12 pregunta">
+                        <p>3. Su experiencia de compartir con alumnos de programas diversos en una misma clase</p>
                     </div>
                     <div class="col-12 col-md-12">
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p3" type="radio" value="1">
-                            <label class="form-check-label" for="p3">Practicante profesional</label>
+                            <label class="form-check-label" for="p3">Muy Buena</label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p3" type="radio" value="2">
-                            <label class="form-check-label" for="p3">Auxiliar</label>
+                            <label class="form-check-label" for="p3">Buena</label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p3" type="radio" value="3">
-                            <label class="form-check-label" for="p3">Asistente</label>
+                            <label class="form-check-label" for="p3">Regular</label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p3" type="radio" value="4">
-                            <label class="form-check-label" for="p3">Directivo</label>
+                            <label class="form-check-label" for="p3">Mala</label>
                         </div>
                     </div>
                 </div>
 
+
                 <div class="row mb-4">
                     <div class="col-12 col-md-12 pregunta">
-                        <p>4. Medios que utiliza para realizar los procesos de selección. (Puede marcar más de uno).</p>
+                        <p>4. La influencia de los talleres impartidos en su formación académica (danza, teatro, música y otros)</p>
                     </div>
                     <div class="col-12 col-md-12">
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p4" type="radio" value="1">
-                            <label class="form-check-label" for="p4">Prueba: Conocimientos.</label>
+                            <label class="form-check-label" for="p4">Muy Buena</label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p4" type="radio" value="2">
-                            <label class="form-check-label" for="p4">Entrevista: Selección individual.</label>
+                            <label class="form-check-label" for="p4">Buena</label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p4" type="radio" value="3">
-                            <label class="form-check-label" for="p4">Entrevista: Selección grupal.</label>
+                            <label class="form-check-label" for="p4">Regular</label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p4" type="radio" value="4">
-                            <label class="form-check-label" for="p4">Test: Aptitudes intelectuales.</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="p4" type="radio" value="5">
-                            <label class="form-check-label" for="p4">Test: Personalidad.</label>
+                            <label class="form-check-label" for="p4">Mala</label>
                         </div>
                     </div>
                 </div>
 
                 <div class="row mb-4">
                     <div class="col-12 col-md-12 pregunta">
-                        <p>5. ¿Conoce si el egresado (a) ha desarrollo producción intelectual?.</p>
+                        <p>5. El desarrollo de los cursos por los docentes de estudios generales</p>
                     </div>
                     <div class="col-12 col-md-12">
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p5" type="radio" value="1">
-                            <label class="form-check-label" for="p5">Artículos en revistas indexadas.</label>
+                            <label class="form-check-label" for="p5">Muy Buena</label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p5" type="radio" value="2">
-                            <label class="form-check-label" for="p5">Artículos de opinión.</label>
+                            <label class="form-check-label" for="p5">Buena</label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p5" type="radio" value="3">
-                            <label class="form-check-label" for="p5">Separatas.</label>
+                            <label class="form-check-label" for="p5">Regular</label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p5" type="radio" value="4">
-                            <label class="form-check-label" for="p5">Libros.</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="p5" type="radio" value="5">
-                            <label class="form-check-label" for="p5">Blog.</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="p5" type="radio" value="6">
-                            <label class="form-check-label" for="p5">Página web.</label>
+                            <label class="form-check-label" for="p5">Mala</label>
                         </div>
                     </div>
                 </div>
 
                 <div class="row mb-4">
                     <div class="col-12 col-md-12 pregunta">
-                        <p>6. Conoce si el/la egresado(a) ha desarrollado estudios complementarios.</p>
+                        <p>6. La distribución de los horarios de los estudios generales</p>
                     </div>
                     <div class="col-12 col-md-12">
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p6" type="radio" value="1">
-                            <label class="form-check-label" for="p6">Maestría.</label>
+                            <label class="form-check-label" for="p6">Muy Buena</label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p6" type="radio" value="2">
-                            <label class="form-check-label" for="p6">Doctorado.</label>
+                            <label class="form-check-label" for="p6">Buena</label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p6" type="radio" value="3">
-                            <label class="form-check-label" for="p6">Segunda especialidad.</label>
+                            <label class="form-check-label" for="p6">Regular</label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p6" type="radio" value="4">
-                            <label class="form-check-label" for="p6">Segunda profesión.</label>
+                            <label class="form-check-label" for="p6">Mala</label>
                         </div>
                     </div>
                 </div>
@@ -307,12 +345,12 @@ $año = new HomeModel();
 
                 <div class="row mb-4">
                     <div class="col-12 col-md-12 pregunta">
-                        <p>7. El/la egresado(a) ha recibido alguna capacitación por parte de entidad laboral.</p>
+                        <p>7. La cantidad de cursos desarrollados en estudios generales durante tu proceso de formación</p>
                     </div>
                     <div class="col-12 col-md-12">
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p7" type="radio" value="1">
-                            <label class="form-check-label" for="p7">De 1 a 2.</label>
+                            <label class="form-check-label" for="p7">Muy Buena</label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p7" type="radio" value="2">
@@ -332,7 +370,7 @@ $año = new HomeModel();
 
                 <div class="row mb-4">
                     <div class="col-12 col-md-12 pregunta">
-                        <p>8. El/la egresado(a) ha recibido algún tipo de reconocimiento por su destacado desempeño que sea demostrable (resoluciones, diplomas u otros) Si así fuera, mencione el tipo de reconocimiento, mes y año.</p>
+                        <p>8. La infraestructura para el desarrollo de los cursos en estudios generales</p>
                     </div>
                     <div class="col-12 col-md-12">
                         <div class="form-check form-check-inline">
@@ -348,59 +386,6 @@ $año = new HomeModel();
                         </div>
                     </div>
                 </div>
-
-                <div class="row mb-4">
-                    <div class="col-12 col-md-12 pregunta">
-                        <p>9. Señale su satisfacción con el desempeño laboral del egresado(a).</p>
-                    </div>
-                    <div class="col-12 col-md-12">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="p9" type="radio" value="1">
-                            <label class="form-check-label" for="p9">Muy satisfecha</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="p9" type="radio" value="2">
-                            <label class="form-check-label" for="p9">Satisfecha</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="p9" type="radio" value="3">
-                            <label class="form-check-label" for="p9">Medianamente satisfecha</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="p9" type="radio" value="4">
-                            <label class="form-check-label" for="p9">Medianamente insatisfecha</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="p9" type="radio" value="5">
-                            <label class="form-check-label" for="p9">Insatisfecha</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row mb-4">
-                    <div class="col-12 col-md-12 pregunta">
-                        <p>10. ¿Como considera al egresado(a) de la Universidad Nacional de Trujillo?</p>
-                    </div>
-                    <div class="col-12 col-md-12">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="p10" type="radio" value="1">
-                            <label class="form-check-label" for="p10">Muy malo</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="p10" type="radio" value="2">
-                            <label class="form-check-label" for="p10">Malo</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="p10" type="radio" value="3">
-                            <label class="form-check-label" for="p10">Bueno</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="p10" type="radio" value="4">
-                            <label class="form-check-label" for="p10">Muy bueno</label>
-                        </div>
-                    </div>
-                </div>
-
 
 
 
