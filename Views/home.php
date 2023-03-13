@@ -178,7 +178,21 @@ $perfiles = $obj->selectBanner();
       </div>
       
     </div><br><br><br>
+
     <div class="col-12 col-sm-5 col-md-5 col-lg-2 mb-2">
+      <div class="cont-titulo">
+        <h5 class="bluemedio text-area">ÁREA DE <br>TRAMITE DOCUMENTARIO</h5>
+      </div>
+      <img class="equipoimg" src="<?= media(); ?>/img/abogadaisa.png" alt="">
+      <div class="col-4 cont-info">
+        <br>
+        <h6 style="text-transform: uppercase;">Maria Isabel<br> Haro Valverde</h6>
+        <p><small>ABOGADA</small></p>
+      </div>
+      
+    </div>
+
+    <!-- <div class="col-12 col-sm-5 col-md-5 col-lg-2 mb-2">
       <div class="cont-titulo ">
         <h5 class="bluemedio text-area">ÁREA DE<br> RELACIONES PÚBLICAS</h5>
       </div>
@@ -188,7 +202,7 @@ $perfiles = $obj->selectBanner();
         <h6>KATHERINE NOELY<br> RODRÍGUEZ GUZMÁN</h6>
         <p><small>COMUNICADORA/INTERPRETE</small></p>
       </div>
-    </div>
+    </div> -->
 
     <br><br><br>
 
