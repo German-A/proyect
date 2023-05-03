@@ -28,7 +28,36 @@ $perfiles = $obj->selectBanner();
     <div class="swiper-pagination"></div>
   </div>
 
-  <br>
+
+  <br><br><br><br>
+
+  <div class="col-12 text-center ml-4 mr-4">
+
+
+    <div class="row">
+      <h2>UNIDAD DE SEGUIMIENTO DEL EGRESADO UNT</h2>
+    </div>
+    <div class="row">
+      <div class="col-2">
+        <h2 class="mostaza" style="font-size: 35px;"><b>98%</b></h2>
+        <h5 class="blueoscuro">De nuestros egresados <strong>actualmente trabajan</strong></h5>
+      </div>
+      <div class="col-2">
+        <h2 class="mostaza" style="font-size: 35px;">3366</h2>
+        <h5 class="blueoscuro">Egresados en el año<strong> 2021</strong> </h5>
+      </div>
+      <div class="col-2">
+        <h2 class="mostaza" style="font-size: 35px;"><b>+2000</b> </h2>
+        <h5 class="blueoscuro"> <strong>Ofertas laborales</strong> activas</h5>
+      </div>
+      <div class="col-6">
+        <h3>APUNTAMOS A LOS MÁS ALTOS ESTANDRES DE </h3>
+        <h3><b>CALIDAD</b></h3>
+
+      </div>
+
+    </div>
+  </div>
 
   <div class="col-12 d-flex justify-content-center">
     <div class="col-10 col-md-6 col-xl-5 col-xg-6 p-1  text-center" style="border-radius:20px; background-color: var(--amarillo-mostaza);">
@@ -176,7 +205,7 @@ $perfiles = $obj->selectBanner();
         <h6>JEAN PAÚL<br> ROMERO LOBATÓN </h6>
         <p><small>INGENIERO DE SISTEMAS</small></p>
       </div>
-      
+
     </div><br><br><br>
 
     <div class="col-12 col-sm-5 col-md-5 col-lg-2 mb-2">
@@ -189,7 +218,7 @@ $perfiles = $obj->selectBanner();
         <h6 style="text-transform: uppercase;">Maria Isabel<br> Haro Valverde</h6>
         <p><small>ABOGADA</small></p>
       </div>
-      
+
     </div>
 
     <!-- <div class="col-12 col-sm-5 col-md-5 col-lg-2 mb-2">
