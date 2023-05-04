@@ -5,7 +5,7 @@ class manualesyguias extends Controllers
 	public function __construct()
 	{
 		session_start();
-		session_regenerate_id(true);
+		//session_regenerate_id(true);
 		parent::__construct();
 		if (empty($_SESSION['login'])) {
 			header('Location: ' . base_url() . '/login');
@@ -78,7 +78,7 @@ class manualesyguias extends Controllers
 
 					$tipo = $_FILES['archivoSubido']['type'];
 
-					if ($tipo == "image/png" || $tipo == 'image/jpeg') {
+					if ($tipo == "application/pdf") {
 
 						$option = 1;
 
