@@ -1,5 +1,8 @@
 <?php
-header( "Access-Control-Allow-Origin: *" );
+
+// header('Access-Control-Allow-Origin: '.base_url() );
+// header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+// header('Access-Control-Allow-Methods: GET, POST');
 
 class manualesyguias extends Controllers
 {
@@ -76,12 +79,13 @@ class manualesyguias extends Controllers
 
 				if ($idUsuario == 0) {
 
+				
 
 					$tipo = $_FILES['archivoSubido']['type'];
 
 					if ($tipo == "application/pdf") {
 
-						$option = 1;
+								$option = 1;
 
 						$cantidadmanualesyguias = "";
 						$cantidadmanualesyguias = $this->model->cantidadmanualesyguias();
