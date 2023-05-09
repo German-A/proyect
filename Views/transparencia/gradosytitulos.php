@@ -26,7 +26,7 @@ $idmaestria = $año->listaFacultadpostgrado();
 
     <div class="row d-flex justify-content-around ">
 
-        <a class="col-8 col-md-4 col-lg-3 fondo m-2" target="_blank" href="<?= media(); ?>/documentos/FACULTADES.pdf">
+        <a class="col-8 col-md-4 col-lg-3 fondo m-2" target="_blank" href="<?= media(); ?>/documentos/Facultades.pdf">
             <div class="col-12 text-right col-md-12">
                 <h1 class="mostaza"><i class="fas fa-university"></i></h1>
                 <br><br> <br>

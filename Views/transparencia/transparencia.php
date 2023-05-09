@@ -21,10 +21,10 @@ $idmaestria = $año->listaFacultadpostgrado();
 
 
 
-<br>
+<br><br>
 
 <h2>EGRESADOS POR PERIODO LECTIVO</h2>
-
+<br><br>
 
 <div class="pt-1">
     <div class="row d-flex justify-content-around ">
@@ -98,7 +98,7 @@ $idmaestria = $año->listaFacultadpostgrado();
         </div>
     </div>
 </div>
-
+<br><br>
 
 <div class="pt-1">
     <div class="row d-flex justify-content-around ">
@@ -174,7 +174,7 @@ $idmaestria = $año->listaFacultadpostgrado();
 </div>
 
 
-
+<br><br>
 
 <br>
 

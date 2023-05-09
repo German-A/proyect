@@ -1,9 +1,9 @@
 <br>
 
 <div class="col-12">
-<footer class="row p-2" style="background-color: var(--azul-medio);">
-    <div class="col-6 col-md-6 col-lg-6 col-xl-3 text-light text-center" style="margin: auto;" data-aos="fade-down-left">
-        <img src="<?= media(); ?>/archivos/logos/logoUseBlanco.png" style="width: 80%; ">
+<footer class="row p-2" style="background-color: var(--azul-medio);" >
+    <div class="col-6 col-md-6 col-lg-6 col-xl-3 text-light text-center" style="margin: auto;" >
+        <img src="<?= media(); ?>/archivos/logos/logoUseBlanco.png" style="width: 80%; " >
     </div>
     <div class="col-6 col-md-6 col-lg-6 col-xl-3 text-light " style="margin: auto auto;" data-aos="fade-down">
         <h5>Unidad de Seguimiento del Egresado</h5>
@@ -180,5 +180,5 @@
 <script src="<?= media(); ?>/js/popper.min.js"></script>
 <script src="<?= media(); ?>/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
-<script src="<?= media(); ?>/js/<?= $data['page_functions_js']; ?>"></script>
+
 <script type="text/javascript" src="<?= media(); ?>/js/plugins/select2.min.js"></script>
