@@ -1,6 +1,9 @@
 <?php head($data); ?>
 
+
+
 <?php obj($data); ?>
+
 <?php
 
 //require_once  "../Models/HomeModel.php";

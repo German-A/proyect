@@ -221,14 +221,7 @@ $n = 1;
                         </a>
                     </div>
                 </li>
-                <li>
-                    <div class="itemY">
-                        <h2 data-id=""></h2>
-                        <a href="<?= base_url(); ?>/expoferialaboralxvl" target="_blank">
-                            <h5>Ciencias de la Persona | Ciencia Económicas (10 y 11 de enero)</h5>
-                        </a>
-                    </div>
-                </li>
+             
             </ul>
         </div>
     </aside>
