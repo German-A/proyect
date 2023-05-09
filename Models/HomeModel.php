@@ -365,7 +365,7 @@ class HomeModel extends Mysql
 	public function listaPreguntasObjetivosEducacionales()
 	{
 		$sql = "SELECT f.idFacultad,f.nombreFacultad,fi.descripcion
-		from preguntasObjetivoseducacionales pa
+		from preguntasobjetivoseducacionales pa
 		inner join escuela e on pa.escuelaid=e.idEscuela
 		inner join facultad f on f.idFacultad=e.idFacultad
 		inner join facultadiconos fi on fi.Facultadid=f.idFacultad
