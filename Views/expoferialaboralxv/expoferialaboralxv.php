@@ -122,7 +122,7 @@ $perfiles = $obj->listaExpoferiaxv();
             <div class="swiper-slide">
                 <div class="divexpoxv">
 
-                    <img src="<?= media(); ?>/archivos/exporiaxv/<?php echo $fila['archivo'] ?>">
+                    <img src="<?= media(); ?>/upload/exporiaxv/<?php echo $fila['archivo'] ?>">
                 </div>
             </div>
         <?php } ?>

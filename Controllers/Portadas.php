@@ -38,18 +38,14 @@ class portadas extends Controllers
 					$btnView = '<button class="btn btn-info btn-sm fntView" onClick="fntView(' . $arrData[$i]['IdBaner'] . ')" title="Ver Banner"><i class="far fa-eye"></i></button>';
 				}
 				if ($_SESSION['permisosMod']['u']) {
-					if (($_SESSION['userData']['idrol'] == 1) || ($_SESSION['userData']['idrol'] == 2)) {
+
 						$btnEdit = '<button class="btn btn-primary  btn-sm " onClick="fntEdit(' . $arrData[$i]['IdBaner'] . ')" title="Editar Banner"><i class="fas fa-pencil-alt"></i></button>';
-					} else {
-						$btnEdit = '<button class="btn btn-secondary btn-sm" disabled ><i class="fas fa-pencil-alt"></i></button>';
-					}
+					
 				}
 				if ($_SESSION['permisosMod']['d']) {
-					if (($_SESSION['userData']['idrol'] == 1) || ($_SESSION['userData']['idrol'] == 2)) {
+		
 						$btnDelete = '<button class="btn btn-danger btn-sm " onClick="fntDelete(' . $arrData[$i]['IdBaner'] . ')" title="Eliminar Banner"><i class="far fa-trash-alt"></i></button>';
-					} else {
-						$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
-					}
+					
 				}
 				$arrData[$i]['NombreArchivo'] = '<a target="_blank" href="' . media() . '/upload/portadas/' . $arrData[$i]['NombreArchivo'] . '"><span class="badge badge-primary"  > Ver Imagen <i class="fas fa-image"></i></span></a> ';
 

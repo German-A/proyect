@@ -15,9 +15,7 @@ $idmaestria = $año->listaFacultadpostgrado();
 
 ?>
 
-<div class="card-header">
-    <h4 class="text-center">Transparencia - Unidad de Seguimiento del Egresado</h4>
-</div>
+
 <br>
 <style>
     .encuesta {
@@ -81,19 +79,19 @@ $idmaestria = $año->listaFacultadpostgrado();
                     <div class="col-12 col-md-12">
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p1" type="radio" value="1">
-                            <label class="form-check-label" for="p1">primera vez</label>
+                            <label class="form-check-label" for="p1"><h5>primera vez</h5></label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p1" type="radio" value="2">
-                            <label class="form-check-label" for="p1">menos de 1 año</label>
+                            <label class="form-check-label" for="p1"><h5>menos de 1 año</h5></label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p1" type="radio" value="3">
-                            <label class="form-check-label" for="p1">1 a 2 años</label>
+                            <label class="form-check-label" for="p1"><h5>1 a 2 años</h5></label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p1" type="radio" value="4">
-                            <label class="form-check-label" for="p1">3 años a más</label>
+                            <label class="form-check-label" for="p1"><h5>3 años a más</h5></label>
                         </div>
                     </div>
                 </div>
@@ -105,23 +103,23 @@ $idmaestria = $año->listaFacultadpostgrado();
                     <div class="col-12 col-md-12">
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p2" type="radio" value="1">
-                            <label class="form-check-label" for="p2">Técnico</label>
+                            <label class="form-check-label" for="p2"><h5>Técnico</h5></label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p2" type="radio" value="2">
-                            <label class="form-check-label" for="p2">Bachiller</label>
+                            <label class="form-check-label" for="p2"><h5>Bachiller</h5></label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p2" type="radio" value="3">
-                            <label class="form-check-label" for="p2">Titulado</label>
+                            <label class="form-check-label" for="p2"><h5>Titulado</h5></label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p2" type="radio" value="4">
-                            <label class="form-check-label" for="p2">Maestría</label>
+                            <label class="form-check-label" for="p2"><h5>Maestría</h5></label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p2" type="radio" value="5">
-                            <label class="form-check-label" for="p2">Doctorado</label>
+                            <label class="form-check-label" for="p2"><h5>Doctorado</h5></label>
                         </div>
                     </div>
                 </div>
@@ -133,19 +131,19 @@ $idmaestria = $año->listaFacultadpostgrado();
                     <div class="col-12 col-md-12">
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p3" type="radio" value="1">
-                            <label class="form-check-label" for="p3">Practicante profesional</label>
+                            <label class="form-check-label" for="p3"><h5>Practicante profesional</h5></label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p3" type="radio" value="2">
-                            <label class="form-check-label" for="p3">Auxiliar</label>
+                            <label class="form-check-label" for="p3"><h5>Auxiliar</h5></label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p3" type="radio" value="3">
-                            <label class="form-check-label" for="p3">Asistente</label>
+                            <label class="form-check-label" for="p3"><h5>Asistente</h5></label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p3" type="radio" value="4">
-                            <label class="form-check-label" for="p3">Directivo</label>
+                            <label class="form-check-label" for="p3"><h5>Directivo</h5></label>
                         </div>
                     </div>
                 </div>
@@ -157,23 +155,23 @@ $idmaestria = $año->listaFacultadpostgrado();
                     <div class="col-12 col-md-12">
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p4" type="radio" value="1">
-                            <label class="form-check-label" for="p4">Prueba: Conocimientos.</label>
+                            <label class="form-check-label" for="p4"><h5>Prueba: Conocimientos.</h5></label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p4" type="radio" value="2">
-                            <label class="form-check-label" for="p4">Entrevista: Selección individual.</label>
+                            <label class="form-check-label" for="p4"><h5>Entrevista: Selección individual.</h5></label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p4" type="radio" value="3">
-                            <label class="form-check-label" for="p4">Entrevista: Selección grupal.</label>
+                            <label class="form-check-label" for="p4"><h5>Entrevista: Selección grupal.</h5></label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p4" type="radio" value="4">
-                            <label class="form-check-label" for="p4">Test: Aptitudes intelectuales.</label>
+                            <label class="form-check-label" for="p4"><h5>Test: Aptitudes intelectuales.</h5></label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p4" type="radio" value="5">
-                            <label class="form-check-label" for="p4">Test: Personalidad.</label>
+                            <label class="form-check-label" for="p4"><h5>Test: Personalidad.</h5></label>
                         </div>
                     </div>
                 </div>
@@ -185,27 +183,27 @@ $idmaestria = $año->listaFacultadpostgrado();
                     <div class="col-12 col-md-12">
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p5" type="radio" value="1">
-                            <label class="form-check-label" for="p5">Artículos en revistas indexadas.</label>
+                            <label class="form-check-label" for="p5"><h5>Artículos en revistas indexadas.</h5></label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p5" type="radio" value="2">
-                            <label class="form-check-label" for="p5">Artículos de opinión.</label>
+                            <label class="form-check-label" for="p5"><h5>Artículos de opinión.</h5></label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p5" type="radio" value="3">
-                            <label class="form-check-label" for="p5">Separatas.</label>
+                            <label class="form-check-label" for="p5"><h5>Separatas.</h5></label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p5" type="radio" value="4">
-                            <label class="form-check-label" for="p5">Libros.</label>
+                            <label class="form-check-label" for="p5"><h5>Libros.</h5></label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p5" type="radio" value="5">
-                            <label class="form-check-label" for="p5">Blog.</label>
+                            <label class="form-check-label" for="p5"><h5>Blog.</h5></label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p5" type="radio" value="6">
-                            <label class="form-check-label" for="p5">Página web.</label>
+                            <label class="form-check-label" for="p5"><h5>Página web.</h5></label>
                         </div>
                     </div>
                 </div>
@@ -217,19 +215,19 @@ $idmaestria = $año->listaFacultadpostgrado();
                     <div class="col-12 col-md-12">
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p6" type="radio" value="1">
-                            <label class="form-check-label" for="p6">Maestría.</label>
+                            <label class="form-check-label" for="p6"><h5>Maestría.</h5></label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p6" type="radio" value="2">
-                            <label class="form-check-label" for="p6">Doctorado.</label>
+                            <label class="form-check-label" for="p6"><h5>Doctorado.</h5></label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p6" type="radio" value="3">
-                            <label class="form-check-label" for="p6">Segunda especialidad.</label>
+                            <label class="form-check-label" for="p6"><h5>Segunda especialidad.</h5></label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p6" type="radio" value="4">
-                            <label class="form-check-label" for="p6">Segunda profesión.</label>
+                            <label class="form-check-label" for="p6"><h5>Segunda profesión.</h5></label>
                         </div>
                     </div>
                 </div>
@@ -242,19 +240,19 @@ $idmaestria = $año->listaFacultadpostgrado();
                     <div class="col-12 col-md-12">
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p7" type="radio" value="1">
-                            <label class="form-check-label" for="p7">De 1 a 2.</label>
+                            <label class="form-check-label" for="p7"><h5>De 1 a 2.</h5></label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p7" type="radio" value="2">
-                            <label class="form-check-label" for="p7">De 3 a 5.</label>
+                            <label class="form-check-label" for="p7"><h5>De 3 a 5.</h5></label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p7" type="radio" value="3">
-                            <label class="form-check-label" for="p7">De 6 a 8.</label>
+                            <label class="form-check-label" for="p7"><h5>De 6 a 8.</h5></label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p7" type="radio" value="4">
-                            <label class="form-check-label" for="p7">Más de 8.</label>
+                            <label class="form-check-label" for="p7"><h5>Más de 8.</h5></label>
                         </div>
                     </div>
                 </div>
@@ -267,11 +265,11 @@ $idmaestria = $año->listaFacultadpostgrado();
                     <div class="col-12 col-md-12">
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" onchange="p51();" name="p8" type="radio" value="1">
-                            <label class="form-check-label" for="p8">si</label>
+                            <label class="form-check-label" for="p8"><h5>si</h5></label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" onchange="p52();" name="p8" type="radio" value="2">
-                            <label class="form-check-label" for="p8">no</label>
+                            <label class="form-check-label" for="p8"><h5>no</h5></label>
                         </div>
                         <div class="col-12" id="oficiomarsa" hidden>
                             <input class="col-12" type="text" id="textp8">
@@ -286,23 +284,23 @@ $idmaestria = $año->listaFacultadpostgrado();
                     <div class="col-12 col-md-12">
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p9" type="radio" value="1">
-                            <label class="form-check-label" for="p9">Muy satisfecha</label>
+                            <label class="form-check-label" for="p9"><h5>Muy satisfecha</h5></label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p9" type="radio" value="2">
-                            <label class="form-check-label" for="p9">Satisfecha</label>
+                            <label class="form-check-label" for="p9"><h5>Satisfecha</h5></label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p9" type="radio" value="3">
-                            <label class="form-check-label" for="p9">Medianamente satisfecha</label>
+                            <label class="form-check-label" for="p9"><h5>Medianamente satisfecha</h5></label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p9" type="radio" value="4">
-                            <label class="form-check-label" for="p9">Medianamente insatisfecha</label>
+                            <label class="form-check-label" for="p9"><h5>Medianamente insatisfecha</h5></label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p9" type="radio" value="5">
-                            <label class="form-check-label" for="p9">Insatisfecha</label>
+                            <label class="form-check-label" for="p9"><h5>Insatisfecha</h5></label>
                         </div>
                     </div>
                 </div>
@@ -314,19 +312,19 @@ $idmaestria = $año->listaFacultadpostgrado();
                     <div class="col-12 col-md-12">
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p10" type="radio" value="1">
-                            <label class="form-check-label" for="p10">Muy malo</label>
+                            <label class="form-check-label" for="p10"><h5>Muy malo</h5></label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p10" type="radio" value="2">
-                            <label class="form-check-label" for="p10">Malo</label>
+                            <label class="form-check-label" for="p10"><h5>Malo</h5></label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p10" type="radio" value="3">
-                            <label class="form-check-label" for="p10">Bueno</label>
+                            <label class="form-check-label" for="p10"><h5>Bueno</h5></label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="p10" type="radio" value="4">
-                            <label class="form-check-label" for="p10">Muy bueno</label>
+                            <label class="form-check-label" for="p10"><h5>Muy bueno</h5></label>
                         </div>
                     </div>
                 </div>

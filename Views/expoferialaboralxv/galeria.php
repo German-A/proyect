@@ -68,8 +68,8 @@ $perfiles = $obj->listaExpoferiaxvGaleria();
             <?php foreach ($perfiles as $key => $fila) { ?>
                 <div class="col-lg-4 col-md-6">
                     <div class="gallery-item">
-                        <a href="<?= media(); ?>/archivos/exporiaxv/<?php echo $fila['archivo'] ?>" data-gall="portfolioGallery" class="gallery-lightbox">
-                            <img src="<?= media(); ?>/archivos/exporiaxv/<?php echo $fila['archivo'] ?>">
+                        <a href="<?= media(); ?>/upload/exporiaxv/<?php echo $fila['archivo'] ?>" data-gall="portfolioGallery" class="gallery-lightbox">
+                            <img src="<?= media(); ?>/upload/exporiaxv/<?php echo $fila['archivo'] ?>">
                         </a>
                     </div>
                 </div>
