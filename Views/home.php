@@ -30,7 +30,7 @@ $perfiles = $obj->selectBanner();
 
 
   <br><br><br><br>
-
+<!-- 
   <div class="col-12 text-center ml-4 mr-4">
 
 
@@ -57,7 +57,7 @@ $perfiles = $obj->selectBanner();
       </div>
 
     </div>
-  </div>
+  </div> -->
 
   <div class="col-12 d-flex justify-content-center">
     <div class="col-10 col-md-6 col-xl-5 col-xg-6 p-1  text-center" style="border-radius:20px; background-color: var(--amarillo-mostaza);">

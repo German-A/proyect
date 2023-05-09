@@ -5,7 +5,7 @@ class portadas extends Controllers
 	public function __construct()
 	{
 		session_start();
-		session_regenerate_id(true);
+		//session_regenerate_id(true);
 		parent::__construct();
 		if (empty($_SESSION['login'])) {
 			header('Location: ' . base_url() . '/login');

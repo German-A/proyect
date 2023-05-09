@@ -52,6 +52,8 @@ class legalinstitucional extends Controllers
 						$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
 					}
 				}
+				$arrData[$i]['NombreArchivo'] = '<a href="' . base_url() . '/Assets/archivos/documentoslegalinstitcuinal/' . $arrData[$i]['NombreArchivo'] . '"target="_blank"><span class="badge badge-primary"  >' . $arrData[$i]['NombreArchivo'] . '</span></a> ';
+
 				$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
 			}
 			echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
@@ -63,12 +65,12 @@ class legalinstitucional extends Controllers
 	public function set()
 	{
 		if ($_POST) {
-			if (empty($_POST['txtNombre'])) {
-				$arrResponse = array("status" => false, "msg" => 'Datos incorrectos en el Banner.');
+			if (empty($_POST['nombreArchivo'])) {
+				$arrResponse = array("status" => false, "msg" => 'Datos incorrectos en el manualesyguias.');
 			} else {
 				$idUsuario = intval($_POST['id']);
 				$posicion = $_POST['posicion'];
-				$nombreArchivo = trim($_POST['txtNombre']);
+				$nombreArchivo = trim($_POST['nombreArchivo']);
 
 				$request_user = "";
 				if ($idUsuario == 0) {
@@ -89,17 +91,17 @@ class legalinstitucional extends Controllers
 						$cantidad++;
 					}
 
-					if (!file_exists('Assets/archivos/documentoslegales/')) {
-						mkdir('Assets/archivos/documentoslegales/', 0777, true);
-						if (file_exists('Assets/archivos/documentoslegales/')) {
-							if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/documentoslegales/' . $nuevonombre)) {
+					if (!file_exists('Assets/archivos/documentoslegalinstitcuinal/')) {
+						mkdir('Assets/archivos/documentoslegalinstitcuinal/', 0777, true);
+						if (file_exists('Assets/archivos/documentoslegalinstitcuinal/')) {
+							if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/documentoslegalinstitcuinal/' . $nuevonombre)) {
 								$insert = $this->model->register($nombreArchivo, $nuevonombre, $cantidad, $posicion);
 							} else {
 								echo "no se pudo guardar ";
 							}
 						}
 					} else {
-						if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/documentoslegales/' . $nuevonombre)) {
+						if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/documentoslegalinstitcuinal/' . $nuevonombre)) {
 							$insert = $this->model->register($nombreArchivo, $nuevonombre, $cantidad, $posicion);
 						} else {
 							echo "no se pudo guardar";
@@ -128,17 +130,17 @@ class legalinstitucional extends Controllers
 							$cantidad++;
 						}
 
-						if (!file_exists('Assets/archivos/documentoslegales/')) {
-							mkdir('Assets/archivos/documentoslegales/', 0777, true);
-							if (file_exists('Assets/archivos/documentoslegales/')) {
-								if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/documentoslegales/' . $nuevonombre)) {
+						if (!file_exists('Assets/archivos/documentoslegalinstitcuinal/')) {
+							mkdir('Assets/archivos/documentoslegalinstitcuinal/', 0777, true);
+							if (file_exists('Assets/archivos/documentoslegalinstitcuinal/')) {
+								if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/documentoslegalinstitcuinal/' . $nuevonombre)) {
 									$insert = $this->model->toupdate($nombreArchivo, $nuevonombre, $cantidad, $idUsuario, $posicion);
 								} else {
 									echo "no se pudo guardar ";
 								}
 							}
 						} else {
-							if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/documentoslegales/' . $nuevonombre)) {
+							if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/documentoslegalinstitcuinal/' . $nuevonombre)) {
 								$insert = $this->model->toupdate($nombreArchivo, $nuevonombre, $cantidad, $idUsuario, $posicion);
 							} else {
 								echo "no se pudo guardar";
@@ -189,7 +191,7 @@ class legalinstitucional extends Controllers
 				$NombreArchivo= $this->model->getOne($IdBaner);
 				//borrar documentos
 				$requestDelete = $this->model->remove($IdBaner);
-				@unlink('Assets/archivos/documentoslegales/'.$NombreArchivo['NombreArchivo']);
+				@unlink('Assets/archivos/documentoslegalinstitcuinal/'.$NombreArchivo['NombreArchivo']);
 				if ($requestDelete) {
 					$arrResponse = array('status' => true, 'msg' => 'Se ha eliminado el Documento Institucional');
 				} else {

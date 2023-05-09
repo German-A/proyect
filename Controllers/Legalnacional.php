@@ -52,6 +52,8 @@ class legalnacional extends Controllers
 						$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
 					}
 				}
+				$arrData[$i]['NombreArchivo'] = '<a href="' . base_url() . '/Assets/archivos/documentoslegales/' . $arrData[$i]['NombreArchivo'] . '"target="_blank"><span class="badge badge-primary"  >' . $arrData[$i]['NombreArchivo'] . '</span></a> ';
+
 				$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
 			}
 			echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
@@ -63,12 +65,12 @@ class legalnacional extends Controllers
 	public function set()
 	{
 		if ($_POST) {
-			if (empty($_POST['txtNombre'])) {
-				$arrResponse = array("status" => false, "msg" => 'Datos incorrectos en el Banner.');
+			if (empty($_POST['nombreArchivo'])) {
+				$arrResponse = array("status" => false, "msg" => 'Datos incorrectos en el manualesyguias.');
 			} else {
 				$idUsuario = intval($_POST['id']);
 				$posicion = $_POST['posicion'];
-				$nombreArchivo = trim($_POST['txtNombre']);
+				$nombreArchivo = trim($_POST['nombreArchivo']);
 
 				$request_user = "";
 				if ($idUsuario == 0) {

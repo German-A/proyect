@@ -1,5 +1,9 @@
 <?php
 
+// header('Access-Control-Allow-Origin: '.base_url() );
+// header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+// header('Access-Control-Allow-Methods: GET, POST');
+
 class manualesyguias extends Controllers
 {
 	public function __construct()
@@ -63,24 +67,25 @@ class manualesyguias extends Controllers
 	public function set()
 	{
 		if ($_POST) {
-			if (empty($_POST['txtNombre'])) {
+			if (empty($_POST['nombreArchivo'])) {
 				$arrResponse = array("status" => false, "msg" => 'Datos incorrectos en el manualesyguias.');
 			} else {
 				$idUsuario = intval($_POST['id']);
 				$posicion = $_POST['posicion'];
-				$nombreArchivo = trim($_POST['txtNombre']);
+				$nombreArchivo = trim($_POST['nombreArchivo']);
 
 				$request_user = "";
 				$insert = null;
 
 				if ($idUsuario == 0) {
 
+				
 
 					$tipo = $_FILES['archivoSubido']['type'];
 
 					if ($tipo == "application/pdf") {
 
-						$option = 1;
+								$option = 1;
 
 						$cantidadmanualesyguias = "";
 						$cantidadmanualesyguias = $this->model->cantidadmanualesyguias();
