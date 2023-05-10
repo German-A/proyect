@@ -113,8 +113,8 @@ $galeria = $obj->selectGaleriavidaysaluda2022();
                 <?php foreach ($galeria as $key => $fila) { ?>
                     <div class="col-lg-4 col-md-6">
                         <div class="gallery-item">
-                            <a href="<?= media(); ?>/archivos/galeriavidaysalud/<?php echo $fila['NombreArchivo'] ?>" data-gall="portfolioGallery" class="gallery-lightbox">                   
-                                <img src="<?= media(); ?>/archivos/galeriavidaysalud/<?php echo $fila['NombreArchivo'] ?>">
+                            <a href="<?= media(); ?>/upload/galeriavidaysalud/<?php echo $fila['NombreArchivo'] ?>" data-gall="portfolioGallery" class="gallery-lightbox">                   
+                                <img src="<?= media(); ?>/upload/galeriavidaysalud/<?php echo $fila['NombreArchivo'] ?>">
                             </a>    
                         </div>
                     </div>                    

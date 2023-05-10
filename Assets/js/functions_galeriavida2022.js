@@ -50,62 +50,64 @@ document.addEventListener('DOMContentLoaded', function() {
             [0, "desc"]
         ]
     });
-    //insertar y actualizar
-    if (document.querySelector("#formmodal")) {
-        let formmodal = document.querySelector("#formmodal");
-        formmodal.onsubmit = function(e) {
-            e.preventDefault();
-            let strNombre = document.querySelector('#nombreArchivo').value;
-            let posicion = document.querySelector('#posicion').value;
-            const input = document.getElementById('archivoSubido');
-            let id = document.querySelector('#id').value;
 
-            if (id != 0) {
-
-            } else {
-                if (strNombre == '' || posicion == '' || input.files['length'] == 0) {
-                    swal("Atención", "Todos los campos son obligatorios.", "error");
-                    return false;
-                }
-            }
-
-            //|| input.files['length']==0
-            if (strNombre == '' || posicion == '') {
-                swal("Atención", "Todos los campos son obligatorios.", "error");
-                return false;
-            }
-            let elementsValid = document.getElementsByClassName("valid");
-            for (let i = 0; i < elementsValid.length; i++) {
-                if (elementsValid[i].classList.contains('is-invalid')) {
-                    swal("Atención", "Por favor verifique los campos en rojo.", "error");
-                    return false;
-                }
-            }
-            divLoading.style.display = "flex";
-            let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-            let ajaxUrl = base_url + '/galeriavida2022/set';
-            let formData = new FormData(formmodal);
-            request.open("POST", ajaxUrl, true);
-            request.send(formData);
-            request.onreadystatechange = function() {
-                if (request.readyState == 4 && request.status == 200) {
-                    let objData = JSON.parse(request.responseText);
-                    if (objData.status) {
-                        datatable.api().ajax.reload();
-                        $('#modalRegistro').modal("hide");
-                        formmodal.reset();
-                        swal("Galería vida y salud", objData.msg, "success");
-                    } else {
-                        swal("Error", objData.msg, "error");
-                    }
-                }
-                divLoading.style.display = "none";
-                return false;
-            }
-        }
-    }
 
 }, false);
+
+function Agregar() {
+    var id = $("#id").val();
+    var nombreArchivo = $("#nombreArchivo").val();
+    var posicion = $("#posicion").val();
+    var inputElement = document.getElementById("archivoSubido");
+    var archivoSubido = inputElement.files[0];
+  
+    if (nombreArchivo == "") {
+      swal("Atención!", "Ingresar el Nombre", "warning");
+      return;
+    }
+  
+    if (posicion == "") {
+      swal("Atención!", "Ingresar la Posición", "warning");
+      return;
+    }
+  
+    if (id != 0) {
+    } else {
+      if (inputElement.files["length"] == 0) {
+        swal("Atención", "Ingresar la Imagen.", "warning");
+        return false;
+      }
+    }
+  
+    var fd = new FormData();
+    fd.append("id", id);
+    fd.append("nombreArchivo", nombreArchivo);
+    fd.append("posicion", posicion);
+    fd.append("archivoSubido", archivoSubido);
+    divLoading.style.display = "flex";
+    $.ajax({
+      method: "POST",
+      url: "" + base_url + "/galeriavida2022/set",
+      data: fd,
+      crossDomain: true,
+  
+      processData: false, // tell jQuery not to process the data
+      contentType: false, // tell jQuery not to set contentType
+    }).done(function (response) {
+      var info = JSON.parse(response);
+      if (info.status == true) {
+        swal("Manuales", info.msg, "success");
+        datatable.api().ajax.reload();
+        $("#modalRegistro").modal("hide");
+      }
+      if (info.status == false) {
+        swal("Error!", info.msg, "error");
+      }
+      divLoading.style.display = "none";
+      return;
+    });
+  }
+  
 
 window.addEventListener('load', function() {
     //fntRolesUsuario();
@@ -203,7 +205,7 @@ function fntDelete(IdBaner) {
 function openModal() {
     document.querySelector('#id').value = "";
     document.querySelector('.modal-header').classList.replace("headerUpdate", "headerRegister");
-    document.querySelector('#btnActionForm').classList.replace("btn-info", "btn-primary");
+    document.querySelector('#btnText').classList.replace("btn-info", "btn-primary");
     document.querySelector('#btnText').innerHTML = "Publicar Imagen";
     document.querySelector('#titleModal').innerHTML = "Publicar Imagen en el galeriavida2022";
     document.querySelector("#formmodal").reset();

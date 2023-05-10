@@ -97,7 +97,7 @@ $n = 1;
     <div class="col-8 libro" id="elid">
         <br>
         <?php foreach ($primerabase as $key => $fila) { ?>
-            <object class="pdfview" type="application/pdf" id="video_id" data="<?= media(); ?>/archivos/documentoslegales/<?php echo $fila['NombreArchivo'] ?>"></object>
+            <object class="pdfview" type="application/pdf" id="video_id" data="<?= media(); ?>/archivos/documentoslegalinstitcuinal/<?php echo $fila['NombreArchivo'] ?>"></object>
         <?php } ?>
     </div>
 
@@ -115,7 +115,7 @@ $n = 1;
 
     function verArchivo(a) {
         var b = a;
-        let newUrl = `<?= media(); ?>/archivos/documentoslegales/${b}`;
+        let newUrl = `<?= media(); ?>/archivos/documentoslegalinstitcuinal/${b}`;
         let newUrl2 = `https://docs.google.com/viewer?url=https://use-dpa.unitru.edu.pe/INTRANET/archivos/base/${b}`;
         $("#video_id").attr("data", newUrl);
     }

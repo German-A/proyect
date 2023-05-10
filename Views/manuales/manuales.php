@@ -85,13 +85,13 @@ $n = 1;
         </div>
 
         <br><br><br>
-
+  <!-- 
         <div class="col-md-10 r m-auto">
             <h3 class="blueoscuro">Video Tutoriales</h3>
         </div>
         <br>
 
-        <div class="row">
+      <div class="row">
             <div class="col-md-10  m-auto">
                 <?php foreach ($tutoriales as $key => $fila) { ?>
                     <a class="col-md-12 ml-2 btn btn-outline-warning p-2 m-2  d-flex justify-content-center" href="<?php echo $fila['UrlVideo'] ?>" target="_blank">
@@ -108,7 +108,7 @@ $n = 1;
 
         <div class="col-md-10 r m-auto">
             <h3 class="blueoscuro">Video Conferencias</h3>
-        </div>
+        </div> -->
 
         <br>
 

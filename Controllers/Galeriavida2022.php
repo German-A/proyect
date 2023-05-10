@@ -66,12 +66,12 @@ class galeriavida2022 extends Controllers
 	public function set()
 	{
 		if ($_POST) {
-			if (empty($_POST['txtNombre'])) {
+			if (empty($_POST['nombreArchivo'])) {
 				$arrResponse = array("status" => false, "msg" => 'Datos incorrectos en el galeriavidaysalud.');
 			} else {
 				$idUsuario = intval($_POST['id']);
 				$posicion = $_POST['posicion'];
-				$nombreArchivo = trim($_POST['txtNombre']);
+				$nombreArchivo = trim($_POST['nombreArchivo']);
 
 				$request_user = "";
 				$insert = null;

@@ -63,34 +63,31 @@ $n = 1;
 
 <div class="row text-center" style="max-width: 1600px; margin:auto">
 
+ 
     <div class="col-12  col-lg-4">
-        <div class="col-md-10 m-auto">
+        <br>
+        <div class="col-md-10  m-auto">
             <h3 class="blueoscuro">Repositorio</h3>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10  m-auto itemY">
+                <?php foreach ($perfiles as $key => $fila) { ?>
+                    <a class="col-md-12 ml-2  mb-1 btn btn-outline-warning p-2 m-2  d-flex justify-content-center" onclick="verArchivo('<?php echo $fila['filename'] ?>');">
+                        <div class="col-11 col-md-9">
+                            <h5 class=""><?php echo $fila['nombre'] ?></h5>                      
+                        </div>                 
+                    </a>
+                <?php } ?>
+                
+            </div>
         </div>
 
         <br>
 
-        <div class="row">
-            <div class="col-md-10  m-auto">
-                <?php foreach ($perfiles as $key => $fila) { ?>
-                    <div class="col-md-12 ml-2 btn btn-outline-warning pl-3 pr-3 d-flex justify-content-center">
-                        <div class="col-11 col-md-9">
-                            <h5 class=""><?php echo $fila['nombre'] ?></h5>
-                        </div>
-
-                        <div class="col-1 col-md-5">
-                            <div class="row">
-                                <a href="#elid" class="btn btn-primary libro"  onclick="verArchivo('<?php echo $fila['filename'] ?>');"><i class="fas fa-book-open"></i></a>
-                                &nbsp
-                                <a href="<?= media(); ?>/upload/repositorio/<?php echo $fila['filename']?>" class="btn btn-primary" download><i class="fas fa-download"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                <?php } ?>
-            </div>
-        </div>
 
     </div>
+
     <div class="col-8 libro" id="elid">
         <br>
         <?php foreach ($primero as $key => $fila) { ?>
