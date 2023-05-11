@@ -8,8 +8,6 @@ $obj = new HomeModel();
 $obj2 = new HomeModel();
 $perfiles = $obj->selectLegal();
 $primerabase = $obj->selectprimeraBase();
-$perfiless = $obj2->selectinstitucional();
-$perfilesss = $obj2->selectprimerNacional();
 $n = 1;
 ?>
 

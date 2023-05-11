@@ -499,6 +499,7 @@ class HomeModel extends Mysql
 		$sql = "SELECT nombre, filename, posicion, status
 		from repositorio
 		where status>0
+		ORDER BY posicion ASC
 		";
 		$request = $this->select_all($sql);
 		return $request;
@@ -507,7 +508,7 @@ class HomeModel extends Mysql
 	public function selectprimerRepositorio()
 	{
 
-		$sql = "SELECT filename FROM repositorio WHERE status > '0' ORDER BY idrepositorio ASC LIMIT 1";
+		$sql = "SELECT filename FROM repositorio WHERE status > '0' ORDER BY posicion ASC LIMIT 1";
 		$request = $this->select_all($sql);
 		return $request;
 	}

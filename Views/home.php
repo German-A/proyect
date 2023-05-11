@@ -73,11 +73,11 @@ $perfiles = $obj->selectBanner();
       <h5 class="blueoscuro">De nuestros egresados <big><strong>actualmente trabajan</strong></big></h5>
     </div>
     <div class="col-4 col-md-3" data-aos="fade-down">
-      <h2 class="mostaza" style="font-size: 35px;">3366</h2>
-      <h5 class="blueoscuro">Egresados en el año<big><strong> 2021</strong></big> </h5>
+      <h2 class="mostaza" style="font-size: 35px;">206</h2>
+      <h5 class="blueoscuro">Egresados en el año<big><strong> 2023</strong></big> </h5>
     </div>
     <div class="col-4 col-md-3" data-aos="fade-down-right">
-      <h2 class="mostaza" style="font-size: 35px;"><b>+2000</b> </h2>
+      <h2 class="mostaza" style="font-size: 35px;"><b>+3500</b> </h2>
       <h5 class="blueoscuro"> <big><strong>Ofertas laborales</strong></big> activas</h5>
     </div>
   </div>

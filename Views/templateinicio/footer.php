@@ -180,5 +180,6 @@
 <script src="<?= media(); ?>/js/popper.min.js"></script>
 <script src="<?= media(); ?>/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+<script src="<?= media(); ?>/js/<?= $data['page_functions_js']; ?>"></script>
 
 <script type="text/javascript" src="<?= media(); ?>/js/plugins/select2.min.js"></script>
