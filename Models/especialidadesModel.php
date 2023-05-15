@@ -281,7 +281,7 @@ class EspecialidadesModel extends Mysql
 	public function listapreguntasObjetivosEducacionales()
 	{
 		$sql = "SELECT pa.idpreguntasobjetivoseducacionales,pa.archivo,pa.año,pa.status,e.nombreEscuela,pa.cantidadPreguntas
-					from preguntasObjetivoseducacionales pa
+					from preguntasobjetivoseducacionales pa
 					inner join escuela e on pa.escuelaid=e.idEscuela
 					where pa.status!=0";
 		$request = $this->select_all($sql);

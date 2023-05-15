@@ -94,7 +94,7 @@ $idmaestria = $año->listaFacultadpostgrado();
                 <br><br> <br>
             </div>
             <div class="col-12 text-left col-md-12">
-                <h5 class="">Segundas Especialidades</h5>
+                <h5 class="">Segundas Especialidades Profesionales</h5>
             </div>
         </a>
         
