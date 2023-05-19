@@ -85,9 +85,9 @@ $n = 1;
         </div>
 
         <br><br><br>
-  <!-- 
+
         <div class="col-md-10 r m-auto">
-            <h3 class="blueoscuro">Video Tutoriales</h3>
+            <h3 class="blueoscuro">Videos de Capacitación</h3>
         </div>
         <br>
 
@@ -105,10 +105,10 @@ $n = 1;
         </div>
 
         <br><br><br>
-
+<!-- 
         <div class="col-md-10 r m-auto">
             <h3 class="blueoscuro">Video Conferencias</h3>
-        </div> -->
+        </div> 
 
         <br>
 
@@ -124,7 +124,7 @@ $n = 1;
                     </a>
                 <?php } ?>
             </div>
-        </div>
+        </div> -->
 
         <br>
         <br>
