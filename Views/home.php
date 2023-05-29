@@ -28,36 +28,84 @@ $perfiles = $obj->selectBanner();
     <div class="swiper-pagination"></div>
   </div>
 
+  <style>
+    .datosestad {
+      background-color: rgb(81, 161, 212);
+      padding: 40px;
+      border-radius: 10px;
+    }
 
+    .amarillotitulo {
+      color: rgb(255, 238, 10);
+    }
+  </style>
   <br><br><br><br>
-<!-- 
-  <div class="col-12 text-center ml-4 mr-4">
 
+  <div class="row  d-flex justify-content-center ml-4 mr-4">
+    <div class="col-12  ml-4 mr-4 datosestad " data-aos="fade-down" data-aos-duration="500">
 
-    <div class="row">
-      <h2>UNIDAD DE SEGUIMIENTO DEL EGRESADO UNT</h2>
+      <br>
+      <div class="row">
+        <b>
+          <h1 class="col-md-12 amarillotitulo">UNIDAD DE SEGUIMIENTO DEL EGRESADO UNT</h1>
+        </b>
+      </div>
+      <br><br>
+      <div class="row">
+        <div class="col-md-2">
+          <h1 class="amarillotitulo" style="font-size: 35px;"><b>98%</b></h1>
+          <h2 class="blanco">De nuestros egresados <strong>actualmente trabajan</strong></h2>
+        </div>
+        <div class="col-md-2">
+          <h1 class="amarillotitulo" style="font-size: 35px;">3366</h1>
+          <h2 class="blanco">Egresados en el año<strong> 2021</strong> </h2>
+        </div>
+        <div class="col-md-2">
+          <h1 class="amarillotitulo" style="font-size: 35px;"><b>+2000</b> </h1>
+          <h2 class="blanco"> <strong>Ofertas laborales</strong> activas</h2>
+        </div>
+        <div class="col-md-6">
+          <h2 class="blanco">APUNTAMOS A LOS MÁS ALTOS ESTANDRES DE </h2>
+          <h1 class="amarillotitulo"><b>CALIDAD</b></h1>
+
+        </div>
+
+      </div>
     </div>
-    <div class="row">
-      <div class="col-2">
-        <h2 class="mostaza" style="font-size: 35px;"><b>98%</b></h2>
-        <h5 class="blueoscuro">De nuestros egresados <strong>actualmente trabajan</strong></h5>
-      </div>
-      <div class="col-2">
-        <h2 class="mostaza" style="font-size: 35px;">3366</h2>
-        <h5 class="blueoscuro">Egresados en el año<strong> 2021</strong> </h5>
-      </div>
-      <div class="col-2">
-        <h2 class="mostaza" style="font-size: 35px;"><b>+2000</b> </h2>
-        <h5 class="blueoscuro"> <strong>Ofertas laborales</strong> activas</h5>
-      </div>
-      <div class="col-6">
-        <h3>APUNTAMOS A LOS MÁS ALTOS ESTANDRES DE </h3>
-        <h3><b>CALIDAD</b></h3>
+  </div>
 
+  <br><br><br>
+
+
+  
+  <div class="row  d-flex justify-content-center ml-4 mr-4">
+    <div class="col-12  ml-4 mr-4 datosestad " data-aos="fade-down" data-aos-duration="500">
+
+      <br>
+      <div class="row text-center">    
+          <h1 class="col-md-12 amarillotitulo">Bolsa de TRABAJO </h1>      
       </div>
 
+      <div class="row d-flex justify-content-center">    
+          <h3 class="col-md-8 blanco">Apartir de este año hemos fortalecido el portal de empleos de las USE para acompañarte y apoyarte en tu desarrollo profesional. Te invitamos a que tu tambien seas parte de la nueva plataforma, ingresa y revisa las ofertas laborales exclusivas que tenemos para ti. </h3>      
+      </div>
+
+      <br><br>
+      <div class="row d-flex justify-content-center">
+        <div class="col-3 text-center">imagen1</div>
+        <div class="col-3 text-center">imagen1</div>
+        <div class="col-3 text-center">imagen1</div>
+        <div class="col-3 text-center">imagen1</div>
+      </div>
     </div>
-  </div> -->
+  </div>
+<br><br>
+
+  <H1 class="text-center azul-oscuro">PLATAFORMAS</H1>
+  
+
+
+  <br><br><br>
 
   <div class="col-12 d-flex justify-content-center">
     <div class="col-10 col-md-6 col-xl-5 col-xg-6 p-1  text-center" style="border-radius:20px; background-color: var(--amarillo-mostaza);">
