@@ -140,6 +140,40 @@
             <?php } ?>
 
 
+            
+            <?php
+            if (
+
+                !empty($_SESSION['permisos'][29]['r']) ||
+                !empty($_SESSION['permisos'][30]['r']) ||
+                !empty($_SESSION['permisos'][31]['r'])
+
+            ) {
+            ?>
+                <li class="treeview">
+                    <a class="app-menu__item" href="#" data-toggle="treeview">
+                        <i class="app-menu__icon fas fa-upload" aria-hidden="true"></i>
+                        <span class="app-menu__label">XVll Expoferia</span>
+                        <i class="treeview-indicator fa fa-angle-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+
+                        <?php if (!empty($_SESSION['permisos'][29]['r'])) { ?>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/expoferialaboralxvlladmin/galeria"><i class="icon fa fa-circle-o"></i>Galería</a></li>
+                        <?php } ?>
+
+                        <?php if (!empty($_SESSION['permisos'][30]['r'])) { ?>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/expoferialaboralxvlladmin/ponencias"><i class="icon fa fa-circle-o"></i>Ponencias</a></li>
+                        <?php } ?>
+
+                        <?php if (!empty($_SESSION['permisos'][31]['r'])) { ?>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/expoferialaboralxvlladmin/empresas"><i class="icon fa fa-circle-o"></i>Empresas</a></li>
+                        <?php } ?>
+
+                    </ul>
+                </li>
+            <?php } ?>
+
 
 
 
