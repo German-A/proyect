@@ -379,7 +379,7 @@ class HomeModel extends Mysql
 	public function listaPreguntasEscuelasObjetivosEducacionales($id)
 	{
 		$sql = "SELECT e.idEscuela,e.nombreEscuela
-		from preguntasObjetivoseducacionales pa
+		from preguntasobjetivoseducacionales pa
 		inner join escuela e on pa.escuelaid=e.idEscuela
 		inner join facultad f on f.idFacultad=e.idFacultad
 		inner join facultadiconos fi on fi.Facultadid=f.idFacultad
@@ -393,7 +393,7 @@ class HomeModel extends Mysql
 	public function listaPreguntasEscuelasObjetivosEducacionalesAnios($id)
 	{
 		$sql = "SELECT e.idEscuela,e.nombreEscuela,YEAR(pa.año) as año,pa.archivo
-			from preguntasObjetivoseducacionales pa
+			from preguntasobjetivoseducacionales pa
 			inner join escuela e on pa.escuelaid=e.idEscuela
 			inner join facultad f on f.idFacultad=e.idFacultad
 			inner join facultadiconos fi on fi.Facultadid=f.idFacultad

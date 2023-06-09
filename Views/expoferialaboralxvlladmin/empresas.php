@@ -1,5 +1,5 @@
 <?php
-headerAdmin($data);
+headexpoferiaxvll($data);
 
 ?>
 
@@ -48,7 +48,7 @@ headerAdmin($data);
         </div>
     </div>
 </main>
-<?php footerAdmin($data); ?>
+<?php footerexpoferiaxvll($data); ?>
 
 
 <!-- Modal  agregarPostrado-->

@@ -1,4 +1,4 @@
-<?php headexpoferiaxv2($data); ?>
+<?php headexpoferiaxvll($data); ?>
 
 
 <?php obj($data);
@@ -68,4 +68,4 @@ $perfiles = $obj->listaExpoferiaxvEmpresas();
 </style>
 
 
-<?php footerexpoferiaxv2($data); ?>
+<?php footerexpoferiaxvll($data); ?>

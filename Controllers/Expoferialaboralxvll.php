@@ -27,12 +27,22 @@ class expoferialaboralxvll extends Controllers
 
 	public function ponencias()
 	{
-
 		$data['page_tag'] = "expoferialaboralxvll";
 		$data['page_title'] = "expoferialaboralxvll";
 		$data['page_name'] = "expoferialaboralxvll";
+
+		require_once("Models/ExpoferialaboralxvlladminModel.php");
+		$obj = new ExpoferialaboralxvlladminModel();
+
+		$arrData  =  array();
+		$arrData = $obj->listPonencias();
+
+		$data['listaponencias'] = $arrData;
+
 		$this->views->getView($this, "ponencias", $data);
 	}
+
+
 
 	public function galeria()
 	{

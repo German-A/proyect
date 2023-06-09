@@ -10,6 +10,13 @@ class EspecialidadesModel extends Mysql
 	private $escuelaid;
 	private $año;
 	private $tipopostgrado;
+
+	private $escuela;
+	private $nuevonombre;
+	private $cantidadPreguntas;
+
+
+	
 	private $intborrar = 0;
 
 	public function __construct()
@@ -296,7 +303,7 @@ class EspecialidadesModel extends Mysql
 		$this->año = $año;
 		$this->cantidadPreguntas = $cantidadPreguntas;
 		$return = 0;
-		$query_insert  = "INSERT INTO preguntasObjetivoseducacionales(escuelaid,archivo,año,cantidadPreguntas)
+		$query_insert  = "INSERT INTO preguntasobjetivoseducacionales(escuelaid,archivo,año,cantidadPreguntas)
 										  VALUES(?,?,?,?)";
 		$arrData = array(
 			$this->escuela,

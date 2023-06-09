@@ -144,7 +144,7 @@ headerAdmin($data);
         divLoading.style.display = "flex";
         $.ajax({
             method: "POST",
-            url: "" + base_url + "/expoferialaboralxvadmin/setPonencias",
+            url: "" + base_url + "/expoferialaboralxvlladmin/setPonencias",
             data: fd,
             processData: false, // tell jQuery not to process the data
             contentType: false // tell jQuery not to set contentType
@@ -173,7 +173,7 @@ headerAdmin($data);
 
         $.ajax({
             method: "GET",
-            url: "" + base_url + "/expoferialaboralxvadmin/getOnePonencia/" + idexpoxvPonencias,
+            url: "" + base_url + "/expoferialaboralxvlladmin/getOnePonencia/" + idexpoxvPonencias,
             processData: false, // tell jQuery not to process the data
             contentType: false, // tell jQuery not to set contentType
 
@@ -213,7 +213,7 @@ headerAdmin($data);
 
                 $.ajax({
                     method: "POST",
-                    url: "" + base_url + "/expoferialaboralxvadmin/deletePonencias/" + idexpoxvPonencias,
+                    url: "" + base_url + "/expoferialaboralxvlladmin/deletePonencias/" + idexpoxvPonencias,
                     processData: false, // tell jQuery not to process the data
                     contentType: false, // tell jQuery not to set contentType
 
@@ -249,11 +249,11 @@ headerAdmin($data);
                 "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
             },
             "ajax": {
-                "url": " " + base_url + "/expoferialaboralxvadmin/getPonencias",
+                "url": " " + base_url + "/expoferialaboralxvlladmin/getPonencias",
                 "dataSrc": ""
             },
             "columns": [{
-                    "data": "idexpoxvponencias"
+                    "data": "idexpoxvllponencias"
                 },
                 {
                     "data": "nombre"

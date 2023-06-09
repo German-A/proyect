@@ -265,17 +265,17 @@ class expoferialaboralxvlladmin extends Controllers
 				$btnDelete = '';
 
 				if ($_SESSION['permisos'][29]['r']) {
-					$btnView = '<button class="btn btn-info btn-sm " onClick="fntView(' . $arrData[$i]['idexpoxvponencias'] . ')" title="Ver Ponencias"><i class="far fa-eye"></i></button>';
+					$btnView = '<button class="btn btn-info btn-sm " onClick="fntView(' . $arrData[$i]['idexpoxvllponencias'] . ')" title="Ver Ponencias"><i class="far fa-eye"></i></button>';
 				}
 
 				if ($_SESSION['permisos'][29]['u']) {
-					$btnEdit = '<button class="btn btn-primary  btn-sm " onClick="fntEditPonencias(' . $arrData[$i]['idexpoxvponencias'] . ')" title="Editar Ponencias"><i class="fas fa-pencil-alt"></i></button>';
+					$btnEdit = '<button class="btn btn-primary  btn-sm " onClick="fntEditPonencias(' . $arrData[$i]['idexpoxvllponencias'] . ')" title="Editar Ponencias"><i class="fas fa-pencil-alt"></i></button>';
 				} else {
 					$btnEdit = '<button class="btn btn-secondary btn-sm" disabled ><i class="fas fa-pencil-alt"></i></button>';
 				}
 
 				if ($_SESSION['permisos'][29]['d']) {
-					$btnDelete = '<button class="btn btn-danger btn-sm " onClick="fntDeletePonencias(' . $arrData[$i]['idexpoxvponencias'] . ')" title="Eliminar Ponencias"><i class="far fa-trash-alt"></i></button>';
+					$btnDelete = '<button class="btn btn-danger btn-sm " onClick="fntDeletePonencias(' . $arrData[$i]['idexpoxvllponencias'] . ')" title="Eliminar Ponencias"><i class="far fa-trash-alt"></i></button>';
 				} else {
 					$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
 				}
@@ -308,7 +308,7 @@ class expoferialaboralxvlladmin extends Controllers
 				$txtNombre = trim($_POST['txtNombre']);
 				$txtPosicion = trim($_POST['txtPosicion']);
 
-				$ruta = 'Assets/upload/exporiaxv/';
+				$ruta = 'Assets/upload/exporiaxvll/';
 				$obj['archivo'] = null;
 
 				$bandera = true;

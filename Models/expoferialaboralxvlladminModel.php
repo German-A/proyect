@@ -1,6 +1,6 @@
 <?php
 
-class ExpoferialaboralxvadminModel extends Mysql
+class ExpoferialaboralxvlladminModel extends Mysql
 {
 	public int $idexpoxvllgaleria;
 	public int $idexpoxvempresas;

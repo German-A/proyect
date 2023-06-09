@@ -147,7 +147,7 @@ $perfiles = $home->listaPreguntasObjetivosEducacionales();
                         listado = listado +
                         `    
                            
-                            <a class="pefilescuela m-2 p-3 col-3 bgbluemedio" href="<?= media(); ?>/archivos/preguntasObjetivosEducacionales/` + data.data[i].archivo + `" target="_blank">
+                            <a class="pefilescuela m-2 p-3 col-3 bgbluemedio" href="<?= media(); ?>/upload/preguntasObjetivosEducacionales/` + data.data[i].archivo + `" target="_blank">
                         <div class="text-center  ">
                             <h6 class="blanco azul">` + data.data[i].año + `</h6>
                         </div>

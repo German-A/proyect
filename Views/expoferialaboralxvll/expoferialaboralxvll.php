@@ -1,9 +1,8 @@
-<?php headexpoferiaxv2($data); ?>
+<?php headexpoferiaxvll($data); ?>
 
 <?php obj($data);
 
 $obj = new HomeModel();
-
 $perfiles = $obj->listaExpoferiaxv();
 
 ?>
@@ -19,7 +18,7 @@ $perfiles = $obj->listaExpoferiaxv();
 </style>
 
 <div class="text-center">
-    <img src="<?= media() ?>/images/expoferiaxv/expoferiaxv2.jpg" style="width: 100%;" alt="">
+    <img src="<?= media() ?>/images/expoferiaxvll/expoferiaxv2.jpg" style="width: 100%;" alt="">
 </div>
 <br>
 
@@ -173,4 +172,4 @@ $perfiles = $obj->listaExpoferiaxv();
 
 
 
-<?php footerexpoferiaxv2($data); ?>
+<?php footerexpoferiaxvll($data); ?>
