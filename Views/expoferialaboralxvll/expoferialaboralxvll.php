@@ -3,7 +3,7 @@
 <?php obj($data);
 
 $obj = new HomeModel();
-$perfiles = $obj->listaExpoferiaxv();
+$perfiles = $obj->listaExpoferiaxvll();
 
 ?>
 

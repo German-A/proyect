@@ -521,4 +521,43 @@ class HomeModel extends Mysql
 		return $request;
 	}
 
+
+/*
+	EXPOFERIA XII
+*/
+
+
+	/*EXPOFERIA LABORAL PONENCIAS */
+	public function listaExpoferiaxvll()
+	{
+		$sql = "SELECT e.archivo
+		from expoxvllponencias e
+		where e.status>0 order by e.posicion asc";
+		$request = $this->select_all($sql);
+		return $request;
+	}
+
+	/*EXPOFERIA LABORAL GALERIA */
+	public function listaExpoferiaxvllGaleriall()
+	{
+		$sql = "SELECT e.archivo
+			from expoxvllgaleria e
+			where e.status>0 order by e.posicion asc";
+		$request = $this->select_all($sql);
+		return $request;
+	}
+
+	public function listaExpoferiaxvllEmpresas()
+	{
+		$sql = "SELECT e.archivo, e.nombre,e.url
+			from expoxvllempresas e
+			where e.status>0 order by e.posicion asc";
+		$request = $this->select_all($sql);
+		return $request;
+	}
+
+
+
+	
+
 }

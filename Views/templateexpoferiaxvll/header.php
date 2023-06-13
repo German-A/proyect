@@ -40,7 +40,8 @@
     body,
     html {
         overflow-x: hidden;
-        background-image: linear-gradient(90deg, #0170b8, #0170b8);  
+        /* background-image: linear-gradient(90deg, #0170b8, #0170b8);   */
+        background-color: #ffffff;
     }
 
     .nav-barxv {
@@ -50,6 +51,7 @@
         cursor: pointer;
         font-size: 15px;
         width: 100%;
+   
     }
 
     .menuxv,
@@ -62,6 +64,7 @@
     /* barra de menu poner color */
     .menuxv {
         display: none;
+      
         width: 100%;
         /*ddd*/
         margin-left: -100%;
@@ -81,7 +84,7 @@
         padding: 20px;
         font-size: 20px;
         text-decoration: none;
-        color: #ffffff;
+        color: --blue;
     }
 
     .menu__linkxv:hover {
@@ -173,7 +176,7 @@
     }
 
     header.down {
-        /* background: rgb(255, 255, 255); */
+        background: #e6ad09; 
         position: fixed;
         top: 0;
         left: 0;

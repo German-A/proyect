@@ -1,90 +1,96 @@
 <?php headexpoferiaxvll($data); ?>
 
-
 <style>
-    figure {
-        position: relative;
-        height: 250px;
-        cursor: pointer;
-        width: 450px;
+    /* Gallery Section--------------------------------*/
+
+    #gallery {
+        background: #fff;
+        padding: 60px 0 0 0;
         overflow: hidden;
-        border-radius: 6px;
-        box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.50);
     }
 
-    figure img {
-        width: 100%;
-        height: 100%;
-        transition: all 400ms ease-out;
-        will-change: transform;
+    #gallery .container-fluid {
+        padding: 0px;
     }
 
-    figure .capa {
+    #gallery .gallery-overlay {
         position: absolute;
         top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 103, 123, 0.7);
-        transition: all 400ms ease-out;
-        opacity: 0;
-        visibility: hidden;
+        opacity: 1;
+        transition: all ease-in-out 0.4s;
+    }
+
+    #gallery .gallery-item {
+        overflow: hidden;
+        position: relative;
+        padding: 0;
+        vertical-align: middle;
         text-align: center;
     }
 
-    figure:hover>.capa {
-        opacity: 1;
-        visibility: visible;
-    }
-
-    figure:hover>img {
-        transform: scale(1.3);
-    }
-
-
-    figure .capa p {
-        height: 250px;
-        background-color: #fff;
-        padding: 40px 0 40px;
-        color: black;
-        font-size: 15px;
-        line-height: 1.5;
+    #gallery .gallery-item img {
+        transition: all ease-in-out 0.4s;
         width: 100%;
-        max-width: 250px;
-        margin-left: 20px;
+    }
+
+    #gallery .gallery-item:hover img {
+        transform: scale(1.1);
+    }
+
+    #gallery .gallery-item:hover .gallery-overlay {
+        opacity: 1;
+        background: rgba(0, 0, 0, 0.7);
     }
 </style>
-
 <?php
-dep($data);
-
-
-for ($i = 0; $i < count($data['listaponencias']); $i++) {
-
-    echo  $data['listaponencias'][$i]['nombre'];
-
-
-}
+//dep($data['listaponencias']);
 ?>
 
 
 
-
-
-<div class="contenedor">
-
-    <div class="col-12 row">
-<?php for ($i = 0; $i < count($data['listaponencias']); $i++) { ?>
-        <figure>
-            <img class="equipoimg" src="<?= media(); ?>/upload/exporiaxvll/<?php echo$data['listaponencias'][$i]['archivo']?>" alt="">
-            <div class="capa">
-<h1>              <?php echo  $data['listaponencias'][$i]['nombre'];       ?></h1>
-
-            </div>
-        </figure>
-        <?php } ?>
-
+<section id="gallery">
+    <div class="container-fluid text-center" data-aos="fade-up">
+        <div class="section-header">
+            <h3 class="section-title ">GALERÍA</h3>
+            <br>
+        </div>
+        <div class="row g-0 d-flex justify-content-center">
+        <?php for ($i = 0; $i < count($data['listaponencias']); $i++) { ?>
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item">
+                        <a href="<?= media(); ?>/upload/exporiaxvll/<?php echo $data['listaponencias'][$i]['archivo'] ?>" data-gall="portfolioGallery" class="gallery-lightbox">
+                            <img src="<?= media(); ?>/upload/exporiaxvll/<?php echo $data['listaponencias'][$i]['archivo'] ?>">
+                        </a>
+                    </div>
+                </div>
+            <?php } ?>
+        </div>
     </div>
+</section>
 
-</div>
+
+<br><br><br><br><br>
+
+
+
+<script src="<?= media(); ?>/vendor/glightbox/js/glightbox.min.js"></script>
+
+<script>
+    /**
+     * Initiate gallery lightbox 
+     */
+    const galleryLightbox = GLightbox({
+        selector: '.gallery-lightbox'
+    });
+</script>
+
+
+
+
 
 <?php footerexpoferiaxvll($data); ?>
