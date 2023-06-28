@@ -53,12 +53,12 @@ $perfiles = $obj->selectBanner();
       <br><br>
       <div class="row">
         <div class="col-md-2">
-          <h1 class="amarillotitulo" style="font-size: 35px;"><b>98%</b></h1>
+          <h1 class="amarillotitulo" style="font-size: 35px;"><b>87%</b></h1>
           <h2 class="blanco">De nuestros egresados <strong>actualmente trabajan</strong></h2>
         </div>
         <div class="col-md-2">
-          <h1 class="amarillotitulo" style="font-size: 35px;">3366</h1>
-          <h2 class="blanco">Egresados en el año<strong> 2021</strong> </h2>
+          <h1 class="amarillotitulo" style="font-size: 35px;">1582</h1>
+          <h2 class="blanco">Egresados en el año<strong> 2023</strong> </h2>
         </div>
         <div class="col-md-2">
           <h1 class="amarillotitulo" style="font-size: 35px;"><b>+2000</b> </h1>
@@ -77,17 +77,17 @@ $perfiles = $obj->selectBanner();
   <br><br><br>
 
 
-  
+
   <div class="row  d-flex justify-content-center ml-4 mr-4">
     <div class="col-12  ml-4 mr-4 datosestad " data-aos="fade-down" data-aos-duration="500">
 
       <br>
-      <div class="row text-center">    
-          <h1 class="col-md-12 amarillotitulo">Bolsa de TRABAJO </h1>      
+      <div class="row text-center">
+        <h1 class="col-md-12 amarillotitulo">Bolsa de TRABAJO </h1>
       </div>
 
-      <div class="row d-flex justify-content-center">    
-          <h3 class="col-md-8 blanco">Apartir de este año hemos fortalecido el portal de empleos de las USE para acompañarte y apoyarte en tu desarrollo profesional. Te invitamos a que tu tambien seas parte de la nueva plataforma, ingresa y revisa las ofertas laborales exclusivas que tenemos para ti. </h3>      
+      <div class="row d-flex justify-content-center">
+        <h3 class="col-md-8 blanco">Apartir de este año hemos fortalecido el portal de empleos de las USE para acompañarte y apoyarte en tu desarrollo profesional. Te invitamos a que tu tambien seas parte de la nueva plataforma, ingresa y revisa las ofertas laborales exclusivas que tenemos para ti. </h3>
       </div>
 
       <br><br>
@@ -99,10 +99,10 @@ $perfiles = $obj->selectBanner();
       </div>
     </div>
   </div>
-<br><br>
+  <br><br>
 
   <H1 class="text-center azul-oscuro">PLATAFORMAS</H1>
-  
+
 
 
   <br><br><br>
@@ -117,15 +117,15 @@ $perfiles = $obj->selectBanner();
 
   <div class="col-12 d-flex justify-content-center text-center">
     <div class="col-4 col-md-3" data-aos="fade-down-left">
-      <h2 class="mostaza" style="font-size: 35px;"><b>98%</b></h2>
+      <h2 class="mostaza" style="font-size: 35px;"><b>87%</b></h2>
       <h5 class="blueoscuro">De nuestros egresados <big><strong>actualmente trabajan</strong></big></h5>
     </div>
     <div class="col-4 col-md-3" data-aos="fade-down">
-      <h2 class="mostaza" style="font-size: 35px;">206</h2>
+      <h2 class="mostaza" style="font-size: 35px;">1582</h2>
       <h5 class="blueoscuro">Egresados en el año<big><strong> 2023</strong></big> </h5>
     </div>
     <div class="col-4 col-md-3" data-aos="fade-down-right">
-      <h2 class="mostaza" style="font-size: 35px;"><b>+3500</b> </h2>
+      <h2 class="mostaza" style="font-size: 35px;"><b>+5639</b> </h2>
       <h5 class="blueoscuro"> <big><strong>Ofertas laborales</strong></big> activas</h5>
     </div>
   </div>
@@ -310,12 +310,7 @@ $perfiles = $obj->selectBanner();
     <br><br><br>
   </div>
 
-
-
   <br><br>
-
-
-
 
   </body>
 

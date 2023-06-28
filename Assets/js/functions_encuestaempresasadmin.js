@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         "columns": [
             { "data": "idencuestause" },
+            { "data": "ruc" },
             { "data": "p1" },
             { "data": "p2" },
             { "data": "p3" },

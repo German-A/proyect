@@ -10,7 +10,7 @@ class HomeModel extends Mysql
 	public function selectBanner()
 	{
 
-		$sql = "SELECT NombreArchivo ,Posicion from banner WHERE Habilitado > 0 order by Posicion desc";
+		$sql = "SELECT NombreArchivo ,Posicion from banner WHERE Habilitado > 0 order by Posicion desc LIMIT 10";
 		$request = $this->select_all($sql);
 		return $request;
 	}

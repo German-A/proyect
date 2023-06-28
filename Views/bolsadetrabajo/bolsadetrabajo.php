@@ -55,6 +55,16 @@ $perfiles = $año->selectañoEspecialidades();
             </div>
         </a>
 
+        <a class="col-8 col-md-3 col-lg-2 fondo m-1" target="_blank" href="https://www.abriljobs.com/jobs?page=1">
+            <div class="col-12 text-right col-md-12">
+                <h1 class="mostaza"><i class="fas fa-briefcase"></i></h1>
+                <br>
+            </div>
+            <div class="col-12 text-left col-md-12">
+                <h5 class="">AbrilATS+</h5>
+            </div>
+        </a>
+
 
         <a class="col-8 col-md-3 col-lg-2 fondo m-1" href="<?= base_url(); ?>/solicitudempleo">
             <div class="col-12 text-right col-md-12">

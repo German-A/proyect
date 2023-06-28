@@ -42,7 +42,7 @@ $idmaestria = $año->listaFacultadpostgrado();
                 </div>
                 <div class="col-12 text-left col-md-12">
                     <h5 class="">Grados de Bachiller</h5>
-                    <h5>1024</h5>
+                    <h5>998</h5>
                 </div>
             </a>
         </div>
@@ -54,7 +54,7 @@ $idmaestria = $año->listaFacultadpostgrado();
                 </div>
                 <div class="col-12 text-left col-md-12">
                     <h5 class="">Títulos Profesionales</h5>           
-                    <h5>433</h5>
+                    <h5>459</h5>
                 </div>
             </a>
         </div>
@@ -78,7 +78,7 @@ $idmaestria = $año->listaFacultadpostgrado();
                 </div>
                 <div class="col-12 text-left col-md-12">
                     <h5 class="">Maestrias</h5>
-                    <h5>96</h5>
+                    <h5>94</h5>
                 </div>
             </a>
         </div>

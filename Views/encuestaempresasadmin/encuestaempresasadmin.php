@@ -15,6 +15,7 @@ getModal('modalBanner', $data);
               <thead>
                 <tr>
                   <th>ID</th>
+                  <th>RUC</th>
                   <th>p1</th>
                   <th>p2</th>
                   <th>p3</th>
