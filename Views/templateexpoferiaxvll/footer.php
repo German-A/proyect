@@ -194,9 +194,17 @@
     window.addEventListener("scroll", function() {
         var header = document.querySelector("header");
 
+
         // var alink = document.querySelectorAll(".menu__link");
         var alink = document.querySelectorAll("a");
         header.classList.toggle('down', window.scrollY > 0);
+
+        var menu__itemxv = document.querySelectorAll(".menu__itemxv");
+        console.log(menu__itemxv.length);
+        for (let i = 0; i < menu__itemxv.length; i++) {
+            menu__itemxv[i].classList.toggle('menu__itemxvp0', window.scrollY > 0);
+        }
+        
 
         for (let i = 0; i < alink.length; i++) {
             alink[i].classList.toggle('enlacesDown', window.scrollY > 0);

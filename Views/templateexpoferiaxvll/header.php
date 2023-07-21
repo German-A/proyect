@@ -51,7 +51,7 @@
         cursor: pointer;
         font-size: 15px;
         width: 100%;
-   
+
     }
 
     .menuxv,
@@ -59,12 +59,23 @@
         list-style: none;
         padding: 0;
         margin: 0;
+
+    }
+
+    .menu__itemxv {
+        padding-top: 60px;
+    }
+
+    .menu__itemxv:hover {
+        background-color: red;
+
     }
 
     /* barra de menu poner color */
     .menuxv {
         display: none;
-      
+
+
         width: 100%;
         /*ddd*/
         margin-left: -100%;
@@ -85,12 +96,13 @@
         font-size: 20px;
         text-decoration: none;
         color: --blue;
+        font-weight: 900;
     }
 
     .menu__linkxv:hover {
-        background-color: #12377b;
         text-decoration: none;
-        color: #ffc107;
+        color: #ffffff;
+
     }
 
     .submenuxv {
@@ -100,8 +112,8 @@
     }
 
     .submenuxv .menu__linkxv {
-        background: #333;
-        padding-left: 50px;
+        background: red;
+        padding-left: 60px;
     }
 
     .naveg {
@@ -172,11 +184,11 @@
         justify-content: space-between;
         align-items: center;
         transition: 0.6s;
-        padding: 10px 0;
+
     }
 
     header.down {
-        background: #e6ad09; 
+        background: #e6ad09;
         position: fixed;
         top: 0;
         left: 0;
@@ -192,11 +204,15 @@
         letter-spacing: 2px;
     }
 
+    header .menu__itemxvp0 {
+        padding-top: 0px;
+    }
+
     .menu .menu__link .enlacesDown {
         color: red;
     }
 
-    .titulos{
+    .titulos {
         color: #ffc107;
     }
 </style>
@@ -208,7 +224,7 @@
         <span id="btnMenuExpoferiaxv" class="nav-barxv text-right">
             <div class="row">
                 <div class="col-6 text-left">
-                    <img class="logo" src="<?= media(); ?>/images/expoferiaxvl/useWhite.png"  style="height: 70px;">
+                    <img class="logo" src="<?= media(); ?>/images/expoferiaxv/logoUse.png" style="height: 70px;">
                 </div>
 
                 <div class="col-6 text-right">
@@ -222,7 +238,7 @@
         <nav class="main-navxv">
             <ul class="menuxv" id="menuxv">
 
-                <img class="logoweb" src="<?= media(); ?>/images/expoferiaxvl/useWhite.png"  style="height: 70px;">
+                <img class="logoweb" src="<?= media(); ?>/images/expoferiaxv/logoUse.png" style="height: 70px;">
 
                 <div class="naveg">
                     <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxvll" class="menu__linkxv">INICIO</a></li>
@@ -235,9 +251,17 @@
                     </ul>
                 </li> -->
                     <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxvll/ponencias" class="menu__linkxv">PONENCIAS</a></li>
-                   <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxvll/galeria" class="menu__linkxv">GALERIA</a></li>
-                    <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxvll/empresas" class="menu__linkxv">EMPRESAS</a></li> 
+                    <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxvll/galeria" class="menu__linkxv">GALERIA</a></li>
+                    <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxvll/empresas" class="menu__linkxv">EMPRESAS</a></li>
                 </div>
             </ul>
         </nav>
 </header>
+
+
+<style>
+    .titulo {
+        font-size: 55px;
+        font-weight: 900;
+    }
+</style>

@@ -16,7 +16,7 @@ $perfiles = $obj->selectBanner();
   <br>
 
   <div class="swiper mySwiper" data-aos="fade-down" data-aos-duration="500">
-    <div class="swiper-wrapper">
+    <div class="swiper-wrapper" id="banner">
       <?php foreach ($perfiles as $key => $fila) { ?>
         <div class="swiper-slide">
           <img class="imgbanner" src="<?= media(); ?>/upload/portadas/<?php echo $fila['NombreArchivo'] ?>">
@@ -317,3 +317,68 @@ $perfiles = $obj->selectBanner();
 </div>
 
 <?php footer($data); ?>
+
+
+<script>
+  function sayHi() {
+    $.ajax({
+      url: " " + base_url + "/home/selectBannerFind/",
+      type: "GET",
+      processData: false, // tell jQuery not to process the data
+      contentType: false, // tell jQuery not to set contentType
+      beforeSend: function() {
+        $(".ajax-loader").show();
+      },
+      success: function(response) {
+        bandera = true;
+        var info = JSON.parse(response);
+
+        var info = info.data;
+
+
+        listado = "";
+
+        for (i = 0; i < info.length; i++) {
+          listado =
+            listado +
+            `
+            <div class="swiper-slide" >
+              <img class="imgbanner" src="<?= media(); ?>/upload/portadas/` + info[i].NombreArchivo + `">
+            </div>
+            `;
+
+        }
+
+        $("#banner").append(listado);
+
+
+
+
+      },
+    });
+
+  }
+
+  sayHi();
+
+  function slider() {
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        dynamicBullets: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      autoplay: {
+        delay: 4000,
+      },
+    });
+
+  };
+
+  setTimeout(slider, 4000);
+</script>

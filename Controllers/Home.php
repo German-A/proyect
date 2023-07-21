@@ -18,6 +18,24 @@ class home extends Controllers
 	}
 
 
+
+	//obtener un baner para actualizar
+	public function selectBannerFind()
+	{
+
+		$arrData = $this->model->selectBannerFind();
+		if (empty($arrData)) {
+			$arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
+		} else {
+			$arrResponse = array('status' => true, 'data' => $arrData);
+		}
+		echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+
+
+		die();
+	}
+
+
 	//obtener un baner para actualizar
 	public function getcantidades()
 	{

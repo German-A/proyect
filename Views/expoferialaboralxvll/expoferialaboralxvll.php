@@ -22,7 +22,8 @@ $perfiles = $obj->listaExpoferiaxvll();
 </div>
 <br>
 
-<div class="col-12">
+
+<!-- <div class="col-12">
 
     <div class="text-center">
         <h2>ORGANIZA</h2>
@@ -50,7 +51,7 @@ $perfiles = $obj->listaExpoferiaxvll();
     </div>
 
 
-</div>
+</div> -->
 
 
 <div class="contenedorxv2">
@@ -58,7 +59,14 @@ $perfiles = $obj->listaExpoferiaxvll();
     <br>
 
     <div class="col-12 text-center">
-        <h2>PONENCIAS</h2>
+        <h1 class="titulo"><b>PONENTES</b></h1>
+        <br>
+        <h5>¡Participa de todas nuestras ponencias!</h3>
+            <br><br>
+    </div>
+    <br>
+    <div class="col-12 text-center">
+        <h1 class="titulo"><b>Multimedia</b></h1>
         <br>
         <h5>¡Participa de todas nuestras ponencias!</h3>
             <br><br>
@@ -121,18 +129,16 @@ $perfiles = $obj->listaExpoferiaxvll();
             <div class="swiper-slide">
                 <div class="divexpoxv">
 
-                    <img src="<?= media(); ?>/upload/exporiaxv/<?php echo $fila['archivo'] ?>">
+                    <img src="<?= media(); ?>/upload/exporiaxvll/<?php echo $fila['archivo'] ?>">
                 </div>
             </div>
         <?php } ?>
 
     </div>
     <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
+    <div class="swiper-button-prev"></div>
     <div class="swiper-pagination"></div>
 </div>
-
-
 
 
 
@@ -150,12 +156,12 @@ $perfiles = $obj->listaExpoferiaxvll();
             clickable: true,
         },
         navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
         },
         autoplay: {
-        delay: 2000,
-    },
+            delay: 2000,
+        },
     });
 </script>
 

@@ -61,7 +61,7 @@ class expoferialaboralxvlladmin extends Controllers
 				}
 
 
-				$arrData[$i]['archivo'] = '<a href="' . base_url() . '/Assets/upload/exporiaxv/' . $arrData[$i]['archivo'] . '"target="_blank"><span class="badge badge-primary"  > Ver Imagen <i class="fas fa-image"></i></span></a> ';
+				$arrData[$i]['archivo'] = '<a href="' . base_url() . '/Assets/upload/exporiaxvll/' . $arrData[$i]['archivo'] . '"target="_blank"><span class="badge badge-primary"  > Ver Imagen <i class="fas fa-image"></i></span></a> ';
 
 				$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
 			}
@@ -82,7 +82,7 @@ class expoferialaboralxvlladmin extends Controllers
 				$txtNombre = trim($_POST['txtNombre']);
 				$txtPosicion = trim($_POST['txtPosicion']);
 
-				$ruta = 'Assets/upload/exporiaxv/';
+				$ruta = 'Assets/upload/exporiaxvll/';
 				$obj['archivo'] = null;
 
 				$bandera = true;
@@ -220,7 +220,7 @@ class expoferialaboralxvlladmin extends Controllers
 
 			$archivo = $this->model->getOneGaleria($idexpoxvgaleria);
 
-			$ruta = 'Assets/upload/exporiaxv/';
+			$ruta = 'Assets/upload/exporiaxvll/';
 			removeFile($ruta, $archivo['archivo']);
 
 			$requestDelete = $this->model->removeGaleria($idexpoxvgaleria);
@@ -287,7 +287,7 @@ class expoferialaboralxvlladmin extends Controllers
 				}
 
 
-				$arrData[$i]['archivo'] = '<a href="' . base_url() . '/Assets/upload/exporiaxv/' . $arrData[$i]['archivo'] . '"target="_blank"><span class="badge badge-primary"  > Ver Imagen <i class="fas fa-image"></i></span></a> ';
+				$arrData[$i]['archivo'] = '<a href="' . base_url() . '/Assets/upload/exporiaxvll/' . $arrData[$i]['archivo'] . '"target="_blank"><span class="badge badge-primary"  > Ver Imagen <i class="fas fa-image"></i></span></a> ';
 
 				$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
 			}
@@ -445,7 +445,7 @@ class expoferialaboralxvlladmin extends Controllers
 			$NombreArchivo = $this->model->getOnePonencia($idexpoxvgaleria);
 			//borrar documentos
 			$requestDelete = $this->model->removePonencias($idexpoxvgaleria);
-			@unlink('Assets/upload/exporiaxv/' . $NombreArchivo['archivo']);
+			@unlink('Assets/upload/exporiaxvll/' . $NombreArchivo['archivo']);
 			if ($requestDelete) {
 				$arrResponse = array('status' => true, 'msg' => 'Se ha eliminado la Imagen');
 			} else {
@@ -508,7 +508,7 @@ class expoferialaboralxvlladmin extends Controllers
 				}
 
 
-				$arrData[$i]['archivo'] = '<a href="' . base_url() . '/Assets/upload/exporiaxv/' . $arrData[$i]['archivo'] . '"target="_blank"><span class="badge badge-primary"  > Ver Imagen <i class="fas fa-image"></i></span></a> ';
+				$arrData[$i]['archivo'] = '<a href="' . base_url() . '/Assets/upload/exporiaxvll/' . $arrData[$i]['archivo'] . '"target="_blank"><span class="badge badge-primary"  > Ver Imagen <i class="fas fa-image"></i></span></a> ';
 
 				$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
 			}
@@ -531,7 +531,7 @@ class expoferialaboralxvlladmin extends Controllers
 				$txtUrl = trim($_POST['txtUrl']);
 				$descripcion = trim($_POST['descripcion']);
 
-				$ruta = 'Assets/upload/exporiaxv/';
+				$ruta = 'Assets/upload/exporiaxvll/';
 				$obj['archivo'] = null;
 
 				$bandera = true;
@@ -670,7 +670,7 @@ class expoferialaboralxvlladmin extends Controllers
 
 			$archivo = $this->model->getOneEmpresa($idexpoxvempresas);
 
-			$ruta = 'Assets/upload/exporiaxv/';
+			$ruta = 'Assets/upload/exporiaxvll/';
 			removeFile($ruta, $archivo['archivo']);
 
 			$requestDelete = $this->model->removeEmpresa($idexpoxvempresas);
