@@ -167,13 +167,7 @@ $perfiles = $obj->selectBanner();
 
 
   <div class="row d-flex justify-content-around text-center" style="max-width: 80%; margin:auto">
-    <!-- <div class="plataform-use  col-md-6 col-lg-4 col-xl-4" data-aos="flip-up">
-      <a href="<?= base_url(); ?>/manuales">
-        <img class="logosplaforma" src="<?= media(); ?>/archivos/logos/cursomooc.png" alt="">
-        <br><br>
-        <h5 class="text-cursosmooc text-center">CURSOS MOOC</h5>
-      </a>
-    </div> -->
+
     <div class="plataform-use  col-md-6 col-lg-4 col-xl-4" data-aos="flip-down">
       <a href="https://siseu-rep.sineace.gob.pe:6041/login" target="_blank">
         <img class="logosplaforma" src="<?= media(); ?>/archivos/logos/siseu.png" alt="">
@@ -269,18 +263,6 @@ $perfiles = $obj->selectBanner();
 
     </div>
 
-    <!-- <div class="col-12 col-sm-5 col-md-5 col-lg-2 mb-2">
-      <div class="cont-titulo ">
-        <h5 class="bluemedio text-area">ÁREA DE<br> RELACIONES PÚBLICAS</h5>
-      </div>
-      <img class="equipoimg" src="<?= media(); ?>/img/LicNoeli.png" alt="">
-      <div class="col-4 cont-info">
-        <br>
-        <h6>KATHERINE NOELY<br> RODRÍGUEZ GUZMÁN</h6>
-        <p><small>COMUNICADORA/INTERPRETE</small></p>
-      </div>
-    </div> -->
-
     <br><br><br>
 
     <div class="col-12 col-sm-5 col-md-5 col-lg-2 mb-2">
@@ -294,18 +276,6 @@ $perfiles = $obj->selectBanner();
         <p><small>COMUNICADOR/DISEÑADOR</small></p>
       </div>
     </div>
-
-    <!-- <div class="col-12 col-sm-5 col-md-5 col-lg-2 mb-2">
-      <div class="cont-titulo ">
-        <h5 class="bluemedio text-area">ÁREA DE <br>MARKETING</h5>
-      </div>
-      <img class="equipoimg" src="<?= media(); ?>/img/renzo.png" alt="">
-      <div class="col-4 cont-info">
-        <br>
-        <h6>RENZO OMAR HURTADO CARBONEL</h6>
-        <p><small>COMUNICADOR/DISEÑADOR</small></p>
-      </div>
-    </div> -->
 
     <br><br><br>
   </div>
@@ -326,15 +296,10 @@ $perfiles = $obj->selectBanner();
       type: "GET",
       processData: false, // tell jQuery not to process the data
       contentType: false, // tell jQuery not to set contentType
-      beforeSend: function() {
-        $(".ajax-loader").show();
-      },
       success: function(response) {
         bandera = true;
         var info = JSON.parse(response);
-
         var info = info.data;
-
 
         listado = "";
 
@@ -346,20 +311,15 @@ $perfiles = $obj->selectBanner();
               <img class="imgbanner" src="<?= media(); ?>/upload/portadas/` + info[i].NombreArchivo + `">
             </div>
             `;
-
         }
-
+        console.log('demas imaganes');
         $("#banner").append(listado);
-
-
-
-
       },
     });
 
   }
 
-  sayHi();
+
 
   function slider() {
     var swiper = new Swiper(".mySwiper", {
@@ -377,8 +337,8 @@ $perfiles = $obj->selectBanner();
         delay: 4000,
       },
     });
-
   };
 
-  setTimeout(slider, 4000);
+  setTimeout(sayHi, 7000);
+  setTimeout(slider, 7000);
 </script>

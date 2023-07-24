@@ -16,7 +16,7 @@ class HomeModel extends Mysql
 
 	public function selectBannerFind()
 	{
-		$sql = "SELECT NombreArchivo ,Posicion from banner WHERE Habilitado > 0 order by Posicion desc LIMIT 100";
+		$sql = "SELECT NombreArchivo ,Posicion from banner WHERE IdBaner != 1 and Habilitado > 0 order by Posicion desc";
 		$request = $this->select_all($sql);
 		return $request;
 	}
@@ -528,7 +528,7 @@ class HomeModel extends Mysql
 	}
 
 
-/*
+	/*
 	EXPOFERIA XII
 */
 
@@ -561,9 +561,4 @@ class HomeModel extends Mysql
 		$request = $this->select_all($sql);
 		return $request;
 	}
-
-
-
-	
-
 }
