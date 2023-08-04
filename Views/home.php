@@ -339,6 +339,6 @@ $perfiles = $obj->selectBanner();
     });
   };
 
-  setTimeout(sayHi, 7000);
-  setTimeout(slider, 7000);
+  setTimeout(sayHi, 2000);
+  setTimeout(slider, 4000);
 </script>

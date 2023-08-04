@@ -81,7 +81,6 @@ $perfiles = $obj->listaExpoferiaxvGaleria();
 <br><br><br><br><br>
 
 
-
 <script src="<?= media(); ?>/vendor/glightbox/js/glightbox.min.js"></script>
 
 <script>

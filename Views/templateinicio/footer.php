@@ -167,7 +167,7 @@
 <!-- <script type="text/javascript" src="<?= media(); ?>/jsinicio/menu.js"></script> -->
 <script type="text/javascript" src="<?= media(); ?>/jsinicio/aos.js"></script>
 <script type="text/javascript" src="<?= media(); ?>/jsinicio/Swiper8.0.6.js"></script>
-<script type="text/javascript" src="<?= media(); ?>/jsinicio/sliderSwiper.js"></script>
+
 <script type="text/javascript" src="<?= media(); ?>/jsinicio/funciones.js"></script>
 <script type="text/javascript" src="<?= media(); ?>/jsinicio/enlacesScroll.js"></script>
 <script type="text/javascript" src="<?= media(); ?>/jsinicio/main.js"></script>

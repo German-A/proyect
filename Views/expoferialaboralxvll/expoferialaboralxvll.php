@@ -7,77 +7,10 @@ $perfiles = $obj->listaExpoferiaxvll();
 
 ?>
 
-
-
-<style>
-    .contenedorxv2 {
-
-        margin: 0 auto;
-        text-align: center;
-    }
-</style>
-
-<div class="text-center">
-    <img src="<?= media() ?>/images/expoferiaxvll/expoferiaxv2.jpg" style="width: 100%;" alt="">
-</div>
-<br>
-
-
-<!-- <div class="col-12">
-
-    <div class="text-center">
-        <h2>ORGANIZA</h2>
-    </div>
-    <br>
-
-    <div class="row d-flex justify-content-around">
-
-        <div class="col-6 col-md-3 text-center mb-4">
-            <img class="img-fluid col-md-12" src="<?= media(); ?>/images/expoferiaxv/vicerrectoradologo.png" alt="" style=" width: 100%; object-fit: cover;">
-        </div>
-
-        <div class="col-6 col-md-3 text-center mb-4">
-            <img class="img-fluid col-md-12" src="<?= media(); ?>/archivos/logos/logoDpa.png" alt="" style=" width: 100%; object-fit: cover;">
-        </div>
-
-        <div class="col-6 col-md-3 text-center mb-4">
-            <img class="img-fluid col-md-12" src="<?= media(); ?>/images/expoferiaxv/logoUse.png" alt="" style=" width: 100%; object-fit: cover;">
-        </div>
-
-        <div class="col-6 col-md-3 text-center mb-4">
-            <img class="img-fluid col-md-12" src="<?= media(); ?>/images/expoferiaxv/CEIINDlogo1.png" alt="" style="width: 70%; object-fit: cover;">
-        </div>
-
-    </div>
-
-
-</div> -->
-
-
-<div class="contenedorxv2">
-
-    <br>
-
-    <div class="col-12 text-center">
-        <h1 class="titulo"><b>PONENTES</b></h1>
-        <br>
-        <h5>¡Participa de todas nuestras ponencias!</h3>
-            <br><br>
-    </div>
-    <br>
-    <div class="col-12 text-center">
-        <h1 class="titulo"><b>Multimedia</b></h1>
-        <br>
-        <h5>¡Participa de todas nuestras ponencias!</h3>
-            <br><br>
-    </div>
-</div>
-
-
 <style>
     .swiper {
         max-width: 1250px;
-        height: 350px;
+        height: 515px;
     }
 
     .swiper-slide {
@@ -100,8 +33,8 @@ $perfiles = $obj->listaExpoferiaxvll();
 
     .swiper-slide img {
         display: block;
-        min-width: 350px;
-        height: 350px;
+        min-width: 450px;
+        height: 500px;
         object-fit: cover;
     }
 
@@ -121,61 +54,219 @@ $perfiles = $obj->listaExpoferiaxvll();
 
 
 
-<!-- Swiper -->
-<div class="swiper mySwiper">
-    <div class="swiper-wrapper">
 
-        <?php foreach ($perfiles as $key => $fila) { ?>
-            <div class="swiper-slide">
-                <div class="divexpoxv">
+<style>
+    .contenedorxv2 {
+        margin: 0 auto;
+        text-align: center;
+    }
+</style>
 
-                    <img src="<?= media(); ?>/upload/exporiaxvll/<?php echo $fila['archivo'] ?>">
-                </div>
-            </div>
-        <?php } ?>
+<div class="text-center">
+    <img src="<?= media() ?>/images/expoferiaxvll/expoferiaxv2.jpg" style="width: 100%;" alt="">
+</div>
+<br>
 
+
+<div class="contenedorxv2">
+    <br>
+    <div class="col-12 text-center">
+        <h1 class="titulo"><b>Ponentes</b></h1>
     </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-pagination"></div>
+    <br>
+
+    <div class="col-12">
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <?php foreach ($perfiles as $key => $fila) { ?>
+                    <div class="swiper-slide">
+                        <div class="divexpoxv">
+
+                            <img src="<?= media(); ?>/upload/exporiaxvll/<?php echo $fila['archivo'] ?>">
+                        </div>
+                    </div>
+                <?php } ?>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+    <br>
+    <div class="col-12 text-center">
+        <h1 class="titulo"><b>Multimedia</b></h1>
+        <br>
+    </div>
+
+    <style>
+        /* Gallery Section--------------------------------*/
+
+        #gallery {
+            background: #fff;
+            padding: 60px 0 0 0;
+            overflow: hidden;
+        }
+
+        #gallery .container-fluid {
+            padding: 0px;
+        }
+
+        #gallery .gallery-overlay {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+            transition: all ease-in-out 0.4s;
+        }
+
+        #gallery .gallery-item {
+            overflow: hidden;
+            position: relative;
+            padding: 0;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        #gallery .gallery-item img {
+            transition: all ease-in-out 0.4s;
+            width: 100%;
+        }
+
+        #gallery .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        #gallery .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+            background: rgba(0, 0, 0, 0.7);
+        }
+    </style>
+
+
+    <section id="gallery">
+        <div class="container-fluid text-center" data-aos="fade-up">
+
+            <div class="row g-0 d-flex justify-content-center">
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item">
+                        <a href="<?= media(); ?>/upload/exporiaxvllll/vice.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                            <img src="<?= media(); ?>/upload/exporiaxvllll/vice.png">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item">
+                        <a href="https://www.youtube.com/embed/MkO9g3ywnG4" data-gall="portfolioGallery" class="gallery-lightbox">
+                            <img src="<?= media(); ?>/upload/exporiaxvllll/sosa.png">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item">
+                        <a href="<?= media(); ?>/upload/exporiaxvllll/dpa.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                            <img src="<?= media(); ?>/upload/exporiaxvllll/dpa.png">
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <section class="">
+
+        <div class="col-12 text-cenfter">
+            <h1 class="titulo"><b>Empresas</b></h1>
+            <br>
+        </div>
+
+        <div class="row  m-1">
+            <div class="col-4 col-md-2 mb-2">
+                <img class="img-fluid" src="<?= media(); ?>/upload/exporiaxvllll/empresa.png" alt="">
+            </div>
+            <div class="col-4 col-md-2 mb-2">
+                <img class="img-fluid" src="<?= media(); ?>/upload/exporiaxvllll/empresa.png" alt="">
+            </div>
+            <div class="col-4 col-md-2 mb-2">
+                <img class="img-fluid" src="<?= media(); ?>/upload/exporiaxvllll/empresa.png" alt="">
+            </div>
+            <div class="col-4 col-md-2 mb-2">
+                <img class="img-fluid" src="<?= media(); ?>/upload/exporiaxvllll/empresa.png" alt="">
+            </div>
+            <div class="col-4 col-md-2 mb-2">
+                <img class="img-fluid" src="<?= media(); ?>/upload/exporiaxvllll/empresa.png" alt="">
+            </div>
+            <div class="col-4 col-md-2 mb-2">
+                <img class="img-fluid" src="<?= media(); ?>/upload/exporiaxvllll/empresa.png" alt="">
+            </div>
+            <div class="col-4 col-md-2 mb-2">
+                <img class="img-fluid" src="<?= media(); ?>/upload/exporiaxvllll/empresa.png" alt="">
+            </div>
+            <div class="col-4 col-md-2 mb-2">
+                <img class="img-fluid" src="<?= media(); ?>/upload/exporiaxvllll/empresa.png" alt="">
+            </div>
+            <div class="col-4 col-md-2 mb-2">
+                <img class="img-fluid" src="<?= media(); ?>/upload/exporiaxvllll/empresa.png" alt="">
+            </div>
+            <div class="col-4 col-md-2 mb-2">
+                <img class="img-fluid" src="<?= media(); ?>/upload/exporiaxvllll/empresa.png" alt="">
+            </div>
+            <div class="col-4 col-md-2 mb-2">
+                <img class="img-fluid" src="<?= media(); ?>/upload/exporiaxvllll/empresa.png" alt="">
+            </div>
+            <div class="col-4 col-md-2 mb-2">
+                <img class="img-fluid" src="<?= media(); ?>/upload/exporiaxvllll/empresa.png" alt="">
+            </div>
+        </div>
+
+    </section>
+
 </div>
 
 
-
-<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="<?= media(); ?>/jsinicio/Swiper8.0.6.js"></script>
 
 <!-- Initialize Swiper -->
 <script>
     var swiper = new Swiper(".mySwiper", {
-        slidesPerView: "auto",
-        spaceBetween: 30,
+        slidesPerView: 2,
         loop: true,
-        freeMode: true,
         pagination: {
             el: ".swiper-pagination",
-            clickable: true,
+            dynamicBullets: true,
         },
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
         },
         autoplay: {
-            delay: 2000,
+            delay: 4000,
         },
     });
 </script>
 
 
+<script src="<?= media(); ?>/vendor/glightbox/js/glightbox.min.js"></script>
 
-
-
-
-
-
-
-
-
-
+<script>
+    /**
+     * Initiate gallery lightbox 
+     */
+    const galleryLightbox = GLightbox({
+        selector: '.gallery-lightbox'
+    });
+</script>
+<!-- Swiper JS -->
 
 
 <?php footerexpoferiaxvll($data); ?>

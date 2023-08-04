@@ -304,7 +304,7 @@ class expoferialaboralxvlladmin extends Controllers
 				$arrResponse = array("status" => false, "msg" => 'Datos incorrectos en la Galería.');
 			} else {
 
-				$idexpoxvponencias = intval($_POST['idexpoxvponencias']);
+				$idexpoxvponencias = intval($_POST['idexpoxvllponencias']);
 				$txtNombre = trim($_POST['txtNombre']);
 				$txtPosicion = trim($_POST['txtPosicion']);
 

@@ -61,7 +61,7 @@ headerAdmin($data);
             </div>
             <div class="modal-body">
                 <form id="formmodalPonencias" name="formmodalPonencias" class="form-horizontal">
-                    <input type="hidden" id="idexpoxvPonencias" name="idexpoxvPonencias" value="">
+                    <input type="hidden" id="idexpoxvllponencias" name="idexpoxvllponencias" value="">
                     <p class="text-primary">Todos los campos son obligatorios.</p>
 
 
@@ -97,7 +97,7 @@ headerAdmin($data);
 
 <script>
     function openModalPonencias() {
-        document.querySelector('#idexpoxvPonencias').value = "";
+        document.querySelector('#idexpoxvllponencias').value = "";
         document.querySelector('.modal-header').classList.replace("headerUpdate", "headerRegister");
         document.querySelector('#btnPonencias').classList.replace("btn-info", "btn-primary");
         document.querySelector('#btnPonencias').innerHTML = "Guardar";
@@ -109,7 +109,7 @@ headerAdmin($data);
 
     function GuardarPonencias() {
 
-        var idexpoxvPonencias = $("#idexpoxvPonencias").val();
+        var idexpoxvllponencias = $("#idexpoxvllponencias").val();
         var txtNombre = $("#txtNombre").val();
         var txtPosicion = $("#txtPosicion").val();
         var inputElement = document.getElementById("archivoSubido");
@@ -125,7 +125,7 @@ headerAdmin($data);
             return;
         }
 
-        if (idexpoxvPonencias != 0) {
+        if (idexpoxvllponencias != 0) {
 
         } else {
             if (inputElement.files['length'] == 0) {
@@ -136,7 +136,7 @@ headerAdmin($data);
 
 
         var fd = new FormData();
-        fd.append("idexpoxvponencias", idexpoxvPonencias);
+        fd.append("idexpoxvllponencias", idexpoxvllponencias);
         fd.append("txtNombre", txtNombre);
         fd.append("txtPosicion", txtPosicion);
         fd.append("archivoSubido", archivoSubido);
@@ -164,7 +164,7 @@ headerAdmin($data);
         });
     }
 
-    function fntEditPonencias(idexpoxvPonencias) {
+    function fntEditPonencias(idexpoxvllponencias) {
 
         document.querySelector("#titlePonencias").innerHTML = "ACTUALIZAR GALERÍA";
         document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");
@@ -173,7 +173,7 @@ headerAdmin($data);
 
         $.ajax({
             method: "GET",
-            url: "" + base_url + "/expoferialaboralxvlladmin/getOnePonencia/" + idexpoxvPonencias,
+            url: "" + base_url + "/expoferialaboralxvlladmin/getOnePonencia/" + idexpoxvllponencias,
             processData: false, // tell jQuery not to process the data
             contentType: false, // tell jQuery not to set contentType
 
@@ -182,7 +182,7 @@ headerAdmin($data);
 
             if (info.status == true) {
                 document.querySelector("#formmodalPonencias").reset();
-                document.getElementById('idexpoxvPonencias').value = info.data['idexpoxvponencias'];
+                document.getElementById('idexpoxvllponencias').value = info.data['idexpoxvllponencias'];
                 document.getElementById('txtNombre').value = info.data['nombre'];
                 document.getElementById('txtPosicion').value = info.data['posicion'];
 
@@ -196,7 +196,7 @@ headerAdmin($data);
         });
     }
 
-    function fntDeletePonencias(idexpoxvPonencias) {
+    function fntDeletePonencias(idexpoxvllponencias) {
 
         swal({
             title: "Eliminar Ponencias",
@@ -213,7 +213,7 @@ headerAdmin($data);
 
                 $.ajax({
                     method: "POST",
-                    url: "" + base_url + "/expoferialaboralxvlladmin/deletePonencias/" + idexpoxvPonencias,
+                    url: "" + base_url + "/expoferialaboralxvlladmin/deletePonencias/" + idexpoxvllponencias,
                     processData: false, // tell jQuery not to process the data
                     contentType: false, // tell jQuery not to set contentType
 

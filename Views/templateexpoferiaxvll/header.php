@@ -263,5 +263,6 @@
     .titulo {
         font-size: 55px;
         font-weight: 900;
+        color: #003366;
     }
 </style>
