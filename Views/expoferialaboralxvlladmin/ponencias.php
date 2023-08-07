@@ -32,6 +32,7 @@ headerAdmin($data);
                                     <th>Nombres</th>
                                     <th>Archivo</th>
                                     <th>Posicion</th>
+                                    <th>dia</th>
                                     <th>Estado</th>
                                     <th>Acciones</th>
                                 </tr>
@@ -74,6 +75,15 @@ headerAdmin($data);
                             <label for="txtPosicion">Posición</label>
                             <input type="number" class="form-control" id="txtPosicion" name="txtPosicion" required="">
                         </div>
+
+                        <div class="form-group col-md-2">
+                            <label for="date">Dia</label>
+                            <select name="" id="date">
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                            </select>
+                        </div>
+
                     </div>
 
                     <div class="form-row">
@@ -114,6 +124,8 @@ headerAdmin($data);
         var txtPosicion = $("#txtPosicion").val();
         var inputElement = document.getElementById("archivoSubido");
         var archivoSubido = inputElement.files[0];
+        var date = $("#date").val();
+
 
         if (txtNombre == '') {
             swal("Atención!", "Ingresar el Nombre", "warning");
@@ -124,6 +136,14 @@ headerAdmin($data);
             swal("Atención!", "Ingresar la Posición", "warning");
             return;
         }
+
+        if (date == '') {
+            swal("Atención!", "Ingresar la Posición", "warning");
+            return;
+        }
+
+
+
 
         if (idexpoxvllponencias != 0) {
 
@@ -140,6 +160,7 @@ headerAdmin($data);
         fd.append("txtNombre", txtNombre);
         fd.append("txtPosicion", txtPosicion);
         fd.append("archivoSubido", archivoSubido);
+        fd.append("date", date);
 
         divLoading.style.display = "flex";
         $.ajax({
@@ -191,7 +212,7 @@ headerAdmin($data);
             if (info.status == false) {
                 swal("Error!", info.msg, "error");
             }
-        
+
             $("#modalRegistroPonencias").modal("show");
         });
     }
@@ -263,6 +284,9 @@ headerAdmin($data);
                 },
                 {
                     "data": "posicion"
+                },
+                {
+                    "data": "date"
                 },
                 {
                     "data": "status"

@@ -18,7 +18,7 @@ class ExpoferialaboralxvlladminModel extends Mysql
 	/*GALERIA*/
 	public function listGaleria()
 	{
-		$sql = "SELECT * FROM expoxvllgaleria where status>0 and expoferiaslaboralesid = 2";
+		$sql = "SELECT * FROM expoxvllgaleria where status>0 and expoferiaslaboralesid = 5";
 		$request = $this->select_all($sql);
 		return $request;
 	}
@@ -35,7 +35,7 @@ class ExpoferialaboralxvlladminModel extends Mysql
 		$this->txtNombre = $txtNombre;
 		$this->txtPosicion = $txtPosicion;
 		$this->nuevonombre = $nuevonombre;
-		$this->expoferiaslaboralesid = 2;
+		$this->expoferiaslaboralesid = 5;
 		$return = 0;
 		$query_insert  = "INSERT INTO expoxvllgaleria(nombre,posicion,archivo,expoferiaslaboralesid)
 								  VALUES(?,?,?,?)";
@@ -109,10 +109,26 @@ class ExpoferialaboralxvlladminModel extends Mysql
 	/*PONENCIAS*/
 	public function listPonencias()
 	{
-		$sql = "SELECT * FROM expoxvllponencias where status > 0 and expoferiaslaboralesid = 5";
+		$sql = "SELECT * FROM expoxvllponencias 
+		where status > 0 and expoferiaslaboralesid = 5";
 		$request = $this->select_all($sql);
 		return $request;
 	}
+	public function listPonenciasdia7()
+	{
+		$sql = "SELECT * FROM expoxvllponencias 
+		where status > 0 and expoferiaslaboralesid = 5 and date = 7 ";
+		$request = $this->select_all($sql);
+		return $request;
+	}
+		/*PONENCIAS*/
+		public function listPonenciasdia8()
+		{
+			$sql = "SELECT * FROM expoxvllponencias 
+			where status > 0 and expoferiaslaboralesid = 5 and date = 8 ";
+			$request = $this->select_all($sql);
+			return $request;
+		}
 
 	public function buscarArchivoPonencias($filename)
 	{
@@ -121,20 +137,22 @@ class ExpoferialaboralxvlladminModel extends Mysql
 		return $request;
 	}
 
-	public function registerPonencias($txtNombre, $txtPosicion, $nuevonombre)
+	public function registerPonencias($txtNombre, $txtPosicion, $nuevonombre,$date)
 	{
 		$this->txtNombre = $txtNombre;
 		$this->txtPosicion = $txtPosicion;
 		$this->nuevonombre = $nuevonombre;
+		$this->date = $date;
 		$this->expoferiaslaboralesid = 5;
 		$return = 0;
-		$query_insert  = "INSERT INTO expoxvllponencias(nombre,posicion,archivo,expoferiaslaboralesid)
-									  VALUES(?,?,?,?)";
+		$query_insert  = "INSERT INTO expoxvllponencias(nombre,posicion,archivo,expoferiaslaboralesid,date)
+									  VALUES(?,?,?,?,?)";
 		$arrData = array(
 			$this->txtNombre,
 			$this->txtPosicion,
 			$this->nuevonombre,
-			$this->expoferiaslaboralesid
+			$this->expoferiaslaboralesid,
+			$this->date
 		);
 		$request_insert = $this->insert($query_insert, $arrData);
 		$return = $request_insert;
@@ -160,36 +178,41 @@ class ExpoferialaboralxvlladminModel extends Mysql
 		return $request;
 	}
 
-	public function updatePonencia($txtNombre, $txtPosicion, $idexpoxvllponencias)
+	public function updatePonencia($txtNombre, $txtPosicion, $idexpoxvllponencias,$date)
 	{
 		$this->nombre = $txtNombre;
 		$this->posicion = $txtPosicion;
 		$this->idexpoxvllponencias = $idexpoxvllponencias;
+		$this->date = $date;
 
-		$sql = "UPDATE expoxvllponencias SET nombre=?,posicion=?
+		$sql = "UPDATE expoxvllponencias SET nombre=?,posicion=?,date=?
 				WHERE idexpoxvllponencias = $this->idexpoxvllponencias ";
 		$arrData = array(
 			$this->nombre,
-			$this->posicion
+			$this->posicion,
+			$this->date
+
 		);
 
 		$request = $this->update($sql, $arrData);
 		return $request;
 	}
 
-	public function updatePonenciaArchivo($txtNombre, $txtPosicion, $archivo, $idexpoxvllponencias)
+	public function updatePonenciaArchivo($txtNombre, $txtPosicion, $archivo, $idexpoxvllponencias,$date)
 	{
 		$this->nombre = $txtNombre;
 		$this->posicion = $txtPosicion;
 		$this->archivo = $archivo;
 		$this->idexpoxvllponencias = $idexpoxvllponencias;
+		$this->date = $date;
 
-		$sql = "UPDATE expoxvllponencias SET nombre=?,posicion=?,archivo=?
+		$sql = "UPDATE expoxvllponencias SET nombre=?,posicion=?,archivo=?,date=?
 				WHERE idexpoxvllponencias = $this->idexpoxvllponencias ";
 		$arrData = array(
 			$this->nombre,
 			$this->posicion,
-			$this->archivo
+			$this->archivo,
+			$this->date
 		);
 		$request = $this->update($sql, $arrData);
 		return $request;

@@ -11,13 +11,13 @@
         --white: #fff;
         --bg: #dbebfa;
         --pink: #9b29b7;
-        --blue-dark: #4763ef;
+        --blue-dark: #3b8acf;
         --font: "Roboto Mono", sans-serif;
     }
 
 
     .underline {
-        color: var(--blue-dark);
+        color: var(--azul);
         display: inline-block;
         position: relative;
     }
@@ -39,6 +39,9 @@
         background: linear-gradient(90deg, rgba(231, 249, 7, 1) 57%, rgba(15, 196, 233, 1) 76%);
         transform-origin: bottom left;
     }
+    .logo{
+max-width: 200px;
+    }
 </style>
 <div class="conten">
     <div class="row">
@@ -52,58 +55,134 @@
             <br>
             <h4>Para ello, a través de diferentes actividades conecta, asesora y capacita a los estudiantes y egresados de nuestra Universidad con las principales empresas de nuestro país.</h4>
         </div>
-        <div class="col-md-4">
-            <img class="img-fluid" src="<?= media(); ?>/images/expoferiaxvll/usecicle.png" alt="" />
+        <div class="col-md-4 text-center">
+            <img class="logo " src="<?= media(); ?>/images/expoferiaxvll/usecicle.png" alt="" />
         </div>
     </div>
 
-    <br><br><br>
+    <br><br>
 
     <style>
-        .card_empleo {
-            background-color: rgb(255 255 255 / 70%);
+
+        .card_empleo {    
             display: flex;
-            margin: 1rem;
-            padding: 1rem;
+            flex-direction: row;
+            margin: 0 auto;
+
+        }
+
+        .cardListempleos .card_foto {
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(255 255 255 / 70%);
             -webkit-box-shadow: 0px 0px 25px -1px rgba(0, 0, 0, 0.75);
             -moz-box-shadow: 0px 0px 25px -1px rgba(0, 0, 0, 0.75);
             box-shadow: 0px 0px 25px -1px rgba(0, 0, 0, 0.75);
+            padding-bottom: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border-radius: 5%;
         }
 
         @media (min-width: 768px) {
+
             .cardListempleos {
                 display: grid;
-                max-width: 80%;
+                max-width: 90%;
                 margin: auto;
                 grid-template-columns: 1fr 1fr 1fr 1fr;
                 column-gap: 1rem;
+     
             }
+
         }
+
+        .imgnosotros{
+            max-width: 190px;
+        }
+
     </style>
+
+    <h1 class="underline">Equipo USE - UNT</h1>
+
+<br><br>
 
     <section class="card_empleo">
 
-        <h1>Equipo USE-UNT</h1>
+
+        <br>
 
         <div class="cardListempleos">
-            <img src="<?= media(); ?>/images/expoferiaxvll/jp.png" alt=""  width="20px"/>
+            <div class="card_foto">
+                <img class="imgnosotros" src="<?= media(); ?>/images/expoferiaxvll/sosa.png" alt="" />
+                <br>
+                <h6>EDUARDO TEÓFILO
+                    <br>
+                    SOSA ANCAJIMA
+                </h6>
+                <label for="">DIRECTOR DE LA UNIDAD DE <br>
+                    SEGUIMIENTO DEL EGRESADO</label>
+            </div>
         </div>
+
         <div class="cardListempleos">
-            <img src="<?= media(); ?>/images/expoferiaxvll/jp.png" alt=""  width="20px"/>
+            <div class="card_foto">
+                <img class="imgnosotros" src="<?= media(); ?>/images/expoferiaxvll/nureña.png" alt="" />
+                <br>
+                <h6>KATHERINE LIZETH
+                    <br>
+                    NUREÑA RODRÍGUEZ
+                </h6>
+                <label for="">SUBUNIDAD DE ESTADÍSTICA <br>
+                    E INFORMÁTICA</label>
+            </div>
         </div>
+
         <div class="cardListempleos">
-            <img src="<?= media(); ?>/images/expoferiaxvll/jp.png" alt=""  width="20px"/>
+            <div class="card_foto">
+                <img class="imgnosotros" src="<?= media(); ?>/images/expoferiaxvll/romero.png" alt="" />
+                <br>
+                <h6>JEAN PAÚL
+                    <br>
+                    ROMERO LOBATÓN
+                </h6>
+                <label for="">
+                    ANALISTA DE <br>
+                    PROCESOS
+                </label>
+
+            </div>
         </div>
+
         <div class="cardListempleos">
-            <img src="<?= media(); ?>/images/expoferiaxvll/jp.png" alt="" width="20px" />
+            <div class="card_foto">
+                <img class="imgnosotros" src="<?= media(); ?>/images/expoferiaxvll/isabel.png" alt=""  />
+                <br>
+                <h6>MARIA ISABEL
+                    <br>
+                    HARO VALVERDE
+                </h6>
+                <label for="">
+                    ÁREA DE <br>
+                    TRAMITE DOCUMENTARIO
+                </label>
+            </div>
         </div>
 
-
-
-
-
-
-
+        <div class="cardListempleos">
+            <div class="card_foto">
+                <img class="imgnosotros" src="<?= media(); ?>/images/expoferiaxvll/andy.png" alt="" />
+                <br>
+                <h6>ANDY BRYAN
+                    <br>
+                    BENITES ZAVALETA
+                </h6>
+                <label for="">
+                    ÁREA DE <br>
+                    MARQUETÍN
+                </label>
+            </div>
+        </div>
     </section>
 
 

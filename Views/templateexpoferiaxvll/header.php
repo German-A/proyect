@@ -44,6 +44,12 @@
         background-color: #ffffff;
     }
 
+    :root {
+        --azul: #003366;
+        --celeste: #3b8acf;
+
+    }
+
     .nav-barxv {
         padding: 20px;
         display: block;
@@ -67,7 +73,7 @@
     }
 
     .menu__itemxv:hover {
-        background-color: red;
+        background-color: var(--celeste);
 
     }
 
@@ -112,7 +118,7 @@
     }
 
     .submenuxv .menu__linkxv {
-        background: red;
+        background: var(--celeste);
         padding-left: 60px;
     }
 
@@ -209,7 +215,7 @@
     }
 
     .menu .menu__link .enlacesDown {
-        color: red;
+        color: var(--celeste);
     }
 
     .titulos {

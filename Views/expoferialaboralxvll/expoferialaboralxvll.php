@@ -63,7 +63,7 @@ $perfiles = $obj->listaExpoferiaxvll();
 </style>
 
 <div class="text-center">
-    <img src="<?= media() ?>/images/expoferiaxvll/expoferiaxv2.jpg" style="width: 100%;" alt="">
+    <img src="<?= media() ?>/images/expoferiaxvll/flyerexpo.png" style="width: 100%;" alt="">
 </div>
 <br>
 

@@ -39,17 +39,17 @@ class expoferialaboralxvlladmin extends Controllers
 				$btnDelete = '';
 
 				if ($_SESSION['permisos'][29]['r']) {
-					$btnView = '<button class="btn btn-info btn-sm fntView" onClick="fntView(' . $arrData[$i]['idexpoxvgaleria'] . ')" title="Ver Galería"><i class="far fa-eye"></i></button>';
+					$btnView = '<button class="btn btn-info btn-sm fntView" onClick="fntView(' . $arrData[$i]['idexpoxvllgaleria'] . ')" title="Ver Galería"><i class="far fa-eye"></i></button>';
 				}
 
 				if ($_SESSION['permisos'][29]['u']) {
-					$btnEdit = '<button class="btn btn-primary  btn-sm " onClick="fntEditGaleria(' . $arrData[$i]['idexpoxvgaleria'] . ')" title="Editar Galería"><i class="fas fa-pencil-alt"></i></button>';
+					$btnEdit = '<button class="btn btn-primary  btn-sm " onClick="fntEditGaleria(' . $arrData[$i]['idexpoxvllgaleria'] . ')" title="Editar Galería"><i class="fas fa-pencil-alt"></i></button>';
 				} else {
 					$btnEdit = '<button class="btn btn-secondary btn-sm" disabled ><i class="fas fa-pencil-alt"></i></button>';
 				}
 
 				if ($_SESSION['permisos'][29]['d']) {
-					$btnDelete = '<button class="btn btn-danger btn-sm " onClick="fntDeleteGaleria(' . $arrData[$i]['idexpoxvgaleria'] . ')" title="Eliminar Galería"><i class="far fa-trash-alt"></i></button>';
+					$btnDelete = '<button class="btn btn-danger btn-sm " onClick="fntDeleteGaleria(' . $arrData[$i]['idexpoxvllgaleria'] . ')" title="Eliminar Galería"><i class="far fa-trash-alt"></i></button>';
 				} else {
 					$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
 				}
@@ -78,7 +78,7 @@ class expoferialaboralxvlladmin extends Controllers
 				$arrResponse = array("status" => false, "msg" => 'Datos incorrectos en la Galería.');
 			} else {
 
-				$idexpoxvgaleria = intval($_POST['idexpoxvgaleria']);
+				$idexpoxvllgaleria = intval($_POST['idexpoxvllgaleria']);
 				$txtNombre = trim($_POST['txtNombre']);
 				$txtPosicion = trim($_POST['txtPosicion']);
 
@@ -88,7 +88,7 @@ class expoferialaboralxvlladmin extends Controllers
 				$bandera = true;
 				$insert = null;
 
-				if ($idexpoxvgaleria == 0) {
+				if ($idexpoxvllgaleria == 0) {
 
 					$tipo = $_FILES['archivoSubido']['type'];
 					if ($tipo == "image/png" || $tipo == 'image/jpeg') {
@@ -133,7 +133,7 @@ class expoferialaboralxvlladmin extends Controllers
 
 					//Actualizar sin Imagen
 					if (empty($_FILES['archivoSubido']['name'])) {
-						$insert = $this->model->updateGaleria($txtNombre, $txtPosicion, $idexpoxvgaleria);
+						$insert = $this->model->updateGaleria($txtNombre, $txtPosicion, $idexpoxvllgaleria);
 					} else {
 
 						$tipo = $_FILES['archivoSubido']['type'];
@@ -141,7 +141,7 @@ class expoferialaboralxvlladmin extends Controllers
 						if ($tipo == "image/png" || $tipo == 'image/jpeg') {
 
 							//Actualizar con Imagen				
-							$obj = $this->model->getOneGaleria($idexpoxvgaleria);
+							$obj = $this->model->getOneGaleria($idexpoxvllgaleria);
 
 							$ubicacionTemporal = $_FILES['archivoSubido']['tmp_name'];
 							$extension = pathinfo($_FILES['archivoSubido']['name'], PATHINFO_EXTENSION);
@@ -159,14 +159,14 @@ class expoferialaboralxvlladmin extends Controllers
 								mkdir($ruta, 0777, true);
 								if (file_exists($ruta)) {
 									if (move_uploaded_file($ubicacionTemporal, $ruta . $filename)) {
-										$insert = $this->model->updateGaleriaArchivo($txtNombre, $txtPosicion, $filename, $idexpoxvgaleria);
+										$insert = $this->model->updateGaleriaArchivo($txtNombre, $txtPosicion, $filename, $idexpoxvllgaleria);
 									} else {
 										echo "no se pudo guardar ";
 									}
 								}
 							} else {
 								if (move_uploaded_file($ubicacionTemporal, $ruta . $filename)) {
-									$insert = $this->model->updateGaleriaArchivo($txtNombre, $txtPosicion, $filename, $idexpoxvgaleria);
+									$insert = $this->model->updateGaleriaArchivo($txtNombre, $txtPosicion, $filename, $idexpoxvllgaleria);
 								} else {
 									echo "no se pudo guardar";
 								}
@@ -193,13 +193,13 @@ class expoferialaboralxvlladmin extends Controllers
 	}
 
 	//obtener una Galeria
-	public function getOneGaleria($idexpoxvgaleria)
+	public function getOneGaleria($idexpoxvllgaleria)
 	{
 
 		if ($_SESSION['permisos'][29]['u']) {
-			$idexpoxvgaleria = intval($idexpoxvgaleria);
-			if ($idexpoxvgaleria > 0) {
-				$arrData = $this->model->getOneGaleria($idexpoxvgaleria);
+			$idexpoxvllgaleria = intval($idexpoxvllgaleria);
+			if ($idexpoxvllgaleria > 0) {
+				$arrData = $this->model->getOneGaleria($idexpoxvllgaleria);
 				if (empty($arrData)) {
 					$arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
 				} else {
@@ -212,18 +212,18 @@ class expoferialaboralxvlladmin extends Controllers
 	}
 
 	//borrar un delete Galeria
-	public function deleteGaleria($idexpoxvgaleria)
+	public function deleteGaleria($idexpoxvllgaleria)
 	{
 
 		if ($_SESSION['permisos'][29]['d']) {
-			$idexpoxvgaleria = intval($idexpoxvgaleria);
+			$idexpoxvllgaleria = intval($idexpoxvllgaleria);
 
-			$archivo = $this->model->getOneGaleria($idexpoxvgaleria);
+			$archivo = $this->model->getOneGaleria($idexpoxvllgaleria);
 
 			$ruta = 'Assets/upload/exporiaxvll/';
 			removeFile($ruta, $archivo['archivo']);
 
-			$requestDelete = $this->model->removeGaleria($idexpoxvgaleria);
+			$requestDelete = $this->model->removeGaleria($idexpoxvllgaleria);
 
 			if ($requestDelete) {
 				$arrResponse = array('status' => true, 'msg' => 'Se ha eliminado la Imagen');
@@ -307,6 +307,7 @@ class expoferialaboralxvlladmin extends Controllers
 				$idexpoxvponencias = intval($_POST['idexpoxvllponencias']);
 				$txtNombre = trim($_POST['txtNombre']);
 				$txtPosicion = trim($_POST['txtPosicion']);
+				$date = trim($_POST['date']);
 
 				$ruta = 'Assets/upload/exporiaxvll/';
 				$obj['archivo'] = null;
@@ -338,14 +339,14 @@ class expoferialaboralxvlladmin extends Controllers
 							mkdir($ruta, 0777, true);
 							if (file_exists($ruta)) {
 								if (move_uploaded_file($ubicacionTemporal, $ruta . $filename)) {
-									$insert = $this->model->registerPonencias($txtNombre, $txtPosicion, $filename);
+									$insert = $this->model->registerPonencias($txtNombre, $txtPosicion, $filename, $date);
 								} else {
 									echo "no se pudo guardar ";
 								}
 							}
 						} else {
 							if (move_uploaded_file($ubicacionTemporal, $ruta . $filename)) {
-								$insert = $this->model->registerPonencias($txtNombre, $txtPosicion, $filename);
+								$insert = $this->model->registerPonencias($txtNombre, $txtPosicion, $filename, $date);
 							} else {
 								echo "no se pudo guardar";
 							}
@@ -359,7 +360,7 @@ class expoferialaboralxvlladmin extends Controllers
 
 					//Actualizar sin Imagen
 					if (empty($_FILES['archivoSubido']['name'])) {
-						$insert = $this->model->updatePonencia($txtNombre, $txtPosicion, $idexpoxvponencias);
+						$insert = $this->model->updatePonencia($txtNombre, $txtPosicion, $idexpoxvponencias,$date);
 					} else {
 
 						$tipo = $_FILES['archivoSubido']['type'];
@@ -384,14 +385,14 @@ class expoferialaboralxvlladmin extends Controllers
 								mkdir($ruta, 0777, true);
 								if (file_exists($ruta)) {
 									if (move_uploaded_file($ubicacionTemporal, $ruta . $filename)) {
-										$insert = $this->model->updatePonenciaArchivo($txtNombre, $txtPosicion, $filename, $idexpoxvponencias);
+										$insert = $this->model->updatePonenciaArchivo($txtNombre, $txtPosicion, $filename, $idexpoxvponencias,$date);
 									} else {
 										echo "no se pudo guardar ";
 									}
 								}
 							} else {
 								if (move_uploaded_file($ubicacionTemporal, $ruta . $filename)) {
-									$insert = $this->model->updatePonenciaArchivo($txtNombre, $txtPosicion, $filename, $idexpoxvponencias);
+									$insert = $this->model->updatePonenciaArchivo($txtNombre, $txtPosicion, $filename, $idexpoxvponencias,$date);
 								} else {
 									echo "no se pudo guardar";
 								}
@@ -437,14 +438,14 @@ class expoferialaboralxvlladmin extends Controllers
 	}
 
 	//borrar un PONENCIAS
-	public function deletePonencias($idexpoxvgaleria)
+	public function deletePonencias($idexpoxvllgaleria)
 	{
 
 		if ($_SESSION['permisos'][29]['d']) {
-			$idexpoxvgaleria = intval($idexpoxvgaleria);
-			$NombreArchivo = $this->model->getOnePonencia($idexpoxvgaleria);
+			$idexpoxvllgaleria = intval($idexpoxvllgaleria);
+			$NombreArchivo = $this->model->getOnePonencia($idexpoxvllgaleria);
 			//borrar documentos
-			$requestDelete = $this->model->removePonencias($idexpoxvgaleria);
+			$requestDelete = $this->model->removePonencias($idexpoxvllgaleria);
 			@unlink('Assets/upload/exporiaxvll/' . $NombreArchivo['archivo']);
 			if ($requestDelete) {
 				$arrResponse = array('status' => true, 'msg' => 'Se ha eliminado la Imagen');
@@ -662,11 +663,11 @@ class expoferialaboralxvlladmin extends Controllers
 	}
 
 	//borrar un delete Empresa
-	public function deleteEmpresa($idexpoxvgaleria)
+	public function deleteEmpresa($idexpoxvllgaleria)
 	{
 
 		if ($_SESSION['permisos'][29]['d']) {
-			$idexpoxvempresas = intval($idexpoxvgaleria);
+			$idexpoxvempresas = intval($idexpoxvllgaleria);
 
 			$archivo = $this->model->getOneEmpresa($idexpoxvempresas);
 

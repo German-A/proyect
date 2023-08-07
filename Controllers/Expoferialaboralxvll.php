@@ -35,9 +35,14 @@ class expoferialaboralxvll extends Controllers
 		$obj = new ExpoferialaboralxvlladminModel();
 
 		$arrData  =  array();
-		$arrData = $obj->listPonencias();
+		$arrData = $obj->listPonenciasdia7();
+
+		$arrDatadia8  =  array();
+		$arrDatadia8 = $obj->listPonenciasdia8();
 
 		$data['listaponencias'] = $arrData;
+
+		$data['listaponenciasdia8'] = $arrDatadia8;
 
 		$this->views->getView($this, "ponencias", $data);
 	}

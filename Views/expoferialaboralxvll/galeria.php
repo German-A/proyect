@@ -61,7 +61,7 @@ $perfiles = $obj->listaExpoferiaxvGaleria();
 <section id="gallery">
     <div class="container-fluid text-center" data-aos="fade-up">
         <div class="section-header">
-            <h3 class="section-title ">GALERÍA</h3>
+ 
             <br>
         </div>
         <div class="row g-0 d-flex justify-content-center">

@@ -61,12 +61,12 @@ headerAdmin($data);
             </div>
             <div class="modal-body">
                 <form id="formmodalGaleria" name="formmodalGaleria" class="form-horizontal">
-                    <input type="hidden" id="idexpoxvgaleria" name="idexpoxvgaleria" value="">
+                    <input type="hidden" id="idexpoxvllgaleria" name="idexpoxvllgaleria" value="">
                     <p class="text-primary">Todos los campos son obligatorios.</p>
 
 
                     <div class="form-row">
-                        <div class="form-group col-md-10">
+                        <div class="form-group col-md-8">
                             <label for="txtNombre">Nombre</label>
                             <input type="text" class="form-control" id="txtNombre" name="txtNombre" required="">
                         </div>
@@ -74,6 +74,7 @@ headerAdmin($data);
                             <label for="txtPosicion">Posición</label>
                             <input type="number" class="form-control" id="txtPosicion" name="txtPosicion" required="">
                         </div>
+             
                     </div>
 
                     <div class="form-row">
@@ -97,7 +98,7 @@ headerAdmin($data);
 
 <script>
     function openModalGaleria() {
-        document.querySelector('#idexpoxvgaleria').value = "";
+        document.querySelector('#idexpoxvllgaleria').value = "";
         document.querySelector('.modal-header').classList.replace("headerUpdate", "headerRegister");
         document.querySelector('#btnGaleria').classList.replace("btn-info", "btn-primary");
         document.querySelector('#btnGaleria').innerHTML = "Guardar";
@@ -109,7 +110,7 @@ headerAdmin($data);
 
     function GuardarGaleria() {
 
-        var idexpoxvgaleria = $("#idexpoxvgaleria").val();
+        var idexpoxvllgaleria = $("#idexpoxvllgaleria").val();
         var txtNombre = $("#txtNombre").val();
         var txtPosicion = $("#txtPosicion").val();
         var inputElement = document.getElementById("archivoSubido");
@@ -125,7 +126,7 @@ headerAdmin($data);
             return;
         }
 
-        if (idexpoxvgaleria != 0) {
+        if (idexpoxvllgaleria != 0) {
 
         } else {
             if (inputElement.files['length'] == 0) {
@@ -136,14 +137,14 @@ headerAdmin($data);
 
 
         var fd = new FormData();
-        fd.append("idexpoxvgaleria", idexpoxvgaleria);
+        fd.append("idexpoxvllgaleria", idexpoxvllgaleria);
         fd.append("txtNombre", txtNombre);
         fd.append("txtPosicion", txtPosicion);
         fd.append("archivoSubido", archivoSubido);
         divLoading.style.display = "flex";
         $.ajax({
             method: "POST",
-            url: "" + base_url + "/expoferialaboralxvadmin/setgaleria",
+            url: "" + base_url + "/expoferialaboralxvlladmin/setgaleria",
             data: fd,
             processData: false, // tell jQuery not to process the data
             contentType: false // tell jQuery not to set contentType
@@ -163,7 +164,7 @@ headerAdmin($data);
         });
     }
 
-    function fntEditGaleria(idexpoxvgaleria) {
+    function fntEditGaleria(idexpoxvllgaleria) {
 
         document.querySelector("#titleGaleria").innerHTML = "ACTUALIZAR GALERÍA";
         document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");
@@ -172,7 +173,7 @@ headerAdmin($data);
 
         $.ajax({
             method: "GET",
-            url: "" + base_url + "/expoferialaboralxvadmin/getOneGaleria/" + idexpoxvgaleria,
+            url: "" + base_url + "/expoferialaboralxvlladmin/getOneGaleria/" + idexpoxvllgaleria,
             processData: false, // tell jQuery not to process the data
             contentType: false, // tell jQuery not to set contentType
 
@@ -181,7 +182,7 @@ headerAdmin($data);
 
             if (info.status == true) {
                 document.querySelector("#formmodalGaleria").reset();
-                document.getElementById('idexpoxvgaleria').value = info.data['idexpoxvgaleria'];
+                document.getElementById('idexpoxvllgaleria').value = info.data['idexpoxvllgaleria'];
                 document.getElementById('txtNombre').value = info.data['nombre'];
                 document.getElementById('txtPosicion').value = info.data['posicion'];
 
@@ -195,7 +196,7 @@ headerAdmin($data);
         });
     }
 
-    function fntDeleteGaleria(idexpoxvgaleria) {
+    function fntDeleteGaleria(idexpoxvllgaleria) {
 
         swal({
             title: "Eliminar Galeria",
@@ -212,7 +213,7 @@ headerAdmin($data);
 
                 $.ajax({
                     method: "POST",
-                    url: "" + base_url + "/expoferialaboralxvadmin/deleteGaleria/" + idexpoxvgaleria,
+                    url: "" + base_url + "/expoferialaboralxvlladmin/deleteGaleria/" + idexpoxvllgaleria,
                     processData: false, // tell jQuery not to process the data
                     contentType: false, // tell jQuery not to set contentType
 
@@ -248,11 +249,11 @@ headerAdmin($data);
                 "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
             },
             "ajax": {
-                "url": " " + base_url + "/expoferialaboralxvadmin/getGaleria",
+                "url": " " + base_url + "/expoferialaboralxvlladmin/getGaleria",
                 "dataSrc": ""
             },
             "columns": [{
-                    "data": "idexpoxvgaleria"
+                    "data": "idexpoxvllgaleria"
                 },
                 {
                     "data": "nombre"
