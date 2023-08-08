@@ -3,9 +3,6 @@
 
 <?php obj($data);
 
-$obj = new HomeModel();
-
-$perfiles = $obj->listaExpoferiaxvGaleria();
 
 ?>
 
@@ -60,16 +57,13 @@ $perfiles = $obj->listaExpoferiaxvGaleria();
 
 <section id="gallery">
     <div class="container-fluid text-center" data-aos="fade-up">
-        <div class="section-header">
- 
-            <br>
-        </div>
+
         <div class="row g-0 d-flex justify-content-center">
-            <?php foreach ($perfiles as $key => $fila) { ?>
+        <?php for ($i = 0; $i < count($data['lista']); $i++) { ?>
                 <div class="col-lg-4 col-md-6">
                     <div class="gallery-item">
-                        <a href="<?= media(); ?>/upload/exporiaxv/<?php echo $fila['archivo'] ?>" data-gall="portfolioGallery" class="gallery-lightbox">
-                            <img src="<?= media(); ?>/upload/exporiaxv/<?php echo $fila['archivo'] ?>">
+                        <a href="<?= media(); ?>/upload/exporiaxvll/<?php echo $data['lista'][$i]['archivo'] ?>" data-gall="portfolioGallery" class="gallery-lightbox">
+                            <img src="<?= media(); ?>/upload/exporiaxvll/<?php echo $data['lista'][$i]['archivo'] ?>">
                         </a>
                     </div>
                 </div>
@@ -77,6 +71,7 @@ $perfiles = $obj->listaExpoferiaxvGaleria();
         </div>
     </div>
 </section>
+
 
 <br><br><br><br><br>
 

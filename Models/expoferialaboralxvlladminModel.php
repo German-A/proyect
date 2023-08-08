@@ -23,6 +23,14 @@ class ExpoferialaboralxvlladminModel extends Mysql
 		return $request;
 	}
 
+		/*GALERIA*/
+		public function listGaleriaweb()
+		{
+			$sql = "SELECT * FROM expoxvllgaleria where status>0 and expoferiaslaboralesid = 5";
+			$request = $this->select_all($sql);
+			return $request;
+		}
+
 	public function buscarArchivoGaleria($filename)
 	{
 		$sql = "SELECT archivo FROM expoxvllgaleria where archivo = '$filename'";

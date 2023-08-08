@@ -47,6 +47,27 @@ class expoferialaboralxvll extends Controllers
 		$this->views->getView($this, "ponencias", $data);
 	}
 
+	public function galeriavii()
+	{
+		$data['page_tag'] = "expoferialaboralxvll";
+		$data['page_title'] = "expoferialaboralxvll";
+		$data['page_name'] = "expoferialaboralxvll";
+
+		require_once("Models/ExpoferialaboralxvlladminModel.php");
+		$obj = new ExpoferialaboralxvlladminModel();
+
+		$arrData  =  array();
+		$arrData = $obj->listGaleriaweb();
+
+
+		$data['lista'] = $arrData;
+
+
+
+		$this->views->getView($this, "ponencias", $data);
+	}
+
+
 
 
 	public function galeria()
