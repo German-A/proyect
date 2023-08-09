@@ -39,8 +39,9 @@
         background: linear-gradient(90deg, rgba(231, 249, 7, 1) 57%, rgba(15, 196, 233, 1) 76%);
         transform-origin: bottom left;
     }
-    .logo{
-max-width: 200px;
+
+    .logo {
+        max-width: 200px;
     }
 </style>
 <div class="conten">
@@ -63,8 +64,7 @@ max-width: 200px;
     <br><br>
 
     <style>
-
-        .card_empleo {    
+        .card_empleo {
             display: flex;
             flex-direction: row;
             margin: 0 auto;
@@ -74,6 +74,8 @@ max-width: 200px;
         .cardListempleos .card_foto {
             display: flex;
             flex-direction: column;
+            max-width: 210px;
+            min-height: 320px;
             background-color: rgb(255 255 255 / 70%);
             -webkit-box-shadow: 0px 0px 25px -1px rgba(0, 0, 0, 0.75);
             -moz-box-shadow: 0px 0px 25px -1px rgba(0, 0, 0, 0.75);
@@ -82,36 +84,59 @@ max-width: 200px;
             padding-left: 10px;
             padding-right: 10px;
             border-radius: 5%;
+            margin: 10px auto;
         }
 
-        @media (min-width: 768px) {
-
-            .cardListempleos {
-                display: grid;
-                max-width: 90%;
-                margin: auto;
-                grid-template-columns: 1fr 1fr 1fr 1fr;
-                column-gap: 1rem;
-     
-            }
-
+        .cardequipo {
+            display: grid;
+            max-width: 90%;
+            grid-template-columns: 1fr;
+            column-gap: 1rem;
+            margin: auto;
         }
 
-        .imgnosotros{
+        .imgnosotros {
             max-width: 190px;
         }
 
+        @media (min-width: 768px) {
+            .cardequipo {
+                display: grid;
+                max-width: 90%;
+                grid-template-columns: 1fr 1fr;
+                column-gap: 1rem;
+            }
+        }
+
+        @media (min-width: 900px) {
+            .cardequipo {
+                display: grid;
+                max-width: 90%;
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+
+        @media (min-width: 1000px) {
+            .cardequipo {
+                display: grid;
+                max-width: 90%;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .cardequipo {
+                display: grid;
+                max-width: 90%;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            }
+        }
     </style>
 
     <h1 class="underline">Equipo USE - UNT</h1>
-
-<br><br>
-
-    <section class="card_empleo">
-
-
-        <br>
-
+    <br><br>
+    <section class="card_empleo cardequipo">
+ 
         <div class="cardListempleos">
             <div class="card_foto">
                 <img class="imgnosotros" src="<?= media(); ?>/images/expoferiaxvll/sosa.png" alt="" />
@@ -156,7 +181,7 @@ max-width: 200px;
 
         <div class="cardListempleos">
             <div class="card_foto">
-                <img class="imgnosotros" src="<?= media(); ?>/images/expoferiaxvll/isabel.png" alt=""  />
+                <img class="imgnosotros" src="<?= media(); ?>/images/expoferiaxvll/isabel.png" alt="" />
                 <br>
                 <h6>MARIA ISABEL
                     <br>

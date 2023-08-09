@@ -61,7 +61,7 @@ headerAdmin($data);
             </div>
             <div class="modal-body">
                 <form id="formmodalGaleria" name="formmodalGaleria" class="form-horizontal">
-                    <input type="hidden" id="idexpoxvllgaleria" name="idexpoxvllgaleria" value="">
+                    <input type="hidden" id="idexpoferiaslaboralesgaleria" name="idexpoferiaslaboralesgaleria" value="">
                     <p class="text-primary">Todos los campos son obligatorios.</p>
 
 
@@ -98,7 +98,7 @@ headerAdmin($data);
 
 <script>
     function openModalGaleria() {
-        document.querySelector('#idexpoxvllgaleria').value = "";
+        document.querySelector('#idexpoferiaslaboralesgaleria').value = "";
         document.querySelector('.modal-header').classList.replace("headerUpdate", "headerRegister");
         document.querySelector('#btnGaleria').classList.replace("btn-info", "btn-primary");
         document.querySelector('#btnGaleria').innerHTML = "Guardar";
@@ -110,7 +110,7 @@ headerAdmin($data);
 
     function GuardarGaleria() {
 
-        var idexpoxvllgaleria = $("#idexpoxvllgaleria").val();
+        var idexpoferiaslaboralesgaleria = $("#idexpoferiaslaboralesgaleria").val();
         var txtNombre = $("#txtNombre").val();
         var txtPosicion = $("#txtPosicion").val();
         var inputElement = document.getElementById("archivoSubido");
@@ -126,7 +126,7 @@ headerAdmin($data);
             return;
         }
 
-        if (idexpoxvllgaleria != 0) {
+        if (idexpoferiaslaboralesgaleria != 0) {
 
         } else {
             if (inputElement.files['length'] == 0) {
@@ -137,7 +137,7 @@ headerAdmin($data);
 
 
         var fd = new FormData();
-        fd.append("idexpoxvllgaleria", idexpoxvllgaleria);
+        fd.append("idexpoferiaslaboralesgaleria", idexpoferiaslaboralesgaleria);
         fd.append("txtNombre", txtNombre);
         fd.append("txtPosicion", txtPosicion);
         fd.append("archivoSubido", archivoSubido);
@@ -164,7 +164,7 @@ headerAdmin($data);
         });
     }
 
-    function fntEditGaleria(idexpoxvllgaleria) {
+    function fntEditGaleria(idexpoferiaslaboralesgaleria) {
 
         document.querySelector("#titleGaleria").innerHTML = "ACTUALIZAR GALERÍA";
         document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");
@@ -173,7 +173,7 @@ headerAdmin($data);
 
         $.ajax({
             method: "GET",
-            url: "" + base_url + "/expoferialaboralxvlladmin/getOneGaleria/" + idexpoxvllgaleria,
+            url: "" + base_url + "/expoferialaboralxvlladmin/getOneGaleria/" + idexpoferiaslaboralesgaleria,
             processData: false, // tell jQuery not to process the data
             contentType: false, // tell jQuery not to set contentType
 
@@ -182,7 +182,7 @@ headerAdmin($data);
 
             if (info.status == true) {
                 document.querySelector("#formmodalGaleria").reset();
-                document.getElementById('idexpoxvllgaleria').value = info.data['idexpoxvllgaleria'];
+                document.getElementById('idexpoferiaslaboralesgaleria').value = info.data['idexpoferiaslaboralesgaleria'];
                 document.getElementById('txtNombre').value = info.data['nombre'];
                 document.getElementById('txtPosicion').value = info.data['posicion'];
 
@@ -196,7 +196,7 @@ headerAdmin($data);
         });
     }
 
-    function fntDeleteGaleria(idexpoxvllgaleria) {
+    function fntDeleteGaleria(idexpoferiaslaboralesgaleria) {
 
         swal({
             title: "Eliminar Galeria",
@@ -213,7 +213,7 @@ headerAdmin($data);
 
                 $.ajax({
                     method: "POST",
-                    url: "" + base_url + "/expoferialaboralxvlladmin/deleteGaleria/" + idexpoxvllgaleria,
+                    url: "" + base_url + "/expoferialaboralxvlladmin/deleteGaleria/" + idexpoferiaslaboralesgaleria,
                     processData: false, // tell jQuery not to process the data
                     contentType: false, // tell jQuery not to set contentType
 
@@ -253,7 +253,7 @@ headerAdmin($data);
                 "dataSrc": ""
             },
             "columns": [{
-                    "data": "idexpoxvllgaleria"
+                    "data": "idexpoferiaslaboralesgaleria"
                 },
                 {
                     "data": "nombre"

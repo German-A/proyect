@@ -2,13 +2,33 @@
 
 class ExpoferialaboralxvlladminModel extends Mysql
 {
-	public int $idexpoxvllgaleria;
-	public int $idexpoxvempresas;
+	public int $idexpoferiaslaboralesgaleria;
+	public int $idexpoferiaslaboralesempresas;
+	public string $idexpoferiaslaboralesponencias;
 
 	public string $nombre;
 	public int $posicion;
 	public string $archivo;
+
+	public string $txtNombre;
+	public string $txtPosicion;
+	public string $nuevonombre;
+
+	public int $date;
+	public string $txtUrl;
+	public string $descripcion;
+	public string $url;
+
+
+
+
+	public int $expoferiaslaboralesid = 5;
+
+	public int $return = 0;
 	public int $intborrar = 0;
+
+
+
 
 	public function __construct()
 	{
@@ -18,22 +38,22 @@ class ExpoferialaboralxvlladminModel extends Mysql
 	/*GALERIA*/
 	public function listGaleria()
 	{
-		$sql = "SELECT * FROM expoxvllgaleria where status>0 and expoferiaslaboralesid = 5";
+		$sql = "SELECT * FROM expoferiaslaboralesgaleria where status>0 and expoferiaslaboralesid = 5";
 		$request = $this->select_all($sql);
 		return $request;
 	}
 
-		/*GALERIA*/
-		public function listGaleriaweb()
-		{
-			$sql = "SELECT * FROM expoxvllgaleria where status>0 and expoferiaslaboralesid = 5";
-			$request = $this->select_all($sql);
-			return $request;
-		}
+	/*GALERIA*/
+	public function listGaleriaweb()
+	{
+		$sql = "SELECT * FROM expoferiaslaboralesgaleria where status>0 and expoferiaslaboralesid = 5";
+		$request = $this->select_all($sql);
+		return $request;
+	}
 
 	public function buscarArchivoGaleria($filename)
 	{
-		$sql = "SELECT archivo FROM expoxvllgaleria where archivo = '$filename'";
+		$sql = "SELECT archivo FROM expoferiaslaboralesgaleria where archivo = '$filename'";
 		$request = $this->select_all($sql);
 		return $request;
 	}
@@ -45,7 +65,7 @@ class ExpoferialaboralxvlladminModel extends Mysql
 		$this->nuevonombre = $nuevonombre;
 		$this->expoferiaslaboralesid = 5;
 		$return = 0;
-		$query_insert  = "INSERT INTO expoxvllgaleria(nombre,posicion,archivo,expoferiaslaboralesid)
+		$query_insert  = "INSERT INTO expoferiaslaboralesgaleria(nombre,posicion,archivo,expoferiaslaboralesid)
 								  VALUES(?,?,?,?)";
 		$arrData = array(
 			$this->txtNombre,
@@ -58,33 +78,33 @@ class ExpoferialaboralxvlladminModel extends Mysql
 		return $return;
 	}
 
-	public function getOneGaleria($idexpoxvllgaleria)
+	public function getOneGaleria($idexpoferiaslaboralesgaleria)
 	{
 		$sql = "SELECT * 
-            FROM expoxvllgaleria
-            where status > 0 and idexpoxvllgaleria = $idexpoxvllgaleria
+            FROM expoferiaslaboralesgaleria
+            where status > 0 and idexpoferiaslaboralesgaleria = $idexpoferiaslaboralesgaleria
 			";
 		$request = $this->select($sql);
 		return $request;
 	}
 
-	public function removeGaleria($idexpoxvllgaleria)
+	public function removeGaleria($idexpoferiaslaboralesgaleria)
 	{
-		$this->idexpoxvllgaleria = $idexpoxvllgaleria;
-		$sql = "UPDATE expoxvllgaleria SET status = ? WHERE idexpoxvllgaleria = $this->idexpoxvllgaleria ";
+		$this->idexpoferiaslaboralesgaleria = $idexpoferiaslaboralesgaleria;
+		$sql = "UPDATE expoferiaslaboralesgaleria SET status = ? WHERE idexpoferiaslaboralesgaleria = $this->idexpoferiaslaboralesgaleria ";
 		$arrData = array($this->intborrar);
 		$request = $this->update($sql, $arrData);
 		return $request;
 	}
 
-	public function updateGaleria($txtNombre, $txtPosicion, $idexpoxvllgaleria)
+	public function updateGaleria($txtNombre, $txtPosicion, $idexpoferiaslaboralesgaleria)
 	{
 		$this->nombre = $txtNombre;
 		$this->posicion = $txtPosicion;
-		$this->idexpoxvllgaleria = $idexpoxvllgaleria;
+		$this->idexpoferiaslaboralesgaleria = $idexpoferiaslaboralesgaleria;
 
-		$sql = "UPDATE expoxvllgaleria SET nombre=?,posicion=?
-			WHERE idexpoxvllgaleria = $this->idexpoxvllgaleria ";
+		$sql = "UPDATE expoferiaslaboralesgaleria SET nombre=?,posicion=?
+			WHERE idexpoferiaslaboralesgaleria = $this->idexpoferiaslaboralesgaleria ";
 		$arrData = array(
 			$this->nombre,
 			$this->posicion
@@ -94,15 +114,15 @@ class ExpoferialaboralxvlladminModel extends Mysql
 		return $request;
 	}
 
-	public function updateGaleriaArchivo($txtNombre, $txtPosicion, $archivo, $idexpoxvllgaleria)
+	public function updateGaleriaArchivo($txtNombre, $txtPosicion, $archivo, $idexpoferiaslaboralesgaleria)
 	{
 		$this->nombre = $txtNombre;
 		$this->posicion = $txtPosicion;
 		$this->archivo = $archivo;
-		$this->idexpoxvllgaleria = $idexpoxvllgaleria;
+		$this->idexpoferiaslaboralesgaleria = $idexpoferiaslaboralesgaleria;
 
-		$sql = "UPDATE expoxvllgaleria SET nombre=?,posicion=?,archivo=?
-			WHERE idexpoxvllgaleria = $this->idexpoxvllgaleria ";
+		$sql = "UPDATE expoferiaslaboralesgaleria SET nombre=?,posicion=?,archivo=?
+			WHERE idexpoferiaslaboralesgaleria = $this->idexpoferiaslaboralesgaleria ";
 		$arrData = array(
 			$this->nombre,
 			$this->posicion,
@@ -117,35 +137,35 @@ class ExpoferialaboralxvlladminModel extends Mysql
 	/*PONENCIAS*/
 	public function listPonencias()
 	{
-		$sql = "SELECT * FROM expoxvllponencias 
+		$sql = "SELECT * FROM expoferiaslaboralesponencias 
 		where status > 0 and expoferiaslaboralesid = 5";
 		$request = $this->select_all($sql);
 		return $request;
 	}
 	public function listPonenciasdia7()
 	{
-		$sql = "SELECT * FROM expoxvllponencias 
+		$sql = "SELECT * FROM expoferiaslaboralesponencias 
 		where status > 0 and expoferiaslaboralesid = 5 and date = 7 ";
 		$request = $this->select_all($sql);
 		return $request;
 	}
-		/*PONENCIAS*/
-		public function listPonenciasdia8()
-		{
-			$sql = "SELECT * FROM expoxvllponencias 
-			where status > 0 and expoferiaslaboralesid = 5 and date = 8 ";
-			$request = $this->select_all($sql);
-			return $request;
-		}
-
-	public function buscarArchivoPonencias($filename)
+	/*PONENCIAS*/
+	public function listPonenciasdia8()
 	{
-		$sql = "SELECT archivo FROM expoxvllponencias where archivo = '$filename' and expoferiaslaboralesid = 2";
+		$sql = "SELECT * FROM expoferiaslaboralesponencias 
+			where status > 0 and expoferiaslaboralesid = 5 and date = 8 ";
 		$request = $this->select_all($sql);
 		return $request;
 	}
 
-	public function registerPonencias($txtNombre, $txtPosicion, $nuevonombre,$date)
+	public function buscarArchivoPonencias($filename)
+	{
+		$sql = "SELECT archivo FROM expoferiaslaboralesponencias where archivo = '$filename' and expoferiaslaboralesid = 2";
+		$request = $this->select_all($sql);
+		return $request;
+	}
+
+	public function registerPonencias($txtNombre, $txtPosicion, $nuevonombre, $date)
 	{
 		$this->txtNombre = $txtNombre;
 		$this->txtPosicion = $txtPosicion;
@@ -153,7 +173,7 @@ class ExpoferialaboralxvlladminModel extends Mysql
 		$this->date = $date;
 		$this->expoferiaslaboralesid = 5;
 		$return = 0;
-		$query_insert  = "INSERT INTO expoxvllponencias(nombre,posicion,archivo,expoferiaslaboralesid,date)
+		$query_insert  = "INSERT INTO expoferiaslaboralesponencias(nombre,posicion,archivo,expoferiaslaboralesid,date)
 									  VALUES(?,?,?,?,?)";
 		$arrData = array(
 			$this->txtNombre,
@@ -167,34 +187,34 @@ class ExpoferialaboralxvlladminModel extends Mysql
 		return $return;
 	}
 
-	public function getOnePonencia($idexpoxvllponencias)
+	public function getOnePonencia($idexpoferiaslaboralesponencias)
 	{
 		$sql = "SELECT * 
-				FROM expoxvllponencias
-				where status > 0 and idexpoxvllponencias = $idexpoxvllponencias
+				FROM expoferiaslaboralesponencias
+				where status > 0 and idexpoferiaslaboralesponencias = $idexpoferiaslaboralesponencias
 				";
 		$request = $this->select($sql);
 		return $request;
 	}
 
-	public function removePonencias($idexpoxvllgaleria)
+	public function removePonencias($idexpoferiaslaboralesgaleria)
 	{
-		$this->idexpoxvllgaleria = $idexpoxvllgaleria;
-		$sql = "UPDATE expoxvllponencias SET status = ? WHERE idexpoxvllponencias = $this->idexpoxvllgaleria ";
+		$this->idexpoferiaslaboralesgaleria = $idexpoferiaslaboralesgaleria;
+		$sql = "UPDATE expoferiaslaboralesponencias SET status = ? WHERE idexpoferiaslaboralesponencias = $this->idexpoferiaslaboralesgaleria ";
 		$arrData = array($this->intborrar);
 		$request = $this->update($sql, $arrData);
 		return $request;
 	}
 
-	public function updatePonencia($txtNombre, $txtPosicion, $idexpoxvllponencias,$date)
+	public function updatePonencia($txtNombre, $txtPosicion, $idexpoferiaslaboralesponencias, $date)
 	{
 		$this->nombre = $txtNombre;
 		$this->posicion = $txtPosicion;
-		$this->idexpoxvllponencias = $idexpoxvllponencias;
+		$this->idexpoferiaslaboralesponencias = $idexpoferiaslaboralesponencias;
 		$this->date = $date;
 
-		$sql = "UPDATE expoxvllponencias SET nombre=?,posicion=?,date=?
-				WHERE idexpoxvllponencias = $this->idexpoxvllponencias ";
+		$sql = "UPDATE expoferiaslaboralesponencias SET nombre=?,posicion=?,date=?
+				WHERE idexpoferiaslaboralesponencias = $this->idexpoferiaslaboralesponencias ";
 		$arrData = array(
 			$this->nombre,
 			$this->posicion,
@@ -206,16 +226,16 @@ class ExpoferialaboralxvlladminModel extends Mysql
 		return $request;
 	}
 
-	public function updatePonenciaArchivo($txtNombre, $txtPosicion, $archivo, $idexpoxvllponencias,$date)
+	public function updatePonenciaArchivo($txtNombre, $txtPosicion, $archivo, $idexpoferiaslaboralesponencias, $date)
 	{
 		$this->nombre = $txtNombre;
 		$this->posicion = $txtPosicion;
 		$this->archivo = $archivo;
-		$this->idexpoxvllponencias = $idexpoxvllponencias;
+		$this->idexpoferiaslaboralesponencias = $idexpoferiaslaboralesponencias;
 		$this->date = $date;
 
-		$sql = "UPDATE expoxvllponencias SET nombre=?,posicion=?,archivo=?,date=?
-				WHERE idexpoxvllponencias = $this->idexpoxvllponencias ";
+		$sql = "UPDATE expoferiaslaboralesponencias SET nombre=?,posicion=?,archivo=?,date=?
+				WHERE idexpoferiaslaboralesponencias = $this->idexpoferiaslaboralesponencias ";
 		$arrData = array(
 			$this->nombre,
 			$this->posicion,
@@ -246,14 +266,14 @@ class ExpoferialaboralxvlladminModel extends Mysql
 	/*EMPRESA*/
 	public function listEmpresa()
 	{
-		$sql = "SELECT * FROM expoxvempresas where status>0";
+		$sql = "SELECT * FROM expoferiaslaboralesempresas where status>0";
 		$request = $this->select_all($sql);
 		return $request;
 	}
 
 	public function buscarArchivoEmpresa($filename)
 	{
-		$sql = "SELECT archivo FROM expoxvempresas where archivo = '$filename'";
+		$sql = "SELECT archivo FROM expoferiaslaboralesempresas where archivo = '$filename'";
 		$request = $this->select_all($sql);
 		return $request;
 	}
@@ -267,7 +287,7 @@ class ExpoferialaboralxvlladminModel extends Mysql
 		$this->archivo = $nuevonombre;
 		$this->expoferiaslaboralesid = 2;
 		$return = 0;
-		$query_insert  = "INSERT INTO expoxvempresas(nombre,url,posicion,descripcion,archivo,expoferiaslaboralesid)
+		$query_insert  = "INSERT INTO expoferiaslaboralesempresas(nombre,url,posicion,descripcion,archivo,expoferiaslaboralesid)
 									  VALUES(?,?,?,?,?,?)";
 		$arrData = array(
 			$this->nombre,
@@ -282,35 +302,35 @@ class ExpoferialaboralxvlladminModel extends Mysql
 		return $return;
 	}
 
-	public function getOneEmpresa($idexpoxvempresas)
+	public function getOneEmpresa($idexpoferiaslaboralesempresas)
 	{
 		$sql = "SELECT * 
-				FROM expoxvempresas
-				where status > 0 and idexpoxvempresas = $idexpoxvempresas
+				FROM expoferiaslaboralesempresas
+				where status > 0 and idexpoferiaslaboralesempresas = $idexpoferiaslaboralesempresas
 				";
 		$request = $this->select($sql);
 		return $request;
 	}
 
-	public function removeEmpresa($idexpoxvempresas)
+	public function removeEmpresa($idexpoferiaslaboralesempresas)
 	{
-		$this->idexpoxvempresas = $idexpoxvempresas;
-		$sql = "UPDATE expoxvempresas SET status = ? WHERE idexpoxvempresas = $this->idexpoxvempresas ";
+		$this->idexpoferiaslaboralesempresas = $idexpoferiaslaboralesempresas;
+		$sql = "UPDATE expoferiaslaboralesempresas SET status = ? WHERE idexpoferiaslaboralesempresas = $this->idexpoferiaslaboralesempresas ";
 		$arrData = array($this->intborrar);
 		$request = $this->update($sql, $arrData);
 		return $request;
 	}
 
-	public function updateEmpresa($txtNombre, $txtUrl, $txtPosicion, $descripcion, $idexpoxvempresas)
+	public function updateEmpresa($txtNombre, $txtUrl, $txtPosicion, $descripcion, $idexpoferiaslaboralesempresas)
 	{
 		$this->nombre = $txtNombre;
 		$this->url = $txtUrl;
 		$this->posicion = $txtPosicion;
 		$this->descripcion = $descripcion;
-		$this->idexpoxvempresas = $idexpoxvempresas;
+		$this->idexpoferiaslaboralesempresas = $idexpoferiaslaboralesempresas;
 
-		$sql = "UPDATE expoxvempresas SET nombre=?,url=?,posicion=?,descripcion=?
-				WHERE idexpoxvempresas = $this->idexpoxvempresas ";
+		$sql = "UPDATE expoferiaslaboralesempresas SET nombre=?,url=?,posicion=?,descripcion=?
+				WHERE idexpoferiaslaboralesempresas = $this->idexpoferiaslaboralesempresas ";
 		$arrData = array(
 			$this->nombre,
 			$this->url,
@@ -322,17 +342,17 @@ class ExpoferialaboralxvlladminModel extends Mysql
 		return $request;
 	}
 
-	public function updateGaleriaEmpresa($txtNombre, $txtUrl, $txtPosicion, $descripcion, $archivo, $idexpoxvempresas)
+	public function updateGaleriaEmpresa($txtNombre, $txtUrl, $txtPosicion, $descripcion, $archivo, $idexpoferiaslaboralesempresas)
 	{
 		$this->nombre = $txtNombre;
 		$this->url = $txtUrl;
 		$this->posicion = $txtPosicion;
 		$this->descripcion = $descripcion;
 		$this->archivo = $archivo;
-		$this->idexpoxvempresas = $idexpoxvempresas;
+		$this->idexpoferiaslaboralesempresas = $idexpoferiaslaboralesempresas;
 
-		$sql = "UPDATE expoxvempresas SET nombre=?,url=?,posicion=?,archivo=?
-				WHERE idexpoxvempresas = $this->idexpoxvempresas ";
+		$sql = "UPDATE expoferiaslaboralesempresas SET nombre=?,url=?,posicion=?,archivo=?
+				WHERE idexpoferiaslaboralesempresas = $this->idexpoferiaslaboralesempresas ";
 		$arrData = array(
 			$this->nombre,
 			$this->url,

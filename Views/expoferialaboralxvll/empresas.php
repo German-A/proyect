@@ -5,7 +5,7 @@
 
 $obj = new HomeModel();
 
-$perfiles = $obj->listaExpoferiaxvEmpresas();
+$perfiles = $obj->listaExpoferiaxvllLogoEmpresa();
 
 ?>
 <br><br>

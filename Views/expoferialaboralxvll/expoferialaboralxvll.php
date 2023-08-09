@@ -2,8 +2,6 @@
 
 <?php obj($data);
 
-$obj = new HomeModel();
-$perfiles = $obj->listaExpoferiaxvll();
 
 ?>
 
@@ -79,11 +77,10 @@ $perfiles = $obj->listaExpoferiaxvll();
         <!-- Swiper -->
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
-                <?php foreach ($perfiles as $key => $fila) { ?>
+            <?php for ($i = 0; $i < count($data['listaponencias']); $i++) { ?>
                     <div class="swiper-slide">
                         <div class="divexpoxv">
-
-                            <img src="<?= media(); ?>/upload/exporiaxvll/<?php echo $fila['archivo'] ?>">
+                            <img src="<?= media(); ?>/upload/exporiaxvll/<?php echo $data['listaponencias'][$i]['archivo']?>">
                         </div>
                     </div>
                 <?php } ?>
@@ -156,7 +153,7 @@ $perfiles = $obj->listaExpoferiaxvll();
 
                 <div class="col-lg-4 col-md-6">
                     <div class="gallery-item">
-                        <a href="<?= media(); ?>/upload/exporiaxvllll/vice.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                        <a href="https://www.youtube.com/embed/9uGj_eR-gYA" data-gall="portfolioGallery" class="gallery-lightbox">
                             <img src="<?= media(); ?>/upload/exporiaxvllll/vice.png">
                         </a>
                     </div>
@@ -164,7 +161,7 @@ $perfiles = $obj->listaExpoferiaxvll();
 
                 <div class="col-lg-4 col-md-6">
                     <div class="gallery-item">
-                        <a href="https://www.youtube.com/embed/MkO9g3ywnG4" data-gall="portfolioGallery" class="gallery-lightbox">
+                        <a href="https://www.youtube.com/embed/9uGj_eR-gYA" data-gall="portfolioGallery" class="gallery-lightbox">
                             <img src="<?= media(); ?>/upload/exporiaxvllll/sosa.png">
                         </a>
                     </div>
@@ -172,7 +169,7 @@ $perfiles = $obj->listaExpoferiaxvll();
 
                 <div class="col-lg-4 col-md-6">
                     <div class="gallery-item">
-                        <a href="<?= media(); ?>/upload/exporiaxvllll/dpa.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                        <a href="https://www.youtube.com/embed/9uGj_eR-gYA" data-gall="portfolioGallery" class="gallery-lightbox">
                             <img src="<?= media(); ?>/upload/exporiaxvllll/dpa.png">
                         </a>
                     </div>

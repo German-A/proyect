@@ -62,7 +62,7 @@ headerAdmin($data);
             </div>
             <div class="modal-body">
                 <form id="formmodalPonencias" name="formmodalPonencias" class="form-horizontal">
-                    <input type="hidden" id="idexpoxvllponencias" name="idexpoxvllponencias" value="">
+                    <input type="hidden" id="idexpoferiaslaboralesponencias" name="idexpoferiaslaboralesponencias" value="">
                     <p class="text-primary">Todos los campos son obligatorios.</p>
 
 
@@ -107,7 +107,7 @@ headerAdmin($data);
 
 <script>
     function openModalPonencias() {
-        document.querySelector('#idexpoxvllponencias').value = "";
+        document.querySelector('#idexpoferiaslaboralesponencias').value = "";
         document.querySelector('.modal-header').classList.replace("headerUpdate", "headerRegister");
         document.querySelector('#btnPonencias').classList.replace("btn-info", "btn-primary");
         document.querySelector('#btnPonencias').innerHTML = "Guardar";
@@ -119,7 +119,7 @@ headerAdmin($data);
 
     function GuardarPonencias() {
 
-        var idexpoxvllponencias = $("#idexpoxvllponencias").val();
+        var idexpoferiaslaboralesponencias = $("#idexpoferiaslaboralesponencias").val();
         var txtNombre = $("#txtNombre").val();
         var txtPosicion = $("#txtPosicion").val();
         var inputElement = document.getElementById("archivoSubido");
@@ -145,7 +145,7 @@ headerAdmin($data);
 
 
 
-        if (idexpoxvllponencias != 0) {
+        if (idexpoferiaslaboralesponencias != 0) {
 
         } else {
             if (inputElement.files['length'] == 0) {
@@ -156,7 +156,7 @@ headerAdmin($data);
 
 
         var fd = new FormData();
-        fd.append("idexpoxvllponencias", idexpoxvllponencias);
+        fd.append("idexpoferiaslaboralesponencias", idexpoferiaslaboralesponencias);
         fd.append("txtNombre", txtNombre);
         fd.append("txtPosicion", txtPosicion);
         fd.append("archivoSubido", archivoSubido);
@@ -185,7 +185,7 @@ headerAdmin($data);
         });
     }
 
-    function fntEditPonencias(idexpoxvllponencias) {
+    function fntEditPonencias(idexpoferiaslaboralesponencias) {
 
         document.querySelector("#titlePonencias").innerHTML = "ACTUALIZAR GALERÍA";
         document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");
@@ -194,7 +194,7 @@ headerAdmin($data);
 
         $.ajax({
             method: "GET",
-            url: "" + base_url + "/expoferialaboralxvlladmin/getOnePonencia/" + idexpoxvllponencias,
+            url: "" + base_url + "/expoferialaboralxvlladmin/getOnePonencia/" + idexpoferiaslaboralesponencias,
             processData: false, // tell jQuery not to process the data
             contentType: false, // tell jQuery not to set contentType
 
@@ -203,7 +203,7 @@ headerAdmin($data);
 
             if (info.status == true) {
                 document.querySelector("#formmodalPonencias").reset();
-                document.getElementById('idexpoxvllponencias').value = info.data['idexpoxvllponencias'];
+                document.getElementById('idexpoferiaslaboralesponencias').value = info.data['idexpoferiaslaboralesponencias'];
                 document.getElementById('txtNombre').value = info.data['nombre'];
                 document.getElementById('txtPosicion').value = info.data['posicion'];
 
@@ -217,7 +217,7 @@ headerAdmin($data);
         });
     }
 
-    function fntDeletePonencias(idexpoxvllponencias) {
+    function fntDeletePonencias(idexpoferiaslaboralesponencias) {
 
         swal({
             title: "Eliminar Ponencias",
@@ -234,7 +234,7 @@ headerAdmin($data);
 
                 $.ajax({
                     method: "POST",
-                    url: "" + base_url + "/expoferialaboralxvlladmin/deletePonencias/" + idexpoxvllponencias,
+                    url: "" + base_url + "/expoferialaboralxvlladmin/deletePonencias/" + idexpoferiaslaboralesponencias,
                     processData: false, // tell jQuery not to process the data
                     contentType: false, // tell jQuery not to set contentType
 
@@ -274,7 +274,7 @@ headerAdmin($data);
                 "dataSrc": ""
             },
             "columns": [{
-                    "data": "idexpoxvllponencias"
+                    "data": "idexpoferiaslaboralesponencias"
                 },
                 {
                     "data": "nombre"

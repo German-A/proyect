@@ -486,6 +486,17 @@ class HomeModel extends Mysql
 		return $request;
 	}
 
+	
+	public function listaExpoferiaxvllLogoEmpresa()
+	{
+		$sql = "SELECT e.archivo, e.nombre,e.url
+			from expoferiaslaboralesempresas e
+			where e.status>0 order by e.posicion asc  and expoferiaslaboralesid = 5";
+		$request = $this->select_all($sql);
+		return $request;
+	}
+
+
 	public function listaGalerias()
 	{
 		$sql = "SELECT nombre, archivo as archivo

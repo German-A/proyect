@@ -1,4 +1,4 @@
-<?php headexpoferiaxvll($data); ?>
+<?php headexpoferiaxvll($data); ?> 
 
 <style>
     /* Gallery Section--------------------------------*/

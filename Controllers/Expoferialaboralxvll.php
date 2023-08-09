@@ -13,6 +13,16 @@ class expoferialaboralxvll extends Controllers
 		$data['page_tag'] = "expoferialaboralxvll";
 		$data['page_title'] = "expoferialaboralxvll";
 		$data['page_name'] = "expoferialaboralxvll";
+
+		require_once("Models/ExpoferialaboralxvlladminModel.php");
+		$obj = new ExpoferialaboralxvlladminModel();
+		
+		$arrData  =  array();
+		$arrData = $obj->listPonencias();
+
+		$data['listaponencias'] = $arrData;
+		
+
 		$this->views->getView($this, "expoferialaboralxvll", $data);
 	}
 
@@ -33,12 +43,13 @@ class expoferialaboralxvll extends Controllers
 
 		require_once("Models/ExpoferialaboralxvlladminModel.php");
 		$obj = new ExpoferialaboralxvlladminModel();
+		$obj2 = new ExpoferialaboralxvlladminModel();
 
 		$arrData  =  array();
 		$arrData = $obj->listPonenciasdia7();
 
 		$arrDatadia8  =  array();
-		$arrDatadia8 = $obj->listPonenciasdia8();
+		$arrDatadia8 = $obj2->listPonenciasdia8();
 
 		$data['listaponencias'] = $arrData;
 
@@ -64,7 +75,7 @@ class expoferialaboralxvll extends Controllers
 
 
 
-		$this->views->getView($this, "ponencias", $data);
+		$this->views->getView($this, "galeria", $data);
 	}
 
 
@@ -72,10 +83,17 @@ class expoferialaboralxvll extends Controllers
 
 	public function galeria()
 	{
-
 		$data['page_tag'] = "expoferialaboralxvll";
 		$data['page_title'] = "expoferialaboralxvll";
 		$data['page_name'] = "expoferialaboralxvll";
+
+		require_once("Models/ExpoferialaboralxvlladminModel.php");
+		$obj = new ExpoferialaboralxvlladminModel();
+
+		$arrData  =  array();
+		$arrData = $obj->listGaleriaweb();
+
+		$data['lista'] = $arrData;
 		$this->views->getView($this, "galeria", $data);
 	}
 
