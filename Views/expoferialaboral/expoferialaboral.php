@@ -192,13 +192,13 @@ $n = 1;
         <div class="contenedor-temario" id="temario">
             <h4 class="text-center">Expoferia Laboral</h4>
             <br><br>
-            <h4>2021</h4>
+            <h4>2023</h4>
             <ul class="lista">
                 <li class="activo">
                     <div class="itemY">
                         <h1 data-id="Documentos\MYG\Cuestionario-SISEU.pdf"></h1>
-                        <a href="https://unitru2021.wixsite.com/expoferialaboral" target="_blank">
-                            <h5>Expoferia Laboral Virtual 2021 (07 al 14 de octubre)</h5>
+                        <a href="https://use-dpa.unitru.edu.pe/expoferialaboralxvll" target="_blank">
+                            <h5>Ciencias Básicas y Tecnológicas (07 y 08 de septiembre)</h5>
                         </a>
                     </div>
                 </li>
@@ -221,18 +221,22 @@ $n = 1;
                             <h5>Ciencias Básicas y Tecnológicas (18 al 20 de octubre)</h5>
                         </a>
                     </div>
-                </li>
-
-                <li>
+                </li>             
+            </ul>
+            <br><br>
+            <h4>2021</h4>
+            <ul class="lista">
+                <li class="">
                     <div class="itemY">
-                        <h1 data-id=""></h1>
-                        <a href="<?= base_url(); ?>/expoferialaboralxvll" target="_blank">
-                            <h5>expoferialaboral xvll</h5>
+                        <h1 data-id="Documentos\MYG\Cuestionario-SISEU.pdf"></h1>
+                        <a href="https://unitru2021.wixsite.com/expoferialaboral" target="_blank">
+                            <h5>Expoferia Laboral Virtual 2021 (07 al 14 de octubre)</h5>
                         </a>
                     </div>
                 </li>
-             
             </ul>
+            <br><br>
+
         </div>
     </aside>
     <main><br><br>
