@@ -137,11 +137,53 @@ class empresaapobarempleoadmin extends Controllers
 		}
 	}
 
+	//CORREO DE LA USE PARA LOS EGRESADOS
+	public function enviarCorreoEgresados($idempleo)
+	{
+		$nombreUsuario = null;
+		$email_user = null;
+		$NombrePuesto = null;
+		$FechaFin = null;
+		$arrData['nombres'] = "";
+		$arrData['email_user'] = "";
+		$arrData['NombrePuesto'] = "";
+		$arrData['FechaFin'] = "";
+
+		$arrData = $this->model->listaCarrerasid($idempleo); //datos del usuario
+		for ($i = 0; $i <= count($arrData); $i++) {
+
+			//$nombreUsuario = empty($arrData[$i]['nombres']);
+			if (!empty($arrData[$i]['nombres'])) {
+				$nombreUsuario = $arrData[$i]['nombres'];
+			}
+			if (!empty($arrData[$i]['email_user'])) {
+				$email_user = $arrData[$i]['email_user'];
+			}
+			if (!empty($arrData[$i]['NombrePuesto'])) {
+				$NombrePuesto = $arrData[$i]['NombrePuesto'];
+			}
+			if (!empty($arrData[$i]['FechaFin'])) {
+				$FechaFin = $arrData[$i]['FechaFin'];
+			}
+
+
+			$dataUsuario = array(
+				'nombreUsuario' => $nombreUsuario,
+				'email_user' => $email_user,
+				'NombrePuesto' => $NombrePuesto,
+				'FechaFin' => $FechaFin,
+				'asunto' => 'Recuperar cuenta - ' . NOMBRE_REMITENTE
+			);
+			sendAprobacionCorreo($dataUsuario, 'email_empleo');
+			$dataUsuario = null;
+		}
+	}
+
 
 	/**************************************** PAGINA DE EMPLEOS PARA VALIDAR RUC ****************************************/
 	public function validarruc()
 	{
-		if ($_SESSION['permisos'][25]['r']==0) {
+		if ($_SESSION['permisos'][25]['r'] == 0) {
 			header("Location:" . base_url() . '/dashboard');
 		}
 
@@ -266,6 +308,10 @@ class empresaapobarempleoadmin extends Controllers
 			if ($_SESSION['permisos'][26]['r']) {
 				$idempleo = intval($_POST['idempleo']);
 				$requestDelete = $this->model->difusionCompletado($idempleo);
+
+
+
+
 				if ($requestDelete) {
 					$arrResponse = array('status' => true, 'msg' => 'Se ha publicado correctamente');
 				} else {
@@ -277,7 +323,7 @@ class empresaapobarempleoadmin extends Controllers
 		die();
 	}
 
-/**************************************** PAGINA PARA SEGUIMIENTO EMPLEO ****************************************/
+	/**************************************** PAGINA PARA SEGUIMIENTO EMPLEO ****************************************/
 	public function seguimientoempleo()
 	{
 		if ($_SESSION['permisos'][27]['r'] == 0) {
