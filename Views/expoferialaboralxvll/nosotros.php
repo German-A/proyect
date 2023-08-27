@@ -1,6 +1,6 @@
 <?php headexpoferiaxvll($data); ?>
 
-<br><br>
+
 <style>
     .conten {
         max-width: 1200px;
