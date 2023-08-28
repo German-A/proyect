@@ -45,7 +45,7 @@ class RegistroegresadoModel extends Mysql
 		return $request;
 	}
 
-	public function insertUsuarioEgresado(string $valorB, string $valorC, string  $valorD, string $valorEE, string $valorH, string  $valorE, string  $valorI)
+	public function insertUsuarioEgresado(string $valorB, string $valorC, string  $valorD,string  $valorE, string $valorH, string  $valorI)
 	{
 		$this->ApellidoP = $valorB;
 		$this->ApellidoM = $valorC;
@@ -59,7 +59,7 @@ class RegistroegresadoModel extends Mysql
 		$return = 0;
 
 
-		$query_insert  = "INSERT INTO usuario(apellidop,apellidom,nombres,dni,telefono,password,email_user,rolid) 
+		$query_insert  = "INSERT INTO usuario(apellidop,apellidom,nombres,dni,telefono,password,email_user,rolid,fecha_nacimiento) 
 								  VALUES(?,?,?,?,?,?,?,?)";
 		$arrData = array(
 			$this->ApellidoP,

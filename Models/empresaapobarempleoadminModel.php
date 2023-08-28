@@ -64,30 +64,69 @@ class EmpresaapobarempleoadminModel extends Mysql
 		return $request;
 	}
 
-	// BUSCAR CARRERAS PARA ENVIAR POR CORREO 
-	public function listaCarrerasid($idempresa)
+	// BUSCAR DATOS DEL PUESTO DE LA EMPRESA PARA ENVIAR POR CORREO 
+	public function buscarPuestoPublicado($idempresa)
 	{
-		$sql = "SELECT u.nombres, u.email_user,e.FechaFin,e.NombrePuesto
-			FROM empleos e
-			inner join empresa emp on e.empresaid = emp.idempresa
-			inner join usuario u on u.idpersona = emp.personaid
-			where e.idempleos =  $idempresa";
+		$sql = "SELECT idEscuela, nombreEscuela
+		FROM detallecarreras dt
+		inner join escuela e
+		on dt.escuelaid = e.idEscuela
+		where empleosid  =  $idempresa";
 		$request = $this->select_all($sql);
 		return $request;
 	}
 
-	// public function listaParaAprobarEmpleo($idempleo)
-	// {
-	// 	$sql = "SELECT em.idEmpleos,emp.nombreEmpresa, u.email_user,em.FechaFin,em.NombrePuesto
-	// 	from empleos em
-	// 	inner join empresa emp
-	// 	on em.empresaid = emp.idempresa
-	// 	inner join usuario u
-	// 	on u.idpersona=emp.personaid
-	// 	where em.status =2 and  em.idempleos = $idempleo";
-	// 	$request = $this->select($sql);			
-	// 	return $request;
-	// }
+	public function listaParaAprobarEmpleo($idempleo)
+	{
+		$sql = "SELECT em.idEmpleos,emp.nombreEmpresa, u.email_user,em.FechaFin,em.NombrePuesto
+		from empleos em
+		inner join empresa emp
+		on em.empresaid = emp.idempresa
+		inner join usuario u
+		on u.idpersona = emp.personaid
+		where  em.idEmpleos = $idempleo";
+		$request = $this->select($sql);			
+		return $request;
+	}
+
+	// BUSCAR DATOS DEL PUESTO DE LA EMPRESA PARA ENVIAR POR CORREO A LOS EGRESADOS
+	public function buscarCarrerasEmpleo($idempresa)
+	{
+		$sql = "SELECT idEscuela
+		FROM detallecarreras dt
+		inner join escuela e
+		on dt.escuelaid = e.idEscuela
+		where empleosid = =  $idempresa";
+		$request = $this->select_all($sql);
+		return $request;
+	}
+
+	public function buscarCorreosEgresados($arrData)
+	{
+
+		$where = "eg.status != 0 and ";
+
+		foreach ($arrData as $idcarrera)
+		{			
+			$where = $where . 'eg.idescuela = ' . $idcarrera['idEscuela'].' or ';
+		}
+		$where = substr($where, 0,-4);
+		
+
+
+		$sql = "SELECT email_user
+		FROM egresado eg
+		inner join escuela es on eg.idescuela = es.idEscuela
+		inner join usuario u on u.idpersona = eg.personaid
+		where $where";
+		$request = $this->select_all($sql);
+		return $request;
+	}
+
+
+
+
+
 
 	/*PAGINA PARA SECRETARIADO*/
 	public function listaEmpleosParaValidarRuc()

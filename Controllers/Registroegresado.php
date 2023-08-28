@@ -59,9 +59,8 @@ class registroegresado extends Controllers
 				$numeroLetra = Coordinate::columnIndexFromString($letra);
 				$registrados = 0;
 
-				for ($indiceFila = 2; $indiceFila <= $numeroFilas; $indiceFila++) {			
-					$valorA = $hojaActual->getCellByColumnAndRow(1, $indiceFila);
-					/*numeroMatricula*/
+				for ($indiceFila = 2; $indiceFila <= $numeroFilas; $indiceFila++) {	
+
 					$valorB = $hojaActual->getCellByColumnAndRow(2, $indiceFila);
 					/*ApellidoPaterno*/
 					$valorC = $hojaActual->getCellByColumnAndRow(3, $indiceFila);
@@ -73,7 +72,11 @@ class registroegresado extends Controllers
 					$valorF = $hojaActual->getCellByColumnAndRow(6, $indiceFila);
 					/*direccion*/
 					$valorG = $hojaActual->getCellByColumnAndRow(7, $indiceFila)->getValue();
-					/*telefonoFijo*/
+					/*fechanacimiento*/
+
+					
+					$valorA = $hojaActual->getCellByColumnAndRow(1, $indiceFila);
+					/*numeroMatricula*/
 					$valorH = $hojaActual->getCellByColumnAndRow(8, $indiceFila);
 					/*celular*/
 					$valorI = $hojaActual->getCellByColumnAndRow(9, $indiceFila);
@@ -95,7 +98,7 @@ class registroegresado extends Controllers
 					if ($cantidadBanner == null) {
 						//registro tabla usuario
 						$registrados++;
-						$ultimoregistro = $this->model->insertUsuarioEgresado($valorB, $valorC, $valorD, 	$valorE, $valorH, $valorE, $valorI);
+						$ultimoregistro = $this->model->insertUsuarioEgresado($valorB, $valorC, $valorD,$valorE, $valorH, $valorI);
 						//registro tabla egresado
 						$ultimoregistro = $this->model->insertEgresado($valorA, $valorF, $valorG, 	$valorI, $valorJ, $valorK, $valorL, $ultimoregistro,$valorM);
 					}

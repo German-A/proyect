@@ -555,7 +555,7 @@ function sendMailPublicacionEmpleo($data, $template)
         $arrResponse = array(
             'status' => true,
             //'msg' => "Correo invalido: " . $data['email']
-             'msg' => "$mail->ErrorInfo"
+            'msg' => "$mail->ErrorInfo"
         );
         return   $arrResponse;
     }
@@ -1056,6 +1056,7 @@ function sendAprobacionCorreo($data, $template)
     ';
 
 
+
     try {
         //Server settings
         $mail->SMTPDebug = 0;                      //Enable verbose debug output
@@ -1093,6 +1094,155 @@ function sendAprobacionCorreo($data, $template)
     }
 }
 
+/*DIFUSION DE EMPLEOS PARA LOS EGRESADOS*/
+function sendEmpleosEgresados($arrDataCorreos, $template)
+{
+
+    $mail = new PHPMailer(true);
+
+    $mensaje = '
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <title>Oferta laboral</title>
+        <style type="text/css">
+            p{
+                font-family: arial;
+                letter-spacing: 1px;
+                color: #7f7f7f;
+                font-size: 15px;
+            }
+            a{
+                color: #3b74d7;
+                font-family: arial;
+                text-decoration: none;
+                text-align: center;
+                display: block;
+                font-size: 18px;
+            }
+            .x_sgwrap p{
+                font-size: 20px;
+                line-height: 32px;
+                color: #244180;
+                font-family: arial;
+                text-align: center;
+            }
+            .x_title_gray {
+                color: #0a4661;
+                padding: 5px 0;
+                font-size: 15px;
+                border-top: 1px solid #CCC;
+            }
+            .x_title_blue {
+                padding: 08px 0;
+                line-height: 25px;
+                text-transform: uppercase;
+                border-bottom: 1px solid #CCC;
+            }
+            .x_title_blue h1{
+                color: #0a4661;
+                font-size: 25px;
+           
+            }
+            .x_bluetext {
+                color: #244180 !important;
+            }
+            .x_title_gray a{
+                text-align: center;
+                padding: 10px;
+                margin: auto;
+                color: #0a4661;
+            }
+            .x_text_white a{
+                color: #FFF;
+            }
+            .x_button_link {
+                width: 100%;
+                max-width: 470px;
+                height: 40px;
+                display: block;
+                color: #FFF;
+                margin: 20px auto;
+                line-height: 40px;
+                text-transform: uppercase;
+                font-family: Arial Black,Arial Bold,Gadget,sans-serif;
+            }
+            .x_link_blue {
+                background-color: #307cf4;
+            }
+            .x_textwhite {
+                background-color: rgb(50, 67, 128);
+                color: #ffffff;
+                padding: 10px;
+                font-size: 15px;
+                line-height: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <table align="center" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="text-align:center;">
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="x_sgwrap x_title_blue">
+                            <h1><?= NOMBRE_EMPESA ?></h1>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="x_sgwrap">
+                            <p>Reciba un cordial saludos por parte de la Unidad de Seguimiento del Egresado UNT</p>
+                        </div>
+  </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+    </html>
+    ';
+
+
+    try {
+        //Server settings
+        $mail->SMTPDebug = 0;                      //Enable verbose debug output
+        $mail->isSMTP();                                            //Send using SMTP
+        $mail->Host       = 'use-dpa.unitru.edu.pe';                     //Set the SMTP server to send through
+        $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+        //$mail->Username   = 'jeanromerolobaton@gmail.com';                     //SMTP username
+        //$mail->Password   = 'JPsistemas321';                               //SMTP password
+        $mail->Username   = 'notificaciones@use-dpa.unitru.edu.pe';                     //SMTP username
+        $mail->Password   = 'vN4Ud6,jKQ.?';
+        $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
+        $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+        //Recipients
+        $mail->setFrom('notificaciones@use-dpa.unitru.edu.pe', 'Oferta Laboral');
+        foreach ($arrDataCorreos as $email_user) {
+            $mail->AddAddress($email_user['email_user']);
+        }
+
+        $mail->addCC('use@unitru.edu.pe');
+        $mail->addBCC('jpromero@unitru.edu.pe');
+
+        $data['asunto'] = 'Oferta Laboral';
+        //Content
+        $mail->isHTML(true);                                  //Set email format to HTML
+        $mail->Subject = $data['asunto'];
+        $mail->Body    = $mensaje;
+
+        $mail->send();
+        return 1;
+    } catch (Exception $e) {
+        $arrResponse = array(
+            'status' => true,
+            'msg' => "$mail->ErrorInfo"
+        );
+        return $arrResponse;
+    }
+}
 function getPermisos(int $idmodulo)
 {
     require_once("Models/PermisosModel.php");
