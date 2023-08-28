@@ -266,7 +266,7 @@ class ExpoferialaboralxvlladminModel extends Mysql
 	/*EMPRESA*/
 	public function listEmpresa()
 	{
-		$sql = "SELECT * FROM expoferiaslaboralesempresas where status>0";
+		$sql = "SELECT * FROM expoferiaslaboralesempresas where status>0 and expoferiaslaboralesid = 5";
 		$request = $this->select_all($sql);
 		return $request;
 	}
@@ -285,7 +285,7 @@ class ExpoferialaboralxvlladminModel extends Mysql
 		$this->posicion = $txtPosicion;
 		$this->descripcion = $descripcion;
 		$this->archivo = $nuevonombre;
-		$this->expoferiaslaboralesid = 2;
+		$this->expoferiaslaboralesid = 5;
 		$return = 0;
 		$query_insert  = "INSERT INTO expoferiaslaboralesempresas(nombre,url,posicion,descripcion,archivo,expoferiaslaboralesid)
 									  VALUES(?,?,?,?,?,?)";

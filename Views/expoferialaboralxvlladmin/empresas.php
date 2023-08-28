@@ -167,7 +167,7 @@ headerAdmin($data);
         }
 
         var fd = new FormData();
-        fd.append("idexpoxvempresas", idexpoxvEmpresa);
+        fd.append("idexpoferiaslaboralesempresas", idexpoxvEmpresa);
         fd.append("txtNombre", txtNombre);
         fd.append("txtUrl", txtUrl);
         fd.append("txtPosicion", txtPosicion);
@@ -176,7 +176,7 @@ headerAdmin($data);
         divLoading.style.display = "flex";
         $.ajax({
             method: "POST",
-            url: "" + base_url + "/expoferialaboralxvadmin/setEmpresa",
+            url: "" + base_url + "/expoferialaboralxvlladmin/setEmpresa",
             data: fd,
             processData: false, // tell jQuery not to process the data
             contentType: false // tell jQuery not to set contentType
@@ -205,7 +205,7 @@ headerAdmin($data);
 
         $.ajax({
             method: "GET",
-            url: "" + base_url + "/expoferialaboralxvadmin/getOneEmpresa/" + idexpoxvEmpresa,
+            url: "" + base_url + "/expoferialaboralxvlladmin/getOneEmpresa/" + idexpoxvEmpresa,
             processData: false, // tell jQuery not to process the data
             contentType: false, // tell jQuery not to set contentType
 
@@ -214,7 +214,7 @@ headerAdmin($data);
 
             if (info.status == true) {
                 document.querySelector("#formmodalEmpresa").reset();
-                document.getElementById('idexpoxvEmpresa').value = info.data['idexpoxvempresas'];
+                document.getElementById('idexpoxvEmpresa').value = info.data['idexpoferiaslaboralesempresas'];
                 document.getElementById('txtNombre').value = info.data['nombre'];
                 document.getElementById('txtPosicion').value = info.data['posicion'];
              //   $(".summernote").summernote("your text");
@@ -248,7 +248,7 @@ headerAdmin($data);
 
                 $.ajax({
                     method: "POST",
-                    url: "" + base_url + "/expoferialaboralxvadmin/deleteEmpresa/" + idexpoxvEmpresa,
+                    url: "" + base_url + "/expoferialaboralxvlladmin/deleteEmpresa/" + idexpoxvEmpresa,
                     processData: false, // tell jQuery not to process the data
                     contentType: false, // tell jQuery not to set contentType
 
@@ -284,11 +284,11 @@ headerAdmin($data);
                 "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
             },
             "ajax": {
-                "url": " " + base_url + "/expoferialaboralxvadmin/getEmpresa",
+                "url": " " + base_url + "/expoferialaboralxvlladmin/getEmpresa",
                 "dataSrc": ""
             },
             "columns": [{
-                    "data": "idexpoxvempresas"
+                    "data": "idexpoferiaslaboralesempresas"
                 },
                 {
                     "data": "nombre"

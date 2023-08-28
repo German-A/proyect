@@ -490,11 +490,14 @@ class HomeModel extends Mysql
 	public function listaExpoferiaxvllLogoEmpresa()
 	{
 		$sql = "SELECT e.archivo, e.nombre,e.url
-			from expoferiaslaboralesempresas e
-			where e.status>0 order by e.posicion asc  and expoferiaslaboralesid = 5";
+		from expoferiaslaboralesempresas e
+		where e.status>0 and expoferiaslaboralesid = 5
+		order by e.posicion asc ";
 		$request = $this->select_all($sql);
 		return $request;
 	}
+	
+	
 
 
 	public function listaGalerias()

@@ -31,7 +31,7 @@ $perfiles = $obj->listaExpoferiaxvllLogoEmpresa();
             <?php foreach ($perfiles as $key => $fila) { ?>
                 <a class="row p-3 col-md-5 mb-4  btn btn-outline-primary " style="display: flex;" href="<?php echo $fila['url'] ?>" target="_blank">
                     <div class="col-md-5 ">
-                        <img class="img-fluid" style="max-height: 150px;" src="<?= media(); ?>/upload/exporiaxv/<?php echo $fila['archivo'] ?>">
+                        <img class="img-fluid" style="max-height: 150px;" src="<?= media(); ?>/upload/exporiaxvll/<?php echo $fila['archivo'] ?>">
                     </div>
                     <div class="col-7">
                         <h2><?php echo $fila['nombre'] ?></h2>

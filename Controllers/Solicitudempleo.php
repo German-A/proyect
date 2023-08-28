@@ -89,12 +89,11 @@ class solicitudempleo extends Controllers
 		$insert = '';
 		$arrData = '';
 
-		if ($empresa['idempresa'] > 0) {
+		if (!empty($empresa['idempresa'])) {
 			//	echo ($empresa['idempresa']);
 			$idEmpresa = $empresa['idempresa'];
 		} else {
 			/*registro de empresa nueva*/
-
 			$ubicacionTemporal = $_FILES['archivoSubido']['tmp_name'];
 			$nombre = $_FILES['archivoSubido']['name'];
 			$password = $ruc;
