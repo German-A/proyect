@@ -77,10 +77,10 @@
         <!-- Swiper -->
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
-            <?php for ($i = 0; $i < count($data['listaponencias']); $i++) { ?>
+                <?php for ($i = 0; $i < count($data['listaponencias']); $i++) { ?>
                     <div class="swiper-slide">
                         <div class="divexpoxv">
-                            <img src="<?= media(); ?>/upload/exporiaxvll/<?php echo $data['listaponencias'][$i]['archivo']?>">
+                            <img src="<?= media(); ?>/upload/exporiaxvll/<?php echo $data['listaponencias'][$i]['archivo'] ?>">
                         </div>
                     </div>
                 <?php } ?>
@@ -174,62 +174,28 @@
                         </a>
                     </div>
                 </div>
-
-
             </div>
         </div>
     </section>
 
     <section class="">
 
-        <div class="col-12 text-cenfter">
+        <div class="col-12 text-center">
             <h1 class="titulo"><b>Empresas</b></h1>
             <br>
         </div>
 
-        <div class="row  m-1">
-            <div class="col-4 col-md-2 mb-2">
-                <img class="img-fluid" src="<?= media(); ?>/upload/exporiaxvllll/empresa.png" alt="">
-            </div>
-            <div class="col-4 col-md-2 mb-2">
-                <img class="img-fluid" src="<?= media(); ?>/upload/exporiaxvllll/empresa.png" alt="">
-            </div>
-            <div class="col-4 col-md-2 mb-2">
-                <img class="img-fluid" src="<?= media(); ?>/upload/exporiaxvllll/empresa.png" alt="">
-            </div>
-            <div class="col-4 col-md-2 mb-2">
-                <img class="img-fluid" src="<?= media(); ?>/upload/exporiaxvllll/empresa.png" alt="">
-            </div>
-            <div class="col-4 col-md-2 mb-2">
-                <img class="img-fluid" src="<?= media(); ?>/upload/exporiaxvllll/empresa.png" alt="">
-            </div>
-            <div class="col-4 col-md-2 mb-2">
-                <img class="img-fluid" src="<?= media(); ?>/upload/exporiaxvllll/empresa.png" alt="">
-            </div>
-            <div class="col-4 col-md-2 mb-2">
-                <img class="img-fluid" src="<?= media(); ?>/upload/exporiaxvllll/empresa.png" alt="">
-            </div>
-            <div class="col-4 col-md-2 mb-2">
-                <img class="img-fluid" src="<?= media(); ?>/upload/exporiaxvllll/empresa.png" alt="">
-            </div>
-            <div class="col-4 col-md-2 mb-2">
-                <img class="img-fluid" src="<?= media(); ?>/upload/exporiaxvllll/empresa.png" alt="">
-            </div>
-            <div class="col-4 col-md-2 mb-2">
-                <img class="img-fluid" src="<?= media(); ?>/upload/exporiaxvllll/empresa.png" alt="">
-            </div>
-            <div class="col-4 col-md-2 mb-2">
-                <img class="img-fluid" src="<?= media(); ?>/upload/exporiaxvllll/empresa.png" alt="">
-            </div>
-            <div class="col-4 col-md-2 mb-2">
-                <img class="img-fluid" src="<?= media(); ?>/upload/exporiaxvllll/empresa.png" alt="">
-            </div>
+        <div class="col-12 row d-flex justify-content-around">
+            <?php for ($i = 0; $i < count($data['listempresas']); $i++) { ?>
+                <div class=" text-center col-4 col-md-2 mb-2">
+                    <img class="img-fluid" src="<?= media(); ?>/upload/exporiaxvll/<?php echo $data['listempresas'][$i]['archivo'] ?>" alt="">
+                </div>
+            <?php } ?>
         </div>
 
     </section>
 
 </div>
-
 
 <script type="text/javascript" src="<?= media(); ?>/jsinicio/Swiper8.0.6.js"></script>
 

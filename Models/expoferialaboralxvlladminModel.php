@@ -266,7 +266,8 @@ class ExpoferialaboralxvlladminModel extends Mysql
 	/*EMPRESA*/
 	public function listEmpresa()
 	{
-		$sql = "SELECT * FROM expoferiaslaboralesempresas where status>0 and expoferiaslaboralesid = 5";
+		$sql = "SELECT * FROM expoferiaslaboralesempresas 
+		where status>0 and expoferiaslaboralesid = 5";
 		$request = $this->select_all($sql);
 		return $request;
 	}

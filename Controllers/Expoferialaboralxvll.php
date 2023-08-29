@@ -20,7 +20,11 @@ class expoferialaboralxvll extends Controllers
 		$arrData  =  array();
 		$arrData = $obj->listPonencias();
 
+		$arrDataEmp  =  array();
+		$arrDataEmp = $obj->listEmpresa();
+
 		$data['listaponencias'] = $arrData;
+		$data['listempresas'] = $arrDataEmp;
 		
 
 		$this->views->getView($this, "expoferialaboralxvll", $data);
@@ -69,11 +73,7 @@ class expoferialaboralxvll extends Controllers
 
 		$arrData  =  array();
 		$arrData = $obj->listGaleriaweb();
-
-
 		$data['lista'] = $arrData;
-
-
 
 		$this->views->getView($this, "galeria", $data);
 	}
