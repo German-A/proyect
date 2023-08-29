@@ -257,8 +257,8 @@
                     </ul>
                 </li> -->
                     <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxvll/ponencias" class="menu__linkxv">PONENCIAS</a></li>
-                    <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxvll/galeria" class="menu__linkxv">GALERIA</a></li>
-                    <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxvll/empresas" class="menu__linkxv">EMPRESAS</a></li>
+                    <!-- <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxvll/galeria" class="menu__linkxv">GALERIA</a></li>
+                    <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxvll/empresas" class="menu__linkxv">EMPRESAS</a></li> -->
                 </div>
             </ul>
         </nav>

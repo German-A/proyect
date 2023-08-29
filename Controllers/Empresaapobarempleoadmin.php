@@ -80,11 +80,12 @@ class empresaapobarempleoadmin extends Controllers
 		if ($_POST) {
 			if ($_SESSION['permisos'][12]['w']) {
 				$idempleo = intval($_POST['idempleo']);
-				$requestDelete = $this->model->aprobarEmpleo($idempleo);
+			//	$request = $this->model->aprobarEmpleo($idempleo);
 
-				$this->enviarCorreo($idempleo);
+			//	$this->enviarCorreo($idempleo);
+				$this->enviarCorreoEgresado($idempleo);
 
-				if ($requestDelete) {
+				if ($request) {
 					$arrResponse = array('status' => true, 'msg' => 'Se ha publicado correctamente');
 				} else {
 					$arrResponse = array('status' => false, 'msg' => 'Error al publicar el Empleo.');

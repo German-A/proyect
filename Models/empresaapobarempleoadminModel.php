@@ -96,7 +96,7 @@ class EmpresaapobarempleoadminModel extends Mysql
 		FROM detallecarreras dt
 		inner join escuela e
 		on dt.escuelaid = e.idEscuela
-		where empleosid = =  $idempresa";
+		where empleosid = $idempresa";
 		$request = $this->select_all($sql);
 		return $request;
 	}

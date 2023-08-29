@@ -1194,7 +1194,7 @@ function sendEmpleosEgresados($arrDataCorreos, $template)
                 <tr>
                     <td>
                         <div class="x_sgwrap">
-                            <p>Reciba un cordial saludos por parte de la Unidad de Seguimiento del Egresado UNT</p>
+                            <p>POSTULA A ESTE PUESTO de TRABAJO</p>
                         </div>
   </td>
                 </tr>
@@ -1219,12 +1219,13 @@ function sendEmpleosEgresados($arrDataCorreos, $template)
         $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
         //Recipients
-        $mail->setFrom('notificaciones@use-dpa.unitru.edu.pe', 'Oferta Laboral');
-        foreach ($arrDataCorreos as $email_user) {
-            $mail->AddAddress($email_user['email_user']);
-        }
+        $mail->setFrom('notificaciones@use-dpa.unitru.edu.pe', 'INFORMACIÓN LABORAL');
+        $mail->AddAddress('use@unitru.edu.pe');
 
-        $mail->addCC('use@unitru.edu.pe');
+        //$mail->addCC($email_user['email_user']);
+        foreach ($arrDataCorreos as $email_user) {
+            $mail->addBCC($email_user['email_user']);
+        }
         $mail->addBCC('jpromero@unitru.edu.pe');
 
         $data['asunto'] = 'Oferta Laboral';
@@ -1234,7 +1235,10 @@ function sendEmpleosEgresados($arrDataCorreos, $template)
         $mail->Body    = $mensaje;
 
         $mail->send();
-        return 1;
+        $arrResponse = array(
+            'status' => true,
+            'msg' => 'Tu publicación de empleo en breves momento será aprobada, así mismo se enviara una copia en el correo que registraste.'
+        );
     } catch (Exception $e) {
         $arrResponse = array(
             'status' => true,
