@@ -11,6 +11,7 @@
     ],
     "minimum-stability": "beta",
     "require": {
-        "phpoffice/phpspreadsheet": "^1.22"
+        "phpoffice/phpspreadsheet": "^1.22",
+        "mpdf/mpdf": "^8.2"
     }
 }

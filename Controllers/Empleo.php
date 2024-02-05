@@ -2,7 +2,7 @@
 
 class empleo extends Controllers
 {
-	private $idempleo ;
+	private $idempleo;
 	public function __construct()
 	{
 		session_start();
@@ -16,7 +16,7 @@ class empleo extends Controllers
 	//pagina Banner
 	public function empleo($id)
 	{
-		$this->idempleo=$id;
+		$this->idempleo = $id;
 		// if (empty($_SESSION['permisosMod']['r'])) {
 		// 	header("Location:" . base_url() . '/dashboard');
 		// }
@@ -25,73 +25,67 @@ class empleo extends Controllers
 		$data['page_tag'] = "Usuarios";
 		$data['page_title'] = "Empleo-<small>Unidad de Seguimiento del Egresado</small>";
 		$data['page_name'] = "USE-banner";
-		$data['idempleo'] = $this->idempleo;		
+		$data['idempleo'] = $this->idempleo;
 		$data['page_functions_js'] = "functions_empleo.js";
 
-		$data['idEmpleos'] =$arrData['idEmpleos'];
-		$data['nombreEmpresa'] =$arrData['nombreEmpresa'];
-		$data['NombrePuesto'] =$arrData['NombrePuesto'];
-		$data['DescripcionPuesto'] =$arrData['DescripcionPuesto'];
-		$data['InformacionAdicional'] =$arrData['InformacionAdicional'];
-		$data['LugarTrabajo'] =$arrData['LugarTrabajo'];
-		$data['TrabajoRemoto'] =$arrData['TrabajoRemoto'];
-		$data['NumeroVacantes'] =$arrData['NumeroVacantes'];
-		$data['Experiencias'] =$arrData['Experiencias'];
-		$data['TipoContrato'] =$arrData['TipoContrato'];
-		$data['JornadaLaboral'] =$arrData['JornadaLaboral'];
-		$data['HorasSemanales'] =$arrData['HorasSemanales'];
-		$data['HorarioTrabajo'] =$arrData['HorarioTrabajo'];
-		$data['RemuneracionBruta'] =$arrData['RemuneracionBruta'];
-		$data['Contacto'] =$arrData['Contacto'];
-		$data['FechaInico'] =$arrData['FechaInico'];
-		$data['FechaFin'] =$arrData['FechaFin'];		
-		$data['FechaInico'] =$arrData['FechaInico'];
-		$data['FechaFin'] =$arrData['FechaFin'];
+		$data['idEmpleos'] = $arrData['idEmpleos'];
+		$data['nombreEmpresa'] = $arrData['nombreEmpresa'];
+		$data['NombrePuesto'] = $arrData['NombrePuesto'];
+		$data['DescripcionPuesto'] = $arrData['DescripcionPuesto'];
+		$data['InformacionAdicional'] = $arrData['InformacionAdicional'];
+		$data['LugarTrabajo'] = $arrData['LugarTrabajo'];
+		$data['TrabajoRemoto'] = $arrData['TrabajoRemoto'];
+		$data['NumeroVacantes'] = $arrData['NumeroVacantes'];
+		$data['Experiencias'] = $arrData['Experiencias'];
+		$data['TipoContrato'] = $arrData['TipoContrato'];
+		$data['JornadaLaboral'] = $arrData['JornadaLaboral'];
+		$data['HorasSemanales'] = $arrData['HorasSemanales'];
+		$data['HorarioTrabajo'] = $arrData['HorarioTrabajo'];
+		$data['RemuneracionBruta'] = $arrData['RemuneracionBruta'];
+		$data['Contacto'] = $arrData['Contacto'];
+		$data['FechaInico'] = $arrData['FechaInico'];
+		$data['FechaFin'] = $arrData['FechaFin'];
+		$data['FechaInico'] = $arrData['FechaInico'];
+		$data['FechaFin'] = $arrData['FechaFin'];
 
-      
 		$this->views->getView($this, "empleo", $data);
 	}
 
 
-		//borrar un banner
-		public function postular()
-		{
-			if ($_POST) {
-				if ($_SESSION['permisosMod']['d']) {
-					$empleoid = intval($_POST['empleoid']);
-					$idpersona=1;
-					$requestDelete=0;
+	//borrar un banner
+	public function postular()
+	{
+		if ($_POST) {
+			if ($_SESSION['permisosMod']['d']) {
+				$empleoid = intval($_POST['empleoid']);
+				$idpersona = 1;
+				$requestDelete = 0;
 
-					$postulado = $this->model->validarpostular($empleoid , $idpersona);
-					
-					if($postulado){						
-	
-						if ($requestDelete) {
-							$arrResponse = array('status' => true, 'msg' => 'Ya esta inscrito en la convocatoria');
-						} else {
-							$arrResponse = array('status' => false, 'msg' => 'Ya se encuentra inscrito en la convocatoria.');
-						}
-						echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+				$postulado = $this->model->validarpostular($empleoid, $idpersona);
 
-					}else{
-						$requestDelete = $this->model->postular($empleoid , $idpersona);
-						if ($requestDelete) {
-							$arrResponse = array('status' => true, 'msg' => 'Se ha inscrito a la convocatoria');
-						} else {
-							$arrResponse = array('status' => false, 'msg' => 'Error al inscribir convocatoria.');
-						}
-						echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+				if ($postulado) {
+
+					if ($requestDelete) {
+						$arrResponse = array('status' => true, 'msg' => 'Ya esta inscrito en la convocatoria');
+					} else {
+						$arrResponse = array('status' => false, 'msg' => 'Ya se encuentra inscrito en la convocatoria.');
 					}
-					
-				
-
-
+					echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+				} else {
+					$requestDelete = $this->model->postular($empleoid, $idpersona);
+					if ($requestDelete) {
+						$arrResponse = array('status' => true, 'msg' => 'Se ha inscrito a la convocatoria');
+					} else {
+						$arrResponse = array('status' => false, 'msg' => 'Error al inscribir convocatoria.');
+					}
+					echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
 				}
 			}
-			die();
 		}
+		die();
+	}
 
-	
+
 	//listado de los banners
 	public function get($idempleo)
 	{
@@ -157,10 +151,10 @@ class empleo extends Controllers
 
 					//Actualizar sin Imagen
 
-					if ($_FILES['archivoSubido']['name']=="") {
+					if ($_FILES['archivoSubido']['name'] == "") {
 						$insert = $this->model->updatePosicion($nombreArchivo, $idUsuario, $posicion);
-					} else{
-					//Actualizar con Imagen
+					} else {
+						//Actualizar con Imagen
 						$cantidad = $cantidadBanner['cant'];
 						$ubicacionTemporal = $_FILES['archivoSubido']['tmp_name'];
 						$nombre = $_FILES['archivoSubido']['name'];
@@ -205,7 +199,7 @@ class empleo extends Controllers
 		}
 		die();
 	}
-	
+
 	//obtener un baner para actualizar
 	public function getone($idpersona)
 	{
@@ -230,10 +224,10 @@ class empleo extends Controllers
 		if ($_POST) {
 			if ($_SESSION['permisosMod']['d']) {
 				$IdBaner = intval($_POST['IdBaner']);
-				$NombreArchivo= $this->model->getOne($IdBaner);
+				$NombreArchivo = $this->model->getOne($IdBaner);
 				//borrar documentos
 				$requestDelete = $this->model->remove($IdBaner);
-				@unlink('Assets/archivos/banner/'.$NombreArchivo['NombreArchivo']);
+				@unlink('Assets/archivos/banner/' . $NombreArchivo['NombreArchivo']);
 				if ($requestDelete) {
 					$arrResponse = array('status' => true, 'msg' => 'Se ha eliminado el Banner');
 				} else {
