@@ -373,49 +373,132 @@
     <br><br><br><br><br>
 
 
-    <table cellpadding="0" cellspacing="0" colspan="12" border="1" bordercolor="#000000">
+    <table cellpadding="0" cellspacing="0" border="1" bordercolor="#000000">
         <tr>
-            <td colspan="6">Escuela Profesional</td>
-            <td colspan="6" >' . $carrera . '</td>
+            <td>Escuela Profesional</td>
+            <td>' . $carrera . '</td>
         </tr>
 
         <tr>
-            <td colspan="8">Sector Publico</td>
-            <td colspan="2" align="center">' . $sectorPublico . '</td>
-            <td colspan="2" align="center">' . $sectorPublico / $totalEgresados . '</td>
+            <td>Sector Publico</td>
+            <td align="center">' . $sectorPublico . '</td>
+            <td align="center">' . $sectorPublico / $totalEgresados . '</td>
         </tr>
 
         <tr>
-            <td colspan="8">Sector Privado</td>
-            <td colspan="2" align="center">' . $sectorPrivado . '</td>
-            <td colspan="2" align="center">' . $sectorPrivado / $totalEgresados . '</td>
+            <td>Sector Privado</td>
+            <td align="center">' . $sectorPrivado . '</td>
+            <td align="center">' . $sectorPrivado / $totalEgresados . '</td>
         </tr>
 
         <tr>
-            <td colspan="4">Comentarios</td>
-            <td colspan="8">' . $comentarios . '</td>
+            <td>Comentarios</td>
+            <td colspan="2">' . $comentarios . '</td>
         </tr>
 
     </table>
 
     <table border="2px"> <!-- Lo cambiaremos por CSS -->
-            <tr>
-                <td>Campo 1</td>
-                <td>Campo 2</td>
-                <td>Campo 3</td>
-            </tr>
-            <tr>
-                <td colspan="2">Campos 4 y 5</td>
-                <td>Campo 6</td>
-            </tr>
-            <tr>
-                <td>Campo 7</td>
-                <td>Campo 8</td>
-                <td>Campo 9</td>
-            </tr>
-        </table>
+        <tr>
+            <td>Escuela profesional</td>
+
+        </tr>
+        <tr>
+            <td>Campo 2</td>
+            <td colspan="2">Campos 4 y 5</td>
+        </tr>
+        <tr>
+            <td colspan="2">Campos 4 y 5</td>
+            <td>Campo 6</td>
+        </tr>
+        <tr>
+            <td>Campo 7</td>
+            <td>Campo 8</td>
+            <td>Campo 9</td>
+        </tr>
+    </table>
 
 </div>
+
+
+
+
+<br><br>
+
+<style>
+    .fondoCelda{
+        background-color: rgb(0, 0, 102);
+        color: #ffffff;
+        padding: 2px;
+    }
+</style>
+
+
+    
+
+<table width=100% cellpadding="0" cellspacing="0" colspan="12" border="1" bordercolor="#000000">
+    <tr>
+        <td colspan="3">Escuela Profesional: ' . $carrera . '</td>
+    </tr>
+    <tr>
+        <td colspan="3">Año y Semestre: ' . $añoysemestre . '</td>
+    </tr>
+    <tr>
+        <td colspan="3">Fecha de Informe: ' . $fechaInforme . '</td>
+    </tr>
+    <tr>
+        <td>EGRESADOS</td>
+        <td align="center">N° DE EGRESADOS</td>
+        <td align="center">% DE EGRESADOS</td>
+    </tr>
+
+    <tr>
+        <td>Laboran en el campo de su carrera</td>
+        <td align="center">' . $laboranCampo . '</td>
+        <td align="center">' . $laboranCampo / $totalEgresados . '</td>
+    </tr>
+    <tr>
+        <td>No laboran en el campo de su carrera</td>
+        <td align="center">' . $noLaboranCampo . '</td>
+        <td align="center">' . $noLaboranCampo / $totalEgresados . '</td>
+    </tr>
+
+    <tr>
+        <td>Laboran Independientes</td>
+        <td align="center">' . $laboranIndependientes . '</td>
+        <td align="center">' . $laboranIndependientes / $totalEgresados . '</td>
+    </tr>
+
+    <tr>
+        <td>Nombrado</td>
+        <td align="center">' . $nombrado . '</td>
+        <td align="center">' . $nombrado / $totalEgresados . '</td>
+    </tr>
+
+    <tr>
+        <td>Contratado</td>
+        <td align="center">' . $contratado . '</td>
+        <td align="center">' . $contratado / $totalEgresados . '</td>
+    </tr>
+
+    <tr>
+        <td>Sector Publico</td>
+        <td align="center">' . $sectorPublico . '</td>
+        <td align="center">' . $sectorPublico / $totalEgresados . '</td>
+    </tr>
+
+    <tr>
+        <td>Sector Privado</td>
+        <td align="center">' . $sectorPrivado . '</td>
+        <td align="center">' . $sectorPrivado / $totalEgresados . '</td>
+    </tr>
+
+    <tr>
+        <td colspan="3" rowspan="3" height="90" valign="top" style="text-align:justify">Comentarios:</td>
+
+    </tr>
+
+</table>
 
 
 
