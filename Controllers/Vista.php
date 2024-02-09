@@ -436,6 +436,7 @@ class vista extends Controllers
 
 		$pdf->WriteHTML($estilos);
 
+		$pdf = new \Mpdf\Mpdf(['orientation' => 'L']);
 		$pdf->WriteHTML($datas);
 
 		$pdf->AddPage();
