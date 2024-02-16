@@ -162,8 +162,10 @@ class vista extends Controllers
 
 		/*FORMULARIO 3*/
 		$totalEgresados = intval($_POST['totalEgresados']);
+
 		$laboranCampo = intval($_POST['laboranCampo']);
 		$noLaboranCampo = intval($_POST['noLaboranCampo']);
+		$laboranDependientes = intval($_POST['laboranDependientes']);
 		$laboranIndependientes = intval($_POST['laboranIndependientes']);
 		$nombrado = intval($_POST['nombrado']);
 		$contratado = intval($_POST['contratado']);
@@ -172,12 +174,29 @@ class vista extends Controllers
 		$comentarios = strClean($_POST['comentarios']);
 
 
+		$total_insecion_laboral = ($laboranCampo + $noLaboranCampo + $laboranDependientes + $laboranIndependientes +
+			$nombrado + $contratado + $sectorPublico + $sectorPrivado + $comentarios);
+
+		$porcentaje_laboranCampo = round((($laboranCampo / $total_insecion_laboral) * 100), 2);
+		$porcentaje_noLaboranCampo = round((($noLaboranCampo / $total_insecion_laboral) * 100), 2);
+		$porcentaje_laboranDependientes = round((($laboranDependientes / $total_insecion_laboral) * 100), 2);
+		$porcentaje_laboranIndependientes = round((($laboranIndependientes / $total_insecion_laboral) * 100), 2);
+		$porcentaje_nombrado = round((($nombrado / $total_insecion_laboral) * 100), 2);
+		$porcentaje_contratado = round((($contratado / $total_insecion_laboral) * 100), 2);
+		$porcentaje_sectorPublico = round((($sectorPublico / $total_insecion_laboral) * 100), 2);
+		$porcentaje_sectorPrivado = round((($sectorPrivado / $total_insecion_laboral) * 100), 2);
+
+		$porcentaje_total_insecion_laboral = (($total_insecion_laboral / $total_insecion_laboral) * 100);
+
+
+
+
 
 
 
 		$fechaInforme  = date("Y-m-d");
 
-		$estilos='
+		$estilos = '
 		<style>
 			.fondoCelda{
 				background-color: rgb(0, 0, 102);
@@ -187,7 +206,7 @@ class vista extends Controllers
 		</style>
 		';
 
-		$datas = '
+		$formulario1 = '
 			<table style="width=100%" cellpadding="0" cellspacing="0"  colspan="11" border="1"  bordercolor="#000000" >
 				<tr>
 					<td >Escuela Profesional</td>
@@ -332,83 +351,84 @@ class vista extends Controllers
 
 		$formulario3 = '
 
-
-
 		<h3 style="text-align: center;">Informe Estadístico Anual y Semestral de Inserción Laboral</h3>
 		<br><br>
 		
 		<table width=100% cellpadding="0" cellspacing="0" colspan="12" border="1" bordercolor="#000000">
-		<tr>
-			<td class="fondoCelda" colspan="3">&nbsp;<b>ESCUELA PROFESIONAL: </b> ' . $carrera . '</td>
-		</tr>
-		<tr>
-			<td class="fondoCelda" colspan="3">&nbsp;<b>AÑO Y SEMESTRE: </b>' . $añoysemestre . '</td>
-		</tr>
-		<tr>
-			<td class="fondoCelda" colspan="3">&nbsp;<b>FECHA DE INFORME:</b> ' . $fechaInforme . '</td>
-		</tr>
-		<tr>
-			<td align="center"><b>EGRESADOS</b></td>
-			<td align="center"><b>N° DE EGRESADOS</b></td>
-			<td align="center"><b>% DE EGRESADOS</b></td>
-		</tr>
+			<tr>
+				<td class="fondoCelda" colspan="3">&nbsp;<b>ESCUELA PROFESIONAL: </b> ' . $carrera . '</td>
+			</tr>
+			<tr>
+				<td class="fondoCelda" colspan="3">&nbsp;<b>AÑO Y SEMESTRE: </b>' . $añoysemestre . '</td>
+			</tr>
+			<tr>
+				<td class="fondoCelda" colspan="3">&nbsp;<b>FECHA DE INFORME:</b> ' . $fechaInforme . '</td>
+			</tr>
+			<tr>
+				<td align="center"><b>EGRESADOS</b></td>
+				<td align="center"><b>N° DE EGRESADOS</b></td>
+				<td align="center"><b>% DE EGRESADOS</b></td>
+			</tr>
 
-		<tr>
-			<td height="40"  align="center">Laboran en el campo de su carrera</td>
-			<td align="center">' . $laboranCampo . '</td>
-			<td align="center">' . $laboranCampo / $totalEgresados . '</td>
-		</tr>
-		<tr>
-			<td height="40"  align="center">No laboran en el campo de su carrera</td>
-			<td align="center">' . $noLaboranCampo . '</td>
-			<td align="center">' . $noLaboranCampo / $totalEgresados . '</td>
-		</tr>
+			<tr>
+				<td height="40"  align="center">Laboran en el campo de su carrera</td>
+				<td align="center">' . $laboranCampo . '</td>
+				<td align="center">' . $porcentaje_laboranCampo . '</td>
+			</tr>
+			<tr>
+				<td height="40"  align="center">No laboran en el campo de su carrera</td>
+				<td align="center">' . $noLaboranCampo . '</td>
+				<td align="center">' . $porcentaje_noLaboranCampo . '</td>
+			</tr>
 
-		<tr>
-			<td height="40"  align="center">Laboran Dependientes</td>
-			<td align="center">' . $laboranIndependientes . '</td>
-			<td align="center">' . $laboranIndependientes / $totalEgresados . '</td>
-		</tr>
+			<tr>
+				<td height="40"  align="center">Laboran Dependientes</td>
+				<td align="center">' . $laboranDependientes . '</td>
+				<td align="center">' . $porcentaje_laboranDependientes . '</td>
+			</tr>
 
-		<tr>
-			<td height="40"  align="center">Laboran Independientes</td>
-			<td align="center">' . $laboranIndependientes . '</td>
-			<td align="center">' . $laboranIndependientes / $totalEgresados . '</td>
-		</tr>
+			<tr>
+				<td height="40"  align="center">Laboran Independientes</td>
+				<td align="center">' . $laboranIndependientes . '</td>
+				<td align="center">' . $porcentaje_laboranIndependientes . '</td>
+			</tr>
 
-		<tr>
-			<td height="40"  align="center">Nombrado</td>
-			<td align="center">' . $nombrado . '</td>
-			<td align="center">' . $nombrado / $totalEgresados . '</td>
-		</tr>
+			<tr>
+				<td height="40"  align="center">Nombrado</td>
+				<td align="center">' . $nombrado . '</td>
+				<td align="center">' . $porcentaje_nombrado . '</td>
+			</tr>
 
-		<tr>
-			<td height="40" align="center">Contratado</td>
-			<td align="center">' . $contratado . '</td>
-			<td align="center">' . $contratado / $totalEgresados . '</td>
-		</tr>
+			<tr>
+				<td height="40" align="center">Contratado</td>
+				<td align="center">' . $contratado . '</td>
+				<td align="center">' . $porcentaje_contratado . '</td>
+			</tr>
 
-		<tr>
-			<td height="40" align="center">Sector Publico</td>
-			<td align="center">' . $sectorPublico . '</td>
-			<td align="center">' . $sectorPublico / $totalEgresados . '</td>
-		</tr>
+			<tr>
+				<td height="40" align="center">Sector Publico</td>
+				<td align="center">' . $sectorPublico . '</td>
+				<td align="center">' . $porcentaje_sectorPublico . '</td>
+			</tr>
 
-		<tr>
-			<td height="40" align="center">Sector Privado</td>
-			<td align="center">' . $sectorPrivado . '</td>
-			<td align="center">' . $sectorPrivado / $totalEgresados . '</td>
-		</tr>
+			<tr>
+				<td height="40" align="center">Sector Privado</td>
+				<td align="center">' . $sectorPrivado . '</td>
+				<td align="center">' . $porcentaje_sectorPrivado . '</td>
+			</tr>
 
-		<tr>
-			<td height="40" align="center"><b>TOTAL</b></td>
-			<td align="center"></td>
-			<td align="center"></td>
-		</tr>
+			<tr>
+				<td height="40" align="center"><b>TOTAL</b></td>
+				<td align="center"> ' . $total_insecion_laboral . '</td>
+				<td align="center"> ' . $porcentaje_total_insecion_laboral . '</td>
+			</tr>
 
-		<tr>
-			<td colspan="3" height="70" valign="top" style="text-align:justify">&nbsp;COMENTARIOS:</td>
-		</tr>
+			<tr>
+				<td colspan="3" height="70" valign="top" style="text-align:justify">&nbsp;COMENTARIOS:
+					<br>
+					' . $comentarios . '
+				</td>					
+			</tr>
 
 		</table>
 			
@@ -423,6 +443,7 @@ class vista extends Controllers
 			'font-size' => 8,
 		]);
 
+
 		$pdf->SetHTMLHeader('
         <div style=" text-align: left; ">		
             <img style="min-width: 200px; max-width: 200px; max-height: 200px;" src="' . media() . '/archivos/logos/logoUse.png" />
@@ -433,27 +454,16 @@ class vista extends Controllers
 
         ');
 
-
 		$pdf->WriteHTML($estilos);
-
-		$pdf = new \Mpdf\Mpdf(['orientation' => 'L']);
-		$pdf->WriteHTML($datas);
-
-		$pdf->AddPage();
 		$pdf->WriteHTML($formulario2);
 
-		$pdf->AddPage();
+		$pdf->AddPage('L');
+		$pdf->WriteHTML($formulario1);
+		$pdf->AddPage('P');
 		$pdf->WriteHTML($formulario3);
-
-
 
 		$pdf->Output('use.pdf', 'I');
 		$data = 'z';
-
-
-
-
-
 
 		$this->views->getView($this, "vista", $data);
 	}

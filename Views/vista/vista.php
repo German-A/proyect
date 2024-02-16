@@ -501,6 +501,10 @@
 </table>
 
 
+<p>__________________________</p>
+<p>ingresar nombre</p>
+
+
 
 
 
@@ -568,6 +572,7 @@
         var totalEgresados = $("#totalEgresados").val();
         var laboranCampo = $("#laboranCampo").val();
         var noLaboranCampo = $("#noLaboranCampo").val();
+        var laboranDependientes = $("#laboranDependientes").val();
         var laboranIndependientes = $("#laboranIndependientes").val();
         var nombrado = $("#nombrado").val();
         var contratado = $("#contratado").val();
@@ -621,6 +626,7 @@
         fd.append("totalEgresados", totalEgresados);
         fd.append("laboranCampo", laboranCampo);
         fd.append("noLaboranCampo", noLaboranCampo);
+        fd.append("laboranDependientes", laboranDependientes);
         fd.append("laboranIndependientes", laboranIndependientes);
 
         fd.append("nombrado", nombrado);
