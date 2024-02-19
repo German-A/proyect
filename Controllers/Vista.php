@@ -203,21 +203,30 @@ class vista extends Controllers
 				color: #ffffff;
 				padding: 5px;
 			}
+			td{
+				padding: 6px 4px;
+			}
 		</style>
 		';
 
 		$formulario1 = '
+
+		<h2 style="text-align: center;">ESCUELA PROFESIONAL - PREGRADO</h2>
+
+		<h3 style="text-align: center;">Informe Estadístico Anual sobre el Estado de los Egresados, Graduados y Titulados Laboral</h3>
+
+
 			<table style="width=100%" cellpadding="0" cellspacing="0"  colspan="11" border="1"  bordercolor="#000000" >
 				<tr>
-					<td >Escuela Profesional</td>
+					<td >Escuela <br> Profesional</td>
 					<td colspan="10">' . $carrera . '</td>
 				</tr>
 				<tr>
-					<td >Promocion o cohorte</td>
+					<td >Promocion o <br> cohorte</td>
 					<td colspan="10">' . $fechaInicio . ' - ' . $fechaFin . ' </td>
 				</tr>
 				<tr>
-					<td >Fecha de Informe</td>
+					<td >Fecha de <br> Informe</td>
 					<td colspan="10">' . $fechaInforme . '</td>
 				</tr>
 				<tr>		
@@ -253,7 +262,7 @@ class vista extends Controllers
 					<td colspan="10">' . $observaciones . '</td>		
 				</tr>
 				<tr>
-					<td >toma de desiciones</td>
+					<td >toma de <br> desiciones</td>
 					<td colspan="10">' . $tomaDesiciones . '</td>		
 				</tr>
 			</table>
@@ -261,9 +270,10 @@ class vista extends Controllers
 		';
 
 		$formulario2 = '
+		
 		<table style="min-width=100%" cellpadding="0" cellspacing="0"  colspan="12" border="1"  bordercolor="#000000" >
 			<tr>
-				<td class="fondoCelda" colspan="4">Escuela Profesional: ' . $carrera . '</td>
+				<td class="fondoCelda" colspan="4">Escuela <br> Profesional: ' . $carrera . '</td>
 			</tr>
 			<tr>
 				<td class="fondoCelda" colspan="4">Año y Semestre: ' . $añoysemestre . '</td>

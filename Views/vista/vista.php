@@ -5,8 +5,15 @@
         max-width: 1200px;
         margin: auto;
     }
+
+    td{
+        padding: 4px 2px;
+    }
 </style>
 
+
+
+<br>
 <div class="contenedor">
 
     <!-- formulario 1 - Informe Estadistico Anual y Semestral de Inserción Laboral -->
