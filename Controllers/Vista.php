@@ -29,9 +29,22 @@ class vista extends Controllers
 	public function informeAnual()
 	{
 
-		$carrera = intval(strClean($_POST['carrera']));
+		$id_carrera = intval(strClean($_POST['carrera']));
+
+		$arrData = $this->model->buscar_carrera($id_carrera);
+
+		$nombre_escuela = $arrData['nombreEscuela'];
+
+
+
+
+
 		$fechaInicio = intval(strClean($_POST['fechaInicio']));
 		$fechaFin = intval(strClean($_POST['fechaFin']));
+
+
+
+
 
 		$ingresantesPromocion = intval(strClean($_POST['ingresantesPromocion']));
 		$egresadosPromocion = intval(strClean($_POST['egresadosPromocion']));
@@ -48,6 +61,10 @@ class vista extends Controllers
 		$porcentajeTitulados = ($cantidadTitulados / $ingresantesPromocion) * 100;
 		$porcentajeNoTitulados = 100 - $porcentajeTitulados;
 		$cantidadEgresadosNoGraduados = $ingresantesPromocion - $cantidadEgresadosGraduados;
+
+
+
+		#region formulario_2
 
 		/*FORMULARIO 2*/
 
@@ -99,11 +116,6 @@ class vista extends Controllers
 		$entreOtros2 = '';
 		$participacionProcesos1 = '';
 		$participacionProcesos2 = '';
-
-
-
-
-
 
 		if ($egresadosConsejoUniversiatario == 'si') {
 			$egresadosConsejoUniversiatario1 = 'X';
@@ -159,6 +171,11 @@ class vista extends Controllers
 			$participacionProcesos2 = 'X';
 		}
 
+		#endregion formulario_2
+
+
+
+		#region formulario_3
 
 		/*FORMULARIO 3*/
 		$totalEgresados = intval($_POST['totalEgresados']);
@@ -175,7 +192,7 @@ class vista extends Controllers
 
 
 		$total_insecion_laboral = ($laboranCampo + $noLaboranCampo + $laboranDependientes + $laboranIndependientes +
-			$nombrado + $contratado + $sectorPublico + $sectorPrivado + $comentarios);
+			$nombrado + $contratado + $sectorPublico + $sectorPrivado);
 
 		$porcentaje_laboranCampo = round((($laboranCampo / $total_insecion_laboral) * 100), 2);
 		$porcentaje_noLaboranCampo = round((($noLaboranCampo / $total_insecion_laboral) * 100), 2);
@@ -189,12 +206,25 @@ class vista extends Controllers
 		$porcentaje_total_insecion_laboral = (($total_insecion_laboral / $total_insecion_laboral) * 100);
 
 
+		#endregion formulario_3
+
+
+
+		#region formulario_1
+
+		#endregion formulario_1
 
 
 
 
 
-		$fechaInforme  = date("Y-m-d");
+
+
+
+
+
+
+		$fechaInforme  = date("d-m-Y");
 
 		$estilos = '
 		<style>
@@ -211,15 +241,14 @@ class vista extends Controllers
 
 		$formulario1 = '
 
-		<h2 style="text-align: center;">ESCUELA PROFESIONAL - PREGRADO</h2>
+			<h2 style="text-align: center;">ESCUELA PROFESIONAL - PREGRADO</h2>
 
-		<h3 style="text-align: center;">Informe Estadístico Anual sobre el Estado de los Egresados, Graduados y Titulados Laboral</h3>
-
+			<h3 style="text-align: center;">Informe Estadístico Anual sobre el Estado de los Egresados, Graduados y Titulados Laboral</h3>
 
 			<table style="width=100%" cellpadding="0" cellspacing="0"  colspan="11" border="1"  bordercolor="#000000" >
 				<tr>
-					<td >Escuela <br> Profesional</td>
-					<td colspan="10">' . $carrera . '</td>
+					<td >Escuela Profesional</td>
+					<td colspan="10">' . $nombre_escuela . '</td>
 				</tr>
 				<tr>
 					<td >Promocion o <br> cohorte</td>
@@ -253,7 +282,7 @@ class vista extends Controllers
 					<td  align="center">' . $cantidadEgresadosGraduados . '</td>
 					<td  align="center">' . $porcentajeCantidadEgresadosGraduados . ' %</td>
 					<td  align="center">' . $cantidadEgresadosNoGraduados . '</td>
-					<td  align="center">' . $porcentajeCantidadEgresadosNoGraduados . '</td>
+					<td  align="center">' . $porcentajeCantidadEgresadosNoGraduados . ' %</td>
 					<td  align="center">' . $porcentajeTitulados . ' %</td>
 					<td  align="center">' . $porcentajeNoTitulados . ' %</td>		
 				</tr>
@@ -270,178 +299,183 @@ class vista extends Controllers
 		';
 
 		$formulario2 = '
+
+			<h2 style="text-align: center;">ESCUELA PROFESIONAL - PREGRADO</h2>
 		
-		<table style="min-width=100%" cellpadding="0" cellspacing="0"  colspan="12" border="1"  bordercolor="#000000" >
-			<tr>
-				<td class="fondoCelda" colspan="4">Escuela <br> Profesional: ' . $carrera . '</td>
-			</tr>
-			<tr>
-				<td class="fondoCelda" colspan="4">Año y Semestre: ' . $añoysemestre . '</td>
-			</tr>
-			<tr>
-				<td class="fondoCelda" colspan="4">Fecha de Informe: ' . $fechaInforme . '</td>
-			</tr>
-			<tr>		
-				<td class="fondoCelda" >PLANES DE ACCIÓN DE VINCULACIÓN CON LOS EGRESADOS</td>
-				<td class="fondoCelda"  align="center">SI GRADO DE CUMPLIMIENTO</td>
-				<td class="fondoCelda"  align="center">NO GRADO DE CUMPLIMIENTO</td>
-				<td class="fondoCelda" >OBSERVACIONES</td>
-			</tr>
+			<h3 style="text-align: center;">Informe Semestral y Anual sobre la Evaluación de Resultados de Planes de Acción</h3>
 
-			<tr>		
-				<td >Representación de egresados en el Consejo de Facultad y Consejo Universitario</td>
-		
-				<td  align="center">' . $egresadosConsejoUniversiatario1 . '</td>
-				<td  align="center">' . $egresadosConsejoUniversiatario2 . '</td>
-				<td >' . $egresadosConsejoUniversiatarioO . '</td>	
-			</tr>
-			<tr>		
-				<td >Programas de educación continua</td>
-				<td  align="center">' . $programasEducacionContinua1 . '</td>
-				<td  align="center">' . $programasEducacionContinua2 . '</td>
-				<td >' . $programasEducacionContinuaO . '</td>	
-			</tr>
+			<table style="min-width=100%" cellpadding="0" cellspacing="0"  colspan="12" border="1"  bordercolor="#000000" >
+				<tr>
+					<td class="fondoCelda" colspan="4">Escuela Profesional: ' . $nombre_escuela . '</td>
+				</tr>
+				<tr>
+					<td class="fondoCelda" colspan="4">Año y Semestre: ' . $añoysemestre . '</td>
+				</tr>
+				<tr>
+					<td class="fondoCelda" colspan="4">Fecha de Informe: ' . $fechaInforme . '</td>
+				</tr>
+				<tr>		
+					<td class="fondoCelda" >PLANES DE ACCIÓN DE VINCULACIÓN CON LOS EGRESADOS</td>
+					<td class="fondoCelda"  align="center">SI GRADO DE CUMPLIMIENTO</td>
+					<td class="fondoCelda"  align="center">NO GRADO DE CUMPLIMIENTO</td>
+					<td class="fondoCelda" >OBSERVACIONES</td>
+				</tr>
 
-			<tr>		
-				<td >
-					Participacion como grupo de interes en los procesos de:
-					<li>  Revisión periodica de sus políticas y objetivos institucionales</li>
-					<li>  Revisión de la pertinencia del perfil del egresado</li>
-					<li>  Revisión evaluación y actualización de los currículos</li>
-					<li>  Otros</li>				
-				</td>
-				<td  align="center">' . $participacionProcesos1 . '</td>
-				<td  align="center">' . $participacionProcesos2 . '</td>
-				<td >' . $participacionProcesosO . '</td>	
-			</tr>
+				<tr>		
+					<td >Representación de egresados en el Consejo de Facultad y Consejo Universitario</td>
+			
+					<td  align="center">' . $egresadosConsejoUniversiatario1 . '</td>
+					<td  align="center">' . $egresadosConsejoUniversiatario2 . '</td>
+					<td >' . $egresadosConsejoUniversiatarioO . '</td>	
+				</tr>
+				<tr>		
+					<td >Programas de educación continua</td>
+					<td  align="center">' . $programasEducacionContinua1 . '</td>
+					<td  align="center">' . $programasEducacionContinua2 . '</td>
+					<td >' . $programasEducacionContinuaO . '</td>	
+				</tr>
 
-			<tr>		
-				<td >Asociacion de egresados</td>
-				<td  align="center">' . $asociacionEegresados1 . '</td>
-				<td  align="center">' . $asociacionEegresados2 . '</td>
-				<td >' . $asociacionEegresadosO . '</td>	
-			</tr>
+				<tr>		
+					<td >
+						Participacion como grupo de interes en los procesos de:
+						<li>  Revisión periodica de sus políticas y objetivos institucionales</li>
+						<li>  Revisión de la pertinencia del perfil del egresado</li>
+						<li>  Revisión evaluación y actualización de los currículos</li>
+						<li>  Otros</li>				
+					</td>
+					<td  align="center">' . $participacionProcesos1 . '</td>
+					<td  align="center">' . $participacionProcesos2 . '</td>
+					<td >' . $participacionProcesosO . '</td>	
+				</tr>
 
-			<tr>		
-				<td >Premiacion o reconocimiento a egresados destacados</td>
-				<td  align="center">' . $reconocimientoEgresados1 . '</td>
-				<td  align="center">' . $reconocimientoEgresados2 . '</td>
-				<td >' . $reconocimientoEgresadosO . '</td>	
-			</tr>
+				<tr>		
+					<td >Asociacion de egresados</td>
+					<td  align="center">' . $asociacionEegresados1 . '</td>
+					<td  align="center">' . $asociacionEegresados2 . '</td>
+					<td >' . $asociacionEegresadosO . '</td>	
+				</tr>
 
-			<tr>		
-				<td >Participación en el desarrollo de investigaciones básicas y aplicadas de interés local, regional, nacional e internacional</td>
-				<td  align="center">' . $desarrolloInvestigaciones1 . '</td>
-				<td  align="center">' . $desarrolloInvestigaciones2 . '</td>
-				<td >' . $desarrolloInvestigacionesO . '</td>	
-			</tr>
+				<tr>		
+					<td >Premiacion o reconocimiento a egresados destacados</td>
+					<td  align="center">' . $reconocimientoEgresados1 . '</td>
+					<td  align="center">' . $reconocimientoEgresados2 . '</td>
+					<td >' . $reconocimientoEgresadosO . '</td>	
+				</tr>
 
-			<tr>		
-				<td >Publicación de resultados de investigación</td>
-				<td  align="center">' . $resultadosInvestigacion1 . '</td>
-				<td  align="center">' . $resultadosInvestigacion2 . '</td>
-				<td >' . $resultadosInvestigacionO . '</td>	
-			</tr>
+				<tr>		
+					<td >Participación en el desarrollo de investigaciones básicas y aplicadas de interés local, regional, nacional e internacional</td>
+					<td  align="center">' . $desarrolloInvestigaciones1 . '</td>
+					<td  align="center">' . $desarrolloInvestigaciones2 . '</td>
+					<td >' . $desarrolloInvestigacionesO . '</td>	
+				</tr>
 
-			<tr>		
-				<td >Promoción de la movilidad de egresados que destacan en investigación</td>
-				<td  align="center">' . $destacadosInvestigacion1 . '</td>
-				<td  align="center">' . $destacadosInvestigacion2 . '</td>
-				<td >' . $destacadosInvestigacionO . 'N</td>	
-			</tr>
+				<tr>		
+					<td >Publicación de resultados de investigación</td>
+					<td  align="center">' . $resultadosInvestigacion1 . '</td>
+					<td  align="center">' . $resultadosInvestigacion2 . '</td>
+					<td >' . $resultadosInvestigacionO . '</td>	
+				</tr>
 
-			<tr>		
-				<td >Entre Otros</td>
-				<td  align="center">' . $entreOtros1 . '</td>
-				<td  align="center">' . $entreOtros2 . '</td>
-				<td >' . $entreOtrosO . '</td>	
-			</tr>
+				<tr>		
+					<td >Promoción de la movilidad de egresados que destacan en investigación</td>
+					<td  align="center">' . $destacadosInvestigacion1 . '</td>
+					<td  align="center">' . $destacadosInvestigacion2 . '</td>
+					<td >' . $destacadosInvestigacionO . '</td>	
+				</tr>
 
-		</table>';
+				<tr>		
+					<td >Entre Otros</td>
+					<td  align="center">' . $entreOtros1 . '</td>
+					<td  align="center">' . $entreOtros2 . '</td>
+					<td >' . $entreOtrosO . '</td>	
+				</tr>
+
+			</table>
+		';
 
 		$formulario3 = '
 
-		<h3 style="text-align: center;">Informe Estadístico Anual y Semestral de Inserción Laboral</h3>
-		<br><br>
-		
-		<table width=100% cellpadding="0" cellspacing="0" colspan="12" border="1" bordercolor="#000000">
-			<tr>
-				<td class="fondoCelda" colspan="3">&nbsp;<b>ESCUELA PROFESIONAL: </b> ' . $carrera . '</td>
-			</tr>
-			<tr>
-				<td class="fondoCelda" colspan="3">&nbsp;<b>AÑO Y SEMESTRE: </b>' . $añoysemestre . '</td>
-			</tr>
-			<tr>
-				<td class="fondoCelda" colspan="3">&nbsp;<b>FECHA DE INFORME:</b> ' . $fechaInforme . '</td>
-			</tr>
-			<tr>
-				<td align="center"><b>EGRESADOS</b></td>
-				<td align="center"><b>N° DE EGRESADOS</b></td>
-				<td align="center"><b>% DE EGRESADOS</b></td>
-			</tr>
+			<h2 style="text-align: center;">ESCUELA PROFESIONAL - PREGRADO</h2>
 
-			<tr>
-				<td height="40"  align="center">Laboran en el campo de su carrera</td>
-				<td align="center">' . $laboranCampo . '</td>
-				<td align="center">' . $porcentaje_laboranCampo . '</td>
-			</tr>
-			<tr>
-				<td height="40"  align="center">No laboran en el campo de su carrera</td>
-				<td align="center">' . $noLaboranCampo . '</td>
-				<td align="center">' . $porcentaje_noLaboranCampo . '</td>
-			</tr>
+			<h3 style="text-align: center;">Informe Estadístico Anual y Semestral de Inserción Laboral</h3>
+					
+			<table width=100% cellpadding="0" cellspacing="0" colspan="12" border="1" bordercolor="#000000">
+				<tr>
+					<td class="fondoCelda" colspan="3">&nbsp;<b>ESCUELA PROFESIONAL: </b> ' . $nombre_escuela . '</td>
+				</tr>
+				<tr>
+					<td class="fondoCelda" colspan="3">&nbsp;<b>AÑO Y SEMESTRE: </b>' . $añoysemestre . '</td>
+				</tr>
+				<tr>
+					<td class="fondoCelda" colspan="3">&nbsp;<b>FECHA DE INFORME:</b> ' . $fechaInforme . '</td>
+				</tr>
+				<tr>
+					<td align="center"><b>EGRESADOS</b></td>
+					<td align="center"><b>N° DE EGRESADOS</b></td>
+					<td align="center"><b>% DE EGRESADOS</b></td>
+				</tr>
 
-			<tr>
-				<td height="40"  align="center">Laboran Dependientes</td>
-				<td align="center">' . $laboranDependientes . '</td>
-				<td align="center">' . $porcentaje_laboranDependientes . '</td>
-			</tr>
+				<tr>
+					<td height="40"  align="center">Laboran en el campo de su carrera</td>
+					<td align="center">' . $laboranCampo . '</td>
+					<td align="center">' . $porcentaje_laboranCampo . '</td>
+				</tr>
+				<tr>
+					<td height="40"  align="center">No laboran en el campo de su carrera</td>
+					<td align="center">' . $noLaboranCampo . '</td>
+					<td align="center">' . $porcentaje_noLaboranCampo . '</td>
+				</tr>
 
-			<tr>
-				<td height="40"  align="center">Laboran Independientes</td>
-				<td align="center">' . $laboranIndependientes . '</td>
-				<td align="center">' . $porcentaje_laboranIndependientes . '</td>
-			</tr>
+				<tr>
+					<td height="40"  align="center">Laboran Dependientes</td>
+					<td align="center">' . $laboranDependientes . '</td>
+					<td align="center">' . $porcentaje_laboranDependientes . '</td>
+				</tr>
 
-			<tr>
-				<td height="40"  align="center">Nombrado</td>
-				<td align="center">' . $nombrado . '</td>
-				<td align="center">' . $porcentaje_nombrado . '</td>
-			</tr>
+				<tr>
+					<td height="40"  align="center">Laboran Independientes</td>
+					<td align="center">' . $laboranIndependientes . '</td>
+					<td align="center">' . $porcentaje_laboranIndependientes . '</td>
+				</tr>
 
-			<tr>
-				<td height="40" align="center">Contratado</td>
-				<td align="center">' . $contratado . '</td>
-				<td align="center">' . $porcentaje_contratado . '</td>
-			</tr>
+				<tr>
+					<td height="40"  align="center">Nombrado</td>
+					<td align="center">' . $nombrado . '</td>
+					<td align="center">' . $porcentaje_nombrado . '</td>
+				</tr>
 
-			<tr>
-				<td height="40" align="center">Sector Publico</td>
-				<td align="center">' . $sectorPublico . '</td>
-				<td align="center">' . $porcentaje_sectorPublico . '</td>
-			</tr>
+				<tr>
+					<td height="40" align="center">Contratado</td>
+					<td align="center">' . $contratado . '</td>
+					<td align="center">' . $porcentaje_contratado . '</td>
+				</tr>
 
-			<tr>
-				<td height="40" align="center">Sector Privado</td>
-				<td align="center">' . $sectorPrivado . '</td>
-				<td align="center">' . $porcentaje_sectorPrivado . '</td>
-			</tr>
+				<tr>
+					<td height="40" align="center">Sector Publico</td>
+					<td align="center">' . $sectorPublico . '</td>
+					<td align="center">' . $porcentaje_sectorPublico . '</td>
+				</tr>
 
-			<tr>
-				<td height="40" align="center"><b>TOTAL</b></td>
-				<td align="center"> ' . $total_insecion_laboral . '</td>
-				<td align="center"> ' . $porcentaje_total_insecion_laboral . '</td>
-			</tr>
+				<tr>
+					<td height="40" align="center">Sector Privado</td>
+					<td align="center">' . $sectorPrivado . '</td>
+					<td align="center">' . $porcentaje_sectorPrivado . '</td>
+				</tr>
 
-			<tr>
-				<td colspan="3" height="70" valign="top" style="text-align:justify">&nbsp;COMENTARIOS:
-					<br>
-					' . $comentarios . '
-				</td>					
-			</tr>
+				<tr>
+					<td height="40" align="center"><b>TOTAL</b></td>
+					<td align="center"> ' . $total_insecion_laboral . '</td>
+					<td align="center"> ' . $porcentaje_total_insecion_laboral . '</td>
+				</tr>
 
-		</table>
-			
+				<tr>
+					<td colspan="3" height="70" valign="top" style="text-align:justify">&nbsp;COMENTARIOS:
+						<br>
+						' . $comentarios . '
+					</td>					
+				</tr>
+
+			</table>
 		';
 
 		$pdf = new Mpdf([
@@ -452,7 +486,6 @@ class vista extends Controllers
 			'orientation' => 'P',
 			'font-size' => 8,
 		]);
-
 
 		$pdf->SetHTMLHeader('
         <div style=" text-align: left; ">		
