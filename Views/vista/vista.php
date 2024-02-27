@@ -349,18 +349,16 @@
 
 
 </div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="text-center">
+            <a href="javascript:void(0)" class="btn btn-success" onclick="enviar()">EXPORTAR INFORME</a>
+        </div>
 
-<div class="col-md-12">
-    <div class="row text-center">
-        <a href="javascript:void(0)" class="btn btn-success" onclick="enviar()">go</a>
     </div>
 
 </div>
 
-
-
-<p>__________________________</p>
-<p>ingresar nombre</p>
 
 
 
@@ -515,7 +513,7 @@
             swal("Atención!", "asociacionEegresadosO", "warning");
             return;
         }
-        
+
         if (reconocimientoEgresados == 0) {
             swal("Atención!", "reconocimientoEgresados", "warning");
             return;
@@ -566,7 +564,7 @@
             return;
         }
 
-        
+
         if (participacionProcesos == 0) {
             swal("Atención!", "participacionProcesos", "warning");
             return;
@@ -601,27 +599,27 @@
             swal("Atención!", "totalEgresados", "warning");
             return;
         }
-        
+
         if (laboranCampo == '') {
             swal("Atención!", "laboranCampo", "warning");
             return;
         }
-        
+
         if (noLaboranCampo == '') {
             swal("Atención!", "noLaboranCampo", "warning");
             return;
         }
-        
+
         if (laboranDependientes == '') {
             swal("Atención!", "laboranDependientes", "warning");
             return;
         }
-        
+
         if (laboranIndependientes == '') {
             swal("Atención!", "laboranIndependientes", "warning");
             return;
         }
-        
+
         if (nombrado == '') {
             swal("Atención!", "nombrado", "warning");
             return;

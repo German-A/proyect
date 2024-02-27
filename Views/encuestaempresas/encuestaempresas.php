@@ -74,7 +74,7 @@ $idmaestria = $año->listaFacultadpostgrado();
         <div class="row">
 
             <div class="col-12 text-left">
-                <h3>Ingresar ruc. <input type="ruc" id="ruc"></h3>
+                <h3><input type="hidden" id="ruc"></h3>
                 
             </div>
 
@@ -262,6 +262,13 @@ $idmaestria = $año->listaFacultadpostgrado();
                                 <h5>Página web.</h5>
                             </label>
                         </div>
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="p6" type="radio" value="7">
+                            <label class="form-check-label" for="p6">
+                                <h5>N/A.</h5>
+                            </label>
+                        </div>
                     </div>
                 </div>
 
@@ -292,6 +299,12 @@ $idmaestria = $año->listaFacultadpostgrado();
                             <input class="form-check-input" name="p6" type="radio" value="4">
                             <label class="form-check-label" for="p6">
                                 <h5>Segunda profesión.</h5>
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="p6" type="radio" value="7">
+                            <label class="form-check-label" for="p6">
+                                <h5>N/A.</h5>
                             </label>
                         </div>
                     </div>

@@ -42,7 +42,7 @@ $idmaestria = $año->listaFacultadpostgrado();
                 </div>
                 <div class="col-12 text-left col-md-12">
                     <h5 class="">Grados de Bachiller</h5>
-                    <h5>1468</h5>
+                    <h5>1680</h5>
                 </div>
             </a>
         </div>
@@ -54,7 +54,7 @@ $idmaestria = $año->listaFacultadpostgrado();
                 </div>
                 <div class="col-12 text-left col-md-12">
                     <h5 class="">Títulos Profesionales</h5>           
-                    <h5>667</h5>
+                    <h5>1312</h5>
                 </div>
             </a>
         </div>
@@ -66,7 +66,7 @@ $idmaestria = $año->listaFacultadpostgrado();
                 </div>
                 <div class="col-12 text-left col-md-12">
                     <h5 class="">Segundas Especialidades Profesionales</h5>
-                    <h5>6</h5>
+                    <h5>84</h5>
                 </div>
             </a>
         </div>
@@ -78,7 +78,7 @@ $idmaestria = $año->listaFacultadpostgrado();
                 </div>
                 <div class="col-12 text-left col-md-12">
                     <h5 class="">Maestrias</h5>
-                    <h5>204</h5>
+                    <h5>284</h5>
                 </div>
             </a>
         </div>
@@ -90,14 +90,14 @@ $idmaestria = $año->listaFacultadpostgrado();
                 </div>
                 <div class="col-12 text-left col-md-12">
                     <h5 class="">Doctorados</h5>
-                    <h5>53</h5>
+                    <h5>61</h5>
                 </div>
             </a>
         </div>
     </div>
     <div class="d-flex align-items-end flex-column">
         <div class="p-2">
-            <h5>Al 16 de julio 2023</h5>
+            <h5>Al 31 de diciembre 2023</h5>
         </div>
     </div>
 </div>
