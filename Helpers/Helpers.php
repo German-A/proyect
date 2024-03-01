@@ -74,6 +74,18 @@ function footerexpoferiaxvll($data = "")
 }
 
 
+function headexpoferiaxvlll($data = "")
+{
+    $view_header = "Views/templateexpoferiaxvlll/header.php";
+    require_once($view_header);
+}
+function footerexpoferiaxvlll($data = "")
+{
+    $view_footer = "Views/templateexpoferiaxvll/footer.php";
+    require_once($view_footer);
+}
+
+
 
 function obj($data = "")
 {

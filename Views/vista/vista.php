@@ -18,108 +18,118 @@
 
     <!-- formulario 1 - Informe Estadistico Anual y Semestral de Inserción Laboral -->
 
-    <h1>ESCUELA PROFESIONAL - PREGRADO</h1>
-    <H3>Informe Estadisticó Anual sobre el Estado de los Egresados, Graduados y Titulados</H3>
+    <section class="col-12">
 
-    <div class="col-12">
-        <div class="row">
-            <div class="form-group col-md-12">
-                <label for="carrera">Escuela Profesional<span class="text-danger">*</span></label>
-                <select class="carrera form-control selectmultiple" name="carrera[]" data-live-search="true" id="carrera" x>
-                    <option value="0" selected>Seleccionar</option>
-                </select>
-            </div>
+        <h1>ESCUELA PROFESIONAL - PREGRADO</h1>
+        <H3>Informe Estadisticó Anual sobre el Estado de los Egresados, Graduados y Titulados</H3>
 
-
-
-            <div class="form-group col-md-4">
-                <div class="row">
-                    <div class="col-6">
-                        <label for="nombreempresa">Cohorte <span class="text-danger">*</span></label>
-                        <select class="select2 form-control" name="fechaInicio[]" data-live-search="true" id="fechaInicio" x>
-                            <option value="0" selected>Desde</option>
-                            <option value="2015">2015</option>
-                            <option value="2016">2016</option>
-                            <option value="2017">2017</option>
-                            <option value="2018">2018</option>
-                            <option value="2019">2019</option>
-                            <option value="2020">2020</option>
-                            <option value="2021">2021</option>
-                            <option value="2022">2022</option>
-                            <option value="2023">2023</option>
-                            <option value="2024">2024</option>
-                            <option value="2025">2025</option>
-                        </select>
-                    </div>
-                    <div class="col-6">
-                        <label for="nombreempresa"> <span class="text-danger"></span></label>
-                        <select class="select2 form-control" name="fechaFin[]" data-live-search="true" id="fechaFin" x>
-                            <option value="0" selected>Hasta</option>
-                            <option value="2015">2015</option>
-                            <option value="2016">2016</option>
-                            <option value="2017">2017</option>
-                            <option value="2018">2018</option>
-                            <option value="2019">2019</option>
-                            <option value="2020">2020</option>
-                            <option value="2021">2021</option>
-                            <option value="2022">2022</option>
-                            <option value="2023">2023</option>
-                            <option value="2024">2024</option>
-                            <option value="2025">2025</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
+        <div class="form-group">
+            <label for="carrera">Escuela Profesional<span class="text-danger">*</span></label>
+            <select class="carrera form-control selectmultiple" name="carrera" data-live-search="true" id="carrera" x>
+                <option value="0" selected>Seleccionar</option>
+            </select>
         </div>
 
         <div class="row">
-            <div class="form-group col-md-2">
+
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="fechaInicio">Desde <span class="col-form-label text-danger">*</span></label>
+                    <select class="select2 form-control" name="fechaInicio" data-live-search="true" id="fechaInicio" x>
+                        <option value="0" selected>Desde</option>
+                        <option value="2015">2015</option>
+                        <option value="2016">2016</option>
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="fechaFin">Hasta<span class="col-form-label text-danger">*</span></label>
+                    <select class="select2 form-control" name="fechaFin" data-live-search="true" id="fechaFin" x>
+                        <option value="0" selected>Hasta</option>
+                        <option value="2015">2015</option>
+                        <option value="2016">2016</option>
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                    </select>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-4">
                 <label for="ingresantesPromocion">N° de Ingresantes por Promoción <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" onchange="buscar()" id="ingresantesPromocion" name="ingresantesPromocion" required>
+                <input type="number" class="form-control" id="ingresantesPromocion" name="ingresantesPromocion" required>
             </div>
 
-            <div class="form-group col-md-2">
-                <label for="egresadosPromocion">N° de <br> Egresados<span class="text-danger">*</span></label>
-                <input type="text" class="form-control" onchange="buscar()" id="egresadosPromocion" name="egresadosPromocion" required>
+            <div class="form-group col-md-4">
+                <label for="egresadosPromocion">N° de Egresados<span class="text-danger">*</span></label>
+                <input type="number" class="form-control" id="egresadosPromocion" name="egresadosPromocion" required>
             </div>
 
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-4">
                 <label for="tiempoEsperando">N° de Egresados en el Tiempo Esperado<span class="text-danger">*</span></label>
-                <input type="text" class="form-control" onchange="buscar()" id="tiempoEsperando" name="tiempoEsperando" required>
+                <input type="number" class="form-control" id="tiempoEsperando" name="tiempoEsperando" required>
             </div>
 
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-6">
                 <label for="cantidadGraduados">N° de Egresados Graduados<span class="text-danger">*</span></label>
-                <input type="text" class="form-control" onchange="buscar()" id="cantidadGraduados" name="cantidadGraduados" required>
+                <input type="number" class="form-control" id="cantidadGraduados" name="cantidadGraduados" required>
             </div>
 
-            <div class="form-group col-md-2">
-                <label for="cantidadTitulados">Cantidad de <br>Titulados<span class="text-danger">*</span></label>
-                <input type="text" class="form-control" onchange="buscar()" id="cantidadTitulados" name="cantidadTitulados" required>
+            <div class="form-group col-md-6">
+                <label for="cantidadTitulados">Cantidad de Titulados<span class="text-danger">*</span></label>
+                <input type="number" class="form-control" id="cantidadTitulados" name="cantidadTitulados" required>
             </div>
 
+        </div>
+
+        <div class="row">
             <div class="form-group col-md-12">
                 <label for="observaciones">Observaciones<span class="text-danger">*</span></label>
-                <input type="text" class="form-control" onchange="buscar()" id="observaciones" name="observaciones" required>
+                <input type="text" class="form-control" id="observaciones" name="observaciones" required>
             </div>
 
             <div class="form-group col-md-12">
                 <label for="tomaDesiciones">Toma de desiciones<span class="text-danger">*</span></label>
-                <input type="text" class="form-control" onchange="buscar()" id="tomaDesiciones" name="tomaDesiciones" required>
+                <input type="text" class="form-control" id="tomaDesiciones" name="tomaDesiciones" required>
             </div>
-
         </div>
 
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center">
+                    <a href="javascript:void(0)" class="btn btn-success" onclick="formato1()">DESCARGAR</a>
+                </div>
+            </div>
+        </div>
 
-    </div>
-
-
-
-    <!-- formulario 2 - Informe Estadistico Anual y Semestral de Inserción Laboral -->
+    </section>
     <br><br><br>
 
-
-    <div class="col-12">
+    <!-- formulario 2 - Informe Estadistico Anual y Semestral de Inserción Laboral -->
+    <section class="col-12">
 
         <h2>Informe Semestral y Anual sobre la Evaluación de Resultados de Planes de Accion</h2>
 
@@ -272,16 +282,12 @@
 
 
         </div>
-    </div>
-
-
-
-    <!-- formulario 3 - Informe Estadistico Anual y Semestral de Inserción Laboral -->
+    </section>
     <br><br><br>
 
+    <!-- formulario 3 - Informe Estadistico Anual y Semestral de Inserción Laboral -->
 
-
-    <div class="col-12">
+    <section class="col-12">
 
         <h2>Informe Estadistico Anual y Semestral de Inserción Laboral</h2>
         <br>
@@ -289,22 +295,22 @@
         <div class="row">
             <div class="col-md-3">
                 <label for="totalEgresados">Total de Egresados<span class="text-danger">*</span></label>
-                <input type="text" class="form-control" onchange="buscar()" id="totalEgresados" name="totalEgresados" required>
+                <input type="text" class="form-control" id="totalEgresados" name="totalEgresados" required>
             </div>
 
             <div class="col-md-3">
                 <label for="laboranCampo">Laboran en el campo de su Carrera<span class="text-danger">*</span></label>
-                <input type="text" class="form-control" onchange="buscar()" id="laboranCampo" name="laboranCampo" required>
+                <input type="text" class="form-control" id="laboranCampo" name="laboranCampo" required>
             </div>
 
             <div class="col-md-3">
                 <label for="noLaboranCampo">No laboran en el campo de su carrera<span class="text-danger">*</span></label>
-                <input type="text" class="form-control" onchange="buscar()" id="noLaboranCampo" name="noLaboranCampo" required>
+                <input type="text" class="form-control" id="noLaboranCampo" name="noLaboranCampo" required>
             </div>
 
             <div class="col-md-3">
                 <label for="laboranDependientes">Labora forma dependiente<span class="text-danger">*</span></label>
-                <input type="text" class="form-control" onchange="buscar()" id="laboranDependientes" name="laboranDependientes" required>
+                <input type="text" class="form-control" id="laboranDependientes" name="laboranDependientes" required>
             </div>
         </div>
 
@@ -312,22 +318,22 @@
         <div class="row">
             <div class="col-md-3">
                 <label for="laboranIndependientes">Labora forma independiente<span class="text-danger">*</span></label>
-                <input type="text" class="form-control" onchange="buscar()" id="laboranIndependientes" name="laboranIndependientes" required>
+                <input type="text" class="form-control" id="laboranIndependientes" name="laboranIndependientes" required>
             </div>
 
             <div class="col-md-3">
                 <label for="nombrado">Nombrado<span class="text-danger">*</span></label>
-                <input type="text" class="form-control" onchange="buscar()" id="nombrado" name="nombrado" required>
+                <input type="text" class="form-control" id="nombrado" name="nombrado" required>
             </div>
 
             <div class="col-md-3">
                 <label for="contratado">Contratado<span class="text-danger">*</span></label>
-                <input type="text" class="form-control" onchange="buscar()" id="contratado" name="contratado" required>
+                <input type="text" class="form-control" id="contratado" name="contratado" required>
             </div>
 
             <div class="col-md-3">
                 <label for="sectorPublico">Sector Público<span class="text-danger">*</span></label>
-                <input type="text" class="form-control" onchange="buscar()" id="sectorPublico" name="sectorPublico" required>
+                <input type="text" class="form-control" id="sectorPublico" name="sectorPublico" required>
             </div>
         </div>
 
@@ -335,7 +341,7 @@
         <div class="row">
             <div class="col-md-3">
                 <label for="sectorPrivado">Sector Privado<span class="text-danger">*</span></label>
-                <input type="text" class="form-control" onchange="buscar()" id="sectorPrivado" name="sectorPrivado" required>
+                <input type="text" class="form-control" id="sectorPrivado" name="sectorPrivado" required>
             </div>
 
             <div class="col-md-9">
@@ -345,7 +351,8 @@
 
         </div>
 
-    </div>
+
+    </section>
 
 
 </div>
@@ -354,9 +361,7 @@
         <div class="text-center">
             <a href="javascript:void(0)" class="btn btn-success" onclick="enviar()">EXPORTAR INFORME</a>
         </div>
-
     </div>
-
 </div>
 
 
@@ -383,6 +388,93 @@
         link.click();
 
     }
+
+    function formato1() {
+        /*FORMULARIO 1*/
+        var carrera = $("#carrera").val();
+        var fechaInicio = $("#fechaInicio").val();
+        var fechaFin = $("#fechaFin").val();
+        var ingresantesPromocion = $("#ingresantesPromocion").val();
+        var egresadosPromocion = $("#egresadosPromocion").val();
+
+        var tiempoEsperando = $("#tiempoEsperando").val();
+        var cantidadGraduados = $("#cantidadGraduados").val();
+        var cantidadTitulados = $("#cantidadTitulados").val();
+        var observaciones = $("#observaciones").val();
+        var tomaDesiciones = $("#tomaDesiciones").val();
+
+
+        if (carrera == 0) {
+            swal("Atención!", "Seleccionar Carrera", "warning");
+            return;
+        }
+
+        if (fechaInicio == 0) {
+            swal("Atención!", "Seleccionar fecha de cohorte Inicial", "warning");
+            return;
+        }
+
+        if (fechaFin == 0) {
+            swal("Atención!", "Seleccionar fecha de cohorte Final", "warning");
+            return;
+        }
+
+        if (ingresantesPromocion == '') {
+            swal("Atención!", "Debe ingresar los ingresantes por Promoción", "warning");
+            return;
+        }
+
+        if (egresadosPromocion == '') {
+            swal("Atención!", "Debe ingresar el numero de Egresados", "warning");
+            return;
+        }
+
+        if (tiempoEsperando == '') {
+            swal("Atención!", "N° de egresados en el Tiempo esperado", "warning");
+            return;
+        }
+
+        if (cantidadGraduados == '') {
+            swal("Atención!", "N° de egresados de egresados Graduados", "warning");
+            return;
+        }
+
+        if (cantidadTitulados == '') {
+            swal("Atención!", "N° de egresados de egresados Graduados Titulados", "warning");
+            return;
+        }
+
+        var fd = new FormData();
+        /*FORMULARIO 1*/
+        fd.append("carrera", carrera);
+        fd.append("fechaInicio", fechaInicio);
+        fd.append("fechaFin", fechaFin);
+        fd.append("ingresantesPromocion", ingresantesPromocion);
+        fd.append("egresadosPromocion", egresadosPromocion);
+
+        fd.append("tiempoEsperando", tiempoEsperando);
+        fd.append("cantidadGraduados", cantidadGraduados);
+        fd.append("cantidadTitulados", cantidadTitulados);
+        fd.append("observaciones", observaciones);
+        fd.append("tomaDesiciones", tomaDesiciones);
+
+        $.ajax({
+            method: "POST",
+            url: "" + base_url + "/vista/informe1",
+            //data: datax
+            data: fd,
+            processData: false, // tell jQuery not to process the data
+            contentType: false, // tell jQuery not to set contentType
+            xhrFields: {
+                responseType: 'blob'
+            },
+
+        }).done(function(response) {
+            descargarpdf(response);
+
+        });
+    }
+    
 
     function enviar() {
 

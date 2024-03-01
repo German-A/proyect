@@ -197,8 +197,17 @@ $n = 1;
                 <li class="activo">
                     <div class="itemY">
                         <h1 data-id="Documentos\MYG\Cuestionario-SISEU.pdf"></h1>
-                        <a href="https://use-dpa.unitru.edu.pe/expoferialaboralxvll" target="_blank">
+                        <a href="<?= base_url(); ?>/expoferialaboralxvll" target="_blank">
                             <h5>Ciencias Básicas y Tecnológicas (07 y 08 de septiembre)</h5>
+                        </a>
+                    </div>
+                </li>
+
+                <li class="">
+                    <div class="itemY">
+                        <h1 data-id="Documentos\MYG\Cuestionario-SISEU.pdf"></h1>
+                        <a href="<?= base_url(); ?>/expoferialaboralxvlll" target="_blank">
+                            <h5>Mega feria laboral "Chambita te busca"</h5>
                         </a>
                     </div>
                 </li>
