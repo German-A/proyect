@@ -1,3 +1,4 @@
+
 <?php
 
 /*importacion de librerias*/
@@ -545,20 +546,27 @@ class vista extends Controllers
 
 		$fechaInforme  = date("d-m-Y");
 
-		$estilos = '
+		$css = '
 			<style>
 				.fondoCelda{
 					background-color: rgb(0, 0, 102);
 					color: #ffffff;
 					padding: 5px;
-				}f
-				td{
-					padding: 6px 4px;
 				}
+				td{
+					padding: 4px 8px;
+				}
+				.firma{
+					text-align: center;
+						
+						border-top: 2px solid #000000;
+			
+						width: 200px;
+							}
 			</style>
 		';
 
-		$formulario1 = '
+		$form1 = '
 	
 				<h2 style="text-align: center;">ESCUELA PROFESIONAL - PREGRADO</h2>
 	
@@ -614,6 +622,12 @@ class vista extends Controllers
 						<td colspan="10">' . $tomaDesiciones . '</td>		
 					</tr>
 				</table>
+				<br>
+				<div class="firma">
+					<h5>V° B°</h5>
+					<h5>DIRECTOR DE ESCUELA PROFESIONAL</h5>
+				</div>
+
 	
 		';
 
@@ -622,7 +636,7 @@ class vista extends Controllers
 			'format' => 'A4',
 			'setAutoTopMargin' => 'pad',
 			'setAutoBottomMargin' => 'pad',
-			'orientation' => 'P',
+			'orientation' => 'L',
 			'font-size' => 8,
 		]);
 
@@ -636,10 +650,11 @@ class vista extends Controllers
 	
 		');
 
-		$pdf->WriteHTML($estilos);
-		$pdf->WriteHTML($formulario1);
+		$pdf->WriteHTML($css);
+		$pdf->WriteHTML($form1);
 		$pdf->Output('use.pdf', 'I');
-		$data = 'z';
+		$data = '';
+
 		$this->views->getView($this, "vista", $data);
 	}
 	/*PAGINA DE INICIO*/

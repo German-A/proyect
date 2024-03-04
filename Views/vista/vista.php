@@ -9,7 +9,22 @@
     td {
         padding: 4px 2px;
     }
+
+    .firma {
+        text-align: center;
+        
+    
+    
+        border-top: 2px dashed #000000;
+        max-width: 100%;
+    }
 </style>
+
+<br><br>
+<div class="firma">
+    <h5>V° B°</h5>
+    <h5><b>DIRECTOR DE ESCUELA PROFESIONAL</b></h5>
+</div>
 
 
 
@@ -20,7 +35,6 @@
 
     <section class="col-12">
 
-        <h1>ESCUELA PROFESIONAL - PREGRADO</h1>
         <H3>Informe Estadisticó Anual sobre el Estado de los Egresados, Graduados y Titulados</H3>
 
         <div class="form-group">
@@ -107,12 +121,12 @@
 
         <div class="row">
             <div class="form-group col-md-12">
-                <label for="observaciones">Observaciones<span class="text-danger">*</span></label>
+                <label for="observaciones">Observaciones</label>
                 <input type="text" class="form-control" id="observaciones" name="observaciones" required>
             </div>
 
             <div class="form-group col-md-12">
-                <label for="tomaDesiciones">Toma de desiciones<span class="text-danger">*</span></label>
+                <label for="tomaDesiciones">Toma de desiciones</label>
                 <input type="text" class="form-control" id="tomaDesiciones" name="tomaDesiciones" required>
             </div>
         </div>
@@ -474,7 +488,7 @@
 
         });
     }
-    
+
 
     function enviar() {
 
