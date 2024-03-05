@@ -10,22 +10,7 @@
         padding: 4px 2px;
     }
 
-    .firma {
-        text-align: center;
-        
-    
-    
-        border-top: 2px dashed #000000;
-        max-width: 100%;
-    }
 </style>
-
-<br><br>
-<div class="firma">
-    <h5>V° B°</h5>
-    <h5><b>DIRECTOR DE ESCUELA PROFESIONAL</b></h5>
-</div>
-
 
 
 <br>
@@ -146,6 +131,13 @@
     <section class="col-12">
 
         <h2>Informe Semestral y Anual sobre la Evaluación de Resultados de Planes de Accion</h2>
+
+        <div class="form-group">
+            <label for="carreraf2">Escuela Profesional<span class="text-danger">*</span></label>
+            <select class="carrera form-control selectmultiple" name="carreraf2" data-live-search="true" id="carreraf2" x>
+                <option value="0" selected>Seleccionar</option>
+            </select>
+        </div>
 
         <br>
         <div class="row">
@@ -471,6 +463,127 @@
         fd.append("cantidadTitulados", cantidadTitulados);
         fd.append("observaciones", observaciones);
         fd.append("tomaDesiciones", tomaDesiciones);
+
+        $.ajax({
+            method: "POST",
+            url: "" + base_url + "/vista/informe1",
+            //data: datax
+            data: fd,
+            processData: false, // tell jQuery not to process the data
+            contentType: false, // tell jQuery not to set contentType
+            xhrFields: {
+                responseType: 'blob'
+            },
+
+        }).done(function(response) {
+            descargarpdf(response);
+
+        });
+    }
+
+    function formato2() {
+        
+        var carreraf2 = $("#carreraf2").val();
+        /*FORMULARIO 2*/
+        var añoysemestre = $("#añoysemestre").val();
+        var egresadosConsejoUniversiatario = $("#egresadosConsejoUniversiatario").val();
+
+        var programasEducacionContinua = $("#programasEducacionContinua").val();
+
+        var asociacionEegresados = $("#asociacionEegresados").val();
+
+        var reconocimientoEgresados = $("#reconocimientoEgresados").val();
+
+        var desarrolloInvestigaciones = $("#desarrolloInvestigaciones").val();
+
+        var resultadosInvestigacion = $("#resultadosInvestigacion").val();
+
+        var destacadosInvestigacion = $("#destacadosInvestigacion").val();
+
+        var entreOtros = $("#entreOtros").val();
+    
+        var participacionProcesos = $("#participacionProcesos").val();
+
+
+        if (añoysemestre == 0) {
+            swal("Atención!", "Debe seleccionar el Semestre", "warning");
+            return;
+        }
+
+        if (egresadosConsejoUniversiatario == 0) {
+            swal("Atención!", "egresadosConsejoUniversiatario", "warning");
+            return;
+        }
+
+
+        if (programasEducacionContinua == 0) {
+            swal("Atención!", "programasEducacionContinua", "warning");
+            return;
+        }
+
+        if (asociacionEegresados == 0) {
+            swal("Atención!", "asociacionEegresados", "warning");
+            return;
+        }
+
+
+        if (reconocimientoEgresados == 0) {
+            swal("Atención!", "reconocimientoEgresados", "warning");
+            return;
+        }
+
+
+        if (desarrolloInvestigaciones == 0) {
+            swal("Atención!", "desarrolloInvestigaciones", "warning");
+            return;
+        }
+
+
+        if (resultadosInvestigacion == 0) {
+            swal("Atención!", "resultadosInvestigacion", "warning");
+            return;
+        }
+
+        if (destacadosInvestigacion == 0) {
+            swal("Atención!", "destacadosInvestigacion", "warning");
+            return;
+        }
+
+        if (entreOtros == 0) {
+            swal("Atención!", "entreOtros", "warning");
+            return;
+        }
+
+        if (participacionProcesos == 0) {
+            swal("Atención!", "participacionProcesos", "warning");
+            return;
+        }
+
+        var fd = new FormData();
+        /*FORMULARIO 1*/
+        /*FORMULARIO 2*/
+        fd.append("carreraf2", carreraf2);
+        fd.append("añoysemestre", añoysemestre);
+        fd.append("egresadosConsejoUniversiatario", egresadosConsejoUniversiatario);
+        fd.append("egresadosConsejoUniversiatarioO", egresadosConsejoUniversiatarioO);
+        fd.append("programasEducacionContinua", programasEducacionContinua);
+        fd.append("programasEducacionContinuaO", programasEducacionContinuaO);
+        fd.append("asociacionEegresados", asociacionEegresados);
+        fd.append("asociacionEegresadosO", asociacionEegresadosO);
+        fd.append("reconocimientoEgresados", reconocimientoEgresados);
+        fd.append("reconocimientoEgresadosO", reconocimientoEgresadosO);
+
+        fd.append("desarrolloInvestigaciones", desarrolloInvestigaciones);
+        fd.append("desarrolloInvestigacionesO", desarrolloInvestigacionesO);
+        fd.append("resultadosInvestigacion", resultadosInvestigacion);
+        fd.append("resultadosInvestigacionO", resultadosInvestigacionO);
+
+        fd.append("destacadosInvestigacion", destacadosInvestigacion);
+        fd.append("destacadosInvestigacionO", destacadosInvestigacionO);
+        fd.append("entreOtros", entreOtros);
+        fd.append("entreOtrosO", entreOtrosO);
+        fd.append("participacionProcesos", participacionProcesos);
+        fd.append("participacionProcesosO", participacionProcesosO);
 
         $.ajax({
             method: "POST",

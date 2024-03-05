@@ -556,17 +556,17 @@ class vista extends Controllers
 				td{
 					padding: 4px 8px;
 				}
-				.firma{
+				.firma {
 					text-align: center;
-						
-						border-top: 2px solid #000000;
-			
-						width: 200px;
-							}
+					border-top: 2px dashed #000000;       
+					margin: auto;
+					width: 320px;
+				}
 			</style>
 		';
 
 		$form1 = '
+		<br><br>
 	
 				<h2 style="text-align: center;">ESCUELA PROFESIONAL - PREGRADO</h2>
 	
@@ -614,18 +614,19 @@ class vista extends Controllers
 						<td  align="center">' . $porcentajeNoTitulados . ' %</td>		
 					</tr>
 					<tr>
-						<td >observaciones</td>
+						<td >Observaciones</td>
 						<td colspan="10">' . $observaciones . '</td>		
 					</tr>
 					<tr>
-						<td >toma de <br> desiciones</td>
+						<td >Toma de <br> desiciones</td>
 						<td colspan="10">' . $tomaDesiciones . '</td>		
 					</tr>
 				</table>
-				<br>
+				
+				<br><br><br>
 				<div class="firma">
 					<h5>V° B°</h5>
-					<h5>DIRECTOR DE ESCUELA PROFESIONAL</h5>
+					<h5><b>DIRECTOR DE ESCUELA PROFESIONAL</b></h5>
 				</div>
 
 	
@@ -634,16 +635,15 @@ class vista extends Controllers
 		$pdf = new Mpdf([
 			'mode' => 'utf-8',
 			'format' => 'A4',
-			'setAutoTopMargin' => 'pad',
-			'setAutoBottomMargin' => 'pad',
 			'orientation' => 'L',
 			'font-size' => 8,
 		]);
 
 		$pdf->SetHTMLHeader('
-			<div style=" text-align: left; ">		
-				<img style="min-width: 200px; max-width: 200px; max-height: 200px;" src="' . media() . '/archivos/logos/logoUse.png" />
+			<div style="text-align: left; padding:0 ">		
+				<img style="min-width: 200px; max-width: 200px; max-height: 40px;" src="' . media() . '/archivos/logos/logoUse.png" />
 			</div>
+			
 		');
 
 		$pdf->SetHTMLFooter('
@@ -662,10 +662,10 @@ class vista extends Controllers
 	{
 
 		$id_carrera = intval(strClean($_POST['carrera']));
-
 		$arrData = $this->model->buscar_carrera($id_carrera);
-
 		$nombre_escuela = $arrData['nombreEscuela'];
+
+		$fechaInforme  = date("d-m-Y");
 
 
 		#region formulario_2
@@ -777,8 +777,6 @@ class vista extends Controllers
 
 		#endregion formulario_2
 
-
-		$fechaInforme  = date("d-m-Y");
 
 		$estilos = '
 			<style>
@@ -892,8 +890,6 @@ class vista extends Controllers
 		$pdf = new Mpdf([
 			'mode' => 'utf-8',
 			'format' => 'A4',
-			'setAutoTopMargin' => 'pad',
-			'setAutoBottomMargin' => 'pad',
 			'orientation' => 'P',
 			'font-size' => 8,
 		]);
