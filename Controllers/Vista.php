@@ -235,7 +235,7 @@ class vista extends Controllers
 				padding: 5px;
 			}
 			td{
-				padding: 6px 4px;
+				padding: 4px 2px;
 			}
 		</style>
 		';
@@ -666,8 +666,6 @@ class vista extends Controllers
 		$nombre_escuela = $arrData['nombreEscuela'];
 
 		$fechaInforme  = date("d-m-Y");
-
-
 		#region formulario_2
 
 		/*FORMULARIO 2*/
@@ -786,7 +784,14 @@ class vista extends Controllers
 					padding: 5px;
 				}
 				td{
-					padding: 6px 4px;
+					padding: 4px 2px;
+				}
+
+				.firma {
+					text-align: center;
+					border-top: 2px dashed #000000;       
+					margin: auto;
+					width: 320px;
 				}
 			</style>
 			';
@@ -809,8 +814,21 @@ class vista extends Controllers
 					</tr>
 					<tr>		
 						<td class="fondoCelda" >PLANES DE ACCIÓN DE VINCULACIÓN CON LOS EGRESADOS</td>
-						<td class="fondoCelda"  align="center">SI GRADO DE CUMPLIMIENTO</td>
-						<td class="fondoCelda"  align="center">NO GRADO DE CUMPLIMIENTO</td>
+
+						<td  colspan=2 >
+							<td >
+								<td class="fondoCelda"  align="center">xx</td>
+							
+							
+							</td>
+
+							<td >
+								<td class="fondoCelda"  align="center">SI GRADO DE CUMPLIMIENTO</td>
+								<td class="fondoCelda"  align="center">NO GRADO DE CUMPLIMIENTO</td>
+							
+							</td>
+						</td>
+	
 						<td class="fondoCelda" >OBSERVACIONES</td>
 					</tr>
 	
@@ -884,6 +902,14 @@ class vista extends Controllers
 					</tr>
 	
 				</table>
+
+
+				<br><br><br>
+				<div class="firma">
+					<h5>V° B°</h5>
+					<h5><b>DIRECTOR DE ESCUELA PROFESIONAL</b></h5>
+				</div>
+
 			';
 
 

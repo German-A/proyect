@@ -284,7 +284,13 @@
 
             </div>
 
-
+            <div class="row">
+            <div class="col-md-12">
+                <div class="text-center">
+                    <a href="javascript:void(0)" class="btn btn-success" onclick="formato2()">DESCARGAR</a>
+                </div>
+            </div>
+        </div>
 
 
         </div>
@@ -587,7 +593,7 @@
 
         $.ajax({
             method: "POST",
-            url: "" + base_url + "/vista/informe1",
+            url: "" + base_url + "/vista/informe2",
             //data: datax
             data: fd,
             processData: false, // tell jQuery not to process the data
