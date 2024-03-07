@@ -179,7 +179,6 @@ class vista extends Controllers
 		#region formulario_3
 
 		/*FORMULARIO 3*/
-		$totalEgresados = intval($_POST['totalEgresados']);
 
 		$laboranCampo = intval($_POST['laboranCampo']);
 		$noLaboranCampo = intval($_POST['noLaboranCampo']);
@@ -943,16 +942,16 @@ class vista extends Controllers
 	public function informe3()
 	{
 
-		$id_carrera = intval(strClean($_POST['carrera']));
+		$id_carrera = intval(strClean($_POST['carreraf3']));
 
 		$arrData = $this->model->buscar_carrera($id_carrera);
 
 		$nombre_escuela = $arrData['nombreEscuela'];
-
+		
 		#region formulario_3
 
 		/*FORMULARIO 3*/
-		$totalEgresados = intval($_POST['totalEgresados']);
+		$añoysemestref3 = $_POST['añoysemestref3'];
 
 		$laboranCampo = intval($_POST['laboranCampo']);
 		$noLaboranCampo = intval($_POST['noLaboranCampo']);
@@ -963,6 +962,8 @@ class vista extends Controllers
 		$sectorPublico = intval($_POST['sectorPublico']);
 		$sectorPrivado = intval($_POST['sectorPrivado']);
 		$comentarios = strClean($_POST['comentarios']);
+
+		$fechaInforme  = date("d-m-Y");
 
 
 		$total_insecion_laboral = ($laboranCampo + $noLaboranCampo + $laboranDependientes + $laboranIndependientes +
@@ -986,7 +987,7 @@ class vista extends Controllers
 
 
 
-		$fechaInforme  = date("d-m-Y");
+
 
 		$estilos = '
 		<style>
@@ -1012,7 +1013,7 @@ class vista extends Controllers
 					<td class="fondoCelda" colspan="3">&nbsp;<b>ESCUELA PROFESIONAL: </b> ' . $nombre_escuela . '</td>
 				</tr>
 				<tr>
-					<td class="fondoCelda" colspan="3">&nbsp;<b>AÑO Y SEMESTRE: </b>' . $añoysemestre . '</td>
+					<td class="fondoCelda" colspan="3">&nbsp;<b>AÑO Y SEMESTRE: </b>' . $añoysemestref3 . '</td>
 				</tr>
 				<tr>
 					<td class="fondoCelda" colspan="3">&nbsp;<b>FECHA DE INFORME:</b> ' . $fechaInforme . '</td>
