@@ -520,7 +520,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="text-center">
-                    <a href="javascript:void(0)" class="btn btn-success" onclick="formato3()">DESCARGAR</a>
+                    <a href="javascript:void(0)" class="btn btn-success" onclick="formato4()">DESCARGAR</a>
                 </div>
             </div>
         </div>
@@ -956,7 +956,7 @@
         fd.append("showroom", showroom);
         fd.append("showroomO", showroomO);
         fd.append("empleabilidad", empleabilidad);
-        fd.append("empleabilidaadO", empleabilidadO);
+        fd.append("empleabilidadO", empleabilidadO);
         fd.append("bolsalaboral", bolsalaboral);
         fd.append("bolsalaboralO", bolsalaboralO);
 

@@ -1,4 +1,3 @@
-
 <?php
 
 /*importacion de librerias*/
@@ -328,21 +327,8 @@ class vista extends Controllers
 					</tr>
 					<tr>		
 						<td class="fondoCelda" >PLANES DE ACCIÓN DE VINCULACIÓN CON LOS EGRESADOS</td>
-
-						<td  colspan=2 >
-							<td >
-								<td class="fondoCelda"  align="center">xx</td>
-							
-							
-							</td>
-
-							<td >
-								<td class="fondoCelda"  align="center">SI GRADO DE CUMPLIMIENTO</td>
-								<td class="fondoCelda"  align="center">NO GRADO DE CUMPLIMIENTO</td>
-							
-							</td>
-						</td>
-	
+						<td class="fondoCelda"  align="center">SI GRADO DE CUMPLIMIENTO</td>
+						<td class="fondoCelda"  align="center">NO GRADO DE CUMPLIMIENTO</td>
 						<td class="fondoCelda" >OBSERVACIONES</td>
 					</tr>
 	
@@ -462,7 +448,7 @@ class vista extends Controllers
 		$arrData = $this->model->buscar_carrera($id_carrera);
 
 		$nombre_escuela = $arrData['nombreEscuela'];
-		
+
 		#region formulario_3
 
 		/*FORMULARIO 3*/
@@ -631,105 +617,97 @@ class vista extends Controllers
 		$this->views->getView($this, "vista", $data);
 	}
 
-		/*PAGINA DE INICIO*/
-		public function informe4()
-		{
-	
-			$id_carrera = intval(strClean($_POST['carreraf4']));
-			$arrData = $this->model->buscar_carrera($id_carrera);
-			$nombre_escuela = $arrData['nombreEscuela'];
-	
-			$fechaInforme  = date("d-m-Y");
-			#region formulario_2
-	
-			/*FORMULARIO 2*/
-	
-			$añoysemestre = $_POST['añoysemestref4'];
+	/*PAGINA DE INICIO*/
+	public function informe4()
+	{
 
-			$feriaslaborales = strClean($_POST['feriaslaborales']);
-			$feriaslaboralesO = strClean($_POST['feriaslaboralesO']);
+		$id_carrera = intval(strClean($_POST['carreraf4']));
+		$arrData = $this->model->buscar_carrera($id_carrera);
+		$nombre_escuela = $arrData['nombreEscuela'];
 
-			$showroom = strClean($_POST['showroom']);
-			$showroomO = strClean($_POST['showroomO']);
+		$fechaInforme  = date("d-m-Y");
+		#region formulario_2
 
-			$empleabilidad = strClean($_POST['empleabilidad']);
-			$empleabilidadO = strClean($_POST['empleabilidadO']);
+		/*FORMULARIO 2*/
 
-			$bolsalaboral = strClean($_POST['bolsalaboral']);
-			$bolsalaboralO = strClean($_POST['bolsalaboralO']);
+		$añoysemestre = $_POST['añoysemestref4'];
 
-			$redessociales = strClean($_POST['redessociales']);
-			$redessocialesO = strClean($_POST['redessocialesO']);
+		$feriaslaborales = strClean($_POST['feriaslaborales']);
+		$feriaslaboralesO = strClean($_POST['feriaslaboralesO']);
 
-			$otros = strClean($_POST['otros']);
-			$otrosO = strClean($_POST['otrosO']);
+		$showroom = strClean($_POST['showroom']);
+		$showroomO = strClean($_POST['showroomO']);
 
-			$otros = '';
-			$egresadosConsejoUniversiatario2 = '';
-	
-			$programasEducacionContinua1 = '';
-			$programasEducacionContinua2 = '';
-	
-			$asociacionEegresados1 = '';
-			$asociacionEegresados2 = '';
-	
-			$reconocimientoEgresados1 = '';
-			$reconocimientoEgresados2 = '';
-	
-			$desarrolloInvestigaciones1 = '';
-			$desarrolloInvestigaciones2 = '';
-	
-			$resultadosInvestigacion1 = '';
-			$resultadosInvestigacion1 = '';
-	
-			$destacadosInvestigacion1 = '';
-			$destacadosInvestigacion2 = '';
-	
-			$entreOtros1 = '';
-			$entreOtros2 = '';
-			$participacionProcesos1 = '';
-			$participacionProcesos2 = '';
-	
-			if ($feriaslaborales == 'si') {
-				$feriaslaborales1 = 'X';
-			} else {
-				$feriaslaborales2 = 'X';
-			}
-	
-			if ($showroom == 'si') {
-				$showroom1 = 'X';
-			} else {
-				$showroom2 = 'X';
-			}
-	
-			if ($empleabilidad == 'si') {
-				$empleabilidad1 = 'X';
-			} else {
-				$empleabilidad2 = 'X';
-			}
-	
-			if ($bolsalaboral == 'si') {
-				$bolsalaboral1 = 'X';
-			} else {
-				$bolsalaboral2 = 'X';
-			}
-	
-			if ($redessociales == 'si') {
-				$redessociales1 = 'X';
-			} else {
-				$redessociales2 = 'X';
-			}
-	
-			if ($otros == 'si') {
-				$otros1 = 'X';
-			} else {
-				$otros2 = 'X';
-			}
-		
-			#endregion formulario_2
-	
-	
-			$estilos = '
+		$empleabilidad = strClean($_POST['empleabilidad']);
+		$empleabilidadO = strClean($_POST['empleabilidadO']);
+
+		$bolsalaboral = strClean($_POST['bolsalaboral']);
+		$bolsalaboralO = strClean($_POST['bolsalaboralO']);
+
+		$redessociales = strClean($_POST['redessociales']);
+		$redessocialesO = strClean($_POST['redessocialesO']);
+
+		$otros = strClean($_POST['otros']);
+		$otrosO = strClean($_POST['otrosO']);
+
+		$feriaslaborales1 = '';
+		$feriaslaborales2 = '';
+
+		$showroom1 = '';
+		$showroom2 = '';
+
+		$bolsalaboral1 = '';
+		$bolsalaboral2 = '';
+
+		$bolsalaboral1 = '';
+		$bolsalaboral2 = '';
+
+		$redessociales1 = '';
+		$redessociales2 = '';
+
+		$otros1 = '';
+		$otros2 = '';
+
+		if ($feriaslaborales == 'si') {
+			$feriaslaborales1 = 'X';
+		} else {
+			$feriaslaborales2 = 'X';
+		}
+
+		if ($showroom == 'si') {
+			$showroom1 = 'X';
+		} else {
+			$showroom2 = 'X';
+		}
+
+		if ($empleabilidad == 'si') {
+			$empleabilidad1 = 'X';
+		} else {
+			$empleabilidad2 = 'X';
+		}
+
+		if ($bolsalaboral == 'si') {
+			$bolsalaboral1 = 'X';
+		} else {
+			$bolsalaboral2 = 'X';
+		}
+
+		if ($redessociales == 'si') {
+			$redessociales1 = 'X';
+		} else {
+			$redessociales2 = 'X';
+		}
+
+		if ($otros == 'si') {
+			$otros1 = 'X';
+		} else {
+			$otros2 = 'X';
+		}
+
+		#endregion formulario_2
+
+
+		$estilos = '
 				<style>
 					.fondoCelda{
 						background-color: rgb(0, 0, 102);
@@ -748,14 +726,15 @@ class vista extends Controllers
 					}
 				</style>
 				';
-	
-			$formulario2 = '
+
+		$formulario4 = '
 		
 					<h2 style="text-align: center;">ESCUELA PROFESIONAL - PREGRADO</h2>
 				
 					<h3 style="text-align: center;">Informe Semestral y Anual sobre la Evaluación de Resultados de Planes de Acción</h3>
 		
 					<table style="min-width=100%" cellpadding="0" cellspacing="0"  colspan="12" border="1"  bordercolor="#000000" >
+
 						<tr>
 							<td class="fondoCelda" colspan="4">Escuela Profesional: ' . $nombre_escuela . '</td>
 						</tr>
@@ -768,92 +747,58 @@ class vista extends Controllers
 						<tr>		
 							<td class="fondoCelda" >PLANES DE ACCIÓN DE VINCULACIÓN CON LOS EGRESADOS</td>
 	
-							<td  colspan=2 >
-								<td >
-									<td class="fondoCelda"  align="center">xx</td>
-								
-								
-								</td>
-	
-								<td >
-									<td class="fondoCelda"  align="center">SI GRADO DE CUMPLIMIENTO</td>
-									<td class="fondoCelda"  align="center">NO GRADO DE CUMPLIMIENTO</td>
-								
-								</td>
-							</td>
-		
-							<td class="fondoCelda" >OBSERVACIONES</td>
-						</tr>
-		
-						<tr>		
-							<td >Representación de egresados en el Consejo de Facultad y Consejo Universitario</td>
+				
+						
+							
+						
+							<td class="fondoCelda"  align="center">SI GRADO DE CUMPLIMIENTO</td>
+							<td class="fondoCelda"  align="center">NO GRADO DE CUMPLIMIENTO</td>
 					
-							<td  align="center">' . $egresadosConsejoUniversiatario1 . '</td>
-							<td  align="center">' . $egresadosConsejoUniversiatario2 . '</td>
-							<td >' . $egresadosConsejoUniversiatarioO . '</td>	
-						</tr>
-						<tr>		
-							<td >Programas de educación continua</td>
-							<td  align="center">' . $programasEducacionContinua1 . '</td>
-							<td  align="center">' . $programasEducacionContinua2 . '</td>
-							<td >' . $programasEducacionContinuaO . '</td>	
+							<td class="fondoCelda" >OBSERVACIONES (Si no cumplió proponer planes de mejora y con plazos)</td>
 						</tr>
 		
 						<tr>		
-							<td >
-								Participacion como grupo de interes en los procesos de:
-								<li>  Revisión periodica de sus políticas y objetivos institucionales</li>
-								<li>  Revisión de la pertinencia del perfil del egresado</li>
-								<li>  Revisión evaluación y actualización de los currículos</li>
-								<li>  Otros</li>				
-							</td>
-							<td  align="center">' . $participacionProcesos1 . '</td>
-							<td  align="center">' . $participacionProcesos2 . '</td>
-							<td >' . $participacionProcesosO . '</td>	
+							<td >Ferias Laborales</td>
+					
+							<td  align="center">' . $feriaslaborales1 . '</td>
+							<td  align="center">' . $feriaslaborales2 . '</td>
+							<td >' . $feriaslaboralesO . '</td>	
+						</tr>
+						<tr>		
+							<td >Showroom</td>
+							<td  align="center">' . $showroom1 . '</td>
+							<td  align="center">' . $showroom2 . '</td>
+							<td >' . $showroomO . '</td>	
 						</tr>
 		
 						<tr>		
-							<td >Asociacion de egresados</td>
-							<td  align="center">' . $asociacionEegresados1 . '</td>
-							<td  align="center">' . $asociacionEegresados2 . '</td>
-							<td >' . $asociacionEegresadosO . '</td>	
+							<td >Eventos de empleabilidad</td>
+							<td  align="center">' . $empleabilidad1 . '</td>
+							<td  align="center">' . $empleabilidad2 . '</td>
+							<td >' . $empleabilidadO . '</td>	
 						</tr>
 		
 						<tr>		
-							<td >Premiacion o reconocimiento a egresados destacados</td>
-							<td  align="center">' . $reconocimientoEgresados1 . '</td>
-							<td  align="center">' . $reconocimientoEgresados2 . '</td>
-							<td >' . $reconocimientoEgresadosO . '</td>	
+							<td >Bolsa Laboral</td>
+							<td  align="center">' . $bolsalaboral1 . '</td>
+							<td  align="center">' . $bolsalaboral2 . '</td>
+							<td >' . $bolsalaboralO . '</td>	
 						</tr>
 		
 						<tr>		
-							<td >Participación en el desarrollo de investigaciones básicas y aplicadas de interés local, regional, nacional e internacional</td>
-							<td  align="center">' . $desarrolloInvestigaciones1 . '</td>
-							<td  align="center">' . $desarrolloInvestigaciones2 . '</td>
-							<td >' . $desarrolloInvestigacionesO . '</td>	
+							<td >Manejo de redes sociales</td>
+							<td  align="center">' . $redessociales1 . '</td>
+							<td  align="center">' . $redessociales2 . '</td>
+							<td >' . $redessocialesO . '</td>	
 						</tr>
 		
 						<tr>		
-							<td >Publicación de resultados de investigación</td>
-							<td  align="center">' . $resultadosInvestigacion1 . '</td>
-							<td  align="center">' . $resultadosInvestigacion2 . '</td>
-							<td >' . $resultadosInvestigacionO . '</td>	
+							<td >Otros</td>
+							<td  align="center">' . $otros1 . '</td>
+							<td  align="center">' . $otros2 . '</td>
+							<td >' . $otrosO . '</td>	
 						</tr>
-		
-						<tr>		
-							<td >Promoción de la movilidad de egresados que destacan en investigación</td>
-							<td  align="center">' . $destacadosInvestigacion1 . '</td>
-							<td  align="center">' . $destacadosInvestigacion2 . '</td>
-							<td >' . $destacadosInvestigacionO . '</td>	
-						</tr>
-		
-						<tr>		
-							<td >Entre Otros</td>
-							<td  align="center">' . $entreOtros1 . '</td>
-							<td  align="center">' . $entreOtros2 . '</td>
-							<td >' . $entreOtrosO . '</td>	
-						</tr>
-		
+
 					</table>
 	
 	
@@ -864,31 +809,31 @@ class vista extends Controllers
 					</div>
 	
 				';
-	
-	
-			$pdf = new Mpdf([
-				'mode' => 'utf-8',
-				'format' => 'A4',
-				'orientation' => 'P',
-				'font-size' => 8,
-			]);
-	
-			$pdf->SetHTMLHeader('
+
+
+		$pdf = new Mpdf([
+			'mode' => 'utf-8',
+			'format' => 'A4',
+			'orientation' => 'P',
+			'font-size' => 8,
+		]);
+
+		$pdf->SetHTMLHeader('
 				<div style=" text-align: left; ">		
 					<img style="min-width: 200px; max-width: 200px; max-height: 200px;" src="' . media() . '/archivos/logos/logoUse.png" />
 				</div>
 				');
-	
-			$pdf->SetHTMLFooter('
+
+		$pdf->SetHTMLFooter('
 		
 				');
-	
-			$pdf->WriteHTML($estilos);
-			$pdf->WriteHTML($formulario2);
-	
-			$pdf->Output('use.pdf', 'I');
-			$data = 'z';
-	
-			$this->views->getView($this, "vista", $data);
-		}
+
+		$pdf->WriteHTML($estilos);
+		$pdf->WriteHTML($formulario4);
+
+		$pdf->Output('use.pdf', 'I');
+		$data = 'z';
+
+		$this->views->getView($this, "vista", $data);
+	}
 }
