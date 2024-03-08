@@ -399,7 +399,134 @@
 
 
     </section>
+    <br><br><br>
 
+    <!-- formulario 4 - Informe Estadistico Semestral y Anual de la mejora de la Inserción Laboral de los Egresados -->
+
+    <section class="col-12">
+
+        <h2>Informe Estadistico Semestral y Anual de la mejora de la Inserción Laboral de los Egresados</h2>
+        <br>
+
+        <div class="form-group">
+            <label for="carreraf4">Escuela Profesional<span class="text-danger">*</span></label>
+            <select class="carrera form-control selectmultiple" name="carreraf4" data-live-search="true" id="carreraf4" x>
+                <option value="0" selected>Seleccionar</option>
+            </select>
+        </div>
+
+        <div class="col-md-2">
+            <label for="añoysemestref4">Año y <br> Semestre<span class="text-danger">*</span></label>
+            <select class="select2 form-control" data-live-search="true" id="añoysemestref4">
+                <option value="0" selected>Seleccionar</option>
+                <option value="2018-I">2018-I</option>
+                <option value="2018-II">2018-II</option>
+                <option value="2019-I">2019-I</option>
+                <option value="2019-II">2019-II</option>
+                <option value="2020-I">2020-I</option>
+                <option value="2020-II">2020-II</option>
+                <option value="2021-I">2021-I</option>
+                <option value="2021-II">2021-II</option>
+                <option value="2022-I">2022-I</option>
+                <option value="2022-II">2022-II</option>
+                <option value="2023-I">2023-I</option>
+                <option value="2023-II">2023-II</option>
+            </select>
+        </div>
+
+        <div class="row">
+
+            <div class="form-group col-md-5">
+                <label for="feriaslaborales">Ferias Laborales<span class="text-danger">*</span></label>
+                <select class="select2 form-control" name="feriaslaborales" data-live-search="true" id="feriaslaborales" x>
+                    <option value="0" selected>Seleccionar</option>
+                    <option value="si">Si</option>
+                    <option value="no">No</option>
+                </select>
+                <label for="feriaslaboralesO">OBSERVACIONES (Si no cumplió proponer planes de mejora y con plazos) <span class="text-danger">*</span></label>
+                <textarea class="form-group col-md-12" name="feriaslaboralesO" id="feriaslaboralesO" rows="2"></textarea>
+            </div>
+
+            <div class="form-group col-md-5">
+                <label for="showroom">Showroom<span class="text-danger">*</span></label>
+                <select class="select2 form-control" name="showroom" data-live-search="true" id="showroom" x>
+                    <option value="0" selected>Seleccionar</option>
+                    <option value="si">Si</option>
+                    <option value="no">No</option>
+                </select>
+                <label for="showroomO">OBSERVACIONES (Si no cumplió proponer planes de mejora y con plazos) <span class="text-danger">*</span></label>
+                <textarea class="form-group col-md-12" name="showroomO" id="showroomO" rows="2"></textarea>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="form-group col-md-5">
+                <label for="empleabilidad">Eventos de empleabilidad<span class="text-danger">*</span></label>
+                <select class="select2 form-control" name="empleabilidad" data-live-search="true" id="empleabilidad" x>
+                    <option value="0" selected>Seleccionar</option>
+                    <option value="si">Si</option>
+                    <option value="no">No</option>
+                </select>
+                <label for="empleabilidadO">OBSERVACIONES (Si no cumplió proponer planes de mejora y con plazos) <span class="text-danger">*</span></label>
+                <textarea class="form-group col-md-12" name="empleabilidadO" id="empleabilidadO" rows="2"></textarea>
+            </div>
+
+            <div class="form-group col-md-5">
+                <label for="bolsalaboral">Bolsa Laboral<span class="text-danger">*</span></label>
+                <select class="select2 form-control" name="bolsalaboral" data-live-search="true" id="bolsalaboral" x>
+                    <option value="0" selected>Seleccionar</option>
+                    <option value="si">Si</option>
+                    <option value="no">No</option>
+                </select>
+                <label for="bolsalaboralO">OBSERVACIONES (Si no cumplió proponer planes de mejora y con plazos) <span class="text-danger">*</span></label>
+                <textarea class="form-group col-md-12" name="" id="bolsalaboralO" rows="2"></textarea>
+            </div>
+
+        </div>
+
+
+        <div class="row">
+
+            <div class="form-group col-md-5">
+                <label for="redessociales">Manejo de redes sociales<span class="text-danger">*</span></label>
+                <select class="select2 form-control" name="redessociales" data-live-search="true" id="redessociales" x>
+                    <option value="0" selected>Seleccionar</option>
+                    <option value="si">Si</option>
+                    <option value="no">No</option>
+                </select>
+                <label for="redessocialesO">OBSERVACIONES (Si no cumplió proponer planes de mejora y con plazos) <span class="text-danger">*</span></label>
+                <textarea class="form-group col-md-12" name="redessocialesO" id="redessocialesO" rows="2"></textarea>
+            </div>
+
+            <div class="form-group col-md-5">
+                <label for="otros">Otros<span class="text-danger">*</span></label>
+                <select class="select2 form-control" name="otros" data-live-search="true" id="otros" x>
+                    <option value="0" selected>Seleccionar</option>
+                    <option value="si">Si</option>
+                    <option value="no">No</option>
+                </select>
+                <label for="otrosO">OBSERVACIONES (Si no cumplió proponer planes de mejora y con plazos) <span class="text-danger">*</span></label>
+                <textarea class="form-group col-md-12" name="" id="otrosO" rows="2"></textarea>
+            </div>
+
+        </div>
+
+
+
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center">
+                    <a href="javascript:void(0)" class="btn btn-success" onclick="formato3()">DESCARGAR</a>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
 
 </div>
 
@@ -660,13 +787,13 @@
         var sectorPrivado = $("#sectorPrivado").val();
         var comentarios = $("#comentarios").val();
 
-        
+
         if (carreraf3 == 0) {
             swal("Atención!", "Seleccionar Carrera", "warning");
             return;
         }
 
-        if (añoysemestref3 >0) {
+        if (añoysemestref3 > 0) {
             swal("Atención!", "año y semestre", "warning");
             return;
         }
@@ -733,7 +860,7 @@
 
 
 
-        
+
         $.ajax({
             method: "POST",
             url: "" + base_url + "/vista/informe3",
@@ -751,4 +878,107 @@
         });
     }
 
+    function formato4() {
+
+        var carreraf4 = $("#carreraf4").val();
+        /*FORMULARIO 2*/
+        var añoysemestref4 = $("#añoysemestref4").val();
+
+        var feriaslaborales = $("#feriaslaborales").val();
+        var feriaslaboralesO = $("#feriaslaboralesO").val();
+
+        var showroom = $("#showroom").val();
+        var showroomO = $("#showroomO").val();
+
+        var empleabilidad = $("#empleabilidad").val();
+        var empleabilidadO = $("#empleabilidadO").val();
+
+        var bolsalaboral = $("#bolsalaboral").val();
+        var bolsalaboralO = $("#bolsalaboralO").val();
+
+        var redessociales = $("#redessociales").val();
+        var redessocialesO = $("#redessocialesO").val();
+
+        var otros = $("#otros").val();
+        var otrosO = $("#otrosO").val();
+
+        
+        if (carreraf4 == 0) {
+            swal("Atención!", "Seleccionar Carrera", "warning");
+            return;
+        }
+
+        if (añoysemestref4 == 0) {
+            swal("Atención!", "Debe seleccionar el Semestre", "warning");
+            return;
+        }
+
+        if (feriaslaborales == 0) {
+            swal("Atención!", "feriaslaborales", "warning");
+            return;
+        }
+
+        if (showroom == 0) {
+            swal("Atención!", "showroom", "warning");
+            return;
+        }
+
+        if (empleabilidad == 0) {
+            swal("Atención!", "empleabilidad", "warning");
+            return;
+        }
+
+
+        if (bolsalaboral == 0) {
+            swal("Atención!", "bolsalaboral", "warning");
+            return;
+        }
+
+
+        if (redessociales == 0) {
+            swal("Atención!", "redessociales", "warning");
+            return;
+        }
+
+
+        if (otros == 0) {
+            swal("Atención!", "otros", "warning");
+            return;
+        }
+
+        var fd = new FormData();
+        /*FORMULARIO 1*/
+        /*FORMULARIO 2*/
+        fd.append("carreraf4", carreraf4);
+        fd.append("añoysemestref4", añoysemestref4);
+        fd.append("feriaslaborales", feriaslaborales);
+        fd.append("feriaslaboralesO", feriaslaboralesO);
+        fd.append("showroom", showroom);
+        fd.append("showroomO", showroomO);
+        fd.append("empleabilidad", empleabilidad);
+        fd.append("empleabilidaadO", empleabilidadO);
+        fd.append("bolsalaboral", bolsalaboral);
+        fd.append("bolsalaboralO", bolsalaboralO);
+
+        fd.append("redessociales", redessociales);
+        fd.append("redessocialesO", redessocialesO);
+        fd.append("otros", otros);
+        fd.append("otrosO", otrosO);
+
+        $.ajax({
+            method: "POST",
+            url: "" + base_url + "/vista/informe4",
+            //data: datax
+            data: fd,
+            processData: false, // tell jQuery not to process the data
+            contentType: false, // tell jQuery not to set contentType
+            xhrFields: {
+                responseType: 'blob'
+            },
+
+        }).done(function(response) {
+            descargarpdf(response);
+
+        });
+    }
 </script>
