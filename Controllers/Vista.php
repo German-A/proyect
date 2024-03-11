@@ -36,8 +36,10 @@ class vista extends Controllers
 		#region formulario_1
 
 		$nombre_escuela = $arrData['nombreEscuela'];
+		$año_egreso = intval(strClean($_POST['anioEgreso']));
 		$fechaInicio = intval(strClean($_POST['fechaInicio']));
 		$fechaFin = intval(strClean($_POST['fechaFin']));
+
 		$ingresantesPromocion = intval(strClean($_POST['ingresantesPromocion']));
 		$egresadosPromocion = intval(strClean($_POST['egresadosPromocion']));
 		$egresadosTiempoEsperando = intval(strClean($_POST['tiempoEsperando']));
@@ -47,10 +49,12 @@ class vista extends Controllers
 		$tomaDesiciones = strval(strClean($_POST['tomaDesiciones']));
 
 		$porcentajeEgresados = ($egresadosPromocion / $ingresantesPromocion) * 100;
-		$porcentajeEgresadosTiempoEsperado = ($egresadosTiempoEsperando / $ingresantesPromocion) * 100;
-		$porcentajeCantidadEgresadosGraduados = ($cantidadEgresadosGraduados / $ingresantesPromocion) * 100;
+
+		$porcentajeEgresadosTiempoEsperado = ($egresadosTiempoEsperando / $egresadosPromocion) * 100;
+		
+		$porcentajeCantidadEgresadosGraduados = ($cantidadEgresadosGraduados / $egresadosPromocion) * 100;
 		$porcentajeCantidadEgresadosNoGraduados = 100 - $porcentajeCantidadEgresadosGraduados;
-		$porcentajeTitulados = ($cantidadTitulados / $ingresantesPromocion) * 100;
+		$porcentajeTitulados = ($cantidadTitulados / $egresadosPromocion) * 100;
 		$porcentajeNoTitulados = 100 - $porcentajeTitulados;
 		$cantidadEgresadosNoGraduados = $ingresantesPromocion - $cantidadEgresadosGraduados;
 
@@ -83,7 +87,7 @@ class vista extends Controllers
 	
 				<h2 style="text-align: center;">ESCUELA PROFESIONAL - PREGRADO</h2>
 	
-				<h3 style="text-align: center;">Informe Estadístico Anual sobre el Estado de los Egresados, Graduados y Titulados Laboral</h3>
+				<h3 style="text-align: center;">Informe estadístico anual sobre el estado de los egresados, graduados y titulados laboral</h3>
 	
 				<table style="width=100%" cellpadding="0" cellspacing="0"  colspan="11" border="1"  bordercolor="#000000" >
 					<tr>
@@ -93,6 +97,10 @@ class vista extends Controllers
 					<tr>
 						<td >Promocion o <br> cohorte</td>
 						<td colspan="10">' . $fechaInicio . ' - ' . $fechaFin . ' </td>
+					</tr>
+					<tr>
+					<td >Año de Egreso</td>
+						<td colspan="10">' . $año_egreso . '</td>
 					</tr>
 					<tr>
 						<td >Fecha de <br> Informe</td>
