@@ -140,7 +140,7 @@
             <?php } ?>
 
 
-            
+
             <?php
             if (
 
@@ -268,7 +268,6 @@
 
 
 
-
             <!------------------------- modulo de empresa  ----------------------->
             <?php if (!empty($_SESSION['permisos'][14]['r']) || !empty($_SESSION['permisos'][15]['r'])) { ?>
                 <li class="treeview">
@@ -326,6 +325,10 @@
             <?php } ?>
              -->
 
+            <?php if (!empty($_SESSION['permisos'][3]['r'])) { ?>
+                <li><a class="treeview-item" href="<?= base_url(); ?>/objetivos_educacionales"><i class="icon fa fa-circle-o"></i>objetivos_educacionales</a></li>
+            <?php } ?>
+
 
             <?php if (!empty($_SESSION['permisos'][28]['r'])) { ?>
                 <li>
@@ -354,6 +357,7 @@
                     </ul>
                 </li>
             <?php } ?> -->
+
 
 
 

@@ -34,7 +34,7 @@ class objetivos_educacionales extends Controllers
     {
 
         if ($_SESSION['permisosMod']['r']) {
-            $arrData = $this->model->get_all($id);
+            $arrData = $this->model->get_all_objetivos_educacionales($id);
 
             for ($i = 0; $i < count($arrData); $i++) {
 
@@ -56,13 +56,13 @@ class objetivos_educacionales extends Controllers
 
 
                 if ($_SESSION['permisos'][4]['u']) {
-                    $btnEdit = '<button class="btn btn-primary  btn-sm btnEditobjetivos_educacionales" onClick="fntEditobjetivos_educacionales(this,' . $arrData[$i]['idobjetivos_educacionales'] . ')" title="Editar objetivos_educacionales"><i class="fas fa-pencil-alt"></i></button>';
+                    $btnEdit = '<button class="btn btn-primary  btn-sm btnEditobjetivos_educacionales" onClick="fntEditobjetivos_educacionales(this,' . $arrData[$i]['id_objetivos_educacionales'] . ')" title="Editar objetivos_educacionales"><i class="fas fa-pencil-alt"></i></button>';
                 } else {
                     $btnEdit = '<button class="btn btn-secondary btn-sm" disabled ><i class="fas fa-pencil-alt"></i></button>';
                 }
 
                 if ($_SESSION['permisos'][4]['d']) {
-                    $btnDelete = '<button class="btn btn-danger btn-sm btnDelobjetivos_educacionaless" onClick="ftnDelobjetivos_educacionales(' . $arrData[$i]['idobjetivos_educacionales'] . ')" title="Eliminar objetivos_educacionales"><i class="far fa-trash-alt"></i></button>';
+                    $btnDelete = '<button class="btn btn-danger btn-sm btnDelobjetivos_educacionaless" onClick="ftnDelobjetivos_educacionales(' . $arrData[$i]['id_objetivos_educacionales'] . ')" title="Eliminar objetivos_educacionales"><i class="far fa-trash-alt"></i></button>';
                 } else {
                     $btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
                 }
@@ -126,14 +126,14 @@ class objetivos_educacionales extends Controllers
 
 
     //obtener un registro
-    public function getobjetivos_educacionales()
+    public function getOne()
     {
         if ($_SESSION['permisosMod']['r']) {
 
-            $idobjetivos_educacionales = intval($_POST['id']);
+            $id_objetivos_educacionales = intval($_POST['id']);
 
-            if ($idobjetivos_educacionales > 0) {
-                $arrData = $this->model->select_objetivos_educacionales($idobjetivos_educacionales);
+            if ($id_objetivos_educacionales > 0) {
+                $arrData = $this->model->get_one_objetivos_educacionales($id_objetivos_educacionales);
                 if (empty($arrData)) {
                     $arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
                 } else {
@@ -146,12 +146,12 @@ class objetivos_educacionales extends Controllers
     }
 
     //borrar 
-    public function delobjetivos_educacionales()
+    public function del()
     {
         if ($_POST) {
             if ($_SESSION['permisosMod']['d']) {
-                $idobjetivos_educacionales = intval($_POST['id']);
-                $requestDelete = $this->model->delete_objetivos_educacionales($idobjetivos_educacionales);
+                $id_objetivos_educacionales = intval($_POST['id']);
+                $requestDelete = $this->model->del_objetivos_educacionales($id_objetivos_educacionales);
                 if ($requestDelete) {
                     $arrData = array('status' => true, 'msg' => 'Se ha eliminado el Banner');
                 } else {
@@ -163,57 +163,33 @@ class objetivos_educacionales extends Controllers
         die();
     }
 
-    //BUSCAR EMPRESAS ASIGNADAS
-    public function getSelectEmpresas()
-    {
-        $search = "";
-        if (!isset($_POST['palabraClave'])) {
-            $arrData = $this->model->select_emoresa($_SESSION['idUser']);
-        } else {
-            $search = $_POST['palabraClave'];
 
-            $arrData = $this->model->select_emoresas($_SESSION['idUser'], $search);
-        }
-        echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
-        die();
-    }
-
-    #endregion objetivos_educacionales
-
-    #region ASIGNAR_objetivos_educacionalesS
-
-    //buscar uuarios para asignar objetivos_educacionales
-    public function getUsuarios()
-    {
-        $search = "";
-        if (!isset($_POST['palabraClave'])) {
-            $arrData = $this->model->select_usuarios_asignar();
-        } else {
-            $search = $_POST['palabraClave'];
-
-            $arrData = $this->model->select_usuarios_asignar_like($search);
-        }
-        echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
-        die();
-    }
-
-    //Asignar objetivos_educacionales a un usuario
-    public function asignarPublicaciones()
-    {
-        $id_objetivos_educacionales = intval($_POST['id']);
-        $id_persona = intval($_POST['txtUsuario']);
-        $requestDelete = $this->model->asignar_publicaciones($id_objetivos_educacionales, $id_persona);
-        if ($requestDelete) {
-            $arrData = array('status' => true, 'msg' => 'Empresas sin Revisión');
-        } else {
-            $arrData = array('status' => false, 'msg' => 'Error en Empresas sin Revisión.');
-        }
-        echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
-        die();
-    }
     #endregion ASIGNAR_objetivos_educacionalesS
 
+
+
+    #region CREARX
+
+    public function getCarrera()
+    {
+        $search = "";
+        if (!isset($_POST['palabraClave'])) {
+            $arrData = $this->model->getSelectDepartamento();
+        } else {
+            $search = $_POST['palabraClave'];
+
+            $arrData = $this->model->getSelectDepartamentoF($search);
+        }
+        echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
+        die();
+    }
+
+
+    #endregion CREARX
+
+
     #region CREAR X
+
 
     #endregion CREAR X
 }
