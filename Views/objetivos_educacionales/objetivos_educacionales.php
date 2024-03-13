@@ -48,8 +48,8 @@ getModal('modal_objetivos_educacionales', $data);
 
 <script>
 
-  $(".departamento").select2({
-    dropdownParent: $(".formConvocatoria"),
+  $(".objetivoEducacional").select2({
+    dropdownParent: $("#formmodal"),
     ajax: {
       url: base_url + "/objetivos_educacionales/getCarrera",
       type: "post",
@@ -144,6 +144,7 @@ getModal('modal_objetivos_educacionales', $data);
     var id = $("#id").val();
     var descripcion = $("#descripcion").val();
     var status = $("#status").val();
+    var descripcion = $("#descripcion").val();
 
     if (descripcion == '') {
       swal("Atención!", "Ingresar el descripcion", "warning");
@@ -178,7 +179,7 @@ getModal('modal_objetivos_educacionales', $data);
     });
   }
 
-  function fntEditEmpresa(id) {
+  function fntEdit_objetivos_educacionales(id) {
 
     document.querySelector("#titleEmpresa").innerHTML = "ACTUALIZAR";
     document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");
@@ -213,11 +214,11 @@ getModal('modal_objetivos_educacionales', $data);
     });
   }
 
-  function fntDeleteEmpresa(id) {
+  function ftnDelobjetivos_educacionales(id) {
 
     swal({
-      title: "Eliminar Empresa",
-      text: "¿Realmente quiere eliminar el Empresa?",
+      title: "Eliminar Objetivo Educacional",
+      text: "¿Realmente quiere eliminar?",
       type: "warning",
       showCancelButton: true,
       confirmButtonText: "Si, eliminar!",
@@ -230,7 +231,7 @@ getModal('modal_objetivos_educacionales', $data);
 
         $.ajax({
           method: "POST",
-          url: "" + base_url + "/objetivos_educacionales/deleteEmpresa/" + id,
+          url: "" + base_url + "/objetivos_educacionales/del/" + id,
           processData: false, // tell jQuery not to process the data
           contentType: false, // tell jQuery not to set contentType
 
@@ -240,7 +241,7 @@ getModal('modal_objetivos_educacionales', $data);
           console.log(info.status);
 
           if (info.status == true) {
-            swal("Empresa", info.msg, "success");
+            swal("Eliminado", info.msg, "success");
             datatable.api().ajax.reload();
           }
           if (info.status == false) {

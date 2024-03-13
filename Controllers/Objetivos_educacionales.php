@@ -56,7 +56,7 @@ class objetivos_educacionales extends Controllers
 
 
                 if ($_SESSION['permisos'][4]['u']) {
-                    $btnEdit = '<button class="btn btn-primary  btn-sm btnEditobjetivos_educacionales" onClick="fntEditobjetivos_educacionales(this,' . $arrData[$i]['id_objetivos_educacionales'] . ')" title="Editar objetivos_educacionales"><i class="fas fa-pencil-alt"></i></button>';
+                    $btnEdit = '<button class="btn btn-primary  btn-sm btnEditobjetivos_educacionales" onClick="fntEdit_objetivos_educacionales(this,' . $arrData[$i]['id_objetivos_educacionales'] . ')" title="Editar objetivos_educacionales"><i class="fas fa-pencil-alt"></i></button>';
                 } else {
                     $btnEdit = '<button class="btn btn-secondary btn-sm" disabled ><i class="fas fa-pencil-alt"></i></button>';
                 }
@@ -146,20 +146,20 @@ class objetivos_educacionales extends Controllers
     }
 
     //borrar 
-    public function del()
+    public function del(int $id)
     {
-        if ($_POST) {
-            if ($_SESSION['permisosMod']['d']) {
-                $id_objetivos_educacionales = intval($_POST['id']);
-                $requestDelete = $this->model->del_objetivos_educacionales($id_objetivos_educacionales);
-                if ($requestDelete) {
-                    $arrData = array('status' => true, 'msg' => 'Se ha eliminado el Banner');
-                } else {
-                    $arrData = array('status' => false, 'msg' => 'Error al eliminar el Bnner.');
-                }
-                echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
+
+        if ($_SESSION['permisosMod']['d']) {
+            $id_objetivos_educacionales = intval($id);
+            $requestDelete = $this->model->del_objetivos_educacionales($id_objetivos_educacionales);
+            if ($requestDelete) {
+                $arrData = array('status' => true, 'msg' => 'Se ha eliminado');
+            } else {
+                $arrData = array('status' => false, 'msg' => 'Error al eliminar.');
             }
+            echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
         }
+
         die();
     }
 
@@ -174,11 +174,11 @@ class objetivos_educacionales extends Controllers
     {
         $search = "";
         if (!isset($_POST['palabraClave'])) {
-            $arrData = $this->model->getSelectDepartamento();
+            $arrData = $this->model->getCarrera();
         } else {
             $search = $_POST['palabraClave'];
 
-            $arrData = $this->model->getSelectDepartamentoF($search);
+            $arrData = $this->model->getCareraFind($search);
         }
         echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
         die();

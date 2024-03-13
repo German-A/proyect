@@ -87,4 +87,36 @@ class objetivos_educacionalesModel extends Mysql
 
 	#endregion objetivos_educacionales
 
+
+	public function getCarrera()
+	{
+		$response = null;
+		//$sql = "SELECT idTitulaciones,nombreTitulaciones from titulaciones where status!=0";
+		$sql = "SELECT idEscuela,nombreEscuela from escuela where status!=0";
+		$request = $this->select_all($sql);
+
+		foreach ($request as $user) {
+			$response[] = array(
+				"id" => $user['idEscuela'],
+				"text" => $user['nombreEscuela']
+			);
+		}
+
+		return $response;
+	}
+	public function getCareraFind($search)
+	{
+		//$sql = "SELECT idTitulaciones,nombreTitulaciones from titulaciones where status!=0";
+		$sql = "SELECT idEscuela,descripcion from escuela where status!=0 and nombreEscuela LIKE '%$search%' ORDER BY idEscuela";
+		$request = $this->select_all($sql);
+
+		foreach ($request as $user) {
+			$response[] = array(
+				"id" => $user['idEscuela'],
+				"text" => $user['nombreEscuela']
+			);
+		}
+		return $response;
+	}
+
 }
