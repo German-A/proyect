@@ -47,8 +47,7 @@ getModal('modal_objetivos_educacionales', $data);
 <?php footerAdmin($data); ?>
 
 <script>
-
-  $(".objetivoEducacional").select2({
+  $(".carrera").select2({
     dropdownParent: $("#formmodal"),
     ajax: {
       url: base_url + "/objetivos_educacionales/getCarrera",
@@ -142,19 +141,24 @@ getModal('modal_objetivos_educacionales', $data);
   function GuardarEmpresa() {
 
     var id = $("#id").val();
-    var descripcion = $("#descripcion").val();
+    var txtObjetivo = $("#txtObjetivo").val();
     var status = $("#status").val();
-    var descripcion = $("#descripcion").val();
+    var carrera = $("#carrera").val();
 
-    if (descripcion == '') {
+    if (txtObjetivo == '') {
       swal("Atención!", "Ingresar el descripcion", "warning");
+      return;
+    }
+
+    if (carrera == '') {
+      swal("Atención!", "Ingresar el carrera", "warning");
       return;
     }
 
     var fd = new FormData();
     fd.append("id", id);
-    fd.append("descripcion", descripcion);
-    fd.append("status", status);
+    fd.append("txtObjetivo", txtObjetivo);
+    fd.append("carrera", carrera);
 
     divLoading.style.display = "flex";
     $.ajax({

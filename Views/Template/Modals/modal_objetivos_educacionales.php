@@ -23,14 +23,14 @@
           <div class="form-row">
 
             <div class="form-group col-md-12">
-              <label for="txtNombre">nombreArchivo</label>
-              <input type="text" class="form-control" id="nombreArchivo" name="txtNombre" required="">
+              <label for="txtObjetivo">Objetivo Educacional</label>
+              <input type="text" class="form-control" id="txtObjetivo" name="txtObjetivo" required="">
             </div>
 
 
             <div class="form-group col-md-12">
-              <label for="objetivoEducacional">objetivoEducacional</label>
-              <select class="form-control objetivoEducacional" data-live-search="true" id="objetivoEducacional" name="objetivoEducacional[]" name="objetivoEducacional" required>
+              <label for="carrera">Carrera</label>
+              <select class="form-control carrera" data-live-search="true" id="carrera" name="carrera" name="carrera" required>
               </select>
             </div>
 
@@ -39,7 +39,7 @@
           <div class="tile-footer">
             <!-- <button id="btnActionForm" class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i><span id="btnText">Guardar</span></button>&nbsp;&nbsp;&nbsp; -->
 
-            <a href="javascript:void(0);" class="btn btn-primary" id="btnText" onclick="Agregar()"><i class="fa fa-fw fa-lg fa-check-circle"></i>Guardar</a>
+            <a href="javascript:void(0);" class="btn btn-primary" id="btnText" onclick="GuardarEmpresa()"><i class="fa fa-fw fa-lg fa-check-circle"></i>Guardar</a>
             <button class="btn btn-danger" type="button" data-dismiss="modal"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cerrar</button>
           </div>
         </form>

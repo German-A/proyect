@@ -7,6 +7,7 @@ class objetivos_educacionalesModel extends Mysql
 	private $id_objetivos_educacionales;
 	private $descripcion;
 	private $status;
+	private $escuela_id;
 	private $status_delete = 0;
 
 
@@ -32,14 +33,17 @@ class objetivos_educacionalesModel extends Mysql
 		return $request;
 	}
 
-	public function insert_objetivos_educacionales($descripcion, $status)
+	public function insert_objetivos_educacionales($descripcion, $escuela_id, $status)
 	{
 
 		$this->descripcion = $descripcion;
 		$this->status = $status;
-		$query_insert  = "INSERT INTO objetivos_educacionales(descripcion,status) VALUES(?,?)";
+		$this->escuela_id = $escuela_id;
+		
+		$query_insert  = "INSERT INTO objetivos_educacionales(descripcion,escuela_id,status) VALUES(?,?)";
 		$arrData = array(
 			$this->descripcion,
+			$this->escuela_id,
 			$this->status
 		);
 

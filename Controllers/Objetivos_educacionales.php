@@ -85,8 +85,9 @@ class objetivos_educacionales extends Controllers
 
 
                 $id_objetivos_educacionales = intval($_POST['id']);
-                $descripcion = strClean($_POST['descripcion']);
-                $status = strClean($_POST['status']);
+                $descripcion = strClean($_POST['txtObjetivo']);
+                $escuela_id = strClean($_POST['carrera']);
+                $status = 1;
 
                 $insert = "";
 
@@ -95,13 +96,13 @@ class objetivos_educacionales extends Controllers
                         $option = 1;
 
                         if ($_SESSION['permisosMod']['w']) {
-                            $insert = $this->model->insert_objetivos_educacionales($descripcion, $status);
+                            $insert = $this->model->insert_objetivos_educacionales($descripcion, $escuela_id, $status);
                         }
                     } else {
                         $option = 2;
 
                         if ($_SESSION['permisosMod']['u']) {
-                            $insert = $this->model->update_objetivos_educacionales($id_objetivos_educacionales, $descripcion, $status);
+                            $insert = $this->model->update_objetivos_educacionales($id_objetivos_educacionales,$descripcion, $escuela_id, $status);
                         }
                     }
 
@@ -165,8 +166,6 @@ class objetivos_educacionales extends Controllers
 
 
     #endregion ASIGNAR_objetivos_educacionalesS
-
-
 
     #region CREARX
 
