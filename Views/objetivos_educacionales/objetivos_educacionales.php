@@ -133,7 +133,6 @@ getModal('modal_objetivos_educacionales', $data);
     document.querySelector('#titleModal').innerHTML = "Objetivo Educacional";
     document.querySelector("#formmodal").reset();
 
-
     $('.summernote').summernote('reset');
     $('#modalRegistro').modal('show');
   }
@@ -150,7 +149,7 @@ getModal('modal_objetivos_educacionales', $data);
       return;
     }
 
-    if (carrera == '') {
+    if (carrera == 0) {
       swal("Atención!", "Ingresar el carrera", "warning");
       return;
     }
@@ -183,12 +182,13 @@ getModal('modal_objetivos_educacionales', $data);
     });
   }
 
-  function fntEdit_objetivos_educacionales(id) {
+  function fntEdit_objetivos_educacionales(element,id) {
 
-    document.querySelector("#titleEmpresa").innerHTML = "ACTUALIZAR";
+    rowTable = element.parentNode.parentNode.parentNode;
+    document.querySelector("#titleModal").innerHTML = "ACTUALIZAR";
     document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");
-    document.querySelector("#btnEmpresa").classList.replace("btn-primary", "btn-info");
-    document.querySelector("#btnEmpresa").innerHTML = "Actualizar";
+    document.querySelector("#btnText").classList.replace("btn-primary", "btn-info");
+    document.querySelector("#btnText").innerHTML = "Actualizar";
 
     $.ajax({
       method: "GET",
@@ -200,14 +200,20 @@ getModal('modal_objetivos_educacionales', $data);
       var info = JSON.parse(response);
 
       if (info.status == true) {
-        document.querySelector("#formmodalEmpresa").reset();
-        document.getElementById('id').value = info.data['idexpoferiaslaboralesempresas'];
-        document.getElementById('txtNombre').value = info.data['nombre'];
-        document.getElementById('txtPosicion').value = info.data['posicion'];
-        //   $(".summernote").summernote("your text");
-        $('.summernote').summernote('code', info.data['descripcion']);
-        // document.getElementsByClassName('summernote').value = info.data['descripcion'];
-        document.getElementById('txtPosicion').value = info.data['posicion'];
+        document.querySelector("#formmodal").reset();
+        document.getElementById('id').value = info.data['id_objetivos_educacionales'];
+        document.getElementById('txtObjetivo').value = info.data['descripcion'];
+        document.getElementById('carrera').value = info.data['posicion'];
+
+        $(".carrera").append(
+        $("<option>", {
+          value: objData.data.id_objetivos_educacionales,
+          text: objData.data.escuela_id,
+        })
+
+        $("#txtEstado").val(objData.data.status).trigger("change");
+      );
+
 
       }
       if (info.status == false) {

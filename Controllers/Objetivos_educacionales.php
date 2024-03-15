@@ -79,7 +79,7 @@ class objetivos_educacionales extends Controllers
     public function set()
     {
         if ($_POST) {
-            if (empty($_POST['txtdescripcionobjetivos_educacionales']) || empty($_POST['txtfechainiciopostulacion'])) {
+            if (empty($_POST['txtObjetivo']) || empty($_POST['carrera'])) {
                 $arrResponse = array("status" => false, "msg" => 'Faltan Datos.');
             } else {
 
@@ -127,11 +127,10 @@ class objetivos_educacionales extends Controllers
 
 
     //obtener un registro
-    public function getOne()
+    public function getOne($id)
     {
+        $id_objetivos_educacionales  = intval($id);
         if ($_SESSION['permisosMod']['r']) {
-
-            $id_objetivos_educacionales = intval($_POST['id']);
 
             if ($id_objetivos_educacionales > 0) {
                 $arrData = $this->model->get_one_objetivos_educacionales($id_objetivos_educacionales);

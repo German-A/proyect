@@ -27,7 +27,7 @@ class objetivos_educacionalesModel extends Mysql
 		if ($_SESSION['idUser'] != 1) {
 			$whereAdmin = "and obd.status > 0";
 		}
-		$sql = "SELECT *
+		$sql = "SELECT obd.*
 		FROM objetivos_educacionales obd $whereAdmin";
 		$request = $this->select_all($sql);
 		return $request;
@@ -40,7 +40,7 @@ class objetivos_educacionalesModel extends Mysql
 		$this->status = $status;
 		$this->escuela_id = $escuela_id;
 		
-		$query_insert  = "INSERT INTO objetivos_educacionales(descripcion,escuela_id,status) VALUES(?,?)";
+		$query_insert  = "INSERT INTO objetivos_educacionales(descripcion,escuela_id,status) VALUES(?,?,?)";
 		$arrData = array(
 			$this->descripcion,
 			$this->escuela_id,
@@ -55,8 +55,9 @@ class objetivos_educacionalesModel extends Mysql
 	{
 		$this->id_objetivos_educacionales = $id_objetivos_educacionales;
 
-		$sql = "SELECT od.*
+		$sql = "SELECT od.*, e.nombreEscuela,e.idEscuela
 		from objetivos_educacionales od
+		inner join escuela e on e.idEscuela = od.escuela_id
 		WHERE od.id_objetivos_educacionales = $this->id_objetivos_educacionales";
 		$request = $this->select($sql);
 		return $request;

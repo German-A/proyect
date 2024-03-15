@@ -30,7 +30,8 @@
 
             <div class="form-group col-md-12">
               <label for="carrera">Carrera</label>
-              <select class="form-control carrera" data-live-search="true" id="carrera" name="carrera" name="carrera" required>
+              <select class="form-control carrera" data-live-search="true" id="carrera" name="carrera"  required>
+                <option value="0" selected>Seleccionar</option>
               </select>
             </div>
 
