@@ -210,19 +210,19 @@ getModal('modal_objetivos_educacionales', $data);
           value: objData.data.id_objetivos_educacionales,
           text: objData.data.escuela_id,
         })
+         );
 
         $("#txtEstado").val(objData.data.status).trigger("change");
-      );
-
-
-      }
+        
       if (info.status == false) {
         swal("Error!", info.msg, "error");
       }
 
       $("#modalRegistro").modal("show");
-    });
-  }
+    }
+  });
+}
+
 
   function ftnDelobjetivos_educacionales(id) {
 

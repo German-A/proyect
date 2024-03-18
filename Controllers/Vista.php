@@ -25,7 +25,9 @@ class vista extends Controllers
 		$this->views->getView($this, "vista", $data);
 	}
 
-	/*PAGINA DE INICIO*/
+
+
+	#region informe_1
 	public function informe1()
 	{
 
@@ -51,7 +53,7 @@ class vista extends Controllers
 		$porcentajeEgresados = ($egresadosPromocion / $ingresantesPromocion) * 100;
 
 		$porcentajeEgresadosTiempoEsperado = ($egresadosTiempoEsperando / $egresadosPromocion) * 100;
-		
+
 		$porcentajeCantidadEgresadosGraduados = ($cantidadEgresadosGraduados / $egresadosPromocion) * 100;
 		$porcentajeCantidadEgresadosNoGraduados = 100 - $porcentajeCantidadEgresadosGraduados;
 		$porcentajeTitulados = ($cantidadTitulados / $egresadosPromocion) * 100;
@@ -178,6 +180,9 @@ class vista extends Controllers
 
 		$this->views->getView($this, "vista", $data);
 	}
+	#endregion informe_1
+
+	#region informe_2
 	/*PAGINA DE INICIO*/
 	public function informe2()
 	{
@@ -446,8 +451,9 @@ class vista extends Controllers
 
 		$this->views->getView($this, "vista", $data);
 	}
+	#endregion informe_2
 
-	/*PAGINA DE INICIO*/
+	#region informe_3
 	public function informe3()
 	{
 
@@ -624,8 +630,10 @@ class vista extends Controllers
 
 		$this->views->getView($this, "vista", $data);
 	}
+	#endregion informe_3
 
-	/*PAGINA DE INICIO*/
+	#region informe_4
+
 	public function informe4()
 	{
 
@@ -816,7 +824,7 @@ class vista extends Controllers
 						<h5><b>DIRECTOR DE ESCUELA PROFESIONAL</b></h5>
 					</div>
 	
-				';
+		';
 
 
 		$pdf = new Mpdf([
@@ -844,4 +852,229 @@ class vista extends Controllers
 
 		$this->views->getView($this, "vista", $data);
 	}
+
+	#endregion informe_4
+
+	#region informe_5
+
+	public function informe5()
+	{
+
+		$id_carrera = intval(strClean($_POST['carreraf5']));
+		$arrData = $this->model->buscar_carrera($id_carrera);
+		$nombre_escuela = $arrData['nombreEscuela'];
+
+		$fechaInforme  = date("d-m-Y");
+		#region formulario_2
+
+		/*FORMULARIO 2*/
+
+		$añoysemestre = $_POST['añoysemestref4'];
+
+		$feriaslaborales = strClean($_POST['feriaslaborales']);
+		$feriaslaboralesO = strClean($_POST['feriaslaboralesO']);
+
+		$showroom = strClean($_POST['showroom']);
+		$showroomO = strClean($_POST['showroomO']);
+
+		$empleabilidad = strClean($_POST['empleabilidad']);
+		$empleabilidadO = strClean($_POST['empleabilidadO']);
+
+		$bolsalaboral = strClean($_POST['bolsalaboral']);
+		$bolsalaboralO = strClean($_POST['bolsalaboralO']);
+
+		$redessociales = strClean($_POST['redessociales']);
+		$redessocialesO = strClean($_POST['redessocialesO']);
+
+		$otros = strClean($_POST['otros']);
+		$otrosO = strClean($_POST['otrosO']);
+
+		$feriaslaborales1 = '';
+		$feriaslaborales2 = '';
+
+		$showroom1 = '';
+		$showroom2 = '';
+
+		$bolsalaboral1 = '';
+		$bolsalaboral2 = '';
+
+		$bolsalaboral1 = '';
+		$bolsalaboral2 = '';
+
+		$redessociales1 = '';
+		$redessociales2 = '';
+
+		$otros1 = '';
+		$otros2 = '';
+
+		if ($feriaslaborales == 'si') {
+			$feriaslaborales1 = 'X';
+		} else {
+			$feriaslaborales2 = 'X';
+		}
+
+		if ($showroom == 'si') {
+			$showroom1 = 'X';
+		} else {
+			$showroom2 = 'X';
+		}
+
+		if ($empleabilidad == 'si') {
+			$empleabilidad1 = 'X';
+		} else {
+			$empleabilidad2 = 'X';
+		}
+
+		if ($bolsalaboral == 'si') {
+			$bolsalaboral1 = 'X';
+		} else {
+			$bolsalaboral2 = 'X';
+		}
+
+		if ($redessociales == 'si') {
+			$redessociales1 = 'X';
+		} else {
+			$redessociales2 = 'X';
+		}
+
+		if ($otros == 'si') {
+			$otros1 = 'X';
+		} else {
+			$otros2 = 'X';
+		}
+
+		#endregion formulario_2
+
+
+		$estilos = '
+				<style>
+					.fondoCelda{
+						background-color: rgb(0, 0, 102);
+						color: #ffffff;
+						padding: 5px;
+					}
+					td{
+						padding: 4px 2px;
+					}
+	
+					.firma {
+						text-align: center;
+						border-top: 2px dashed #000000;       
+						margin: auto;
+						width: 320px;
+					}
+				</style>
+				';
+
+		$formulario4 = '
+		
+					<h2 style="text-align: center;">ESCUELA PROFESIONAL - PREGRADO</h2>
+				
+					<h3 style="text-align: center;">Informe Semestral y Anual sobre la Evaluación de Resultados de Planes de Acción</h3>
+		
+					<table style="min-width=100%" cellpadding="0" cellspacing="0"  colspan="12" border="1"  bordercolor="#000000" >
+
+						<tr>
+							<td class="fondoCelda" colspan="4">Escuela Profesional: ' . $nombre_escuela . '</td>
+						</tr>
+						<tr>
+							<td class="fondoCelda" colspan="4">Año y Semestre: ' . $añoysemestre . '</td>
+						</tr>
+						<tr>
+							<td class="fondoCelda" colspan="4">Fecha de Informe: ' . $fechaInforme . '</td>
+						</tr>
+						<tr>		
+							<td class="fondoCelda" >PLANES DE ACCIÓN DE VINCULACIÓN CON LOS EGRESADOS</td>
+	
+				
+						
+							
+						
+							<td class="fondoCelda"  align="center">SI GRADO DE CUMPLIMIENTO</td>
+							<td class="fondoCelda"  align="center">NO GRADO DE CUMPLIMIENTO</td>
+					
+							<td class="fondoCelda" >OBSERVACIONES (Si no cumplió proponer planes de mejora y con plazos)</td>
+						</tr>
+		
+						<tr>		
+							<td >Ferias Laborales</td>
+					
+							<td  align="center">' . $feriaslaborales1 . '</td>
+							<td  align="center">' . $feriaslaborales2 . '</td>
+							<td >' . $feriaslaboralesO . '</td>	
+						</tr>
+						<tr>		
+							<td >Showroom</td>
+							<td  align="center">' . $showroom1 . '</td>
+							<td  align="center">' . $showroom2 . '</td>
+							<td >' . $showroomO . '</td>	
+						</tr>
+		
+						<tr>		
+							<td >Eventos de empleabilidad</td>
+							<td  align="center">' . $empleabilidad1 . '</td>
+							<td  align="center">' . $empleabilidad2 . '</td>
+							<td >' . $empleabilidadO . '</td>	
+						</tr>
+		
+						<tr>		
+							<td >Bolsa Laboral</td>
+							<td  align="center">' . $bolsalaboral1 . '</td>
+							<td  align="center">' . $bolsalaboral2 . '</td>
+							<td >' . $bolsalaboralO . '</td>	
+						</tr>
+		
+						<tr>		
+							<td >Manejo de redes sociales</td>
+							<td  align="center">' . $redessociales1 . '</td>
+							<td  align="center">' . $redessociales2 . '</td>
+							<td >' . $redessocialesO . '</td>	
+						</tr>
+		
+						<tr>		
+							<td >Otros</td>
+							<td  align="center">' . $otros1 . '</td>
+							<td  align="center">' . $otros2 . '</td>
+							<td >' . $otrosO . '</td>	
+						</tr>
+
+					</table>
+	
+	
+					<br><br><br>
+					<div class="firma">
+						<h5>V° B°</h5>
+						<h5><b>DIRECTOR DE ESCUELA PROFESIONAL</b></h5>
+					</div>
+	
+		';
+
+
+		$pdf = new Mpdf([
+			'mode' => 'utf-8',
+			'format' => 'A4',
+			'orientation' => 'P',
+			'font-size' => 8,
+		]);
+
+		$pdf->SetHTMLHeader('
+				<div style=" text-align: left; ">		
+					<img style="min-width: 200px; max-width: 200px; max-height: 200px;" src="' . media() . '/archivos/logos/logoUse.png" />
+				</div>
+				');
+
+		$pdf->SetHTMLFooter('
+		
+				');
+
+		$pdf->WriteHTML($estilos);
+		$pdf->WriteHTML($formulario4);
+
+		$pdf->Output('use.pdf', 'I');
+		$data = 'z';
+
+		$this->views->getView($this, "vista", $data);
+	}
+
+	#endregion informe_5
 }

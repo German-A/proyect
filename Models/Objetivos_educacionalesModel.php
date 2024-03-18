@@ -25,7 +25,7 @@ class objetivos_educacionalesModel extends Mysql
 	{
 		$whereAdmin = "";
 		if ($_SESSION['idUser'] != 1) {
-			$whereAdmin = "and obd.status > 0";
+			$whereAdmin = "WHERE  obd.status > 0";
 		}
 		$sql = "SELECT obd.*
 		FROM objetivos_educacionales obd $whereAdmin";
