@@ -9,15 +9,31 @@
     td {
         padding: 4px 2px;
     }
+
+    .borde_preguntas {
+        color: black;
+        border: 4px solid #C00;
+
+    }
 </style>
 
 
 <br>
+
+<div class="">
+
+    <h1>6465</h1>
+
+</div>
+
+
+
+
 <div class="contenedor">
 
     <!-- formulario 1 - Informe Estadistico Anual y Semestral de Inserción Laboral -->
 
-    <section class="col-12">
+    <section class="col-12 borde_preguntas">
 
         <H3>Informe Estadisticó Anual sobre el Estado de los Egresados, Graduados y Titulados</H3>
 
