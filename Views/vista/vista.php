@@ -12,22 +12,43 @@
 
     .borde_preguntas {
         color: black;
-        border: 4px solid #C00;
+        border: 1px solid #C00;
+        padding: 8px 20px !important;
+    }
 
+    fieldset {
+        background-color: #f4f1ed;
+        color: firebrick;
+        border-color: darkgoldenrod;
+        border: 9px groove (internal value);
+        border-radius: 7px;
+        width: 400px
+    }
+
+    legend {
+        color: darkblue;
+        font-weight: bold
     }
 </style>
 
-
+<fieldset>
+    <legend>Tu texto</legend>
+    <div>Aquí puedes ir rellenandolo con lo que quieras mostrar dentro del fieldset</div>
+</fieldset>
 <br>
 
-<div class="">
-
-    <h1>6465</h1>
-
-</div>
-
-
-
+<fieldset>
+    <legend>Datos personales</legend>
+    <label>Nombre: <input type="text" name="nom" /><label><br>
+            <label>Apellidos: <input type="text" name="ape" /><label><br>
+</fieldset>
+<br>
+<fieldset>
+    <legend>Datos del domicilo</legend>
+    <label>Calle: <input type="text" name="calle" /><label><br>
+            <label>Población: <input type="text" name="pobla" /><label><br>
+                    <label>Provincia: <input type="text" name="prov" /><label><br>
+</fieldset><br>
 
 <div class="contenedor">
 
@@ -37,63 +58,17 @@
 
         <H3>Informe Estadisticó Anual sobre el Estado de los Egresados, Graduados y Titulados</H3>
 
-        <div class="form-group">
-            <label for="carrera">Escuela Profesional<span class="text-danger">*</span></label>
-            <select class="carrera form-control selectmultiple" name="carrera" data-live-search="true" id="carrera" x>
-                <option value="0" selected>Seleccionar</option>
-            </select>
-        </div>
+        <div class="row form-group">
+            <div class="col-md-8">
 
-        <div class="row">
 
-            <div class="col-6">
+                <label for="carrera">Escuela Profesional<span class="text-danger">*</span></label>
+                <select class="carrera form-control selectmultiple" name="carrera" data-live-search="true" id="carrera" x>
+                    <option value="0" selected>Seleccionar</option>
+                </select>
+
                 <div class="form-group">
-                    <label for="fechaInicio">Desde <span class="col-form-label text-danger">*</span></label>
-                    <select class="select2 form-control" name="fechaInicio" data-live-search="true" id="fechaInicio" x>
-                        <option value="0" selected>Desde</option>
-                        <option value="2015">2015</option>
-                        <option value="2016">2016</option>
-                        <option value="2017">2017</option>
-                        <option value="2018">2018</option>
-                        <option value="2019">2019</option>
-                        <option value="2020">2020</option>
-                        <option value="2021">2021</option>
-                        <option value="2022">2022</option>
-                        <option value="2023">2023</option>
-                        <option value="2024">2024</option>
-                        <option value="2025">2025</option>
-                    </select>
-                </div>
-
-            </div>
-
-            <div class="col-6">
-                <div class="form-group">
-                    <label for="fechaFin">Hasta<span class="col-form-label text-danger">*</span></label>
-                    <select class="select2 form-control" name="fechaFin" data-live-search="true" id="fechaFin" x>
-                        <option value="0" selected>Hasta</option>
-                        <option value="2015">2015</option>
-                        <option value="2016">2016</option>
-                        <option value="2017">2017</option>
-                        <option value="2018">2018</option>
-                        <option value="2019">2019</option>
-                        <option value="2020">2020</option>
-                        <option value="2021">2021</option>
-                        <option value="2022">2022</option>
-                        <option value="2023">2023</option>
-                        <option value="2024">2024</option>
-                        <option value="2025">2025</option>
-                    </select>
-                </div>
-
-
-            </div>
-
-        </div>
-
-        <div class="row">
-            <div class="col-12">
-                <div class="form-group">
+                    <!-- año egreso -->
                     <label for="anioEgreso">Año de Egreso<span class="col-form-label text-danger">*</span></label>
                     <select class="select2 form-control" name="anioEgreso" data-live-search="true" id="anioEgreso" x>
                         <option value="0" selected>Seleccionar</option>
@@ -111,9 +86,66 @@
                     </select>
 
                 </div>
+
+            </div>
+
+            <div class="col-md-4">
+                <!-- desde+ -->
+                <label for="fechaFin"></label>
+
+                <fieldset>
+                    <legend>cohorte</legend>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <select class="select2 form-control" name="fechaInicio" data-live-search="true" id="fechaInicio" x>
+                                <option value="0" selected>Desde</option>
+                                <option value="2015">2015</option>
+                                <option value="2016">2016</option>
+                                <option value="2017">2017</option>
+                                <option value="2018">2018</option>
+                                <option value="2019">2019</option>
+                                <option value="2020">2020</option>
+                                <option value="2021">2021</option>
+                                <option value="2022">2022</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- hasta -->
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <select class="select2 form-control" name="fechaFin" data-live-search="true" id="fechaFin" x>
+                                <option value="0" selected>Hasta</option>
+                                <option value="2015">2015</option>
+                                <option value="2016">2016</option>
+                                <option value="2017">2017</option>
+                                <option value="2018">2018</option>
+                                <option value="2019">2019</option>
+                                <option value="2020">2020</option>
+                                <option value="2021">2021</option>
+                                <option value="2022">2022</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+
+
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-12">
+
             </div>
 
         </div>
+
         <div class="row">
             <div class="form-group col-md-4">
                 <label for="ingresantesPromocion">N° de Ingresantes por Promoción <span class="text-danger">*</span></label>
