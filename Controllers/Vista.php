@@ -196,6 +196,8 @@ class vista extends Controllers
 
 		/*FORMULARIO 2*/
 
+		$asociacionEegresadosO = '';
+
 		$añoysemestre = $_POST['añoysemestre'];
 		$egresadosConsejoUniversiatario = strClean($_POST['egresadosConsejoUniversiatario']);
 		$egresadosConsejoUniversiatarioO = strClean($_POST['egresadosConsejoUniversiatarioO']);

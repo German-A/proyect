@@ -47,25 +47,25 @@
 
                 <a class="col-md-12 ml-2  mb-1 btn btn-outline-warning p-2 m-2  d-flex justify-content-center" onclick="verArchivo(1);">
                     <div class="col-11 col-md-9">
-                        <h5 class="">Informe Estadisticó Anual sobre el Estado de los Egresados, Graduados y Titulados</h5>
+                        <h5 class="">Informe estadístico anual sobre el estado de los egresados, graduados y titulados</h5>
                     </div>
                 </a>
 
                 <a class="col-md-12 ml-2  mb-1 btn btn-outline-warning p-2 m-2  d-flex justify-content-center" onclick="verArchivo(2);">
                     <div class="col-11 col-md-9">
-                        <h5 class="">Informe Semestral y Anual sobre la Evaluación de Resultados de Planes de Accion</h5>
+                        <h5 class="">Informe semestral y anual sobre la evaluación de resultados de planes de acción</h5>
                     </div>
                 </a>
 
                 <a class="col-md-12 ml-2  mb-1 btn btn-outline-warning p-2 m-2  d-flex justify-content-center" onclick="verArchivo(3);">
                     <div class="col-11 col-md-9">
-                        <h5 class="">Informe Estadistico Anual y Semestral de Inserción Laboral</h5>
+                        <h5 class="">Informe estadístico anual y semestral de inserción laboral</h5>
                     </div>
                 </a>
 
                 <a class="col-md-12 ml-2  mb-1 btn btn-outline-warning p-2 m-2  d-flex justify-content-center" onclick="verArchivo(4);">
                     <div class="col-11 col-md-9">
-                        <h5 class="">nforme Estadistico Semestral y Anual de la mejora de la Inserción Laboral de los Egresados</h5>
+                        <h5 class="">Informe estadístico semestral y anual de la mejora de la inserción laboral de los egresados</h5>
                     </div>
                 </a>
             </div>
@@ -79,7 +79,7 @@
     <div class="col-8 libro">
         <section class="col-12">
 
-            <H3>Informe Estadisticó Anual sobre el Estado de los Egresados, Graduados y Titulados</H3>
+            <H3>Informe estadístico anual sobre el estado de los egresados, graduados y titulados</H3>
 
             <div class="row form-group">
                 <!-- Escuela Profesional y Año de Egreso -->
@@ -220,6 +220,7 @@
 
 
         </section>
+        <br><br><br>
     </div>
 
 
@@ -346,22 +347,31 @@
         /*FORMULARIO 2*/
         var añoysemestre = $("#añoysemestre").val();
         var egresadosConsejoUniversiatario = $("#egresadosConsejoUniversiatario").val();
-
+        var egresadosConsejoUniversiatarioO = $("#egresadosConsejoUniversiatarioO").val();
+        
         var programasEducacionContinua = $("#programasEducacionContinua").val();
+        var programasEducacionContinuaO = $("#programasEducacionContinuaO").val();
 
         var asociacionEegresados = $("#asociacionEegresados").val();
+        var asociacionEegresadosO = $("#asociacionEegresadosO").val();
 
         var reconocimientoEgresados = $("#reconocimientoEgresados").val();
+        var reconocimientoEgresadosO = $("#reconocimientoEgresadosO").val();
 
         var desarrolloInvestigaciones = $("#desarrolloInvestigaciones").val();
+        var desarrolloInvestigacionesO = $("#desarrolloInvestigacionesO").val();
 
         var resultadosInvestigacion = $("#resultadosInvestigacion").val();
+        var resultadosInvestigacionO = $("#resultadosInvestigacionO").val();
 
         var destacadosInvestigacion = $("#destacadosInvestigacion").val();
+        var destacadosInvestigacionO = $("#destacadosInvestigacionO").val();
 
         var entreOtros = $("#entreOtros").val();
+        var entreOtrosO = $("#entreOtrosO").val();
 
         var participacionProcesos = $("#participacionProcesos").val();
+        var participacionProcesosO = $("#participacionProcesosO").val();
 
 
         if (añoysemestre == 0) {
@@ -787,7 +797,7 @@
                 var informe1 = `
                 <section class="col-12">
 
-                    <H3>Informe Estadisticó Anual sobre el Estado de los Egresados, Graduados y Titulados</H3>
+                    <H3>Informe estadístico anual sobre el estado de los egresados, graduados y titulados</H3>
 
                     <div class="row form-group">
                         <!-- Escuela Profesional y Año de Egreso -->
@@ -941,7 +951,7 @@
                 var informe2 = `
                     <section class="col-12">
 
-                    <h2>Informe Semestral y Anual sobre la Evaluación de Resultados de Planes de Accion</h2>
+                    <h2>Informe semestral y anual sobre la evaluación de resultados de planes de acción</h2>
 
                     <div class="row">
                         <div class="col-md-9">
@@ -1000,7 +1010,7 @@
 
                         <div class="col-md-6">
                             <fieldset>
-                                <legend>Programas de educación continua<span class="text-danger">*</span></legend>
+                                <legend>Programas de Educación Continua<span class="text-danger">*</span></legend>
                                 <div class="row">
                                     <div class="col-md-3 align-self-center">
                                         <label for="programasEducacionContinua">Seleccionar <span class="text-danger">*</span></label>
@@ -1023,7 +1033,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <fieldset>
-                                <legend>Asociacion de Egresados<span class="text-danger">*</span></legend>
+                                <legend>Asociación de Egresados<span class="text-danger">*</span></legend>
                                 <div class="row">
                                     <div class="col-md-3 align-self-center">
                                         <label for="egresadosConsejo">Seleccionar<span class="text-danger">*</span></label>
@@ -1043,7 +1053,7 @@
 
                         <div class="col-md-6">
                             <fieldset>
-                                <legend>Premiacion o reconocimiento a <br> Egresados destacados<span class="text-danger">*</span></legend>
+                                <legend>Premiación o reconocimiento a <br> Egresados destacados<span class="text-danger">*</span></legend>
                                 <div class="row">
                                     <div class="col-md-3 align-self-center">
                                         <label for="reconocimientoEgresados">Seleccionar<span class="text-danger">*</span></label>
@@ -1067,7 +1077,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <fieldset>
-                                <legend>Participacion en el desarrollo de investigaciones basicas y aplicadas de <br>interés local, regional nacional e internacional<span class="text-danger">*</span></legend>
+                                <legend>Participación en el desarrollo de investigaciones básicas y aplicadas de <br>interés local, regional nacional e internacional<span class="text-danger">*</span></legend>
 
                                 <div class="row">
 
@@ -1090,7 +1100,7 @@
 
                         <div class="col-md-6">
                             <fieldset>
-                                <legend>Publicación de resultados e investigacion<span class="text-danger">*</span></legend>
+                                <legend>Publicación de resultados e investigación<span class="text-danger">*</span></legend>
                                 <div class="row">
 
                                     <div class="col-md-3 align-self-center">
@@ -1115,7 +1125,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <fieldset>
-                                <legend>Promoción de la movilidad de egresados que destacan en investigacion<span class="text-danger">*</span></legend>
+                                <legend>Promoción de la movilidad de egresados que destacan en investigación<span class="text-danger">*</span></legend>
                                 <div class="row">
 
                                     <div class="col-md-3 align-self-center">
@@ -1172,7 +1182,7 @@
                                     <div class="col-md-5 align-self-center">
 
                                         <label for="educacionContinua">
-                                            <li>Revisión periódica de sus politicas y objetivos institucionales<span class="text-danger">*</span></li>
+                                            <li>Revisión periódica de sus políticas y objetivos institucionales<span class="text-danger">*</span></li>
                                         </label><br>
 
                                         <label for="educacionContinua">
@@ -1221,7 +1231,7 @@
                 var informe3 = `
                 <section class="col-12">
 
-                    <h2>Informe Estadistico Anual y Semestral de Inserción Laboral</h2>
+                    <h2>Informe estadístico anual y semestral de inserción laboral</h2>
                     <br>
 
 
@@ -1285,14 +1295,14 @@
 
                         <div class="col-md-4">
                             <fieldset>
-                                <legend>Labora forma dependiente<span class="text-danger">*</span></legend>
+                                <legend>Labora de forma dependiente<span class="text-danger">*</span></legend>
                                 <input type="number" class="form-control" id="laboranDependientes" name="laboranDependientes" required>
                             </fieldset>
                         </div>
 
                         <div class="col-md-4">
                             <fieldset>
-                                <legend>Labora forma independiente<span class="text-danger">*</span></legend>
+                                <legend>Labora de forma independiente<span class="text-danger">*</span></legend>
                                 <input type="number" class="form-control" id="laboranIndependientes" name="laboranIndependientes" required>
                             </fieldset>
                         </div>
@@ -1355,7 +1365,7 @@
                 var informe4 = `
                 <section class="col-12">
 
-                    <h2>Informe Estadistico Semestral y Anual de la mejora de la Inserción Laboral de los Egresados</h2>
+                    <h2>Informe estadístico semestral y anual de la mejora de la inserción laboral de los egresados</h2>
                     <br>
 
 
@@ -1567,24 +1577,24 @@
         $(".select2").select2({});
 
         $(".carrera").select2({
-                    ajax: {
-                        url: " " + base_url + "/solicitudempleo/getCarreras",
-                        type: "post",
-                        dataType: 'json',
-                        delay: 250,
-                        data: function(params) {
-                            return {
-                                palabraClave: params.term // search term
-                            };
-                        },
-                        processResults: function(response) {
-                            return {
-                                results: response
-                            };
-                        },
-                        cache: true
-                    }
-                });
+            ajax: {
+                url: " " + base_url + "/solicitudempleo/getCarreras",
+                type: "post",
+                dataType: 'json',
+                delay: 250,
+                data: function(params) {
+                    return {
+                        palabraClave: params.term // search term
+                    };
+                },
+                processResults: function(response) {
+                    return {
+                        results: response
+                    };
+                },
+                cache: true
+            }
+        });
 
 
     }
