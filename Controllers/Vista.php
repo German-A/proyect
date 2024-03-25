@@ -429,8 +429,10 @@ class vista extends Controllers
 		$pdf = new Mpdf([
 			'mode' => 'utf-8',
 			'format' => 'A4',
+			'setAutoTopMargin' => 'pad',
+			'setAutoBottomMargin' => 'pad',
 			'orientation' => 'P',
-			'font-size' => 8,
+			'font-size' => 6,
 		]);
 
 		$pdf->SetHTMLHeader('
@@ -1054,7 +1056,7 @@ class vista extends Controllers
 			'mode' => 'utf-8',
 			'format' => 'A4',
 			'orientation' => 'P',
-			'font-size' => 8,
+			'font-size' => 6,
 		]);
 
 		$pdf->SetHTMLHeader('

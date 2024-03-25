@@ -17,771 +17,213 @@
     }
 
     fieldset {
+        border: 3px groove #ddd !important;
+        padding: 0 1em 1.4em 1.4em !important;
         background-color: #f4f1ed;
-        color: firebrick;
-        border-color: darkgoldenrod;
-        border: 9px groove (internal value);
-        border-radius: 7px;
-        width: 400px
+        margin-top: 10px;
     }
 
     legend {
-        color: darkblue;
-        font-weight: bold
+        width: auto;
+        background-color: white;
+        font-size: 13px !important;
+        font-weight: bold !important;
+        padding: 0 10px;
     }
 </style>
-
-<fieldset>
-    <legend>Tu texto</legend>
-    <div>Aquí puedes ir rellenandolo con lo que quieras mostrar dentro del fieldset</div>
-</fieldset>
 <br>
 
-<fieldset>
-    <legend>Datos personales</legend>
-    <label>Nombre: <input type="text" name="nom" /><label><br>
-            <label>Apellidos: <input type="text" name="ape" /><label><br>
-</fieldset>
-<br>
-<fieldset>
-    <legend>Datos del domicilo</legend>
-    <label>Calle: <input type="text" name="calle" /><label><br>
-            <label>Población: <input type="text" name="pobla" /><label><br>
-                    <label>Provincia: <input type="text" name="prov" /><label><br>
-</fieldset><br>
+<div class="row text-center" style="max-width: 1600px; margin:auto">
 
-<div class="contenedor">
+    <br><br>
+    <div class="col-12  col-lg-4">
+        <br>
+        <div class="col-md-10  m-auto">
+            <h3 class="blueoscuro">FORMATOS DE CALIDAD</h3>
+        </div>
 
-    <!-- formulario 1 - Informe Estadistico Anual y Semestral de Inserción Laboral -->
+        <div class="row">
+            <div class="col-md-10  m-auto itemY">
 
-    <section class="col-12 borde_preguntas">
-
-        <H3>Informe Estadisticó Anual sobre el Estado de los Egresados, Graduados y Titulados</H3>
-
-        <div class="row form-group">
-            <div class="col-md-8">
-
-
-                <label for="carrera">Escuela Profesional<span class="text-danger">*</span></label>
-                <select class="carrera form-control selectmultiple" name="carrera" data-live-search="true" id="carrera" x>
-                    <option value="0" selected>Seleccionar</option>
-                </select>
-
-                <div class="form-group">
-                    <!-- año egreso -->
-                    <label for="anioEgreso">Año de Egreso<span class="col-form-label text-danger">*</span></label>
-                    <select class="select2 form-control" name="anioEgreso" data-live-search="true" id="anioEgreso" x>
-                        <option value="0" selected>Seleccionar</option>
-                        <option value="2015">2015</option>
-                        <option value="2016">2016</option>
-                        <option value="2017">2017</option>
-                        <option value="2018">2018</option>
-                        <option value="2019">2019</option>
-                        <option value="2020">2020</option>
-                        <option value="2021">2021</option>
-                        <option value="2022">2022</option>
-                        <option value="2023">2023</option>
-                        <option value="2024">2024</option>
-                        <option value="2025">2025</option>
-                    </select>
-
-                </div>
-
-            </div>
-
-            <div class="col-md-4">
-                <!-- desde+ -->
-                <label for="fechaFin"></label>
-
-                <fieldset>
-                    <legend>cohorte</legend>
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <select class="select2 form-control" name="fechaInicio" data-live-search="true" id="fechaInicio" x>
-                                <option value="0" selected>Desde</option>
-                                <option value="2015">2015</option>
-                                <option value="2016">2016</option>
-                                <option value="2017">2017</option>
-                                <option value="2018">2018</option>
-                                <option value="2019">2019</option>
-                                <option value="2020">2020</option>
-                                <option value="2021">2021</option>
-                                <option value="2022">2022</option>
-                                <option value="2023">2023</option>
-                                <option value="2024">2024</option>
-                                <option value="2025">2025</option>
-                            </select>
-                        </div>
+                <a class="col-md-12 ml-2  mb-1 btn btn-outline-warning p-2 m-2  d-flex justify-content-center" onclick="verArchivo(1);">
+                    <div class="col-11 col-md-9">
+                        <h5 class="">Informe Estadisticó Anual sobre el Estado de los Egresados, Graduados y Titulados</h5>
                     </div>
-                    <!-- hasta -->
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <select class="select2 form-control" name="fechaFin" data-live-search="true" id="fechaFin" x>
-                                <option value="0" selected>Hasta</option>
-                                <option value="2015">2015</option>
-                                <option value="2016">2016</option>
-                                <option value="2017">2017</option>
-                                <option value="2018">2018</option>
-                                <option value="2019">2019</option>
-                                <option value="2020">2020</option>
-                                <option value="2021">2021</option>
-                                <option value="2022">2022</option>
-                                <option value="2023">2023</option>
-                                <option value="2024">2024</option>
-                                <option value="2025">2025</option>
-                            </select>
-                        </div>
+                </a>
+
+                <a class="col-md-12 ml-2  mb-1 btn btn-outline-warning p-2 m-2  d-flex justify-content-center" onclick="verArchivo(2);">
+                    <div class="col-11 col-md-9">
+                        <h5 class="">Informe Semestral y Anual sobre la Evaluación de Resultados de Planes de Accion</h5>
                     </div>
-                </fieldset>
+                </a>
 
-
-            </div>
-        </div>
-
-
-        <div class="row">
-            <div class="col-12">
-
-            </div>
-
-        </div>
-
-        <div class="row">
-            <div class="form-group col-md-4">
-                <label for="ingresantesPromocion">N° de Ingresantes por Promoción <span class="text-danger">*</span></label>
-                <input type="number" class="form-control" id="ingresantesPromocion" name="ingresantesPromocion" required>
-            </div>
-
-            <div class="form-group col-md-4">
-                <label for="egresadosPromocion">N° de Egresados<span class="text-danger">*</span></label>
-                <input type="number" class="form-control" id="egresadosPromocion" name="egresadosPromocion" required>
-            </div>
-
-            <div class="form-group col-md-4">
-                <label for="tiempoEsperando">N° de Egresados en el Tiempo Esperado<span class="text-danger">*</span></label>
-                <input type="number" class="form-control" id="tiempoEsperando" name="tiempoEsperando" required>
-            </div>
-
-            <div class="form-group col-md-6">
-                <label for="cantidadGraduados">N° de Egresados Graduados<span class="text-danger">*</span></label>
-                <input type="number" class="form-control" id="cantidadGraduados" name="cantidadGraduados" required>
-            </div>
-
-            <div class="form-group col-md-6">
-                <label for="cantidadTitulados">Cantidad de Titulados<span class="text-danger">*</span></label>
-                <input type="number" class="form-control" id="cantidadTitulados" name="cantidadTitulados" required>
-            </div>
-
-        </div>
-
-        <div class="row">
-            <div class="form-group col-md-12">
-                <label for="observaciones">Observaciones</label>
-                <input type="text" class="form-control" id="observaciones" name="observaciones" required>
-            </div>
-
-            <div class="form-group col-md-12">
-                <label for="tomaDesiciones">Toma de desiciones</label>
-                <input type="text" class="form-control" id="tomaDesiciones" name="tomaDesiciones" required>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-12">
-                <div class="text-center">
-                    <a href="javascript:void(0)" class="btn btn-success" onclick="formato1()">DESCARGAR</a>
-                </div>
-            </div>
-        </div>
-
-    </section>
-    <br><br><br>
-
-    <!-- formulario 2 - Informe Estadistico Anual y Semestral de Inserción Laboral -->
-    <section class="col-12">
-
-        <h2>Informe Semestral y Anual sobre la Evaluación de Resultados de Planes de Accion</h2>
-
-        <div class="form-group">
-            <label for="carreraf2">Escuela Profesional<span class="text-danger">*</span></label>
-            <select class="carrera form-control selectmultiple" name="carreraf2" data-live-search="true" id="carreraf2" x>
-                <option value="0" selected>Seleccionar</option>
-            </select>
-        </div>
-
-        <br>
-        <div class="row">
-            <div class="col-md-2">
-                <label for="añoysemestre">Año y <br> Semestre<span class="text-danger">*</span></label>
-                <select class="select2 form-control" data-live-search="true" id="añoysemestre">
-                    <option value="0" selected>Seleccionar</option>
-                    <option value="2018-I">2018-I</option>
-                    <option value="2018-II">2018-II</option>
-                    <option value="2019-I">2019-I</option>
-                    <option value="2019-II">2019-II</option>
-                    <option value="2020-I">2020-I</option>
-                    <option value="2020-II">2020-II</option>
-                    <option value="2021-I">2021-I</option>
-                    <option value="2021-II">2021-II</option>
-                    <option value="2022-I">2022-I</option>
-                    <option value="2022-II">2022-II</option>
-                    <option value="2023-I">2023-I</option>
-                    <option value="2023-II">2023-II</option>
-                </select>
-            </div>
-
-            <div class="form-group col-md-5">
-                <label for="egresadosConsejoUniversiatario">Representación de Egresados en el Consejo de <br>Facultad y Consejo Universitario<span class="text-danger">*</span></label>
-                <select class="select2 form-control" name="egresadosConsejoUniversiatario[]" data-live-search="true" id="egresadosConsejoUniversiatario" x>
-                    <option value="0" selected>Seleccionar</option>
-                    <option value="si">Si</option>
-                    <option value="no">No</option>
-                </select>
-                <label for="egresadosConsejo">OBSERVACIONES (Si no cumplió proponer planes de mejora y con plazos) <span class="text-danger">*</span></label>
-                <textarea class="form-group col-md-12" name="" id="egresadosConsejoUniversiatarioO" rows="2"></textarea>
-            </div>
-
-            <div class="form-group col-md-5">
-                <label for="programasEducacionContinua">Programas de educación<br> continua<span class="text-danger">*</span></label>
-                <select class="select2 form-control" name="programasEducacionContinua[]" data-live-search="true" id="programasEducacionContinua" x>
-                    <option value="0" selected>Seleccionar</option>
-                    <option value="si">Si</option>
-                    <option value="no">No</option>
-                </select>
-                <label for="egresadosConsejo">OBSERVACIONES (Si no cumplió proponer planes de mejora y con plazos) <span class="text-danger">*</span></label>
-                <textarea class="form-group col-md-12" name="" id="programasEducacionContinuaO" rows="2"></textarea>
-            </div>
-
-        </div>
-
-        <div class="row">
-
-            <div class="form-group col-md-3">
-                <label for="asociacionEegresados">Asociacion de <br>Egresados<span class="text-danger">*</span></label>
-                <select class="select2 form-control" name="asociacionEegresados[]" data-live-search="true" id="asociacionEegresados" x>
-                    <option value="0" selected>Seleccionar</option>
-                    <option value="si">Si</option>
-                    <option value="no">No</option>
-                </select>
-                <label for="asociacionEegresadosO">OBSERVACIONES (Si no cumplió proponer planes de mejora y con plazos) <span class="text-danger">*</span></label>
-                <textarea class="form-group col-md-12" name="" id="asociacionEegresadosO" rows="2"></textarea>
-            </div>
-
-            <div class="form-group col-md-3">
-                <label for="reconocimientoEgresados">Premiacion o reconocimiento a <br> Egresados destacados<span class="text-danger">*</span></label>
-                <select class="select2 form-control" name="reconocimientoEgresados[]" data-live-search="true" id="reconocimientoEgresados" x>
-                    <option value="0" selected>Seleccionar</option>
-                    <option value="si">Si</option>
-                    <option value="no">No</option>
-                </select>
-                <label for="reconocimientoEgresadosO">OBSERVACIONES (Si no cumplió proponer planes de mejora y con plazos) <span class="text-danger">*</span></label>
-                <textarea class="form-group col-md-12" name="" id="reconocimientoEgresadosO" rows="2"></textarea>
-            </div>
-
-            <div class="form-group col-md-6">
-                <label for="desarrolloInvestigaciones">Participacion en el desarrollo de investigaciones basicas y aplicadas de <br>interés local, regional nacional e internacional<span class="text-danger">*</span></label>
-                <select class="select2 form-control" name="desarrolloInvestigaciones[]" data-live-search="true" id="desarrolloInvestigaciones" x>
-                    <option value="0" selected>Seleccionar</option>
-                    <option value="si">Si</option>
-                    <option value="no">No</option>
-                </select>
-                <label for="desarrolloInvestigacionesO">OBSERVACIONES (Si no cumplió proponer planes de mejora <br>y con plazos) <span class="text-danger">*</span></label>
-                <textarea class="form-group col-md-12" name="" id="desarrolloInvestigacionesO" rows="2"></textarea>
-            </div>
-
-        </div>
-
-        <div class="row">
-
-            <div class="form-group col-md-3">
-                <label for="resultadosInvestigacion">Publicación de resultados e investigacion<span class="text-danger">*</span></label>
-                <select class="select2 form-control" name="resultadosInvestigacion[]" data-live-search="true" id="resultadosInvestigacion" x>
-                    <option value="0" selected>Seleccionar</option>
-                    <option value="si">Si</option>
-                    <option value="no">No</option>
-                </select>
-                <label for="resultadosInvestigacionO">OBSERVACIONES (Si no cumplió proponer planes de mejora y con plazos) <span class="text-danger">*</span></label>
-                <textarea class="form-group col-md-12" name="" id="resultadosInvestigacionO" rows="2"></textarea>
-            </div>
-
-            <div class="form-group col-md-6">
-                <label for="destacadosInvestigacion">Promoción de la movilidad de egresados que destacan en investigacion<span class="text-danger">*</span></label>
-                <select class="select2 form-control" name="destacadosInvestigacion[]" data-live-search="true" id="destacadosInvestigacion" x>
-                    <option value="0" selected>Seleccionar</option>
-                    <option value="si">Si</option>
-                    <option value="no">No</option>
-                </select>
-                <label for="destacadosInvestigacionO">OBSERVACIONES (Si no cumplió proponer planes de <br>mejora y con plazos) <span class="text-danger">*</span></label>
-                <textarea class="form-group col-md-12" name="" id="destacadosInvestigacionO" rows="2"></textarea>
-            </div>
-
-            <div class="form-group col-md-3">
-                <label for="entreOtros">Entre otros.<span class="text-danger">*</span></label>
-                <select class="select2 form-control" name="entreOtros[]" data-live-search="true" id="entreOtros" x>
-                    <option value="0" selected>Seleccionar</option>
-                    <option value="si">Si</option>
-                    <option value="no">No</option>
-                </select>
-                <label for="egresadosConsejo">OBSERVACIONES (Si no cumplió proponer planes de mejora y con plazos) <span class="text-danger">*</span></label>
-                <textarea class="form-group col-md-12" name="" id="entreOtrosO" rows="2"></textarea>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="form-group col-md-12">
-                <label for="tiempoEsperando">Participación como grupo de interés en los procesos de:<span class="text-danger">*</span></label>
-                <br>
-                <label for="educacionContinua">
-                    <li>Revisión periódica de sus politicas y objetivos institucionales<span class="text-danger">*</span></li>
-                </label><br>
-
-                <label for="educacionContinua">
-                    <li>Revisión de la pertinencia del perfil del Egresado<span class="text-danger">*</span></li>
-                </label><br>
-                <label for="educacionContinua">
-                    <li>Revisión, evaluación y actualización de los currículos<span class="text-danger">*</span></li>
-                </label><br>
-                <label for="educacionContinua">
-                    <li>Otros<span class="text-danger">*</span></li>
-                </label><br>
-                <select class="select2 form-control" name="participacionProcesos[]" data-live-search="true" id="participacionProcesos" x>
-                    <option value="0" selected>Seleccionar</option>
-                    <option value="si">Si</option>
-                    <option value="no">No</option>
-                </select>
-                <label for="egresadosConsejo">OBSERVACIONES (Si no cumplió proponer planes de mejora y con plazos) <span class="text-danger">*</span></label>
-                <textarea class="form-group col-md-12" name="" id="participacionProcesosO" rows="2"></textarea>
-
-            </div>
-
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="text-center">
-                        <a href="javascript:void(0)" class="btn btn-success" onclick="formato2()">DESCARGAR</a>
+                <a class="col-md-12 ml-2  mb-1 btn btn-outline-warning p-2 m-2  d-flex justify-content-center" onclick="verArchivo(3);">
+                    <div class="col-11 col-md-9">
+                        <h5 class="">Informe Estadistico Anual y Semestral de Inserción Laboral</h5>
                     </div>
-                </div>
+                </a>
+
+                <a class="col-md-12 ml-2  mb-1 btn btn-outline-warning p-2 m-2  d-flex justify-content-center" onclick="verArchivo(4);">
+                    <div class="col-11 col-md-9">
+                        <h5 class="">nforme Estadistico Semestral y Anual de la mejora de la Inserción Laboral de los Egresados</h5>
+                    </div>
+                </a>
             </div>
-
-
         </div>
-    </section>
-    <br><br><br>
 
-    <!-- formulario 3 - Informe Estadistico Anual y Semestral de Inserción Laboral -->
-
-    <section class="col-12">
-
-        <h2>Informe Estadistico Anual y Semestral de Inserción Laboral</h2>
         <br>
 
-        <div class="form-group">
-            <label for="carreraf3">Escuela Profesional<span class="text-danger">*</span></label>
-            <select class="carrera form-control selectmultiple" name="carreraf3" data-live-search="true" id="carreraf3" x>
-                <option value="0" selected>Seleccionar</option>
-            </select>
-        </div>
 
-        <div class="col-md-2">
-            <label for="añoysemestref3">Año y <br> Semestre<span class="text-danger">*</span></label>
-            <select class="select2 form-control" data-live-search="true" id="añoysemestref3">
-                <option value="0" selected>Seleccionar</option>
-                <option value="2018-I">2018-I</option>
-                <option value="2018-II">2018-II</option>
-                <option value="2019-I">2019-I</option>
-                <option value="2019-II">2019-II</option>
-                <option value="2020-I">2020-I</option>
-                <option value="2020-II">2020-II</option>
-                <option value="2021-I">2021-I</option>
-                <option value="2021-II">2021-II</option>
-                <option value="2022-I">2022-I</option>
-                <option value="2022-II">2022-II</option>
-                <option value="2023-I">2023-I</option>
-                <option value="2023-II">2023-II</option>
-            </select>
-        </div>
-
-
-        <div class="row">
-            <div class="col-md-3">
-                <label for="totalEgresados">Total de Egresados<span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="totalEgresados" name="totalEgresados" required>
-            </div>
-
-            <div class="col-md-3">
-                <label for="laboranCampo">Laboran en el campo de su Carrera<span class="text-danger">*</span></label>
-                <input type="number" class="form-control" id="laboranCampo" name="laboranCampo" required>
-            </div>
-
-            <div class="col-md-3">
-                <label for="noLaboranCampo">No laboran en el campo de su carrera<span class="text-danger">*</span></label>
-                <input type="number" class="form-control" id="noLaboranCampo" name="noLaboranCampo" required>
-            </div>
-
-            <div class="col-md-3">
-                <label for="laboranDependientes">Labora forma dependiente<span class="text-danger">*</span></label>
-                <input type="number" class="form-control" id="laboranDependientes" name="laboranDependientes" required>
-            </div>
-        </div>
-
-
-        <div class="row">
-            <div class="col-md-3">
-                <label for="laboranIndependientes">Labora forma independiente<span class="text-danger">*</span></label>
-                <input type="number" class="form-control" id="laboranIndependientes" name="laboranIndependientes" required>
-            </div>
-
-            <div class="col-md-3">
-                <label for="nombrado">Nombrado<span class="text-danger">*</span></label>
-                <input type="number" class="form-control" id="nombrado" name="nombrado" required>
-            </div>
-
-            <div class="col-md-3">
-                <label for="contratado">Contratado<span class="text-danger">*</span></label>
-                <input type="number" class="form-control" id="contratado" name="contratado" required>
-            </div>
-
-            <div class="col-md-3">
-                <label for="sectorPublico">Sector Público<span class="text-danger">*</span></label>
-                <input type="number" class="form-control" id="sectorPublico" name="sectorPublico" required>
-            </div>
-        </div>
-
-
-        <div class="row">
-            <div class="col-md-3">
-                <label for="sectorPrivado">Sector Privado<span class="text-danger">*</span></label>
-                <input type="number" class="form-control" id="sectorPrivado" name="sectorPrivado" required>
-            </div>
-
-            <div class="col-md-9">
-                <label for="comentarios">Comentarios<span class="text-danger">*</span></label>
-                <textarea class="form-group col-md-12" name="" id="comentarios" rows="2"></textarea>
-            </div>
-
-        </div>
-
-        <div class="row">
-            <div class="col-md-12">
-                <div class="text-center">
-                    <a href="javascript:void(0)" class="btn btn-success" onclick="formato3()">DESCARGAR</a>
-                </div>
-            </div>
-        </div>
-
-
-    </section>
-    <br><br><br>
-
-    <!-- formulario 4 - Informe Estadistico Semestral y Anual de la mejora de la Inserción Laboral de los Egresados -->
-
-    <section class="col-12">
-
-        <h2>Informe Estadistico Semestral y Anual de la mejora de la Inserción Laboral de los Egresados</h2>
-        <br>
-
-        <div class="form-group">
-            <label for="carreraf4">Escuela Profesional<span class="text-danger">*</span></label>
-            <select class="carrera form-control selectmultiple" name="carreraf4" data-live-search="true" id="carreraf4" x>
-                <option value="0" selected>Seleccionar</option>
-            </select>
-        </div>
-
-        <div class="col-md-2">
-            <label for="añoysemestref4">Año y <br> Semestre<span class="text-danger">*</span></label>
-            <select class="select2 form-control" data-live-search="true" id="añoysemestref4">
-                <option value="0" selected>Seleccionar</option>
-                <option value="2018-I">2018-I</option>
-                <option value="2018-II">2018-II</option>
-                <option value="2019-I">2019-I</option>
-                <option value="2019-II">2019-II</option>
-                <option value="2020-I">2020-I</option>
-                <option value="2020-II">2020-II</option>
-                <option value="2021-I">2021-I</option>
-                <option value="2021-II">2021-II</option>
-                <option value="2022-I">2022-I</option>
-                <option value="2022-II">2022-II</option>
-                <option value="2023-I">2023-I</option>
-                <option value="2023-II">2023-II</option>
-            </select>
-        </div>
-
-        <div class="row">
-
-            <div class="form-group col-md-5">
-                <label for="feriaslaborales">Ferias Laborales<span class="text-danger">*</span></label>
-                <select class="select2 form-control" name="feriaslaborales" data-live-search="true" id="feriaslaborales" x>
-                    <option value="0" selected>Seleccionar</option>
-                    <option value="si">Si</option>
-                    <option value="no">No</option>
-                </select>
-                <label for="feriaslaboralesO">OBSERVACIONES (Si no cumplió proponer planes de mejora y con plazos) <span class="text-danger">*</span></label>
-                <textarea class="form-group col-md-12" name="feriaslaboralesO" id="feriaslaboralesO" rows="2"></textarea>
-            </div>
-
-            <div class="form-group col-md-5">
-                <label for="showroom">Showroom<span class="text-danger">*</span></label>
-                <select class="select2 form-control" name="showroom" data-live-search="true" id="showroom" x>
-                    <option value="0" selected>Seleccionar</option>
-                    <option value="si">Si</option>
-                    <option value="no">No</option>
-                </select>
-                <label for="showroomO">OBSERVACIONES (Si no cumplió proponer planes de mejora y con plazos) <span class="text-danger">*</span></label>
-                <textarea class="form-group col-md-12" name="showroomO" id="showroomO" rows="2"></textarea>
-            </div>
-
-        </div>
-
-        <div class="row">
-
-            <div class="form-group col-md-5">
-                <label for="empleabilidad">Eventos de empleabilidad<span class="text-danger">*</span></label>
-                <select class="select2 form-control" name="empleabilidad" data-live-search="true" id="empleabilidad" x>
-                    <option value="0" selected>Seleccionar</option>
-                    <option value="si">Si</option>
-                    <option value="no">No</option>
-                </select>
-                <label for="empleabilidadO">OBSERVACIONES (Si no cumplió proponer planes de mejora y con plazos) <span class="text-danger">*</span></label>
-                <textarea class="form-group col-md-12" name="empleabilidadO" id="empleabilidadO" rows="2"></textarea>
-            </div>
-
-            <div class="form-group col-md-5">
-                <label for="bolsalaboral">Bolsa Laboral<span class="text-danger">*</span></label>
-                <select class="select2 form-control" name="bolsalaboral" data-live-search="true" id="bolsalaboral" x>
-                    <option value="0" selected>Seleccionar</option>
-                    <option value="si">Si</option>
-                    <option value="no">No</option>
-                </select>
-                <label for="bolsalaboralO">OBSERVACIONES (Si no cumplió proponer planes de mejora y con plazos) <span class="text-danger">*</span></label>
-                <textarea class="form-group col-md-12" name="" id="bolsalaboralO" rows="2"></textarea>
-            </div>
-
-        </div>
-
-
-        <div class="row">
-
-            <div class="form-group col-md-5">
-                <label for="redessociales">Manejo de redes sociales<span class="text-danger">*</span></label>
-                <select class="select2 form-control" name="redessociales" data-live-search="true" id="redessociales" x>
-                    <option value="0" selected>Seleccionar</option>
-                    <option value="si">Si</option>
-                    <option value="no">No</option>
-                </select>
-                <label for="redessocialesO">OBSERVACIONES (Si no cumplió proponer planes de mejora y con plazos) <span class="text-danger">*</span></label>
-                <textarea class="form-group col-md-12" name="redessocialesO" id="redessocialesO" rows="2"></textarea>
-            </div>
-
-            <div class="form-group col-md-5">
-                <label for="otros">Otros<span class="text-danger">*</span></label>
-                <select class="select2 form-control" name="otros" data-live-search="true" id="otros" x>
-                    <option value="0" selected>Seleccionar</option>
-                    <option value="si">Si</option>
-                    <option value="no">No</option>
-                </select>
-                <label for="otrosO">OBSERVACIONES (Si no cumplió proponer planes de mejora y con plazos) <span class="text-danger">*</span></label>
-                <textarea class="form-group col-md-12" name="" id="otrosO" rows="2"></textarea>
-            </div>
-
-        </div>
-
-
-
-
-
-        <div class="row">
-            <div class="col-md-12">
-                <div class="text-center">
-                    <a href="javascript:void(0)" class="btn btn-success" onclick="formato4()">DESCARGAR</a>
-                </div>
-            </div>
-        </div>
-
-
-    </section>
-
-    <!-- formulario 5 - Informe de logro de los objetivos educacionales -->
-
-    <section class="col-12">
-
-        <h2>Informe de logro de los objetivos educacionales</h2>
-        <br>
-
-        <div class="form-group">
-            <label for="carreraf5">Escuela Profesional<span class="text-danger">*</span></label>
-            <select class="carrera form-control selectmultiple" name="carreraf5" data-live-search="true" id="carreraf5" x>
-                <option value="0" selected>Seleccionar</option>
-            </select>
-        </div>
-
-        <div class="row">
-
-            <div class="col-6">
-                <div class="form-group">
-                    <label for="fechaIniciof5">Desde <span class="col-form-label text-danger">*</span></label>
-                    <select class="select2 form-control" name="fechaIniciof5" data-live-search="true" id="fechaIniciof5" x>
-                        <option value="0" selected>Desde</option>
-                        <option value="2015">2015</option>
-                        <option value="2016">2016</option>
-                        <option value="2017">2017</option>
-                        <option value="2018">2018</option>
-                        <option value="2019">2019</option>
-                        <option value="2020">2020</option>
-                        <option value="2021">2021</option>
-                        <option value="2022">2022</option>
-                        <option value="2023">2023</option>
-                        <option value="2024">2024</option>
-                        <option value="2025">2025</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="col-6">
-                <div class="form-group">
-                    <label for="fechaFinf5">Hasta<span class="col-form-label text-danger">*</span></label>
-                    <select class="select2 form-control" name="fechaFinf5" data-live-search="true" id="fechaFinf5" x>
-                        <option value="0" selected>Hasta</option>
-                        <option value="2015">2015</option>
-                        <option value="2016">2016</option>
-                        <option value="2017">2017</option>
-                        <option value="2018">2018</option>
-                        <option value="2019">2019</option>
-                        <option value="2020">2020</option>
-                        <option value="2021">2021</option>
-                        <option value="2022">2022</option>
-                        <option value="2023">2023</option>
-                        <option value="2024">2024</option>
-                        <option value="2025">2025</option>
-                    </select>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="col-md-2">
-            <label for="añoysemestref5">Año y <br> Semestre<span class="text-danger">*</span></label>
-            <select class="select2 form-control" data-live-search="true" id="añoysemestref5">
-                <option value="0" selected>Seleccionar</option>
-                <option value="2018-I">2018-I</option>
-                <option value="2018-II">2018-II</option>
-                <option value="2019-I">2019-I</option>
-                <option value="2019-II">2019-II</option>
-                <option value="2020-I">2020-I</option>
-                <option value="2020-II">2020-II</option>
-                <option value="2021-I">2021-I</option>
-                <option value="2021-II">2021-II</option>
-                <option value="2022-I">2022-I</option>
-                <option value="2022-II">2022-II</option>
-                <option value="2023-I">2023-I</option>
-                <option value="2023-II">2023-II</option>
-            </select>
-        </div>
-
-        <div class="row">
-
-            <div class="form-group col-md-5">
-                <label for="feriaslaborales">Ferias Laborales<span class="text-danger">*</span></label>
-                <select class="select2 form-control" name="feriaslaborales" data-live-search="true" id="feriaslaborales" x>
-                    <option value="0" selected>Seleccionar</option>
-                    <option value="si">Si</option>
-                    <option value="no">No</option>
-                </select>
-                <label for="feriaslaboralesO">OBSERVACIONES (Si no cumplió proponer planes de mejora y con plazos) <span class="text-danger">*</span></label>
-                <textarea class="form-group col-md-12" name="feriaslaboralesO" id="feriaslaboralesO" rows="2"></textarea>
-            </div>
-
-            <div class="form-group col-md-5">
-                <label for="showroom">Showroom<span class="text-danger">*</span></label>
-                <select class="select2 form-control" name="showroom" data-live-search="true" id="showroom" x>
-                    <option value="0" selected>Seleccionar</option>
-                    <option value="si">Si</option>
-                    <option value="no">No</option>
-                </select>
-                <label for="showroomO">OBSERVACIONES (Si no cumplió proponer planes de mejora y con plazos) <span class="text-danger">*</span></label>
-                <textarea class="form-group col-md-12" name="showroomO" id="showroomO" rows="2"></textarea>
-            </div>
-
-        </div>
-
-        <div class="row">
-
-            <div class="form-group col-md-5">
-                <label for="empleabilidad">Eventos de empleabilidad<span class="text-danger">*</span></label>
-                <select class="select2 form-control" name="empleabilidad" data-live-search="true" id="empleabilidad" x>
-                    <option value="0" selected>Seleccionar</option>
-                    <option value="si">Si</option>
-                    <option value="no">No</option>
-                </select>
-                <label for="empleabilidadO">OBSERVACIONES (Si no cumplió proponer planes de mejora y con plazos) <span class="text-danger">*</span></label>
-                <textarea class="form-group col-md-12" name="empleabilidadO" id="empleabilidadO" rows="2"></textarea>
-            </div>
-
-            <div class="form-group col-md-5">
-                <label for="bolsalaboral">Bolsa Laboral<span class="text-danger">*</span></label>
-                <select class="select2 form-control" name="bolsalaboral" data-live-search="true" id="bolsalaboral" x>
-                    <option value="0" selected>Seleccionar</option>
-                    <option value="si">Si</option>
-                    <option value="no">No</option>
-                </select>
-                <label for="bolsalaboralO">OBSERVACIONES (Si no cumplió proponer planes de mejora y con plazos) <span class="text-danger">*</span></label>
-                <textarea class="form-group col-md-12" name="" id="bolsalaboralO" rows="2"></textarea>
-            </div>
-
-        </div>
-
-
-        <div class="row">
-
-            <div class="form-group col-md-5">
-                <label for="redessociales">Manejo de redes sociales<span class="text-danger">*</span></label>
-                <select class="select2 form-control" name="redessociales" data-live-search="true" id="redessociales" x>
-                    <option value="0" selected>Seleccionar</option>
-                    <option value="si">Si</option>
-                    <option value="no">No</option>
-                </select>
-                <label for="redessocialesO">OBSERVACIONES (Si no cumplió proponer planes de mejora y con plazos) <span class="text-danger">*</span></label>
-                <textarea class="form-group col-md-12" name="redessocialesO" id="redessocialesO" rows="2"></textarea>
-            </div>
-
-            <div class="form-group col-md-5">
-                <label for="otros">Otros<span class="text-danger">*</span></label>
-                <select class="select2 form-control" name="otros" data-live-search="true" id="otros" x>
-                    <option value="0" selected>Seleccionar</option>
-                    <option value="si">Si</option>
-                    <option value="no">No</option>
-                </select>
-                <label for="otrosO">OBSERVACIONES (Si no cumplió proponer planes de mejora y con plazos) <span class="text-danger">*</span></label>
-                <textarea class="form-group col-md-12" name="" id="otrosO" rows="2"></textarea>
-            </div>
-
-        </div>
-
-
-
-
-
-        <div class="row">
-            <div class="col-md-12">
-                <div class="text-center">
-                    <a href="javascript:void(0)" class="btn btn-success" onclick="formato4()">DESCARGAR</a>
-                </div>
-            </div>
-        </div>
-
-
-    </section>
-
-</div>
-
-<br><br><br>
-<div class="row">
-    <div class="col-md-12">
-        <div class="text-center">
-            <a href="javascript:void(0)" class="btn btn-success" onclick="enviar()">EXPORTAR INFORME</a>
-        </div>
     </div>
+
+    <div class="col-8 libro">
+        <section class="col-12">
+
+            <H3>Informe Estadisticó Anual sobre el Estado de los Egresados, Graduados y Titulados</H3>
+
+            <div class="row form-group">
+                <!-- Escuela Profesional y Año de Egreso -->
+                <div class="col-md-8">
+
+                    <fieldset>
+                        <legend>Escuela Profesional <label for="anioEgreso"><span class="col-form-label text-danger">*</span></label></legend>
+                        <select class="carrera form-control selectmultiple" name="carrera" data-live-search="true" id="carrera" x>
+                            <option value="0" selected>Seleccionar</option>
+                        </select>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Año de Egreso <label for="anioEgreso"><span class="col-form-label text-danger">*</span></label></legend>
+                        <select class="select2 form-control" name="anioEgreso" data-live-search="true" id="anioEgreso" x>
+                            <option value="0" selected>Seleccionar</option>
+                            <option value="2015">2015</option>
+                            <option value="2016">2016</option>
+                            <option value="2017">2017</option>
+                            <option value="2018">2018</option>
+                            <option value="2019">2019</option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                        </select>
+                    </fieldset>
+
+                </div>
+
+                <!-- cohorte -->
+                <div class="col-md-4">
+
+                    <fieldset>
+                        <legend>Cohorte <label for="anioEgreso"><span class="col-form-label text-danger">*</span></label></legend>
+                        <!-- desde -->
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <select class="select2 form-control" name="fechaInicio" data-live-search="true" id="fechaInicio" x>
+                                    <option value="0" selected>Desde</option>
+                                    <option value="2015">2015</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2024">2024</option>
+                                    <option value="2025">2025</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- hasta -->
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <select class="select2 form-control" name="fechaFin" data-live-search="true" id="fechaFin" x>
+                                    <option value="0" selected>Hasta</option>
+                                    <option value="2015">2015</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2024">2024</option>
+                                    <option value="2025">2025</option>
+                                </select>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                </div>
+            </div>
+
+            <!-- DATOS y observaciones-->
+            <fieldset>
+                <legend>Datos <label for="anioEgreso"><span class="col-form-label text-danger">*</span></label></legend>
+
+
+                <div class="row">
+
+                    <div class="form-group col-md-4">
+                        <label for="ingresantesPromocion">N° de Ingresantes por Promoción <span class="text-danger">*</span></label>
+                        <input type="number" class="form-control" id="ingresantesPromocion" name="ingresantesPromocion" required>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="egresadosPromocion">N° de Egresados<span class="text-danger">*</span></label>
+                        <input type="number" class="form-control" id="egresadosPromocion" name="egresadosPromocion" required>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="tiempoEsperando">N° de Egresados en el Tiempo Esperado<span class="text-danger">*</span></label>
+                        <input type="number" class="form-control" id="tiempoEsperando" name="tiempoEsperando" required>
+                    </div>
+
+
+                    <div class="form-group col-md-6">
+                        <label for="cantidadGraduados">N° de Egresados Graduados<span class="text-danger">*</span></label>
+                        <input type="number" class="form-control" id="cantidadGraduados" name="cantidadGraduados" required>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="cantidadTitulados">Cantidad de Titulados<span class="text-danger">*</span></label>
+                        <input type="number" class="form-control" id="cantidadTitulados" name="cantidadTitulados" required>
+                    </div>
+
+
+                    <div class="form-group col-md-12">
+                        <label for="observaciones">Observaciones</label>
+                        <textarea class="form-group col-md-12" name="" id="observaciones" rows="2"></textarea>
+                    </div>
+
+
+                </div>
+
+                <div class="row">
+
+                    <div class="form-group col-md-9">
+                        <label for="tomaDesiciones">Toma de desiciones</label>
+                        <textarea class="form-group col-md-12" name="" id="tomaDesiciones" rows="2"></textarea>
+                    </div>
+                    <div class="col-md-3 align-self-center">
+                        <div class="text-center">
+                            <a href="javascript:void(0)" class="btn btn-success" onclick="formato1()">DESCARGAR</a>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+
+
+
+        </section>
+    </div>
+
+
 </div>
-
-
 
 
 
@@ -791,9 +233,7 @@
 
 <script>
     //get Idiomas
-    $(".select2").select2({
-
-    });
+    $(".select2").select2({});
 
     function descargarpdf(response) {
         var blob = new Blob([response], {
@@ -1334,5 +774,818 @@
             descargarpdf(response);
 
         });
+    }
+
+    function verArchivo(id) {
+
+        var expresion = id;
+
+        console.log(expresion);
+
+        switch (expresion) {
+            case 1:
+                var informe1 = `
+                <section class="col-12">
+
+                    <H3>Informe Estadisticó Anual sobre el Estado de los Egresados, Graduados y Titulados</H3>
+
+                    <div class="row form-group">
+                        <!-- Escuela Profesional y Año de Egreso -->
+                        <div class="col-md-8">
+
+                            <fieldset>
+                                <legend>Escuela Profesional <label for="anioEgreso"><span class="col-form-label text-danger">*</span></label></legend>
+                                <select class="carrera form-control selectmultiple" name="carrera" data-live-search="true" id="carrera" x>
+                                    <option value="0" selected>Seleccionar</option>
+                                </select>
+                            </fieldset>
+
+                            <fieldset>
+                                <legend>Año de Egreso <label for="anioEgreso"><span class="col-form-label text-danger">*</span></label></legend>
+                                <select class="select2 form-control" name="anioEgreso" data-live-search="true" id="anioEgreso" x>
+                                    <option value="0" selected>Seleccionar</option>
+                                    <option value="2015">2015</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2024">2024</option>
+                                    <option value="2025">2025</option>
+                                </select>
+                            </fieldset>
+
+                        </div>
+
+                        <!-- cohorte -->
+                        <div class="col-md-4">
+
+                            <fieldset>
+                                <legend>Cohorte <label for="anioEgreso"><span class="col-form-label text-danger">*</span></label></legend>
+                                <!-- desde -->
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <select class="select2 form-control" name="fechaInicio" data-live-search="true" id="fechaInicio" x>
+                                            <option value="0" selected>Desde</option>
+                                            <option value="2015">2015</option>
+                                            <option value="2016">2016</option>
+                                            <option value="2017">2017</option>
+                                            <option value="2018">2018</option>
+                                            <option value="2019">2019</option>
+                                            <option value="2020">2020</option>
+                                            <option value="2021">2021</option>
+                                            <option value="2022">2022</option>
+                                            <option value="2023">2023</option>
+                                            <option value="2024">2024</option>
+                                            <option value="2025">2025</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- hasta -->
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <select class="select2 form-control" name="fechaFin" data-live-search="true" id="fechaFin" x>
+                                            <option value="0" selected>Hasta</option>
+                                            <option value="2015">2015</option>
+                                            <option value="2016">2016</option>
+                                            <option value="2017">2017</option>
+                                            <option value="2018">2018</option>
+                                            <option value="2019">2019</option>
+                                            <option value="2020">2020</option>
+                                            <option value="2021">2021</option>
+                                            <option value="2022">2022</option>
+                                            <option value="2023">2023</option>
+                                            <option value="2024">2024</option>
+                                            <option value="2025">2025</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                        </div>
+                    </div>
+
+                    <!-- DATOS y observaciones-->
+                    <fieldset>
+                        <legend>Datos <label for="anioEgreso"><span class="col-form-label text-danger">*</span></label></legend>
+
+
+                        <div class="row">
+
+                            <div class="form-group col-md-4">
+                                <label for="ingresantesPromocion">N° de Ingresantes por Promoción <span class="text-danger">*</span></label>
+                                <input type="number" class="form-control" id="ingresantesPromocion" name="ingresantesPromocion" required>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label for="egresadosPromocion">N° de Egresados<span class="text-danger">*</span></label>
+                                <input type="number" class="form-control" id="egresadosPromocion" name="egresadosPromocion" required>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label for="tiempoEsperando">N° de Egresados en el Tiempo Esperado<span class="text-danger">*</span></label>
+                                <input type="number" class="form-control" id="tiempoEsperando" name="tiempoEsperando" required>
+                            </div>
+
+
+                            <div class="form-group col-md-6">
+                                <label for="cantidadGraduados">N° de Egresados Graduados<span class="text-danger">*</span></label>
+                                <input type="number" class="form-control" id="cantidadGraduados" name="cantidadGraduados" required>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="cantidadTitulados">Cantidad de Titulados<span class="text-danger">*</span></label>
+                                <input type="number" class="form-control" id="cantidadTitulados" name="cantidadTitulados" required>
+                            </div>
+
+
+                            <div class="form-group col-md-12">
+                                <label for="observaciones">Observaciones</label>
+                                <textarea class="form-group col-md-12" name="" id="observaciones" rows="2"></textarea>
+                            </div>
+
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="form-group col-md-9">
+                                <label for="tomaDesiciones">Toma de desiciones</label>
+                                <textarea class="form-group col-md-12" name="" id="tomaDesiciones" rows="2"></textarea>
+                            </div>
+                            <div class="col-md-3 align-self-center">
+                                <div class="text-center">
+                                    <a href="javascript:void(0)" class="btn btn-success" onclick="formato1()">DESCARGAR</a>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+
+
+
+                    </section>
+                    <br><br><br>
+                `;
+
+                $(".libro").html(informe1);
+                $(".select2").select2({});
+
+
+
+                break;
+            case 2:
+                var informe2 = `
+                    <section class="col-12">
+
+                    <h2>Informe Semestral y Anual sobre la Evaluación de Resultados de Planes de Accion</h2>
+
+                    <div class="row">
+                        <div class="col-md-9">
+                            <fieldset>
+                                <legend>Escuela Profesional<span class="text-danger">*</span> <label for="anioEgreso"><span class="col-form-label text-danger">*</span></label></legend>
+                                <div class="form-group">
+                                    <select class="carrera form-control selectmultiple" name="carreraf2" data-live-search="true" id="carreraf2" x>
+                                        <option value="0" selected>Seleccionar</option>
+                                    </select>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="col-md-3">
+                            <fieldset>
+                                <legend>Semestre<span class="text-danger">*</span> <label for="anioEgreso"><span class="col-form-label text-danger">*</span></label></legend>
+                                <select class="select2 form-control" data-live-search="true" id="añoysemestre">
+                                    <option value="0" selected>Seleccionar</option>
+                                    <option value="2018-I">2018-I</option>
+                                    <option value="2018-II">2018-II</option>
+                                    <option value="2019-I">2019-I</option>
+                                    <option value="2019-II">2019-II</option>
+                                    <option value="2020-I">2020-I</option>
+                                    <option value="2020-II">2020-II</option>
+                                    <option value="2021-I">2021-I</option>
+                                    <option value="2021-II">2021-II</option>
+                                    <option value="2022-I">2022-I</option>
+                                    <option value="2022-II">2022-II</option>
+                                    <option value="2023-I">2023-I</option>
+                                    <option value="2023-II">2023-II</option>
+                                </select>
+                            </fieldset>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <fieldset>
+                                <legend>Representación de Egresados en el Consejo de Facultad y Consejo Universitario<span class="text-danger">*</span></legend>
+                                <div class="row">
+                                    <div class="col-md-3 align-self-center">
+                                        <label for="egresadosConsejo">Seleccionar<span class="text-danger">*</span></label>
+                                        <select class="select2 form-control" name="egresadosConsejoUniversiatario[]" data-live-search="true" id="egresadosConsejoUniversiatario" x>
+                                            <option value="0" selected></option>
+                                            <option value="si">Si</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <label for="egresadosConsejo">OBSERVACIONES (Si no cumplió proponer planes de mejora y con plazos)</label>
+                                        <textarea class="form-group col-md-12" name="" id="egresadosConsejoUniversiatarioO" rows="2"></textarea>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="col-md-6">
+                            <fieldset>
+                                <legend>Programas de educación continua<span class="text-danger">*</span></legend>
+                                <div class="row">
+                                    <div class="col-md-3 align-self-center">
+                                        <label for="programasEducacionContinua">Seleccionar <span class="text-danger">*</span></label>
+                                        <select class="select2 form-control" name="programasEducacionContinua" data-live-search="true" id="programasEducacionContinua" x>
+                                            <option value="0" selected>Seleccionar</option>
+                                            <option value="si">Si</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <label for="programasEducacionContinuaO">OBSERVACIONES (Si no cumplió proponer planes de mejora y con plazos)</label>
+                                        <textarea class="form-group col-md-12" name="" id="programasEducacionContinuaO" rows="2"></textarea>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <fieldset>
+                                <legend>Asociacion de Egresados<span class="text-danger">*</span></legend>
+                                <div class="row">
+                                    <div class="col-md-3 align-self-center">
+                                        <label for="egresadosConsejo">Seleccionar<span class="text-danger">*</span></label>
+                                        <select class="select2 form-control" name="asociacionEegresados[]" data-live-search="true" id="asociacionEegresados" x>
+                                            <option value="0" selected>Seleccionar</option>
+                                            <option value="si">Si</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <label for="asociacionEegresadosO">OBSERVACIONES (Si no cumplió proponer planes de mejora y con plazos) <span class="text-danger">*</span></label>
+                                        <textarea class="form-group col-md-12" name="" id="asociacionEegresadosO" rows="2"></textarea>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="col-md-6">
+                            <fieldset>
+                                <legend>Premiacion o reconocimiento a <br> Egresados destacados<span class="text-danger">*</span></legend>
+                                <div class="row">
+                                    <div class="col-md-3 align-self-center">
+                                        <label for="reconocimientoEgresados">Seleccionar<span class="text-danger">*</span></label>
+                                        <select class="select2 form-control" name="reconocimientoEgresados[]" data-live-search="true" id="reconocimientoEgresados" x>
+                                            <option value="0" selected>Seleccionar</option>
+                                            <option value="si">Si</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-9">
+                                        <label for="reconocimientoEgresadosO">OBSERVACIONES (Si no cumplió proponer planes de mejora y con plazos) <span class="text-danger">*</span></label>
+                                        <textarea class="form-group col-md-12" name="" id="reconocimientoEgresadosO" rows="2"></textarea>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <fieldset>
+                                <legend>Participacion en el desarrollo de investigaciones basicas y aplicadas de <br>interés local, regional nacional e internacional<span class="text-danger">*</span></legend>
+
+                                <div class="row">
+
+                                    <div class="col-md-3 align-self-center">
+                                        <label for="desarrolloInvestigaciones">Seleccionar<span class="text-danger">*</span></label>
+                                        <select class="select2 form-control" name="desarrolloInvestigaciones[]" data-live-search="true" id="desarrolloInvestigaciones" x>
+                                            <option value="0" selected>Seleccionar</option>
+                                            <option value="si">Si</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-9">
+                                        <label for="desarrolloInvestigacionesO">OBSERVACIONES (Si no cumplió proponer planes de mejora <br>y con plazos) <span class="text-danger">*</span></label>
+                                        <textarea class="form-group col-md-12" name="" id="desarrolloInvestigacionesO" rows="2"></textarea>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="col-md-6">
+                            <fieldset>
+                                <legend>Publicación de resultados e investigacion<span class="text-danger">*</span></legend>
+                                <div class="row">
+
+                                    <div class="col-md-3 align-self-center">
+                                        <label for="desarrolloInvestigaciones">Seleccionar<span class="text-danger">*</span></label>
+                                        <select class="select2 form-control" name="resultadosInvestigacion[]" data-live-search="true" id="resultadosInvestigacion" x>
+                                            <option value="0" selected>Seleccionar</option>
+                                            <option value="si">Si</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-9">
+                                        <label for="resultadosInvestigacionO">OBSERVACIONES (Si no cumplió proponer planes de mejora <br>y con plazos) <span class="text-danger">*</span></label>
+                                        <textarea class="form-group col-md-12" name="" id="resultadosInvestigacionO" rows="2"></textarea>
+                                    </div>
+
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <fieldset>
+                                <legend>Promoción de la movilidad de egresados que destacan en investigacion<span class="text-danger">*</span></legend>
+                                <div class="row">
+
+                                    <div class="col-md-3 align-self-center">
+                                        <label for="desarrolloInvestigaciones">Seleccionar<span class="text-danger">*</span></label>
+                                        <select class="select2 form-control" name="destacadosInvestigacion[]" data-live-search="true" id="destacadosInvestigacion" x>
+                                            <option value="0" selected>Seleccionar</option>
+                                            <option value="si">Si</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-9">
+                                        <label for="destacadosInvestigacionO">OBSERVACIONES (Si no cumplió proponer planes de <br>mejora y con plazos) <span class="text-danger">*</span></label>
+                                        <textarea class="form-group col-md-12" name="" id="destacadosInvestigacionO" rows="2"></textarea>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+
+
+                        <div class="col-md-6">
+                            <fieldset>
+                                <legend>Entre otros.<span class="text-danger">*</span></legend>
+                                <div class="row">
+
+                                    <div class="col-md-3 align-self-center">
+                                        <label for="desarrolloInvestigaciones">Seleccionar<span class="text-danger">*</span></label>
+                                        <select class="select2 form-control" name="entreOtros[]" data-live-search="true" id="entreOtros" x>
+                                            <option value="0" selected>Seleccionar</option>
+                                            <option value="si">Si</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-9">
+                                        <label for="egresadosConsejo">OBSERVACIONES (Si no cumplió proponer planes de mejora y con plazos) <span class="text-danger">*</span></label>
+                                        <textarea class="form-group col-md-12" name="" id="entreOtrosO" rows="2"></textarea>
+                                    </div>
+
+                                </div>
+
+                            </fieldset>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-10">
+
+                            <fieldset>
+                                <legend>Participación como grupo de interés en los procesos de:<span class="text-danger">*</span></legend>
+                                <div class="row">
+
+                                    <div class="col-md-5 align-self-center">
+
+                                        <label for="educacionContinua">
+                                            <li>Revisión periódica de sus politicas y objetivos institucionales<span class="text-danger">*</span></li>
+                                        </label><br>
+
+                                        <label for="educacionContinua">
+                                            <li>Revisión de la pertinencia del perfil del Egresado<span class="text-danger">*</span></li>
+                                        </label><br>
+                                        <label for="educacionContinua">
+                                            <li>Revisión, evaluación y actualización de los currículos<span class="text-danger">*</span></li>
+                                        </label><br>
+                                        <label for="educacionContinua">
+                                            <li>Otros</li>
+                                        </label><br>
+
+                                    </div>
+
+                                    <div class="col-md-7">
+                                        <label for="desarrolloInvestigaciones">Seleccionar<span class="text-danger">*</span></label>
+                                        <select class="select2 form-control" name="participacionProcesos[]" data-live-search="true" id="participacionProcesos" x>
+                                            <option value="0" selected>Seleccionar</option>
+                                            <option value="si">Si</option>
+                                            <option value="no">No</option>
+                                        </select>
+
+                                        <label for="egresadosConsejo">OBSERVACIONES (Si no cumplió proponer planes de mejora y con plazos) <span class="text-danger">*</span></label>
+                                        <textarea class="form-group col-md-12" name="" id="participacionProcesosO" rows="2"></textarea>
+                                    </div>
+
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="col-md-2 align-self-center">
+                            <div class="text-center">
+                                <a href="javascript:void(0)" class="btn btn-success" onclick="formato2()">DESCARGAR</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    </section>
+                `;
+
+                $(".libro").html(informe2);
+                $(".select2").select2({});
+
+                break;
+            case 3:
+                var informe3 = `
+                <section class="col-12">
+
+                    <h2>Informe Estadistico Anual y Semestral de Inserción Laboral</h2>
+                    <br>
+
+
+                    <div class="row">
+                        <div class="col-md-9">
+                            <fieldset>
+                                <legend>Escuela Profesional<span class="text-danger">*</span></legend>
+                                <div class="form-group">
+                                    <select class="carrera form-control selectmultiple" name="carreraf3" data-live-search="true" id="carreraf3" x>
+                                        <option value="0" selected>Seleccionar</option>
+                                    </select>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="col-md-3">
+                            <fieldset>
+                                <legend>Año y Semestre<span class="text-danger">*</span></legend>
+                                <select class="select2 form-control" data-live-search="true" id="añoysemestref3">
+                                    <option value="0" selected>Seleccionar</option>
+                                    <option value="2018-I">2018-I</option>
+                                    <option value="2018-II">2018-II</option>
+                                    <option value="2019-I">2019-I</option>
+                                    <option value="2019-II">2019-II</option>
+                                    <option value="2020-I">2020-I</option>
+                                    <option value="2020-II">2020-II</option>
+                                    <option value="2021-I">2021-I</option>
+                                    <option value="2021-II">2021-II</option>
+                                    <option value="2022-I">2022-I</option>
+                                    <option value="2022-II">2022-II</option>
+                                    <option value="2023-I">2023-I</option>
+                                    <option value="2023-II">2023-II</option>
+                                </select>
+                            </fieldset>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+
+                        <div class="col-md-4">
+                            <fieldset>
+                                <legend>Total de Egresados<span class="text-danger">*</span></legend>
+                                <input type="text" class="form-control" id="totalEgresados" name="totalEgresados" required>
+                            </fieldset>
+                        </div>
+
+                        <div class="col-md-4">
+                            <fieldset>
+                                <legend>Laboran en el campo de su Carrera<span class="text-danger">*</span></legend>
+                                <input type="number" class="form-control" id="laboranCampo" name="laboranCampo" required>
+                            </fieldset>
+                        </div>
+
+                        <div class="col-md-4">
+                            <fieldset>
+                                <legend>No laboran en el campo de su carrera<span class="text-danger">*</span></legend>
+                                <input type="number" class="form-control" id="noLaboranCampo" name="noLaboranCampo" required>
+                            </fieldset>
+                        </div>
+
+                        <div class="col-md-4">
+                            <fieldset>
+                                <legend>Labora forma dependiente<span class="text-danger">*</span></legend>
+                                <input type="number" class="form-control" id="laboranDependientes" name="laboranDependientes" required>
+                            </fieldset>
+                        </div>
+
+                        <div class="col-md-4">
+                            <fieldset>
+                                <legend>Labora forma independiente<span class="text-danger">*</span></legend>
+                                <input type="number" class="form-control" id="laboranIndependientes" name="laboranIndependientes" required>
+                            </fieldset>
+                        </div>
+
+                        <div class="col-md-4">
+                            <fieldset>
+                                <legend>Nombrado<span class="text-danger">*</span></legend>
+                                <input type="number" class="form-control" id="nombrado" name="nombrado" required>
+                            </fieldset>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-4">
+                            <fieldset>
+                                <legend>Contratado<span class="text-danger">*</span></legend>
+                                <input type="number" class="form-control" id="contratado" name="contratado" required>
+                            </fieldset>
+                        </div>
+
+                        <div class="col-md-4">
+                            <fieldset>
+                                <legend>Sector Público<span class="text-danger">*</span></legend>
+                                <input type="number" class="form-control" id="sectorPublico" name="sectorPublico" required>
+                            </fieldset>
+                        </div>
+
+                        <div class="col-md-4">
+                            <fieldset>
+                                <legend>Sector Privado<span class="text-danger">*</span></legend>
+                                <input type="number" class="form-control" id="sectorPrivado" name="sectorPrivado" required>
+                            </fieldset>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-8">
+                            <fieldset>
+                                <legend>Comentarios<span class="text-danger">*</span></legend>
+                                <textarea class="form-group col-md-12" name="" id="comentarios" rows="2"></textarea>
+                            </fieldset>
+                        </div>
+
+                        <div class="col-md-4 align-self-center">
+                            <div class="text-center">
+                                <a href="javascript:void(0)" class="btn btn-success" onclick="formato3()">DESCARGAR</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    </section>
+                `;
+
+                $(".libro").html(informe3);
+                $(".select2").select2({});
+                break;
+            case 4:
+                var informe4 = `
+                <section class="col-12">
+
+                    <h2>Informe Estadistico Semestral y Anual de la mejora de la Inserción Laboral de los Egresados</h2>
+                    <br>
+
+
+                    <div class="row">
+                        <div class="col-md-9">
+                            <fieldset>
+                                <legend>Escuela Profesional<span class="text-danger">*</span></legend>
+                                <div class="form-group">
+                                    <select class="carrera form-control selectmultiple" name="carreraf4" data-live-search="true" id="carreraf4" x>
+                                        <option value="0" selected>Seleccionar</option>
+                                    </select>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="col-md-3">
+                            <fieldset>
+                                <label for="añoysemestref4">Año y <br> Semestre<span class="text-danger">*</span></label>
+                                <select class="select2 form-control" data-live-search="true" id="añoysemestref4">
+                                    <option value="0" selected>Seleccionar</option>
+                                    <option value="2018-I">2018-I</option>
+                                    <option value="2018-II">2018-II</option>
+                                    <option value="2019-I">2019-I</option>
+                                    <option value="2019-II">2019-II</option>
+                                    <option value="2020-I">2020-I</option>
+                                    <option value="2020-II">2020-II</option>
+                                    <option value="2021-I">2021-I</option>
+                                    <option value="2021-II">2021-II</option>
+                                    <option value="2022-I">2022-I</option>
+                                    <option value="2022-II">2022-II</option>
+                                    <option value="2023-I">2023-I</option>
+                                    <option value="2023-II">2023-II</option>
+                                </select>
+                            </fieldset>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <fieldset>
+                                <legend>Ferias Laborales<span class="text-danger">*</span></legend>
+                                <div class="row">
+                                    <div class="col-md-3 align-self-center">
+                                        <label for="feriaslaborales">Seleccionar <span class="text-danger">*</span></label>
+                                        <select class="select2 form-control" name="feriaslaborales" data-live-search="true" id="feriaslaborales" x>
+                                            <option value="0" selected>Seleccionar</option>
+                                            <option value="si">Si</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <label for="feriaslaboralesO">OBSERVACIONES (Si no cumplió proponer planes de mejora y con plazos)</label>
+                                        <textarea class="form-group col-md-12" name="feriaslaboralesO" id="feriaslaboralesO" rows="2"></textarea>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="col-md-6">
+                            <fieldset>
+                                <legend>Programas de educación continua<span class="text-danger">*</span></legend>
+                                <div class="row">
+                                    <div class="col-md-3 align-self-center">
+                                        <label for="programasEducacionContinua">Seleccionar <span class="text-danger">*</span></label>
+                                        <select class="select2 form-control" name="programasEducacionContinua" data-live-search="true" id="programasEducacionContinua" x>
+                                            <option value="0" selected>Seleccionar</option>
+                                            <option value="si">Si</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <label for="programasEducacionContinuaO">OBSERVACIONES (Si no cumplió proponer planes de mejora y con plazos)</label>
+                                        <textarea class="form-group col-md-12" name="programasEducacionContinuaO" id="programasEducacionContinuaO" rows="2"></textarea>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <fieldset>
+                                <legend>Showroom<span class="text-danger">*</span></legend>
+                                <div class="row">
+                                    <div class="col-md-3 align-self-center">
+                                        <label for="showroom">Seleccionar <span class="text-danger">*</span></label>
+                                        <select class="select2 form-control" name="showroom" data-live-search="true" id="showroom" x>
+                                            <option value="0" selected>Seleccionar</option>
+                                            <option value="si">Si</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <label for="programasEducacionContinuaO">OBSERVACIONES (Si no cumplió proponer planes de mejora y con plazos)</label>
+                                        <textarea class="form-group col-md-12" name="programasEducacionContinuaO" id="programasEducacionContinuaO" rows="2"></textarea>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="col-md-6">
+                            <fieldset>
+                                <legend>Eventos de empleabilidad<span class="text-danger">*</span></legend>
+                                <div class="row">
+                                    <div class="col-md-3 align-self-center">
+                                        <label for="empleabilidad">Seleccionar <span class="text-danger">*</span></label>
+                                        <select class="select2 form-control" name="empleabilidad" data-live-search="true" id="empleabilidad" x>
+                                            <option value="0" selected>Seleccionar</option>
+                                            <option value="si">Si</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <label for="empleabilidadO">OBSERVACIONES (Si no cumplió proponer planes de mejora y con plazos)</label>
+                                        <textarea class="form-group col-md-12" name="empleabilidadO" id="empleabilidadO" rows="2"></textarea>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <fieldset>
+                                <legend>Bolsa Labora<span class="text-danger">*</span></legend>
+                                <div class="row">
+                                    <div class="col-md-3 align-self-center">
+                                        <label for="bolsalaboral">Seleccionar <span class="text-danger">*</span></label>
+                                        <select class="select2 form-control" name="bolsalaboral" data-live-search="true" id="bolsalaboral" x>
+                                            <option value="0" selected>Seleccionar</option>
+                                            <option value="si">Si</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <label for="bolsalaboralO">OBSERVACIONES (Si no cumplió proponer planes de mejora y con plazos)</label>
+                                        <textarea class="form-group col-md-12" name="" id="bolsalaboralO" rows="2"></textarea>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="col-md-6">
+                            <fieldset>
+                                <legend>Manejo de redes sociales<span class="text-danger">*</span></legend>
+                                <div class="row">
+                                    <div class="col-md-3 align-self-center">
+                                        <label for="redessociales">Seleccionar <span class="text-danger">*</span></label>
+                                        <select class="select2 form-control" name="redessociales" data-live-search="true" id="redessociales" x>
+                                            <option value="0" selected>Seleccionar</option>
+                                            <option value="si">Si</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <label for="redessocialesO">OBSERVACIONES (Si no cumplió proponer planes de mejora y con plazos)</label>
+                                        <textarea class="form-group col-md-12" name="redessocialesO" id="redessocialesO" rows="2"></textarea>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-8">
+                            <fieldset>
+                                <legend>Otros<span class="text-danger">*</span></legend>
+                                <div class="row">
+                                    <div class="col-md-3 align-self-center">
+                                        <label for="otros">Seleccionar <span class="text-danger">*</span></label>
+                                        <select class="select2 form-control" name="otros" data-live-search="true" id="otros" x>
+                                            <option value="0" selected>Seleccionar</option>
+                                            <option value="si">Si</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <label for="otrosO">OBSERVACIONES (Si no cumplió proponer planes de mejora y con plazos)</label>
+                                        <textarea class="form-group col-md-12" name="" id="otrosO" rows="2"></textarea>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="text-center">
+                                <a href="javascript:void(0)" class="btn btn-success" onclick="formato4()">DESCARGAR</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    </section>
+
+                `;
+
+                $(".libro").html(informe4);
+                $(".select2").select2({});
+                break;
+            default:
+                //este código se ejecutará si ninguno de los casos coincide con la expresión
+                break;
+        }
+        $(".select2").select2({});
+
+        $(".carrera").select2({
+                    ajax: {
+                        url: " " + base_url + "/solicitudempleo/getCarreras",
+                        type: "post",
+                        dataType: 'json',
+                        delay: 250,
+                        data: function(params) {
+                            return {
+                                palabraClave: params.term // search term
+                            };
+                        },
+                        processResults: function(response) {
+                            return {
+                                results: response
+                            };
+                        },
+                        cache: true
+                    }
+                });
+
+
     }
 </script>
