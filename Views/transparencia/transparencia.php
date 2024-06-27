@@ -32,6 +32,79 @@ $idmaestria = $año->listaFacultadpostgrado();
 <div class="pt-1">
     <div class="row d-flex justify-content-around ">
         <div class="col-12 col-md-1">
+            <h1>2024</h1>
+        </div>
+        <div class="col-3 col-md-3 col-lg-2   fondo m-1">
+            <a href="https://docs.google.com/spreadsheets/d/1o8VcHbnSDCtZwnT3nvh5sb4gx16TmhWI/edit?usp=sharing&ouid=115190337207338943725&rtpof=true&sd=true" target="_blank" class=" m-3  p-1 ">
+                <div class="col-12 text-right col-md-12">
+                    <h1 class="mostaza "><i class="icon fas fa-graduation-cap"></i></h1>
+                    <br>
+                </div>
+                <div class="col-12 text-left col-md-12">
+                    <h5 class="">Grados de Bachiller</h5>
+                    <h5>122</h5>
+                </div>
+            </a>
+        </div>
+        <div class="col-4 col-md-3 col-lg-2   fondo m-1">
+            <a href="https://docs.google.com/spreadsheets/d/19DkHi2PGzUZnr0GFEGMFtyu1NmyGLbYc/edit?usp=sharing&ouid=115190337207338943725&rtpof=true&sd=true" target="_blank" class=" m-3  p-1 ">
+                <div class="col-12 text-right col-md-12">
+                    <h1 class="mostaza "><i class="icon fas fa-user-graduate"></i></h1>
+                    <br>
+                </div>
+                <div class="col-12 text-left col-md-12">
+                    <h5 class="">Títulos Profesionales</h5>           
+                    <h5>67</h5>
+                </div>
+            </a>
+        </div>
+        <div class="col-4 col-md-3 col-lg-2   fondo m-1">
+            <a href="https://docs.google.com/spreadsheets/d/1ia-JfjRi0l22ZJeXazWGZgWKZzsVGUaG/edit?usp=sharing&ouid=115190337207338943725&rtpof=true&sd=true" target="_blank" class=" m-3  p-1 ">
+                <div class="col-12 text-right col-md-12">
+                    <h1 class="mostaza "><i class="icon fas fa-user-graduate"></i><i class="icon fas fa-user-graduate"></i></h1>
+                    <br>
+                </div>
+                <div class="col-12 text-left col-md-12">
+                    <h5 class="">Segundas Especialidades Profesionales</h5>
+                    <h5>65</h5>
+                </div>
+            </a>
+        </div>
+        <div class="col-4 col-md-3 col-lg-2   fondo m-1">
+            <a href="https://docs.google.com/spreadsheets/d/1Ql4ImgPgUCuBL-rU1dAOj8F-TnAuOHTd/edit?usp=sharing&ouid=115190337207338943725&rtpof=true&sd=true" target="_blank" class=" m-3  p-1 ">
+                <div class="col-12 text-right col-md-12">
+                    <h1 class="mostaza "><i class="far fa-university"></i></h1>
+                    <br>
+                </div>
+                <div class="col-12 text-left col-md-12">
+                    <h5 class="">Maestrias</h5>
+                    <h5>69</h5>
+                </div>
+            </a>
+        </div>
+        <div class="col-4 col-md-3 col-lg-2   fondo m-1">
+            <a href="https://docs.google.com/spreadsheets/d/1SgTUpFidhfxyCeq3cqP-jT1tY56BIL7f/edit?usp=sharing&ouid=115190337207338943725&rtpof=true&sd=true" target="_blank" class=" m-3  p-1 ">
+                <div class="col-12 text-right col-md-12">
+                    <h1 class="mostaza"><i class="far fa-university"></i><i class="far fa-university"></i></h1>
+                    <br>
+                </div>
+                <div class="col-12 text-left col-md-12">
+                    <h5 class="">Doctorados</h5>
+                    <h5>17</h5>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="d-flex align-items-end flex-column">
+        <div class="p-2">
+            <h5>Al 31 de diciembre 2023</h5>
+        </div>
+    </div>
+</div>
+
+<div class="pt-1">
+    <div class="row d-flex justify-content-around ">
+        <div class="col-12 col-md-1">
             <h1>2023</h1>
         </div>
         <div class="col-3 col-md-3 col-lg-2   fondo m-1">
