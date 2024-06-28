@@ -86,6 +86,19 @@ function footerexpoferiaxvlll($data = "")
 }
 
 
+function headferialaborlaxvll($data = "")
+{
+    $view_header = "Views/templateferialaboralxvlll/header.php";
+    require_once($view_header);
+}
+function footerferialaborlaxvll($data = "")
+{
+    $view_footer = "Views/templateferialaboralxvlll/footer.php";
+    require_once($view_footer);
+}
+
+
+
 
 function obj($data = "")
 {

@@ -14,8 +14,8 @@ class ferialaboralxvlll extends Controllers
 		$data['page_title'] = "ferialaboralxvlll";
 		$data['page_name'] = "ferialaboralxvlll";
 
-		require_once("Models/ExpoferialaboralxvlladminModel.php");
-		$obj = new ExpoferialaboralxvlladminModel();
+		require_once("Models/FerialaboralxvllladminModel.php");
+		$obj = new FerialaboralxvllladminModel();
 		
 		$arrData  =  array();
 		$arrData = $obj->listPonencias();
@@ -45,9 +45,9 @@ class ferialaboralxvlll extends Controllers
 		$data['page_title'] = "ferialaboralxvlll";
 		$data['page_name'] = "ferialaboralxvlll";
 
-		require_once("Models/ExpoferialaboralxvlladminModel.php");
-		$obj = new ExpoferialaboralxvlladminModel();
-		$obj2 = new ExpoferialaboralxvlladminModel();
+		require_once("Models/FerialaboralxvllladminModel.php");
+		$obj = new FerialaboralxvllladminModel();
+		$obj2 = new FerialaboralxvllladminModel();
 
 		$arrData  =  array();
 		$arrData = $obj->listPonenciasdia7();
@@ -68,8 +68,8 @@ class ferialaboralxvlll extends Controllers
 		$data['page_title'] = "ferialaboralxvlll";
 		$data['page_name'] = "ferialaboralxvlll";
 
-		require_once("Models/ExpoferialaboralxvlladminModel.php");
-		$obj = new ExpoferialaboralxvlladminModel();
+		require_once("Models/FerialaboralxvllladminModel.php");
+		$obj = new FerialaboralxvllladminModel();
 
 		$arrData  =  array();
 		$arrData = $obj->listGaleriaweb();
@@ -87,8 +87,8 @@ class ferialaboralxvlll extends Controllers
 		$data['page_title'] = "ferialaboralxvlll";
 		$data['page_name'] = "ferialaboralxvlll";
 
-		require_once("Models/ExpoferialaboralxvlladminModel.php");
-		$obj = new ExpoferialaboralxvlladminModel();
+		require_once("Models/FerialaboralxvllladminModel.php");
+		$obj = new FerialaboralxvllladminModel();
 
 		$arrData  =  array();
 		$arrData = $obj->listGaleriaweb();
