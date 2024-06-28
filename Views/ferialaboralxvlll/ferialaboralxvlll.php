@@ -159,20 +159,20 @@
                 </div>
             </section>
         </div>
-        <div class="col-md-4 text-left">
+        <div class="col-md-4 text-left texto_azul">
             <h2>Que ofrece la feria</h2>
             <br><br>
-            <h3><i class="fas fa-check-square"></i> &nbsp; Charlas presenciales y stands virtuales</h3>
-            <h3><i class="fas fa-check-square"></i> &nbsp; Acceso a muchas empresas en un solo lugar</h3>
-            <h3><i class="fas fa-check-square"></i> &nbsp; Oportunidades labotales</h3>
-            <h3><i class="fas fa-check-square"></i> &nbsp; Conocer el mercado laboral y sus necesidades </h3>
-            <h3><i class="fas fa-check-square"></i> &nbsp; Contacto directo con recultadores </h3>
+            <h4><span class=""><i class="fas fa-check-square"></i></span> &nbsp; Charlas presenciales y stands virtuales</h4>
+            <h4><i class="fas fa-check-square"></i> &nbsp; Acceso a muchas empresas en un solo lugar</h4>
+            <h4><i class="fas fa-check-square"></i> &nbsp; Oportunidades labotales</h4>
+            <h4><i class="fas fa-check-square"></i> &nbsp; Conocer el mercado laboral y sus necesidades </h4>
+            <h4><i class="fas fa-check-square"></i> &nbsp; Contacto directo con recultadores </h4>
         </div>
         <div class="col-md-2">
             <h1 class="titulo" style="font-weight: 900;"><b>+ 3649</b></h1>
-            <h5>Ofertas laborales activas</h5>
+            <h5 class="texto_azul">Ofertas laborales activas</h5>
             <h1 class="titulo" style="font-weight: 900;"><b>84 %</b></h1>
-            <h5>De nuestros egresados actualmente trabajan</h5>
+            <h5 class="texto_azul">De nuestros egresados actualmente trabajan</h5>
             <br><br><br>
         </div>
     </div>

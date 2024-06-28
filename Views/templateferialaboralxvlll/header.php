@@ -49,6 +49,9 @@
         --celeste: #3b8acf;
 
     }
+    .texto_azul{
+        color: var(--azul);
+    }
 
     .nav-barxv {
         padding: 10px;
@@ -225,7 +228,7 @@
 
 
 <div class="text-center">
-    <img src="<?= media() ?>/archivos/ferialaboralxvlll/home_banner.png" style="width: 100%; height: 500px;" alt="">
+    <img src="<?= media() ?>/archivos/ferialaboralxvlll/home_banner.png" style="width:100%; max-height: 80vh; " alt="">
 </div>
 <header class="d-flex justify-content-around">
 
@@ -266,8 +269,8 @@
 
 <style>
     .titulo {
-        font-size: 55px;
+        font-size: 40px;
         font-weight: 900;
-        color: #003366;
+     
     }
 </style>
