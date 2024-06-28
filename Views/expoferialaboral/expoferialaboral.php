@@ -191,6 +191,20 @@ $n = 1;
     <aside>
         <div class="contenedor-temario" id="temario">
             <h4 class="text-center">Expoferia Laboral</h4>
+
+            <br><br>
+            <h4>2024</h4>
+            <ul class="lista">
+                <li class="activo">
+                    <div class="itemY">
+                        <h1 data-id="Documentos\MYG\Cuestionario-SISEU.pdf"></h1>
+                        <a href="<?= base_url(); ?>/ferialaboralxvlll" target="_blank">
+                            <h5>Feria Laboral Ciencias Básicas y Tecnológicas (11 de julio)</h5>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+            <br><br>
             <br><br>
             <h4>2023</h4>
             <ul class="lista">
@@ -230,7 +244,7 @@ $n = 1;
                             <h5>Ciencias Básicas y Tecnológicas (18 al 20 de octubre)</h5>
                         </a>
                     </div>
-                </li>             
+                </li>
             </ul>
             <br><br>
             <h4>2021</h4>

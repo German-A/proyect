@@ -67,9 +67,79 @@
 
 
 <div class="contenedorxv2">
+
+    <div class="col-12 text-center ">
+        <div class="row d-flex justify-content-around">
+            <div class="col-md-2">
+                <h5>XVIII Feria Laboral</h5>
+            </div>
+            <div class="col-md-2">
+                <h5>Nosotros</h5>
+            </div>
+            <div class="col-md-2">
+                <h5>Empresas</h5>
+            </div>
+            <div class="col-md-2">
+                <h5>Ponentes</h5>
+            </div>
+            <div class="col-md-2">
+                <h5>Galería</h5>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <h1>youteube</h1>
+        </div>
+        <div class="col-md-4">
+            <h1>checks</h1>
+        </div>
+        <div class="col-md-2">
+            <h1>porcentaje</h1>
+        </div>
+    </div>
+
+    <style>
+        .btn_pagina_principal {
+            background-color: blue;         
+            padding: 10px;
+        }
+
+        .btn_pagina_principal:hover {
+            background-color: red;         
+            padding: 10px;
+            text-decoration: none;
+        }
+    </style>
+
+
+    <div class="row d-flex justify-content-around">
+        <div class="col-md-2  ">
+
+            <a href="javascript:void(0)" class="btn_pagina_principal d-flex justify-content-between text-white">
+                <p>i</p>
+                <p>Brochure</p>
+                <p>i</p>
+            </a>
+        </div>
+        <div class="col-md-2">
+            <p>i</p>
+            <a href="javascript:void(0)" class="">Cronograma</a>
+            <p>i</p>
+        </div>
+        <div class="col-md-2">
+            <p>i</p>
+            <a href="javascript:void(0)" class="">Bolsa de Trabajo</a>
+            <p>i</p>
+        </div>
+    </div>
+
+
     <br>
     <div class="col-12 text-center">
-        <h1 class="titulo"><b>Ponentes</b></h1>
+        <h1 class="titulo"><b>xxxxxxx</b></h1>
     </div>
     <br>
 
