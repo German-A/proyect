@@ -12,6 +12,7 @@ $perfiles = $obj->listaExpoferiaxvllLogoEmpresa();
 
 <div class="text-center">
     <h4>EMPRESAS</h4>
+    <h4>EMPRESAS</h4>
 </div>
 
 <br><br>
