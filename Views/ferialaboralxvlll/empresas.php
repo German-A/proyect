@@ -15,7 +15,7 @@
 
 <div class="contenedor ">
 
-    <div class="col-12">
+    <div class="col-12 m-2">
         <div class="row m-auto">
             <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/empresas/fondo_emp1.png" alt="" />
         </div>
@@ -23,7 +23,7 @@
 
     <br>
 
-    <div class="col-12">
+    <div class="col-12 m-2">
         <div class="row m-auto">
             <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/empresas/fondo_emp2.png" alt="" />
         </div>
@@ -31,22 +31,20 @@
 
     <div class="col-12 m-2">
         <div class="row">
-            <h5 class="text-center">
-                Empresas Participantes
-            </h5>
+            <h1 class="underline m-5">Empresas Participantes</h1>
         </div>
 
         <div class="row">
 
-            <div class="col-1 "> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/hortiftut.svg"></div>
-            <div class="col-1 "> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/colegio_administradores.png"></div>
+            <div class="col-4 col-md-2 "> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/autopista_del_norte.png"></div>
+            <div class="col-4 col-md-2 "> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/bravo_constructora.png"></div>
+            <div class="col-4 col-md-2 "> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/centro_empleo.png"></div>
+            <div class="col-4 col-md-2 "> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/corlad.png"></div>
 
-            <div class="col-1 "> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/hortiftut.svg"></div>
-            <div class="col-1 "> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/colegio_administradores.png"></div>
-            <div class="col-1 "> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/hortiftut.svg"></div>
-            <div class="col-1 "> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/colegio_administradores.png"></div>
-            <div class="col-1 "> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/hortiftut.svg"></div>
-            <div class="col-1 "> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/colegio_administradores.png"></div>
+            <div class="col-4 col-md-2 "> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/grupo_rocio.png"></div>
+            <div class="col-4 col-md-2 "> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/hortifrud.png"></div>
+            <div class="col-4 col-md-2 "> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/imcop.png"></div>
+            <div class="col-4 col-md-2 "> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/mota_engil.jpg"></div>
 
         </div>
     </div>

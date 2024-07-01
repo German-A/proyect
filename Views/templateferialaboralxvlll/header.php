@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha512-L7MWcK7FNPcwNqnLdZq86lTHYLdQqZaz5YcAgE+5cnGmlw8JT03QB2+oxL100UeB6RlzZLUxCGSS4/++mNZdxw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <meta name="theme-color" content="#009688">
@@ -272,6 +271,29 @@
     .titulo {
         font-size: 40px;
         font-weight: 900;
-
     }
+
+    .underline {
+            color: var(--azul);
+            display: inline-block;
+            position: relative;
+        }
+
+        .underline:after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            transform: scaleX(1);
+            height: 5px;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(90deg, rgba(231, 249, 7, 1) 19%, rgba(15, 196, 233, 1) 32%);
+            transform-origin: bottom right;
+            transition: transform 0.6s ease-out;
+        }
+
+        .underline:hover:after {
+            background: linear-gradient(90deg, rgba(231, 249, 7, 1) 57%, rgba(15, 196, 233, 1) 76%);
+            transform-origin: bottom left;
+        }
 </style>
