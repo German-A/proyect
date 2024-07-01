@@ -1,21 +1,9 @@
-<?php headexpoferiaxvll($data); ?>
-
+<?php headferialaborlaxvll($data); ?>
 
 <?php obj($data);
-
-$obj = new HomeModel();
-
-$perfiles = $obj->listaExpoferiaxvllLogoEmpresa();
-
+// $obj = new HomeModel();
+// $perfiles = $obj->listaExpoferiaxvllLogoEmpresa();
 ?>
-<br><br>
-
-<div class="text-center">
-    <h4>EMPRESAS</h4>
-    <h4>EMPRESAS</h4>
-</div>
-
-<br><br>
 
 <style>
     .contenedor {
@@ -27,7 +15,43 @@ $perfiles = $obj->listaExpoferiaxvllLogoEmpresa();
 
 <div class="contenedor ">
 
-    <div class="col-12r">
+    <div class="col-12">
+        <div class="row m-auto">
+            <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/empresas/fondo_emp1.png" alt="" />
+        </div>
+    </div>
+
+    <br>
+
+    <div class="col-12">
+        <div class="row m-auto">
+            <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/empresas/fondo_emp2.png" alt="" />
+        </div>
+    </div>
+
+    <div class="col-12 m-2">
+        <div class="row">
+            <h5 class="text-center">
+                Empresas Participantes
+            </h5>
+        </div>
+
+        <div class="row">
+
+            <div class="col-1 "> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/hortiftut.svg"></div>
+            <div class="col-1 "> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/colegio_administradores.png"></div>
+
+            <div class="col-1 "> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/hortiftut.svg"></div>
+            <div class="col-1 "> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/colegio_administradores.png"></div>
+            <div class="col-1 "> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/hortiftut.svg"></div>
+            <div class="col-1 "> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/colegio_administradores.png"></div>
+            <div class="col-1 "> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/hortiftut.svg"></div>
+            <div class="col-1 "> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/colegio_administradores.png"></div>
+
+        </div>
+    </div>
+
+    <!-- <div class="col-12">
         <div class="row d-flex justify-content-around">
             <?php foreach ($perfiles as $key => $fila) { ?>
                 <a class="row p-3 col-md-5 mb-4  btn btn-outline-primary " style="display: flex;" href="<?php echo $fila['url'] ?>" target="_blank">
@@ -39,8 +63,8 @@ $perfiles = $obj->listaExpoferiaxvllLogoEmpresa();
                     </div>
                 </a>
             <?php } ?>
-        </div>
-    </div>
+        </div> -->
+</div>
 
 </div>
 
@@ -68,5 +92,4 @@ $perfiles = $obj->listaExpoferiaxvllLogoEmpresa();
     }
 </style>
 
-
-<?php footerexpoferiaxvll($data); ?>
+<?php footerferialaborlaxvll($data); ?>

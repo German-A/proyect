@@ -1,4 +1,4 @@
-<?php headexpoferiaxvll($data); ?> 
+<?php headferialaborlaxvll($data); ?> 
 
 <style>
     /* Gallery Section--------------------------------*/
@@ -99,7 +99,7 @@
 </style>
 
 
-<img class="imgponentes" src="<?= media(); ?>/images/expoferiaxvll/ponentes1.png" alt="">
+<img class="imgponentes" src="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/fondo1.png" alt="">
 
 
 <section id="gallery">
@@ -120,7 +120,7 @@
 </section>
 
 
-<img class="imgponentes" src="<?= media(); ?>/images/expoferiaxvll/ponentes2.png" alt="">
+<img class="imgponentes" src="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/fondo2.png" alt="">
 
 
 
@@ -162,4 +162,4 @@
 
 
 
-<?php footerexpoferiaxvll($data); ?>
+<?php footerferialaborlaxvll($data); ?>

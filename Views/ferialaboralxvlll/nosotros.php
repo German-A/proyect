@@ -1,4 +1,4 @@
-<?php headexpoferiaxvll($data); ?>
+<?php headferialaborlaxvll($data); ?>
 
 
 <style>
@@ -51,10 +51,20 @@
             <h1 class="underline">Quiénes somos</h1>
             <br>
             <br>
-            <h4>Tiene por finalidad planificar, promover, ejecutar y evaluar actividades asociadas con el cumplimiento de las condiciones básicas de calidad del Modelo de Licenciamiento de la SUNEDU, indicador 53, que expresa “Existencia de mecanismos de mediación e inserción laboral”; asimismo, al cumplimiento del estándar 34 denominado “Seguimiento a egresados y objetivos educacionales” del nuevo “Modelo de Acreditación para programas de Estudios de Educación Superior Universitaria” del SINEACE.
+            <h4>La Unidad de Seguimiento del Egresado de la Direccion de Procesos Academicos UNT en
+                colaboración con estudiantes de las areas de Ciencias Básicas Tecnológicas, y Ciencias
+                Economicas, organiza la XVIII Feria Laboral, donde se busca vincular a los estudiantes y egresados
+                de la UNT, con las mejores organizaciones del mercado laboral regional y nacional. Asimismo,
+                busca ampliar su vision y perspectiva laboral y profesional, recibiendo sugerencias y
+                requerimientos para el alineamiento de los perfiles de egreso por programa de estudio.
+                <br> <br>
+                ¿A quiénes nos dirigimos?
+                <br> <br>
+                Estudiantes de los egresadosúltimos ciclos y de todas los programas de estudio de la
+                Universidad Nacional de Trujillo.
             </h4>
             <br>
-            <h4>Para ello, a través de diferentes actividades conecta, asesora y capacita a los estudiantes y egresados de nuestra Universidad con las principales empresas de nuestro país.</h4>
+
         </div>
         <div class="col-md-4 text-center">
             <img class="logo " src="<?= media(); ?>/images/expoferiaxvll/usecicle.png" alt="" />
@@ -136,44 +146,44 @@
     <h1 class="underline">Equipo USE - UNT</h1>
     <br><br>
     <section class="card_empleo cardequipo">
- 
+
         <div class="cardListempleos">
             <div class="card_foto">
-                <img class="imgnosotros" src="<?= media(); ?>/images/expoferiaxvll/sosa.png" alt="" />
+                <img class="imgnosotros" src="<?= media(); ?>/archivos/ferialaboralxvlll/equipo/sosa.png" alt="" />
                 <br>
                 <h6>EDUARDO TEÓFILO
                     <br>
                     SOSA ANCAJIMA
                 </h6>
-                <label for="">DIRECTOR DE LA UNIDAD DE <br>
+                <label for="">Dir. UNIDAD DE <br>
                     SEGUIMIENTO DEL EGRESADO</label>
             </div>
         </div>
 
         <div class="cardListempleos">
             <div class="card_foto">
-                <img class="imgnosotros" src="<?= media(); ?>/images/expoferiaxvll/nureña.png" alt="" />
+                <img class="imgnosotros" src="<?= media(); ?>/archivos/ferialaboralxvlll/equipo/kathy.png" alt="" />
                 <br>
                 <h6>KATHERINE LIZETH
                     <br>
                     NUREÑA RODRÍGUEZ
                 </h6>
-                <label for="">SUBUNIDAD DE ESTADÍSTICA <br>
-                    E INFORMÁTICA</label>
+                <label for="">ANALISTA DE <br>
+                    PROCESOS</label>
             </div>
         </div>
 
         <div class="cardListempleos">
             <div class="card_foto">
-                <img class="imgnosotros" src="<?= media(); ?>/images/expoferiaxvll/romero.png" alt="" />
+                <img class="imgnosotros" src="<?= media(); ?>/archivos/ferialaboralxvlll/equipo/jp.png" alt="" />
                 <br>
                 <h6>JEAN PAÚL
                     <br>
                     ROMERO LOBATÓN
                 </h6>
                 <label for="">
-                    ANALISTA DE <br>
-                    PROCESOS
+                    INGENIERO DE <br>
+                    SISTEMAS
                 </label>
 
             </div>
@@ -181,30 +191,30 @@
 
         <div class="cardListempleos">
             <div class="card_foto">
-                <img class="imgnosotros" src="<?= media(); ?>/images/expoferiaxvll/isabel.png" alt="" />
+                <img class="imgnosotros" src="<?= media(); ?>/archivos/ferialaboralxvlll/equipo/isabel.png" alt="" />
                 <br>
                 <h6>MARIA ISABEL
                     <br>
                     HARO VALVERDE
                 </h6>
                 <label for="">
-                    ÁREA DE <br>
-                    TRAMITE DOCUMENTARIO
+                    ABOGADA <br>
+
                 </label>
             </div>
         </div>
 
         <div class="cardListempleos">
             <div class="card_foto">
-                <img class="imgnosotros" src="<?= media(); ?>/images/expoferiaxvll/andy.png" alt="" />
+                <img class="imgnosotros" src="<?= media(); ?>/archivos/ferialaboralxvlll/equipo/andy.png" alt="" />
                 <br>
                 <h6>ANDY BRYAN
                     <br>
                     BENITES ZAVALETA
                 </h6>
                 <label for="">
-                    ÁREA DE <br>
-                    MARQUETÍN
+                    COMUNICADOR <br>
+                    DISEÑADOR
                 </label>
             </div>
         </div>
@@ -214,4 +224,4 @@
 </div>
 
 
-<?php footerexpoferiaxvll($data); ?>
+<?php footerferialaborlaxvll($data); ?>

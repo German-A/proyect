@@ -2,7 +2,6 @@
 
 <?php obj($data);
 
-
 ?>
 
 <style>
@@ -48,10 +47,7 @@
             width: 30%;
         }
     }
-</style>
 
-
-<style>
     .contenedorxv2 {
         margin: 0 auto;
         text-align: center;
@@ -70,8 +66,7 @@
     }
 </style>
 
-
-<br><br><br><br>
+<br>
 <style>
     /* Gallery Section--------------------------------*/
 
@@ -122,59 +117,69 @@
 
 <div class="contenedorxv2">
 
-
     <div class="row">
-        <div class="col-md-6">
-            <h1>youteube</h1>
-            <br><br><br><br>
-            <section id="gallery">
-                <div class="container-fluid text-center" data-aos="fade-up">
 
-                    <div class="row g-0 d-flex justify-content-center">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6 col-lg-6">
+                    <div class="gallery-item">
+                        <a href="https://www.youtube.com/embed/9uGj_eR-gYA" data-gall="portfolioGallery" class="gallery-lightbox">
+                            <img src="<?= media(); ?>/upload/exporiaxvllll/vice.png">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 text-left texto_azul p-4">
+                    <h2>Que ofrece la feria</h2>
+                    <br><br>
+                    <h4><span class=""><i class="fas fa-check-square"></i></span> &nbsp; Charlas presenciales y stands virtuales</h4>
+                    <h4><i class="fas fa-check-square"></i> &nbsp; Acceso a muchas empresas en un solo lugar</h4>
+                    <h4><i class="fas fa-check-square"></i> &nbsp; Oportunidades labotales</h4>
+                    <h4><i class="fas fa-check-square"></i> &nbsp; Conocer el mercado laboral y sus necesidades </h4>
+                    <h4><i class="fas fa-check-square"></i> &nbsp; Contacto directo con recultadores </h4>
+                    <h4><i class="fas fa-check-square"></i> &nbsp; Habilidades blandas</h4>
+                </div>
+                <div class="col-md-12 col-lg-2">
+                    <h1 class="titulo" style="font-weight: 900;"><b>+ 3649</b></h1>
+                    <h5 class="texto_azul">Ofertas laborales activas</h5>
+                    <h1 class="titulo" style="font-weight: 900;"><b>84 %</b></h1>
+                    <h5 class="texto_azul">De nuestros egresados actualmente trabajan</h5>
 
-                        <div class="col-lg-4 col-md-6">
-                            <div class="gallery-item">
-                                <a href="https://www.youtube.com/embed/9uGj_eR-gYA" data-gall="portfolioGallery" class="gallery-lightbox">
-                                    <img src="<?= media(); ?>/upload/exporiaxvllll/vice.png">
-                                </a>
-                            </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="col-md-12" id="gallery">
+            <div class="container-fluid text-center" data-aos="fade-up">
+
+                <div class="row d-flex justify-content-center">
+
+                    <div class="col-md-3">
+                        <div class="gallery-item">
+                            <a href="https://www.youtube.com/embed/9uGj_eR-gYA" data-gall="portfolioGallery" class="gallery-lightbox">
+                                <img src="<?= media(); ?>/upload/exporiaxvllll/vice.png">
+                            </a>
                         </div>
+                    </div>
 
-                        <div class="col-lg-4 col-md-6">
-                            <div class="gallery-item">
-                                <a href="https://www.youtube.com/embed/9uGj_eR-gYA" data-gall="portfolioGallery" class="gallery-lightbox">
-                                    <img src="<?= media(); ?>/upload/exporiaxvllll/sosa.png">
-                                </a>
-                            </div>
+                    <div class="col-md-3">
+                        <div class="gallery-item">
+                            <a href="https://www.youtube.com/embed/9uGj_eR-gYA" data-gall="portfolioGallery" class="gallery-lightbox">
+                                <img src="<?= media(); ?>/upload/exporiaxvllll/sosa.png">
+                            </a>
                         </div>
+                    </div>
 
-                        <div class="col-lg-4 col-md-6">
-                            <div class="gallery-item">
-                                <a href="https://www.youtube.com/embed/9uGj_eR-gYA" data-gall="portfolioGallery" class="gallery-lightbox">
-                                    <img src="<?= media(); ?>/upload/exporiaxvllll/dpa.png">
-                                </a>
-                            </div>
+                    <div class="col-md-3">
+                        <div class="gallery-item">
+                            <a href="https://www.youtube.com/embed/9uGj_eR-gYA" data-gall="portfolioGallery" class="gallery-lightbox">
+                                <img src="<?= media(); ?>/upload/exporiaxvllll/dpa.png">
+                            </a>
                         </div>
                     </div>
                 </div>
-            </section>
-        </div>
-        <div class="col-md-4 text-left texto_azul">
-            <h2>Que ofrece la feria</h2>
-            <br><br>
-            <h4><span class=""><i class="fas fa-check-square"></i></span> &nbsp; Charlas presenciales y stands virtuales</h4>
-            <h4><i class="fas fa-check-square"></i> &nbsp; Acceso a muchas empresas en un solo lugar</h4>
-            <h4><i class="fas fa-check-square"></i> &nbsp; Oportunidades labotales</h4>
-            <h4><i class="fas fa-check-square"></i> &nbsp; Conocer el mercado laboral y sus necesidades </h4>
-            <h4><i class="fas fa-check-square"></i> &nbsp; Contacto directo con recultadores </h4>
-        </div>
-        <div class="col-md-2">
-            <h1 class="titulo" style="font-weight: 900;"><b>+ 3649</b></h1>
-            <h5 class="texto_azul">Ofertas laborales activas</h5>
-            <h1 class="titulo" style="font-weight: 900;"><b>84 %</b></h1>
-            <h5 class="texto_azul">De nuestros egresados actualmente trabajan</h5>
-            <br><br><br>
-        </div>
+            </div>
+        </section>
+
     </div>
 
     <style>
@@ -217,33 +222,26 @@
             </a>
         </div>
     </div>
-
-    <br><br><br><br>
+    <br><br>
     <br>
     <div class="col-12">
         <div class="row text-left">
             <h1 class=""><b>Empresas</b></h1>
         </div>
 
-        <div class="row">
-            <div class="col-2">logo 1</div>
-            <div class="col-2">logo 1</div>
-            <div class="col-2">logo 1</div>
-            <div class="col-2">logo 1</div>
-            <div class="col-2">logo 1</div>
-            <div class="col-2">logo 1</div>
+        <div class="row p-auto">
+            <div class="col-1 "> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/hortiftut.svg"></div>
+            <div class="col-1 "> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/colegio_administradores.png"></div>
+            
+            <div class="col-1 "> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/hortiftut.svg"></div>
+            <div class="col-1 "> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/colegio_administradores.png"></div>
+            <div class="col-1 "> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/hortiftut.svg"></div>
+            <div class="col-1 "> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/colegio_administradores.png"></div>
+            <div class="col-1 "> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/hortiftut.svg"></div>
+            <div class="col-1 "> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/colegio_administradores.png"></div>
         </div>
-
-
-
     </div>
     <br>
-
-
-
-
-
-
 
 </div>
 
@@ -280,6 +278,5 @@
     });
 </script>
 <!-- Swiper JS -->
-
 
 <?php footerferialaborlaxvll($data); ?>

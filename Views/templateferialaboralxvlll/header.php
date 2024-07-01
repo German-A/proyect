@@ -49,7 +49,8 @@
         --celeste: #3b8acf;
 
     }
-    .texto_azul{
+
+    .texto_azul {
         color: var(--azul);
     }
 
@@ -256,11 +257,11 @@
             <ul class="menuxv" id="menuxv">
 
                 <div class="naveg">
-                    <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxvl" class="menu__linkxv">XVIII Feria Laboral</a></li>
-                    <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxvl/nosotros" class="menu__linkxv">Nosotros</a></li>
-                    <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxvl/nosotros" class="menu__linkxv">Empresas</a></li>
-                    <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxvl/ponencias" class="menu__linkxv">Ponentes</a></li>
-                    <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxvl/ponencias" class="menu__linkxv">Galería</a></li>
+                    <li class="menu__itemxv"><a href="<?= base_url(); ?>/ferialaboralxvlll" class="menu__linkxv">XVIII Feria Laboral</a></li>
+                    <li class="menu__itemxv"><a href="<?= base_url(); ?>/ferialaboralxvlll/nosotros" class="menu__linkxv">Nosotros</a></li>
+                    <li class="menu__itemxv"><a href="<?= base_url(); ?>/ferialaboralxvlll/empresas" class="menu__linkxv">Empresas</a></li>
+                    <li class="menu__itemxv"><a href="<?= base_url(); ?>/ferialaboralxvlll/ponencias" class="menu__linkxv">Ponentes</a></li>
+                    <li class="menu__itemxv"><a href="<?= base_url(); ?>/ferialaboralxvlll/galeria" class="menu__linkxv">Galería</a></li>
                 </div>
             </ul>
         </nav>
@@ -271,6 +272,6 @@
     .titulo {
         font-size: 40px;
         font-weight: 900;
-     
+
     }
 </style>

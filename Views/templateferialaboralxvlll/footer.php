@@ -2,23 +2,22 @@
 <div class="col-12">
     <footer class="row p-2" style="background-color: #12377b;">
         <div class="col-6 col-md-6 col-lg-6 col-xl-3 text-light text-center" style="margin: auto;" data-aos="fade-down-left">
-            <img src="<?= media(); ?>/archivos/logos/logoUseBlanco.png" style="width: 80%; ">
+            <img src="<?= media(); ?>/archivos/ferialaboralxvlll/logo_bicentenario.png" style="width: 60%; ">
         </div>
         <div class="col-6 col-md-6 col-lg-6 col-xl-3 text-light " style="margin: auto auto;" data-aos="fade-down">
-    <img src="<?= media(); ?>/archivos/logos/logoUseBlanco.png" style="width: 80%; ">
-     
-        <br>
-        <h5>www.use-dpa.unitru.edu.pe</h5>
-        <br>
- 
-     
-    </div>
-    
-        <div class="col-6 col-md-6 col-lg-6 col-xl-3 text-light " style="margin: auto auto;" data-aos="fade-down">
-            <img src="<?= media(); ?>/archivos/logos/logoUseBlanco.png" style="width: 80%; ">
+            <img src="<?= media(); ?>/archivos/logos/logoUseBlanco.png" style="width: 60%; ">
 
             <br>
-            <h5>use@unitru.edu.pe</h5>
+            <h5>www.use-dpa.unitru.edu.pe</h5>
+            <br>
+
+
+        </div>
+
+        <div class="col-6 col-md-6 col-lg-6 col-xl-3 text-light text-center " style="margin: auto auto;" data-aos="fade-down">
+
+            <br>
+            <h5>Siguenos en nuestras redes</h5>
             <br>
             <div class="col-12 ">
                 <a target="_blank" href="https://www.facebook.com/use.unt">
@@ -38,39 +37,7 @@
                 </a>
             </div>
             <br>
-            <div class="col-12">
-                <div class="col-6 m-auto">
-                    <a href="<?= base_url(); ?>/libroreclamaciones">
-                        <img class="img-fluid" src="<?= media(); ?>/img/libro-reclamaciones.png" alt="">
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-md-12 col-lg-12 col-xl-6 text-light" style="margin: auto auto;" data-aos="fade-down-rigth">
-            <!-- <form class="formulario" action="enviar-prueba.php" method="POST"> -->
-            <form id="frmempleo" class="col-12 d-flex flex-column" name="frmempleo" method="post" submit="return false">
-                <input type="hidden" name="accion" id="accion" value="REGISTRAR_EMPLEO">
-                <div class="row" style="width: 100%;" data-aos="fade-down-left">
-                    <div class="col-md-8">
-                        <div class="d-flex flex-column">
-                            <p>Envíanos un mensaje</p>
-                            <input type="text" id="email" class="input p-3" placeholder="Ingresar el correo Electrónico" required>
-                            <br>
-                            <textarea name="" id="mensaje" class="input p-3" rows="4" placeholder="Ingresar el Mensaje"></textarea>
-                        </div>
-                    </div>
-                    <div class="col-md-2 text-center">
-                        <br><br>
-                        <input type="text" id="contacto" class="input p-3" placeholder="Número de Contacto" required>
-                        <br><br>
-                        <button type="button" class="input bg-warning enviar pt-2 pb-2 pl-5 pr-5 text-white" onclick="crearTicket()">
-                            <h4>ENVIAR</h4>
-                        </button>
 
-                    </div>
-
-                </div>
-            </form>
         </div>
 
     </footer>

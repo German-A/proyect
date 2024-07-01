@@ -1,4 +1,4 @@
-<?php headexpoferiaxvll($data); ?>
+<?php headferialaborlaxvll($data); ?>
 
 
 <?php obj($data);
@@ -90,4 +90,4 @@
 
 
 
-<?php footerexpoferiaxvll($data); ?>
+<?php footerferialaborlaxvll($data); ?>
