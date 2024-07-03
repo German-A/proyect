@@ -1,8 +1,7 @@
 <?php headferialaborlaxvll($data); ?>
-
 <?php obj($data);
-
 ?>
+
 
 <style>
     .swiper {
@@ -115,7 +114,9 @@
     }
 </style>
 
-<div class="contenedorxv2">
+
+
+<div class="conten">
 
     <div class="row">
 
@@ -128,7 +129,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 text-left texto_azul p-4">
+                <div class="col-md-6 col-lg-6 text-left texto_azul p-4">
                     <h2>Que ofrece la feria</h2>
                     <br><br>
                     <h4><span class=""><i class="fas fa-check-square"></i></span> &nbsp; Charlas presenciales y stands virtuales</h4>
@@ -138,21 +139,18 @@
                     <h4><i class="fas fa-check-square"></i> &nbsp; Contacto directo con recultadores </h4>
                     <h4><i class="fas fa-check-square"></i> &nbsp; Habilidades blandas</h4>
                 </div>
-                <div class="col-md-12 col-lg-2">
+                <!-- <div class="col-md-12 col-lg-2">
                     <h1 class="titulo" style="font-weight: 900;"><b>+ 3649</b></h1>
                     <h5 class="texto_azul">Ofertas laborales activas</h5>
                     <h1 class="titulo" style="font-weight: 900;"><b>84 %</b></h1>
                     <h5 class="texto_azul">De nuestros egresados actualmente trabajan</h5>
-
-                </div>
+                </div> -->
             </div>
         </div>
 
         <section class="col-md-12" id="gallery">
             <div class="container-fluid text-center" data-aos="fade-up">
-
                 <div class="row d-flex justify-content-center">
-
                     <div class="col-md-3">
                         <div class="gallery-item">
                             <a href="https://www.youtube.com/embed/9uGj_eR-gYA" data-gall="portfolioGallery" class="gallery-lightbox">
@@ -160,7 +158,6 @@
                             </a>
                         </div>
                     </div>
-
                     <div class="col-md-3">
                         <div class="gallery-item">
                             <a href="https://www.youtube.com/embed/9uGj_eR-gYA" data-gall="portfolioGallery" class="gallery-lightbox">
@@ -168,7 +165,6 @@
                             </a>
                         </div>
                     </div>
-
                     <div class="col-md-3">
                         <div class="gallery-item">
                             <a href="https://www.youtube.com/embed/9uGj_eR-gYA" data-gall="portfolioGallery" class="gallery-lightbox">
@@ -193,28 +189,24 @@
             padding: 10px;
             text-decoration: none;
         }
-
-
     </style>
 
-
     <div class="row d-flex justify-content-around mt-5">
-        <div class="col-md-2  ">
-
+        <div class="col-md-2 m-2">
             <a href="javascript:void(0)" class="btn_pagina_principal d-flex justify-content-between text-white">
                 <h3><span><i class="fas fa-book-reader"></i></span></h3>
                 <p>Brochure</p>
                 <h3><span><i class="fas fa-arrow-down"></i></span></h3>
             </a>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-2 m-2">
             <a href="javascript:void(0)" class="btn_pagina_principal d-flex justify-content-between text-white">
                 <h3><i class="fas fa-calendar-alt"></i></h3>
                 <p>Cronograma</p>
                 <h3><span><i class="fas fa-arrow-down"></i></span></h3>
             </a>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-2 m-2">
             <a href="https://use-dpa.unitru.edu.pe/bolsadetrabajo" class="btn_pagina_principal d-flex justify-content-between text-white">
                 <h3><i class="fas fa-briefcase"></i></h3>
                 <p>Bolsa de Trabajo</p>
@@ -226,23 +218,20 @@
     <br>
     <div class="col-12">
         <br><br>
-
-        <div class="row text-center">
-            <h1 class="underline">Empresas</h1>
+        <div class="row ">
+            <h1 class=" text-center underline">Empresas</h1>
         </div>
         <br><br>
+        <div class="row d-flex justify-content-around">
+            <div class="col-6 col-md-4 logos_empresa"> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/autopista_del_norte.png"></div>
+            <div class="col-6 col-md-4 logos_empresa"> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/bravo_constructora.png"></div>
+            <div class="col-6 col-md-4 logos_empresa"> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/centro_empleo.png"></div>
+            <div class="col-6 col-md-4 logos_empresa"> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/corlad.png"></div>
 
-        <div class="row m-auto p-auto text-center">
-            <div class="col-4 col-md-2 "> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/autopista_del_norte.png"></div>
-            <div class="col-4 col-md-2 "> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/bravo_constructora.png"></div>
-            <div class="col-4 col-md-2 "> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/centro_empleo.png"></div>
-            <div class="col-4 col-md-2 "> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/corlad.png"></div>
-
-            <div class="col-4 col-md-2 "> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/grupo_rocio.png"></div>
-            <div class="col-4 col-md-2 "> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/hortifrud.png"></div>
-            <div class="col-4 col-md-2 "> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/imcop.png"></div>
-            <div class="col-4 col-md-2 "> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/mota_engil.jpg"></div>
-
+            <div class="col-6 col-md-4 logos_empresa"> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/grupo_rocio.png"></div>
+            <div class="col-6 col-md-4 logos_empresa"> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/hortifrud.png"></div>
+            <div class="col-6 col-md-4 logos_empresa"> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/imcop.png"></div>
+            <div class="col-6 col-md-4 logos_empresa"> <img class="img-fluid" src="<?= media(); ?>/archivos/ferialaboralxvlll/logos_empresa/mota_engil.jpg"></div>
         </div>
     </div>
     <br>

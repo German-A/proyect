@@ -1,4 +1,4 @@
-<?php headferialaborlaxvll($data); ?> 
+<?php headferialaborlaxvll($data); ?>
 
 <style>
     /* Gallery Section--------------------------------*/
@@ -91,18 +91,61 @@
         background: rgba(0, 0, 0, 0.7);
     }
 
-    .imgponentes{
+    .imgponentes {
         max-width: 100%;
     }
-
-    
 </style>
 
 
-<img class="imgponentes" src="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/fondo1.png" alt="">
+<img class="imgponentes" src="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/ponentes_1.png" alt="">
 
 
 <section id="gallery">
+    <div class="container-fluid text-center" data-aos="fade-up">
+
+        <div class="row g-0 d-flex justify-content-center">
+
+            <div class="col-lg-4 col-md-6">
+                <div class="gallery-item">
+                    <a href="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/aunort.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                        <img src="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/aunort.png">
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="gallery-item">
+                    <a href="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/rocio.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                        <img src="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/rocio.png">
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-6">
+                <div class="gallery-item">
+                    <a href="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/colegio.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                        <img src="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/colegio.png">
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="gallery-item">
+                    <a href="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/imcorp.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                        <img src="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/imcorp.png">
+                    </a>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</section>
+
+
+<!-- <section id="gallery">
     <div class="container-fluid text-center" data-aos="fade-up">
 
         <div class="row g-0 d-flex justify-content-center">
@@ -117,14 +160,51 @@
             <?php } ?>
         </div>
     </div>
-</section>
+</section> -->
 
-
-<img class="imgponentes" src="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/fondo2.png" alt="">
+<img class="imgponentes" src="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/ponentes_2.png" alt="">
 
 
 
 <section id="gallery">
+    <div class="container-fluid text-center" data-aos="fade-up">
+
+        <div class="row g-0 d-flex justify-content-center">
+
+            <div class="col-lg-4 col-md-6">
+                <div class="gallery-item">
+                    <a href="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/hortifrut.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                        <img src="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/hortifrut.png">
+                    </a>
+                </div>
+            </div>
+
+
+     
+
+            <div class="col-lg-4 col-md-6">
+                <div class="gallery-item">
+                    <a href="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/empleos.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                        <img src="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/empleos.png">
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="gallery-item">
+                    <a href="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/evolucion.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                        <img src="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/evolucion.png">
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+
+<!-- <section id="gallery">
     <div class="container-fluid text-center" data-aos="fade-up">
 
         <div class="row g-0 d-flex justify-content-center">
@@ -139,7 +219,7 @@
             <?php } ?>
         </div>
     </div>
-</section>
+</section> -->
 
 
 

@@ -232,12 +232,7 @@
 </div>
 <header class="d-flex justify-content-around">
 
-
     <body>
-
-
-
-
         <span id="btnMenuExpoferiaxv" class="nav-barxv text-right">
             <div class="row">
                 <div class="col-6 text-left">
@@ -268,32 +263,42 @@
 
 
 <style>
+    .conten {
+        max-width: 1250px;
+        margin: 0 auto;
+    }
+
     .titulo {
         font-size: 40px;
         font-weight: 900;
     }
 
     .underline {
-            color: var(--azul);
-            display: inline-block;
-            position: relative;
-        }
+        color: var(--azul);
+        display: inline-block;
+        position: relative;
+    }
 
-        .underline:after {
-            content: "";
-            position: absolute;
-            width: 100%;
-            transform: scaleX(1);
-            height: 5px;
-            bottom: 0;
-            left: 0;
-            background: linear-gradient(90deg, rgba(231, 249, 7, 1) 19%, rgba(15, 196, 233, 1) 32%);
-            transform-origin: bottom right;
-            transition: transform 0.6s ease-out;
-        }
+    .underline:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        transform: scaleX(1);
+        height: 5px;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(90deg, rgba(231, 249, 7, 1) 19%, rgba(15, 196, 233, 1) 32%);
+        transform-origin: bottom right;
+        transition: transform 0.6s ease-out;
+    }
 
-        .underline:hover:after {
-            background: linear-gradient(90deg, rgba(231, 249, 7, 1) 57%, rgba(15, 196, 233, 1) 76%);
-            transform-origin: bottom left;
-        }
+    .underline:hover:after {
+        background: linear-gradient(90deg, rgba(231, 249, 7, 1) 57%, rgba(15, 196, 233, 1) 76%);
+        transform-origin: bottom left;
+    }
+
+    .logos_empresa {
+        max-width: 200px;
+        padding: 20px;
+    }
 </style>

@@ -208,7 +208,7 @@ $n = 1;
             <br><br>
             <h4>2023</h4>
             <ul class="lista">
-                <li class="activo">
+                <li class="">
                     <div class="itemY">
                         <h1 data-id="Documentos\MYG\Cuestionario-SISEU.pdf"></h1>
                         <a href="<?= base_url(); ?>/expoferialaboralxvll" target="_blank">
