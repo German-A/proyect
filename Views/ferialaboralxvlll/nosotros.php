@@ -48,16 +48,15 @@
             <h1 class="underline">Quiénes somos</h1>
             <br>
             <br>
-            <h4>La Unidad de Seguimiento del Egresado de la Direccion de Procesos Academicos UNT en
-                colaboración con estudiantes de las areas de Ciencias Básicas Tecnológicas, y Ciencias
-                Economicas, organiza la XVIII Feria Laboral, donde se busca vincular a los estudiantes y egresados
-                de la UNT, con las mejores organizaciones del mercado laboral regional y nacional. Asimismo,
-                busca ampliar su vision y perspectiva laboral y profesional, recibiendo sugerencias y
-                requerimientos para el alineamiento de los perfiles de egreso por programa de estudio.
+            <h4>La Unidad de Seguimiento del Egresado de la Dirección de Procesos Académicos UNT, 
+                en colaboración con los estudiantes de las áreas de Ciencias Básicas Tecnológicas, y Ciencias Económicas; 
+                organiza la XVIII Feria Laboral, donde se busca vincular a los egresados y estudiantes de los últimos ciclos, 
+                con las mejores empresas públicas y privadas. Asimismo, busca ampliar su visión y perspectiva laboral y profesional 
+                desarrollando habilidades blandas para mejorar su empleabilidad.
                 <br> <br>
                 ¿A quiénes nos dirigimos?
                 <br> <br>
-                Estudiantes de los egresadosúltimos ciclos y de todas los programas de estudio de la
+                Egresados y estudiantes de los últimos ciclos y de todas los programas de estudio de la
                 Universidad Nacional de Trujillo.
             </h4>
             <br>

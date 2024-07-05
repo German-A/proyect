@@ -107,16 +107,16 @@
 
             <div class="col-lg-4 col-md-6">
                 <div class="gallery-item">
-                    <a href="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/aunort.png" data-gall="portfolioGallery" class="gallery-lightbox">
-                        <img src="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/aunort.png">
+                    <a href="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/11/vaisec.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                        <img src="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/11/vaisec.png">
                     </a>
                 </div>
             </div>
 
             <div class="col-lg-4 col-md-6">
                 <div class="gallery-item">
-                    <a href="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/rocio.png" data-gall="portfolioGallery" class="gallery-lightbox">
-                        <img src="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/rocio.png">
+                    <a href="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/11/vaunort.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                        <img src="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/11/vaunort.png">
                     </a>
                 </div>
             </div>
@@ -124,21 +124,60 @@
 
             <div class="col-lg-4 col-md-6">
                 <div class="gallery-item">
-                    <a href="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/colegio.png" data-gall="portfolioGallery" class="gallery-lightbox">
-                        <img src="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/colegio.png">
+                    <a href="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/11/vbackus.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                        <img src="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/11/vbackus.png">
                     </a>
                 </div>
             </div>
 
             <div class="col-lg-4 col-md-6">
                 <div class="gallery-item">
-                    <a href="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/imcorp.png" data-gall="portfolioGallery" class="gallery-lightbox">
-                        <img src="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/imcorp.png">
+                    <a href="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/11/vcolegioadministra.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                        <img src="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/11/vcolegioadministra.png">
                     </a>
                 </div>
             </div>
 
+            <div class="col-lg-4 col-md-6">
+                <div class="gallery-item">
+                    <a href="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/11/veasydrop.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                        <img src="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/11/veasydrop.png">
+                    </a>
+                </div>
+            </div>
 
+            <div class="col-lg-4 col-md-6">
+                <div class="gallery-item">
+                    <a href="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/11/vgruporocio.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                        <img src="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/11/vgruporocio.png">
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="gallery-item">
+                    <a href="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/11/vgruporocio2.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                        <img src="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/11/vgruporocio2.png">
+                    </a>
+                </div>
+            </div>
+
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="gallery-item">
+                    <a href="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/11/vimcorp.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                        <img src="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/11/vimcorp.png">
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="gallery-item">
+                    <a href="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/11/vmotaengil.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                        <img src="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/11/vmotaengil.png">
+                    </a>
+                </div>
+            </div>
 
         </div>
     </div>
@@ -173,27 +212,41 @@
 
             <div class="col-lg-4 col-md-6">
                 <div class="gallery-item">
-                    <a href="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/hortifrut.png" data-gall="portfolioGallery" class="gallery-lightbox">
-                        <img src="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/hortifrut.png">
+                    <a href="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/12/vbbva.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                        <img src="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/12/vbbva.png">
+                    </a>
+                </div>
+            </div>
+ 
+
+            <div class="col-lg-4 col-md-6">
+                <div class="gallery-item">
+                    <a href="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/12/vcentrodeempleo.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                        <img src="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/12/vcentrodeempleo.png">
                     </a>
                 </div>
             </div>
 
-
-     
-
             <div class="col-lg-4 col-md-6">
                 <div class="gallery-item">
-                    <a href="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/empleos.png" data-gall="portfolioGallery" class="gallery-lightbox">
-                        <img src="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/empleos.png">
+                    <a href="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/12/vevolucionperu.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                        <img src="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/12/vevolucionperu.png">
                     </a>
                 </div>
             </div>
 
             <div class="col-lg-4 col-md-6">
                 <div class="gallery-item">
-                    <a href="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/evolucion.png" data-gall="portfolioGallery" class="gallery-lightbox">
-                        <img src="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/evolucion.png">
+                    <a href="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/12/vhortifrut.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                        <img src="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/12/vhortifrut.png">
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="gallery-item">
+                    <a href="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/12/vrcs.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                        <img src="<?= media(); ?>/archivos/ferialaboralxvlll/ponencias/12/vrcs.png">
                     </a>
                 </div>
             </div>
