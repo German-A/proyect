@@ -200,14 +200,14 @@
             </a>
         </div>
         <div class="col-md-2 m-2">
-            <a href="javascript:void(0)" class="btn_pagina_principal d-flex justify-content-between text-white">
+            <a href="<?= media(); ?>/archivos/ferialaboralxvlll/programa.pdf"   download="file"   download="file" 00class="btn_pagina_principal d-flex justify-content-between text-white">
                 <h3><i class="fas fa-calendar-alt"></i></h3>
                 <p>Cronograma</p>
                 <h3><span><i class="fas fa-arrow-down"></i></span></h3>
             </a>
         </div>
         <div class="col-md-2 m-2">
-            <a href="https://use-dpa.unitru.edu.pe/bolsadetrabajo" class="btn_pagina_principal d-flex justify-content-between text-white">
+            <a href="https://use-dpa.unitru.edu.pe/bolsadetrabajo"class="btn_pagina_principal d-flex justify-content-between text-white">
                 <h3><i class="fas fa-briefcase"></i></h3>
                 <p>Bolsa de Trabajo</p>
                 <h3><span><i class="fas fa-arrow-down"></i></span></h3>
