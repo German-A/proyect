@@ -122,13 +122,13 @@
 
         <div class="col-md-12">
             <div class="row">
-                <div class="col-md-6 col-lg-6">
+                <!-- <div class="col-md-6 col-lg-6">
                     <div class="gallery-item">
                         <a href="https://www.youtube.com/embed/9uGj_eR-gYA" data-gall="portfolioGallery" class="gallery-lightbox">
                             <img src="<?= media(); ?>/upload/exporiaxvllll/vice.png">
                         </a>
                     </div>
-                </div>
+                </div> -->
                 <div class="col-md-6 col-lg-6 text-left texto_azul p-4">
                     <h2>Que ofrece la feria</h2>
                     <br><br>
@@ -148,7 +148,7 @@
             </div>
         </div>
 
-        <section class="col-md-12" id="gallery">
+        <!-- <section class="col-md-12" id="gallery">
             <div class="container-fluid text-center" data-aos="fade-up">
                 <div class="row d-flex justify-content-center">
                     <div class="col-md-3">
@@ -174,7 +174,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
     </div>
 
@@ -200,7 +200,7 @@
             </a>
         </div>
         <div class="col-md-2 m-2">
-            <a href="<?= media(); ?>/archivos/ferialaboralxvlll/programa.pdf"   download="file"   download="file" 00class="btn_pagina_principal d-flex justify-content-between text-white">
+            <a href="<?= media(); ?>/archivos/ferialaboralxvlll/programa.pdf"   download="file" class="btn_pagina_principal d-flex justify-content-between text-white">
                 <h3><i class="fas fa-calendar-alt"></i></h3>
                 <p>Cronograma</p>
                 <h3><span><i class="fas fa-arrow-down"></i></span></h3>
