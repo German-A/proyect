@@ -10,7 +10,7 @@ headerAdmin($data);
         <div>
             <h1><i class="fas fa-user-tag"></i> <?= $data['page_title'] ?>
                 <?php if ($_SESSION['permisos'][29]['w']) { ?>
-                    <button class="btn btn-primary" type="button" onclick="openModalGaleria();"><i class="fas fa-plus-circle"></i>Publicar Foto</button>
+                    <button class="btn btn-primary" type="button" onclick="openModalEmpresa();"><i class="fas fa-plus-circle"></i>Publicar Empresa</button>
                 <?php } ?>
             </h1>
         </div>
@@ -29,9 +29,8 @@ headerAdmin($data);
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Nombres</th>
-                                    <th>Archivo</th>
-                                    <th>Posicion</th>
+                                    <th>descripcion</th>
+                                    <th>link</th>
                                     <th>Estado</th>
                                     <th>Acciones</th>
                                 </tr>
@@ -48,25 +47,24 @@ headerAdmin($data);
 </main>
 <?php footerAdmin($data); ?>
 
-
 <!-- Modal  agregarPostrado-->
-<div class="modal fade" id="modalRegistroGaleria" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="modalRegistroEmpresa" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header headerRegister">
-                <h5 class="modal-title" id="titleGaleria">Galería</h5>
+                <h5 class="modal-title" id="titleEmpresa">Empresa</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form id="formmodalGaleria" name="formmodalGaleria" class="form-horizontal">
-                    <input type="hidden" id="idexpoferiaslaboralesgaleria" name="idexpoferiaslaboralesgaleria" value="">
+                <form id="formmodalEmpresa" name="formmodalEmpresa" class="form-horizontal">
+                    <input type="hidden" id="idexpoxvEmpresa" name="idexpoxvEmpresa" value="">
                     <p class="text-primary">Todos los campos son obligatorios.</p>
 
 
                     <div class="form-row">
-                        <div class="form-group col-md-8">
+                        <div class="form-group col-md-10">
                             <label for="txtNombre">Nombre</label>
                             <input type="text" class="form-control" id="txtNombre" name="txtNombre" required="">
                         </div>
@@ -74,8 +72,19 @@ headerAdmin($data);
                             <label for="txtPosicion">Posición</label>
                             <input type="number" class="form-control" id="txtPosicion" name="txtPosicion" required="">
                         </div>
-             
+                        <div class="form-group col-md-12">
+                            <label for="txtUrl">Url</label>
+                            <input type="text" class="form-control" id="txtUrl" name="txtUrl" required="">
+                        </div>
                     </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="descripcion">Descripción del Puesto<span class="text-danger">*</span></label>
+                            <textarea type="text" class="form-control summernote" id="descripcion" name="descripcion" placeholder="Ingresar Descripción Puesto"></textarea>
+                        </div>
+                    </div>
+
 
                     <div class="form-row">
                         <div class="form-group col-md-12">
@@ -85,7 +94,7 @@ headerAdmin($data);
                     </div>
 
                     <div class="tile-footer">
-                        <a href="javascript:void(0)" class="btn btn-info" id="btnGaleria" onclick="GuardarGaleria()">Guardar</a>&nbsp;&nbsp;&nbsp;
+                        <a href="javascript:void(0)" class="btn btn-info" id="btnEmpresa" onclick="GuardarEmpresa()">Guardar</a>&nbsp;&nbsp;&nbsp;
                         <button class="btn btn-danger" type="button" data-dismiss="modal"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cerrar</button>
                     </div>
                 </form>
@@ -94,25 +103,49 @@ headerAdmin($data);
     </div>
 </div>
 
+<script>
+    $(document).ready(function() {
+        $('.summernote').summernote({
+            toolbar: [
+                // [groupName, [list of button]]
+                ['style', ['clear']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['lineHeights', ['0.2']],
+
+            ]
+        });
+    });
+
+
+</script>
+
 
 
 <script>
-    function openModalGaleria() {
-        document.querySelector('#idexpoferiaslaboralesgaleria').value = "";
+    function openModalEmpresa() {
+        document.querySelector('#idexpoxvEmpresa').value = "";
         document.querySelector('.modal-header').classList.replace("headerUpdate", "headerRegister");
-        document.querySelector('#btnGaleria').classList.replace("btn-info", "btn-primary");
-        document.querySelector('#btnGaleria').innerHTML = "Guardar";
-        document.querySelector('#titleGaleria').innerHTML = "Galería";
-        document.querySelector("#formmodalGaleria").reset();
+        document.querySelector('#btnEmpresa').classList.replace("btn-info", "btn-primary");
+        document.querySelector('#btnEmpresa').innerHTML = "Guardar";
+        document.querySelector('#titleEmpresa').innerHTML = "Galería";
+        document.querySelector("#formmodalEmpresa").reset();
 
-        $('#modalRegistroGaleria').modal('show');
+
+        $('.summernote').summernote('reset');
+        $('#modalRegistroEmpresa').modal('show');
     }
 
-    function GuardarGaleria() {
+    function copiar(i) {
+        console.log(i);
+    };
 
-        var idexpoferiaslaboralesgaleria = $("#idexpoferiaslaboralesgaleria").val();
+    function GuardarEmpresa() {
+
+        var idexpoxvEmpresa = $("#idexpoxvEmpresa").val();
         var txtNombre = $("#txtNombre").val();
+        var txtUrl = $("#txtUrl").val();
         var txtPosicion = $("#txtPosicion").val();
+        var descripcion = $("#descripcion").val();
         var inputElement = document.getElementById("archivoSubido");
         var archivoSubido = inputElement.files[0];
 
@@ -126,7 +159,7 @@ headerAdmin($data);
             return;
         }
 
-        if (idexpoferiaslaboralesgaleria != 0) {
+        if (idexpoxvEmpresa != 0) {
 
         } else {
             if (inputElement.files['length'] == 0) {
@@ -135,16 +168,17 @@ headerAdmin($data);
             }
         }
 
-
         var fd = new FormData();
-        fd.append("idexpoferiaslaboralesgaleria", idexpoferiaslaboralesgaleria);
+        fd.append("idexpoxvempresas", idexpoxvEmpresa);
         fd.append("txtNombre", txtNombre);
+        fd.append("txtUrl", txtUrl);
         fd.append("txtPosicion", txtPosicion);
+        fd.append("descripcion", descripcion);
         fd.append("archivoSubido", archivoSubido);
         divLoading.style.display = "flex";
         $.ajax({
             method: "POST",
-            url: "" + base_url + "/ferialaboralxvllladmin/setgaleria",
+            url: "" + base_url + "/expoferialaboralxvadmin/setEmpresa",
             data: fd,
             processData: false, // tell jQuery not to process the data
             contentType: false // tell jQuery not to set contentType
@@ -152,9 +186,9 @@ headerAdmin($data);
         }).done(function(response) {
             var info = JSON.parse(response);
             if (info.status == true) {
-                swal("Galeria", info.msg, "success");
+                swal("Empresa", info.msg, "success");
                 datatable.api().ajax.reload();
-                $("#modalRegistroGaleria").modal("hide");
+                $("#modalRegistroEmpresa").modal("hide");
             }
             if (info.status == false) {
                 swal("Error!", info.msg, "error");
@@ -164,16 +198,16 @@ headerAdmin($data);
         });
     }
 
-    function fntEditGaleria(idexpoferiaslaboralesgaleria) {
+    function fntEditEmpresa(idexpoxvEmpresa) {
 
-        document.querySelector("#titleGaleria").innerHTML = "ACTUALIZAR GALERÍA";
+        document.querySelector("#titleEmpresa").innerHTML = "ACTUALIZAR GALERÍA";
         document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");
-        document.querySelector("#btnGaleria").classList.replace("btn-primary", "btn-info");
-        document.querySelector("#btnGaleria").innerHTML = "Actualizar";
+        document.querySelector("#btnEmpresa").classList.replace("btn-primary", "btn-info");
+        document.querySelector("#btnEmpresa").innerHTML = "Actualizar";
 
         $.ajax({
             method: "GET",
-            url: "" + base_url + "/ferialaboralxvllladmin/getOneGaleria/" + idexpoferiaslaboralesgaleria,
+            url: "" + base_url + "/expoferialaboralxvadmin/getOneEmpresa/" + idexpoxvEmpresa,
             processData: false, // tell jQuery not to process the data
             contentType: false, // tell jQuery not to set contentType
 
@@ -181,26 +215,29 @@ headerAdmin($data);
             var info = JSON.parse(response);
 
             if (info.status == true) {
-                document.querySelector("#formmodalGaleria").reset();
-                document.getElementById('idexpoferiaslaboralesgaleria').value = info.data['idexpoferiaslaboralesgaleria'];
+                document.querySelector("#formmodalEmpresa").reset();
+                document.getElementById('idexpoxvEmpresa').value = info.data['idexpoxvempresas'];
                 document.getElementById('txtNombre').value = info.data['nombre'];
                 document.getElementById('txtPosicion').value = info.data['posicion'];
-
+                //   $(".summernote").summernote("your text");
+                $('.summernote').summernote('code', info.data['descripcion']);
+                // document.getElementsByClassName('summernote').value = info.data['descripcion'];
+                document.getElementById('txtPosicion').value = info.data['posicion'];
 
             }
             if (info.status == false) {
                 swal("Error!", info.msg, "error");
             }
-        
-            $("#modalRegistroGaleria").modal("show");
+
+            $("#modalRegistroEmpresa").modal("show");
         });
     }
 
-    function fntDeleteGaleria(idexpoferiaslaboralesgaleria) {
+    function fntDeleteEmpresa(idexpoxvEmpresa) {
 
         swal({
-            title: "Eliminar Galeria",
-            text: "¿Realmente quiere eliminar el Galeria?",
+            title: "Eliminar Empresa",
+            text: "¿Realmente quiere eliminar el Empresa?",
             type: "warning",
             showCancelButton: true,
             confirmButtonText: "Si, eliminar!",
@@ -213,7 +250,7 @@ headerAdmin($data);
 
                 $.ajax({
                     method: "POST",
-                    url: "" + base_url + "/ferialaboralxvllladmin/deleteGaleria/" + idexpoferiaslaboralesgaleria,
+                    url: "" + base_url + "/expoferialaboralxvadmin/deleteEmpresa/" + idexpoxvEmpresa,
                     processData: false, // tell jQuery not to process the data
                     contentType: false, // tell jQuery not to set contentType
 
@@ -223,7 +260,7 @@ headerAdmin($data);
                     console.log(info.status);
 
                     if (info.status == true) {
-                        swal("Galeria", info.msg, "success");
+                        swal("Empresa", info.msg, "success");
                         datatable.api().ajax.reload();
                     }
                     if (info.status == false) {
@@ -249,20 +286,17 @@ headerAdmin($data);
                 "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
             },
             "ajax": {
-                "url": " " + base_url + "/ferialaboralxvllladmin/getGaleria",
+                "url": " " + base_url + "/difusion/getDifusion",
                 "dataSrc": ""
             },
             "columns": [{
-                    "data": "idexpoferiaslaboralesgaleria"
+                    "data": "id_disusion"
                 },
                 {
-                    "data": "nombre"
+                    "data": "descripcion"
                 },
                 {
-                    "data": "archivo"
-                },
-                {
-                    "data": "posicion"
+                    "data": "link"
                 },
                 {
                     "data": "status"

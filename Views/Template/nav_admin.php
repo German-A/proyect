@@ -208,10 +208,54 @@
                 </li>
             <?php } ?>
 
+            <?php
+            if (
+
+                !empty($_SESSION['permisos'][3]['r']) 
+
+            ) {
+            ?>
+                <li class="treeview">
+                    <a class="app-menu__item" href="#" data-toggle="treeview">
+                        <i class="app-menu__icon fas fa-upload" aria-hidden="true"></i>
+                        <span class="app-menu__label">difusion</span>
+                        <i class="treeview-indicator fa fa-angle-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+
+                        <?php if (!empty($_SESSION['permisos'][29]['r'])) { ?>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/difusion"><i class="icon fa fa-circle-o"></i>difusion</a></li>
+                        <?php } ?>
+
+                    </ul>
+                </li>
+            <?php } ?>
 
 
 
 
+
+
+            <?php
+            if (
+
+                !empty($_SESSION['permisos'][34]['r'])
+            ) {
+            ?>
+                <li class="treeview">
+                    <a class="app-menu__item" href="#" data-toggle="treeview">
+                        <i class="app-menu__icon fas fa-upload" aria-hidden="true"></i>
+                        <span class="app-menu__label">XVlll feria laboral</span>
+                        <i class="treeview-indicator fa fa-angle-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+
+                        <?php if (!empty($_SESSION['permisos'][29]['r'])) { ?>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/ferialaboralxvllladmin/galeria"><i class="icon fa fa-circle-o"></i>Galería</a></li>
+                        <?php } ?>
+                    </ul>
+                </li>
+            <?php } ?>
 
 
 

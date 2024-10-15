@@ -165,7 +165,7 @@ headerAdmin($data);
         divLoading.style.display = "flex";
         $.ajax({
             method: "POST",
-            url: "" + base_url + "/expoferialaboralxvlladmin/setPonencias",
+            url: "" + base_url + "/ferialaboralxvllladmin/setPonencias",
             data: fd,
             processData: false, // tell jQuery not to process the data
             contentType: false // tell jQuery not to set contentType
@@ -194,7 +194,7 @@ headerAdmin($data);
 
         $.ajax({
             method: "GET",
-            url: "" + base_url + "/expoferialaboralxvlladmin/getOnePonencia/" + idexpoferiaslaboralesponencias,
+            url: "" + base_url + "/ferialaboralxvllladmin/getOnePonencia/" + idexpoferiaslaboralesponencias,
             processData: false, // tell jQuery not to process the data
             contentType: false, // tell jQuery not to set contentType
 
@@ -234,7 +234,7 @@ headerAdmin($data);
 
                 $.ajax({
                     method: "POST",
-                    url: "" + base_url + "/expoferialaboralxvlladmin/deletePonencias/" + idexpoferiaslaboralesponencias,
+                    url: "" + base_url + "/ferialaboralxvllladmin/deletePonencias/" + idexpoferiaslaboralesponencias,
                     processData: false, // tell jQuery not to process the data
                     contentType: false, // tell jQuery not to set contentType
 
@@ -270,7 +270,7 @@ headerAdmin($data);
                 "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
             },
             "ajax": {
-                "url": " " + base_url + "/expoferialaboralxvlladmin/getPonencias",
+                "url": " " + base_url + "/ferialaboralxvllladmin/getPonencias",
                 "dataSrc": ""
             },
             "columns": [{
