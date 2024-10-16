@@ -190,7 +190,7 @@ $n = 1;
 <div class="contenedor">
     <aside>
         <div class="contenedor-temario" id="temario">
-            <h4 class="text-center">Expoferia Laboral</h4>
+            <h4 class="text-center">Feria laboral</h4>
 
             <br><br>
             <h4>2024</h4>
@@ -199,7 +199,7 @@ $n = 1;
                     <div class="itemY">
                         <h1 data-id="Documentos\MYG\Cuestionario-SISEU.pdf"></h1>
                         <a href="<?= base_url(); ?>/ferialaboralxvlll" target="_blank">
-                            <h5>Feria Laboral Ciencias Básicas y Tecnológicas (11 de julio)</h5>
+                            <h5>Ciencias básicas y tecnológicas (11 de julio)</h5>
                         </a>
                     </div>
                 </li>
@@ -212,7 +212,7 @@ $n = 1;
                     <div class="itemY">
                         <h1 data-id="Documentos\MYG\Cuestionario-SISEU.pdf"></h1>
                         <a href="<?= base_url(); ?>/expoferialaboralxvll" target="_blank">
-                            <h5>Ciencias Básicas y Tecnológicas (07 y 08 de septiembre)</h5>
+                            <h5>Ciencias básicas y tecnológicas (07 y 08 de septiembre)</h5>
                         </a>
                     </div>
                 </li>
@@ -233,7 +233,7 @@ $n = 1;
                     <div class="itemY">
                         <h1 data-id=""></h1>
                         <a href="<?= base_url(); ?>/expoferiavidaysalud" target="_blank">
-                            <h5>Ciencias de la Vida y la Salud (25 al 27 de mayo)</h5>
+                            <h5>Ciencias de la vida y la salud (25 al 27 de mayo)</h5>
                         </a>
                     </div>
                 </li>
@@ -241,7 +241,7 @@ $n = 1;
                     <div class="itemY">
                         <h1 data-id=""></h1>
                         <a href="<?= base_url(); ?>/expoferialaboralxv" target="_blank">
-                            <h5>Ciencias Básicas y Tecnológicas (18 al 20 de octubre)</h5>
+                            <h5>Ciencias básicas y tecnológicas (18 al 20 de octubre)</h5>
                         </a>
                     </div>
                 </li>
@@ -253,7 +253,7 @@ $n = 1;
                     <div class="itemY">
                         <h1 data-id="Documentos\MYG\Cuestionario-SISEU.pdf"></h1>
                         <a href="https://unitru2021.wixsite.com/expoferialaboral" target="_blank">
-                            <h5>Expoferia Laboral Virtual 2021 (07 al 14 de octubre)</h5>
+                            <h5>Ciencias básicas y tecnológicas (07 al 14 de octubre)</h5>
                         </a>
                     </div>
                 </li>

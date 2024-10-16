@@ -64,7 +64,7 @@ class difusion extends Controllers
                     $btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
                 }
 
-				$arrData[$i]['link'] = '<a href="javascript:void(0);"  onClick="copiar('. $arrData[$i]['link'] .')" class="btn btn-secondary btn-sm"  ><span>web</span></a> ';
+				$arrData[$i]['link'] = '<a href="javascript:void(0);" lin-oferta="'. $arrData[$i]['link'] .'"  onClick="copiarLinkOferta(this)" class="btn btn-secondary btn-sm" ><span>web</span></a> ';
 
                 $arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
             }
@@ -72,7 +72,7 @@ class difusion extends Controllers
         }
         die();
     }
-ñ
+
 	//insertar y actualizar los Banners
 	public function setBanner()
 	{

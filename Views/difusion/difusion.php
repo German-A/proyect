@@ -115,8 +115,6 @@ headerAdmin($data);
             ]
         });
     });
-
-
 </script>
 
 
@@ -135,8 +133,10 @@ headerAdmin($data);
         $('#modalRegistroEmpresa').modal('show');
     }
 
-    function copiar(i) {
-        console.log(i);
+    function copiarLinkOferta(e) {
+        navigator.clipboard.writeText(e.getAttribute("lin-oferta")).then(function() {}).catch(function(err) {
+            console.error('Error al copiar texto: ', err);
+        });
     };
 
     function GuardarEmpresa() {

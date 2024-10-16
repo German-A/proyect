@@ -103,7 +103,7 @@
                     </ul>
                 </li>
 
-                <li class="menu__item"><a href="<?= base_url(); ?>/expoferialaboral" class="menu__link">EXPOFERIAS LABORALES </a></li>
+                <li class="menu__item"><a href="<?= base_url(); ?>/expoferialaboral" class="menu__link">FERIA LABORAL </a></li>
                 <li class="menu__item container-submenu"><a href="#" class="menu__link submenu-btn">TRANSPARENCIA&nbsp;<i class="fas fa-chevron-down"></i></a>
                     <ul class="submenu">
                         <li class="menu__item"><a href="<?= base_url(); ?>/transparencia" class="al menu__link">EGRESADOS</a></li>
