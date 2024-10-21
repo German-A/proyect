@@ -1,6 +1,6 @@
 <?php
 headerAdmin($data);
-
+getModal('modalDifusion', $data);
 ?>
 
 
@@ -9,8 +9,8 @@ headerAdmin($data);
     <div class="app-title">
         <div>
             <h1><i class="fas fa-user-tag"></i> <?= $data['page_title'] ?>
-                <?php if ($_SESSION['permisos'][29]['w']) { ?>
-                    <button class="btn btn-primary" type="button" onclick="openModalEmpresa();"><i class="fas fa-plus-circle"></i>Publicar Empresa</button>
+                <?php if ($_SESSION['permisosMod']['w']) { ?>
+                    <button class="btn btn-primary" type="button" onclick="openModal();"><i class="fas fa-plus-circle"></i> Registrar Conferencia</button>
                 <?php } ?>
             </h1>
         </div>
@@ -47,61 +47,6 @@ headerAdmin($data);
 </main>
 <?php footerAdmin($data); ?>
 
-<!-- Modal  agregarPostrado-->
-<div class="modal fade" id="modalRegistroEmpresa" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header headerRegister">
-                <h5 class="modal-title" id="titleEmpresa">Empresa</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form id="formmodalEmpresa" name="formmodalEmpresa" class="form-horizontal">
-                    <input type="hidden" id="idexpoxvEmpresa" name="idexpoxvEmpresa" value="">
-                    <p class="text-primary">Todos los campos son obligatorios.</p>
-
-
-                    <div class="form-row">
-                        <div class="form-group col-md-10">
-                            <label for="txtNombre">Nombre</label>
-                            <input type="text" class="form-control" id="txtNombre" name="txtNombre" required="">
-                        </div>
-                        <div class="form-group col-md-2">
-                            <label for="txtPosicion">Posición</label>
-                            <input type="number" class="form-control" id="txtPosicion" name="txtPosicion" required="">
-                        </div>
-                        <div class="form-group col-md-12">
-                            <label for="txtUrl">Url</label>
-                            <input type="text" class="form-control" id="txtUrl" name="txtUrl" required="">
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group col-md-12">
-                            <label for="descripcion">Descripción del Puesto<span class="text-danger">*</span></label>
-                            <textarea type="text" class="form-control summernote" id="descripcion" name="descripcion" placeholder="Ingresar Descripción Puesto"></textarea>
-                        </div>
-                    </div>
-
-
-                    <div class="form-row">
-                        <div class="form-group col-md-12">
-                            <label for="">Archivo a subir:</label>
-                            <input type="file" id="archivoSubido" name="archivoSubido">
-                        </div>
-                    </div>
-
-                    <div class="tile-footer">
-                        <a href="javascript:void(0)" class="btn btn-info" id="btnEmpresa" onclick="GuardarEmpresa()">Guardar</a>&nbsp;&nbsp;&nbsp;
-                        <button class="btn btn-danger" type="button" data-dismiss="modal"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cerrar</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
 
 <script>
     $(document).ready(function() {
@@ -120,83 +65,13 @@ headerAdmin($data);
 
 
 <script>
-    function openModalEmpresa() {
-        document.querySelector('#idexpoxvEmpresa').value = "";
-        document.querySelector('.modal-header').classList.replace("headerUpdate", "headerRegister");
-        document.querySelector('#btnEmpresa').classList.replace("btn-info", "btn-primary");
-        document.querySelector('#btnEmpresa').innerHTML = "Guardar";
-        document.querySelector('#titleEmpresa').innerHTML = "Galería";
-        document.querySelector("#formmodalEmpresa").reset();
-
-
-        $('.summernote').summernote('reset');
-        $('#modalRegistroEmpresa').modal('show');
-    }
-
     function copiarLinkOferta(e) {
         navigator.clipboard.writeText(e.getAttribute("lin-oferta")).then(function() {}).catch(function(err) {
             console.error('Error al copiar texto: ', err);
         });
     };
 
-    function GuardarEmpresa() {
 
-        var idexpoxvEmpresa = $("#idexpoxvEmpresa").val();
-        var txtNombre = $("#txtNombre").val();
-        var txtUrl = $("#txtUrl").val();
-        var txtPosicion = $("#txtPosicion").val();
-        var descripcion = $("#descripcion").val();
-        var inputElement = document.getElementById("archivoSubido");
-        var archivoSubido = inputElement.files[0];
-
-        if (txtNombre == '') {
-            swal("Atención!", "Ingresar el Nombre", "warning");
-            return;
-        }
-
-        if (txtPosicion == '') {
-            swal("Atención!", "Ingresar la Posición", "warning");
-            return;
-        }
-
-        if (idexpoxvEmpresa != 0) {
-
-        } else {
-            if (inputElement.files['length'] == 0) {
-                swal("Atención", "Ingresar la Imagen.", "warning");
-                return false;
-            }
-        }
-
-        var fd = new FormData();
-        fd.append("idexpoxvempresas", idexpoxvEmpresa);
-        fd.append("txtNombre", txtNombre);
-        fd.append("txtUrl", txtUrl);
-        fd.append("txtPosicion", txtPosicion);
-        fd.append("descripcion", descripcion);
-        fd.append("archivoSubido", archivoSubido);
-        divLoading.style.display = "flex";
-        $.ajax({
-            method: "POST",
-            url: "" + base_url + "/expoferialaboralxvadmin/setEmpresa",
-            data: fd,
-            processData: false, // tell jQuery not to process the data
-            contentType: false // tell jQuery not to set contentType
-
-        }).done(function(response) {
-            var info = JSON.parse(response);
-            if (info.status == true) {
-                swal("Empresa", info.msg, "success");
-                datatable.api().ajax.reload();
-                $("#modalRegistroEmpresa").modal("hide");
-            }
-            if (info.status == false) {
-                swal("Error!", info.msg, "error");
-            }
-            divLoading.style.display = "none";
-            return;
-        });
-    }
 
     function fntEditEmpresa(idexpoxvEmpresa) {
 

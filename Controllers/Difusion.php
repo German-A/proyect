@@ -26,138 +26,76 @@ class difusion extends Controllers
 		$data['page_functions_js'] = "functions_difusion.js";
 		$this->views->getView($this, "difusion", $data);
 	}
-    //listado
-    public function getDifusion()
-    {
+	//listado
+	public function getDifusion()
+	{
 
-        if ($_SESSION['permisosMod']['r']) {
-            $arrData = $this->model->getDifusion();
+		if ($_SESSION['permisosMod']['r']) {
+			$arrData = $this->model->getDifusion();
 
 
-            for ($i = 0; $i < count($arrData); $i++) {
+			for ($i = 0; $i < count($arrData); $i++) {
 
-                $btnView = '';
-                $btnEdit = '';
-                $btnDelete = '';
+				$btnView = '';
+				$btnEdit = '';
+				$btnDelete = '';
 
-                if ($arrData[$i]['status'] == 0) {
-                    $arrData[$i]['status'] = '<span class="badge badge-danger">Eliminado</span>';
-                } else if ($arrData[$i]['status'] == 10) {
-                    $arrData[$i]['status'] = '<span class="badge badge-warning">Inactivo</span>';
-                } else {
-                    $arrData[$i]['status'] = '<span class="badge badge-success">Activo</span>';
-                }
+				if ($arrData[$i]['status'] == 0) {
+					$arrData[$i]['status'] = '<span class="badge badge-danger">Eliminado</span>';
+				} else if ($arrData[$i]['status'] == 10) {
+					$arrData[$i]['status'] = '<span class="badge badge-warning">Inactivo</span>';
+				} else {
+					$arrData[$i]['status'] = '<span class="badge badge-success">Activo</span>';
+				}
 
-                if ($_SESSION['permisos'][18]['r']) {
-                    $btnView = '<button class="btn btn-info btn-sm" onClick="fntView(' . $arrData[$i]['id_disusion'] . ')" title="Ver encuestas"><i class="far fa-eye"></i></button>';
-                }
+				if ($_SESSION['permisos'][18]['r']) {
+					$btnView = '<button class="btn btn-info btn-sm" onClick="fntView(' . $arrData[$i]['id_disusion'] . ')" title="Ver encuestas"><i class="far fa-eye"></i></button>';
+				}
 
-                if ($_SESSION['permisos'][18]['u']) {
-                    $btnEdit = '<button class="btn btn-primary  btn-sm" onClick="fntEdit(this,' . $arrData[$i]['id_disusion'] . ')" title="Editar encuesta"><i class="fas fa-pencil-alt"></i></button>';
-                } else {
-                    $btnEdit = '<button class="btn btn-secondary btn-sm" disabled ><i class="fas fa-pencil-alt"></i></button>';
-                }
+				if ($_SESSION['permisos'][18]['u']) {
+					$btnEdit = '<button class="btn btn-primary  btn-sm" onClick="fntEdit(this,' . $arrData[$i]['id_disusion'] . ')" title="Editar encuesta"><i class="fas fa-pencil-alt"></i></button>';
+				} else {
+					$btnEdit = '<button class="btn btn-secondary btn-sm" disabled ><i class="fas fa-pencil-alt"></i></button>';
+				}
 
-                if ($_SESSION['permisos'][18]['d']) {
-                    $btnDelete = '<button class="btn btn-danger btn-sm" onClick="ftnDelete(' . $arrData[$i]['id_disusion'] . ')" title="Eliminar encuesta"><i class="far fa-trash-alt"></i></button>';
-                } else {
-                    $btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
-                }
+				if ($_SESSION['permisos'][18]['d']) {
+					$btnDelete = '<button class="btn btn-danger btn-sm" onClick="ftnDelete(' . $arrData[$i]['id_disusion'] . ')" title="Eliminar encuesta"><i class="far fa-trash-alt"></i></button>';
+				} else {
+					$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
+				}
 
-				$arrData[$i]['link'] = '<a href="javascript:void(0);" lin-oferta="'. $arrData[$i]['link'] .'"  onClick="copiarLinkOferta(this)" class="btn btn-secondary btn-sm" ><span>web</span></a> ';
+				$arrData[$i]['link'] = '<a href="javascript:void(0);" lin-oferta="' . $arrData[$i]['link'] . '"  onClick="copiarLinkOferta(this)" class="btn btn-secondary btn-sm" ><span>web</span></a> ';
 
-                $arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
-            }
-            echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
-        }
-        die();
-    }
+				$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
+			}
+			echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
+		}
+		die();
+	}
 
 	//insertar y actualizar los Banners
-	public function setBanner()
+	public function set()
 	{
 		if ($_POST) {
-			if (empty($_POST['txtNombre'])) {
-				$arrResponse = array("status" => false, "msg" => 'Datos incorrectos en el Banner.');
+			if (empty($_POST['descripcion'])) {
+				$arrResponse = array("status" => false, "msg" => 'Datos incorrectos.');
 			} else {
-				$idUsuario = intval($_POST['idBanner']);
-				$posicion = $_POST['posicion'];
-				$nombreArchivo = trim($_POST['txtNombre']);
+				$id_disusion = intval(strClean($_POST['id']));
+				$descripcion = strClean($_POST['descripcion']);
+				$link = strClean($_POST['link']);
 
 				$request_user = "";
-				if ($idUsuario == 0) {
+
+				if ($id_disusion == 0) {
 
 					$option = 1;
-
-					$cantidadBanner = "";
-					$cantidadBanner = $this->model->cantidadBanner();
-					$cantidad = $cantidadBanner['cant'];
-					$ubicacionTemporal = $_FILES['archivoSubido']['tmp_name'];
-					$nombre = $_FILES['archivoSubido']['name'];
-
-					$nuevonombre = $cantidad . $nombre;
-
-					if ($cantidad == null) {
-						$cantidad = 0;
-					} else {
-						$cantidad++;
-					}
-
-					if (!file_exists('Assets/archivos/banner/')) {
-						mkdir('Assets/archivos/banner/', 0777, true);
-						if (file_exists('Assets/archivos/banner/')) {
-							if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/banner/' . $nuevonombre)) {
-								$insert = $this->model->insertBanner($nombreArchivo, $nuevonombre, $cantidad, $posicion);
-							} else {
-								echo "no se pudo guardar ";
-							}
-						}
-					} else {
-						if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/banner/' . $nuevonombre)) {
-							$insert = $this->model->insertBanner($nombreArchivo, $nuevonombre, $cantidad, $posicion);
-						} else {
-							echo "no se pudo guardar";
-						}
+					if ($_SESSION['permisosMod']['r']) {
+						$insert = $this->model->register($descripcion, $link);
 					}
 				} else {
 					$option = 2;
-
-					$cantidadBanner = "";
-					$cantidadBanner = $this->model->cantidadBanner();
-
-					//$nombre = null;
-
-					if ($_FILES['archivoSubido']['name'] == "") {
-						$insert = $this->model->updatePosicion($nombreArchivo, $idUsuario, $posicion);
-					} else {
-
-						$cantidad = $cantidadBanner['cant'];
-						$ubicacionTemporal = $_FILES['archivoSubido']['tmp_name'];
-						$nombre = $_FILES['archivoSubido']['name'];
-						$nuevonombre = $cantidad . $nombre;
-						$nombreArchivo = trim($_POST['txtNombre']);
-						if ($cantidad == null) {
-							$cantidad = 0;
-						} else {
-							$cantidad++;
-						}
-
-						if (!file_exists('Assets/archivos/banner/')) {
-							mkdir('Assets/archivos/banner/', 0777, true);
-							if (file_exists('Assets/archivos/banner/')) {
-								if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/banner/' . $nuevonombre)) {
-									$insert = $this->model->updateBanner($nombreArchivo, $nuevonombre, $cantidad, $idUsuario, $posicion);
-								} else {
-									echo "no se pudo guardar ";
-								}
-							}
-						} else {
-							if (move_uploaded_file($ubicacionTemporal, 'Assets/archivos/banner/' . $nuevonombre)) {
-								$insert = $this->model->updateBanner($nombreArchivo, $nuevonombre, $cantidad, $idUsuario, $posicion);
-							} else {
-								echo "no se pudo guardar";
-							}
-						}
+					if ($_SESSION['permisosMod']['u']) {
+						$insert = $this->model->update($nombreArchivo, $nuevonombre, $cantidad, $id_disusion, $posicion);
 					}
 				}
 
@@ -180,9 +118,9 @@ class difusion extends Controllers
 	public function getunBanner($idpersona)
 	{
 		if ($_SESSION['permisosMod']['r']) {
-			$idusuario = intval($idpersona);
-			if ($idusuario > 0) {
-				$arrData = $this->model->getunBanner($idusuario);
+			$id_disusion = intval($idpersona);
+			if ($id_disusion > 0) {
+				$arrData = $this->model->getunBanner($id_disusion);
 				if (empty($arrData)) {
 					$arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
 				} else {

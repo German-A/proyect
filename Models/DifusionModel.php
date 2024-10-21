@@ -2,10 +2,10 @@
 
 	class DifusionModel extends Mysql
 	{
-		private $intIdUsuario;
-		private $nombreArchivo;
-		private $nuevonombre;
-		private $cantidad;
+		private $id_disusion;
+		private $descripcion;
+		private $link;
+
 		private $intborrar=0;
 
 		public function __construct()
@@ -20,42 +20,15 @@
 			return $request;
 		}
 
-		public function buscarArchivoDifusion($filename)
-		{
-			$sql = "SELECT NombreArchivo FROM banner where NombreArchivo = '$filename'";
-			$request = $this->select_all($sql);
-			return $request;
-		}
-
-		public function getOneDifusion($idexpoxvgaleria)
-		{
-			$sql = "SELECT * 
-				FROM banner
-				where Habilitado > 0 and IdDifusion = $idexpoxvgaleria
-				";
-			$request = $this->select($sql);
-			return $request;
-		}
-
-		
-		public function cantidadDifusion()
-		{
-			$sql = "SELECT count(IdDifusion) cant FROM banner where Habilitado = 1 order by FechaRegistro desc";
-			$request = $this->select($sql);
-			return $request;
-		}
-
-		public function register($txtNombre, $txtPosicion, $filename){			
-			$this->Nombre = $txtNombre;
-			$this->NombreArchivo = $filename;
-			$this->Posicion = $txtPosicion;
+		public function register($descripcion, $link){			
+			$this->descripcion = $descripcion;
+			$this->link = $link;
 			$return = 0;
-			$query_insert  = "INSERT INTO banner(Nombre,NombreArchivo,Posicion)
-								  VALUES(?,?,?)";
+			$query_insert  = "INSERT INTO disusion(descripcion,link)
+								  VALUES(?,?)";
 	        	$arrData = array(
-        						$this->Nombre,
-        						$this->NombreArchivo,
-        						$this->Posicion);
+        						$this->descripcion,
+        						$this->link);
 	        	$request_insert = $this->insert($query_insert,$arrData);
 	        	$return = $request_insert;
 	        return $return;
