@@ -84,18 +84,18 @@ class difusion extends Controllers
 				$descripcion = strClean($_POST['descripcion']);
 				$link = strClean($_POST['link']);
 
-				$request_user = "";
+				$insert = "";
 
 				if ($id_disusion == 0) {
 
 					$option = 1;
 					if ($_SESSION['permisosMod']['r']) {
-						$insert = $this->model->register($descripcion, $link);
+						$insert = $this->model->newRegister($descripcion, $link);
 					}
 				} else {
 					$option = 2;
 					if ($_SESSION['permisosMod']['u']) {
-						$insert = $this->model->update($nombreArchivo, $nuevonombre, $cantidad, $id_disusion, $posicion);
+						$insert = $this->model->newUpdate($id_disusion, $descripcion, $link);
 					}
 				}
 

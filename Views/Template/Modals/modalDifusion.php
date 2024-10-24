@@ -27,10 +27,10 @@
           </div>
 
 
-          
+
           <div class="tile-footer">
-          <a href="javascript:void(0);" class="btn btn-primary" id="btnText" onclick="Agregar()"><i class="fa fa-fw fa-lg fa-check-circle"></i>Guardar</a>
-          
+            <a href="javascript:void(0);" class="btn btn-primary" id="btnText" onclick="Agregar()"><i class="fa fa-fw fa-lg fa-check-circle"></i>Guardar</a>
+
             <button class="btn btn-danger" type="button" data-dismiss="modal"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cerrar</button>
           </div>
         </form>
@@ -38,9 +38,6 @@
     </div>
   </div>
 </div>
-
-
-
 
 
 <!-- Modal -->
@@ -55,39 +52,39 @@
       </div>
       <div class="modal-body">
 
-      <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="nombres">Nombres</label>
-              <input type="text" class="form-control" id="vnombres" name="nombres" required="">
-            </div>
-            <div class="form-group col-md-3">
-              <label for="apellidop">Apellido Paterno</label>
-              <input type="text" class="form-control" id="vapellidop" name="apellidop" required="">
-            </div>
-            <div class="form-group col-md-3">
-              <label for="apellidom">Apellido Materno</label>
-              <input type="text" class="form-control" id="vapellidom" name="apellidom" required="">
-            </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="nombres">Nombres</label>
+            <input type="text" class="form-control" id="vnombres" name="nombres" required="">
+          </div>
+          <div class="form-group col-md-3">
+            <label for="apellidop">Apellido Paterno</label>
+            <input type="text" class="form-control" id="vapellidop" name="apellidop" required="">
+          </div>
+          <div class="form-group col-md-3">
+            <label for="apellidom">Apellido Materno</label>
+            <input type="text" class="form-control" id="vapellidom" name="apellidom" required="">
+          </div>
+        </div>
+
+        <div class="form-row">
+
+          <div class="form-group col-md-6">
+            <label for="email_user">Correo</label>
+            <input type="text" class="form-control" id="vemail_user" name="email_user" required="">
           </div>
 
-          <div class="form-row">
-
-            <div class="form-group col-md-6">
-              <label for="email_user">Correo</label>
-              <input type="text" class="form-control" id="vemail_user" name="email_user" required="">
-            </div>
-
-            <div class="form-group col-md-3">
-              <label for="dni">Dni</label>
-              <input type="text" class="form-control" id="vdni" name="dni" required="">
-            </div>
-
-            <div class="form-group col-md-3">
-              <label for="telefono">Celular</label>
-              <input type="text" class="form-control" id="vtelefono" name="telefono" required="">
-            </div>
-
+          <div class="form-group col-md-3">
+            <label for="dni">Dni</label>
+            <input type="text" class="form-control" id="vdni" name="dni" required="">
           </div>
+
+          <div class="form-group col-md-3">
+            <label for="telefono">Celular</label>
+            <input type="text" class="form-control" id="vtelefono" name="telefono" required="">
+          </div>
+
+        </div>
 
       </div>
       <div class="modal-footer">

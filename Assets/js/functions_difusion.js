@@ -1,3 +1,13 @@
+function openModal() {
+    document.querySelector('#id').value = "";
+    document.querySelector('.modal-header').classList.replace("headerUpdate", "headerRegister");
+    document.querySelector('#btnText').classList.replace("btn-info", "btn-primary");
+    document.querySelector('#btnText').innerHTML = "Publicar";
+    document.querySelector('#titleModal').innerHTML = "Publicar Imagen en el Banner";
+    document.querySelector("#formmodal").reset();
+    $('#modal').modal('show');
+}
+
 function Agregar() {
 
     var id = $("#id").val();
@@ -13,7 +23,6 @@ function Agregar() {
         swal("Atención!", "link", "warning");
         return;
     }
-
 
     var fd = new FormData();
     fd.append("id", id);
@@ -31,9 +40,9 @@ function Agregar() {
     }).done(function(response) {
         var info = JSON.parse(response);
         if (info.status == true) {
-            swal("Empresa", info.msg, "success");
+            swal("Difusión", info.msg, "success");
             datatable.api().ajax.reload();
-            $("#modalRegistroEmpresa").modal("hide");
+            $("#modal").modal("hide");
         }
         if (info.status == false) {
             swal("Error!", info.msg, "error");
@@ -43,7 +52,32 @@ function Agregar() {
     });
 }
 
+//Modal para editar la informacion
+function fntEdit(element, idbtn) {
+    rowTable = element.parentNode.parentNode.parentNode;
+    document.querySelector('#titleModal').innerHTML = "Actualizar";
+    document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");
+    document.querySelector('#btnActionForm').classList.replace("btn-primary", "btn-info");
+    document.querySelector('#btnText').innerHTML = "Actualizar";
 
+    //let idbtn = idbtn;
+    let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+    let ajaxUrl = base_url + '/Banner/getone/' + idbtn;
+    request.open("GET", ajaxUrl, true);
+    request.send();
+    request.onreadystatechange = function() {
+
+        if (request.readyState == 4 && request.status == 200) {
+            let objData = JSON.parse(request.responseText);
+
+            if (objData.status) {
+                document.querySelector("#id").value = objData.data.id_disusion;
+                document.querySelector("#descripcion").value = objData.data.descripcion;
+            }
+        }
+        $('#modal').modal('show');
+    }
+}
 
 
 
@@ -109,33 +143,6 @@ function fntView(idbtn) {
     }
 }
 
-//Modal para editar la informacion
-function fntEdit(element, idbtn) {
-    rowTable = element.parentNode.parentNode.parentNode;
-    document.querySelector('#titleModal').innerHTML = "Actualizar Imagen en el Banner";
-    document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");
-    document.querySelector('#btnActionForm').classList.replace("btn-primary", "btn-info");
-    document.querySelector('#btnText').innerHTML = "Actualizar Datos";
-
-    //let idbtn = idbtn;
-    let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-    let ajaxUrl = base_url + '/Banner/getone/' + idbtn;
-    request.open("GET", ajaxUrl, true);
-    request.send();
-    request.onreadystatechange = function() {
-
-        if (request.readyState == 4 && request.status == 200) {
-            let objData = JSON.parse(request.responseText);
-
-            if (objData.status) {
-                document.querySelector("#id").value = objData.data.IdBaner;
-                document.querySelector("#nombreArchivo").value = objData.data.Nombre;
-                document.querySelector("#posicion").value = objData.data.Posicion;
-            }
-        }
-        $('#modalRegistro').modal('show');
-    }
-}
 
 //visualizar Borrar 
 function fntDelete(IdBaner) {
@@ -216,12 +223,3 @@ function ftnPostular(empleoid) {
 
 }
 
-function openModal() {
-    document.querySelector('#id').value = "";
-    document.querySelector('.modal-header').classList.replace("headerUpdate", "headerRegister");
-    document.querySelector('#btnText').classList.replace("btn-info", "btn-primary");
-    document.querySelector('#btnText').innerHTML = "Publicar";
-    document.querySelector('#titleModal').innerHTML = "Publicar Imagen en el Banner";
-    document.querySelector("#formmodal").reset();
-    $('#modal').modal('show');
-}
