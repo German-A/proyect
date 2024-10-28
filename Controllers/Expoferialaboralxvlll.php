@@ -77,7 +77,7 @@ class expoferialaboralxvlll extends Controllers
 	}
 
 
-
+	
 
 	public function galeria()
 	{

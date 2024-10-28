@@ -24,7 +24,7 @@ class ExpoferialaboralxvllladminModel extends Mysql
 
 	private int $expoferiaslaboralesid = 6;
 
-	
+
 
 	public int $return = 0;
 	public int $intborrar = 0;
@@ -40,7 +40,9 @@ class ExpoferialaboralxvllladminModel extends Mysql
 	/*GALERIA*/
 	public function listGaleria()
 	{
-		$sql = "SELECT * FROM expoferiaslaboralesgaleria where status>0 and expoferiaslaboralesid =  $this->expoferiaslaboralesid";
+		$sql = "SELECT * FROM expoferiaslaboralesgaleria 
+		where status > 0 and expoferiaslaboralesid =  $this->expoferiaslaboralesid
+				ORDER BY posicion ASC";
 		$request = $this->select_all($sql);
 		return $request;
 	}
@@ -48,7 +50,9 @@ class ExpoferialaboralxvllladminModel extends Mysql
 	/*GALERIA*/
 	public function listGaleriaweb()
 	{
-		$sql = "SELECT * FROM expoferiaslaboralesgaleria where status>0 and expoferiaslaboralesid = $this->expoferiaslaboralesid";
+		$sql = "SELECT * FROM expoferiaslaboralesgaleria 
+		where status > 0 and expoferiaslaboralesid = $this->expoferiaslaboralesid
+		ORDER BY posicion ASC";
 		$request = $this->select_all($sql);
 		return $request;
 	}
@@ -147,7 +151,8 @@ class ExpoferialaboralxvllladminModel extends Mysql
 	public function listPonenciasdia7()
 	{
 		$sql = "SELECT * FROM expoferiaslaboralesponencias 
-		where status > 0 and expoferiaslaboralesid = $this->expoferiaslaboralesid and date = 7 ";
+		where status > 0 and expoferiaslaboralesid = $this->expoferiaslaboralesid and date = 7 
+		ORDER BY posicion ASC";
 		$request = $this->select_all($sql);
 		return $request;
 	}
@@ -155,7 +160,8 @@ class ExpoferialaboralxvllladminModel extends Mysql
 	public function listPonenciasdia8()
 	{
 		$sql = "SELECT * FROM expoferiaslaboralesponencias 
-			where status > 0 and expoferiaslaboralesid = $this->expoferiaslaboralesid and date = 8 ";
+			where status > 0 and expoferiaslaboralesid = $this->expoferiaslaboralesid and date = 8 
+			ORDER BY posicion ASC ";
 		$request = $this->select_all($sql);
 		return $request;
 	}

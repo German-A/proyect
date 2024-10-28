@@ -19,16 +19,10 @@ class ferialaboralxvllladminModel extends Mysql
 	public string $descripcion;
 	public string $url;
 
-
-
-
 	public int $expoferiaslaboralesid = 7;
 
 	public int $return = 0;
 	public int $intborrar = 0;
-
-
-
 
 	public function __construct()
 	{
@@ -38,7 +32,10 @@ class ferialaboralxvllladminModel extends Mysql
 	/*GALERIA*/
 	public function listGaleria()
 	{
-		$sql = "SELECT * FROM expoferiaslaboralesgaleria where status>0 and expoferiaslaboralesid = $this->expoferiaslaboralesid";
+		$sql = "SELECT *
+		FROM expoferiaslaboralesgaleria 
+		where status > 0 and expoferiaslaboralesid = $this->expoferiaslaboralesid
+		ORDER BY posicion DESC";
 		$request = $this->select_all($sql);
 		return $request;
 	}
@@ -46,14 +43,17 @@ class ferialaboralxvllladminModel extends Mysql
 	/*GALERIA*/
 	public function listGaleriaweb()
 	{
-		$sql = "SELECT * FROM expoferiaslaboralesgaleria where status>0 and expoferiaslaboralesid = $this->expoferiaslaboralesid";
+		$sql = "SELECT * FROM 
+		expoferiaslaboralesgaleria 
+		where status>0 and expoferiaslaboralesid = $this->expoferiaslaboralesid";
 		$request = $this->select_all($sql);
 		return $request;
 	}
 
 	public function buscarArchivoGaleria($filename)
 	{
-		$sql = "SELECT archivo FROM expoferiaslaboralesgaleria where archivo = '$filename'";
+		$sql = "SELECT archivo 
+		FROM expoferiaslaboralesgaleria where archivo = '$filename'";
 		$request = $this->select_all($sql);
 		return $request;
 	}
