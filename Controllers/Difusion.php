@@ -73,6 +73,48 @@ class difusion extends Controllers
 		die();
 	}
 
+
+
+
+
+
+    public function getSelectCarreras()
+    {
+        $search = "";
+        if (!isset($_POST['palabraClave'])) {
+            $arrData = $this->model->getSelectCarrera();
+        } else {
+            $search = $_POST['palabraClave'];
+
+            $arrData = $this->model->getSelectCarreras($search);
+        }
+        echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
+        die();
+    }
+
+    public function getSelectEmpresas()
+    {
+        $search = "";
+        if (!isset($_POST['palabraClave'])) {
+            $arrData = $this->model->getSelectEmpresa();
+        } else {
+            $search = $_POST['palabraClave'];
+
+            $arrData = $this->model->getSelectEmpresaW($search);
+        }
+        echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
+        die();
+    }
+
+
+
+
+
+
+
+
+
+
 	//insertar y actualizar los Banners
 	public function set()
 	{

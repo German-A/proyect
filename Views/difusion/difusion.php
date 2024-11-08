@@ -3,14 +3,63 @@ headerAdmin($data);
 getModal('modalDifusion', $data);
 ?>
 
-
-
 <main class="app-content">
+
+    <form id="form" name="form" class="form-horizontal">
+        <input type="hidden" id="id" name="id" value="">
+        <p class="text-primary">Todos los campos son obligatorios.</p>
+
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="programa_estudio">Programa de estudio</label><br>
+                <select class="form-control programa_estudio" id="programa_estudio" data-live-search="true" name="programa_estudio" required>
+                </select>
+            </div>
+
+            <div class="form-group col-md-12">
+                <label for="nombre_empresa">Nombre Empresa</label>
+                <select class="form-control nombre_empresa" id="nombre_empresa" data-live-search="true" name="nombre_empresa" required>
+                </select>
+
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="nombre_puesto">Nombre Puesto</label>
+                <input type="text" class="form-control" id="nombre_puesto" name="nombre_puesto" required="">
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="modalidad_oferta">Modalidad</label>
+                <input type="text" class="form-control" id="modalidad_oferta" name="modalidad_oferta" required="">
+            </div>
+        </div>
+
+
+        <div class="form-row">
+            <div class="form-group col-md-5">
+                <label for="descripcion">NOMBRE OFERTA</label>
+                <input type="text" class="form-control" id="descripcion" name="descripcion" required="">
+            </div>
+            <div class="form-group col-md-5">
+                <label for="link">link</label>
+                <input type="text" class="form-control" id="link" name="link" required="">
+            </div>
+
+            <div class="form-group col-md-2">
+                <a href="javascript:void(0);" class="btn btn-primary" id="btnText" onclick="Agregar()"><i class="fa fa-fw fa-lg fa-check-circle"></i>Guardar</a>
+                <button class="btn btn-danger" type="button" data-dismiss="modal"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cerrar</button>
+
+            </div>
+        </div>
+    </form>
+
     <div class="app-title">
         <div>
             <h1><i class="fas fa-user-tag"></i> <?= $data['page_title'] ?>
                 <?php if ($_SESSION['permisosMod']['w']) { ?>
-                    <button class="btn btn-primary" type="button" onclick="openModal();"><i class="fas fa-plus-circle"></i> Registrar Conferencia</button>
+                    <button class="btn btn-primary" type="button" onclick="openModal();"><i class="fas fa-plus-circle"></i> Registrar</button>
                 <?php } ?>
             </h1>
         </div>

@@ -187,7 +187,7 @@
                 <li class="treeview">
                     <a class="app-menu__item" href="#" data-toggle="treeview">
                         <i class="app-menu__icon fas fa-upload" aria-hidden="true"></i>
-                        <span class="app-menu__label">XVlll Expoferia</span>
+                        <span class="app-menu__label">CHAMBITA-BUSCA <br>2023</span>
                         <i class="treeview-indicator fa fa-angle-right"></i>
                     </a>
                     <ul class="treeview-menu">
@@ -207,6 +207,37 @@
                     </ul>
                 </li>
             <?php } ?>
+
+            <?php
+            if (
+                !empty($_SESSION['permisos'][21]['r']) ||
+                !empty($_SESSION['permisos'][22]['r'])
+            ) {
+            ?>
+                <li class="treeview">
+                    <a class="app-menu__item" href="#" data-toggle="treeview">
+                        <i class="app-menu__icon fas fa-upload" aria-hidden="true"></i>
+                        <span class="app-menu__label">CHAMBITA-BUSCA<br> 2024</span>
+                        <i class="treeview-indicator fa fa-angle-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+
+                    <?php if (!empty($_SESSION['permisos'][29]['r'])) { ?>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/ferialaboralchambitaadmin/galeria"><i class="icon fa fa-circle-o"></i>Galería</a></li>
+                        <?php } ?>
+
+                        <?php if (!empty($_SESSION['permisos'][30]['r'])) { ?>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/ferialaboralchambitaadmin/ponencias"><i class="icon fa fa-circle-o"></i>Ponencias</a></li>
+                        <?php } ?>
+
+                        <?php if (!empty($_SESSION['permisos'][31]['r'])) { ?>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/ferialaboralchambitaadmin/empresas"><i class="icon fa fa-circle-o"></i>Empresas</a></li>
+                        <?php } ?>
+       
+                    </ul>
+                </li>
+            <?php } ?>
+
 
             <?php
             if (
@@ -252,6 +283,10 @@
 
                         <?php if (!empty($_SESSION['permisos'][29]['r'])) { ?>
                             <li><a class="treeview-item" href="<?= base_url(); ?>/ferialaboralxvllladmin/galeria"><i class="icon fa fa-circle-o"></i>Galería</a></li>
+                        <?php } ?>
+
+                        <?php if (!empty($_SESSION['permisos'][29]['r'])) { ?>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/ferialaboralxvllladmin/ponencias"><i class="icon fa fa-circle-o"></i>ponencias</a></li>
                         <?php } ?>
                     </ul>
                 </li>
@@ -401,11 +436,6 @@
                     </ul>
                 </li>
             <?php } ?> -->
-
-
-
-
-
 
 
             <li>

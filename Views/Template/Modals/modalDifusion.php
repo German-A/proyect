@@ -13,19 +13,11 @@
           <input type="hidden" id="id" name="id" value="">
           <p class="text-primary">Todos los campos son obligatorios.</p>
 
-
           <div class="form-row">
-            <div class="form-group col-md-12">
-              <label for="descripcion">descripcion</label>
-              <input type="text" class="form-control" id="descripcion" name="descripcion" required="">
-            </div>
-            <div class="form-group col-md-12">
-              <label for="link">link</label>
-              <input type="text" class="form-control" id="link" name="link" required="">
-            </div>
 
+     
           </div>
-
+ 
 
 
           <div class="tile-footer">
@@ -34,6 +26,7 @@
             <button class="btn btn-danger" type="button" data-dismiss="modal"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cerrar</button>
           </div>
         </form>
+
       </div>
     </div>
   </div>

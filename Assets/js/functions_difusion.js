@@ -8,6 +8,46 @@ function openModal() {
     $('#modal').modal('show');
 }
 
+$("#programa_estudio").select2({
+    ajax: {
+      url: base_url + "/difusion/getSelectCarreras",
+      type: "post",
+      dataType: "json",
+      delay: 250,
+      data: function (params) {
+        return {
+          palabraClave: params.term, // search term
+        };
+      },
+      processResults: function (response) {
+        return {
+          results: response,
+        };
+      },
+      cache: true,
+    },
+  });
+
+  $("#nombre_empresa").select2({
+    ajax: {
+      url: base_url + "/difusion/getSelectEmpresas",
+      type: "post",
+      dataType: "json",
+      delay: 250,
+      data: function (params) {
+        return {
+          palabraClave: params.term, // search term
+        };
+      },
+      processResults: function (response) {
+        return {
+          results: response,
+        };
+      },
+      cache: true,
+    },
+  });
+
 function Agregar() {
 
     var id = $("#id").val();

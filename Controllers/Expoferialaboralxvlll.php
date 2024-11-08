@@ -20,8 +20,6 @@ class expoferialaboralxvlll extends Controllers
 		$arrData  =  array();
 		$arrData = $obj->listGaleria();
 
-		
-
 		$data['lista_galeria'] = $arrData;
 	
 
@@ -30,7 +28,6 @@ class expoferialaboralxvlll extends Controllers
 
 	public function nosotros()
 	{
-
 		$data['page_tag'] = "Expoferialaboralxvlll";
 		$data['page_title'] = "Expoferialaboralxvlll";
 		$data['page_name'] = "Expoferialaboralxvlll";
@@ -75,9 +72,6 @@ class expoferialaboralxvlll extends Controllers
 
 		$this->views->getView($this, "galeria", $data);
 	}
-
-
-
 
 	public function galeria()
 	{

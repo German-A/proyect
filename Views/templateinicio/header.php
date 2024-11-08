@@ -19,7 +19,7 @@
     <link rel="stylesheet" type="text/css" href="<?= media(); ?>/cssinicio/sliderSwiperjp.css">
     <!-- barra de navegacion -->
 
-    <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/cssjp.css">
+    <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/cssjpv1.css">
 
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/select2.min.css">

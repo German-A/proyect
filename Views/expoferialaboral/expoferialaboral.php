@@ -195,24 +195,12 @@ $n = 1;
             <br><br>
             <h4>2024</h4>
             <ul class="lista">
+
                 <li class="activo">
                     <div class="itemY">
                         <h1 data-id="Documentos\MYG\Cuestionario-SISEU.pdf"></h1>
-                        <a href="<?= base_url(); ?>/ferialaboralxvlll" target="_blank">
-                            <h5>Ciencias básicas y tecnológicas (11 de julio)</h5>
-                        </a>
-                    </div>
-                </li>
-            </ul>
-            <br><br>
-            <br><br>
-            <h4>2023</h4>
-            <ul class="lista">
-                <li class="">
-                    <div class="itemY">
-                        <h1 data-id="Documentos\MYG\Cuestionario-SISEU.pdf"></h1>
-                        <a href="<?= base_url(); ?>/expoferialaboralxvll" target="_blank">
-                            <h5>Ciencias básicas y tecnológicas (07 y 08 de septiembre)</h5>
+                        <a href="<?= base_url(); ?>/ferialaboralchambita" target="_blank">
+                            <h5>Mega feria laboral Chambita te busca (17 y 18 de octubre)</h5>
                         </a>
                     </div>
                 </li>
@@ -220,31 +208,62 @@ $n = 1;
                 <li class="">
                     <div class="itemY">
                         <h1 data-id="Documentos\MYG\Cuestionario-SISEU.pdf"></h1>
-                        <a href="<?= base_url(); ?>/expoferialaboralxvlll" target="_blank">
-                            <h5>Mega feria laboral "Chambita te busca"</h5>
+                        <a href="<?= base_url(); ?>/ferialaboralxvlll" target="_blank">
+                            <h5>Feria laboral XVIII (11 y 12 de julio)</h5>
                         </a>
                     </div>
                 </li>
+
+
+
+            </ul>
+            <br><br>
+            <br><br>
+            <h4>2023</h4>
+            <ul class="lista">
+
+                <li class="">
+                    <div class="itemY">
+                        <h1 data-id="Documentos\MYG\Cuestionario-SISEU.pdf"></h1>
+                        <a href="<?= base_url(); ?>/expoferialaboralxvlll" target="_blank">
+                            <h5>Feria laboral XVII Chambita te busca (20 y 21 de octubre)</h5>
+                        </a>
+                    </div>
+                </li>
+
+                <li class="">
+                    <div class="itemY">
+                        <h1 data-id="Documentos\MYG\Cuestionario-SISEU.pdf"></h1>
+                        <a href="<?= base_url(); ?>/expoferialaboralxvll" target="_blank">
+                            <h5>Feria laboral XVI (07 y 08 de septiembre)</h5>
+                        </a>
+                    </div>
+                </li>
+
+
             </ul>
             <br><br>
             <h4>2022</h4>
             <ul class="lista">
-                <li>
-                    <div class="itemY">
-                        <h1 data-id=""></h1>
-                        <a href="<?= base_url(); ?>/expoferiavidaysalud" target="_blank">
-                            <h5>Ciencias de la vida y la salud (25 al 27 de mayo)</h5>
-                        </a>
-                    </div>
-                </li>
+
                 <li>
                     <div class="itemY">
                         <h1 data-id=""></h1>
                         <a href="<?= base_url(); ?>/expoferialaboralxv" target="_blank">
-                            <h5>Ciencias básicas y tecnológicas (18 al 20 de octubre)</h5>
+                            <h5>Feria laboral XV (18 al 20 de octubre)</h5>
                         </a>
                     </div>
                 </li>
+
+                <li>
+                    <div class="itemY">
+                        <h1 data-id=""></h1>
+                        <a href="<?= base_url(); ?>/expoferiavidaysalud" target="_blank">
+                            <h5>Feria laboral XIV (25 al 27 de mayo)</h5>
+                        </a>
+                    </div>
+                </li>
+
             </ul>
             <br><br>
             <h4>2021</h4>
@@ -253,7 +272,7 @@ $n = 1;
                     <div class="itemY">
                         <h1 data-id="Documentos\MYG\Cuestionario-SISEU.pdf"></h1>
                         <a href="https://unitru2021.wixsite.com/expoferialaboral" target="_blank">
-                            <h5>Ciencias básicas y tecnológicas (07 al 14 de octubre)</h5>
+                            <h5>Feria laboral XIII (07 al 14 de octubre)</h5>
                         </a>
                     </div>
                 </li>

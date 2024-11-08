@@ -28,36 +28,84 @@ $perfiles = $obj->selectBanner();
     <div class="swiper-pagination"></div>
   </div>
 
+  <style>
+    .datosestad {
+      background-color: rgb(81, 161, 212);
+      padding: 40px;
+      border-radius: 10px;
+    }
 
+    .amarillotitulo {
+      color: rgb(255, 238, 10);
+    }
+  </style>
   <br><br><br><br>
-  <!-- 
-  <div class="col-12 text-center ml-4 mr-4">
 
+  <div class="row  d-flex justify-content-center ml-4 mr-4">
+    <div class="col-12  ml-4 mr-4 datosestad " data-aos="fade-down" data-aos-duration="500">
 
-    <div class="row">
-      <h2>UNIDAD DE SEGUIMIENTO DEL EGRESADO UNT</h2>
+      <br>
+      <div class="row">
+        <b>
+          <h1 class="col-md-12 amarillotitulo">UNIDAD DE SEGUIMIENTO DEL EGRESADO UNT</h1>
+        </b>
+      </div>
+      <br><br>
+      <div class="row">
+        <div class="col-md-2">
+          <h1 class="amarillotitulo" style="font-size: 35px;"><b>87%</b></h1>
+          <h2 class="blanco">De nuestros egresados <strong>actualmente trabajan</strong></h2>
+        </div>
+        <div class="col-md-2">
+          <h1 class="amarillotitulo" style="font-size: 35px;">1582</h1>
+          <h2 class="blanco">Egresados en el año<strong> 2023</strong> </h2>
+        </div>
+        <div class="col-md-2">
+          <h1 class="amarillotitulo" style="font-size: 35px;"><b>+2000</b> </h1>
+          <h2 class="blanco"> <strong>Ofertas laborales</strong> activas</h2>
+        </div>
+        <div class="col-md-6">
+          <h2 class="blanco">APUNTAMOS A LOS MÁS ALTOS ESTANDRES DE </h2>
+          <h1 class="amarillotitulo"><b>CALIDAD</b></h1>
+
+        </div>
+
+      </div>
     </div>
-    <div class="row">
-      <div class="col-2">
-        <h2 class="mostaza" style="font-size: 35px;"><b>98%</b></h2>
-        <h5 class="blueoscuro">De nuestros egresados <strong>actualmente trabajan</strong></h5>
-      </div>
-      <div class="col-2">
-        <h2 class="mostaza" style="font-size: 35px;">3366</h2>
-        <h5 class="blueoscuro">Egresados en el año<strong> 2021</strong> </h5>
-      </div>
-      <div class="col-2">
-        <h2 class="mostaza" style="font-size: 35px;"><b>+2000</b> </h2>
-        <h5 class="blueoscuro"> <strong>Ofertas laborales</strong> activas</h5>
-      </div>
-      <div class="col-6">
-        <h3>APUNTAMOS A LOS MÁS ALTOS ESTANDRES DE </h3>
-        <h3><b>CALIDAD</b></h3>
+  </div>
 
+  <br><br><br>
+
+
+
+  <div class="row  d-flex justify-content-center ml-4 mr-4">
+    <div class="col-12  ml-4 mr-4 datosestad " data-aos="fade-down" data-aos-duration="500">
+
+      <br>
+      <div class="row text-center">
+        <h1 class="col-md-12 amarillotitulo">Bolsa de TRABAJO </h1>
       </div>
 
+      <div class="row d-flex justify-content-center">
+        <h3 class="col-md-8 blanco">Apartir de este año hemos fortalecido el portal de empleos de las USE para acompañarte y apoyarte en tu desarrollo profesional. Te invitamos a que tu tambien seas parte de la nueva plataforma, ingresa y revisa las ofertas laborales exclusivas que tenemos para ti. </h3>
+      </div>
+
+      <br><br>
+      <div class="row d-flex justify-content-center">
+        <div class="col-3 text-center">imagen1</div>
+        <div class="col-3 text-center">imagen1</div>
+        <div class="col-3 text-center">imagen1</div>
+        <div class="col-3 text-center">imagen1</div>
+      </div>
     </div>
-  </div> -->
+  </div>
+  <br><br>
+
+  <H1 class="text-center azul-oscuro">PLATAFORMAS</H1>
+
+
+
+  <br><br><br>
 
   <div class="col-12 d-flex justify-content-center">
     <div class="col-10 col-md-6 col-xl-5 col-xg-6 p-1  text-center" style="border-radius:20px; background-color: var(--amarillo-mostaza);">
@@ -69,15 +117,15 @@ $perfiles = $obj->selectBanner();
 
   <div class="col-12 d-flex justify-content-center text-center">
     <div class="col-4 col-md-3" data-aos="fade-down-left">
-      <h2 class="mostaza" style="font-size: 35px;"><b>84%</b></h2>
+      <h2 class="mostaza" style="font-size: 35px;"><b>87%</b></h2>
       <h5 class="blueoscuro">De nuestros egresados <big><strong>actualmente trabajan</strong></big></h5>
     </div>
     <div class="col-4 col-md-3" data-aos="fade-down">
-      <h2 class="mostaza" style="font-size: 35px;">3421</h2>
+      <h2 class="mostaza" style="font-size: 35px;">1582</h2>
       <h5 class="blueoscuro">Egresados en el año<big><strong> 2023</strong></big> </h5>
     </div>
     <div class="col-4 col-md-3" data-aos="fade-down-right">
-      <h2 class="mostaza" style="font-size: 35px;"><b>+3649</b> </h2>
+      <h2 class="mostaza" style="font-size: 35px;"><b>+5639</b> </h2>
       <h5 class="blueoscuro"> <big><strong>Ofertas laborales</strong></big> activas</h5>
     </div>
   </div>
@@ -119,13 +167,7 @@ $perfiles = $obj->selectBanner();
 
 
   <div class="row d-flex justify-content-around text-center" style="max-width: 80%; margin:auto">
-    <!-- <div class="plataform-use  col-md-6 col-lg-4 col-xl-4" data-aos="flip-up">
-      <a href="<?= base_url(); ?>/manuales">
-        <img class="logosplaforma" src="<?= media(); ?>/archivos/logos/cursomooc.png" alt="">
-        <br><br>
-        <h5 class="text-cursosmooc text-center">CURSOS MOOC</h5>
-      </a>
-    </div> -->
+
     <div class="plataform-use  col-md-6 col-lg-4 col-xl-4" data-aos="flip-down">
       <a href="https://siseu-rep.sineace.gob.pe:6041/login" target="_blank">
         <img class="logosplaforma" src="<?= media(); ?>/archivos/logos/siseu.png" alt="">
@@ -151,7 +193,7 @@ $perfiles = $obj->selectBanner();
 
     </div>
     <div class="plataform-use  col-md-6 col-lg-4 col-xl-4" data-aos="flip-up">
-      <a href="<?= base_url(); ?>/expoferialaboral" target="_blank">
+      <a href="<?= base_url(); ?>/expoferiavidaysalud" target="_blank">
         <img class="logosplaforma" src="<?= media(); ?>/archivos/logos/expoferiasuse.jpg" alt="">
         <br><br>
         <h5 class="text-cursosmooc text-center">EXPOFERIA LABORAL</h5>
@@ -169,22 +211,15 @@ $perfiles = $obj->selectBanner();
   </div>
   <br>
   <br>
-
-  <style>
-    .equipoimg {
-      max-width: 200px;
-      max-height: 200px;
-    }
-  </style>
   <h2 class="mostaza text-center" data-aos="fade-down">NUESTRO EQUIPO</h2>
   <br>
 
   <div class="row contepersonald-flex justify-content-around text-center " data-aos="fade-down">
     <div class="col-12 col-sm-5 col-md-5 col-lg-2 mb-2">
       <div class="cont-titulo">
-        <h5 class="bluemedio text-area">DIRECTOR UNIDAD DE<br> SEGUIMIENTO DEL EGRESADO</h5>
+        <h5 class="bluemedio text-area">DIRECTOR DE LA UNIDAD DE <br> SEGUIMIENTO DEL EGRESADO</h5>
       </div>
-      <img class="equipoimg" src="<?= media(); ?>/img/s2024.png" alt="">
+      <img class="equipoimg" src="<?= media(); ?>/img/drEduardo.png" alt="">
       <div class="cont-info">
         <br>
         <h6>EDUARDO TEÓFILO <br> SOSA ANCAJIMA</h6>
@@ -195,29 +230,38 @@ $perfiles = $obj->selectBanner();
       <div class="cont-titulo">
         <h5 class="bluemedio text-area">SUBUNIDAD DE ESTADÍSTICA <br> E INFORMÁTICA</h5>
       </div>
-      <img class="equipoimg" src="<?= media(); ?>/img/kat2024.png" alt="">
+      <img class="equipoimg" src="<?= media(); ?>/img/mgLiseth.png" alt="">
       <div class="cont-info">
         <br>
         <h6>KATHERINE LIZETH <br> NUREÑA RODRÍGUEZ</h6>
         <p><small>INGENIERA ESTADÍSTICO</small> </p>
+      </div>
+    </div><br><br><br>
+    <div class="col-12 col-sm-5 col-md-5 col-lg-2 mb-2">
+      <div class="cont-titulo">
+        <h5 class="bluemedio text-area">ANALISTA DE <br>PROCESOS</h5>
+      </div>
+      <img class="equipoimg" src="<?= media(); ?>/img/ingPaul.png" alt="">
+      <div class="col-4 cont-info">
+        <br>
+        <h6>JEAN PAÚL<br> ROMERO LOBATÓN </h6>
+        <p><small>INGENIERO DE SISTEMAS</small></p>
       </div>
 
     </div><br><br><br>
 
     <div class="col-12 col-sm-5 col-md-5 col-lg-2 mb-2">
       <div class="cont-titulo">
-        <h5 class="bluemedio text-area">ANALISTA DE <br>PROCESOS</h5>
+        <h5 class="bluemedio text-area">ÁREA DE <br>TRAMITE DOCUMENTARIO</h5>
       </div>
-      <img class="equipoimg" src="<?= media(); ?>/img/j2024.png" alt="">
+      <img class="equipoimg" src="<?= media(); ?>/img/abogadaisa.png" alt="">
       <div class="col-4 cont-info">
         <br>
-        <h6>JEAN PAUL<br> ROMERO LOBATÓN </h6>
-        <p><small>INGENIERO DE SISTEMAS</small></p>
+        <h6 style="text-transform: uppercase;">Maria Isabel<br> Haro Valverde</h6>
+        <p><small>ABOGADA</small></p>
       </div>
 
-    </div><br><br><br>
-
-
+    </div>
 
     <br><br><br>
 
@@ -225,7 +269,7 @@ $perfiles = $obj->selectBanner();
       <div class="cont-titulo ">
         <h5 class="bluemedio text-area">ÁREA DE<br>MARQUETÍN</h5>
       </div>
-      <img class="equipoimg" src="<?= media(); ?>/img/a2024.png" alt="">
+      <img class="equipoimg" src="<?= media(); ?>/img/licaandyb.png" alt="">
       <div class="col-4 cont-info">
         <br>
         <h6>ANDY BRYAN<br>BENITES ZAVALETA</h6>
@@ -233,41 +277,13 @@ $perfiles = $obj->selectBanner();
       </div>
     </div>
 
-
-
     <br><br><br>
-
-    <br><br><br>
-    <div class="col-12 col-sm-5 col-md-5 col-lg-2 mb-2">
-      <div class="cont-titulo ">
-        <h5 class="bluemedio text-area">GESTIÓN<br>DOCUMENTARIA</h5>
-      </div>
-      <img class="equipoimg" src="<?= media(); ?>/img/k2024.png" alt="">
-      <div class="col-4 cont-info">
-        <br>
-        <h6>KEVIN JULIO<br>RAMOS AGUILAR</h6>
-        <p><small>LICENCIADO EN PSICOLOGÍA</small></p>
-      </div>
-    </div>
-    <br><br><br>
-
-    <br><br><br>
-    <div class="col-12 col-sm-5 col-md-5 col-lg-2 mb-2">
-      <div class="cont-titulo ">
-        <h5 class="bluemedio text-area">ÁREA DE<br>SISTEMAS DE INFORMACIÓN</h5>
-      </div>
-      <img class="equipoimg" src="<?= media(); ?>/img/g2024.png" alt="">
-      <div class="col-4 cont-info">
-        <br>
-        <h6>GERSON DAVID <br>HUERTA HERRERA</h6>
-        <p><small>CIENCIAS POLITICAS Y GOBERNABILIDAD</small></p>
-      </div>
-    </div>
-    <br><br><br>
-
   </div>
 
+  <br><br>
+
   </body>
+
 </div>
 
 <?php footer($data); ?>
@@ -322,7 +338,6 @@ $perfiles = $obj->selectBanner();
       },
     });
   };
-
 
   setTimeout(sayHi, 2000);
   setTimeout(slider, 4000);

@@ -224,26 +224,20 @@
 </style>
 
 <header>
-
-
     <body>
         <span id="btnMenuExpoferiaxv" class="nav-barxv text-right">
             <div class="row">
                 <div class="col-6 text-left">
                     <img class="logo" src="<?= media(); ?>/images/expoferiaxv/logoUse.png" style="height: 70px;">
                 </div>
-
                 <div class="col-6 text-right">
                     <h2><i class="fas fa-bars text-dark"></i></h2>
                 </div>
-
             </div>
-
         </span>
 
         <nav class="main-navxv">
             <ul class="menuxv" id="menuxv">
-
                 <img class="logoweb" src="<?= media(); ?>/images/expoferiaxv/logoUse.png" style="height: 70px;">
 
                 <div class="naveg">
@@ -257,8 +251,8 @@
                     </ul>
                 </li> -->
                     <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxvll/ponencias" class="menu__linkxv">PONENCIAS</a></li>
-                    <!-- <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxvll/galeria" class="menu__linkxv">GALERIA</a></li>
-                    <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxvll/empresas" class="menu__linkxv">EMPRESAS</a></li> -->
+                     <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxvll/galeria" class="menu__linkxv">GALERIA</a></li>
+                    <!-- <li class="menu__itemxv"><a href="<?= base_url(); ?>/expoferialaboralxvll/empresas" class="menu__linkxv">EMPRESAS</a></li> -->
                 </div>
             </ul>
         </nav>

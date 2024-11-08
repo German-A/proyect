@@ -37,23 +37,23 @@ class manualesyguias extends Controllers
 				$btnView = '';
 				$btnEdit = '';
 				$btnDelete = '';
+
 				if ($_SESSION['permisosMod']['r']) {
 					$btnView = '<button class="btn btn-info btn-sm fntView" onClick="fntView(' . $arrData[$i]['IdManuales'] . ')" title="Ver manualesyguias"><i class="far fa-eye"></i></button>';
 				}
+
 				if ($_SESSION['permisosMod']['u']) {
-					if (($_SESSION['userData']['idrol'] == 1) || ($_SESSION['userData']['idrol'] == 2)) {
-						$btnEdit = '<button class="btn btn-primary  btn-sm fntEdit" onClick="fntEdit(this,' . $arrData[$i]['IdManuales'] . ')" title="Editar manualesyguias"><i class="fas fa-pencil-alt"></i></button>';
-					} else {
-						$btnEdit = '<button class="btn btn-secondary btn-sm" disabled ><i class="fas fa-pencil-alt"></i></button>';
-					}
+					$btnEdit = '<button class="btn btn-primary  btn-sm fntEdit" onClick="fntEdit(this,' . $arrData[$i]['IdManuales'] . ')" title="Editar manualesyguias"><i class="fas fa-pencil-alt"></i></button>';
+				} else {
+					$btnEdit = '<button class="btn btn-secondary btn-sm" disabled ><i class="fas fa-pencil-alt"></i></button>';
 				}
+
 				if ($_SESSION['permisosMod']['d']) {
-					if (($_SESSION['userData']['idrol'] == 1) || ($_SESSION['userData']['idrol'] == 2)) {
-						$btnDelete = '<button class="btn btn-danger btn-sm fntDelete" onClick="fntDelete(' . $arrData[$i]['IdManuales'] . ')" title="Eliminar manualesyguias"><i class="far fa-trash-alt"></i></button>';
-					} else {
-						$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
-					}
+					$btnDelete = '<button class="btn btn-danger btn-sm fntDelete" onClick="fntDelete(' . $arrData[$i]['IdManuales'] . ')" title="Eliminar manualesyguias"><i class="far fa-trash-alt"></i></button>';
+				} else {
+					$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
 				}
+
 				$arrData[$i]['NombreArchivo'] = '<a href="' . base_url() . '/Assets/archivos/manuales/' . $arrData[$i]['NombreArchivo'] . '"target="_blank"><span class="badge badge-primary"  >' . $arrData[$i]['NombreArchivo'] . '</span></a> ';
 
 				$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
@@ -79,13 +79,11 @@ class manualesyguias extends Controllers
 
 				if ($idUsuario == 0) {
 
-				
-
 					$tipo = $_FILES['archivoSubido']['type'];
 
 					if ($tipo == "application/pdf") {
 
-								$option = 1;
+						$option = 1;
 
 						$cantidadmanualesyguias = "";
 						$cantidadmanualesyguias = $this->model->cantidadmanualesyguias();
@@ -137,7 +135,7 @@ class manualesyguias extends Controllers
 						$ubicacionTemporal = $_FILES['archivoSubido']['tmp_name'];
 						$nombre = $_FILES['archivoSubido']['name'];
 						$nuevonombre = $cantidad . $nombre;
-						$nombreArchivo = trim($_POST['txtNombre']);
+						$nombreArchivo = trim($_POST['nombreArchivo']);
 						if ($cantidad == null) {
 							$cantidad = 0;
 						} else {

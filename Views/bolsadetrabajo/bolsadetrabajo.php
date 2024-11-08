@@ -143,11 +143,6 @@ $perfiles = $año->selectañoEspecialidades();
 </style>
 
 
-
-<!-- <div class="listempleos bg-danger">
-
- </div> -->
-
 <div class="col-12 row contenedor">
 
     <div class="col-5 listempleos " id="empleos">
@@ -157,19 +152,130 @@ $perfiles = $año->selectañoEspecialidades();
     <div class="col-7 listempleos  ">
         <h5 id="nombrePuesto"></h5>
         <br>
-        
+
         <p id="DescripcionPuesto"></p>
         <br>
-    </div> 
+    </div>
 
 </div>
 
+<!-- registro de usuarios -->
+<div class="modal fade" id="modalRegistro" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
 
+                <form id="formUsuario" name="formUsuario" class="form-horizontal">
+
+                    <div class="form-group col-md-12">
+                        <label for="dni">Dni</label>
+                        <input type="text" class="form-control  " id="dni" name="dni" required="">
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label for="nombre">Nombres</label>
+                        <input type="text" class="form-control  " id="nombre" name="nombre" required="">
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label for="escuela">escuela</label>
+                        <input type="text" class="form-control  " id="escuela" name="escuela" required="">
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label for="celular">celular</label>
+                        <input type="text" class="form-control  " id="celular" name="celular" required="">
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label for="email">email</label>
+                        <input type="text" class="form-control  " id="email" name="email" required="">
+                    </div>
+
+                    <a href="javascript:void(0);" onclick="registroUsuario()" class="btn btn-outline-primary pl-5 pr-5">
+                            Guardar
+                        </a>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- usuarios registrados -->
+
+<div class="modal fade" id="modalUsuariosRegistrados" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+
+                <form id="formUsuario" name="formUsuario" class="form-horizontal">
+
+                    <div class="form-group col-md-12">
+                        <label for="dni_usuario">Dni</label>
+                        <input type="text" class="form-control  " id="dni_usuario" name="dni_usuario" required="">
+                    </div>
+
+                    <div id="usuarioInfo">
+
+                    </div>
+
+
+
+                 
+                    
+                    <a href="javascript:void(0);" onclick="buscarUsuario()" class="btn btn-outline-primary pl-5 pr-5">
+                            Accedor
+                        </a>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- SEGUNDAS ESPECIALIDADES -->
+<div class="modal fade" id="modalInformacionSesion" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-body">
+
+                <form id="formUsuario" name="formUsuario" class="form-horizontal text-center">
+
+                    <div class="form-group  col-md-12">
+                        <img style="max-width: 250px;" src="<?= media(); ?>/archivos/logos/logoUse.png" alt="">
+                    </div>
+
+                    <div class="form-group col-md-12 ">
+                        <a href="javascript:void(0);" onclick="modalNuevoUsuario()" class="btn btn-outline-primary pl-5 pr-5">
+                            Nuevo usuario
+                        </a>
+                    </div>
+
+                    <div class="form-group col-md-12 ">
+                        <a href="javascript:void(0);" onclick="modalUsuariosRegistrados()"  class="btn btn-outline-primary pl-5 pr-5">
+                            Ya estoy registrado
+                        </a>
+                    </div>
+
+                    <div class="form-group col-md-12 ">
+                        <a href="<?= base_url(); ?>/solicitudempleo" class="btn btn-outline-primary pl-5 pr-5">
+                            Acceso a empresa
+                        </a>
+
+
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
 
 <?php footer($data); ?>
 
 <script>
-
     function empleos() {
         $.ajax({
             method: "GET",
@@ -228,9 +334,9 @@ $perfiles = $año->selectañoEspecialidades();
             console.log(info);
             console.log(info[0].NombrePuesto);
 
-            var descripcionpuesto =null;
+            var descripcionpuesto = null;
 
-            descripcionpuesto= '<h4>Descripcion Puesto:</h4>' + info[0].DescripcionPuesto;
+            descripcionpuesto = '<h4>Descripcion Puesto:</h4>' + info[0].DescripcionPuesto;
 
             $("#nombrePuesto").html(info[0].NombrePuesto);
             $("#DescripcionPuesto").html(descripcionpuesto);
@@ -244,7 +350,127 @@ $perfiles = $año->selectañoEspecialidades();
     }
 
     $(document).ready(function() {
-        empleos();
+        modal();
+
     });
 
+    function modal() {
+
+        $('#modalInformacionSesion').modal({
+            backdrop: 'static',
+            keyboard: false
+        });
+
+    }
+
+    function modalNuevoUsuario() {
+        $('#modalInformacionSesion').modal('hide');
+        $('#modalRegistro').modal({
+            backdrop: 'static',
+            keyboard: false
+        });
+    }
+
+    function modalUsuariosRegistrados() {
+        $('#modalInformacionSesion').modal('hide');
+        $('#modalUsuariosRegistrados').modal({
+            backdrop: 'static',
+            keyboard: false
+        });
+    }
+
+    function registroUsuario() {
+        $('#modalInformacionSesion').modal('hide');
+        $('#modalRegistro').modal({
+            backdrop: 'static',
+            keyboard: false
+        });
+
+        var dni = $("#dni").val();
+        var nombre = $("#nombre").val();
+        var escuela = $("#escuela").val();
+        var celular = $("#celular").val();
+        var email = $("#email").val();    
+
+        if (dni == 0) {
+            swal("Atención!", "Debe Ingresar el número de dni", "warning");
+            return;
+        }
+
+        if (nombre == 0) {
+            swal("Atención!", "Debe Ingresar el nombre", "warning");
+            return;
+        }
+
+        if (escuela == 0) {
+            swal("Atención!", "Debe Ingresar la carrera", "warning");
+            return;
+        }
+
+        if (celular == 0) {
+            swal("Atención!", "Debe Ingresar el numero de celular", "warning");
+            return;
+        }
+
+        if (email == 0) {
+            swal("Atención!", "Debe Ingresar el email", "warning");
+            return;
+        }
+
+        var fd = new FormData();
+        fd.append("dni", dni);
+        fd.append("nombre", nombre);
+        fd.append("escuela", escuela);
+        fd.append("celular", celular);
+        fd.append("email", email);
+
+
+        divLoading.style.display = "flex";
+
+        $.ajax({
+            method: "POST",
+            url: "" + base_url + "/Usuarios_bolsa_trabajo/set",
+            //data: datax
+            data: fd,
+            processData: false, // tell jQuery not to process the data
+            contentType: false // tell jQuery not to set contentType
+
+        }).done(function(response) {
+            location.reload();
+        });
+
+    }
+
+    function buscarUsuario(){
+        
+        var dni_usuario = $("#dni_usuario").val();
+
+        var fd = new FormData();
+        fd.append("dni_usuario", dni_usuario);
+
+        $.ajax({
+            method: "POST",
+            url: "" + base_url + "/usuarios_bolsa_trabajo/getone",
+            //data: datax
+            data: fd,
+            processData: false, // tell jQuery not to process the data
+            contentType: false // tell jQuery not to set contentType
+
+        }).done(function(response) {
+
+            var info = JSON.parse(response);
+
+            console.log(info.data.dni);
+
+            listado =
+                    `
+                    <div class="text-center  mb-2">
+                       <h5 class="azul">bienbenido: ` + info.data.nombres + `</h5>
+                    </div>                          
+                `;
+                $("#usuarioInfo").html(listado);
+
+            console.log(info);
+        });
+    }
 </script>

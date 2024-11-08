@@ -20,6 +20,76 @@ class DifusionModel extends Mysql
 		return $request;
 	}
 
+	public function getSelectCarrera()
+	{
+		$response = null;
+		$sql = "SELECT * FROM escuela";
+		$request = $this->select_all($sql);
+
+		foreach ($request as $line) {
+			$response[] = array(
+				"id" => $line['idEscuela'],
+				"text" => $line['nombreEscuela']
+			);
+		}
+		return $response;
+	}
+
+	public function getSelectCarreras($search)
+	{
+		$response = null;
+		//$sql = "SELECT idTitulaciones,nombreTitulaciones from titulaciones where status!=0";
+		$sql = "SELECT * FROM escuela WHERE nombreEscuela LIKE '%$search%' ORDER BY nombreEscuela";
+		$request = $this->select_all($sql);
+		foreach ($request as $line) {
+			$response[] = array(
+				"id" => $line['idEscuela'],
+				"text" => $line['nombreEscuela']
+			);
+		}
+		return $response;
+	}
+
+	public function getSelectEmpresa()
+	{
+		$response = null;
+		$sql = "SELECT * 
+			FROM usuario u 
+			INNER JOIN empresa e on e.personaid = u.idpersona
+			WHERE u.rolid = 4 ";
+		$request = $this->select_all($sql);
+
+		foreach ($request as $line) {
+			$response[] = array(
+				"id" => $line['idpersona'],
+				"text" => $line['nombreEmpresa']
+			);
+		}
+		return $response;
+	}
+
+	public function getSelectEmpresaW($search)
+	{
+		$response = null;
+		//$sql = "SELECT idTitulaciones,nombreTitulaciones from titulaciones where status!=0";
+		$sql = "SELECT * 
+		FROM usuario u 
+		INNER JOIN empresa e on e.personaid = u.idpersona
+		WHERE u.rolid = 4 and e.nombreEmpresa LIKE '%$search%' ORDER BY nombreEmpresa";
+
+		$request = $this->select_all($sql);
+		foreach ($request as $line) {
+			$response[] = array(
+				"id" => $line['idpersona'],
+				"text" => $line['nombreEmpresa']
+			);
+		}
+		return $response;
+	}
+
+
+
+
 	public function newRegister($descripcion, $link)
 	{
 		$this->descripcion = $descripcion;

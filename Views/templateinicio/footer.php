@@ -14,13 +14,13 @@
             <a target="_blank" href="https://www.facebook.com/use.unt">
                 <img src="<?= media(); ?>/archivos/logos/fbwite.png" style="width:10%">
             </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a target="_blank" href="https://instagram.com/use.unt?igshid=YmMyMTA2M2Y=">
+            <a target="_blank" href="https://www.instagram.com/use.unt/">
                 <img src="<?= media(); ?>/archivos/logos/instawite.png" style="width:10%">
             </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <a target="_blank" href="https://www.youtube.com/channel/UCXyJxRPtWA72esjZKAQdeOw">
                 <img src="<?= media(); ?>/archivos/logos/youtwite.png" style="width:10%">
             </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a target="_blank" href="https://www.linkedin.com/in/unidad-de-seguimiento-del-egresado-unt-0b53aa23b/">
+            <a target="_blank" href="https://www.linkedin.com/in/use-unt-a94592276/">
                 <img src="<?= media(); ?>/archivos/logos/inwite.png" style="width:10%">
             </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <a target="_blank" href="https://www.tiktok.com/@use.unt">
