@@ -62,8 +62,8 @@
         <?php for ($i = 0; $i < count($data['lista']); $i++) { ?>
                 <div class="col-lg-4 col-md-6">
                     <div class="gallery-item">
-                        <a href="<?= media(); ?>/upload/exporiaxvll/<?php echo $data['lista'][$i]['archivo'] ?>" data-gall="portfolioGallery" class="gallery-lightbox">
-                            <img src="<?= media(); ?>/upload/exporiaxvll/<?php echo $data['lista'][$i]['archivo'] ?>">
+                        <a href="<?= media(); ?>/upload/ferialaboralxlll/<?php echo $data['lista'][$i]['archivo'] ?>" data-gall="portfolioGallery" class="gallery-lightbox">
+                            <img src="<?= media(); ?>/upload/ferialaboralxlll/<?php echo $data['lista'][$i]['archivo'] ?>">
                         </a>
                     </div>
                 </div>

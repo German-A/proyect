@@ -73,6 +73,9 @@ class expoferialaboralxvlll extends Controllers
 		$this->views->getView($this, "galeria", $data);
 	}
 
+
+
+
 	public function galeria()
 	{
 		$data['page_tag'] = "Expoferialaboralxvlll";

@@ -276,7 +276,7 @@
                 <li class="treeview">
                     <a class="app-menu__item" href="#" data-toggle="treeview">
                         <i class="app-menu__icon fas fa-upload" aria-hidden="true"></i>
-                        <span class="app-menu__label">XVlll feria laboral</span>
+                        <span class="app-menu__label">feria laboral</span>
                         <i class="treeview-indicator fa fa-angle-right"></i>
                     </a>
                     <ul class="treeview-menu">
