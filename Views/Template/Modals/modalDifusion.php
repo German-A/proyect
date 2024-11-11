@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="modalEmpresa" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header headerRegister">
@@ -14,15 +14,21 @@
           <p class="text-primary">Todos los campos son obligatorios.</p>
 
           <div class="form-row">
+            <div class="form-group col-md-10">
+              <label for="txtNombreEmpresa">Nombre empresa</label>
+              <input type="text" class="form-control" id="txtNombreEmpresa" name="txtNombreEmpresa" required="">
+            </div>
 
-     
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <label for="">Archivo a subir:</label>
+                <input type="file" id="archivoSubido" name="archivoSubido">
+              </div>
+            </div>
           </div>
- 
-
 
           <div class="tile-footer">
-            <a href="javascript:void(0);" class="btn btn-primary" id="btnText" onclick="Agregar()"><i class="fa fa-fw fa-lg fa-check-circle"></i>Guardar</a>
-
+            <a href="javascript:void(0);" class="btn btn-primary" id="btnText" onclick="AgregarEmpresa()"><i class="fa fa-fw fa-lg fa-check-circle"></i>Guardar</a>          
             <button class="btn btn-danger" type="button" data-dismiss="modal"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cerrar</button>
           </div>
         </form>

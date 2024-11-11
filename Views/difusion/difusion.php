@@ -12,12 +12,12 @@ getModal('modalDifusion', $data);
         <div class="form-row">
             <div class="form-group col-md-12">
                 <label for="programa_estudio">Programa de estudio</label><br>
-                <select class="form-control programa_estudio" id="programa_estudio" data-live-search="true" name="programa_estudio" required>
+                <select class="form-control" id="programa_estudio" multiple="multiple" name="programa_estudio" required>
                 </select>
             </div>
 
             <div class="form-group col-md-12">
-                <label for="nombre_empresa">Empresa <a href="javascript:void(0);" class="btn btn-primary" onclick="AgregarEmpresa()"><i class="fas fa-plus-circle"></i></a></label>
+                <label for="nombre_empresa">Empresa <a href="javascript:void(0);" class="btn btn-primary" onclick="openModalEmpresa()"><i class="fas fa-plus-circle"></i></a></label>
                 <select class="form-control nombre_empresa" id="nombre_empresa" data-live-search="true" name="nombre_empresa" required>
                 </select>
 
@@ -31,16 +31,20 @@ getModal('modalDifusion', $data);
             </div>
 
             <div class="form-group col-md-6">
-                <label for="modalidad_oferta">Modalidad</label>
-                <input type="text" class="form-control" id="modalidad_oferta" name="modalidad_oferta" required="">
+                <label for="modalidad_laboral">Modalidad</label>
+                <input type="text" class="form-control" id="modalidad_laboral" name="modalidad_laboral" required="">
             </div>
         </div>
 
 
         <div class="form-row">
             <div class="form-group col-md-5">
-                <label for="descripcion">NOMBRE OFERTA</label>
-                <input type="text" class="form-control" id="descripcion" name="descripcion" required="">
+                <label for="condicion_laboral">condicion_laboral</label>
+                <input type="text" class="form-control" id="condicion_laboral" name="condicion_laboral" required="">
+            </div>
+            <div class="form-group col-md-5">
+                <label for="fecha_termino">fecha_termino</label>
+                <input type="date" class="form-control" id="fecha_termino" name="fecha_termino" required="">
             </div>
             <div class="form-group col-md-5">
                 <label for="link">link</label>
@@ -120,9 +124,133 @@ getModal('modalDifusion', $data);
         });
     };
 
-    function AgregarEmpresa(){
-        
+    function openModalEmpresa() {
+        document.querySelector('#id').value = "";
+        document.querySelector('.modal-header').classList.replace("headerUpdate", "headerRegister");
+        document.querySelector('#btnText').classList.replace("btn-info", "btn-primary");
+        document.querySelector('#btnText').innerHTML = "Publicar Imagen";
+        document.querySelector('#titleModal').innerHTML = "Publicar Idocumento legalnacional";
+        document.querySelector("#formmodal").reset();
+        $('#modalEmpresa').modal('show');
     }
+
+    function AgregarEmpresa() {
+        var id = $("#id").val();
+        var txtNombreEmpresa = $("#txtNombreEmpresa").val();
+        var inputElement = document.getElementById("archivoSubido");
+        var archivoSubido = inputElement.files[0];
+
+        if (txtNombreEmpresa == "") {
+            swal("Atención!", "Ingresar nombre de la Empresa", "warning");
+            return;
+        }
+
+        if (id != 0) {} else {
+            if (inputElement.files["length"] == 0) {
+                swal("Atención", "Ingresar la Imagen.", "warning");
+                return false;
+            }
+        }
+
+        var fd = new FormData();
+        fd.append("id", id);
+        fd.append("txtNombreEmpresa", txtNombreEmpresa);
+
+        fd.append("archivoSubido", archivoSubido);
+
+        divLoading.style.display = "flex";
+        $.ajax({
+            method: "POST",
+            url: "" + base_url + "/difusion/registro_empresa",
+            data: fd,
+            processData: false, // tell jQuery not to process the data
+            contentType: false, // tell jQuery not to set contentType
+        }).done(function(response) {
+            var info = JSON.parse(response);
+
+            if (info.status == true) {
+                swal("Repositorio", info.msg, "success");
+                datatable.api().ajax.reload();
+                $("#modalRegistroRepositorio").modal("hide");
+            }
+
+            if (info.status == false) {
+                swal("Error!", info.msg, "error");
+            }
+
+            divLoading.style.display = "none";
+            return;
+        });
+
+    }
+
+
+
+
+    function Agregar() {
+
+        var id = $("#id").val();
+        var nombre_puesto = $("#nombre_puesto").val();
+        var programa_estudio = $("#programa_estudio").val();
+        var modalidad_laboral = $("#modalidad_laboral").val();
+        var condicion_laboral = $("#condicion_laboral").val();
+        var fecha_termino = $("#fecha_termino").val(); 
+        var link = $("#link").val();
+
+        if (nombre_puesto == '') {
+            swal("Atención!", "ingresar el nombre del nombre_puesto", "warning");
+            return;
+        }
+
+        if (link == '') {
+            swal("Atención!", "link", "warning");
+            return;
+        }
+
+        var lista_programa_estudio = new Array();
+        for (var i = 0; i < programa_estudio.length; i++) {
+            lista_programa_estudio.push({
+                programa_estudio: programa_estudio[i],
+            });
+        }
+    
+        var fd = new FormData();
+        fd.append("id", id);
+        fd.append("nombre_puesto", nombre_puesto);
+        fd.append("lista_programa_estudio", lista_programa_estudio);
+        fd.append("modalidad_laboral", modalidad_laboral);
+        fd.append("condicion_laboral", condicion_laboral);
+        fd.append("fecha_termino", fecha_termino);    
+        fd.append("link", link);
+
+        divLoading.style.display = "flex";
+        $.ajax({
+            method: "POST",
+            url: "" + base_url + "/difusion/set",
+            data: fd,
+            processData: false, // tell jQuery not to process the data
+            contentType: false // tell jQuery not to set contentType
+
+        }).done(function(response) {
+            var info = JSON.parse(response);
+            if (info.status == true) {
+                swal("Difusión", info.msg, "success");
+                datatable.api().ajax.reload();
+                $("#modal").modal("hide");
+            }
+            if (info.status == false) {
+                swal("Error!", info.msg, "error");
+            }
+            divLoading.style.display = "none";
+            return;
+        });
+    }
+
+
+
+
+
+
 
 
 

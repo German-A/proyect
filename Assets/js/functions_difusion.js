@@ -48,49 +48,6 @@ $("#programa_estudio").select2({
     },
   });
 
-function Agregar() {
-
-    var id = $("#id").val();
-    var descripcion = $("#descripcion").val();
-    var link = $("#link").val();
-
-    if (descripcion == '') {
-        swal("Atención!", "descripcion", "warning");
-        return;
-    }
-
-    if (link == '') {
-        swal("Atención!", "link", "warning");
-        return;
-    }
-
-    var fd = new FormData();
-    fd.append("id", id);
-    fd.append("descripcion", descripcion);
-    fd.append("link", link);
-
-    divLoading.style.display = "flex";
-    $.ajax({
-        method: "POST",
-        url: "" + base_url + "/difusion/set",
-        data: fd,
-        processData: false, // tell jQuery not to process the data
-        contentType: false // tell jQuery not to set contentType
-
-    }).done(function(response) {
-        var info = JSON.parse(response);
-        if (info.status == true) {
-            swal("Difusión", info.msg, "success");
-            datatable.api().ajax.reload();
-            $("#modal").modal("hide");
-        }
-        if (info.status == false) {
-            swal("Error!", info.msg, "error");
-        }
-        divLoading.style.display = "none";
-        return;
-    });
-}
 
 //Modal para editar la informacion
 function fntEdit(element, idbtn) {
