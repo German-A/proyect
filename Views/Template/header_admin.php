@@ -46,7 +46,7 @@
 
   <style>
     .select2-container{
-      min-width: 100% !important;
+      max-width: 100% !important;
     }
   </style>
   <?php require_once("nav_admin.php"); ?>

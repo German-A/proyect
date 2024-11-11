@@ -17,7 +17,7 @@ getModal('modalDifusion', $data);
             </div>
 
             <div class="form-group col-md-12">
-                <label for="nombre_empresa">Nombre Empresa</label>
+                <label for="nombre_empresa">Empresa <a href="javascript:void(0);" class="btn btn-primary" onclick="AgregarEmpresa()"><i class="fas fa-plus-circle"></i></a></label>
                 <select class="form-control nombre_empresa" id="nombre_empresa" data-live-search="true" name="nombre_empresa" required>
                 </select>
 
@@ -119,6 +119,10 @@ getModal('modalDifusion', $data);
             console.error('Error al copiar texto: ', err);
         });
     };
+
+    function AgregarEmpresa(){
+        
+    }
 
 
 
