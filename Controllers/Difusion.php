@@ -49,17 +49,17 @@ class difusion extends Controllers
 				}
 
 				if ($_SESSION['permisos'][18]['r']) {
-					$btnView = '<button class="btn btn-info btn-sm" onClick="fntView(' . $arrData[$i]['id_disusion'] . ')" title="Ver encuestas"><i class="far fa-eye"></i></button>';
+					$btnView = '<button class="btn btn-info btn-sm" onClick="fntView(' . $arrData[$i]['id_difusion_ofertas'] . ')" title="Ver encuestas"><i class="far fa-eye"></i></button>';
 				}
 
 				if ($_SESSION['permisos'][18]['u']) {
-					$btnEdit = '<button class="btn btn-primary  btn-sm" onClick="fntEdit(this,' . $arrData[$i]['id_disusion'] . ')" title="Editar encuesta"><i class="fas fa-pencil-alt"></i></button>';
+					$btnEdit = '<button class="btn btn-primary  btn-sm" onClick="fntEdit(this,' . $arrData[$i]['id_difusion_ofertas'] . ')" title="Editar encuesta"><i class="fas fa-pencil-alt"></i></button>';
 				} else {
 					$btnEdit = '<button class="btn btn-secondary btn-sm" disabled ><i class="fas fa-pencil-alt"></i></button>';
 				}
 
 				if ($_SESSION['permisos'][18]['d']) {
-					$btnDelete = '<button class="btn btn-danger btn-sm" onClick="ftnDelete(' . $arrData[$i]['id_disusion'] . ')" title="Eliminar encuesta"><i class="far fa-trash-alt"></i></button>';
+					$btnDelete = '<button class="btn btn-danger btn-sm" onClick="ftnDelete(' . $arrData[$i]['id_difusion_ofertas'] . ')" title="Eliminar encuesta"><i class="far fa-trash-alt"></i></button>';
 				} else {
 					$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
 				}
@@ -183,8 +183,8 @@ class difusion extends Controllers
 				$updated_at =  strtotime(date("Y-m-d H:i:s"));
 
 				/*con archivo*/
-				$Folder = 'Assets/upload/repositorio/';
-				$deleteFolder = 'Assets/upload/repositorio/delete/';
+				$Folder = 'Assets/upload/difusiones_laborales/';
+				$deleteFolder = 'Assets/upload/difusiones_laborales/delete/';
 				$filename = '';
 				$findFile = true;
 				$notFile = false;
@@ -283,14 +283,15 @@ class difusion extends Controllers
 
 				$id = intval(strClean($_POST['id']));
 				$nombre_puesto = strClean($_POST['nombre_puesto']);
+				$nombre_empresa = strClean($_POST['nombre_empresa']);
 				$modalidad_laboral = strClean($_POST['modalidad_laboral']);
 				$condicion_laboral = strClean($_POST['condicion_laboral']);
 				$fecha_termino = strClean($_POST['fecha_termino']);
 				$link = strClean($_POST['link']);
 
 				$lista_programa_estudio = array();
-				$lista_programa_estudio = strClean(json_decode($_POST['lista_programa_estudio']));
-
+				$lista_programa_estudio = json_decode($_POST['lista_programa_estudio'],true);
+		
 					
 				$created_by = $_SESSION['idUser'];
 				$created_at =  strtotime(date("Y-m-d H:i:s"));
@@ -324,8 +325,6 @@ class difusion extends Controllers
 				$fecha_termino = strClean($_POST['fecha_termino']);
 				$link = strClean($_POST['link']);
 
-
-
 				/*registro*/
 				if ($id == null) {
 					$option = 1;
@@ -333,7 +332,7 @@ class difusion extends Controllers
 					$filename = $this->upload($archivos, $findFile, $Folder);
 					/*registro*/
 					if ($_SESSION['permisosMod']['w']) {
-						$insert = $this->model->newRegisterDifusion($nombre_puesto, $modalidad_laboral,$condicion_laboral, $fecha_termino, $lista_programa_estudio, $link, $created_by, $created_at);
+						$insert = $this->model->newRegisterDifusion($nombre_puesto, $nombre_empresa, $modalidad_laboral,$condicion_laboral, $fecha_termino, $lista_programa_estudio, $link, $created_by, $created_at);
 					}
 				}
 

@@ -18,7 +18,8 @@ getModal('modalDifusion', $data);
 
             <div class="form-group col-md-12">
                 <label for="nombre_empresa">Empresa <a href="javascript:void(0);" class="btn btn-primary" onclick="openModalEmpresa()"><i class="fas fa-plus-circle"></i></a></label>
-                <select class="form-control nombre_empresa" id="nombre_empresa" data-live-search="true" name="nombre_empresa" required>
+                <select class="form-control" id="nombre_empresa" data-live-search="true" name="nombre_empresa" required>
+
                 </select>
 
             </div>
@@ -82,7 +83,10 @@ getModal('modalDifusion', $data);
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>descripcion</th>
+                                    <th>nombre_puesto</th>
+                                    <th>condicion_laboral</th>
+                                    <th>modalidad_laboral</th>
+                                    <th>fecha_termino</th>
                                     <th>link</th>
                                     <th>Estado</th>
                                     <th>Acciones</th>
@@ -191,10 +195,12 @@ getModal('modalDifusion', $data);
 
         var id = $("#id").val();
         var nombre_puesto = $("#nombre_puesto").val();
+        var nombre_empresa = $("#nombre_empresa").val();
+        
         var programa_estudio = $("#programa_estudio").val();
         var modalidad_laboral = $("#modalidad_laboral").val();
         var condicion_laboral = $("#condicion_laboral").val();
-        var fecha_termino = $("#fecha_termino").val(); 
+        var fecha_termino = $("#fecha_termino").val();
         var link = $("#link").val();
 
         if (nombre_puesto == '') {
@@ -213,14 +219,15 @@ getModal('modalDifusion', $data);
                 programa_estudio: programa_estudio[i],
             });
         }
-    
+
         var fd = new FormData();
         fd.append("id", id);
         fd.append("nombre_puesto", nombre_puesto);
-        fd.append("lista_programa_estudio", lista_programa_estudio);
+        fd.append("nombre_empresa", nombre_empresa);
+        fd.append("lista_programa_estudio", JSON.stringify(lista_programa_estudio));
         fd.append("modalidad_laboral", modalidad_laboral);
         fd.append("condicion_laboral", condicion_laboral);
-        fd.append("fecha_termino", fecha_termino);    
+        fd.append("fecha_termino", fecha_termino);
         fd.append("link", link);
 
         divLoading.style.display = "flex";
@@ -233,6 +240,13 @@ getModal('modalDifusion', $data);
 
         }).done(function(response) {
             var info = JSON.parse(response);
+
+
+            $('#programa_estudio').val(null).trigger('change');
+            $('#programa_estudio').val(null).trigger('change');
+
+            document.querySelector("#form").reset();
+
             if (info.status == true) {
                 swal("Difusión", info.msg, "success");
                 datatable.api().ajax.reload();
@@ -334,63 +348,5 @@ getModal('modalDifusion', $data);
     }
 
 
-    $(document).ready(function() {
-        datatable = $('#datatable').dataTable({
-            "aProcessing": true,
-            "aServerSide": true,
-            "language": {
-                "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
-            },
-            "ajax": {
-                "url": " " + base_url + "/difusion/getDifusion",
-                "dataSrc": ""
-            },
-            "columns": [{
-                    "data": "id_disusion"
-                },
-                {
-                    "data": "descripcion"
-                },
-                {
-                    "data": "link"
-                },
-                {
-                    "data": "status"
-                },
-                {
-                    "data": "options"
-                }
-            ],
-            'dom': 'lBfrtip',
-            'buttons': [{
-                "extend": "copyHtml5",
-                "text": "<i class='far fa-copy'></i> Copiar",
-                "titleAttr": "Copiar",
-                "className": "btn btn-secondary"
-            }, {
-                "extend": "excelHtml5",
-                "text": "<i class='fas fa-file-excel'></i> Excel",
-                "titleAttr": "Esportar a Excel",
-                "className": "btn btn-success"
-            }, {
-                "extend": "pdfHtml5",
-                "text": "<i class='fas fa-file-pdf'></i> PDF",
-                "titleAttr": "Esportar a PDF",
-                "className": "btn btn-danger"
-            }, {
-                "extend": "csvHtml5",
-                "text": "<i class='fas fa-file-csv'></i> CSV",
-                "titleAttr": "Esportar a CSV",
-                "className": "btn btn-info"
-            }],
-            "resonsieve": "true",
-            "bDestroy": true,
-            "iDisplayLength": 10,
 
-            "order": [
-                [0, "desc"]
-            ]
-        });
-
-    });
 </script>

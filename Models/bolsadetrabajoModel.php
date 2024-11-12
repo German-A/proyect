@@ -1,17 +1,44 @@
-<?php 
+<?php
 
-	class bolsadetrabajoModel extends Mysql
+class bolsadetrabajoModel extends Mysql
+{
+	private $intIdUsuario;
+	private $nombreArchivo;
+	private $nuevonombre;
+	private $cantidad;
+	private $intborrar = 0;
+
+	public function __construct()
 	{
-		private $intIdUsuario;
-		private $nombreArchivo;
-		private $nuevonombre;
-		private $cantidad;
-		private $intborrar=0;
+		parent::__construct();
+	}
 
-		public function __construct()
-		{
-			parent::__construct();
-		}
+	public function get_ofertas_laborales()
+	{
+		$sql = "SELECT * 
+			FROM difusion_ofertas difo
+			INNER JOIN empresa_feria ef on difo.id_difusion_ofertas=ef.id_empresa_feria
+			INNER JOIN disusion_ofertas_carreras oc on oc.id_difusion_ofertas=difo.id_difusion_ofertas
+			INNER JOIN escuela e on oc.id_escuela = e.idEscuela
+				";
+		$request = $this->select_all($sql);
+		return $request;
+	}
+
+	public function listaCarrerasRequeridas($idempresa)
+	{
+		$sql = "SELECT * 
+		from disusion_ofertas_carreras oc
+		inner join escuela e on oc.id_escuela = e.idEscuela
+		where oc.id_difusion_ofertas = $idempresa";
+		$request = $this->select_all($sql);
+		return $request;
+	}
+
+
+
+
+
 
 	// LISTA DE EMPLEOS POR APROBAR
 	public function listEmpleos()
@@ -72,14 +99,13 @@
 		return $request;
 	}
 
-		public function getOne($idusuario)
-		{
-			$sql = "SELECT * 
+	public function getOne($idusuario)
+	{
+		$sql = "SELECT * 
             FROM banner
             where Habilitado=1 and IdBaner=$idusuario
 			";
-			$request = $this->select($sql);			
-			return $request;
-		}
+		$request = $this->select($sql);
+		return $request;
 	}
- ?>
+}

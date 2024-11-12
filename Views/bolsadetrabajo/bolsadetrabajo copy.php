@@ -94,6 +94,26 @@ $perfiles = $año->selectañoEspecialidades();
 
 
 
+<br><br>
+
+
+<!-- <div class="col-12">
+    <div class="row d-flex justify-content-around" id="empleos">
+        <div class="col-5 pb-4 cardempleo ">
+            <div class="row">
+                <div class="col-3">
+
+                </div>
+                <div class="col-8">
+                    <h4></h4>
+                    <br>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ -->
 
 <style>
     .contenedor {
@@ -173,8 +193,8 @@ $perfiles = $año->selectañoEspecialidades();
                     </div>
 
                     <a href="javascript:void(0);" onclick="registroUsuario()" class="btn btn-outline-primary pl-5 pr-5">
-                        Guardar
-                    </a>
+                            Guardar
+                        </a>
                 </form>
             </div>
 
@@ -200,50 +220,19 @@ $perfiles = $año->selectañoEspecialidades();
 
                     </div>
 
+
+
+                 
+                    
                     <a href="javascript:void(0);" onclick="buscarUsuario()" class="btn btn-outline-primary pl-5 pr-5">
-                        Accedor
-                    </a>
+                            Accedor
+                        </a>
                 </form>
             </div>
 
         </div>
     </div>
 </div>
-
-
-<style>
-    .contenedor_ofertas_curos {
-        display: grid;
-        grid-template-columns: auto auto auto;
-        /* Ajusta el número de columnas según tus necesidades */
-        margin: auto;
-        column-gap: 10px;
-        grid-auto-rows: auto;
-
-    }
-
-    .cursos_empleabilidad {
-        max-width: 200px;
-        /* height: max-content; */
-
-    }
-</style>
-
-
-<div class="contenedor_ofertas_curos">
-    <div class="cursos_empleabilidad desarrollo_personal" data-aos="fade-left">
-        <a href="<?= base_url(); ?>/bolsadetrabajo/desarrollo_personal"><img src="<?= media(); ?>/archivos/bolsa_de_trabajo/desarrollo_personal.png" alt=""></a>
-    </div>
-    <div class="cursos_empleabilidad imagen_egresados" data-aos="fade-up">
-      <img src="<?= media(); ?>/archivos/bolsa_de_trabajo/egresados.png" alt="">
-    </div>
-    <div class="cursos_empleabilidad empleos" data-aos="fade-right">
-        <a href="<?= base_url();?>/bolsadetrabajo/ofertas_laborales"><img src="<?= media(); ?>/archivos/bolsa_de_trabajo/empleos.png" alt=""></a>
-    </div>
-</div>
-
-
-
 
 <!-- SEGUNDAS ESPECIALIDADES -->
 <div class="modal fade" id="modalInformacionSesion" tabindex="-1" role="dialog" aria-hidden="true">
@@ -264,7 +253,7 @@ $perfiles = $año->selectañoEspecialidades();
                     </div>
 
                     <div class="form-group col-md-12 ">
-                        <a href="javascript:void(0);" onclick="modalUsuariosRegistrados()" class="btn btn-outline-primary pl-5 pr-5">
+                        <a href="javascript:void(0);" onclick="modalUsuariosRegistrados()"  class="btn btn-outline-primary pl-5 pr-5">
                             Ya estoy registrado
                         </a>
                     </div>
@@ -361,14 +350,17 @@ $perfiles = $año->selectañoEspecialidades();
     }
 
     $(document).ready(function() {
-        // modal();
+        modal();
+
     });
 
     function modal() {
+
         $('#modalInformacionSesion').modal({
             backdrop: 'static',
             keyboard: false
         });
+
     }
 
     function modalNuevoUsuario() {
@@ -398,7 +390,7 @@ $perfiles = $año->selectañoEspecialidades();
         var nombre = $("#nombre").val();
         var escuela = $("#escuela").val();
         var celular = $("#celular").val();
-        var email = $("#email").val();
+        var email = $("#email").val();    
 
         if (dni == 0) {
             swal("Atención!", "Debe Ingresar el número de dni", "warning");
@@ -432,6 +424,7 @@ $perfiles = $año->selectañoEspecialidades();
         fd.append("celular", celular);
         fd.append("email", email);
 
+
         divLoading.style.display = "flex";
 
         $.ajax({
@@ -448,8 +441,8 @@ $perfiles = $año->selectañoEspecialidades();
 
     }
 
-    function buscarUsuario() {
-
+    function buscarUsuario(){
+        
         var dni_usuario = $("#dni_usuario").val();
 
         var fd = new FormData();
@@ -470,12 +463,12 @@ $perfiles = $año->selectañoEspecialidades();
             console.log(info.data.dni);
 
             listado =
-                `
+                    `
                     <div class="text-center  mb-2">
                        <h5 class="azul">bienbenido: ` + info.data.nombres + `</h5>
                     </div>                          
                 `;
-            $("#usuarioInfo").html(listado);
+                $("#usuarioInfo").html(listado);
 
             console.log(info);
         });

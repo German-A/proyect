@@ -232,13 +232,13 @@ $perfiles = $año->selectañoEspecialidades();
 
 <div class="contenedor_ofertas_curos">
     <div class="cursos_empleabilidad desarrollo_personal" data-aos="fade-left">
-        <a href="<?= base_url(); ?>/bolsadetrabajo/desarrollo_personal"><img src="<?= media(); ?>/archivos/bolsa_de_trabajo/desarrollo_personal.png" alt=""></a>
+        <a href="<?= base_url(); ?>/desarrollo_personal"><img src="<?= media(); ?>/archivos/bolsa_de_trabajo/desarrollo_personal.png" alt=""></a>
     </div>
     <div class="cursos_empleabilidad imagen_egresados" data-aos="fade-up">
       <img src="<?= media(); ?>/archivos/bolsa_de_trabajo/egresados.png" alt="">
     </div>
     <div class="cursos_empleabilidad empleos" data-aos="fade-right">
-        <a href="<?= base_url();?>/bolsadetrabajo/ofertas_laborales"><img src="<?= media(); ?>/archivos/bolsa_de_trabajo/empleos.png" alt=""></a>
+        <a href="<?= base_url();?>/ofertas_laborales"><img src="<?= media(); ?>/archivos/bolsa_de_trabajo/empleos.png" alt=""></a>
     </div>
 </div>
 
