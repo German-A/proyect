@@ -1,6 +1,6 @@
 <?php
 
-class difusion extends Controllers
+class difusion_cursos extends Controllers
 {
 	private $idempleo;
 	public function __construct()
@@ -14,24 +14,24 @@ class difusion extends Controllers
 		getPermisos(36);
 	}
 	//pagina Banner
-	public function difusion()
+	public function difusion_cursos()
 	{
 		if (empty($_SESSION['permisosMod']['r'])) {
 			header("Location:" . base_url() . '/dashboard');
 		}
-		$data['page_tag'] = "difusion";
-		$data['page_title'] = "difusion <small>Unidad de Seguimiento del Egresado</small>";
-		$data['page_name'] = "USE-difusion";
+		$data['page_tag'] = "difusion_cursos";
+		$data['page_title'] = "difusion_cursos <small>Unidad de Seguimiento del Egresado</small>";
+		$data['page_name'] = "USE-difusion_cursos";
 
-		$data['page_functions_js'] = "functions_difusion.js";
-		$this->views->getView($this, "difusion", $data);
+		$data['page_functions_js'] = "functions_difusion_cursos.js";
+		$this->views->getView($this, "difusion_cursos", $data);
 	}
 	//listado
-	public function getDifusion()
+	public function getdifusion_cursos()
 	{
 
 		if ($_SESSION['permisosMod']['r']) {
-			$arrData = $this->model->getDifusion();
+			$arrData = $this->model->getdifusion_cursos();
 
 
 			for ($i = 0; $i < count($arrData); $i++) {
@@ -49,17 +49,17 @@ class difusion extends Controllers
 				}
 
 				if ($_SESSION['permisos'][36]['r']) {
-					$btnView = '<button class="btn btn-info btn-sm" onClick="fntView(' . $arrData[$i]['id_difusion_ofertas'] . ')" title="Ver encuestas"><i class="far fa-eye"></i></button>';
+					$btnView = '<button class="btn btn-info btn-sm" onClick="fntView(' . $arrData[$i]['id_difusion_cursos_ofertas'] . ')" title="Ver encuestas"><i class="far fa-eye"></i></button>';
 				}
 
 				if ($_SESSION['permisos'][36]['u']) {
-					$btnEdit = '<button class="btn btn-primary  btn-sm" onClick="fntEdit(this,' . $arrData[$i]['id_difusion_ofertas'] . ')" title="Editar encuesta"><i class="fas fa-pencil-alt"></i></button>';
+					$btnEdit = '<button class="btn btn-primary  btn-sm" onClick="fntEdit(this,' . $arrData[$i]['id_difusion_cursos_ofertas'] . ')" title="Editar encuesta"><i class="fas fa-pencil-alt"></i></button>';
 				} else {
 					$btnEdit = '<button class="btn btn-secondary btn-sm" disabled ><i class="fas fa-pencil-alt"></i></button>';
 				}
 
 				if ($_SESSION['permisos'][36]['d']) {
-					$btnDelete = '<button class="btn btn-danger btn-sm" onClick="ftnDelete(' . $arrData[$i]['id_difusion_ofertas'] . ')" title="Eliminar encuesta"><i class="far fa-trash-alt"></i></button>';
+					$btnDelete = '<button class="btn btn-danger btn-sm" onClick="ftnDelete(' . $arrData[$i]['id_difusion_cursos_ofertas'] . ')" title="Eliminar encuesta"><i class="far fa-trash-alt"></i></button>';
 				} else {
 					$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
 				}
@@ -183,8 +183,8 @@ class difusion extends Controllers
 				$updated_at =  strtotime(date("Y-m-d H:i:s"));
 
 				/*con archivo*/
-				$Folder = 'Assets/upload/difusiones_laborales/';
-				$deleteFolder = 'Assets/upload/difusiones_laborales/delete/';
+				$Folder = 'Assets/upload/difusion_cursoses_laborales/';
+				$deleteFolder = 'Assets/upload/difusion_cursoses_laborales/delete/';
 				$filename = '';
 				$findFile = true;
 				$notFile = false;
@@ -273,7 +273,7 @@ class difusion extends Controllers
 
 
 
-	#region registro_difusion_oferta
+	#region registro_difusion_cursos_oferta
 	public function set()
 	{
 		if ($_POST) {
@@ -332,7 +332,7 @@ class difusion extends Controllers
 					$filename = $this->upload($archivos, $findFile, $Folder);
 					/*registro*/
 					if ($_SESSION['permisosMod']['w']) {
-						$insert = $this->model->newRegisterDifusion($nombre_puesto, $nombre_empresa, $modalidad_laboral,$condicion_laboral, $fecha_termino, $lista_programa_estudio, $link, $created_by, $created_at);
+						$insert = $this->model->newRegisterdifusion_cursos($nombre_puesto, $nombre_empresa, $modalidad_laboral,$condicion_laboral, $fecha_termino, $lista_programa_estudio, $link, $created_by, $created_at);
 					}
 				}
 
@@ -392,7 +392,7 @@ class difusion extends Controllers
 		}
 		die();
 	}
-	#endregion registro_difusion_oferta
+	#endregion registro_difusion_cursos_oferta
 
 	//obtener un baner para actualizar
 	public function getunBanner($idpersona)

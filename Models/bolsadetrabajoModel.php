@@ -13,13 +13,52 @@ class bolsadetrabajoModel extends Mysql
 		parent::__construct();
 	}
 
-	public function get_ofertas_laborales()
+		/*CARRERAS*/
+		public function getSelectCarrera()
+		{
+			$response = null;
+			$sql = "SELECT * FROM escuela";
+			$request = $this->select_all($sql);
+	
+			foreach ($request as $line) {
+				$response[] = array(
+					"id" => $line['idEscuela'],
+					"text" => $line['nombreEscuela']
+				);
+			}
+			return $response;
+		}
+	
+		public function getSelectCarreras($search)
+		{
+	
+			$response = null;
+			//$sql = "SELECT idTitulaciones,nombreTitulaciones from titulaciones where status!=0";
+			$sql = "SELECT * FROM escuela WHERE nombreEscuela LIKE '%$search%'  ORDER BY nombreEscuela";
+			$request = $this->select_all($sql);
+			foreach ($request as $line) {
+				$response[] = array(
+					"id" => $line['idEscuela'],
+					"text" => $line['nombreEscuela']
+				);
+			}
+			return $response;
+		}
+	
+	public function get_ofertas_laborales($escuela)
 	{
+		$escuelaid = '';
+
+		if ($escuela != null) {
+			$escuelaid = 'and oc.id_escuela = ' . $escuela;
+		}
+
 		$sql = "SELECT * 
 			FROM difusion_ofertas difo
-			INNER JOIN empresa_feria ef on difo.id_difusion_ofertas=ef.id_empresa_feria
+			INNER JOIN empresa_feria ef on difo.id_empresa_feria=ef.id_empresa_feria
 			INNER JOIN disusion_ofertas_carreras oc on oc.id_difusion_ofertas=difo.id_difusion_ofertas
 			INNER JOIN escuela e on oc.id_escuela = e.idEscuela
+			where difo.status > 0 $escuelaid
 				";
 		$request = $this->select_all($sql);
 		return $request;
@@ -34,6 +73,12 @@ class bolsadetrabajoModel extends Mysql
 		$request = $this->select_all($sql);
 		return $request;
 	}
+
+
+
+
+
+
 
 
 

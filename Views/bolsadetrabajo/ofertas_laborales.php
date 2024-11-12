@@ -2,41 +2,188 @@
 
 <?php obj($data); ?>
 
+<style>
+    .contenedor {
+        max-width: 1200px;
+        margin: auto;
+    }
 
-<div class="col-12">
+
+    @media (min-width: 800px) {
+        .contedorlinkbolsa {
+            max-width: 900px;
+            margin: auto;
+        }
+    }
+
+    .listempleos {
+        min-height: 60vh;
+        max-height: 60vh;
+        overflow-y: auto;
+    }
+
+    .callout.callout-danger {
+        border-left-color: #12377b;
+
+    }
+
+    .callout {
+        border-radius: 0.25rem;
+        box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+
+        border-left: 5px solid #e9ecef;
+        margin-bottom: 1rem;
+        padding: 1rem;
+    }
+
+
+
+    .contenedor_ofertas {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        /* Ajusta el número de columnas según tus necesidades */
+        margin: auto;
+        column-gap: 20px;
+        grid-auto-rows: auto;
+    }
+
+    .cursos_empleabilidad {
+        max-width: 200px;
+        /* height: max-content; */
+
+    }
+
+    .imagen_ofertas {
+        display: grid;
+        grid-template-columns: 30% 70%;
+        column-gap: 20px;
+        grid-auto-rows: auto;
+    }
+
+    .modalidad_fecha {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .tarjeta a {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tarjeta a:hover {
+        color: #12377B;
+
+    }
+</style>
+
+
+<!-- <div class="contenedor">
     <div class="row d-flex justify-content-around" id="empleos">
-        <div class="col-5 pb-4 cardempleo ">
-            <div class="row">
-                <div class="col-3">
 
+    </div>
+</div> -->
+<br><br><br><br>
+<div class="contenedor">
+
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <div class="row d-flex justify-content-around">
+
+                <div class="col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <label>Programa de Estudio:</label>
+                        <select class="escuela" data-placeholder="Seleccionar" id="escuela" style="width: 100%;">
+                        </select>
+                    </div>
                 </div>
-                <div class="col-8">
-                    <h4></h4>
-                    <br>
-                    <p></p>
+
+                <div class="col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <label>Tipo Oferta</label>
+                        <select class="departamento" data-placeholder="Seleccionar" id="departamento" style="width: 100%;">
+                        </select>
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>
+
+    <div class="contenedor_ofertas" id="empleos">
+
+    </div>
 </div>
 
-
-
+<br><br><br><br>
 <?php footer($data); ?>
-
 
 <script>
     $(document).ready(function() {
         empleos();
     });
 
+    $(".escuela").select2({
+        ajax: {
+            url: " " + base_url + "/bolsadetrabajo/getSelectCarreras",
+            type: "post",
+            dataType: "json",
+            delay: 250,
+            data: function(params) {
+                return {
+                    palabraClave: params.term // search term
+                };
+            },
+            processResults: function(response) {
+                return {
+                    results: response
+                };
+            },
+            cache: true
+        }
+    });
+
+    //getDepartamentos
+    $(".departamento").select2({
+        ajax: {
+            url: " " + base_url + "/bolsadetrabajo/getSelectDepartamentos",
+            type: "post",
+            dataType: "json",
+            delay: 250,
+            data: function(params) {
+                return {
+                    palabraClave: params.term // search term
+                };
+            },
+            processResults: function(response) {
+                return {
+                    results: response
+                };
+            },
+            cache: true
+        }
+    });
+
+    $("#escuela").on("change", function() {
+        empleos();
+    });
+
     function empleos() {
-        console.log('x');
+
+        var escuela = $("#escuela").val();
+        var carreras = $("#carreras").val();
+
+        var fd = new FormData();
+        fd.append("escuela", escuela);
+        fd.append("carreras", carreras);
+
         $.ajax({
-            method: "GET",
+            method: "POST",
             url: "" + base_url + "/bolsadetrabajo/get_ofertas_laborales",
-            //data: datax
-            //data: fd,
+            data: fd,
             processData: false, // tell jQuery not to process the data
             contentType: false // tell jQuery not to set contentType
 
@@ -48,22 +195,38 @@
 
             for (i = 0; i < info.length; i++) {
                 listado = listado +
-
                     `
-                    <div class="col-12 row callout callout-danger">
-                        <div class="col-4">
-                            <img width="60px" class="img-fluid" src="<?= media() ?>/upload/difusiones_laborales/` + info[i].filename + `">
-                        </div>
-                        <div class="col-8">
-                            <h5><span>` + info[i].nombre_puesto + `</span></h5>
-                            <h5>Empresa: <span>` + info[i].descripcion + `</span></h5>                           
-                        </div>                      
-                            <div class="col-12">
-                                <h5><span> ` + info[i].nombreEscuela + `</span></h5>
+   
+
+                      <div class="tarjeta callout callout-danger">
+
+                        <a Target="_blank" href="` + info[i].link + `">
+                            <div class="imagen_ofertas">
+                                <div class="div">
+                                    <img style="width: 70px;" class="" src="<?= media() ?>/upload/difusiones_laborales/` + info[i].filename + `">
+                                </div>
+                                <div class="div">
+                                    <h5><span>` + info[i].nombre_puesto + `</span></h5>
+                                    <h5>Empresa: <span>` + info[i].descripcion + `</span></h5>
+                                </div>
                             </div>
-                            <div class="col-12 text-center">
-                                <a href="javascript:void(0);" class="btn btn-outline-primary" onclick="ver(` + info[i].id_difusion_ofertas + ` )" >Más Información</a>
-                            </div>                       
+
+                            <div class="">
+                                <h5>
+                                    <span> ` + info[i].nombreEscuela + `</span>
+                                </h5>
+                            </div>
+
+                            <div class="modalidad_fecha">
+                                <div class="div">
+                                    <span>Modalidad: ` + info[i].modalidad_laboral + `</span><br>
+                                    <span>Hasta: ` + info[i].fecha_termino + `</span>
+                                </div>
+                                <div class="div">
+                                    <p>` + info[i].condicion_laboral + `</p>
+                                </div>
+                            </div>
+                        </a>
                     </div>
                    
                 `;

@@ -27,8 +27,14 @@ class bolsadetrabajo extends Controllers
 
 		$carreras['nombreEscuela'] = "";
 
+		if ($_POST['escuela'] == 'null') {
+			$escuela = null;
+		} else {
+			$escuela = $_POST['escuela'];
+		}
 
-		$arrData = $this->model->get_ofertas_laborales();
+
+		$arrData = $this->model->get_ofertas_laborales($escuela);
 
 		foreach ($arrData as &$line) {
 
@@ -54,7 +60,19 @@ class bolsadetrabajo extends Controllers
 
 
 
+	public function getSelectCarreras()
+	{
+		$search = "";
+		if (!isset($_POST['palabraClave'])) {
+			$arrData = $this->model->getSelectCarrera();
+		} else {
+			$search = $_POST['palabraClave'];
 
+			$arrData = $this->model->getSelectCarreras($search);
+		}
+		echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
+		die();
+	}
 
 
 

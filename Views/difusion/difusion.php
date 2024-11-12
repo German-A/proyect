@@ -12,7 +12,8 @@ getModal('modalDifusion', $data);
         <div class="form-row">
             <div class="form-group col-md-12">
                 <label for="programa_estudio">Programa de estudio</label><br>
-                <select class="form-control" id="programa_estudio" multiple="multiple" name="programa_estudio" required>
+
+                <select class="programa_estudio form-control selectmultiple" name="programa_estudio[]" data-live-search="true" id="programa_estudio" multiple="multiple" x>
                 </select>
             </div>
 
@@ -33,15 +34,24 @@ getModal('modalDifusion', $data);
 
             <div class="form-group col-md-6">
                 <label for="modalidad_laboral">Modalidad</label>
-                <input type="text" class="form-control" id="modalidad_laboral" name="modalidad_laboral" required="">
+                <select class="form-control lista" name="modalidad_laboral" id="modalidad_laboral" data-live-search="true" class="mdb-select md-form" x>
+                    <option value="0" disabled selected>Seleccionar</option>
+                    <option value="hibrido">Hibrido</option>
+                    <option value="presencial">Presencial</option>
+                    <option value="remoto">Remoto</option>
+                </select>
             </div>
         </div>
 
-
         <div class="form-row">
             <div class="form-group col-md-5">
-                <label for="condicion_laboral">condicion_laboral</label>
-                <input type="text" class="form-control" id="condicion_laboral" name="condicion_laboral" required="">
+                <label for="condicion_laboral">Tipo Oferta</label>
+                <select class="form-control lista" name="condicion_laboral" id="condicion_laboral" data-live-search="true" class="mdb-select md-form" x>
+                    <option value="0" disabled selected>Seleccionar</option>
+                    <option value="empleo">empleo</option>
+                    <option value="practicas_pre">Practicas Preprofesionales</option>
+                    <option value="practicas_pro">Practicas Profesionales</option>
+                </select>
             </div>
             <div class="form-group col-md-5">
                 <label for="fecha_termino">fecha_termino</label>
@@ -61,17 +71,7 @@ getModal('modalDifusion', $data);
     </form>
 
     <div class="app-title">
-        <div>
-            <h1><i class="fas fa-user-tag"></i> <?= $data['page_title'] ?>
-                <?php if ($_SESSION['permisosMod']['w']) { ?>
-                    <button class="btn btn-primary" type="button" onclick="openModal();"><i class="fas fa-plus-circle"></i> Registrar</button>
-                <?php } ?>
-            </h1>
-        </div>
-        <ul class="app-breadcrumb breadcrumb">
-            <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-            <li class="breadcrumb-item"><a href="<?= base_url(); ?>/usuarios"><?= $data['page_title'] ?></a></li>
-        </ul>
+        <h1>lista de difusiones registradas</h1>
     </div>
 
     <div class="row">
@@ -106,17 +106,8 @@ getModal('modalDifusion', $data);
 
 
 <script>
-    $(document).ready(function() {
-        $('.summernote').summernote({
-            toolbar: [
-                // [groupName, [list of button]]
-                ['style', ['clear']],
-                ['para', ['ul', 'ol', 'paragraph']],
-                ['lineHeights', ['0.2']],
 
-            ]
-        });
-    });
+
 </script>
 
 
@@ -159,7 +150,6 @@ getModal('modalDifusion', $data);
         var fd = new FormData();
         fd.append("id", id);
         fd.append("txtNombreEmpresa", txtNombreEmpresa);
-
         fd.append("archivoSubido", archivoSubido);
 
         divLoading.style.display = "flex";
@@ -173,9 +163,9 @@ getModal('modalDifusion', $data);
             var info = JSON.parse(response);
 
             if (info.status == true) {
-                swal("Repositorio", info.msg, "success");
+                swal("Oferta de Empleos", info.msg, "success");
                 datatable.api().ajax.reload();
-                $("#modalRegistroRepositorio").modal("hide");
+                $("#modalEmpresa").modal("hide");
             }
 
             if (info.status == false) {
@@ -188,15 +178,12 @@ getModal('modalDifusion', $data);
 
     }
 
-
-
-
     function Agregar() {
 
         var id = $("#id").val();
         var nombre_puesto = $("#nombre_puesto").val();
         var nombre_empresa = $("#nombre_empresa").val();
-        
+
         var programa_estudio = $("#programa_estudio").val();
         var modalidad_laboral = $("#modalidad_laboral").val();
         var condicion_laboral = $("#condicion_laboral").val();
@@ -346,7 +333,4 @@ getModal('modalDifusion', $data);
 
 
     }
-
-
-
 </script>

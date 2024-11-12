@@ -1,6 +1,6 @@
 <?php
 
-class DifusionModel extends Mysql
+class Difusion_cursosModel extends Mysql
 {
 	private $created_by;
 	private $created_at;
@@ -161,14 +161,13 @@ class DifusionModel extends Mysql
 		$this->created_at = $created_at;
 
 		$return = 0;
-		$query_insert  = "INSERT INTO difusion_ofertas(nombre_puesto, id_empresa_feria, modalidad_laboral,condicion_laboral,fecha_termino, fecha_termino, link, created_by, created_at)
-								  VALUES(?,?,?,?,?, ?,?,?,?)";
+		$query_insert  = "INSERT INTO difusion_ofertas(nombre_puesto, id_empresa_feria, modalidad_laboral,condicion_laboral, fecha_termino, link, created_by, created_at)
+								  VALUES(?,?,?,?,?, ?,?,?)";
 		$arrData = array(
 			$this->nombre_puesto,
 			$this->nombre_empresa,
 			$this->modalidad_laboral,
 			$this->condicion_laboral,
-			$this->fecha_termino,
 			$this->fecha_termino,
 			$this->link,
 			$this->created_by,

@@ -222,7 +222,7 @@
                     </a>
                     <ul class="treeview-menu">
 
-                    <?php if (!empty($_SESSION['permisos'][29]['r'])) { ?>
+                        <?php if (!empty($_SESSION['permisos'][29]['r'])) { ?>
                             <li><a class="treeview-item" href="<?= base_url(); ?>/ferialaboralchambitaadmin/galeria"><i class="icon fa fa-circle-o"></i>Galería</a></li>
                         <?php } ?>
 
@@ -233,7 +233,7 @@
                         <?php if (!empty($_SESSION['permisos'][31]['r'])) { ?>
                             <li><a class="treeview-item" href="<?= base_url(); ?>/ferialaboralchambitaadmin/empresas"><i class="icon fa fa-circle-o"></i>Empresas</a></li>
                         <?php } ?>
-       
+
                     </ul>
                 </li>
             <?php } ?>
@@ -242,7 +242,7 @@
             <?php
             if (
 
-                !empty($_SESSION['permisos'][3]['r']) 
+                !empty($_SESSION['permisos'][36]['r'])
 
             ) {
             ?>
@@ -254,12 +254,22 @@
                     </a>
                     <ul class="treeview-menu">
 
-                        <?php if (!empty($_SESSION['permisos'][29]['r'])) { ?>
+                        <?php if (!empty($_SESSION['permisos'][36]['r'])) { ?>
                             <li><a class="treeview-item" href="<?= base_url(); ?>/difusion"><i class="icon fa fa-circle-o"></i>difusion</a></li>
                         <?php } ?>
 
                     </ul>
+
+                    <ul class="treeview-menu">
+
+                        <?php if (!empty($_SESSION['permisos'][36]['r'])) { ?>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/difusion_cursos"><i class="icon fa fa-circle-o"></i>difusion cursos</a></li>
+                        <?php } ?>
+
+                    </ul>
                 </li>
+
+
             <?php } ?>
 
 
