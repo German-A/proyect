@@ -32,8 +32,6 @@ class difusion_cursos extends Controllers
 
 		if ($_SESSION['permisosMod']['r']) {
 			$arrData = $this->model->getList();
-
-
 			for ($i = 0; $i < count($arrData); $i++) {
 
 				$btnView = '';

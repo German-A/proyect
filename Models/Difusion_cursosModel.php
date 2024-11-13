@@ -10,7 +10,7 @@ class Difusion_cursosModel extends Mysql
 
 	private $id_difusion_cursos;
 	private $nombre_curso;
-	private $tipo_curso;	
+	private $tipo_curso;
 	private $url;
 	private $id_empresa_cursos;
 
@@ -26,13 +26,17 @@ class Difusion_cursosModel extends Mysql
 
 	public function getList()
 	{
-		$response = null;
-		$sql = "SELECT * 
-				FROM difusion_cursos";
-		$response = $this->select_all($sql);
-		return $response;
+		try {
+			$response = null;
+			$sql = "SELECT * 
+				FROM difusion_cursos
+				WHERE status >0";
+			$response = $this->select_all($sql);
+			return $response;
+		} catch (Exception $e) {
+			echo 'Caught exception: ',  $e->getMessage(), "\n";
+		}
 	}
-
 
 	#region cursos
 	public function newRegister($id_empresa_cursos, $nombre_curso, $tipo_curso, $url, $created_by, $created_at)
