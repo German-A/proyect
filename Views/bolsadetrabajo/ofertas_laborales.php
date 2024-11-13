@@ -78,6 +78,15 @@
         color: #12377B;
 
     }
+
+    .condicion_laboral {
+        background-color: rgba(33, 50, 109, 0.5);
+        padding-top: 5px;
+        padding-block: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        color: #000c4b;
+    }
 </style>
 
 
@@ -93,20 +102,34 @@
         <div class="col-md-10 offset-md-1">
             <div class="row d-flex justify-content-around">
 
-                <div class="col-md-6 col-lg-6">
+                <div class="col-md-4">
                     <div class="form-group">
-                        <label>Programa de Estudio:</label>
+                        <h5 class="bluemedio">Programa de estudio:</h5>
                         <select class="escuela" data-placeholder="Seleccionar" id="escuela" style="width: 100%;">
                         </select>
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-6">
+                <div class="col-md-4">
                     <div class="form-group">
-                        <label>Tipo Oferta</label>
-                        <select class="departamento" data-placeholder="Seleccionar" id="departamento" style="width: 100%;">
+                        <h5 class="bluemedio">Modalidad laboral</h5>
+                        <select class="form-control lista" name="modalidad_laboral" id="modalidad_laboral" data-live-search="true" class="mdb-select md-form" x>
+                            <option value="0" disabled selected>Seleccionar</option>
+                            <option value="hibrido">Hibrido</option>
+                            <option value="presencial">Presencial</option>
+                            <option value="remoto">Remoto</option>
                         </select>
                     </div>
+                </div>
+
+                <div class="col-md-4">
+                    <h5 class="bluemedio">Tipo oferta</h5>
+                    <select class="form-control lista" name="condicion_laboral" id="condicion_laboral" data-live-search="true" class="mdb-select md-form" x>
+                        <option value="0" disabled selected>Seleccionar</option>
+                        <option value="empleo">empleo</option>
+                        <option value="practicas_pre">Practicas Preprofesionales</option>
+                        <option value="practicas_pro">Practicas Profesionales</option>
+                    </select>
                 </div>
 
             </div>
@@ -122,6 +145,8 @@
 <?php footer($data); ?>
 
 <script>
+    $(".lista").select2({});
+
     $(document).ready(function() {
         empleos();
     });
@@ -146,39 +171,23 @@
         }
     });
 
-    //getDepartamentos
-    $(".departamento").select2({
-        ajax: {
-            url: " " + base_url + "/bolsadetrabajo/getSelectDepartamentos",
-            type: "post",
-            dataType: "json",
-            delay: 250,
-            data: function(params) {
-                return {
-                    palabraClave: params.term // search term
-                };
-            },
-            processResults: function(response) {
-                return {
-                    results: response
-                };
-            },
-            cache: true
-        }
-    });
-
     $("#escuela").on("change", function() {
         empleos();
     });
 
+    $("#modalidad_laboral").on("change", function() {
+        empleos();
+    });
+
+
     function empleos() {
 
         var escuela = $("#escuela").val();
-        var carreras = $("#carreras").val();
+        var modalidad_laboral = $("#modalidad_laboral").val();
 
         var fd = new FormData();
         fd.append("escuela", escuela);
-        fd.append("carreras", carreras);
+        fd.append("modalidad_laboral", modalidad_laboral);
 
         $.ajax({
             method: "POST",
@@ -196,9 +205,7 @@
             for (i = 0; i < info.length; i++) {
                 listado = listado +
                     `
-   
-
-                      <div class="tarjeta callout callout-danger">
+                         <div class="tarjeta callout callout-danger">
 
                         <a Target="_blank" href="` + info[i].link + `">
                             <div class="imagen_ofertas">
@@ -223,7 +230,7 @@
                                     <span>Hasta: ` + info[i].fecha_termino + `</span>
                                 </div>
                                 <div class="div">
-                                    <p>` + info[i].condicion_laboral + `</p>
+                                    <p class="condicion_laboral">` + info[i].condicion_laboral + `</p>
                                 </div>
                             </div>
                         </a>

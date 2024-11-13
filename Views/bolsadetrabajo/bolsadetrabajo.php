@@ -33,7 +33,7 @@ $perfiles = $año->selectañoEspecialidades();
 
 
 
-<div class="contedorlinkbolsa pt-4 pb-1">
+<!-- <div class="contedorlinkbolsa pt-4 pb-1">
     <div class="row d-flex justify-content-around ">
         <a class="col-8 col-md-3 col-lg-2 fondo m-1" target="_blank" href="https://jobboard.universia.net/unitruoportunidades">
             <div class="col-12 text-right col-md-12">
@@ -87,7 +87,7 @@ $perfiles = $año->selectañoEspecialidades();
         </a>
 
     </div>
-</div>
+</div> -->
 
 
 
@@ -123,7 +123,7 @@ $perfiles = $año->selectañoEspecialidades();
 </style>
 
 
-<div class="col-12 row contenedor">
+<!-- <div class="col-12 row contenedor">
 
     <div class="col-5 listempleos " id="empleos">
 
@@ -137,10 +137,10 @@ $perfiles = $año->selectañoEspecialidades();
         <br>
     </div>
 
-</div>
+</div> -->
 
 <!-- registro de usuarios -->
-<div class="modal fade" id="modalRegistro" tabindex="-1" role="dialog" aria-hidden="true">
+<!-- <div class="modal fade" id="modalRegistro" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-body">
@@ -180,11 +180,11 @@ $perfiles = $año->selectañoEspecialidades();
 
         </div>
     </div>
-</div>
+</div> -->
 
 <!-- usuarios registrados -->
 
-<div class="modal fade" id="modalUsuariosRegistrados" tabindex="-1" role="dialog" aria-hidden="true">
+<!-- <div class="modal fade" id="modalUsuariosRegistrados" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-body">
@@ -208,45 +208,64 @@ $perfiles = $año->selectañoEspecialidades();
 
         </div>
     </div>
-</div>
+</div> -->
 
 
 <style>
     .contenedor_ofertas_curos {
+        width: 1000px;
         display: grid;
         grid-template-columns: auto auto auto;
         /* Ajusta el número de columnas según tus necesidades */
         margin: auto;
-        column-gap: 10px;
+        column-gap: 20px;
         grid-auto-rows: auto;
-
     }
 
-    .cursos_empleabilidad {
-        max-width: 200px;
-        /* height: max-content; */
 
+    .img_egresados{
+        width: 315px;
     }
+    .img_empleo_curso{
+        width: 315px;
+    }
+
+    .img_empleo_curso:hover{
+        transition:  2s;
+        width: 330px;
+    }
+
 </style>
 
+<div class="container">
+    <div class="contenedor_ofertas_curos">
 
-<div class="contenedor_ofertas_curos">
-    <div class="cursos_empleabilidad desarrollo_personal" data-aos="fade-left">
-        <a href="<?= base_url(); ?>/bolsadetrabajo/desarrollo_personal"><img src="<?= media(); ?>/archivos/bolsa_de_trabajo/desarrollo_personal.png" alt=""></a>
-    </div>
-    <div class="cursos_empleabilidad imagen_egresados" data-aos="fade-up">
-      <img src="<?= media(); ?>/archivos/bolsa_de_trabajo/egresados.png" alt="">
-    </div>
-    <div class="cursos_empleabilidad empleos" data-aos="fade-right">
-        <a href="<?= base_url();?>/bolsadetrabajo/ofertas_laborales"><img src="<?= media(); ?>/archivos/bolsa_de_trabajo/empleos.png" alt=""></a>
+        <a href="<?= base_url(); ?>/bolsadetrabajo/desarrollo_personal">
+            <div class="cursos_empleabilidad desarrollo_personal" data-aos="fade-left">
+                <img class="img_empleo_curso" src="<?= media(); ?>/archivos/bolsa_de_trabajo/desarrollo_personal.png" alt="">
+            </div>
+        </a>
+
+        <div class="cursos_empleabilidad imagen_egresados" data-aos="fade-up">
+            <img class="img_egresados" src="<?= media(); ?>/archivos/bolsa_de_trabajo/egresados.png" alt="">
+        </div>
+
+        <a href="<?= base_url(); ?>/bolsadetrabajo/ofertas_laborales">
+            <div class="cursos_empleabilidad empleos" data-aos="fade-right">
+                <img class="img_empleo_curso" src="<?= media(); ?>/archivos/bolsa_de_trabajo/empleos.png" alt="">
+            </div>
+        </a>
     </div>
 </div>
+
+
+<br><br><br><br>
 
 
 
 
 <!-- SEGUNDAS ESPECIALIDADES -->
-<div class="modal fade" id="modalInformacionSesion" tabindex="-1" role="dialog" aria-hidden="true">
+<!-- <div class="modal fade" id="modalInformacionSesion" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-md">
         <div class="modal-content">
             <div class="modal-body">
@@ -282,7 +301,7 @@ $perfiles = $año->selectañoEspecialidades();
 
         </div>
     </div>
-</div>
+</div> -->
 
 <?php footer($data); ?>
 

@@ -177,11 +177,9 @@
 
             <?php
             if (
-
                 !empty($_SESSION['permisos'][29]['r']) ||
                 !empty($_SESSION['permisos'][30]['r']) ||
                 !empty($_SESSION['permisos'][31]['r'])
-
             ) {
             ?>
                 <li class="treeview">

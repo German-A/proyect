@@ -22,7 +22,7 @@ class bolsadetrabajo extends Controllers
 
 	public function get_ofertas_laborales()
 	{
-		$line[]="";
+		$line[] = "";
 		$line['id_difusion_ofertas'] = "";
 
 		$carreras['nombreEscuela'] = "";
@@ -33,15 +33,23 @@ class bolsadetrabajo extends Controllers
 			$escuela = $_POST['escuela'];
 		}
 
+		if ($_POST['modalidad_laboral'] == 'null') {
+			$modalidad_laboral = null;
+		} else {
+			$modalidad_laboral = $_POST['modalidad_laboral'];
+		}
 
-		$arrData = $this->model->get_ofertas_laborales($escuela);
+
+
+
+		$arrData = $this->model->get_ofertas_laborales($escuela,$modalidad_laboral);
 
 		foreach ($arrData as &$line) {
 
 			$btnView = '';
 			$btnEdit = '';
 			$btnDelete = '';
-		
+
 			$line['nombreEscuela'] = "";
 			$arrCarreras = $this->model->listaCarrerasRequeridas($line['id_difusion_ofertas']);
 
@@ -73,6 +81,17 @@ class bolsadetrabajo extends Controllers
 		echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
 		die();
 	}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -162,6 +181,7 @@ class bolsadetrabajo extends Controllers
 		$data['page_content'] = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, quis. Perspiciatis repellat perferendis accusamus, ea natus id omnis, ratione alias quo dolore tempore dicta cum aliquid corrupti enim deserunt voluptas.";
 		$this->views->getView($this, "ofertas_laborales", $data);
 	}
+
 	public function desarrollo_personal()
 	{
 		$data['page_id'] = 4;
@@ -170,5 +190,15 @@ class bolsadetrabajo extends Controllers
 		$data['page_name'] = "home";
 		$data['page_content'] = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, quis. Perspiciatis repellat perferendis accusamus, ea natus id omnis, ratione alias quo dolore tempore dicta cum aliquid corrupti enim deserunt voluptas.";
 		$this->views->getView($this, "desarrollo_personal", $data);
+	}
+
+	public function getCursosTalleres()
+	{
+
+		$arrData = $this->model->getCursosTalleres();
+
+		echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
+
+		die();
 	}
 }

@@ -29,11 +29,11 @@ getModal('modalDifusionCurso', $data);
               <thead>
                 <tr>
                   <th>ID</th>
-                  <th>Nombre</th>
-                  <th>Archivo</th>
-                  <th>Posicion</th>
-                  <th>Registrado</th>
-                  <th>Actualizado</th>
+                  <th>nombre_curso</th>
+                  <th>tipo_curso</th>
+                  <th>Url</th>
+                  <th>Empresa</th>
+                  <th>Estado</th>
                   <th>Acciones</th>
                 </tr>
               </thead>

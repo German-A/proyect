@@ -8,24 +8,12 @@ class Difusion_cursosModel extends Mysql
 	private $updated_by;
 	private $updated_at;
 
-	private $id_difusion_ofertas;
-	private $nombre_puesto;
-	private $nombre_empresa;	
-	private $modalidad_laboral;
-	private $condicion_laboral;
-	private $fecha_termino;
-	private $escuelaid;
+	private $id_difusion_cursos;
+	private $nombre_curso;
+	private $tipo_curso;	
+	private $url;
+	private $id_empresa_cursos;
 
-	private $id_escuela;
-
-
-	private $id_empresa_feria;
-	private $filename;
-	private $empresa_feria;
-
-	private $id_disusion;
-	private $descripcion;
-	private $link;
 
 	private $intborrar = 0;
 
@@ -34,66 +22,37 @@ class Difusion_cursosModel extends Mysql
 		parent::__construct();
 	}
 
-	public function findFile($filename)
-	{
-		$this->filename = $filename;
-		$sql = "SELECT filename
-				from empresa_feria
-				where filename = '$this->filename'";
-		$request = $this->select($sql);
-		return $request;
-	}
 
-	#region empresas
 
-	public function getSelectEmpresa()
+	public function getList()
 	{
 		$response = null;
 		$sql = "SELECT * 
-				FROM empresa_feria ";
-		$request = $this->select_all($sql);
-
-		foreach ($request as $line) {
-			$response[] = array(
-				"id" => $line['id_empresa_feria'],
-				"text" => $line['descripcion']
-			);
-		}
+				FROM difusion_cursos";
+		$response = $this->select_all($sql);
 		return $response;
 	}
 
-	public function getSelectEmpresaW($search)
-	{
-		$response = null;
-		//$sql = "SELECT idTitulaciones,nombreTitulaciones from titulaciones where status!=0";
-		$sql = "SELECT * 
-			FROM empresa_feria
-			WHERE descripcion LIKE '%$search%' ORDER BY descripcion";
 
-		$request = $this->select_all($sql);
-		foreach ($request as $line) {
-			$response[] = array(
-				"id" => $line['id_empresa_feria'],
-				"text" => $line['descripcion']
-			);
-		}
-		return $response;
-	}
-
-	public function newRegisterEmpresa($empresa_feria, $filename, $created_by, $created_at)
+	#region cursos
+	public function newRegister($id_empresa_cursos, $nombre_curso, $tipo_curso, $url, $created_by, $created_at)
 	{
 
-		$this->empresa_feria = $empresa_feria;
-		$this->filename = $filename;
+		$this->id_empresa_cursos = $id_empresa_cursos;
+		$this->nombre_curso = $nombre_curso;
+		$this->tipo_curso = $tipo_curso;
+		$this->url = $url;
 		$this->created_by = $created_by;
 		$this->created_at = $created_at;
 
 		$return = 0;
-		$query_insert  = "INSERT INTO empresa_feria(descripcion,filename,created_by,created_at)
-									  VALUES(?,?,?,?)";
+		$query_insert  = "INSERT INTO difusion_cursos(id_empresa_cursos,nombre_curso,tipo_curso,url,created_by,created_at)
+		VALUES(?,?,?,?,?,?)";
 		$arrData = array(
-			$this->empresa_feria,
-			$this->filename,
+			$this->id_empresa_cursos,
+			$this->nombre_curso,
+			$this->tipo_curso,
+			$this->url,
 			$this->created_by,
 			$this->created_at
 		);
@@ -102,48 +61,18 @@ class Difusion_cursosModel extends Mysql
 		return $return;
 	}
 
-	#endregion empresas
+	#endregion cursos
+
+
+
+
+
+
+
+
 
 
 	#region registro_difusion_oferta
-
-	public function getDifusion()
-	{
-		$sql = "SELECT * FROM difusion_ofertas where status=1";
-		$request = $this->select_all($sql);
-		return $request;
-	}
-
-	public function getSelectCarrera()
-	{
-		$response = null;
-		$sql = "SELECT * FROM escuela";
-		$request = $this->select_all($sql);
-
-		foreach ($request as $line) {
-			$response[] = array(
-				"id" => $line['idEscuela'],
-				"text" => $line['nombreEscuela']
-			);
-		}
-		return $response;
-	}
-
-	public function getSelectCarreras($search)
-	{
-		$response = null;
-		//$sql = "SELECT idTitulaciones,nombreTitulaciones from titulaciones where status!=0";
-		$sql = "SELECT * FROM escuela WHERE nombreEscuela LIKE '%$search%' ORDER BY nombreEscuela";
-		$request = $this->select_all($sql);
-		foreach ($request as $line) {
-			$response[] = array(
-				"id" => $line['idEscuela'],
-				"text" => $line['nombreEscuela']
-			);
-		}
-		return $response;
-	}
-
 
 
 	#endregion registro_difusion_oferta
@@ -214,21 +143,7 @@ class Difusion_cursosModel extends Mysql
 	#endregion registro_difusion_oferta
 
 
-	public function newRegister($descripcion, $link)
-	{
-		$this->descripcion = $descripcion;
-		$this->link = $link;
-		$return = 0;
-		$query_insert  = "INSERT INTO disusion(descripcion,link)
-								  VALUES(?,?)";
-		$arrData = array(
-			$this->descripcion,
-			$this->link
-		);
-		$request_insert = $this->insert($query_insert, $arrData);
-		$return = $request_insert;
-		return $return;
-	}
+
 
 	public function newUpdate($id_disusion, $descripcion, $link)
 	{

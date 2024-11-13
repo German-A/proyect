@@ -14,21 +14,42 @@
           <p class="text-primary">Todos los campos son obligatorios.</p>
 
           <div class="form-row">
-            <div class="form-group col-md-10">
-              <label for="txtNombreEmpresa">Nombre curso</label>
-              <input type="text" class="form-control" id="txtNombreEmpresa" name="txtNombreEmpresa" required="">
+
+            <div class="form-group col-md-4">
+              <label for="txtNombreEmpresa">Empresa</label><br>
+              <select class="form-control lista select" name="txtNombreEmpresa" id="txtNombreEmpresa" data-live-search="true" x>
+                <option value="0" disabled selected>Seleccionar</option>
+                <option value="1">Ministerio de Trabajo y Promoción del Empleo</option>
+                <option value="2">Universia</option>
+                <option value="3">abril jobs</option>
+              </select>
             </div>
 
-            <div class="form-row">
-              <div class="form-group col-md-12">
-                <label for="">Archivo a subir:</label>
-                <input type="file" id="archivoSubido" name="archivoSubido">
-              </div>
+            <div class="form-group col-md-7">
+              <label for="txtNombreCurso">Nombre curso</label>
+              <input type="text" class="form-control" id="txtNombreCurso" name="txtNombreCurso" required="">
+            </div>
+          </div>
+
+          <div class="form-row">
+
+            <div class="form-group col-md-4">
+              <label for="txtTipoCurso">Tipo Curso</label><br>
+              <select class="form-control lista select" name="txtTipoCurso" id="txtTipoCurso" data-live-search="true" x>
+                <option value="0" disabled selected>Seleccionar</option>
+                <option value="cursos">Cursos</option>
+                <option value="talleres">Talleres</option>
+              </select>
+            </div>
+
+            <div class="form-group col-md-7">
+              <label for="txtUrl">Url</label>
+              <input type="text" class="form-control" id="txtUrl" name="txtUrl" required="">
             </div>
           </div>
 
           <div class="tile-footer">
-            <a href="javascript:void(0);" class="btn btn-primary" id="btnText" onclick="AgregarEmpresa()"><i class="fa fa-fw fa-lg fa-check-circle"></i>Guardar</a>          
+            <a href="javascript:void(0);" class="btn btn-primary" id="btnText" onclick="Guardar()"><i class="fa fa-fw fa-lg fa-check-circle"></i>Guardar</a>
             <button class="btn btn-danger" type="button" data-dismiss="modal"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cerrar</button>
           </div>
         </form>

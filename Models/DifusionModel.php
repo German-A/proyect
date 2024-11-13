@@ -10,7 +10,7 @@ class DifusionModel extends Mysql
 
 	private $id_difusion_ofertas;
 	private $nombre_puesto;
-	private $nombre_empresa;	
+	private $nombre_empresa;
 	private $modalidad_laboral;
 	private $condicion_laboral;
 	private $fecha_termino;
@@ -160,35 +160,39 @@ class DifusionModel extends Mysql
 		$this->created_by = $created_by;
 		$this->created_at = $created_at;
 
-		$return = 0;
-		$query_insert  = "INSERT INTO difusion_ofertas(nombre_puesto, id_empresa_feria, modalidad_laboral,condicion_laboral,fecha_termino, fecha_termino, link, created_by, created_at)
-								  VALUES(?,?,?,?,?, ?,?,?,?)";
-		$arrData = array(
-			$this->nombre_puesto,
-			$this->nombre_empresa,
-			$this->modalidad_laboral,
-			$this->condicion_laboral,
-			$this->fecha_termino,
-			$this->fecha_termino,
-			$this->link,
-			$this->created_by,
-			$this->created_at
-		);
-		$request_insert = $this->insert($query_insert, $arrData);
-		$this->id_difusion_ofertas = $request_insert;
-
-		foreach ($lista_programa_estudio as $val) {
-			$this->id_escuela = $val['programa_estudio'];
-			$query_insert  = "INSERT INTO disusion_ofertas_carreras(id_escuela,id_difusion_ofertas)
-						VALUES(?,?)";
+		try {
+			$return = 0;
+			$query_insert  = "INSERT INTO difusion_ofertas(nombre_puesto, id_empresa_feria, modalidad_laboral,condicion_laboral,fecha_publicacion, fecha_termino, link, created_by, created_at)
+			VALUES(?,?,?,?,?, ?,?,?,?)";
 			$arrData = array(
-				$this->id_escuela,
-				$this->id_difusion_ofertas
+				$this->nombre_puesto,
+				$this->nombre_empresa,
+				$this->modalidad_laboral,
+				$this->condicion_laboral,
+				$this->fecha_termino,
+				$this->fecha_termino,
+				$this->link,
+				$this->created_by,
+				$this->created_at
 			);
-			$this->request_in = $this->insert($query_insert, $arrData);
-		}
-		$return = $this->request_in;
+			$request_insert = $this->insert($query_insert, $arrData);
+			$this->id_difusion_ofertas = $request_insert;
 
+			foreach ($lista_programa_estudio as $val) {
+				$this->id_escuela = $val['programa_estudio'];
+				$query_insert  = "INSERT INTO disusion_ofertas_carreras(id_escuela,id_difusion_ofertas)
+			VALUES(?,?)";
+				$arrData = array(
+					$this->id_escuela,
+					$this->id_difusion_ofertas
+				);
+				$this->insert($query_insert, $arrData);
+			}
+		} catch (Exception $e) {
+			echo 'Excepción capturada: ',  $e->getMessage(), "\n";
+		}
+
+		$return = $request_insert;
 		return $return;
 	}
 

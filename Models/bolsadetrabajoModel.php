@@ -13,39 +13,39 @@ class bolsadetrabajoModel extends Mysql
 		parent::__construct();
 	}
 
-		/*CARRERAS*/
-		public function getSelectCarrera()
-		{
-			$response = null;
-			$sql = "SELECT * FROM escuela";
-			$request = $this->select_all($sql);
-	
-			foreach ($request as $line) {
-				$response[] = array(
-					"id" => $line['idEscuela'],
-					"text" => $line['nombreEscuela']
-				);
-			}
-			return $response;
+	/*CARRERAS*/
+	public function getSelectCarrera()
+	{
+		$response = null;
+		$sql = "SELECT * FROM escuela";
+		$request = $this->select_all($sql);
+
+		foreach ($request as $line) {
+			$response[] = array(
+				"id" => $line['idEscuela'],
+				"text" => $line['nombreEscuela']
+			);
 		}
-	
-		public function getSelectCarreras($search)
-		{
-	
-			$response = null;
-			//$sql = "SELECT idTitulaciones,nombreTitulaciones from titulaciones where status!=0";
-			$sql = "SELECT * FROM escuela WHERE nombreEscuela LIKE '%$search%'  ORDER BY nombreEscuela";
-			$request = $this->select_all($sql);
-			foreach ($request as $line) {
-				$response[] = array(
-					"id" => $line['idEscuela'],
-					"text" => $line['nombreEscuela']
-				);
-			}
-			return $response;
+		return $response;
+	}
+
+	public function getSelectCarreras($search)
+	{
+
+		$response = null;
+		//$sql = "SELECT idTitulaciones,nombreTitulaciones from titulaciones where status!=0";
+		$sql = "SELECT * FROM escuela WHERE nombreEscuela LIKE '%$search%'  ORDER BY nombreEscuela";
+		$request = $this->select_all($sql);
+		foreach ($request as $line) {
+			$response[] = array(
+				"id" => $line['idEscuela'],
+				"text" => $line['nombreEscuela']
+			);
 		}
-	
-	public function get_ofertas_laborales($escuela)
+		return $response;
+	}
+
+	public function get_ofertas_laborales($escuela,$modalidad_laboral)
 	{
 		$escuelaid = '';
 
@@ -53,12 +53,17 @@ class bolsadetrabajoModel extends Mysql
 			$escuelaid = 'and oc.id_escuela = ' . $escuela;
 		}
 
+		$b_modalidad_laboral = '';
+		if ($modalidad_laboral != null) {
+			$b_modalidad_laboral = "and difo.modalidad_laboral = '$modalidad_laboral'";
+		}
+
 		$sql = "SELECT * 
 			FROM difusion_ofertas difo
 			INNER JOIN empresa_feria ef on difo.id_empresa_feria=ef.id_empresa_feria
 			INNER JOIN disusion_ofertas_carreras oc on oc.id_difusion_ofertas=difo.id_difusion_ofertas
 			INNER JOIN escuela e on oc.id_escuela = e.idEscuela
-			where difo.status > 0 $escuelaid
+			where difo.status > 0 $escuelaid $b_modalidad_laboral
 				";
 		$request = $this->select_all($sql);
 		return $request;
@@ -70,6 +75,20 @@ class bolsadetrabajoModel extends Mysql
 		from disusion_ofertas_carreras oc
 		inner join escuela e on oc.id_escuela = e.idEscuela
 		where oc.id_difusion_ofertas = $idempresa";
+		$request = $this->select_all($sql);
+		return $request;
+	}
+
+
+
+	// cursos y talleres 
+	public function getCursosTalleres()
+	{
+
+
+		$sql = "SELECT * 
+		FROM difusion_cursos dc
+		INNER JOIN empresa_cursos ec on  dc.id_empresa_cursos = ec.id_empresa_cursos";
 		$request = $this->select_all($sql);
 		return $request;
 	}
