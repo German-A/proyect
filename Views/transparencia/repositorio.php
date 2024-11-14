@@ -71,7 +71,7 @@ $n = 1;
         </div>
 
         <div class="row">
-            <div class="col-md-10  m-auto itemY">
+            <div class="col-md-10  m-auto itemY list_informacion">
                 <?php foreach ($perfiles as $key => $fila) { ?>
                     <a class="col-md-12 ml-2  mb-1 btn btn-outline-warning p-2 m-2  d-flex justify-content-center" onclick="verArchivo('<?php echo $fila['filename'] ?>');">
                         <div class="col-11 col-md-9">

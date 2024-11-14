@@ -54,6 +54,8 @@ $n = 1;
             display: block;
         }
     }
+
+
 </style>
 
 <div id="elid">
@@ -71,15 +73,15 @@ $n = 1;
         </div>
 
         <div class="row">
-            <div class="col-md-10  m-auto itemY">
+            <div class="col-md-10  m-auto itemY list_informacion">
                 <?php foreach ($perfiles as $key => $fila) { ?>
                     <a class="col-md-12 ml-2  mb-1 btn btn-outline-warning p-2 m-2  d-flex justify-content-center" onclick="verArchivo('<?php echo $fila['NombreArchivo'] ?>');">
                         <div class="col-11 col-md-9">
-                            <h5 class=""><?php echo $fila['Nombre'] ?></h5>                      
-                        </div>                 
+                            <h5 class=""><?php echo $fila['Nombre'] ?></h5>
+                        </div>
                     </a>
                 <?php } ?>
-                
+
             </div>
         </div>
 
@@ -88,7 +90,7 @@ $n = 1;
 
     </div>
 
-    <div class="col-8 libro" >
+    <div class="col-8 libro">
         <br>
         <?php foreach ($primerabase as $key => $fila) { ?>
             <object class="pdfview" type="application/pdf" id="video_id" data="<?= media(); ?>/archivos/documentoslegales/<?php echo $fila['NombreArchivo'] ?>"></object>

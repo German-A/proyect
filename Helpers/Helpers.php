@@ -100,6 +100,25 @@ function footerferialaborlaxvll($data = "")
 
 
 
+function headferialaboralxiv($data = "")
+{
+    $view_header = "Views/templateferialaboral/headerxiv.php";
+    require_once($view_header);
+}
+function footerferialaboralxiv($data = "")
+{
+    $view_footer = "Views/templateferialaboral/footerxiv.php";
+    require_once($view_footer);
+}
+
+
+
+
+
+
+
+
+
 function obj($data = "")
 {
     $view_header = "Models/HomeModel.php";

@@ -78,7 +78,7 @@ $n = 1;
 
 
         <div class="row">
-            <div class="col-md-10  m-auto itemY">
+            <div class="col-md-10  m-auto itemY list_informacion">
                 <?php foreach ($perfiless as $key => $fila) { ?>
                     <a class="col-md-12 ml-2  btn btn-outline-warning p-2 m-2  d-flex justify-content-center" onclick="verArchivo('<?php echo $fila['NombreArchivo'] ?>');">
                         <div class="col-md-9">

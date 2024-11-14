@@ -46,11 +46,49 @@
         max-width: 120px !important;
     }
 
-    .titulo_curso {}
+    .encabezado {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 20px;
+    }
+    .cursos_principales {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 20px;
+    }
+
+    
 </style>
 
 <div class="container">
-    <h2 class="text-decoration">Potencia <b>tu empleabilidad</b></h2>
+    <div class="encabezado">
+        <h2 class="text-decoration">Potencia <b>tu empleabilidad</b></h2>
+        <div class="cursos_principales" data-aos="fade-up">
+            <a href="https://www.universia.net/pe/crear-cv-con-ia.html">
+                <div class="informacion">
+                    <div>
+                        <img width="50px" src="<?= media() ?>/upload/empresa_difusion/uni.png" alt="">
+                    </div>
+                    <div>
+                        <h5 class="titulo_curso">Crear CV con IA</h5>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://www.empleosperu.gob.pe/CertificadoUnicoLaboral/">
+                <div class="informacion">
+                    <div>
+                        <img width="50px" src="<?= media() ?>/upload/empresa_difusion/mpt.png" alt="">
+                    </div>
+                    <div>
+                        <h5 class="titulo_curso">Certificado Único Laboral</h5>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
 </div>
 
 <div class="container">
@@ -59,7 +97,6 @@
         <div class="cursos_empleabilidad " data-aos="fade-left">
             <img class="egresado" src="<?= media() ?>/upload/empresa_difusion/egresado.png" alt="">
         </div>
-
 
         <div class="cursos_talleres" id="cursos" data-aos="fade-up">
 
@@ -94,16 +131,18 @@
             for (i = 0; i < info.length; i++) {
                 listado = listado +
                 `
-                <div class="" data-aos="fade-up">
-                    <div class="informacion">
-                        <div>
-                            <img width="50px" src="<?= media() ?>/upload/empresa_difusion/` + info[i].filename + `" alt="">
-                        </div>
-                        <div>
-                            <h5 class="titulo_curso">` + info[i].nombre_curso + `</h5>
+                <a href="` + info[i].url + `">
+                    <div class="" data-aos="fade-up">
+                        <div class="informacion">
+                            <div>
+                                <img width="50px" src="<?= media() ?>/upload/empresa_difusion/` + info[i].filename + `" alt="">
+                            </div>
+                            <div>
+                                <h5 class="titulo_curso">` + info[i].nombre_curso + `</h5>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>       
                 `;
             }
 

@@ -35,24 +35,25 @@
 
 <body>
 
-<style>#divLoading {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(254, 254, 255, .65);
-    z-index: 9999;
-    display: none;
-}
+    <style>
+        #divLoading {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(254, 254, 255, .65);
+            z-index: 9999;
+            display: none;
+        }
 
-#divLoading img {
-    width: 150px;
-    height: 150px;
-}
-</style>
+        #divLoading img {
+            width: 150px;
+            height: 150px;
+        }
+    </style>
 
     <div class="pace  pace-inactive">
         <div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
@@ -74,7 +75,7 @@
         <nav class="main-nav">
             <ul class="menu " id="menu">
                 <img class="logo" src="<?= media(); ?>/archivos/logos/uselogoWhite.png" style="height: 80px;">
-                
+
                 <li class="menu__item "><a scrollto href="<?= base_url(); ?>/home" class="menu__link  m select">INICIO</a></li>
                 <li class="menu__item"><a href="<?= base_url(); ?>/manuales" class="menu__link m">CAPACITACIÓN</a></li>
                 <li class="menu__item"><a href="<?= base_url(); ?>/bolsadetrabajo" class="menu__link m">BOLSA DE TRABAJO&nbsp;</a></li>
@@ -98,8 +99,8 @@
                 <li class="menu__item container-submenu"><a href="#" class="menu__link submenu-btn">NORMATIVA&nbsp;<i class="fas fa-chevron-down"></i></a>
                     <ul class="submenu">
                         <li class="menu__item"><a href="<?= base_url(); ?>/bases/nacional" class="al menu__link">NACIONAL</a></li>
-                        <li class="menu__item"><a href="<?= base_url(); ?>/bases/institucional"  class="al menu__link">INSTITUCIONAL</a></li>
-                 
+                        <li class="menu__item"><a href="<?= base_url(); ?>/bases/institucional" class="al menu__link">INSTITUCIONAL</a></li>
+
                     </ul>
                 </li>
 
@@ -114,7 +115,7 @@
                         <li class="menu__item"><a href="<?= base_url(); ?>/transparencia/repositorio" class="al menu__link">REPOSITORIO</a></li>
 
 
-                        
+
                     </ul>
                 </li>
 
@@ -122,3 +123,32 @@
             </ul>
         </nav>
     </header>
+
+
+    <style>
+        .list_informacion {
+            min-height: 60vh;
+            max-height: 60vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .list_informacion::-webkit-scrollbar {
+            width: 12px;
+            /* width of the entire scrollbar */
+        }
+
+        .list_informacion::-webkit-scrollbar-track {
+            background: #ffc107;
+            /* color of the tracking area */
+        }
+
+        .list_informacion::-webkit-scrollbar-thumb {
+            background-color: blue;
+            /* color of the scroll thumb */
+            border-radius: 20px;
+            /* roundness of the scroll thumb */
+            border: 3px solid #ffc107;
+            /* creates padding around scroll thumb */
+        }
+    </style>
