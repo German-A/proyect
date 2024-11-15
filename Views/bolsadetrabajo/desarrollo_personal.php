@@ -48,15 +48,20 @@
 
     .encabezado {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 30% 70%;
         padding: 20px;
     }
     .cursos_principales {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
         padding: 20px;
     }
-
+    @media (min-width: 800px) {
+        .encabezado {
+            max-width: 900px;
+            margin: auto;
+        }
+    }
     
 </style>
 
@@ -71,6 +76,17 @@
                     </div>
                     <div>
                         <h5 class="titulo_curso">Crear CV con IA</h5>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://www.youtube.com/embed/WQYGuWxIa5Q">
+                <div class="informacion">
+                    <div>
+                        <img width="50px" src="<?= media() ?>/upload/empresa_difusion/a.png" alt="">
+                    </div>
+                    <div>
+                        <h5 class="titulo_curso">Tips para tener éxito en una entrevista de trabajo</h5>
                     </div>
                 </div>
             </a>
