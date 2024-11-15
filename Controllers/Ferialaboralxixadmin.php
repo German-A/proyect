@@ -1,6 +1,6 @@
 <?php
 
-class ferialaboralxivadmin extends Controllers
+class ferialaboralxixadmin extends Controllers
 {
 	public function __construct()
 	{

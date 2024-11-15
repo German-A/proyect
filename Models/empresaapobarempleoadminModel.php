@@ -155,7 +155,7 @@ class EmpresaapobarempleoadminModel extends Mysql
 	/*PAGINA PARA SECRETARIADO*/
 	public function listaEmpleosDifusion()
 	{
-		$sql = "SELECT u.idpersona,em.idEmpleos,em.status,emp.nombreEmpresa,
+		$sql = "SELECT u.idpersona,em.idEmpleos,em.status,emp.nombreEmpresa,u.imagen,
 		em.NombrePuesto,em.DescripcionPuesto,em.InformacionAdicional,em.LugarTrabajo,em.TrabajoRemoto,em.NumeroVacantes,em.Experiencias,
 		em.TipoContrato,em.JornadaLaboral,em.HorasSemanales,em.HorarioTrabajo,em.RemuneracionBruta,em.Contacto,em.FechaInico,em.FechaFin
 		from empleos em

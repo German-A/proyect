@@ -212,7 +212,7 @@
     <span id="btnMenuExpoferiaxv" class="nav-barxv text-right">
         <div class="row">
             <div class="col-6 text-left">
-                <img class="logo" src="<?= media(); ?>/images/ferialaboralxiv/logoxiv.png" style="height: 60px;">
+                <img class="logo" src="<?= media(); ?>/images/ferialaboralxix/logoxiv.png" style="height: 60px;">
             </div>
 
             <div class="col-6 text-right">
@@ -226,11 +226,11 @@
     <nav class="main-navxv">
         <ul class="menuxv" id="menuxv">
 
-            <img class="logoweb" src="<?= media(); ?>/images/ferialaboralxiv/logoxiv.png" style="height: 60px;">
+            <img class="logoweb" src="<?= media(); ?>/images/ferialaboralxix/logoxiv.png" style="height: 60px;">
 
             <div class="naveg">
-                <li class="menu__itemxv"><a href="<?= base_url(); ?>/ferialaboralxiv" class="menu__linkxv">INICIO</a></li>
-                <li class="menu__itemxv"><a href="<?= base_url(); ?>/ferialaboralxiv/nosotros" class="menu__linkxv">NOSOTROS</a></li>
+                <li class="menu__itemxv"><a href="<?= base_url(); ?>/ferialaboralxix" class="menu__linkxv">INICIO</a></li>
+                <li class="menu__itemxv"><a href="<?= base_url(); ?>/ferialaboralxix/nosotros" class="menu__linkxv">NOSOTROS</a></li>
                 <!-- <li class="menu__itemxv container-submenuxv">
                     <a href="#" class="menu__linkxv submenu-btnxv">OFERTA LABORAL</a>
                     <ul class="submenuxv">
@@ -238,9 +238,9 @@
                         <li class="menu__itemxv"><a href="" class="menu__linkxv">BOLSA DE TRABAJO</a></li>
                     </ul>
                 </li> -->
-                <li class="menu__itemxv"><a href="<?= base_url(); ?>/ferialaboralxiv/ponencias" class="menu__linkxv">PONENCIAS</a></li>
-                <li class="menu__itemxv"><a href="<?= base_url(); ?>/ferialaboralxiv/galeria" class="menu__linkxv">GALERIA</a></li>
-                <li class="menu__itemxv"><a href="<?= base_url(); ?>/ferialaboralxiv/empresas" class="menu__linkxv">EMPRESAS</a></li>
+                <li class="menu__itemxv"><a href="<?= base_url(); ?>/ferialaboralxix/ponencias" class="menu__linkxv">PONENCIAS</a></li>
+                <li class="menu__itemxv"><a href="<?= base_url(); ?>/ferialaboralxix/galeria" class="menu__linkxv">GALERIA</a></li>
+                <li class="menu__itemxv"><a href="<?= base_url(); ?>/ferialaboralxix/empresas" class="menu__linkxv">EMPRESAS</a></li>
             </div>
         </ul>
     </nav>

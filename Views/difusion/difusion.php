@@ -1,5 +1,6 @@
 <?php
 headerAdmin($data);
+getModal('modalDifusionEmpresa', $data);
 getModal('modalDifusion', $data);
 ?>
 
@@ -10,29 +11,25 @@ getModal('modalDifusion', $data);
         <p class="text-primary">Todos los campos son obligatorios.</p>
 
         <div class="form-row">
-            <div class="form-group col-md-12">
+            <div class="form-group col-md-3">
                 <label for="programa_estudio">Programa de estudio</label><br>
 
                 <select class="programa_estudio form-control selectmultiple" name="programa_estudio[]" data-live-search="true" id="programa_estudio" multiple="multiple" x>
                 </select>
             </div>
-
-            <div class="form-group col-md-12">
+            <div class="form-group col-md-3">
                 <label for="nombre_empresa">Empresa <a href="javascript:void(0);" class="btn btn-primary" onclick="openModalEmpresa()"><i class="fas fa-plus-circle"></i></a></label>
                 <select class="form-control" id="nombre_empresa" data-live-search="true" name="nombre_empresa" required>
-
                 </select>
-
             </div>
-        </div>
-
-        <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="nombre_puesto">Nombre Puesto</label>
                 <input type="text" class="form-control" id="nombre_puesto" name="nombre_puesto" required="">
             </div>
+        </div>
 
-            <div class="form-group col-md-6">
+        <div class="form-row">
+            <div class="form-group col-md-2">
                 <label for="modalidad_laboral">Modalidad</label>
                 <select class="form-control lista" name="modalidad_laboral" id="modalidad_laboral" data-live-search="true" class="mdb-select md-form" x>
                     <option value="0" disabled selected>Seleccionar</option>
@@ -41,10 +38,7 @@ getModal('modalDifusion', $data);
                     <option value="remoto">Remoto</option>
                 </select>
             </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group col-md-5">
+            <div class="form-group col-md-2">
                 <label for="condicion_laboral">Tipo Oferta</label>
                 <select class="form-control lista" name="condicion_laboral" id="condicion_laboral" data-live-search="true" class="mdb-select md-form" x>
                     <option value="0" disabled selected>Seleccionar</option>
@@ -53,25 +47,27 @@ getModal('modalDifusion', $data);
                     <option value="practicas_pro">Practicas Profesionales</option>
                 </select>
             </div>
-            <div class="form-group col-md-5">
+            <div class="form-group col-md-2">
                 <label for="fecha_termino">fecha_termino</label>
                 <input type="date" class="form-control" id="fecha_termino" name="fecha_termino" required="">
             </div>
-            <div class="form-group col-md-5">
+            <div class="form-group col-md-6">
                 <label for="link">link</label>
                 <input type="text" class="form-control" id="link" name="link" required="">
             </div>
+        </div>
 
-            <div class="form-group col-md-2">
+        <div class="form-row">
+            <div class="form-group col-md-4">
                 <a href="javascript:void(0);" class="btn btn-primary" id="btnText" onclick="Agregar()"><i class="fa fa-fw fa-lg fa-check-circle"></i>Guardar</a>
                 <button class="btn btn-danger" type="button" data-dismiss="modal"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cerrar</button>
-
             </div>
         </div>
     </form>
-
+    <br><br>
     <div class="app-title">
         <h1>lista de difusiones registradas</h1>
+
     </div>
 
     <div class="row">
@@ -123,8 +119,8 @@ getModal('modalDifusion', $data);
         document.querySelector('#id').value = "";
         document.querySelector('.modal-header').classList.replace("headerUpdate", "headerRegister");
         document.querySelector('#btnText').classList.replace("btn-info", "btn-primary");
-        document.querySelector('#btnText').innerHTML = "Publicar Imagen";
-        document.querySelector('#titleModal').innerHTML = "Publicar Idocumento legalnacional";
+        document.querySelector('#btnText').innerHTML = "Publicar";
+        document.querySelector('#titleModal').innerHTML = "Publicar";
         document.querySelector("#formmodal").reset();
         $('#modalEmpresa').modal('show');
     }
@@ -247,24 +243,16 @@ getModal('modalDifusion', $data);
         });
     }
 
+    function fntEdit(id) {
 
-
-
-
-
-
-
-
-    function fntEditEmpresa(idexpoxvEmpresa) {
-
-        document.querySelector("#titleEmpresa").innerHTML = "ACTUALIZAR GALERÍA";
+        document.querySelector("#titleModal").innerHTML = "ACTUALIZAR";
         document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");
-        document.querySelector("#btnEmpresa").classList.replace("btn-primary", "btn-info");
-        document.querySelector("#btnEmpresa").innerHTML = "Actualizar";
+        document.querySelector("#btnText").classList.replace("btn-primary", "btn-info");
+        document.querySelector("#btnText").innerHTML = "Actualizar";
 
         $.ajax({
             method: "GET",
-            url: "" + base_url + "/expoferialaboralxvadmin/getOneEmpresa/" + idexpoxvEmpresa,
+            url: "" + base_url + "/difusion/getOneDifusion/" + id,
             processData: false, // tell jQuery not to process the data
             contentType: false, // tell jQuery not to set contentType
 
@@ -273,7 +261,7 @@ getModal('modalDifusion', $data);
 
             if (info.status == true) {
                 document.querySelector("#formmodalEmpresa").reset();
-                document.getElementById('idexpoxvEmpresa').value = info.data['idexpoxvempresas'];
+                document.getElementById('id_difusion_cursos').value = info.data['id_difusion_cursos'];
                 document.getElementById('txtNombre').value = info.data['nombre'];
                 document.getElementById('txtPosicion').value = info.data['posicion'];
                 //   $(".summernote").summernote("your text");
@@ -286,7 +274,7 @@ getModal('modalDifusion', $data);
                 swal("Error!", info.msg, "error");
             }
 
-            $("#modalRegistroEmpresa").modal("show");
+            $("#modalDifusion").modal("show");
         });
     }
 

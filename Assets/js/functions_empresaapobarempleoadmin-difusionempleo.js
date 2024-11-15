@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
         "columns": [
             { "data": "idEmpleos" },
             { "data": "NombrePuesto" },
+            { "data": "imagen" },
             { "data": "escuelaid" },
             { "data": "titulacionesid" },
             { "data": "FechaInico" },

@@ -44,7 +44,7 @@ class DifusionModel extends Mysql
 		return $request;
 	}
 
-	#region empresas
+	#region select_empreas_carreras
 
 	public function getSelectEmpresa()
 	{
@@ -79,7 +79,9 @@ class DifusionModel extends Mysql
 		}
 		return $response;
 	}
+	#endregion select_empreas_carreras
 
+	#region registro_empresa
 	public function newRegisterEmpresa($empresa_feria, $filename, $created_by, $created_at)
 	{
 
@@ -101,8 +103,7 @@ class DifusionModel extends Mysql
 		$return = $request_insert;
 		return $return;
 	}
-
-	#endregion empresas
+	#endregion registro_empresa
 
 
 	#region registro_difusion_oferta
@@ -143,10 +144,6 @@ class DifusionModel extends Mysql
 		}
 		return $response;
 	}
-
-
-
-	#endregion registro_difusion_oferta
 
 	public function newRegisterDifusion($nombre_puesto, $nombre_empresa, $modalidad_laboral, $condicion_laboral, $fecha_termino, $lista_programa_estudio, $link, $created_by, $created_at)
 	{
@@ -195,24 +192,9 @@ class DifusionModel extends Mysql
 		$return = $request_insert;
 		return $return;
 	}
-
-
-
-
+	#endregion registro_difusion_oferta
 
 	#region registro_difusion_oferta
-
-
-	public function listaCarreras($idempresa)
-	{
-		$sql = "SELECT nombreEscuela
-				FROM escuela
-				where status = 1 and idEscuela = $idempresa";
-		$request = $this->select($sql);
-		return $request;
-	}
-
-
 
 
 

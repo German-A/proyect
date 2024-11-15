@@ -27,6 +27,7 @@ getModal('modalEmpresa', $data);
                 <tr>
                   <th>ID</th>
                   <th>NombrePuesto</th>
+                  <th>imagen</th>
                   <th>Escuelas</th>
                   <th>Titulaciones</th>
                   <th>Fecha Inico</th>                  
@@ -61,6 +62,7 @@ getModal('modalEmpresa', $data);
   <!-- /.row -->
 
 </main>
+
 
 <?php footerAdmin($data); ?>
 

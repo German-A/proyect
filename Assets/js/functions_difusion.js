@@ -67,6 +67,7 @@ $(document).ready(function() {
 
 });
 
+$(".lista").select2({});
 
 
 
@@ -149,9 +150,7 @@ function fntEdit(element, idbtn) {
 }
 
 
-$(".lista").select2({
 
-});
 
 
 

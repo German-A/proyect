@@ -13,7 +13,7 @@ class difusion extends Controllers
 		}
 		getPermisos(36);
 	}
-	//pagina Banner
+
 	public function difusion()
 	{
 		if (empty($_SESSION['permisosMod']['r'])) {
@@ -26,7 +26,7 @@ class difusion extends Controllers
 		$data['page_functions_js'] = "functions_difusion.js";
 		$this->views->getView($this, "difusion", $data);
 	}
-	//listado
+
 	public function getDifusion()
 	{
 
@@ -36,7 +36,7 @@ class difusion extends Controllers
 
 			for ($i = 0; $i < count($arrData); $i++) {
 
-				$btnView = '';
+
 				$btnEdit = '';
 				$btnDelete = '';
 
@@ -66,29 +66,10 @@ class difusion extends Controllers
 
 				$arrData[$i]['link'] = '<a href="javascript:void(0);" lin-oferta="' . $arrData[$i]['link'] . '"  onClick="copiarLinkOferta(this)" class="btn btn-secondary btn-sm" ><span>web</span></a> ';
 
-				$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
+				$arrData[$i]['options'] = '<div class="text-center">' . $btnEdit . ' ' . $btnDelete . '</div>';
 			}
 			echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
 		}
-		die();
-	}
-
-
-
-
-
-
-	public function getSelectCarreras()
-	{
-		$search = "";
-		if (!isset($_POST['palabraClave'])) {
-			$arrData = $this->model->getSelectCarrera();
-		} else {
-			$search = $_POST['palabraClave'];
-
-			$arrData = $this->model->getSelectCarreras($search);
-		}
-		echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
 		die();
 	}
 
@@ -149,7 +130,22 @@ class difusion extends Controllers
 	}
 
 
-	#region empresas
+
+	#region select_empreas_carreras
+
+	public function getSelectCarreras()
+	{
+		$search = "";
+		if (!isset($_POST['palabraClave'])) {
+			$arrData = $this->model->getSelectCarrera();
+		} else {
+			$search = $_POST['palabraClave'];
+
+			$arrData = $this->model->getSelectCarreras($search);
+		}
+		echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
+		die();
+	}
 
 	public function getSelectEmpresas()
 	{
@@ -165,6 +161,9 @@ class difusion extends Controllers
 		die();
 	}
 
+	#endregion select_empreas_carreras
+
+	#region registro_empresa
 	public function registro_empresa()
 	{
 		if ($_POST) {
@@ -268,10 +267,7 @@ class difusion extends Controllers
 		}
 		die();
 	}
-
-	#endregion empresas
-
-
+	#endregion registro_empresa
 
 	#region registro_difusion_oferta
 	public function set()
@@ -290,9 +286,9 @@ class difusion extends Controllers
 				$link = strClean($_POST['link']);
 
 				$lista_programa_estudio = array();
-				$lista_programa_estudio = json_decode($_POST['lista_programa_estudio'],true);
-		
-					
+				$lista_programa_estudio = json_decode($_POST['lista_programa_estudio'], true);
+
+
 				$created_by = $_SESSION['idUser'];
 				$created_at =  strtotime(date("Y-m-d H:i:s"));
 
@@ -332,7 +328,7 @@ class difusion extends Controllers
 					$filename = $this->upload($archivos, $findFile, $Folder);
 					/*registro*/
 					if ($_SESSION['permisosMod']['w']) {
-						$insert = $this->model->newRegisterDifusion($nombre_puesto, $nombre_empresa, $modalidad_laboral,$condicion_laboral, $fecha_termino, $lista_programa_estudio, $link, $created_by, $created_at);
+						$insert = $this->model->newRegisterDifusion($nombre_puesto, $nombre_empresa, $modalidad_laboral, $condicion_laboral, $fecha_termino, $lista_programa_estudio, $link, $created_by, $created_at);
 					}
 				}
 
@@ -392,15 +388,13 @@ class difusion extends Controllers
 		}
 		die();
 	}
-	#endregion registro_difusion_oferta
 
-	//obtener un baner para actualizar
-	public function getunBanner($idpersona)
+	public function getOne($id_disusion_ofertas)
 	{
 		if ($_SESSION['permisosMod']['r']) {
-			$id_disusion = intval($idpersona);
-			if ($id_disusion > 0) {
-				$arrData = $this->model->getunBanner($id_disusion);
+			$id_disusion_ofertas = intval($id_disusion_ofertas);
+			if ($id_disusion_ofertas > 0) {
+				$arrData = $this->model->getOne($id_disusion_ofertas);
 				if (empty($arrData)) {
 					$arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
 				} else {
@@ -412,7 +406,6 @@ class difusion extends Controllers
 		die();
 	}
 
-	//borrar un banner
 	public function delBanner()
 	{
 		if ($_POST) {
@@ -429,4 +422,5 @@ class difusion extends Controllers
 		}
 		die();
 	}
+	#endregion registro_difusion_oferta
 }

@@ -61,11 +61,18 @@ class empresaapobarempleoadmin extends Controllers
 				if ($_SESSION['permisos'][12]['r']) {
 				}
 
+				
+			
+			
+
 				if ($_SESSION['permisos'][12]['u']) {
 					$btnDelete = '<button class="btn btn-success btn-sm btnDelUsuario" onClick="fntAprobarBanner(' . $line['idEmpleos'] . ')" title="Aprobar Empleo"><i class="fas fa-check-circle"></i></button>';
 				} else {
 					$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
 				}
+				
+
+
 				$line['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
 			}
 
@@ -254,6 +261,9 @@ class empresaapobarempleoadmin extends Controllers
 				} else {
 					$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
 				}
+
+				$line['imagen'] = '<a target="_blank" href="' . base_url() . '/Assets/archivos/empresa/'.$line['imagen'].'" >imagen</a>';
+
 				$line['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
 			}
 
