@@ -152,3 +152,10 @@
             /* creates padding around scroll thumb */
         }
     </style>
+
+<style>
+    .select2-container{
+      width: 100% !important;
+
+    }
+  </style>

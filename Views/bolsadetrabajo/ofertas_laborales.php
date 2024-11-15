@@ -40,11 +40,22 @@
 
     .contenedor_ofertas {
         display: grid;
-        grid-template-columns: auto auto auto;
+        grid-template-columns: 1fr;
         /* Ajusta el número de columnas según tus necesidades */
         margin: auto;
-        column-gap: 20px;
+        gap: 20px;
         grid-auto-rows: auto;
+    }
+
+    @media (min-width: 800px) {
+        .contenedor_ofertas {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            grid-auto-rows: auto;
+            margin: 10px;
+
+        }
     }
 
     .cursos_empleabilidad {
@@ -102,15 +113,15 @@
         <div class="col-md-10 offset-md-1">
             <div class="row d-flex justify-content-around">
 
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="form-group">
                         <h5 class="bluemedio">Programa de estudio:</h5>
-                        <select class="escuela" data-placeholder="Seleccionar" id="escuela" style="width: 100%;">
+                        <select class="escuela" data-placeholder="Seleccionar" id="escuela">
                         </select>
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="form-group">
                         <h5 class="bluemedio">Modalidad laboral</h5>
                         <select class="form-control lista" name="modalidad_laboral" id="modalidad_laboral" data-live-search="true" class="mdb-select md-form" x>
@@ -122,7 +133,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <h5 class="bluemedio">Tipo oferta</h5>
                     <select class="form-control lista" name="condicion_laboral" id="condicion_laboral" data-live-search="true" class="mdb-select md-form" x>
                         <option value="0" disabled selected>Seleccionar</option>
@@ -130,6 +141,9 @@
                         <option value="practicas_pre">Practicas Preprofesionales</option>
                         <option value="practicas_pro">Practicas Profesionales</option>
                     </select>
+                </div>
+                <div class="col-md-3 d-flex align-items-center">
+                    <a href="javascript:void(0);" onclick="buscarOfertas()" class="btn btn-primary">QUITAR FILTROS</a>
                 </div>
 
             </div>
@@ -179,15 +193,19 @@
         empleos();
     });
 
-
-    function empleos() {
-
-        var escuela = $("#escuela").val();
-        var modalidad_laboral = $("#modalidad_laboral").val();
+    $("#condicion_laboral").on("change", function() {
+        empleos();
+    });
+    
+    function buscarOfertas() {
+        var escuela = null;
+        var modalidad_laboral = null;
+        var condicion_laboral = null;
 
         var fd = new FormData();
         fd.append("escuela", escuela);
         fd.append("modalidad_laboral", modalidad_laboral);
+        fd.append("condicion_laboral", condicion_laboral);
 
         $.ajax({
             method: "POST",
@@ -205,7 +223,80 @@
             for (i = 0; i < info.length; i++) {
                 listado = listado +
                     `
-                         <div class="tarjeta callout callout-danger">
+                    <div class="tarjeta callout callout-danger">
+
+                        <a Target="_blank" href="` + info[i].link + `">
+                            <div class="imagen_ofertas">
+                                <div class="div">
+                                    <img style="width: 70px;" class="" src="<?= media() ?>/upload/difusiones_laborales/` + info[i].filename + `">
+                                </div>
+                                <div class="div">
+                                    <h5><span>` + info[i].nombre_puesto + `</span></h5>
+                                    <h5>Empresa: <span>` + info[i].descripcion + `</span></h5>
+                                </div>
+                            </div>
+
+                            <div class="">
+                                <h5>
+                                    <span> ` + info[i].nombreEscuela + `</span>
+                                </h5>
+                            </div>
+
+                            <div class="modalidad_fecha">
+                                <div class="div">
+                                    <span>Modalidad: ` + info[i].modalidad_laboral + `</span><br>
+                                    <span>Hasta: ` + info[i].fecha_termino + `</span>
+                                </div>
+                                <div class="div">
+                                    <p class="condicion_laboral">` + info[i].condicion_laboral + `</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                   
+                `;
+
+            }
+
+            //console.log(listado);
+
+            $("#empleos").html(listado);
+
+        });
+
+
+    }
+
+
+    function empleos() {
+
+        var escuela = $("#escuela").val();
+        var modalidad_laboral = $("#modalidad_laboral").val();
+        var condicion_laboral = $("#condicion_laboral").val();
+
+
+        var fd = new FormData();
+        fd.append("escuela", escuela);
+        fd.append("modalidad_laboral", modalidad_laboral);
+        fd.append("condicion_laboral", condicion_laboral);
+
+        $.ajax({
+            method: "POST",
+            url: "" + base_url + "/bolsadetrabajo/get_ofertas_laborales",
+            data: fd,
+            processData: false, // tell jQuery not to process the data
+            contentType: false // tell jQuery not to set contentType
+
+        }).done(function(response) {
+            var info = JSON.parse(response);
+
+            console.log(info);
+            listado = '';
+
+            for (i = 0; i < info.length; i++) {
+                listado = listado +
+                    `
+                    <div class="tarjeta callout callout-danger">
 
                         <a Target="_blank" href="` + info[i].link + `">
                             <div class="imagen_ofertas">

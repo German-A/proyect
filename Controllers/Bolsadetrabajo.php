@@ -39,10 +39,16 @@ class bolsadetrabajo extends Controllers
 			$modalidad_laboral = $_POST['modalidad_laboral'];
 		}
 
+		if ($_POST['condicion_laboral'] == 'null') {
+			$condicion_laboral = null;
+		} else {
+			$condicion_laboral = $_POST['condicion_laboral'];
+		}
 
 
 
-		$arrData = $this->model->get_ofertas_laborales($escuela,$modalidad_laboral);
+
+		$arrData = $this->model->get_ofertas_laborales($escuela,$modalidad_laboral,$condicion_laboral);
 
 		foreach ($arrData as &$line) {
 

@@ -45,10 +45,9 @@ class bolsadetrabajoModel extends Mysql
 		return $response;
 	}
 
-	public function get_ofertas_laborales($escuela,$modalidad_laboral)
+	public function get_ofertas_laborales($escuela,$modalidad_laboral,$condicion_laboral)
 	{
 		$escuelaid = '';
-
 		if ($escuela != null) {
 			$escuelaid = 'and oc.id_escuela = ' . $escuela;
 		}
@@ -58,12 +57,17 @@ class bolsadetrabajoModel extends Mysql
 			$b_modalidad_laboral = "and difo.modalidad_laboral = '$modalidad_laboral'";
 		}
 
+		$b_condicion_laboral = '';
+		if ($condicion_laboral != null) {
+			$b_condicion_laboral = "and difo.condicion_laboral = '$condicion_laboral'";
+		}
+
 		$sql = "SELECT * 
 			FROM difusion_ofertas difo
 			INNER JOIN empresa_feria ef on difo.id_empresa_feria=ef.id_empresa_feria
 			INNER JOIN disusion_ofertas_carreras oc on oc.id_difusion_ofertas=difo.id_difusion_ofertas
 			INNER JOIN escuela e on oc.id_escuela = e.idEscuela
-			where difo.status > 0 $escuelaid $b_modalidad_laboral
+			where difo.status > 0 $escuelaid $b_modalidad_laboral $b_condicion_laboral
 				";
 		$request = $this->select_all($sql);
 		return $request;
