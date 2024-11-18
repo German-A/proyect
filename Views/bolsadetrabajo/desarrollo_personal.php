@@ -24,16 +24,13 @@
     .informacion {
         display: grid;
         grid-template-columns: 20% 80%;
-        padding: 20px;
         /* Ajusta el número de columnas según tus necesidades */
-
         column-gap: 10px;
-        grid-auto-rows: auto;
         -webkit-box-shadow: 18px 12px 3px -10px rgba(247, 228, 17, 1);
         -moz-box-shadow: 18px 12px 3px -10px rgba(247, 228, 17, 1);
         box-shadow: 18px 12px 3px -10px rgba(247, 228, 17, 1);
-
-
+        width: max-content;
+        margin: auto;
     }
 
     .text-decoration {
@@ -48,57 +45,71 @@
 
     .encabezado {
         display: grid;
-        grid-template-columns: 30% 70%;
-        padding: 20px;
+        padding: 2px;
     }
+
     .cursos_principales {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        padding: 20px;
+        grid-template-columns: 1fr;
+        margin: 20px 0;
+        column-gap: 20px;
     }
+
     @media (min-width: 800px) {
         .encabezado {
-            max-width: 900px;
             margin: auto;
         }
+
+        .cursos_principales {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 20px;
+        }
+
     }
-    
+
+    @media (min-width: 1050px) {
+        .encabezado {
+            margin: auto;
+        }
+
+        .cursos_principales {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            column-gap: 20px;
+        }
+
+    }
 </style>
 
-<div class="container">
+<div class="contenedor">
     <div class="encabezado">
         <h2 class="text-decoration">Potencia <b>tu empleabilidad</b></h2>
         <div class="cursos_principales" data-aos="fade-up">
-            <a href="https://www.universia.net/pe/crear-cv-con-ia.html">
-                <div class="informacion">
-                    <div>
-                        <img width="50px" src="<?= media() ?>/upload/empresa_difusion/uni.png" alt="">
-                    </div>
-                    <div>
-                        <h5 class="titulo_curso">Crear CV con IA</h5>
-                    </div>
+            <a class="informacion" href="https://www.universia.net/pe/crear-cv-con-ia.html">
+                <div>
+                    <img width="50px" src="<?= media() ?>/upload/empresa_difusion/uni.png" alt="">
+                </div>
+                <div>
+                    <h5 class="titulo_curso">Crear CV con IA</h5>
                 </div>
             </a>
 
-            <a href="https://www.youtube.com/embed/WQYGuWxIa5Q">
-                <div class="informacion">
-                    <div>
-                        <img width="50px" src="<?= media() ?>/upload/empresa_difusion/a.png" alt="">
-                    </div>
-                    <div>
-                        <h5 class="titulo_curso">Tips para tener éxito en una entrevista de trabajo</h5>
-                    </div>
+            <a class="informacion" href="https://www.youtube.com/embed/WQYGuWxIa5Q">
+                <div>
+                    <img width="50px" src="<?= media() ?>/upload/empresa_difusion/a.png" alt="">
+                </div>
+                <div>
+                    <h5 class="titulo_curso">Tips para tener éxito en una entrevista de trabajo</h5>
                 </div>
             </a>
 
-            <a href="https://www.empleosperu.gob.pe/CertificadoUnicoLaboral/">
-                <div class="informacion">
-                    <div>
-                        <img width="50px" src="<?= media() ?>/upload/empresa_difusion/mpt.png" alt="">
-                    </div>
-                    <div>
-                        <h5 class="titulo_curso">Certificado Único Laboral</h5>
-                    </div>
+            <a class="informacion" href="https://www.empleosperu.gob.pe/CertificadoUnicoLaboral/">
+                <div>
+                    <img width="50px" src="<?= media() ?>/upload/empresa_difusion/mpt.png" alt="">
+                </div>
+                <div>
+                    <h5 class="titulo_curso">Certificado Único Laboral</h5>
                 </div>
             </a>
 
@@ -146,7 +157,7 @@
 
             for (i = 0; i < info.length; i++) {
                 listado = listado +
-                `
+                    `
                 <a href="` + info[i].url + `">
                     <div class="" data-aos="fade-up">
                         <div class="informacion">

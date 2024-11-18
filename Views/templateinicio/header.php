@@ -153,9 +153,16 @@
         }
     </style>
 
-<style>
-    .select2-container{
-      width: 100% !important;
+    <style>
+        .select2-container {
+            width: 100% !important;
 
-    }
-  </style>
+        }
+
+        .contenedor {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0px auto;
+          
+        }
+    </style>
