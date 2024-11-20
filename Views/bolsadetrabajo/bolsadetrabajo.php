@@ -46,6 +46,11 @@
         padding: 1rem;
     }
 
+<<<<<<< HEAD
+=======
+
+<style>
+>>>>>>> 017c644daeadc43f9e71dc643e9b7871bb0eacf8
     .contenedor_ofertas_curos {
         width: 1000px;
         display: grid;
