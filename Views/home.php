@@ -181,6 +181,10 @@ $perfiles = $obj->selectBanner();
     .container{
       margin: 20px auto;
     }
+       .cuadro_enlace {
+        min-width: 270px;
+        min-height: 145px;
+    }
   </style>
 
   <div class="container ">
@@ -192,7 +196,7 @@ $perfiles = $obj->selectBanner();
     <div class="row d-flex justify-content-around ">
 
       <a href="<?= base_url(); ?>/encuestaempresas" target="_blank">
-        <div class="col-8 col-md-3 col-lg-3  fondo" data-aos="flip-down">
+        <div class="col-8 col-md-4 col-lg-3  fondo cuadro_enlace" data-aos="flip-down">
           <div class="text-right">
             <img class="iconosPlaforma" src="<?= media(); ?>/archivos/home/encuesta_empleadores.png" alt="">
           </div>
@@ -204,7 +208,7 @@ $perfiles = $obj->selectBanner();
       </a>
 
       <a href="https://siseu-rep.sineace.gob.pe:6040/" target="_blank">
-        <div class="col-8 col-md-3 col-lg-3  fondo" data-aos="flip-down">
+        <div class="col-8 col-md-4 col-lg-3  fondo cuadro_enlace" data-aos="flip-down">
           <div class="col-12 text-right col-md-12">
             <img class="iconosPlaforma" src="<?= media(); ?>/archivos/home/siseu.png" alt="">
           </div>
@@ -216,7 +220,7 @@ $perfiles = $obj->selectBanner();
       </a>
 
       <a target="_blank" href="https://jobboard.universia.net/unitruoportunidades">
-        <div class="col-8 col-md-3 col-lg-3  fondo" data-aos="flip-down">
+        <div class="col-8 col-md-4 col-lg-3  fondo cuadro_enlace" data-aos="flip-down">
           <div class="col-12 text-right col-md-12">
             <img class="iconosPlaforma" src="<?= media(); ?>/archivos/home/bolsa_trabajo.png" alt="">
           </div>
@@ -228,7 +232,7 @@ $perfiles = $obj->selectBanner();
       </a>
 
       <a target="_blank" href="<?= base_url(); ?>/expoferialaboral">
-        <div class="col-8 col-md-3 col-lg-3  fondo" data-aos="flip-up">
+        <div class="col-8 col-md-4 col-lg-3  fondo cuadro_enlace" data-aos="flip-up">
           <div class="col-12 text-right col-md-12">
             <img class="iconosPlaforma" src="<?= media(); ?>/archivos/home/feria_laboral.png" alt="">
           </div>
@@ -240,7 +244,7 @@ $perfiles = $obj->selectBanner();
       </a>
 
       <a target="_blank" href="<?= base_url(); ?>/solicitudempleo">
-        <div class="col-8 col-md-3 col-lg-3  fondo" data-aos="flip-up">
+        <div class="col-8 col-md-4 col-lg-3  fondo cuadro_enlace" data-aos="flip-up">
           <div class="col-12 text-right col-md-12">
             <img class="iconosPlaforma" src="<?= media(); ?>/archivos/home/publicar_oferta.png" alt="">
           </div>
