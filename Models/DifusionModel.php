@@ -85,22 +85,27 @@ class DifusionModel extends Mysql
 	public function newRegisterEmpresa($empresa_feria, $filename, $created_by, $created_at)
 	{
 
-		$this->empresa_feria = $empresa_feria;
-		$this->filename = $filename;
-		$this->created_by = $created_by;
-		$this->created_at = $created_at;
+		try {
 
-		$return = 0;
-		$query_insert  = "INSERT INTO empresa_feria(descripcion,filename,created_by,created_at)
+			$this->empresa_feria = $empresa_feria;
+			$this->filename = $filename;
+			$this->created_by = $created_by;
+			$this->created_at = $created_at;
+
+			$return = 0;
+			$query_insert  = "INSERT INTO empresa_feria(descripcion,filename,created_by,created_at)
 									  VALUES(?,?,?,?)";
-		$arrData = array(
-			$this->empresa_feria,
-			$this->filename,
-			$this->created_by,
-			$this->created_at
-		);
-		$request_insert = $this->insert($query_insert, $arrData);
-		$return = $request_insert;
+			$arrData = array(
+				$this->empresa_feria,
+				$this->filename,
+				$this->created_by,
+				$this->created_at
+			);
+			$request_insert = $this->insert($query_insert, $arrData);
+			$return = $request_insert;
+		} catch (Exception $e) {
+			echo 'Caught exception: ',  $e->getMessage(), "\n";
+		}
 		return $return;
 	}
 	#endregion registro_empresa

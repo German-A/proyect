@@ -1,14 +1,6 @@
 <?php head($data); ?>
-
 <?php obj($data); ?>
-<?php
 
-//require_once  "../Models/HomeModel.php";
-$año = new HomeModel();
-
-$perfiles = $año->selectañoEspecialidades();
-
-?>
 <style>
     .contedorlinkbolsa {
         max-width: 100%;
@@ -28,74 +20,7 @@ $perfiles = $año->selectañoEspecialidades();
             margin: auto;
         }
     }
-</style>
 
-
-
-
-<!-- <div class="contedorlinkbolsa pt-4 pb-1">
-    <div class="row d-flex justify-content-around ">
-        <a class="col-8 col-md-3 col-lg-2 fondo m-1" target="_blank" href="https://jobboard.universia.net/unitruoportunidades">
-            <div class="col-12 text-right col-md-12">
-                <h1 class="mostaza"><i class="fas fa-briefcase"></i></h1>
-                <br>
-            </div>
-            <div class="col-12 text-left col-md-12">
-                <h5 class="">BOLSA DE TRABAJO UNT</h5>
-            </div>
-        </a>
-
-        <a class="col-8 col-md-3 col-lg-2 fondo m-1" target="_blank" href="https://www.empleosperu.gob.pe/portal-mtpe/">
-            <div class="col-12 text-right col-md-12">
-                <h1 class="mostaza"><i class="fas fa-briefcase"></i></h1>
-                <br>
-            </div>
-            <div class="col-12 text-left col-md-12">
-                <h5 class="">PORTAL EMPLEOS PERÚ</h5>
-            </div>
-        </a>
-
-        <a class="col-8 col-md-3 col-lg-2 fondo m-1" target="_blank" href="https://www.abriljobs.com/jobs?page=1">
-            <div class="col-12 text-right col-md-12">
-                <h1 class="mostaza"><i class="fas fa-briefcase"></i></h1>
-                <br>
-            </div>
-            <div class="col-12 text-left col-md-12">
-                <h5 class="">AbrilATS+</h5>
-            </div>
-        </a>
-
-
-        <a class="col-8 col-md-3 col-lg-2 fondo m-1" href="<?= base_url(); ?>/solicitudempleo">
-            <div class="col-12 text-right col-md-12">
-                <h1 class="mostaza"><i class="fas fa-edit"></i></h1>
-                <br>
-            </div>
-            <div class="col-12 text-left col-md-12">
-                <h5 class="">SOLICITUD DE OFERTA LABORAL</h5>
-            </div>
-        </a>
-
-        <a class="col-8 col-md-3 col-lg-2 fondo m-1" href="<?= base_url(); ?>/encuestaempresas">
-            <div class="col-12 text-right col-md-12">
-                <h1 class="mostaza"><i class="fas fa-user-edit"></i></h1>
-                <br>
-            </div>
-            <div class="col-12 text-left col-md-12">
-                <h5 class="">ENCUESTA EMPLEADORES</h5>
-            </div>
-        </a>
-
-    </div>
-</div> -->
-
-
-
-
-
-
-
-<style>
     .contenedor {
         max-width: 1200px;
         margin: auto;
@@ -120,98 +45,7 @@ $perfiles = $año->selectañoEspecialidades();
         margin-bottom: 1rem;
         padding: 1rem;
     }
-</style>
 
-
-<!-- <div class="col-12 row contenedor">
-
-    <div class="col-5 listempleos " id="empleos">
-
-    </div>
-
-    <div class="col-7 listempleos  ">
-        <h5 id="nombrePuesto"></h5>
-        <br>
-
-        <p id="DescripcionPuesto"></p>
-        <br>
-    </div>
-
-</div> -->
-
-<!-- registro de usuarios -->
-<!-- <div class="modal fade" id="modalRegistro" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-body">
-
-                <form id="formUsuario" name="formUsuario" class="form-horizontal">
-
-                    <div class="form-group col-md-12">
-                        <label for="dni">Dni</label>
-                        <input type="text" class="form-control  " id="dni" name="dni" required="">
-                    </div>
-
-                    <div class="form-group col-md-12">
-                        <label for="nombre">Nombres</label>
-                        <input type="text" class="form-control  " id="nombre" name="nombre" required="">
-                    </div>
-
-                    <div class="form-group col-md-12">
-                        <label for="escuela">escuela</label>
-                        <input type="text" class="form-control  " id="escuela" name="escuela" required="">
-                    </div>
-
-                    <div class="form-group col-md-12">
-                        <label for="celular">celular</label>
-                        <input type="text" class="form-control  " id="celular" name="celular" required="">
-                    </div>
-
-                    <div class="form-group col-md-12">
-                        <label for="email">email</label>
-                        <input type="text" class="form-control  " id="email" name="email" required="">
-                    </div>
-
-                    <a href="javascript:void(0);" onclick="registroUsuario()" class="btn btn-outline-primary pl-5 pr-5">
-                        Guardar
-                    </a>
-                </form>
-            </div>
-
-        </div>
-    </div>
-</div> -->
-
-<!-- usuarios registrados -->
-
-<!-- <div class="modal fade" id="modalUsuariosRegistrados" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-body">
-
-                <form id="formUsuario" name="formUsuario" class="form-horizontal">
-
-                    <div class="form-group col-md-12">
-                        <label for="dni_usuario">Dni</label>
-                        <input type="text" class="form-control  " id="dni_usuario" name="dni_usuario" required="">
-                    </div>
-
-                    <div id="usuarioInfo">
-
-                    </div>
-
-                    <a href="javascript:void(0);" onclick="buscarUsuario()" class="btn btn-outline-primary pl-5 pr-5">
-                        Accedor
-                    </a>
-                </form>
-            </div>
-
-        </div>
-    </div>
-</div> -->
-
-
-<style>
     .contenedor_ofertas_curos {
         width: 1000px;
         display: grid;
@@ -222,40 +56,100 @@ $perfiles = $año->selectañoEspecialidades();
         grid-auto-rows: auto;
     }
 
-
-    .img_egresados{
-        width: 315px;
-    }
-    .img_empleo_curso{
+    .img_egresados {
         width: 315px;
     }
 
-    .img_empleo_curso:hover{
-        transition:  2s;
+    .img_empleo_curso {
+        width: 315px;
+    }
+
+    .img_empleo_curso:hover {
+        transition: 2s;
         width: 330px;
     }
 
+    .fondo {
+        min-width: max-content;
+        padding: 5px
+    }
+
+    .iconosPlaforma {
+        height: 50px;
+        width: 50px;
+    }
+
+    .cuadro_enlace {
+        min-width: 270px;
+        min-height: 145px;
+    }
+
+    .publica_oferta {
+        max-width: 420px;
+        padding-right: 57px;
+    }
 </style>
 
 <div class="container">
-    <div class="contenedor_ofertas_curos">
 
-        <a href="<?= base_url(); ?>/bolsadetrabajo/desarrollo_personal">
-            <div class="cursos_empleabilidad desarrollo_personal" data-aos="fade-left">
-                <img class="img_empleo_curso" src="<?= media(); ?>/archivos/bolsa_de_trabajo/desarrollo_personal.png" alt="">
-            </div>
-        </a>
+    <div class="row">
+        <div class="col-md-4">
+            <a target="_blank" href="<?= base_url(); ?>/bolsadetrabajo/desarrollo_personal" class="">
+                <div class="col-8 col-md-3 col-lg-3  fondo cuadro_enlace" data-aos="flip-up">
+                    <div class="col-12 text-right col-md-12">
+                        <h1 class="mostaza "><i class="fas fa-globe-americas"></i></h1>
+                    </div>
+                    <div class="col-12 text-left col-md-12">
+                        <h5 class="">POTENCIA <br>TU EMPLEABILIDAD</h5>
+                    </div>
+                </div>
+            </a>
+            <br>
+            <a target="_blank" href="<?= base_url(); ?>/solicitudempleo" class="">
+                <div class="col-8 col-md-3 col-lg-3  fondo cuadro_enlace" data-aos="flip-up">
+                    <div class="col-12 text-right col-md-12">
+                        <img class="iconosPlaforma" src="<?= media(); ?>/archivos/home/publicar_oferta.png" alt="">
+                    </div>
+                    <div class="col-md-12 text-left cuadro_texto">
+                        <h5 class="">PUBLICA <br>TU OFERTA LABORAL</h5>
+                    </div>
+                </div>
+            </a>
 
-        <div class="cursos_empleabilidad imagen_egresados" data-aos="fade-up">
-            <img class="img_egresados" src="<?= media(); ?>/archivos/bolsa_de_trabajo/egresados.png" alt="">
         </div>
 
-        <a href="<?= base_url(); ?>/bolsadetrabajo/ofertas_laborales">
-            <div class="cursos_empleabilidad empleos" data-aos="fade-right">
-                <img class="img_empleo_curso" src="<?= media(); ?>/archivos/bolsa_de_trabajo/empleos.png" alt="">
+        <div class="col-md-4">
+            <div class="cursos_empleabilidad imagen_egresados" data-aos="fade-up">
+                <img class="img_egresados" src="<?= media(); ?>/archivos/bolsa_de_trabajo/egresados.png" alt="">
             </div>
-        </a>
+        </div>
+
+        <div class="col-md-4">
+            <a href="javascript:void(0);" onclick="ofertasLaborales()">
+                <div class="col-8 col-md-3 col-lg-3  fondo cuadro_enlace" data-aos="flip-up">
+                    <div class="col-12 text-right col-md-12">
+                        <img class="iconosPlaforma" src="<?= media(); ?>/archivos/home/ofertas_laborales.png" alt="">
+                    </div>
+                    <div class="col-12 text-left col-md-12">
+                        <h5 class="">OFERTAS LABORALES</h5>
+                    </div>
+                </div>
+            </a>
+            <br>
+            <a href="<?= base_url(); ?>/encuestaempresas" target="_blank">
+                <div class="col-8 col-md-3 col-lg-3  fondo cuadro_enlace" data-aos="flip-up">
+                    <div class="text-right">
+                        <img class="iconosPlaforma" src="<?= media(); ?>/archivos/home/encuesta_empleadores.png" alt="">
+                    </div>
+                    <div class="col-md-12 text-left cuadro_texto">
+                        <h5 class="">ENCUESTA <br>EMPLEADORES</h5> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </div>
+                </div>
+            </a>
+        </div>
+
     </div>
+
 </div>
 
 
@@ -265,7 +159,7 @@ $perfiles = $año->selectañoEspecialidades();
 
 
 <!-- SEGUNDAS ESPECIALIDADES -->
-<!-- <div class="modal fade" id="modalInformacionSesion" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="modalInformacionSesion" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-md">
         <div class="modal-content">
             <div class="modal-body">
@@ -301,11 +195,71 @@ $perfiles = $año->selectañoEspecialidades();
 
         </div>
     </div>
-</div> -->
+</div>
+
+<div class="modal fade" id="modalBolsasWork" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-body">
+
+                <form id="formUsuario" name="formUsuario" class="form-horizontal text-center">
+                    <div>
+                        <h4>Dar clic para acceder a las bolsas de trabajo</h4>
+                    </div>
+
+                    <br>
+                    <a target="_blank"  href="https://jobboard.universia.net/unitruoportunidades">
+                        <div class="form-group  col-md-12">
+                            <img style="max-width: 150px;" src="<?= media(); ?>/archivos/bolsa_de_trabajo/universia_unt.png" alt="">
+                        </div>
+                    </a>
+
+                    <a target="_blank"  href="https://www.empleosperu.gob.pe/portal-mtpe/">
+                        <div class="form-group col-md-12 ">
+                            <img style="max-width: 250px;" src="<?= media(); ?>/archivos/bolsa_de_trabajo/mtp_unt.png" alt="">
+                        </div>
+                    </a>
+
+                    <a target="_blank"  href="https://www.abriljobs.com/jobs?page=1">
+                        <div class="form-group col-md-12 ">
+                            <img style="max-width: 150px;" src="<?= media(); ?>/archivos/bolsa_de_trabajo/abril_ats.png" alt="">
+                        </div>
+                    </a>
+
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
 
 <?php footer($data); ?>
 
 <script>
+    function ofertasLaborales() {
+
+        $('#modalBolsasWork').modal('show');
+        console.log('xd');
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     function empleos() {
         $.ajax({
             method: "GET",

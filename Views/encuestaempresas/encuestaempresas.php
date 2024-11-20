@@ -1,20 +1,6 @@
 <?php head($data); ?>
 
 <?php obj($data); ?>
-<?php
-
-//require_once  "../Models/HomeModel.php";
-$año = new HomeModel();
-
-$perfiles = $año->selectañoEspecialidades();
-$segundasEspecialidades = $año->SegundasEspecialidades();
-$doctorados = $año->doctorados();
-$idmaestria = $año->listaFacultadpostgrado();
-//$perfiless = $año->selectañoEspecialidadesporaño($id);
-
-
-?>
-
 
 <br>
 <style>
@@ -61,7 +47,7 @@ $idmaestria = $año->listaFacultadpostgrado();
             </div>
         </div>
     </div>
-    <form id="frmempleo" class="col-12 d-flex flex-column" name="frmempleo" method="post" submit="return false">
+    <form id="frmEncuesta" class="col-12 d-flex flex-column" name="frmEncuesta" method="post" submit="return false">
         <div class="row">
 
 
@@ -74,11 +60,16 @@ $idmaestria = $año->listaFacultadpostgrado();
         <div class="row">
 
             <div class="col-12 text-left">
-                <h3><input type="hidden" id="ruc"></h3>
-                
+
+                <div class="col-12 col-md-12 pregunta ">
+                    <p>1. Ingrese el número de RUC.</p>
+                </div>
+
+                <h3><input type="text" id="ruc"></h3>
+
             </div>
 
-<br><br><br>
+            <br>
 
             <div class="col-12 text-left">
                 <div class="row mb-4">
@@ -264,8 +255,8 @@ $idmaestria = $año->listaFacultadpostgrado();
                         </div>
 
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="p6" type="radio" value="7">
-                            <label class="form-check-label" for="p6">
+                            <input class="form-check-input" name="p5" type="radio" value="7">
+                            <label class="form-check-label" for="p5">
                                 <h5>N/A.</h5>
                             </label>
                         </div>
@@ -534,6 +525,12 @@ $idmaestria = $año->listaFacultadpostgrado();
             return;
         }
 
+        if (!document.querySelector('input[name="p10"]:checked')) {
+            swal("Atención!", "Debe seleccior la Pregunta Nº10", "warning");
+            hasError = true;
+            return;
+        }
+
 
 
         var pregunta1 = document.querySelector('input[name="p1"]:checked').value;
@@ -547,7 +544,7 @@ $idmaestria = $año->listaFacultadpostgrado();
         if (document.querySelector('input[name="p8"]:checked').value == 1) {
             var pregunta8 = document.querySelector('input[name="p8"]:checked').value;
         } else {
-            console.log('---------');
+
             var pregunta8 = document.getElementById('textp8').value;
             console.log(pregunta8);
         }
@@ -582,11 +579,14 @@ $idmaestria = $año->listaFacultadpostgrado();
             console.log(info);
             divLoading.style.display = "none";
             if (info.status == true) {
+                let frmEncuesta = document.querySelector("#frmEncuesta");
+                frmEncuesta.reset();
+
                 listado =
                     `
                         <div class="text-center  mb-2">
                             <h5 class="azul">` + info.msg + `</h5>
-                        </div>                          
+                        </div>
                     `;
                 $("#msgmodal").html(listado);
             }

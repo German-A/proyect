@@ -196,6 +196,7 @@ class difusion extends Controllers
 					"archivo1" => "image/png",
 					"archivo2" => "image/jpeg",
 					"archivo3" => "image/webp",
+					"archivo3" => "image/jpg",
 				);
 
 				$insert = "";

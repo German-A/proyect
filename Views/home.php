@@ -114,21 +114,15 @@ $perfiles = $obj->selectBanner();
   <br><br>
 
 
-  <br><br>
+  <!-- <br><br>
   <h2 class="mostaza text-center mb-5" data-aos="fade-down">PLATAFORMAS</h2>
 
 
   <div class="row d-flex justify-content-around text-center" style="max-width: 80%; margin:auto">
-    <!-- <div class="plataform-use  col-md-6 col-lg-4 col-xl-4" data-aos="flip-up">
-      <a href="<?= base_url(); ?>/manuales">
-        <img class="logosplaforma" src="<?= media(); ?>/archivos/logos/cursomooc.png" alt="">
-        <br><br>
-        <h5 class="text-cursosmooc text-center">CURSOS MOOC</h5>
-      </a>
-    </div> -->
+
     <div class="plataform-use  col-md-6 col-lg-4 col-xl-4" data-aos="flip-down">
       <a href="https://siseu-rep.sineace.gob.pe:6041/login" target="_blank">
-        <img class="logosplaforma" src="<?= media(); ?>/archivos/logos/siseu.png" alt="">
+        <img class="iconosPlaforma" src="<?= media(); ?>/archivos/logos/siseu.png" alt="">
         <br><br>
         <h5 class="text-cursosmooc text-center">SISEU - PROGRAMA DE ESTUDIO</h5>
       </a>
@@ -136,7 +130,7 @@ $perfiles = $obj->selectBanner();
     </div>
     <div class="plataform-use  col-md-6 col-lg-4 col-xl-4" data-aos="flip-up">
       <a href="https://siseu-rep.sineace.gob.pe:6040/" target="_blank">
-        <img class="logosplaforma" src="<?= media(); ?>/archivos/logos/sineace.jpg" alt="">
+        <img class="iconosPlaforma" src="<?= media(); ?>/archivos/logos/sineace.jpg" alt="">
         <br><br>
         <h5 class="text-cursosmooc text-center">SISEU - EGRESADOS</h5>
       </a>
@@ -144,7 +138,7 @@ $perfiles = $obj->selectBanner();
     </div>
     <div class="plataform-use  col-md-6 col-lg-4 col-xl-4" data-aos="flip-down">
       <a href="https://jobboard.universia.net/unitruoportunidades" target="_blank">
-        <img class="logosplaforma" src="<?= media(); ?>/archivos/logos/bolsatrabajo.png" alt="">
+        <img class="iconosPlaforma" src="<?= media(); ?>/archivos/logos/bolsatrabajo.png" alt="">
         <br><br>
         <h5 class="text-cursosmooc text-center">BOLSA DE TRABAJO UNT</h5>
       </a>
@@ -152,7 +146,7 @@ $perfiles = $obj->selectBanner();
     </div>
     <div class="plataform-use  col-md-6 col-lg-4 col-xl-4" data-aos="flip-up">
       <a href="<?= base_url(); ?>/expoferialaboral" target="_blank">
-        <img class="logosplaforma" src="<?= media(); ?>/archivos/logos/expoferiasuse.jpg" alt="">
+        <img class="iconosPlaforma" src="<?= media(); ?>/archivos/logos/expoferiasuse.jpg" alt="">
         <br><br>
         <h5 class="text-cursosmooc text-center">EXPOFERIA LABORAL</h5>
       </a>
@@ -160,14 +154,105 @@ $perfiles = $obj->selectBanner();
     </div>
     <div class="plataform-use  col-md-6 col-lg-4 col-xl-4" data-aos="flip-down">
       <a href="<?= base_url(); ?>/solicitudempleo">
-        <img class="logosplaforma" src="<?= media(); ?>/archivos/logos/publicarTrabajo.png" alt="">
+        <img class="iconosPlaforma" src="<?= media(); ?>/archivos/logos/publicarTrabajo.png" alt="">
         <br><br>
         <h5 class="text-cursosmooc text-center">PUBLICA TU OFERTA</h5>
       </a>
 
     </div>
   </div>
-  <br>
+
+  <br> -->
+
+  <style>
+    .iconosPlaforma {
+      height: 50px;
+      width: 50px;
+    }
+
+    .fondo {
+      min-width: max-content;
+      padding: 5px;
+    }
+
+    .cuadro_texto {
+      padding-right: 50px;
+    }
+    .container{
+      margin: 20px auto;
+    }
+  </style>
+
+  <div class="container ">
+    <div class="col-12 text-center">
+      <h2 class=" mostaza text-center" data-aos="fade-up">PLATAFORMAS</h2>
+    </div>
+    <br>
+
+    <div class="row d-flex justify-content-around ">
+
+      <a href="<?= base_url(); ?>/encuestaempresas" target="_blank">
+        <div class="col-8 col-md-3 col-lg-3  fondo" data-aos="flip-down">
+          <div class="text-right">
+            <img class="iconosPlaforma" src="<?= media(); ?>/archivos/home/encuesta_empleadores.png" alt="">
+          </div>
+          <br>
+          <div class="col-md-12 text-left cuadro_texto">
+            <h5 class="">ENCUESTA <br>EMPLEADORES</h5> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </div>
+        </div>
+      </a>
+
+      <a href="https://siseu-rep.sineace.gob.pe:6040/" target="_blank">
+        <div class="col-8 col-md-3 col-lg-3  fondo" data-aos="flip-down">
+          <div class="col-12 text-right col-md-12">
+            <img class="iconosPlaforma" src="<?= media(); ?>/archivos/home/siseu.png" alt="">
+          </div>
+          <br>
+          <div class="col-md-12 text-left cuadro_texto">
+            <h5 class="">SISEU <br> EGRESADOS</h5>
+          </div>
+        </div>
+      </a>
+
+      <a target="_blank" href="https://jobboard.universia.net/unitruoportunidades">
+        <div class="col-8 col-md-3 col-lg-3  fondo" data-aos="flip-down">
+          <div class="col-12 text-right col-md-12">
+            <img class="iconosPlaforma" src="<?= media(); ?>/archivos/home/bolsa_trabajo.png" alt="">
+          </div>
+          <br>
+          <div class="col-md-12 text-left cuadro_texto">
+            <h5 class="">BOLSA DE <br>TRABAJO UNT</h5>
+          </div>
+        </div>
+      </a>
+
+      <a target="_blank" href="<?= base_url(); ?>/expoferialaboral">
+        <div class="col-8 col-md-3 col-lg-3  fondo" data-aos="flip-up">
+          <div class="col-12 text-right col-md-12">
+            <img class="iconosPlaforma" src="<?= media(); ?>/archivos/home/feria_laboral.png" alt="">
+          </div>
+          <br>
+          <div class="col-md-12 text-left cuadro_texto">
+            <h5 class="">FERIA <br>LABORAL</h5>
+          </div>
+        </div>
+      </a>
+
+      <a target="_blank" href="<?= base_url(); ?>/solicitudempleo">
+        <div class="col-8 col-md-3 col-lg-3  fondo" data-aos="flip-up">
+          <div class="col-12 text-right col-md-12">
+            <img class="iconosPlaforma" src="<?= media(); ?>/archivos/home/publicar_oferta.png" alt="">
+          </div>
+          <br>
+          <div class="col-md-12 text-left cuadro_texto">
+            <h5 class="">PUBLICA <br>TU OFERTA LABO</h5>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
   <br>
 
   <style>
@@ -176,7 +261,7 @@ $perfiles = $obj->selectBanner();
       max-height: 200px;
     }
   </style>
-  <h2 class="mostaza text-center" data-aos="fade-down">NUESTRO EQUIPO</h2>
+  <h2 class="mostaza text-center" data-aos="fade-up">NUESTRO EQUIPO</h2>
   <br>
 
   <div class="row contepersonald-flex justify-content-around text-center " data-aos="fade-down">

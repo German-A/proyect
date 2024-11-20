@@ -12,10 +12,10 @@ class bolsadetrabajo extends Controllers
 	public function bolsadetrabajo()
 	{
 		$data['page_id'] = 4;
-		$data['page_tag'] = "bolsadetrabajo";
-		$data['page_title'] = "Página principal";
-		$data['page_name'] = "home";
-		$data['page_content'] = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, quis. Perspiciatis repellat perferendis accusamus, ea natus id omnis, ratione alias quo dolore tempore dicta cum aliquid corrupti enim deserunt voluptas.";
+		$data['page_tag'] = "Bolsa de trabajo UNT";
+		$data['page_title'] = "Bolsa de trabajo UNT";
+		$data['page_name'] = "Bolsa de trabajo UNT";
+		$data['page_content'] = "Bolsa de trabajo UNT";
 		$this->views->getView($this, "bolsadetrabajo", $data);
 	}
 
