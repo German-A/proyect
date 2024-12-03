@@ -106,88 +106,67 @@
 
             <div class="col-lg-4 col-md-6">
                 <div class="gallery-item">
-                    <a href="<?= media(); ?>/images/ferialaboralxix/sosa.png" data-gall="portfolioGallery" class="gallery-lightbox">
-                        <img src="<?= media(); ?>/images/ferialaboralxix/sosa.png">
+                    <a href="<?= media(); ?>/upload/ferialaboralxix/grupo_rocio.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                        <img src="<?= media(); ?>/upload/ferialaboralxix/grupo_rocio.png">
                     </a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="gallery-item">
-                    <a href="<?= media(); ?>/images/ferialaboralxix/sosa.png" data-gall="portfolioGallery" class="gallery-lightbox">
-                        <img src="<?= media(); ?>/images/ferialaboralxix/sosa.png">
+                    <a href="<?= media(); ?>/upload/ferialaboralxix/hortifrut.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                        <img src="<?= media(); ?>/upload/ferialaboralxix/hortifrut.png">
                     </a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="gallery-item">
-                    <a href="<?= media(); ?>/images/ferialaboralxix/sosa.png" data-gall="portfolioGallery" class="gallery-lightbox">
-                        <img src="<?= media(); ?>/images/ferialaboralxix/sosa.png">
+                    <a href="<?= media(); ?>/upload/ferialaboralxix/aiesec.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                        <img src="<?= media(); ?>/upload/ferialaboralxix/aiesec.png">
                     </a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="gallery-item">
-                    <a href="<?= media(); ?>/images/ferialaboralxix/sosa.png" data-gall="portfolioGallery" class="gallery-lightbox">
-                        <img src="<?= media(); ?>/images/ferialaboralxix/sosa.png">
+                    <a href="<?= media(); ?>/upload/ferialaboralxix/stracon.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                        <img src="<?= media(); ?>/upload/ferialaboralxix/stracon.png">
                     </a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="gallery-item">
-                    <a href="<?= media(); ?>/images/ferialaboralxix/sosa.png" data-gall="portfolioGallery" class="gallery-lightbox">
-                        <img src="<?= media(); ?>/images/ferialaboralxix/sosa.png">
+                    <a href="<?= media(); ?>/upload/ferialaboralxix/la_industria.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                        <img src="<?= media(); ?>/upload/ferialaboralxix/la_industria.png">
                     </a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="gallery-item">
-                    <a href="<?= media(); ?>/images/ferialaboralxix/sosa.png" data-gall="portfolioGallery" class="gallery-lightbox">
-                        <img src="<?= media(); ?>/images/ferialaboralxix/sosa.png">
+                    <a href="<?= media(); ?>/upload/ferialaboralxix/sosa.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                        <img src="<?= media(); ?>/upload/ferialaboralxix/sosa.png">
                     </a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="gallery-item">
-                    <a href="<?= media(); ?>/images/ferialaboralxix/sosa.png" data-gall="portfolioGallery" class="gallery-lightbox">
-                        <img src="<?= media(); ?>/images/ferialaboralxix/sosa.png">
+                    <a href="<?= media(); ?>/upload/ferialaboralxix/katy.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                        <img src="<?= media(); ?>/upload/ferialaboralxix/katy.png">
                     </a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="gallery-item">
-                    <a href="<?= media(); ?>/images/ferialaboralxix/sosa.png" data-gall="portfolioGallery" class="gallery-lightbox">
-                        <img src="<?= media(); ?>/images/ferialaboralxix/sosa.png">
+                    <a href="<?= media(); ?>/upload/ferialaboralxix/jp.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                        <img src="<?= media(); ?>/upload/ferialaboralxix/jp.png">
                     </a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="gallery-item">
-                    <a href="<?= media(); ?>/images/ferialaboralxix/sosa.png" data-gall="portfolioGallery" class="gallery-lightbox">
-                        <img src="<?= media(); ?>/images/ferialaboralxix/sosa.png">
+                    <a href="<?= media(); ?>/upload/ferialaboralxix/gerson.png" data-gall="portfolioGallery" class="gallery-lightbox">
+                        <img src="<?= media(); ?>/upload/ferialaboralxix/gerson.png">
                     </a>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="gallery-item">
-                    <a href="<?= media(); ?>/images/ferialaboralxix/sosa.png" data-gall="portfolioGallery" class="gallery-lightbox">
-                        <img src="<?= media(); ?>/images/ferialaboralxix/sosa.png">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="gallery-item">
-                    <a href="<?= media(); ?>/images/ferialaboralxix/sosa.png" data-gall="portfolioGallery" class="gallery-lightbox">
-                        <img src="<?= media(); ?>/images/ferialaboralxix/sosa.png">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="gallery-item">
-                    <a href="<?= media(); ?>/images/ferialaboralxix/sosa.png" data-gall="portfolioGallery" class="gallery-lightbox">
-                        <img src="<?= media(); ?>/images/ferialaboralxix/sosa.png">
-                    </a>
-                </div>
-            </div>
+            </div>           
 
         </div>
     </div>

@@ -73,7 +73,7 @@ $perfiles = $obj->selectBanner();
       <h5 class="blueoscuro">De nuestros egresados <big><strong>actualmente trabajan</strong></big></h5>
     </div>
     <div class="col-4 col-md-3" data-aos="fade-down">
-      <h2 class="mostaza" style="font-size: 35px;">3421</h2>
+      <h2 class="mostaza" style="font-size: 35px;">3360</h2>
       <h5 class="blueoscuro">Egresados en el año<big><strong> 2023</strong></big> </h5>
     </div>
     <div class="col-4 col-md-3" data-aos="fade-down-right">
@@ -85,6 +85,9 @@ $perfiles = $obj->selectBanner();
   <br>
   <br>
   <br>
+
+
+
 
   <div class="row d-flex justify-content-around" style="max-width: 900px; margin:auto">
     <div class="col-md-12">
@@ -113,56 +116,6 @@ $perfiles = $obj->selectBanner();
   </div>
   <br><br>
 
-
-  <!-- <br><br>
-  <h2 class="mostaza text-center mb-5" data-aos="fade-down">PLATAFORMAS</h2>
-
-
-  <div class="row d-flex justify-content-around text-center" style="max-width: 80%; margin:auto">
-
-    <div class="plataform-use  col-md-6 col-lg-4 col-xl-4" data-aos="flip-down">
-      <a href="https://siseu-rep.sineace.gob.pe:6041/login" target="_blank">
-        <img class="iconosPlaforma" src="<?= media(); ?>/archivos/logos/siseu.png" alt="">
-        <br><br>
-        <h5 class="text-cursosmooc text-center">SISEU - PROGRAMA DE ESTUDIO</h5>
-      </a>
-
-    </div>
-    <div class="plataform-use  col-md-6 col-lg-4 col-xl-4" data-aos="flip-up">
-      <a href="https://siseu-rep.sineace.gob.pe:6040/" target="_blank">
-        <img class="iconosPlaforma" src="<?= media(); ?>/archivos/logos/sineace.jpg" alt="">
-        <br><br>
-        <h5 class="text-cursosmooc text-center">SISEU - EGRESADOS</h5>
-      </a>
-
-    </div>
-    <div class="plataform-use  col-md-6 col-lg-4 col-xl-4" data-aos="flip-down">
-      <a href="https://jobboard.universia.net/unitruoportunidades" target="_blank">
-        <img class="iconosPlaforma" src="<?= media(); ?>/archivos/logos/bolsatrabajo.png" alt="">
-        <br><br>
-        <h5 class="text-cursosmooc text-center">BOLSA DE TRABAJO UNT</h5>
-      </a>
-
-    </div>
-    <div class="plataform-use  col-md-6 col-lg-4 col-xl-4" data-aos="flip-up">
-      <a href="<?= base_url(); ?>/expoferialaboral" target="_blank">
-        <img class="iconosPlaforma" src="<?= media(); ?>/archivos/logos/expoferiasuse.jpg" alt="">
-        <br><br>
-        <h5 class="text-cursosmooc text-center">EXPOFERIA LABORAL</h5>
-      </a>
-
-    </div>
-    <div class="plataform-use  col-md-6 col-lg-4 col-xl-4" data-aos="flip-down">
-      <a href="<?= base_url(); ?>/solicitudempleo">
-        <img class="iconosPlaforma" src="<?= media(); ?>/archivos/logos/publicarTrabajo.png" alt="">
-        <br><br>
-        <h5 class="text-cursosmooc text-center">PUBLICA TU OFERTA</h5>
-      </a>
-
-    </div>
-  </div>
-
-  <br> -->
 
   <style>
     .iconosPlaforma {
@@ -250,7 +203,7 @@ $perfiles = $obj->selectBanner();
           </div>
           <br>
           <div class="col-md-12 text-left cuadro_texto">
-            <h5 class="">PUBLICA <br>TU OFERTA LABO</h5>
+            <h5 class="">PUBLICA <br>TU OFERTA LABORAL</h5>
           </div>
         </div>
       </a>

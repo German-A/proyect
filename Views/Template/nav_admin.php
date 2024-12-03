@@ -82,13 +82,17 @@
             <?php
             if (
                 !empty($_SESSION['permisos'][21]['r']) ||
-                !empty($_SESSION['permisos'][22]['r'])
+                !empty($_SESSION['permisos'][22]['r']) ||
+                !empty($_SESSION['permisos'][29]['r']) ||
+                !empty($_SESSION['permisos'][31]['r']) ||
+                !empty($_SESSION['permisos'][30]['r']) ||
+                !empty($_SESSION['permisos'][30]['r']) 
             ) {
             ?>
                 <li class="treeview">
                     <a class="app-menu__item" href="#" data-toggle="treeview">
                         <i class="app-menu__icon fas fa-upload" aria-hidden="true"></i>
-                        <span class="app-menu__label">XlV Expoferia</span>
+                        <span class="app-menu__label">FERIA LABORAL</span>
                         <i class="treeview-indicator fa fa-angle-right"></i>
                     </a>
                     <ul class="treeview-menu">
@@ -100,137 +104,62 @@
                             <li><a class="treeview-item" href="<?= base_url(); ?>/galeriavida2022"><i class="icon fa fa-circle-o"></i> Galeria vida2022</a></li>
                         <?php } ?>
 
-                    </ul>
-                </li>
-            <?php } ?>
-
-
-
-            <?php
-            if (
-
-                !empty($_SESSION['permisos'][29]['r']) ||
-                !empty($_SESSION['permisos'][30]['r']) ||
-                !empty($_SESSION['permisos'][31]['r'])
-
-            ) {
-            ?>
-                <li class="treeview">
-                    <a class="app-menu__item" href="#" data-toggle="treeview">
-                        <i class="app-menu__icon fas fa-upload" aria-hidden="true"></i>
-                        <span class="app-menu__label">XV Expoferia</span>
-                        <i class="treeview-indicator fa fa-angle-right"></i>
-                    </a>
-                    <ul class="treeview-menu">
-
                         <?php if (!empty($_SESSION['permisos'][29]['r'])) { ?>
-                            <li><a class="treeview-item" href="<?= base_url(); ?>/expoferialaboralxvadmin/galeria"><i class="icon fa fa-circle-o"></i>Galería</a></li>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/expoferialaboralxvadmin/galeria"><i class="icon fa fa-circle-o"></i>XV Galería</a></li>
                         <?php } ?>
 
                         <?php if (!empty($_SESSION['permisos'][30]['r'])) { ?>
-                            <li><a class="treeview-item" href="<?= base_url(); ?>/expoferialaboralxvadmin/ponencias"><i class="icon fa fa-circle-o"></i>Ponencias</a></li>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/expoferialaboralxvadmin/ponencias"><i class="icon fa fa-circle-o"></i>XV Ponencias</a></li>
                         <?php } ?>
 
                         <?php if (!empty($_SESSION['permisos'][31]['r'])) { ?>
-                            <li><a class="treeview-item" href="<?= base_url(); ?>/expoferialaboralxvadmin/empresas"><i class="icon fa fa-circle-o"></i>Empresas</a></li>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/expoferialaboralxvadmin/empresas"><i class="icon fa fa-circle-o"></i>XV Empresas</a></li>
                         <?php } ?>
 
-                    </ul>
-                </li>
-            <?php } ?>
-
-
-
-            <?php
-            if (
-
-                !empty($_SESSION['permisos'][29]['r']) ||
-                !empty($_SESSION['permisos'][30]['r']) ||
-                !empty($_SESSION['permisos'][31]['r'])
-
-            ) {
-            ?>
-                <li class="treeview">
-                    <a class="app-menu__item" href="#" data-toggle="treeview">
-                        <i class="app-menu__icon fas fa-upload" aria-hidden="true"></i>
-                        <span class="app-menu__label">XVll Expoferia</span>
-                        <i class="treeview-indicator fa fa-angle-right"></i>
-                    </a>
-                    <ul class="treeview-menu">
-
                         <?php if (!empty($_SESSION['permisos'][29]['r'])) { ?>
-                            <li><a class="treeview-item" href="<?= base_url(); ?>/expoferialaboralxvlladmin/galeria"><i class="icon fa fa-circle-o"></i>Galería</a></li>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/expoferialaboralxvlladmin/galeria"><i class="icon fa fa-circle-o"></i>XVll Galería</a></li>
                         <?php } ?>
 
                         <?php if (!empty($_SESSION['permisos'][30]['r'])) { ?>
-                            <li><a class="treeview-item" href="<?= base_url(); ?>/expoferialaboralxvlladmin/ponencias"><i class="icon fa fa-circle-o"></i>Ponencias</a></li>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/expoferialaboralxvlladmin/ponencias"><i class="icon fa fa-circle-o"></i>XVll Ponencias</a></li>
                         <?php } ?>
 
                         <?php if (!empty($_SESSION['permisos'][31]['r'])) { ?>
-                            <li><a class="treeview-item" href="<?= base_url(); ?>/expoferialaboralxvlladmin/empresas"><i class="icon fa fa-circle-o"></i>Empresas</a></li>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/expoferialaboralxvlladmin/empresas"><i class="icon fa fa-circle-o"></i>XVll Empresas</a></li>
                         <?php } ?>
 
-                    </ul>
-                </li>
-            <?php } ?>
-
-
-            <?php
-            if (
-                !empty($_SESSION['permisos'][29]['r']) ||
-                !empty($_SESSION['permisos'][30]['r']) ||
-                !empty($_SESSION['permisos'][31]['r'])
-            ) {
-            ?>
-                <li class="treeview">
-                    <a class="app-menu__item" href="#" data-toggle="treeview">
-                        <i class="app-menu__icon fas fa-upload" aria-hidden="true"></i>
-                        <span class="app-menu__label">CHAMBITA-BUSCA <br>2023</span>
-                        <i class="treeview-indicator fa fa-angle-right"></i>
-                    </a>
-                    <ul class="treeview-menu">
-
                         <?php if (!empty($_SESSION['permisos'][29]['r'])) { ?>
-                            <li><a class="treeview-item" href="<?= base_url(); ?>/expoferialaboralxvllladmin/galeria"><i class="icon fa fa-circle-o"></i>Galería</a></li>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/expoferialaboralxvllladmin/galeria"><i class="icon fa fa-circle-o"></i>CORE 2023 Galería</a></li>
                         <?php } ?>
 
                         <?php if (!empty($_SESSION['permisos'][30]['r'])) { ?>
-                            <li><a class="treeview-item" href="<?= base_url(); ?>/expoferialaboralxvllladmin/ponencias"><i class="icon fa fa-circle-o"></i>Ponencias</a></li>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/expoferialaboralxvllladmin/ponencias"><i class="icon fa fa-circle-o"></i>CORE 2023 Ponencias</a></li>
                         <?php } ?>
 
                         <?php if (!empty($_SESSION['permisos'][31]['r'])) { ?>
-                            <li><a class="treeview-item" href="<?= base_url(); ?>/expoferialaboralxvllladmin/empresas"><i class="icon fa fa-circle-o"></i>Empresas</a></li>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/expoferialaboralxvllladmin/empresas"><i class="icon fa fa-circle-o"></i>CORE 2023 mpresas</a></li>
                         <?php } ?>
 
-                    </ul>
-                </li>
-            <?php } ?>
-
-            <?php
-            if (
-                !empty($_SESSION['permisos'][21]['r']) ||
-                !empty($_SESSION['permisos'][22]['r'])
-            ) {
-            ?>
-                <li class="treeview">
-                    <a class="app-menu__item" href="#" data-toggle="treeview">
-                        <i class="app-menu__icon fas fa-upload" aria-hidden="true"></i>
-                        <span class="app-menu__label">CHAMBITA-BUSCA<br> 2024</span>
-                        <i class="treeview-indicator fa fa-angle-right"></i>
-                    </a>
-                    <ul class="treeview-menu">
-
                         <?php if (!empty($_SESSION['permisos'][29]['r'])) { ?>
-                            <li><a class="treeview-item" href="<?= base_url(); ?>/ferialaboralchambitaadmin/galeria"><i class="icon fa fa-circle-o"></i>Galería</a></li>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/ferialaboralchambitaadmin/galeria"><i class="icon fa fa-circle-o"></i>CORE 2024 Galería</a></li>
                         <?php } ?>
 
                         <?php if (!empty($_SESSION['permisos'][30]['r'])) { ?>
-                            <li><a class="treeview-item" href="<?= base_url(); ?>/ferialaboralchambitaadmin/ponencias"><i class="icon fa fa-circle-o"></i>Ponencias</a></li>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/ferialaboralchambitaadmin/ponencias"><i class="icon fa fa-circle-o"></i>CORE 2024 Ponencias</a></li>
                         <?php } ?>
 
                         <?php if (!empty($_SESSION['permisos'][31]['r'])) { ?>
-                            <li><a class="treeview-item" href="<?= base_url(); ?>/ferialaboralchambitaadmin/empresas"><i class="icon fa fa-circle-o"></i>Empresas</a></li>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/ferialaboralchambitaadmin/empresas"><i class="icon fa fa-circle-o"></i>CORE 2024 Empresas</a></li>
                         <?php } ?>
+
+                        <?php if (!empty($_SESSION['permisos'][29]['r'])) { ?>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/ferialaboralxvllladmin/galeria"><i class="icon fa fa-circle-o"></i>xvlll-Galería</a></li>
+                        <?php } ?>
+
+                        <?php if (!empty($_SESSION['permisos'][29]['r'])) { ?>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/ferialaboralxvllladmin/ponencias"><i class="icon fa fa-circle-o"></i>xvlll-ponencias</a></li>
+                        <?php } ?>
+
 
                     </ul>
                 </li>
@@ -265,40 +194,22 @@
                         <?php } ?>
 
                     </ul>
-                </li>
 
-
-            <?php } ?>
-
-
-
-
-
-
-            <?php
-            if (
-
-                !empty($_SESSION['permisos'][34]['r'])
-            ) {
-            ?>
-                <li class="treeview">
-                    <a class="app-menu__item" href="#" data-toggle="treeview">
-                        <i class="app-menu__icon fas fa-upload" aria-hidden="true"></i>
-                        <span class="app-menu__label">feria laboral</span>
-                        <i class="treeview-indicator fa fa-angle-right"></i>
-                    </a>
+                    
                     <ul class="treeview-menu">
 
-                        <?php if (!empty($_SESSION['permisos'][29]['r'])) { ?>
-                            <li><a class="treeview-item" href="<?= base_url(); ?>/ferialaboralxvllladmin/galeria"><i class="icon fa fa-circle-o"></i>Galería</a></li>
+                        <?php if (!empty($_SESSION['permisos'][36]['r'])) { ?>
+                            <li><a class="treeview-item" href="<?= base_url(); ?>/api_egresados"><i class="icon fa fa-circle-o"></i>api_egresados</a></li>
                         <?php } ?>
 
-                        <?php if (!empty($_SESSION['permisos'][29]['r'])) { ?>
-                            <li><a class="treeview-item" href="<?= base_url(); ?>/ferialaboralxvllladmin/ponencias"><i class="icon fa fa-circle-o"></i>ponencias</a></li>
-                        <?php } ?>
                     </ul>
+
+                    
                 </li>
+
+
             <?php } ?>
+
 
 
 
@@ -306,15 +217,13 @@
             <!------------------------- modulo de administador   ----------------------->
             <?php if (
                 !empty($_SESSION['permisos'][8]['r']) || !empty($_SESSION['permisos'][9]['r'])
-                || !empty($_SESSION['permisos'][12]['r'])
-                ||  !empty($_SESSION['permisos'][25]['r']) ||  !empty($_SESSION['permisos'][26]['r'])
-                ||  !empty($_SESSION['permisos'][27]['r'])
-
+                || !empty($_SESSION['permisos'][12]['r']) || !empty($_SESSION['permisos'][26]['r'])
+                || !empty($_SESSION['permisos'][25]['r']) || !empty($_SESSION['permisos'][27]['r'])
             ) { ?>
                 <li class="treeview">
                     <a class="app-menu__item" href="#" data-toggle="treeview">
                         <i class="app-menu__icon fas fa-briefcase" aria-hidden="true"></i>
-                        <span class="app-menu__label">Expoferia Admin</span>
+                        <span class="app-menu__label">OFERTAS LABORALES</span>
                         <i class="treeview-indicator fa fa-angle-right"></i>
                     </a>
                     <ul class="treeview-menu">

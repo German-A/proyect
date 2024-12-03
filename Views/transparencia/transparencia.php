@@ -35,8 +35,19 @@ $idmaestria = $año->listaFacultadpostgrado();
             <h1>2024</h1>
         </div>
         <div class="col-3 col-md-3 col-lg-2   fondo m-1">
-            <a href="https://docs.google.com/spreadsheets/d/1UQ4F2RrqGYyJhwYl8nzv1kDhfuJ4AVE-/edit?usp=sharing&ouid=103502351721971787980&rtpof=true&sd=true
-" target="_blank" class=" m-3  p-1 ">
+            <a href="https://docs.google.com/spreadsheets/d/16j_PX0cHZOUiqujq6DQi21J13ZUIqqVv/edit?usp=sharing&ouid=104637188327252951961&rtpof=true&sd=true" target="_blank" class=" m-3  p-1 ">
+                <div class="col-12 text-right col-md-12">
+                    <h1 class="mostaza "><i class="icon fas fa-graduation-cap"></i></h1>
+                    <br>
+                </div>
+                <div class="col-12 text-left col-md-12">
+                    <h5 class="">Egresados</h5>
+                    <h5>201</h5>
+                </div>
+            </a>
+        </div>
+        <div class="col-3 col-md-3 col-lg-2   fondo m-1">
+            <a href="https://docs.google.com/spreadsheets/d/1UQ4F2RrqGYyJhwYl8nzv1kDhfuJ4AVE-/edit?usp=sharing&ouid=103502351721971787980&rtpof=true&sd=true" target="_blank" class=" m-3  p-1 ">
                 <div class="col-12 text-right col-md-12">
                     <h1 class="mostaza "><i class="icon fas fa-graduation-cap"></i></h1>
                     <br>
@@ -48,14 +59,13 @@ $idmaestria = $año->listaFacultadpostgrado();
             </a>
         </div>
         <div class="col-4 col-md-3 col-lg-2   fondo m-1">
-            <a href="https://docs.google.com/spreadsheets/d/1zG2IO23FOUZDEYQ9Ymod_QMG2fzrTxPF/edit?usp=sharing&ouid=103502351721971787980&rtpof=true&sd=true
-" target="_blank" class=" m-3  p-1 ">
+            <a href="https://docs.google.com/spreadsheets/d/1zG2IO23FOUZDEYQ9Ymod_QMG2fzrTxPF/edit?usp=sharing&ouid=103502351721971787980&rtpof=true&sd=true" target="_blank" class=" m-3  p-1 ">
                 <div class="col-12 text-right col-md-12">
                     <h1 class="mostaza "><i class="icon fas fa-user-graduate"></i></h1>
                     <br>
                 </div>
                 <div class="col-12 text-left col-md-12">
-                    <h5 class="">Títulos Profesionales</h5>           
+                    <h5 class="">Títulos Profesionales</h5>
                     <h5>924</h5>
                 </div>
             </a>
@@ -73,8 +83,7 @@ $idmaestria = $año->listaFacultadpostgrado();
             </a>
         </div>
         <div class="col-4 col-md-3 col-lg-2   fondo m-1">
-            <a href="https://docs.google.com/spreadsheets/d/16HjP27GArON5zltat9bPed5Xfeyte78j/edit?usp=sharing&ouid=103502351721971787980&rtpof=true&sd=true
-" target="_blank" class=" m-3  p-1 ">
+            <a href="https://docs.google.com/spreadsheets/d/16HjP27GArON5zltat9bPed5Xfeyte78j/edit?usp=sharing&ouid=103502351721971787980&rtpof=true&sd=true" target="_blank" class=" m-3  p-1 ">
                 <div class="col-12 text-right col-md-12">
                     <h1 class="mostaza "><i class="far fa-university"></i></h1>
                     <br>
@@ -111,6 +120,18 @@ $idmaestria = $año->listaFacultadpostgrado();
             <h1>2023</h1>
         </div>
         <div class="col-3 col-md-3 col-lg-2   fondo m-1">
+            <a href="https://docs.google.com/spreadsheets/d/1IB4zveaWYktBldRm1BQ9IEdvqDReHtLU/edit?usp=sharing&ouid=104637188327252951961&rtpof=true&sd=true" target="_blank" class=" m-3  p-1 ">
+                <div class="col-12 text-right col-md-12">
+                    <h1 class="mostaza "><i class="icon fas fa-graduation-cap"></i></h1>
+                    <br>
+                </div>
+                <div class="col-12 text-left col-md-12">
+                    <h5 class="">Egresados</h5>
+                    <h5>2502</h5>
+                </div>
+            </a>
+        </div>
+        <div class="col-3 col-md-3 col-lg-2   fondo m-1">
             <a href="https://docs.google.com/spreadsheets/d/1q4o-uWSVkXMIl2hxdYu4wqlyLYwgJNuI/edit?usp=share_link&ouid=115190337207338943725&rtpof=true&sd=true" target="_blank" class=" m-3  p-1 ">
                 <div class="col-12 text-right col-md-12">
                     <h1 class="mostaza "><i class="icon fas fa-graduation-cap"></i></h1>
@@ -129,7 +150,7 @@ $idmaestria = $año->listaFacultadpostgrado();
                     <br>
                 </div>
                 <div class="col-12 text-left col-md-12">
-                    <h5 class="">Títulos Profesionales</h5>           
+                    <h5 class="">Títulos Profesionales</h5>
                     <h5>1312</h5>
                 </div>
             </a>
@@ -184,6 +205,18 @@ $idmaestria = $año->listaFacultadpostgrado();
             <h1>2022</h1>
         </div>
         <div class="col-3 col-md-3 col-lg-2   fondo m-1">
+            <a href="https://docs.google.com/spreadsheets/d/1tTwPq4vtLTGydJsYCGM8-DTeqafF9uKh/edit?usp=sharing&ouid=104637188327252951961&rtpof=true&sd=true" target="_blank" class=" m-3  p-1 ">
+                <div class="col-12 text-right col-md-12">
+                    <h1 class="mostaza "><i class="icon fas fa-graduation-cap"></i></h1>
+                    <br>
+                </div>
+                <div class="col-12 text-left col-md-12">
+                    <h5 class="">Egresados</h5>
+                    <h5>2220</h5>
+                </div>
+            </a>
+        </div>
+        <div class="col-3 col-md-3 col-lg-2   fondo m-1">
             <a href="https://docs.google.com/spreadsheets/d/1g2Eni-DIN81gvAsesz0p3iATS9lA0XlG/edit?usp=sharing&ouid=103502351721971787980&rtpof=true&sd=true" target="_blank" class=" m-3  p-1 ">
                 <div class="col-12 text-right col-md-12">
                     <h1 class="mostaza "><i class="icon fas fa-graduation-cap"></i></h1>
@@ -202,7 +235,7 @@ $idmaestria = $año->listaFacultadpostgrado();
                     <br>
                 </div>
                 <div class="col-12 text-left col-md-12">
-                    <h5 class="">Títulos Profesionales</h5>           
+                    <h5 class="">Títulos Profesionales</h5>
                     <h5>529</h5>
                 </div>
             </a>
@@ -275,7 +308,7 @@ $idmaestria = $año->listaFacultadpostgrado();
                     <br>
                 </div>
                 <div class="col-12 text-left col-md-12">
-                    <h5 class="">Títulos Profesionales</h5>           
+                    <h5 class="">Títulos Profesionales</h5>
                     <h5>1139</h5>
                 </div>
             </a>

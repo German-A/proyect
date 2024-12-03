@@ -239,7 +239,7 @@
                     </ul>
                 </li> -->
                 <li class="menu__itemxv"><a href="<?= base_url(); ?>/ferialaboralxix/ponencias" class="menu__linkxv">PONENCIAS</a></li>
-                <li class="menu__itemxv"><a href="<?= base_url(); ?>/ferialaboralxix/galeria" class="menu__linkxv">GALERIA</a></li>
+                <!-- <li class="menu__itemxv"><a href="<?= base_url(); ?>/ferialaboralxix/galeria" class="menu__linkxv">GALERIA</a></li> -->
                 <li class="menu__itemxv"><a href="<?= base_url(); ?>/ferialaboralxix/empresas" class="menu__linkxv">EMPRESAS</a></li>
             </div>
         </ul>
