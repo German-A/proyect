@@ -210,7 +210,7 @@
                     <br>
                     <a target="_blank"  href="https://jobboard.universia.net/unitruoportunidades">
                         <div class="form-group  col-md-12">
-                            <img style="max-width: 150px;" src="<?= media(); ?>/archivos/bolsa_de_trabajo/universia_unt.png" alt="">
+                            <img style="max-width: 150px;" src="<?= media(); ?>/archivos/bolsa_de_trabajo/bolsa_unt.png" alt="">
                         </div>
                     </a>
 
