@@ -32,7 +32,6 @@ getModal('modalDifusionCurso', $data);
           <table id="datatable" class="table table-bordered table-striped">
             <thead>
               <tr>
-                <th>ID</th>
                 <th>anio_egreso</th>
                 <th>periodo_egreso</th>
                 <th>fecha_egreso</th>
@@ -49,7 +48,7 @@ getModal('modalDifusionCurso', $data);
                 <th>fecha_bachiller</th>
                 <th>titulo_profesional</th>
                 <th>fecha_titulo</th>
-                <th>Acciones</th>
+   
               </tr>
             </thead>
             <tbody>
