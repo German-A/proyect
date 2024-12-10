@@ -15,7 +15,6 @@ class api_egresados extends Controllers
 	#region api_egresados_datos
 	public function api_egresados()
 	{
-
 		if (empty($_SESSION['permisosMod']['r'])) {
 			header("Location:" . base_url() . '/dashboard');
 		}
@@ -24,14 +23,16 @@ class api_egresados extends Controllers
 		$data['page_name'] = "USE-api_egresados";
 		$data['page_functions_js'] = "functions_api_egresados.js";
 
-
-
 		$this->views->getView($this, "api_egresados", $data);
 	}
 
 	public function getList()
 	{
-		$url = "https://api-tramites.unitru.edu.pe/api/egresados/2023/8";
+
+		$anio_egreso = intval(strClean($_POST['anio_egreso']));
+		$id_escuela = intval(strClean($_POST['id_escuela']));
+
+		$url = "https://api-tramites.unitru.edu.pe/api/egresados/$anio_egreso/$id_escuela";
 		$curl = curl_init();
 		curl_setopt($curl, CURLOPT_URL, $url);
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -40,6 +41,20 @@ class api_egresados extends Controllers
 		echo $arrData;
 		die();
 	}
+	public function getSelectCarreras()
+	{
+		$search = "";
+		if (!isset($_POST['palabraClave'])) {
+			$arrData = $this->model->getSelectCarrera();
+		} else {
+			$search = $_POST['palabraClave'];
+
+			$arrData = $this->model->getSelectCarreras($search);
+		}
+		echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
+		die();
+	}
+
 	#endregion api_egresados_datos
 
 	#region insertar_actualizar
