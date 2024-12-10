@@ -5,19 +5,27 @@
 <style>
     .contenedor_cursos_talleres {
         display: grid;
+        grid-template-columns: 1fr;
+        /* Ajusta el número de columnas según tus necesidades */
+        column-gap: 10px;
+    }
+    @media (min-width: 1000px) {
+
+        .contenedor_cursos_talleres {
+        display: grid;
         grid-template-columns: 20% 80%;
         /* Ajusta el número de columnas según tus necesidades */
-        margin: auto;
-        gap: 30px;
-        grid-auto-rows: auto;
+        column-gap: 10px;
+    }
     }
 
     .cursos_talleres {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         /* Ajusta el número de columnas según tus necesidades */
-        gap: 20px;
-        grid-auto-rows: auto;
+        column-gap: 10px;
+        row-gap: 40px;
+        margin: auto;
 
     }
 
@@ -25,12 +33,18 @@
         display: grid;
         grid-template-columns: 20% 80%;
         /* Ajusta el número de columnas según tus necesidades */
-        column-gap: 10px;
-        -webkit-box-shadow: 18px 12px 3px -10px rgba(247, 228, 17, 1);
-        -moz-box-shadow: 18px 12px 3px -10px rgba(247, 228, 17, 1);
-        box-shadow: 18px 12px 3px -10px rgba(247, 228, 17, 1);
-        width: max-content;
-        margin: auto;
+        -webkit-box-shadow: 1px 3px 5px 0px rgba(255, 197, 7, 1);
+        -moz-box-shadow: 1px 3px 5px 0px rgba(255, 197, 7, 1);
+        box-shadow: 1px 3px 5px 0px rgba(255, 197, 7, 1);
+        width: 350px;
+        height: 60px;
+
+    }
+
+    a:hover .informacion {
+        -webkit-box-shadow: 1px 3px 5px 0px rgba(17, 58, 123, 1);
+        -moz-box-shadow: 1px 3px 5px 0px rgba(17, 58, 123, 1);
+        box-shadow: 1px 3px 5px 0px rgba(17, 58, 123, 1);
     }
 
     .text-decoration {
@@ -51,11 +65,12 @@
     .cursos_principales {
         display: grid;
         grid-template-columns: 1fr;
-        margin: 20px 0;
+        margin: auto;
         column-gap: 20px;
+        row-gap: 40px;
     }
 
-    @media (min-width: 800px) {
+    @media (min-width: 1000px) {
         .encabezado {
             margin: auto;
         }
@@ -68,7 +83,7 @@
 
     }
 
-    @media (min-width: 1050px) {
+    @media (min-width: 1200px) {
         .encabezado {
             margin: auto;
         }
@@ -79,12 +94,22 @@
             column-gap: 20px;
         }
 
+        .cursos_talleres {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            /* Ajusta el número de columnas según tus necesidades */
+            column-gap: 10px;
+            row-gap: 20px;
+
+        }
+
     }
 </style>
 
 <div class="contenedor">
     <div class="encabezado">
         <h2 class="text-decoration">Potencia <b>tu empleabilidad</b></h2>
+        <br>
         <div class="cursos_principales" data-aos="fade-up">
             <a class="informacion" href="https://www.universia.net/pe/crear-cv-con-ia.html">
                 <div>
@@ -169,7 +194,7 @@
                             </div>
                         </div>
                     </div>
-                </a>       
+                </a>
                 `;
             }
 
@@ -322,7 +347,7 @@
                 `
                     <div class="text-center  mb-2">
                        <h5 class="azul">bienbenido: ` + info.data.nombres + `</h5>
-                    </div>                          
+                    </div>
                 `;
             $("#usuarioInfo").html(listado);
 
