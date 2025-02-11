@@ -73,11 +73,11 @@ $perfiles = $obj->selectBanner();
       <h5 class="blueoscuro">De nuestros egresados <big><strong>actualmente trabajan</strong></big></h5>
     </div>
     <div class="col-4 col-md-3" data-aos="fade-down">
-      <h2 class="mostaza" style="font-size: 35px;">3360</h2>
+      <h2 class="mostaza" style="font-size: 35px;">3361</h2>
       <h5 class="blueoscuro">Egresados en el año<big><strong> 2023</strong></big> </h5>
     </div>
     <div class="col-4 col-md-3" data-aos="fade-down-right">
-      <h2 class="mostaza" style="font-size: 35px;"><b>+3649</b> </h2>
+      <h2 class="mostaza" style="font-size: 35px;"><b>+5169</b> </h2>
       <h5 class="blueoscuro"> <big><strong>Ofertas laborales</strong></big> activas</h5>
     </div>
   </div>
@@ -246,20 +246,6 @@ $perfiles = $obj->selectBanner();
 
     </div><br><br><br>
 
-    <div class="col-12 col-sm-5 col-md-5 col-lg-2 mb-2">
-      <div class="cont-titulo">
-        <h5 class="bluemedio text-area">ANALISTA DE <br>PROCESOS</h5>
-      </div>
-      <img class="equipoimg" src="<?= media(); ?>/img/j2024.png" alt="">
-      <div class="col-4 cont-info">
-        <br>
-        <h6>JEAN PAUL<br> ROMERO LOBATÓN </h6>
-        <p><small>INGENIERO DE SISTEMAS</small></p>
-      </div>
-
-    </div><br><br><br>
-
-
 
     <br><br><br>
 
@@ -282,6 +268,20 @@ $perfiles = $obj->selectBanner();
     <br><br><br>
     <div class="col-12 col-sm-5 col-md-5 col-lg-2 mb-2">
       <div class="cont-titulo ">
+        <h5 class="bluemedio text-area">ÁREA DE<br>SISTEMAS DE INFORMACIÓN</h5>
+      </div>
+      <img class="equipoimg" src="<?= media(); ?>/img/g2024.png" alt="">
+      <div class="col-4 cont-info">
+        <br>
+        <h6>GERSON DAVID <br>HUERTA HERRERA</h6>
+        <p><small>CIENCIAS POLITICAS Y GOBERNABILIDAD</small></p>
+      </div>
+    </div>
+    <br><br><br>
+
+    <br><br><br>
+    <div class="col-12 col-sm-5 col-md-5 col-lg-2 mb-2">
+      <div class="cont-titulo ">
         <h5 class="bluemedio text-area">GESTIÓN<br>DOCUMENTARIA</h5>
       </div>
       <img class="equipoimg" src="<?= media(); ?>/img/k2024.png" alt="">
@@ -293,19 +293,20 @@ $perfiles = $obj->selectBanner();
     </div>
     <br><br><br>
 
-    <br><br><br>
+
     <div class="col-12 col-sm-5 col-md-5 col-lg-2 mb-2">
-      <div class="cont-titulo ">
-        <h5 class="bluemedio text-area">ÁREA DE<br>SISTEMAS DE INFORMACIÓN</h5>
+      <div class="cont-titulo">
+        <h5 class="bluemedio text-area">ANALISTA DE <br>PROCESOS</h5>
       </div>
-      <img class="equipoimg" src="<?= media(); ?>/img/g2024.png" alt="">
+      <img class="equipoimg" src="<?= media(); ?>/img/german1.png" alt="">
       <div class="col-4 cont-info">
         <br>
-        <h6>GERSON DAVID <br>HUERTA HERRERA</h6>
-        <p><small>CIENCIAS POLITICAS Y GOBERNABILIDAD</small></p>
+        <h6>SEGUNDO GERMAN<br>AYALA JILAPA</h6>
+        <p><small>INGENIERO DE SISTEMAS</small></p>
       </div>
-    </div>
-    <br><br><br>
+
+    </div><br><br><br> 
+
 
   </div>
 

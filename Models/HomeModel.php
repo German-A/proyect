@@ -237,7 +237,7 @@ class HomeModel extends Mysql
 			inner join facultad f on m.Facultadid=f.idFacultad
 			inner join facultadiconos fi on fi.Facultadid=f.idFacultad
 			where m.status!=0
-			group by m.Facultadid";
+			group by m.Facultadid, f.nombreFacultad, fi.descripcion";
 		$request = $this->select_all($sql);
 		return $request;
 	}
@@ -263,7 +263,7 @@ class HomeModel extends Mysql
 		inner join facultad f on f.idFacultad=e.idFacultad
 		inner join facultadiconos fi on fi.Facultadid=f.idFacultad
 		where pa.status!=0
-		group by f.nombreFacultad";
+		group by f.nombreFacultad, f.idFacultad, fi.descripcion";
 		$request = $this->select_all($sql);
 		return $request;
 	}
@@ -277,7 +277,7 @@ class HomeModel extends Mysql
 		inner join facultad f on f.idFacultad=e.idFacultad
 		inner join facultadiconos fi on fi.Facultadid=f.idFacultad
 		where pa.status!=0 and f.idFacultad =$id
-		group by e.nombreEscuela";
+		group by e.nombreEscuela, e.idEscuela";
 		$request = $this->select_all($sql);
 		return $request;
 	}
@@ -331,7 +331,7 @@ class HomeModel extends Mysql
 		inner join facultad f on f.idFacultad=e.idFacultad
 		inner join facultadiconos fi on fi.Facultadid=f.idFacultad
 		where pa.status!=0
-		group by f.nombreFacultad";
+		group by f.nombreFacultad, f.idFacultad,fi.descripcion";
 		$request = $this->select_all($sql);
 		return $request;
 	}
@@ -345,7 +345,7 @@ class HomeModel extends Mysql
 		inner join facultad f on f.idFacultad=e.idFacultad
 		inner join facultadiconos fi on fi.Facultadid=f.idFacultad
 		where pa.status!=0 and f.idFacultad =$id
-		group by e.nombreEscuela";
+		group by e.nombreEscuela, e.idEscuela";
 		$request = $this->select_all($sql);
 		return $request;
 	}
@@ -376,7 +376,7 @@ class HomeModel extends Mysql
 		inner join facultad f on f.idFacultad=e.idFacultad
 		inner join facultadiconos fi on fi.Facultadid=f.idFacultad
 		where pa.status!=0
-		group by f.nombreFacultad";
+		group by f.nombreFacultad, f.idFacultad,fi.descripcion";
 		$request = $this->select_all($sql);
 		return $request;
 	}
@@ -390,7 +390,7 @@ class HomeModel extends Mysql
 		inner join facultad f on f.idFacultad=e.idFacultad
 		inner join facultadiconos fi on fi.Facultadid=f.idFacultad
 		where pa.status!=0 and f.idFacultad =$id
-		group by e.nombreEscuela";
+		group by e.nombreEscuela, e.idEscuela";
 		$request = $this->select_all($sql);
 		return $request;
 	}

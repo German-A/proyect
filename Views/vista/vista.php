@@ -30,203 +30,44 @@
         font-weight: bold !important;
         padding: 0 10px;
     }
+    .tamaño{
+
+        max-width: 100px ;
+        margin: auto;
+
+    }
 </style>
-<br>
+<br><br></br>
 
-<div class="row text-center" style="max-width: 1600px; margin:auto">
-
-    <br><br>
-    <div class="col-12  col-lg-4">
-        <br>
-        <div class="col-md-10  m-auto">
-            <h3 class="blueoscuro">FORMATOS DE CALIDAD</h3>
-        </div>
-
-        <div class="row">
-            <div class="col-md-10  m-auto itemY">
-
-                <a class="col-md-12 ml-2  mb-1 btn btn-outline-warning p-2 m-2  d-flex justify-content-center" onclick="verArchivo(1);">
-                    <div class="col-11 col-md-9">
-                        <h5 class="">Informe estadístico anual sobre el estado de los egresados, graduados y titulados</h5>
-                    </div>
-                </a>
-
-                <a class="col-md-12 ml-2  mb-1 btn btn-outline-warning p-2 m-2  d-flex justify-content-center" onclick="verArchivo(2);">
-                    <div class="col-11 col-md-9">
-                        <h5 class="">Informe semestral y anual sobre la evaluación de resultados de planes de acción</h5>
-                    </div>
-                </a>
-
-                <a class="col-md-12 ml-2  mb-1 btn btn-outline-warning p-2 m-2  d-flex justify-content-center" onclick="verArchivo(3);">
-                    <div class="col-11 col-md-9">
-                        <h5 class="">Informe estadístico anual y semestral de inserción laboral</h5>
-                    </div>
-                </a>
-
-                <a class="col-md-12 ml-2  mb-1 btn btn-outline-warning p-2 m-2  d-flex justify-content-center" onclick="verArchivo(4);">
-                    <div class="col-11 col-md-9">
-                        <h5 class="">Informe estadístico semestral y anual de la mejora de la inserción laboral de los egresados</h5>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <br>
-
-
+<div class="col-12">
+<div id="carouselExampleIndicators" class="carousel slide " data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://i.pinimg.com/736x/d6/65/cb/d665cb4fb1a3459389ecfa73befe5d3b.jpg" class="d-block w-100" alt="...">
     </div>
-
-    <div class="col-8 libro">
-        <section class="col-12">
-
-            <H3>Informe estadístico anual sobre el estado de los egresados, graduados y titulados</H3>
-
-            <div class="row form-group">
-                <!-- Escuela Profesional y Año de Egreso -->
-                <div class="col-md-8">
-
-                    <fieldset>
-                        <legend>Escuela Profesional <label for="anioEgreso"><span class="col-form-label text-danger">*</span></label></legend>
-                        <select class="carrera form-control selectmultiple" name="carrera" data-live-search="true" id="carrera" x>
-                            <option value="0" selected>Seleccionar</option>
-                        </select>
-                    </fieldset>
-
-                    <fieldset>
-                        <legend>Año de Egreso <label for="anioEgreso"><span class="col-form-label text-danger">*</span></label></legend>
-                        <select class="select2 form-control" name="anioEgreso" data-live-search="true" id="anioEgreso" x>
-                            <option value="0" selected>Seleccionar</option>
-                            <option value="2015">2015</option>
-                            <option value="2016">2016</option>
-                            <option value="2017">2017</option>
-                            <option value="2018">2018</option>
-                            <option value="2019">2019</option>
-                            <option value="2020">2020</option>
-                            <option value="2021">2021</option>
-                            <option value="2022">2022</option>
-                            <option value="2023">2023</option>
-                            <option value="2024">2024</option>
-                            <option value="2025">2025</option>
-                        </select>
-                    </fieldset>
-
-                </div>
-
-                <!-- cohorte -->
-                <div class="col-md-4">
-
-                    <fieldset>
-                        <legend>Cohorte <label for="anioEgreso"><span class="col-form-label text-danger">*</span></label></legend>
-                        <!-- desde -->
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <select class="select2 form-control" name="fechaInicio" data-live-search="true" id="fechaInicio" x>
-                                    <option value="0" selected>Desde</option>
-                                    <option value="2015">2015</option>
-                                    <option value="2016">2016</option>
-                                    <option value="2017">2017</option>
-                                    <option value="2018">2018</option>
-                                    <option value="2019">2019</option>
-                                    <option value="2020">2020</option>
-                                    <option value="2021">2021</option>
-                                    <option value="2022">2022</option>
-                                    <option value="2023">2023</option>
-                                    <option value="2024">2024</option>
-                                    <option value="2025">2025</option>
-                                </select>
-                            </div>
-                        </div>
-                        <!-- hasta -->
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <select class="select2 form-control" name="fechaFin" data-live-search="true" id="fechaFin" x>
-                                    <option value="0" selected>Hasta</option>
-                                    <option value="2015">2015</option>
-                                    <option value="2016">2016</option>
-                                    <option value="2017">2017</option>
-                                    <option value="2018">2018</option>
-                                    <option value="2019">2019</option>
-                                    <option value="2020">2020</option>
-                                    <option value="2021">2021</option>
-                                    <option value="2022">2022</option>
-                                    <option value="2023">2023</option>
-                                    <option value="2024">2024</option>
-                                    <option value="2025">2025</option>
-                                </select>
-                            </div>
-                        </div>
-                    </fieldset>
-
-                </div>
-            </div>
-
-            <!-- DATOS y observaciones-->
-            <fieldset>
-                <legend>Datos <label for="anioEgreso"><span class="col-form-label text-danger">*</span></label></legend>
-
-
-                <div class="row">
-
-                    <div class="form-group col-md-4">
-                        <label for="ingresantesPromocion">N° de Ingresantes por Promoción <span class="text-danger">*</span></label>
-                        <input type="number" class="form-control" id="ingresantesPromocion" name="ingresantesPromocion" required>
-                    </div>
-
-                    <div class="form-group col-md-4">
-                        <label for="egresadosPromocion">N° de Egresados<span class="text-danger">*</span></label>
-                        <input type="number" class="form-control" id="egresadosPromocion" name="egresadosPromocion" required>
-                    </div>
-
-                    <div class="form-group col-md-4">
-                        <label for="tiempoEsperando">N° de Egresados en el Tiempo Esperado<span class="text-danger">*</span></label>
-                        <input type="number" class="form-control" id="tiempoEsperando" name="tiempoEsperando" required>
-                    </div>
-
-
-                    <div class="form-group col-md-6">
-                        <label for="cantidadGraduados">N° de Egresados Graduados<span class="text-danger">*</span></label>
-                        <input type="number" class="form-control" id="cantidadGraduados" name="cantidadGraduados" required>
-                    </div>
-
-                    <div class="form-group col-md-6">
-                        <label for="cantidadTitulados">Cantidad de Titulados<span class="text-danger">*</span></label>
-                        <input type="number" class="form-control" id="cantidadTitulados" name="cantidadTitulados" required>
-                    </div>
-
-
-                    <div class="form-group col-md-12">
-                        <label for="observaciones">Observaciones</label>
-                        <textarea class="form-group col-md-12" name="" id="observaciones" rows="2"></textarea>
-                    </div>
-
-
-                </div>
-
-                <div class="row">
-
-                    <div class="form-group col-md-9">
-                        <label for="tomaDesiciones">Toma de desiciones</label>
-                        <textarea class="form-group col-md-12" name="" id="tomaDesiciones" rows="2"></textarea>
-                    </div>
-                    <div class="col-md-3 align-self-center">
-                        <div class="text-center">
-                            <a href="javascript:void(0)" class="btn btn-success" onclick="formato1()">DESCARGAR</a>
-                        </div>
-                    </div>
-                </div>
-            </fieldset>
-
-
-
-
-        </section>
-        <br><br><br>
+    <div class="carousel-item">
+      <img src="<?= media(); ?>/img/k2024.png" class="d-block w-100" alt="...">
     </div>
-
-
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
-
-
+</div>
+<br><br><br><br>
 
 
 

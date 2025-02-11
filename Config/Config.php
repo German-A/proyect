@@ -13,9 +13,9 @@
 	const DB_HOST = "localhost";
 
 
-	const DB_NAME = "bduse3";
+	const DB_NAME = "usedpaun_bduse";
 	const DB_USER = "root";
-	const DB_PASSWORD = "jp123";
+	const DB_PASSWORD = "123456";
 
 
 	// const DB_NAME = "usedpaun_bduse";

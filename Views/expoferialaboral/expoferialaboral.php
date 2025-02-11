@@ -40,7 +40,7 @@ $n = 1;
 
 <div class="contedor90 m1">
     <div class="col-12 text-center">
-        <h2 class="text-center">Feria laboral 2024</h2>
+        <h2 class="text-center">Ferias laborales 2024</h2>
     </div>
     <div class="list_feria">
 
@@ -85,7 +85,7 @@ $n = 1;
 
 <div class="contedor90 m1">
     <div class="col-12 text-center">
-        <h2 class="text-center">Feria laboral 2023</h2>
+        <h2 class="text-center">Ferias laborales 2023</h2>
     </div>
     <div class="list_feria ">
         <a target="_blank" href="<?= base_url(); ?>/expoferialaboralxvlll" class=" m-4  p-2 ">
@@ -118,7 +118,7 @@ $n = 1;
 
 <div class="contedor90 m1">
     <div class="col-12 text-center">
-        <h2 class="text-center">Feria laboral 2022</h2>
+        <h2 class="text-center">Ferias laborales 2022</h2>
     </div>
     <div class="list_feria ">
         <a target="_blank" href="<?= base_url(); ?>/expoferialaboralxv" class=" m-4  p-2 ">
@@ -145,8 +145,6 @@ $n = 1;
 
             </div>
         </a>
-
-
     </div>
 </div>
 
